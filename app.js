@@ -2685,7 +2685,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 3 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 3 cycles' }
             ]
         },
         'TPF-Modified': {
@@ -2694,7 +2694,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Docetaxel', dose: 70, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 3 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 3 cycles' }
             ]
         },
         'TIP': {
@@ -2702,8 +2702,8 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Docetaxel', dose: 30, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 4 cycles' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'days 1-3, q3weeks x 4 cycles' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
             ]
         },
         'Carboplatin-Paclitaxel-HN': {
@@ -2735,7 +2735,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
             ]
         },
         'Carboplatin-5FU-HN': {
@@ -2743,7 +2743,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
             ]
         },
         'Pembrolizumab-Carboplatin-5FU': {
@@ -2752,7 +2752,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
             ]
         },
         'Pembrolizumab-Cisplatin-5FU': {
@@ -2761,7 +2761,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
             ]
         },
         'Pembrolizumab-Carboplatin-Paclitaxel': {
@@ -2779,7 +2779,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
             ]
         },
         'Cisplatin-5FU-Cetuximab': {
@@ -2788,7 +2788,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
             ]
         },
         'Cisplatin-Cetuximab': {
@@ -2818,14 +2818,14 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
             ]
         },
         'Gemcitabine-Cisplatin-NPC': {
             name: 'Gemcitabine + Cisplatin (Nasopharyngeal)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -2834,7 +2834,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Toripalimab', dose: 240, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -3098,7 +3098,8 @@ function calculateDoses(formData) {
             calculatedDose: calculatedDose,
             doseUnit: doseUnit,
             schedule: drug.schedule,
-            hasLoadingDose: drug.hasLoadingDose
+            hasLoadingDose: drug.hasLoadingDose,
+            days: drug.days
         });
     });
     
@@ -3430,7 +3431,7 @@ function displayResults(results, patientData) {
                 <tbody>
                     ${results.drugs.map(drug => `
                         <tr style="border-bottom: 1px solid #dee2e6;">
-                            <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}</td>
+                            <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}${drug.days ? ` (${drug.days})` : ''}</td>
                             <td style="padding: 12px; border: 1px solid #dee2e6;">
                                 ${drug.hasLoadingDose ? 
                                     `<div style="font-size: 13px;">
