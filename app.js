@@ -2359,13 +2359,19 @@ function validatePage1() {
 }
 
 function validatePage2() {
+    console.log('Validating page 2, selectedSearchProtocol:', selectedSearchProtocol); // Debug log
+    
     // Check if protocol is selected via search
     if (selectedSearchProtocol) {
+        console.log('Using search protocol'); // Debug log
         // Check if carboplatin protocol requires AUC
         const aucGroup = document.getElementById('aucGroup');
         if (aucGroup.style.display !== 'none') {
             const auc = document.getElementById('auc').value;
-            if (!auc) return false;
+            if (!auc) {
+                alert('Please select an AUC value for this carboplatin protocol.');
+                return false;
+            }
         }
         return true;
     }
@@ -2374,19 +2380,30 @@ function validatePage2() {
     const cancerType = document.getElementById('cancerType').value;
     const protocol = document.getElementById('protocol').value;
     
-    if (!cancerType || !protocol) return false;
+    console.log('Browse selection - cancerType:', cancerType, 'protocol:', protocol); // Debug log
+    
+    if (!cancerType || !protocol) {
+        alert('Please either search for a protocol above OR select cancer type and protocol below.');
+        return false;
+    }
     
     // Check if breast cancer requires subtype
     if (cancerType === 'breast') {
         const subtype = document.getElementById('cancerSubtype').value;
-        if (!subtype) return false;
+        if (!subtype) {
+            alert('Please select a breast cancer subtype.');
+            return false;
+        }
     }
     
     // Check if carboplatin protocol requires AUC
     const aucGroup = document.getElementById('aucGroup');
     if (aucGroup.style.display !== 'none') {
         const auc = document.getElementById('auc').value;
-        if (!auc) return false;
+        if (!auc) {
+            alert('Please select an AUC value for this carboplatin protocol.');
+            return false;
+        }
     }
     
     return true;
@@ -2398,6 +2415,7 @@ let selectedSearchProtocol = null;
 
 // Build searchable protocol index
 function buildProtocolIndex() {
+    console.log('Building protocol index...'); // Debug log
     allProtocols = [];
     
     Object.keys(protocolDatabase).forEach(cancerType => {
@@ -2434,6 +2452,9 @@ function buildProtocolIndex() {
             });
         }
     });
+    
+    console.log('Protocol index built, total protocols:', allProtocols.length); // Debug log
+    console.log('First few protocols:', allProtocols.slice(0, 3)); // Debug log
 }
 
 function getCancerDisplayName(cancerType) {
@@ -2484,9 +2505,11 @@ function searchProtocols(query) {
 
 function displaySearchSuggestions(suggestions) {
     const suggestionsDiv = document.getElementById('searchSuggestions');
+    console.log('Displaying suggestions, count:', suggestions.length); // Debug log
     
     if (suggestions.length === 0) {
         suggestionsDiv.style.display = 'none';
+        console.log('No suggestions to display'); // Debug log
         return;
     }
     
@@ -2498,10 +2521,12 @@ function displaySearchSuggestions(suggestions) {
     `).join('');
     
     suggestionsDiv.style.display = 'block';
+    console.log('Suggestions displayed'); // Debug log
     
     // Add click handlers
     suggestionsDiv.querySelectorAll('.suggestion-item').forEach(item => {
         item.addEventListener('click', function() {
+            console.log('Suggestion clicked:', this.dataset.protocolKey); // Debug log
             selectSearchProtocol({
                 key: this.dataset.protocolKey,
                 cancerType: this.dataset.cancerType,
@@ -2514,6 +2539,7 @@ function displaySearchSuggestions(suggestions) {
 }
 
 function selectSearchProtocol(protocol) {
+    console.log('Selecting search protocol:', protocol); // Debug log
     selectedSearchProtocol = protocol;
     
     // Update search input
@@ -2532,6 +2558,8 @@ function selectSearchProtocol(protocol) {
     
     // Check for carboplatin in selected protocol
     checkForCarboplatinSearch(protocol);
+    
+    console.log('Protocol selected successfully'); // Debug log
 }
 
 function clearBrowseSection() {
@@ -2666,12 +2694,20 @@ document.getElementById('protocol').addEventListener('change', function() {
 // Search event listeners
 document.getElementById('protocolSearch').addEventListener('input', function() {
     const query = this.value.trim();
+    console.log('Search query:', query); // Debug log
+    
     if (query.length < 2) {
         document.getElementById('searchSuggestions').style.display = 'none';
         return;
     }
     
+    // Make sure index is built
+    if (allProtocols.length === 0) {
+        buildProtocolIndex();
+    }
+    
     const suggestions = searchProtocols(query);
+    console.log('Search suggestions:', suggestions); // Debug log
     displaySearchSuggestions(suggestions);
     
     // Clear browse section when searching
@@ -2681,10 +2717,10 @@ document.getElementById('protocolSearch').addEventListener('input', function() {
 });
 
 document.getElementById('protocolSearch').addEventListener('blur', function() {
-    // Hide suggestions after a short delay to allow clicks
+    // Hide suggestions after a longer delay to allow clicks
     setTimeout(() => {
         document.getElementById('searchSuggestions').style.display = 'none';
-    }, 200);
+    }, 300);
 });
 
 document.getElementById('protocolSearch').addEventListener('focus', function() {
