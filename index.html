@@ -234,6 +234,131 @@
             font-size: 14px;
         }
 
+        /* Search functionality styles */
+        .search-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 2px dashed #e9ecef;
+        }
+
+        .search-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .search-icon {
+            font-size: 20px;
+        }
+
+        .search-input {
+            position: relative;
+        }
+
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+
+        .suggestion-item:hover {
+            background: #f8f9fa;
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-protocol {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .suggestion-cancer {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 2px;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #dee2e6;
+            z-index: 1;
+        }
+
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .browse-section {
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+
+        .browse-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .selected-protocol-info {
+            background: #e8f5e8;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .selected-protocol-name {
+            font-weight: 600;
+            color: #155724;
+            margin-bottom: 5px;
+        }
+
+        .selected-protocol-cancer {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
         @media (max-width: 480px) {
             .form-row {
                 flex-direction: column;
@@ -307,41 +432,69 @@
             <div class="form-section">
                 <div class="page-title">
                     <div class="page-number">2</div>
-                    <h2>Cancer & Protocol Selection</h2>
-                </div>
-                
-                <div class="form-group">
-                    <label for="cancerType">Cancer Type</label>
-                    <select id="cancerType" name="cancerType" required>
-                        <option value="">Select cancer type</option>
-                        <option value="anal">Anal Cancer</option>
-                        <option value="biliary">Biliary Tract Cancer</option>
-                        <option value="bladder">Bladder Cancer</option>
-                        <option value="breast">Breast Cancer</option>
-                        <option value="cervical">Cervical Cancer</option>
-                        <option value="colorectal">Colorectal Cancer</option>
-                        <option value="endometrial">Endometrial Cancer</option>
-                        <option value="gastric">Gastric Cancer</option>
-                        <option value="lung">Lung Cancer</option>
-                        <option value="lymphoma">Lymphoma</option>
-                        <option value="neuroendocrine">Neuroendocrine Tumors</option>
-                        <option value="ovarian">Ovarian Cancer</option>
-                        <option value="pancreatic">Pancreatic Cancer</option>
-                    </select>
+                    <h2>Protocol Selection</h2>
                 </div>
 
-                <div class="form-group" id="subtypeGroup" style="display: none;">
-                    <label for="cancerSubtype">Cancer Subtype</label>
-                    <select id="cancerSubtype" name="cancerSubtype" required disabled>
-                        <option value="">Select subtype</option>
-                    </select>
+                <!-- Search Section -->
+                <div class="search-section">
+                    <div class="search-header">
+                        <span class="search-icon">🔍</span>
+                        <h3 style="margin: 0; color: #2c3e50;">Quick Protocol Search</h3>
+                    </div>
+                    <div class="search-input">
+                        <input type="text" id="protocolSearch" placeholder="Search protocols (e.g., FOLFOX, AC-T, Pembrolizumab...)" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                    <div class="selected-protocol-info" id="selectedProtocolInfo">
+                        <div class="selected-protocol-name" id="selectedProtocolName"></div>
+                        <div class="selected-protocol-cancer" id="selectedProtocolCancer"></div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="protocol">Protocol</label>
-                    <select id="protocol" name="protocol" required disabled>
-                        <option value="">Select cancer type first</option>
-                    </select>
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Browse Section -->
+                <div class="browse-section">
+                    <div class="browse-header">
+                        <span style="font-size: 20px;">📋</span>
+                        <h3 style="margin: 0; color: #2c3e50;">Browse by Cancer Type</h3>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cancerType">Cancer Type</label>
+                        <select id="cancerType" name="cancerType">
+                            <option value="">Select cancer type</option>
+                            <option value="anal">Anal Cancer</option>
+                            <option value="biliary">Biliary Tract Cancer</option>
+                            <option value="bladder">Bladder Cancer</option>
+                            <option value="breast">Breast Cancer</option>
+                            <option value="cervical">Cervical Cancer</option>
+                            <option value="colorectal">Colorectal Cancer</option>
+                            <option value="endometrial">Endometrial Cancer</option>
+                            <option value="gastric">Gastric Cancer</option>
+                            <option value="lung">Lung Cancer</option>
+                            <option value="lymphoma">Lymphoma</option>
+                            <option value="neuroendocrine">Neuroendocrine Tumors</option>
+                            <option value="ovarian">Ovarian Cancer</option>
+                            <option value="pancreatic">Pancreatic Cancer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="subtypeGroup" style="display: none;">
+                        <label for="cancerSubtype">Cancer Subtype</label>
+                        <select id="cancerSubtype" name="cancerSubtype" disabled>
+                            <option value="">Select subtype</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="protocol">Protocol</label>
+                        <select id="protocol" name="protocol" disabled>
+                            <option value="">Select cancer type first</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group" id="aucGroup" style="display: none;">

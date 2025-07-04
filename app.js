@@ -2359,6 +2359,18 @@ function validatePage1() {
 }
 
 function validatePage2() {
+    // Check if protocol is selected via search
+    if (selectedSearchProtocol) {
+        // Check if carboplatin protocol requires AUC
+        const aucGroup = document.getElementById('aucGroup');
+        if (aucGroup.style.display !== 'none') {
+            const auc = document.getElementById('auc').value;
+            if (!auc) return false;
+        }
+        return true;
+    }
+    
+    // Check if protocol is selected via browse
     const cancerType = document.getElementById('cancerType').value;
     const protocol = document.getElementById('protocol').value;
     
@@ -2378,6 +2390,189 @@ function validatePage2() {
     }
     
     return true;
+}
+
+// Search functionality
+let allProtocols = [];
+let selectedSearchProtocol = null;
+
+// Build searchable protocol index
+function buildProtocolIndex() {
+    allProtocols = [];
+    
+    Object.keys(protocolDatabase).forEach(cancerType => {
+        const cancerName = getCancerDisplayName(cancerType);
+        
+        if (cancerType === 'breast') {
+            // Handle breast cancer subtypes
+            Object.keys(protocolDatabase[cancerType]).forEach(subtype => {
+                const subtypeName = getSubtypeDisplayName(subtype);
+                Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
+                    const protocol = protocolDatabase[cancerType][subtype][protocolKey];
+                    allProtocols.push({
+                        key: protocolKey,
+                        name: protocol.name,
+                        cancerType: cancerType,
+                        cancerName: `${cancerName} - ${subtypeName}`,
+                        subtype: subtype,
+                        searchText: `${protocol.name} ${cancerName} ${subtypeName}`.toLowerCase()
+                    });
+                });
+            });
+        } else {
+            // Handle other cancer types
+            Object.keys(protocolDatabase[cancerType]).forEach(protocolKey => {
+                const protocol = protocolDatabase[cancerType][protocolKey];
+                allProtocols.push({
+                    key: protocolKey,
+                    name: protocol.name,
+                    cancerType: cancerType,
+                    cancerName: cancerName,
+                    subtype: null,
+                    searchText: `${protocol.name} ${cancerName}`.toLowerCase()
+                });
+            });
+        }
+    });
+}
+
+function getCancerDisplayName(cancerType) {
+    const names = {
+        anal: 'Anal Cancer',
+        biliary: 'Biliary Tract Cancer',
+        bladder: 'Bladder Cancer',
+        breast: 'Breast Cancer',
+        cervical: 'Cervical Cancer',
+        colorectal: 'Colorectal Cancer',
+        endometrial: 'Endometrial Cancer',
+        gastric: 'Gastric Cancer',
+        lung: 'Lung Cancer',
+        lymphoma: 'Lymphoma',
+        neuroendocrine: 'Neuroendocrine Tumors',
+        ovarian: 'Ovarian Cancer',
+        pancreatic: 'Pancreatic Cancer'
+    };
+    return names[cancerType] || cancerType;
+}
+
+function getSubtypeDisplayName(subtype) {
+    const names = {
+        hormone_positive: 'Hormone Positive (ER+/PR+)',
+        triple_negative: 'Triple Negative (ER-/PR-/HER2-)',
+        her2_positive: 'HER2 Positive'
+    };
+    return names[subtype] || subtype;
+}
+
+function searchProtocols(query) {
+    if (!query || query.length < 2) return [];
+    
+    const queryLower = query.toLowerCase();
+    const results = allProtocols.filter(protocol => 
+        protocol.searchText.includes(queryLower)
+    );
+    
+    // Sort by relevance (exact matches first, then partial matches)
+    results.sort((a, b) => {
+        const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+        const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+        return aExact - bExact;
+    });
+    
+    return results.slice(0, 8); // Limit to 8 suggestions
+}
+
+function displaySearchSuggestions(suggestions) {
+    const suggestionsDiv = document.getElementById('searchSuggestions');
+    
+    if (suggestions.length === 0) {
+        suggestionsDiv.style.display = 'none';
+        return;
+    }
+    
+    suggestionsDiv.innerHTML = suggestions.map(protocol => `
+        <div class="suggestion-item" data-protocol-key="${protocol.key}" data-cancer-type="${protocol.cancerType}" data-subtype="${protocol.subtype || ''}">
+            <div class="suggestion-protocol">${protocol.name}</div>
+            <div class="suggestion-cancer">${protocol.cancerName}</div>
+        </div>
+    `).join('');
+    
+    suggestionsDiv.style.display = 'block';
+    
+    // Add click handlers
+    suggestionsDiv.querySelectorAll('.suggestion-item').forEach(item => {
+        item.addEventListener('click', function() {
+            selectSearchProtocol({
+                key: this.dataset.protocolKey,
+                cancerType: this.dataset.cancerType,
+                subtype: this.dataset.subtype || null,
+                name: this.querySelector('.suggestion-protocol').textContent,
+                cancerName: this.querySelector('.suggestion-cancer').textContent
+            });
+        });
+    });
+}
+
+function selectSearchProtocol(protocol) {
+    selectedSearchProtocol = protocol;
+    
+    // Update search input
+    document.getElementById('protocolSearch').value = protocol.name;
+    
+    // Hide suggestions
+    document.getElementById('searchSuggestions').style.display = 'none';
+    
+    // Show selected protocol info
+    document.getElementById('selectedProtocolName').textContent = protocol.name;
+    document.getElementById('selectedProtocolCancer').textContent = protocol.cancerName;
+    document.getElementById('selectedProtocolInfo').style.display = 'block';
+    
+    // Clear browse section
+    clearBrowseSection();
+    
+    // Check for carboplatin in selected protocol
+    checkForCarboplatinSearch(protocol);
+}
+
+function clearBrowseSection() {
+    document.getElementById('cancerType').value = '';
+    document.getElementById('cancerSubtype').value = '';
+    document.getElementById('protocol').value = '';
+    document.getElementById('subtypeGroup').style.display = 'none';
+    document.getElementById('cancerSubtype').disabled = true;
+    document.getElementById('protocol').disabled = true;
+}
+
+function clearSearchSection() {
+    document.getElementById('protocolSearch').value = '';
+    document.getElementById('searchSuggestions').style.display = 'none';
+    document.getElementById('selectedProtocolInfo').style.display = 'none';
+    selectedSearchProtocol = null;
+}
+
+function checkForCarboplatinSearch(protocol) {
+    let protocolData;
+    
+    if (protocol.cancerType === 'breast' && protocol.subtype) {
+        protocolData = protocolDatabase[protocol.cancerType][protocol.subtype][protocol.key];
+    } else {
+        protocolData = protocolDatabase[protocol.cancerType][protocol.key];
+    }
+    
+    if (protocolData) {
+        const hasCarboplatin = protocolData.drugs.some(drug => drug.name.toLowerCase().includes('carboplatin'));
+        const aucGroup = document.getElementById('aucGroup');
+        const aucSelect = document.getElementById('auc');
+        
+        if (hasCarboplatin) {
+            aucGroup.style.display = 'block';
+            aucSelect.required = true;
+        } else {
+            aucGroup.style.display = 'none';
+            aucSelect.required = false;
+            aucSelect.value = '';
+        }
+    }
 }
 
 // Display results
@@ -2451,6 +2646,7 @@ function displayResults(results, patientData) {
 
 // Event listeners
 document.getElementById('cancerType').addEventListener('change', function() {
+    clearSearchSection(); // Clear search when using browse
     populateSubtypes(this.value);
     checkForCarboplatin('', this.value, '');
 });
@@ -2465,6 +2661,38 @@ document.getElementById('protocol').addEventListener('change', function() {
     const cancerType = document.getElementById('cancerType').value;
     const subtype = document.getElementById('cancerSubtype').value;
     checkForCarboplatin(this.value, cancerType, subtype);
+});
+
+// Search event listeners
+document.getElementById('protocolSearch').addEventListener('input', function() {
+    const query = this.value.trim();
+    if (query.length < 2) {
+        document.getElementById('searchSuggestions').style.display = 'none';
+        return;
+    }
+    
+    const suggestions = searchProtocols(query);
+    displaySearchSuggestions(suggestions);
+    
+    // Clear browse section when searching
+    if (query.length > 0) {
+        clearBrowseSection();
+    }
+});
+
+document.getElementById('protocolSearch').addEventListener('blur', function() {
+    // Hide suggestions after a short delay to allow clicks
+    setTimeout(() => {
+        document.getElementById('searchSuggestions').style.display = 'none';
+    }, 200);
+});
+
+document.getElementById('protocolSearch').addEventListener('focus', function() {
+    const query = this.value.trim();
+    if (query.length >= 2) {
+        const suggestions = searchProtocols(query);
+        displaySearchSuggestions(suggestions);
+    }
 });
 
 // Page navigation event listeners
@@ -2482,18 +2710,36 @@ document.getElementById('backToPage1').addEventListener('click', function() {
 
 document.getElementById('calculateDoses').addEventListener('click', function() {
     if (validatePage2()) {
-        // Collect form data
-        const formData = {
-            height: document.getElementById('height').value,
-            weight: document.getElementById('weight').value,
-            age: document.getElementById('age').value,
-            sex: document.getElementById('sex').value,
-            creatinine: document.getElementById('creatinine').value,
-            cancerType: document.getElementById('cancerType').value,
-            cancerSubtype: document.getElementById('cancerSubtype').value,
-            protocol: document.getElementById('protocol').value,
-            auc: document.getElementById('auc').value
-        };
+        let formData;
+        
+        // Collect form data based on selection method
+        if (selectedSearchProtocol) {
+            // Using search selection
+            formData = {
+                height: document.getElementById('height').value,
+                weight: document.getElementById('weight').value,
+                age: document.getElementById('age').value,
+                sex: document.getElementById('sex').value,
+                creatinine: document.getElementById('creatinine').value,
+                cancerType: selectedSearchProtocol.cancerType,
+                cancerSubtype: selectedSearchProtocol.subtype,
+                protocol: selectedSearchProtocol.key,
+                auc: document.getElementById('auc').value
+            };
+        } else {
+            // Using browse selection
+            formData = {
+                height: document.getElementById('height').value,
+                weight: document.getElementById('weight').value,
+                age: document.getElementById('age').value,
+                sex: document.getElementById('sex').value,
+                creatinine: document.getElementById('creatinine').value,
+                cancerType: document.getElementById('cancerType').value,
+                cancerSubtype: document.getElementById('cancerSubtype').value,
+                protocol: document.getElementById('protocol').value,
+                auc: document.getElementById('auc').value
+            };
+        }
         
         try {
             const results = calculateDoses(formData);
@@ -2523,6 +2769,9 @@ document.getElementById('startOver').addEventListener('click', function() {
     document.getElementById('protocol').value = '';
     document.getElementById('auc').value = '';
     
+    // Reset search
+    clearSearchSection();
+    
     // Reset UI state
     document.getElementById('subtypeGroup').style.display = 'none';
     document.getElementById('aucGroup').style.display = 'none';
@@ -2536,5 +2785,6 @@ document.getElementById('startOver').addEventListener('click', function() {
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Chemo Protocol Calculator loaded successfully');
+    buildProtocolIndex(); // Build search index
     showPage(1);
 });
