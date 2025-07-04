@@ -138,8 +138,8 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Carboplatin (GC)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
                 ]
             },
             'FAC': {
@@ -287,7 +287,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Carboplatin (GC)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                     { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'days 1, 8, q3weeks x 6 cycles' }
                 ]
             },
@@ -467,7 +467,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Carboplatin (GC)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                     { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'days 1, 8, q3weeks x 6 cycles' }
                 ]
             },
@@ -475,7 +475,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Carboplatin + Trastuzumab (GCH)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                     { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                     { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true }
                 ]
@@ -586,7 +586,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'q3weeks x 4 cycles' },
-                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                { name: 'Etoposide', dose: 120, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
             ]
         }
     },
@@ -598,7 +598,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'CAPEOX': {
@@ -606,7 +606,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'mFOLFIRI': {
@@ -616,7 +616,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'mFOLFOX6-Bevacizumab': {
@@ -626,7 +626,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -637,7 +637,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -646,7 +646,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
                 { name: 'Bevacizumab', dose: 7.5, unit: 'mg/kg', schedule: 'q3weeks x 8 cycles' }
             ]
         },
@@ -657,7 +657,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true }
             ]
         },
@@ -668,7 +668,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true }
             ]
         },
@@ -679,7 +679,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -690,7 +690,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -701,7 +701,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '48-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', days: 'D1-D2 (48hr CI)', schedule: '48-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'FOLFOXIRI-Bevacizumab': {
@@ -711,7 +711,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '48-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', days: 'D1-D2 (48hr CI)', schedule: '48-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -722,7 +722,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '48-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', days: 'D1-D2 (48hr CI)', schedule: '48-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -733,7 +733,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Ziv-aflibercept', dose: 4, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -742,7 +742,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Irinotecan', dose: 250, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'XELIRI-Bevacizumab': {
@@ -750,7 +750,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Irinotecan', dose: 200, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
                 { name: 'Bevacizumab', dose: 7.5, unit: 'mg/kg', schedule: 'q3weeks x 8 cycles' }
             ]
         },
@@ -953,7 +953,7 @@ const protocolDatabase = {
                 { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, q2weeks x 8 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, q2weeks x 8 cycles' }
             ]
         },
         'DCF': {
@@ -997,7 +997,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'mFOLFOX6': {
@@ -1007,7 +1007,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'mFOLFIRI': {
@@ -1017,7 +1017,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'Cisplatin-5FU': {
@@ -1034,7 +1034,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, q2weeks x 8 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, q2weeks x 8 cycles' }
             ]
         },
         'Docetaxel-Cisplatin': {
@@ -1086,7 +1086,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'q2weeks x 12 cycles' }
             ]
         },
@@ -1114,7 +1114,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'q3weeks x 8 cycles' }
             ]
         },
@@ -1124,7 +1124,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'q3weeks x 8 cycles' },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'Nivolumab-Ipilimumab': {
@@ -1142,7 +1142,7 @@ const protocolDatabase = {
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'Pembrolizumab-Trastuzumab-5FU-Cisplatin': {
@@ -1190,7 +1190,7 @@ const protocolDatabase = {
             name: 'Single agent 5-Fluorouracil',
             cycles: 6,
             drugs: [
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, weekly x 6 weeks' }
+                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, weekly x 6 weeks' }
             ]
         },
         'Single-Paclitaxel': {
@@ -1310,7 +1310,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'Gemcitabine-Nabpaclitaxel': {
@@ -1325,7 +1325,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Capecitabine',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Capecitabine', dose: 830, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 6 cycles' }
             ]
         },
@@ -1333,7 +1333,7 @@ const protocolDatabase = {
             name: 'Single agent Gemcitabine',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
             ]
         },
         'Single-Capecitabine': {
@@ -1371,7 +1371,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 6 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 6 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 6 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 6 cycles' }
             ]
         },
         'GTX': {
@@ -1387,7 +1387,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Oxaliplatin (GEMOX)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -1395,7 +1395,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Erlotinib',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'daily' }
             ]
         },
@@ -1413,7 +1413,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Liposomal Irinotecan', dose: 70, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'Single-Olaparib': {
@@ -1495,7 +1495,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'Single-Pembrolizumab': {
@@ -1542,7 +1542,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Capecitabine',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Capecitabine', dose: 830, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 6 cycles' }
             ]
         },
@@ -1550,7 +1550,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Oxaliplatin (GEMOX)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -1569,7 +1569,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'Gemcitabine-Nabpaclitaxel': {
@@ -1585,7 +1585,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'Dabrafenib-Trametinib': {
@@ -1600,7 +1600,7 @@ const protocolDatabase = {
             name: 'Single agent Gemcitabine',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
             ]
         },
         'Ivosidenib': {
@@ -1655,7 +1655,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Carboplatin',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -1663,7 +1663,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Paclitaxel (GP)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -1671,7 +1671,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Docetaxel (GD)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
             ]
         },
@@ -1797,7 +1797,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'days 1-3, q3weeks x 6 cycles' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 6 cycles' }
             ]
         },
         'Octreotide-LAR': {
@@ -1948,7 +1948,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
             ]
         },
         'Cisplatin-Docetaxel': {
@@ -2156,7 +2156,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 3 cycles with RT' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 3 cycles with RT' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 3 cycles with RT' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 3 cycles with RT' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 3 cycles with RT' }
             ]
         },
         'CAPEOX-RT': {
@@ -2181,7 +2181,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 200, unit: 'mg/m²', schedule: 'continuous infusion daily x 21 days, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 200, unit: 'mg/m²', days: 'D1-D21', schedule: 'continuous infusion daily x 21 days, q3weeks x 6 cycles' }
             ]
         },
         'FLO': {
@@ -2190,7 +2190,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, q2weeks x 8 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, q2weeks x 8 cycles' }
             ]
         },
         'FLOT4': {
@@ -2200,7 +2200,7 @@ const protocolDatabase = {
                 { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 8 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, q2weeks x 8 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, q2weeks x 8 cycles' }
             ]
         },
         'mFOLFOX6': {
@@ -2210,7 +2210,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'CAPEOX': {
@@ -2218,7 +2218,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'EOF': {
@@ -2227,7 +2227,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 200, unit: 'mg/m²', schedule: 'continuous infusion daily x 21 days, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 200, unit: 'mg/m²', days: 'D1-D21', schedule: 'continuous infusion daily x 21 days, q3weeks x 6 cycles' }
             ]
         },
         'ECX': {
@@ -2236,7 +2236,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
+                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', days: 'D1-D21', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
             ]
         },
         'EOX': {
@@ -2245,7 +2245,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
+                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', days: 'D1-D21', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
             ]
         },
         'Cisplatin-Irinotecan': {
@@ -2260,7 +2260,7 @@ const protocolDatabase = {
             name: '5-FU + Paclitaxel',
             cycles: 6,
             drugs: [
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 6 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 6 cycles' },
                 { name: 'Paclitaxel', dose: 150, unit: 'mg/m²', schedule: 'q2weeks x 6 cycles' }
             ]
         },
@@ -2292,7 +2292,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true }
             ]
         },
@@ -2303,7 +2303,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true }
             ]
         },
@@ -2312,7 +2312,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles' }
             ]
@@ -2324,7 +2324,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks (given with every other FOLFOX cycle)' }
             ]
@@ -2334,7 +2334,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
                 { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'q3weeks x 8 cycles' }
             ]
         },
@@ -2345,7 +2345,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'q3weeks (given with every other FOLFOX cycle)' }
             ]
         },
@@ -2356,7 +2356,7 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'Nivolumab-Ipilimumab': {
@@ -2442,7 +2442,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'week 1 and 5 with RT' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'week 1 and 5 with RT' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'week 1 and 5 with RT' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, week 1 and 5 with RT' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, week 1 and 5 with RT' }
             ]
         },
         'CAPEOX-RT': {
@@ -2475,7 +2475,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 3 cycles pre-op, 3 cycles post-op' },
                 { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'q3weeks x 3 cycles pre-op, 3 cycles post-op' },
-                { name: '5-Fluorouracil', dose: 200, unit: 'mg/m²', schedule: 'continuous infusion daily x 21 days, q3weeks' }
+                { name: '5-Fluorouracil', dose: 200, unit: 'mg/m²', days: 'D1-D21', schedule: 'continuous infusion daily x 21 days, q3weeks' }
             ]
         },
         'FLO-Trial': {
@@ -2484,7 +2484,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 4 cycles' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 4 cycles' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, q2weeks x 4 cycles' }
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, q2weeks x 4 cycles' }
             ]
         },
         'FLOT4': {
@@ -2494,7 +2494,7 @@ const protocolDatabase = {
                 { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'q2weeks x 4 cycles pre-op, 4 cycles post-op' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 4 cycles pre-op, 4 cycles post-op' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'q2weeks x 4 cycles pre-op, 4 cycles post-op' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: '24-hour infusion, q2weeks x 4 cycles pre-op, 4 cycles post-op' }
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, q2weeks x 4 cycles pre-op, 4 cycles post-op' }
             ]
         },
         'mFOLFOX6-Eso': {
@@ -2504,7 +2504,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' }
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' }
             ]
         },
         'CAPEOX-Eso': {
@@ -2512,7 +2512,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' }
             ]
         },
         'EOF-Eso': {
@@ -2521,7 +2521,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: '5-Fluorouracil', dose: 200, unit: 'mg/m²', schedule: 'continuous infusion daily x 21 days, q3weeks x 6 cycles' }
+                { name: '5-Fluorouracil', dose: 200, unit: 'mg/m²', days: 'D1-D21', schedule: 'continuous infusion daily x 21 days, q3weeks x 6 cycles' }
             ]
         },
         'ECX-Eso': {
@@ -2530,7 +2530,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
+                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', days: 'D1-D21', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
             ]
         },
         'EOX-Eso': {
@@ -2539,7 +2539,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
-                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
+                { name: 'Capecitabine', dose: 625, unit: 'mg/m²', days: 'D1-D21', schedule: 'twice daily, days 1-21, q3weeks x 6 cycles' }
             ]
         },
         'Cisplatin-Irinotecan-Eso': {
@@ -2554,7 +2554,7 @@ const protocolDatabase = {
             name: '5-FU + Paclitaxel (Esophageal)',
             cycles: 6,
             drugs: [
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 6 cycles' },
                 { name: 'Paclitaxel', dose: 150, unit: 'mg/m²', schedule: 'q2weeks x 6 cycles' }
             ]
         },
@@ -2596,7 +2596,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true }
             ]
         },
@@ -2605,7 +2605,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'q3weeks x 8 cycles' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, q3weeks x 8 cycles' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg q3weeks', hasLoadingDose: true }
             ]
         },
@@ -2638,7 +2638,7 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
                 { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'q2weeks x 12 cycles' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion, q2weeks x 12 cycles' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, q2weeks x 12 cycles' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks (given with every other FOLFOX cycle)' }
             ]
         },
