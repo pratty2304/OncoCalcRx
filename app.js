@@ -2677,6 +2677,247 @@ const protocolDatabase = {
                 { name: 'Trastuzumab Deruxtecan', dose: 6.4, unit: 'mg/kg', schedule: 'q3weeks x 12 cycles' }
             ]
         }
+    },
+    head_neck: {
+        'TPF': {
+            name: 'TPF (Docetaxel + Cisplatin + 5-FU)',
+            cycles: 3,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 3 cycles' }
+            ]
+        },
+        'TPF-Modified': {
+            name: 'TPF Modified (Docetaxel + Cisplatin + 5-FU)',
+            cycles: 3,
+            drugs: [
+                { name: 'Docetaxel', dose: 70, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 3 cycles' }
+            ]
+        },
+        'TIP': {
+            name: 'TIP (Docetaxel + Ifosfamide + Cisplatin)',
+            cycles: 4,
+            drugs: [
+                { name: 'Docetaxel', dose: 30, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 4 cycles' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'days 1-3, q3weeks x 4 cycles' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'days 1-3, q3weeks x 4 cycles' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-HN': {
+            name: 'Carboplatin + Paclitaxel (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'q3weeks x 6 cycles' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-Weekly-HN': {
+            name: 'Carboplatin + Paclitaxel (weekly, Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 18 weeks' },
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
+            ]
+        },
+        'Cisplatin-Paclitaxel-HN': {
+            name: 'Cisplatin + Paclitaxel (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Cisplatin-5FU-HN': {
+            name: 'Cisplatin + 5-FU (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'Carboplatin-5FU-HN': {
+            name: 'Carboplatin + 5-FU (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'Pembrolizumab-Carboplatin-5FU': {
+            name: 'Pembrolizumab + Carboplatin + 5-FU (all patients)',
+            cycles: 6,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'Pembrolizumab-Cisplatin-5FU': {
+            name: 'Pembrolizumab + Cisplatin + 5-FU (all patients)',
+            cycles: 6,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'Pembrolizumab-Carboplatin-Paclitaxel': {
+            name: 'Pembrolizumab + Carboplatin + Paclitaxel',
+            cycles: 6,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
+                { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Carboplatin-5FU-Cetuximab': {
+            name: 'Carboplatin + 5-FU + Cetuximab (EXTREME)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'Cisplatin-5FU-Cetuximab': {
+            name: 'Cisplatin + 5-FU + Cetuximab (EXTREME)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: '5-Fluorouracil', dose: 4000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'Cisplatin-Cetuximab': {
+            name: 'Cisplatin + Cetuximab',
+            cycles: 6,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Cisplatin-RT': {
+            name: 'Cisplatin + Radiation Therapy',
+            cycles: 3,
+            drugs: [
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles with concurrent RT' }
+            ]
+        },
+        'Cisplatin-RT-Weekly': {
+            name: 'Cisplatin + Radiation Therapy (weekly)',
+            cycles: 7,
+            drugs: [
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'weekly x 7 weeks with concurrent RT' }
+            ]
+        },
+        'Cisplatin-Vinorelbine-NPC': {
+            name: 'Cisplatin + Vinorelbine (Nasopharyngeal)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-NPC': {
+            name: 'Gemcitabine + Cisplatin (Nasopharyngeal)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Toripalimab-Gemcitabine-Cisplatin': {
+            name: 'Toripalimab + Gemcitabine + Cisplatin (Nasopharyngeal)',
+            cycles: 6,
+            drugs: [
+                { name: 'Toripalimab', dose: 240, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles, then maintenance' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Single-Docetaxel-HN': {
+            name: 'Single agent Docetaxel (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Single-Paclitaxel-HN': {
+            name: 'Single agent Paclitaxel (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Single-Paclitaxel-Weekly-HN': {
+            name: 'Single agent Paclitaxel (weekly, Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
+            ]
+        },
+        'Single-Pembrolizumab-CPS1': {
+            name: 'Single agent Pembrolizumab (PD-L1 CPS≥1)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks or 400mg q6weeks' }
+            ]
+        },
+        'Single-Nivolumab-CPS1': {
+            name: 'Single agent Nivolumab (PD-L1 CPS≥1)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'q2weeks or 480mg q4weeks' }
+            ]
+        },
+        'Single-Cetuximab': {
+            name: 'Single agent Cetuximab',
+            cycles: 12,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true }
+            ]
+        },
+        'Single-Methotrexate': {
+            name: 'Single agent Methotrexate',
+            cycles: 6,
+            drugs: [
+                { name: 'Methotrexate', dose: 40, unit: 'mg/m²', schedule: 'weekly x 6 cycles' }
+            ]
+        },
+        'Single-Capecitabine-HN': {
+            name: 'Single agent Capecitabine (Head & Neck)',
+            cycles: 6,
+            drugs: [
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, q3weeks x 6 cycles' }
+            ]
+        },
+        'Carboplatin-Cetuximab': {
+            name: 'Carboplatin + Cetuximab',
+            cycles: 6,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Paclitaxel-Carboplatin-Cetuximab': {
+            name: 'Paclitaxel + Carboplatin + Cetuximab (PCE)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Afatinib': {
+            name: 'Afatinib (EGFR mutation)',
+            cycles: 12,
+            drugs: [
+                { name: 'Afatinib', dose: 40, unit: 'mg', schedule: 'daily' }
+            ]
+        }
     }
 };
 
@@ -3014,6 +3255,7 @@ function getCancerDisplayName(cancerType) {
         endometrial: 'Endometrial Cancer',
         esophageal: 'Esophageal & Esophagogastric Junction Cancer',
         gastric: 'Gastric Cancer',
+        head_neck: 'Head & Neck Cancer',
         lung: 'Lung Cancer',
         lymphoma: 'Lymphoma',
         neuroendocrine: 'Neuroendocrine Tumors',
