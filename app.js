@@ -2329,9 +2329,59 @@ function calculateDoses(formData) {
     };
 }
 
+// Page navigation functions
+function showPage(pageNumber) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Show selected page
+    document.getElementById(`page${pageNumber}`).classList.add('active');
+    
+    // Update progress bar
+    const progressFill = document.getElementById('progressFill');
+    const progressPercent = (pageNumber / 3) * 100;
+    progressFill.style.width = `${progressPercent}%`;
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+
+function validatePage1() {
+    const height = document.getElementById('height').value;
+    const weight = document.getElementById('weight').value;
+    const age = document.getElementById('age').value;
+    const sex = document.getElementById('sex').value;
+    const creatinine = document.getElementById('creatinine').value;
+    
+    return height && weight && age && sex && creatinine;
+}
+
+function validatePage2() {
+    const cancerType = document.getElementById('cancerType').value;
+    const protocol = document.getElementById('protocol').value;
+    
+    if (!cancerType || !protocol) return false;
+    
+    // Check if breast cancer requires subtype
+    if (cancerType === 'breast') {
+        const subtype = document.getElementById('cancerSubtype').value;
+        if (!subtype) return false;
+    }
+    
+    // Check if carboplatin protocol requires AUC
+    const aucGroup = document.getElementById('aucGroup');
+    if (aucGroup.style.display !== 'none') {
+        const auc = document.getElementById('auc').value;
+        if (!auc) return false;
+    }
+    
+    return true;
+}
+
 // Display results
 function displayResults(results, patientData) {
-    const resultsDiv = document.getElementById('results');
     const resultsContent = document.getElementById('resultsContent');
     
     resultsContent.innerHTML = `
@@ -2395,8 +2445,8 @@ function displayResults(results, patientData) {
         </div>
     `;
     
-    resultsDiv.style.display = 'block';
-    resultsDiv.scrollIntoView({ behavior: 'smooth' });
+    // Show results page
+    showPage(3);
 }
 
 // Event listeners
@@ -2417,22 +2467,74 @@ document.getElementById('protocol').addEventListener('change', function() {
     checkForCarboplatin(this.value, cancerType, subtype);
 });
 
-document.getElementById('patientForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
-    
-    try {
-        const results = calculateDoses(data);
-        displayResults(results, data);
-    } catch (error) {
-        alert('Error calculating doses. Please check your inputs and try again.');
-        console.error('Calculation error:', error);
+// Page navigation event listeners
+document.getElementById('nextToPage2').addEventListener('click', function() {
+    if (validatePage1()) {
+        showPage(2);
+    } else {
+        alert('Please fill in all patient information fields.');
     }
+});
+
+document.getElementById('backToPage1').addEventListener('click', function() {
+    showPage(1);
+});
+
+document.getElementById('calculateDoses').addEventListener('click', function() {
+    if (validatePage2()) {
+        // Collect form data
+        const formData = {
+            height: document.getElementById('height').value,
+            weight: document.getElementById('weight').value,
+            age: document.getElementById('age').value,
+            sex: document.getElementById('sex').value,
+            creatinine: document.getElementById('creatinine').value,
+            cancerType: document.getElementById('cancerType').value,
+            cancerSubtype: document.getElementById('cancerSubtype').value,
+            protocol: document.getElementById('protocol').value,
+            auc: document.getElementById('auc').value
+        };
+        
+        try {
+            const results = calculateDoses(formData);
+            displayResults(results, formData);
+        } catch (error) {
+            alert('Error calculating doses. Please check your inputs and try again.');
+            console.error('Calculation error:', error);
+        }
+    } else {
+        alert('Please complete all required selections.');
+    }
+});
+
+document.getElementById('backToPage2').addEventListener('click', function() {
+    showPage(2);
+});
+
+document.getElementById('startOver').addEventListener('click', function() {
+    // Reset form
+    document.getElementById('height').value = '';
+    document.getElementById('weight').value = '';
+    document.getElementById('age').value = '';
+    document.getElementById('sex').value = '';
+    document.getElementById('creatinine').value = '';
+    document.getElementById('cancerType').value = '';
+    document.getElementById('cancerSubtype').value = '';
+    document.getElementById('protocol').value = '';
+    document.getElementById('auc').value = '';
+    
+    // Reset UI state
+    document.getElementById('subtypeGroup').style.display = 'none';
+    document.getElementById('aucGroup').style.display = 'none';
+    document.getElementById('protocol').disabled = true;
+    document.getElementById('cancerSubtype').disabled = true;
+    
+    // Go back to first page
+    showPage(1);
 });
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Chemo Protocol Calculator loaded successfully');
+    showPage(1);
 });
