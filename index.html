@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemo Protocol Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .form-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .calculate-btn {
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .calculate-btn:hover {
+            background: #2980b9;
+        }
+
+        .calculate-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .results {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            display: none;
+        }
+
+        .results h2 {
+            color: #27ae60;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .result-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .result-item strong {
+            color: #2c3e50;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Chemo Protocol Calculator</h1>
+            <p>Calculate chemotherapy doses based on patient parameters</p>
+        </div>
+
+        <form id="patientForm">
+            <div class="form-section">
+                <h2>Patient Information</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" name="height" required min="100" max="250">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" required min="20" max="200" step="0.1">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" name="age" required min="1" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">Sex</label>
+                        <select id="sex" name="sex" required>
+                            <option value="">Select sex</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="creatinine">Creatinine (mg/dL)</label>
+                    <input type="number" id="creatinine" name="creatinine" required min="0.3" max="15" step="0.1">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Cancer & Protocol Selection</h2>
+                
+                <div class="form-group">
+                    <label for="cancerType">Cancer Type</label>
+                    <select id="cancerType" name="cancerType" required>
+                        <option value="">Select cancer type</option>
+                        <option value="breast">Breast Cancer</option>
+                        <option value="lung">Lung Cancer</option>
+                        <option value="colorectal">Colorectal Cancer</option>
+                        <option value="gastric">Gastric Cancer</option>
+                        <option value="lymphoma">Lymphoma</option>
+                        <option value="ovarian">Ovarian Cancer</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="subtypeGroup" style="display: none;">
+                    <label for="cancerSubtype">Cancer Subtype</label>
+                    <select id="cancerSubtype" name="cancerSubtype" required disabled>
+                        <option value="">Select subtype</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="protocol">Protocol</label>
+                    <select id="protocol" name="protocol" required disabled>
+                        <option value="">Select cancer type first</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="aucGroup" style="display: none;">
+                    <label for="auc">Carboplatin AUC</label>
+                    <select id="auc" name="auc">
+                        <option value="">Select AUC</option>
+                        <option value="1">AUC 1</option>
+                        <option value="2">AUC 2</option>
+                        <option value="3">AUC 3</option>
+                        <option value="4">AUC 4</option>
+                        <option value="5">AUC 5</option>
+                        <option value="6">AUC 6</option>
+                        <option value="7">AUC 7</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="calculate-btn">Calculate Doses</button>
+        </form>
+
+        <div id="results" class="results">
+            <h2>Protocol Results</h2>
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
