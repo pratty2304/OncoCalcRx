@@ -572,24 +572,6 @@ const protocolDatabase = {
             }
         }
     },
-    lung: {
-        'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel',
-            cycles: 6,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'q3weeks x 6 cycles' },
-                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
-            ]
-        },
-        'Cisplatin-Etoposide': {
-            name: 'Cisplatin + Etoposide',
-            cycles: 4,
-            drugs: [
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'q3weeks x 4 cycles' },
-                { name: 'Etoposide', dose: 120, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
-            ]
-        }
-    },
     colorectal: {
         'mFOLFOX6': {
             name: 'Modified FOLFOX6 (mFOLFOX6)',
@@ -2918,6 +2900,704 @@ const protocolDatabase = {
                 { name: 'Afatinib', dose: 40, unit: 'mg', schedule: 'daily' }
             ]
         }
+    },
+    lung: {
+        nsclc: {
+            // First-line combinations with immunotherapy
+            'Nivolumab-Carboplatin-Pemetrexed': {
+                name: 'Nivolumab + Carboplatin + Pemetrexed (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Nivolumab-Cisplatin-Pemetrexed': {
+                name: 'Nivolumab + Cisplatin + Pemetrexed (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Pembrolizumab-Cisplatin-Pemetrexed': {
+                name: 'Pembrolizumab + Cisplatin + Pemetrexed (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Pembrolizumab-Carboplatin-Pemetrexed': {
+                name: 'Pembrolizumab + Carboplatin + Pemetrexed (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Pemetrexed-Cisplatin': {
+                name: 'Pemetrexed + Cisplatin (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Pemetrexed-Carboplatin': {
+                name: 'Pemetrexed + Carboplatin (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Pemetrexed-Carboplatin-Bevacizumab': {
+                name: 'Pemetrexed + Carboplatin + Bevacizumab (Non-squamous)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks, continue as maintenance' }
+                ]
+            },
+            'Atezolizumab-Bevacizumab-Carboplatin-Paclitaxel': {
+                name: 'ABCP (Atezolizumab + Bevacizumab + Carboplatin + Paclitaxel)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks, continue as maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Atezolizumab-Nab-Paclitaxel-Carboplatin': {
+                name: 'Atezolizumab + Nab-paclitaxel + Carboplatin (Non-squamous)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            // EGFR-targeted therapy
+            'Amivantamab-Lazertinib': {
+                name: 'Amivantamab + Lazertinib (EGFR exon19del/L858R)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg q2weeks' },
+                    { name: 'Lazertinib', dose: 240, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Osimertinib': {
+                name: 'Osimertinib (EGFR exon19del/L858R/T790M)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Osimertinib', dose: 80, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Amivantamab-Exon20': {
+                name: 'Amivantamab (EGFR exon20 insertion)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg q2weeks' }
+                ]
+            },
+            'Mobocertinib': {
+                name: 'Mobocertinib (EGFR exon20 insertion)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Mobocertinib', dose: 160, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            // Maintenance therapy
+            'Maintenance-Pemetrexed': {
+                name: 'Maintenance Pemetrexed (Non-squamous)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks maintenance' }
+                ]
+            },
+            // Second-line therapy
+            'Docetaxel-Ramucirumab': {
+                name: 'Docetaxel + Ramucirumab (Second-line)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                    { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'day 1, q3weeks x 6 cycles' }
+                ]
+            },
+            'T-DXd-HER2': {
+                name: 'Trastuzumab Deruxtecan (HER2 mutation)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Trastuzumab Deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'q3weeks x 12 cycles' }
+                ]
+            },
+            // Additional NSCLC protocols from user's comprehensive list
+            'Nivolumab-Paclitaxel-Carboplatin': {
+                name: 'Nivolumab + Paclitaxel + Carboplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Nivolumab-Paclitaxel-Cisplatin': {
+                name: 'Nivolumab + Paclitaxel + Cisplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Pembrolizumab-Cisplatin-Gemcitabine-NSCLC': {
+                name: 'Pembrolizumab + Cisplatin + Gemcitabine',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' }
+                ]
+            },
+            'Cisplatin-Etoposide-RT-NSCLC': {
+                name: 'Cisplatin + Etoposide + RT',
+                cycles: 2,
+                drugs: [
+                    { name: 'Cisplatin', dose: 50, unit: 'mg/m²', days: 'D1,D8,D29,D36', schedule: 'days 1, 8, 29, 36 with concurrent RT' },
+                    { name: 'Etoposide', dose: 50, unit: 'mg/m²', days: 'D1-D5,D29-D33', schedule: 'days 1-5, 29-33 with concurrent RT' },
+                    { name: 'Radiation Therapy', dose: 'concurrent', unit: 'RT', schedule: 'concurrent with chemotherapy' }
+                ]
+            },
+            'Weekly-Paclitaxel-Carboplatin-RT': {
+                name: 'Weekly Paclitaxel + Carboplatin + RT',
+                cycles: 6,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 45, unit: 'mg/m²', schedule: 'weekly x 6 with concurrent RT' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 6 with concurrent RT' },
+                    { name: 'Radiation Therapy', dose: 'concurrent', unit: 'RT', schedule: 'concurrent with chemotherapy' }
+                ]
+            },
+            'Paclitaxel-Carboplatin-3weekly': {
+                name: 'Paclitaxel + Carboplatin (3 weekly)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Vinorelbine-Cisplatin': {
+                name: 'Vinorelbine + Cisplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Cisplatin-Vinblastine': {
+                name: 'Cisplatin + Vinblastine',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q4weeks x 4 cycles' },
+                    { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'days 1, 8, q4weeks x 4 cycles' }
+                ]
+            },
+            'Cisplatin-Etoposide-NSCLC': {
+                name: 'Cisplatin + Etoposide',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Etoposide', dose: 120, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                ]
+            },
+            'Single-Atezolizumab': {
+                name: 'Single agent Atezolizumab',
+                cycles: 12,
+                drugs: [
+                    { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'q3weeks' }
+                ]
+            },
+            'Carboplatin-Nab-Paclitaxel': {
+                name: 'Carboplatin + Nab-paclitaxel',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 4 cycles' }
+                ]
+            },
+            'Carboplatin-Paclitaxel-Weekly': {
+                name: 'Carboplatin + Paclitaxel (weekly)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 12 weeks' },
+                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 12 weeks' }
+                ]
+            },
+            'Carboplatin-Paclitaxel-Bevacizumab': {
+                name: 'Carboplatin + Paclitaxel + Bevacizumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'ABCP': {
+                name: 'Atezolizumab + Bevacizumab + Carboplatin + Paclitaxel (ABCP)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Gemcitabine-Cisplatin-Bevacizumab': {
+                name: 'Gemcitabine + Cisplatin + Bevacizumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Cisplatin-Paclitaxel': {
+                name: 'Cisplatin + Paclitaxel',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Docetaxel-Carboplatin': {
+                name: 'Docetaxel + Carboplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Docetaxel-Cisplatin': {
+                name: 'Docetaxel + Cisplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Docetaxel-Gemcitabine': {
+                name: 'Docetaxel + Gemcitabine',
+                cycles: 4,
+                drugs: [
+                    { name: 'Docetaxel', dose: 85, unit: 'mg/m²', schedule: 'day 8, q3weeks x 4 cycles' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' }
+                ]
+            },
+            'Gemcitabine-Cisplatin': {
+                name: 'Gemcitabine + Cisplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Gemcitabine-Carboplatin': {
+                name: 'Gemcitabine + Carboplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Gemcitabine-Vinorelbine': {
+                name: 'Gemcitabine + Vinorelbine',
+                cycles: 6,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                    { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+                ]
+            },
+            'Docetaxel-Bevacizumab': {
+                name: 'Docetaxel + Bevacizumab',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'q3weeks x 6 cycles' }
+                ]
+            },
+            'Pemetrexed-Carboplatin-Bevacizumab': {
+                name: 'Pemetrexed + Carboplatin + Bevacizumab (Non-squamous histology)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Maintenance-Pemetrexed': {
+                name: 'Maintenance Pemetrexed (Non-squamous histology)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks maintenance' }
+                ]
+            },
+            'Nab-Paclitaxel-Carboplatin': {
+                name: 'Nab-paclitaxel + Carboplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q4weeks x 4 cycles' }
+                ]
+            },
+            'Docetaxel-Ramucirumab': {
+                name: 'Docetaxel + Ramucirumab',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                    { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'day 1, q3weeks x 6 cycles' }
+                ]
+            },
+            'Gemcitabine-Cisplatin-Necitumumab': {
+                name: 'Gemcitabine + Cisplatin + Necitumumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 4 cycles' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Necitumumab', dose: 800, unit: 'mg', schedule: 'days 1, 8, q3weeks x 4 cycles' }
+                ]
+            },
+            'Dabrafenib-Trametinib': {
+                name: 'Dabrafenib + Trametinib (BRAF V600E mutation)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily' },
+                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Carboplatin-Paclitaxel-Pembrolizumab': {
+                name: 'Carboplatin + Paclitaxel + Pembrolizumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Carboplatin-Nab-Paclitaxel-Pembrolizumab': {
+                name: 'Carboplatin + Nab-paclitaxel + Pembrolizumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 4 cycles' },
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Atezolizumab-Nab-Paclitaxel-Carboplatin': {
+                name: 'Atezolizumab + Nab-paclitaxel + Carboplatin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 4 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' }
+                ]
+            },
+            'Ramucirumab-Erlotinib': {
+                name: 'Ramucirumab + Erlotinib',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'q2weeks' },
+                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Ipilimumab-Nivolumab': {
+                name: 'Ipilimumab + Nivolumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'day 1, q6weeks x 4 cycles' },
+                    { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' }
+                ]
+            },
+            'Durvalumab-Tremelimumab': {
+                name: 'Durvalumab + Tremelimumab',
+                cycles: 4,
+                drugs: [
+                    { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'day 1, q4weeks x 4 cycles, then maintenance' },
+                    { name: 'Tremelimumab', dose: 75, unit: 'mg', schedule: 'day 1, q4weeks x 4 cycles' }
+                ]
+            },
+            // Single agents
+            'Single-Paclitaxel': {
+                name: 'Single agent Paclitaxel',
+                cycles: 6,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+                ]
+            },
+            'Single-Nab-Paclitaxel': {
+                name: 'Single agent Nab-paclitaxel',
+                cycles: 6,
+                drugs: [
+                    { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+                ]
+            },
+            'Single-Docetaxel': {
+                name: 'Single agent Docetaxel',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+                ]
+            },
+            'Single-Pemetrexed': {
+                name: 'Single agent Pemetrexed (Non-squamous histology)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+                ]
+            },
+            'Single-Gemcitabine': {
+                name: 'Single agent Gemcitabine',
+                cycles: 6,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 6 cycles' }
+                ]
+            },
+            'Single-Vinorelbine': {
+                name: 'Single agent Vinorelbine',
+                cycles: 6,
+                drugs: [
+                    { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'weekly x 6 cycles' }
+                ]
+            },
+            // EGFR inhibitors
+            'Gefitinib': {
+                name: 'Gefitinib (EGFR exon19del)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Gefitinib', dose: 250, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Erlotinib': {
+                name: 'Erlotinib (EGFR exon19del)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Afatinib': {
+                name: 'Afatinib (EGFR exon19del)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Afatinib', dose: 40, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Dacomitinib': {
+                name: 'Dacomitinib (EGFR exon19del)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dacomitinib', dose: 45, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Amivantamab-Exon20': {
+                name: 'Amivantamab (EGFR exon20 insertion)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg q2weeks' }
+                ]
+            },
+            'Mobocertinib': {
+                name: 'Mobocertinib (EGFR exon20 insertion)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Mobocertinib', dose: 160, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Single-Nivolumab': {
+                name: 'Single agent Nivolumab',
+                cycles: 12,
+                drugs: [
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'q2weeks' }
+                ]
+            },
+            // ALK/ROS1 inhibitors
+            'Crizotinib': {
+                name: 'Crizotinib (ALK or ROS1 positive)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'twice daily' }
+                ]
+            },
+            'Ceritinib': {
+                name: 'Ceritinib (ALK or ROS1 positive)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ceritinib', dose: 450, unit: 'mg', schedule: 'daily with food' }
+                ]
+            },
+            'Alectinib': {
+                name: 'Alectinib (ALK rearrangements)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'twice daily' }
+                ]
+            },
+            'Brigatinib': {
+                name: 'Brigatinib (ALK rearrangements)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'daily (after 7-day lead-in at 90mg)' }
+                ]
+            },
+            'Lorlatinib': {
+                name: 'Lorlatinib (ALK rearrangements, ROS1)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Lorlatinib', dose: 100, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Entrectinib': {
+                name: 'Entrectinib (NTRK fusion)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Osimertinib-T790M': {
+                name: 'Osimertinib (EGFR exon19del, T790M mutation)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Osimertinib', dose: 80, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Selpercatinib': {
+                name: 'Selpercatinib (RET fusion-positive)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily' }
+                ]
+            },
+            'Pralsetinib': {
+                name: 'Pralsetinib (RET fusion-positive)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Capmatinib': {
+                name: 'Capmatinib (MET exon14 skipping)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Capmatinib', dose: 400, unit: 'mg', schedule: 'twice daily' }
+                ]
+            },
+            'Tepotinib': {
+                name: 'Tepotinib (MET exon14 skipping)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Tepotinib', dose: 450, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Sotorasib': {
+                name: 'Sotorasib (KRAS G12C mutation)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sotorasib', dose: 960, unit: 'mg', schedule: 'daily' }
+                ]
+            },
+            'Adagrasib': {
+                name: 'Adagrasib (KRAS G12C mutation)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Adagrasib', dose: 600, unit: 'mg', schedule: 'twice daily' }
+                ]
+            },
+            'Single-Pembrolizumab': {
+                name: 'Single agent Pembrolizumab (PD-L1 ≥50%)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks' }
+                ]
+            },
+            'Single-Durvalumab': {
+                name: 'Single agent Durvalumab',
+                cycles: 12,
+                drugs: [
+                    { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'q4weeks' }
+                ]
+            },
+            'Single-Cemiplimab': {
+                name: 'Single agent Cemiplimab',
+                cycles: 12,
+                drugs: [
+                    { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'q3weeks' }
+                ]
+            }
+        },
+        sclc: {
+            // First-line therapy for extensive stage SCLC
+            'Atezolizumab-Carboplatin-Etoposide': {
+                name: 'Atezolizumab + Carboplatin + Etoposide (ES-SCLC)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                ]
+            },
+            'Durvalumab-Carboplatin-Etoposide': {
+                name: 'Durvalumab + Carboplatin + Etoposide (ES-SCLC)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'day 1, q3weeks x 4 cycles, then maintenance' },
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                ]
+            },
+            'Carboplatin-Etoposide': {
+                name: 'Carboplatin + Etoposide (SCLC)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                ]
+            },
+            'Cisplatin-Etoposide-SCLC': {
+                name: 'Cisplatin + Etoposide (SCLC)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 4 cycles' }
+                ]
+            },
+            'Topotecan-SCLC': {
+                name: 'Topotecan (Second-line SCLC)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Topotecan', dose: 1.5, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 6 cycles' }
+                ]
+            },
+            'Lurbinectedin': {
+                name: 'Lurbinectedin (Second-line SCLC)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Lurbinectedin', dose: 3.2, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+                ]
+            },
+            'CAV-SCLC': {
+                name: 'CAV (Cyclophosphamide + Adriamycin + Vincristine)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 45, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                    { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'day 1, q3weeks x 6 cycles' }
+                ]
+            }
+        }
     }
 };
 
@@ -2941,7 +3621,7 @@ function calculateCarboplatinDose(auc, crCl) {
     return auc * (gfr + 25);
 }
 
-// Populate subtype dropdown for breast cancer
+// Populate subtype dropdown for breast cancer and lung cancer
 function populateSubtypes(cancerType) {
     const subtypeGroup = document.getElementById('subtypeGroup');
     const subtypeSelect = document.getElementById('cancerSubtype');
@@ -2969,6 +3649,27 @@ function populateSubtypes(cancerType) {
         // Reset protocol dropdown
         protocolSelect.innerHTML = '<option value="">Select subtype first</option>';
         protocolSelect.disabled = true;
+    } else if (cancerType === 'lung') {
+        subtypeGroup.style.display = 'block';
+        subtypeSelect.disabled = false;
+        subtypeSelect.required = true;
+        subtypeSelect.innerHTML = '<option value="">Select histology</option>';
+        
+        const subtypes = {
+            'nsclc': 'Non-Small Cell Lung Cancer (NSCLC)',
+            'sclc': 'Small Cell Lung Cancer (SCLC)'
+        };
+        
+        Object.keys(subtypes).forEach(key => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = subtypes[key];
+            subtypeSelect.appendChild(option);
+        });
+        
+        // Reset protocol dropdown
+        protocolSelect.innerHTML = '<option value="">Select histology first</option>';
+        protocolSelect.disabled = true;
     } else {
         subtypeGroup.style.display = 'none';
         subtypeSelect.disabled = true;
@@ -2986,9 +3687,9 @@ function populateProtocols(cancerType, subtype) {
     if (cancerType && protocolDatabase[cancerType]) {
         let protocols;
         
-        if (cancerType === 'breast' && subtype) {
+        if ((cancerType === 'breast' || cancerType === 'lung') && subtype) {
             protocols = protocolDatabase[cancerType][subtype];
-        } else if (cancerType !== 'breast') {
+        } else if (cancerType !== 'breast' && cancerType !== 'lung') {
             protocols = protocolDatabase[cancerType];
         }
         
@@ -3209,8 +3910,8 @@ function buildProtocolIndex() {
     Object.keys(protocolDatabase).forEach(cancerType => {
         const cancerName = getCancerDisplayName(cancerType);
         
-        if (cancerType === 'breast') {
-            // Handle breast cancer subtypes
+        if (cancerType === 'breast' || cancerType === 'lung') {
+            // Handle breast cancer and lung cancer subtypes
             Object.keys(protocolDatabase[cancerType]).forEach(subtype => {
                 const subtypeName = getSubtypeDisplayName(subtype);
                 Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
@@ -3270,7 +3971,9 @@ function getSubtypeDisplayName(subtype) {
     const names = {
         hormone_positive: 'Hormone Positive (ER+/PR+)',
         triple_negative: 'Triple Negative (ER-/PR-/HER2-)',
-        her2_positive: 'HER2 Positive'
+        her2_positive: 'HER2 Positive',
+        nsclc: 'Non-Small Cell Lung Cancer (NSCLC)',
+        sclc: 'Small Cell Lung Cancer (SCLC)'
     };
     return names[subtype] || subtype;
 }
