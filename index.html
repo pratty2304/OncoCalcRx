@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemo Protocol Calculator</title>
+    <title>ChemoCalc RX</title>
     <style>
         * {
             margin: 0;
@@ -373,7 +373,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏥 Chemo Protocol Calculator</h1>
+            <h1>🏥 ChemoCalc RX</h1>
             <p>Calculate chemotherapy doses based on patient parameters</p>
         </div>
 
@@ -422,7 +422,7 @@
                 </div>
 
                 <div class="nav-buttons">
-                    <button type="button" class="btn btn-primary" id="nextToPage2">Next: Select Cancer Type</button>
+                    <button type="button" class="btn btn-primary" id="nextToPage2">Next: Select Regimen</button>
                 </div>
             </div>
         </div>
@@ -432,17 +432,17 @@
             <div class="form-section">
                 <div class="page-title">
                     <div class="page-number">2</div>
-                    <h2>Protocol Selection</h2>
+                    <h2>Regimen Selection</h2>
                 </div>
 
                 <!-- Search Section -->
                 <div class="search-section">
                     <div class="search-header">
                         <span class="search-icon">🔍</span>
-                        <h3 style="margin: 0; color: #2c3e50;">Quick Protocol Search</h3>
+                        <h3 style="margin: 0; color: #2c3e50;">Quick Regimen Search</h3>
                     </div>
                     <div class="search-input">
-                        <input type="text" id="protocolSearch" placeholder="Search protocols (e.g., FOLFOX, AC-T, Pembrolizumab...)" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                        <input type="text" id="protocolSearch" placeholder="Search regimens (e.g., FOLFOX, AC-T, Pembrolizumab...)" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
                         <div class="search-suggestions" id="searchSuggestions"></div>
                     </div>
                     <div class="selected-protocol-info" id="selectedProtocolInfo">
@@ -497,9 +497,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="protocol">Protocol</label>
+                        <label for="protocol">Regimen</label>
                         <select id="protocol" name="protocol" disabled>
-                            <option value="">Select cancer type first</option>
+                            <option value="">Select regimen</option>
                         </select>
                     </div>
                 </div>
@@ -530,13 +530,13 @@
             <div class="form-section">
                 <div class="page-title">
                     <div class="page-number">3</div>
-                    <h2>Protocol Results</h2>
+                    <h2>Regimen & Dose Results</h2>
                 </div>
                 
                 <div id="resultsContent"></div>
 
                 <div class="nav-buttons">
-                    <button type="button" class="btn btn-secondary" id="backToPage2">Back to Protocol Selection</button>
+                    <button type="button" class="btn btn-secondary" id="backToPage2">Back to Regimen Selection</button>
                     <button type="button" class="btn btn-primary" id="startOver">Start New Calculation</button>
                 </div>
             </div>

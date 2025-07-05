@@ -5775,7 +5775,7 @@ function populateSubtypes(cancerType) {
 // Populate protocol dropdown based on cancer type and subtype
 function populateProtocols(cancerType, subtype) {
     const protocolSelect = document.getElementById('protocol');
-    protocolSelect.innerHTML = '<option value="">Select protocol</option>';
+    protocolSelect.innerHTML = '<option value="">Select regimen</option>';
     
     if (cancerType && protocolDatabase[cancerType]) {
         let protocols;
