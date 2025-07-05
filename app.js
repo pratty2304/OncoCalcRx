@@ -2538,6 +2538,744 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles, then 400mg q6weeks' }
             ]
+        },
+        'BEP': {
+            name: 'BEP (Bleomycin + Etoposide + Cisplatin) - Germ Cell',
+            cycles: 3,
+            drugs: [
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, q3weeks x 3 cycles' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 3 cycles' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 3 cycles' }
+            ]
+        }
+    },
+    prostate: {
+        'Docetaxel-Prednisone': {
+            name: 'Docetaxel + Prednisone (mCSPC/mCRPC first-line)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Docetaxel-Leuprolide': {
+            name: 'Docetaxel + Leuprolide (mCSPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM q3months, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Docetaxel-Prednisone-Bevacizumab': {
+            name: 'Docetaxel + Prednisone + Bevacizumab (mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Cabazitaxel-Prednisone': {
+            name: 'Cabazitaxel + Prednisone (mCRPC post-docetaxel)',
+            cycles: 8,
+            drugs: [
+                { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'day 1, q3weeks x 8 cycles' },
+                { name: 'Prednisone', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Cabazitaxel-Carboplatin': {
+            name: 'Cabazitaxel + Carboplatin (mCRPC - DNA repair defects)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Abiraterone-Prednisone': {
+            name: 'Abiraterone + Prednisone (mCSPC/mCRPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Niraparib-Abiraterone-Prednisone': {
+            name: 'Niraparib + Abiraterone + Prednisone (mCRPC - HRR mutations)',
+            cycles: 12,
+            drugs: [
+                { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'daily, continuous (HRR gene mutations)' },
+                { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Olaparib-Abiraterone-Prednisone': {
+            name: 'Olaparib + Abiraterone + Prednisone (mCRPC - HRR mutations)',
+            cycles: 12,
+            drugs: [
+                { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'twice daily, continuous (HRR gene mutations)' },
+                { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Talazoparib-Enzalutamide': {
+            name: 'Talazoparib + Enzalutamide (mCRPC - HRR mutations)',
+            cycles: 12,
+            drugs: [
+                { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'daily, continuous (HRR gene mutations)' },
+                { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Mitoxantrone-Prednisone': {
+            name: 'Mitoxantrone + Prednisone (mCRPC - palliation)',
+            cycles: 6,
+            drugs: [
+                { name: 'Mitoxantrone', dose: 12, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Estramustine-Etoposide': {
+            name: 'Estramustine + Etoposide (mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily x 21 days' },
+                { name: 'Etoposide', dose: 50, unit: 'mg/m²', days: 'D1-D21', schedule: 'daily x 21 days, q4weeks x 6 cycles' }
+            ]
+        },
+        'Estramustine-Vinblastine': {
+            name: 'Estramustine + Vinblastine (mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' },
+                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'weekly x 6 weeks, then q2weeks' }
+            ]
+        },
+        'Paclitaxel-Estramustine': {
+            name: 'Paclitaxel + Estramustine (mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly x 6 weeks' },
+                { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' }
+            ]
+        },
+        'Docetaxel-Estramustine': {
+            name: 'Docetaxel + Estramustine (mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 70, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, days 1-5' }
+            ]
+        },
+        'Flutamide-Leuprolide': {
+            name: 'Flutamide + Leuprolide (ADT combination)',
+            cycles: 12,
+            drugs: [
+                { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' },
+                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM q3months, continuous' }
+            ]
+        },
+        'Flutamide-Goserelin': {
+            name: 'Flutamide + Goserelin (ADT combination)',
+            cycles: 12,
+            drugs: [
+                { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' },
+                { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC q3months, continuous' }
+            ]
+        },
+        'Enzalutamide': {
+            name: 'Enzalutamide (mCSPC/mCRPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Apalutamide': {
+            name: 'Apalutamide (nmCRPC/mCSPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Apalutamide', dose: 240, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Darolutamide': {
+            name: 'Darolutamide (nmCRPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Darolutamide', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Olaparib': {
+            name: 'Olaparib (mCRPC - HRR gene mutations)',
+            cycles: 12,
+            drugs: [
+                { name: 'Olaparib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous (germline/somatic HRR mutations)' }
+            ]
+        },
+        'Rucaparib': {
+            name: 'Rucaparib (mCRPC - BRCA mutations)',
+            cycles: 12,
+            drugs: [
+                { name: 'Rucaparib', dose: 600, unit: 'mg', schedule: 'twice daily, continuous (BRCA1/2 mutations)' }
+            ]
+        },
+        'Pembrolizumab-Prostate': {
+            name: 'Pembrolizumab (mCRPC - MSI-H/dMMR)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles (MSI-H/dMMR)' }
+            ]
+        },
+        'Leuprolide': {
+            name: 'Leuprolide (ADT monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM q3months, continuous' }
+            ]
+        },
+        'Goserelin': {
+            name: 'Goserelin (ADT monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC q3months, continuous' }
+            ]
+        },
+        'Degarelix': {
+            name: 'Degarelix (GnRH antagonist)',
+            cycles: 12,
+            drugs: [
+                { name: 'Degarelix', dose: 240, unit: 'mg', schedule: 'SC loading dose, then 80mg monthly' }
+            ]
+        },
+        'Relugolix': {
+            name: 'Relugolix (Oral GnRH antagonist)',
+            cycles: 12,
+            drugs: [
+                { name: 'Relugolix', dose: 120, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Bicalutamide': {
+            name: 'Bicalutamide (Antiandrogen monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Bicalutamide', dose: 50, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Flutamide': {
+            name: 'Flutamide (Antiandrogen monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' }
+            ]
+        },
+        'Nilutamide': {
+            name: 'Nilutamide (Antiandrogen)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nilutamide', dose: 300, unit: 'mg', schedule: 'daily x 30 days, then 150mg daily' }
+            ]
+        },
+        'Ketoconazole': {
+            name: 'Ketoconazole (CYP17 inhibitor)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ketoconazole', dose: 400, unit: 'mg', schedule: 'three times daily, continuous' },
+                { name: 'Hydrocortisone', dose: 30, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Aminoglutethimide': {
+            name: 'Aminoglutethimide (Adrenal enzyme inhibitor)',
+            cycles: 6,
+            drugs: [
+                { name: 'Aminoglutethimide', dose: 250, unit: 'mg', schedule: 'four times daily, continuous' },
+                { name: 'Hydrocortisone', dose: 40, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Sipuleucel-T': {
+            name: 'Sipuleucel-T (Immunotherapy)',
+            cycles: 1,
+            drugs: [
+                { name: 'Sipuleucel-T', dose: '50×10⁶', unit: 'autologous CD54+ cells', schedule: '3 infusions q2weeks (weeks 0, 2, 4)' }
+            ]
+        },
+        'Paclitaxel-Single': {
+            name: 'Paclitaxel (Single agent - mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
+            ]
+        },
+        'Docetaxel-Single': {
+            name: 'Docetaxel (Single agent - mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Estramustine': {
+            name: 'Estramustine (Single agent - mCRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' }
+            ]
+        },
+        'Radium-223': {
+            name: 'Radium-223 (Bone-targeted therapy)',
+            cycles: 6,
+            drugs: [
+                { name: 'Radium-223 dichloride', dose: 55, unit: 'kBq/kg', schedule: 'IV q4weeks x 6 cycles (bone metastases)' }
+            ]
+        },
+        'Lutetium-177-PSMA': {
+            name: 'Lutetium-177 PSMA-617 (PSMA-targeted therapy)',
+            cycles: 6,
+            drugs: [
+                { name: 'Lutetium-177 PSMA-617', dose: 7400, unit: 'MBq', schedule: 'IV q6weeks x 6 cycles (PSMA+ mCRPC)' }
+            ]
+        }
+    },
+    renal: {
+        'Nivolumab-Ipilimumab': {
+            name: 'Nivolumab + Ipilimumab (First-line intermediate/poor risk)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'q3weeks x 4 cycles, then 240mg q2weeks' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'q3weeks x 4 cycles only' }
+            ]
+        },
+        'Pembrolizumab-Axitinib': {
+            name: 'Pembrolizumab + Axitinib (First-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles, then 400mg q6weeks' },
+                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Avelumab-Axitinib': {
+            name: 'Avelumab + Axitinib (First-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'q2weeks x 8 cycles' },
+                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Lenvatinib-Pembrolizumab': {
+            name: 'Lenvatinib + Pembrolizumab (First-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles, then 400mg q6weeks' }
+            ]
+        },
+        'Nivolumab-Cabozantinib': {
+            name: 'Nivolumab + Cabozantinib (First-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'q2weeks x 8 cycles, then 480mg q4weeks' },
+                { name: 'Cabozantinib', dose: 40, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Lenvatinib-Everolimus': {
+            name: 'Lenvatinib + Everolimus (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Lenvatinib', dose: 18, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'Everolimus', dose: 5, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Bevacizumab-Everolimus': {
+            name: 'Bevacizumab + Everolimus (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'q2weeks x 8 cycles' },
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Bevacizumab-Interferon': {
+            name: 'Bevacizumab + Interferon alfa-2a (Historical first-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'q2weeks x 8 cycles' },
+                { name: 'Interferon alfa-2a', dose: 9, unit: 'MIU', schedule: 'SC 3x/week, continuous' }
+            ]
+        },
+        'Interferon-IL2': {
+            name: 'Interferon alfa + IL-2 (Historical combination)',
+            cycles: 6,
+            drugs: [
+                { name: 'Interferon alfa-2a', dose: 6, unit: 'MIU', schedule: 'SC daily x 5 days/week' },
+                { name: 'Interleukin-2 (IL-2)', dose: 18, unit: 'MIU/m²', schedule: 'SC daily x 5 days/week' }
+            ]
+        },
+        'Sunitinib': {
+            name: 'Sunitinib (First-line monotherapy)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily x 4 weeks, then 2 weeks off' }
+            ]
+        },
+        'Pazopanib': {
+            name: 'Pazopanib (First-line monotherapy)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily on empty stomach, continuous' }
+            ]
+        },
+        'Cabozantinib': {
+            name: 'Cabozantinib (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Nivolumab': {
+            name: 'Nivolumab (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'q2weeks x 8 cycles, then 480mg q4weeks' }
+            ]
+        },
+        'Axitinib': {
+            name: 'Axitinib (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Sorafenib': {
+            name: 'Sorafenib (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Lenvatinib': {
+            name: 'Lenvatinib (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Everolimus': {
+            name: 'Everolimus (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Temsirolimus': {
+            name: 'Temsirolimus (Poor-risk first-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Temsirolimus', dose: 25, unit: 'mg', schedule: 'IV weekly, continuous' }
+            ]
+        },
+        'Tivozanib': {
+            name: 'Tivozanib (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Tivozanib', dose: 1340, unit: 'mcg', schedule: 'daily x 21 days, then 7 days off' }
+            ]
+        },
+        'Bevacizumab': {
+            name: 'Bevacizumab (Single agent)',
+            cycles: 8,
+            drugs: [
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'q2weeks x 8 cycles' }
+            ]
+        },
+        'Pembrolizumab': {
+            name: 'Pembrolizumab (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles, then 400mg q6weeks' }
+            ]
+        },
+        'Interleukin-2': {
+            name: 'Interleukin-2 (High-dose)',
+            cycles: 2,
+            drugs: [
+                { name: 'Interleukin-2 (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'q8h x 14 doses (cycle 1), then q8h x 14 doses (cycle 2)' }
+            ]
+        },
+        'Interferon-alpha': {
+            name: 'Interferon alfa-2a (Historical)',
+            cycles: 8,
+            drugs: [
+                { name: 'Interferon alfa-2a', dose: 9, unit: 'MIU', schedule: 'SC 3x/week, continuous' }
+            ]
+        }
+    },
+    testicular: {
+        'BEP': {
+            name: 'BEP (Bleomycin + Etoposide + Cisplatin) - Standard risk',
+            cycles: 3,
+            drugs: [
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, q3weeks x 3 cycles' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 3 cycles' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 3 cycles' }
+            ]
+        },
+        'EP': {
+            name: 'EP (Etoposide + Cisplatin) - Standard risk',
+            cycles: 4,
+            drugs: [
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 4 cycles' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 4 cycles' }
+            ]
+        },
+        'Carboplatin-Single': {
+            name: 'Carboplatin (Single agent - Stage I seminoma)',
+            cycles: 1,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'single dose' }
+            ]
+        },
+        'VIP': {
+            name: 'VIP (Vinblastine + Ifosfamide + Cisplatin) - Salvage',
+            cycles: 4,
+            drugs: [
+                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', days: 'D1-D2', schedule: 'days 1-2, q3weeks x 4 cycles' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 4 cycles' },
+                { name: 'Mesna', dose: 400, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (with ifosfamide)' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 4 cycles' }
+            ]
+        },
+        'TIP': {
+            name: 'TIP (Paclitaxel + Ifosfamide + Cisplatin) - Salvage',
+            cycles: 4,
+            drugs: [
+                { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'day 1, q3weeks x 4 cycles' },
+                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', days: 'D2-D6', schedule: 'days 2-6, q3weeks x 4 cycles' },
+                { name: 'Mesna', dose: 500, unit: 'mg/m²', days: 'D2-D6', schedule: 'days 2-6 (with ifosfamide)' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', days: 'D2-D6', schedule: 'days 2-6, q3weeks x 4 cycles' }
+            ]
+        },
+        'VeIP': {
+            name: 'VeIP (Vinblastine + Ifosfamide + Cisplatin) - Salvage',
+            cycles: 4,
+            drugs: [
+                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', days: 'D1-D2', schedule: 'days 1-2, q3weeks x 4 cycles' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 4 cycles' },
+                { name: 'Mesna', dose: 400, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (with ifosfamide)' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 4 cycles' }
+            ]
+        },
+        'PVB': {
+            name: 'PVB (Cisplatin + Vinblastine + Bleomycin) - Historical',
+            cycles: 3,
+            drugs: [
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 3 cycles' },
+                { name: 'Vinblastine', dose: 0.15, unit: 'mg/kg', days: 'D1-D2', schedule: 'days 1-2, q3weeks x 3 cycles' },
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, q3weeks x 3 cycles' }
+            ]
+        },
+        'VAB-6': {
+            name: 'VAB-6 (Vinblastine + Actinomycin D + Bleomycin + Cisplatin + Cyclophosphamide) - Historical',
+            cycles: 3,
+            drugs: [
+                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
+                { name: 'Actinomycin D', dose: 1, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' },
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, q3weeks x 3 cycles' },
+                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'day 4, q3weeks x 3 cycles' },
+                { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'day 1, q3weeks x 3 cycles' }
+            ]
+        },
+        'Paclitaxel-Gemcitabine': {
+            name: 'Paclitaxel + Gemcitabine (Salvage)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 6 cycles' }
+            ]
+        },
+        'Paclitaxel-Gemcitabine-Oxaliplatin': {
+            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (Salvage)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Gemcitabine-Oxaliplatin': {
+            name: 'Gemcitabine + Oxaliplatin (Salvage)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Etoposide-Single': {
+            name: 'Etoposide (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 6 cycles' }
+            ]
+        }
+    },
+    sarcoma: {
+        'AD': {
+            name: 'AD (Doxorubicin + Dacarbazine)',
+            cycles: 6,
+            drugs: [
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Dacarbazine', dose: 1000, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'AI': {
+            name: 'AI (Doxorubicin + Ifosfamide)',
+            cycles: 6,
+            drugs: [
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Ifosfamide', dose: 10000, unit: 'mg/m²', schedule: 'continuous infusion days 1-3, q3weeks x 6 cycles' },
+                { name: 'Mesna', dose: 2000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' }
+            ]
+        },
+        'MAID': {
+            name: 'MAID (Mesna + Doxorubicin + Ifosfamide + Dacarbazine)',
+            cycles: 6,
+            drugs: [
+                { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, q3weeks x 6 cycles' },
+                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', days: 'D1-D3', schedule: 'continuous infusion days 1-3, q3weeks x 6 cycles' },
+                { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', days: 'D1-D3', schedule: 'continuous infusion days 1-3, q3weeks x 6 cycles' },
+                { name: 'Dacarbazine', dose: 300, unit: 'mg/m²', days: 'D1-D3', schedule: 'continuous infusion days 1-3, q3weeks x 6 cycles' }
+            ]
+        },
+        'CYVADIC': {
+            name: 'CYVADIC (Cyclophosphamide + Vincristine + Doxorubicin + Dacarbazine)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles (max 2mg)' },
+                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Dacarbazine', dose: 250, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 6 cycles' }
+            ]
+        },
+        'IAP': {
+            name: 'IAP (Ifosfamide + Doxorubicin + Cisplatin)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, q3weeks x 6 cycles' },
+                { name: 'Mesna', dose: 400, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (with ifosfamide)' },
+                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'AP': {
+            name: 'AP (Doxorubicin + Cisplatin)',
+            cycles: 6,
+            drugs: [
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'day 1, q3weeks x 6 cycles' }
+            ]
+        },
+        'Gemcitabine-Docetaxel': {
+            name: 'Gemcitabine + Docetaxel',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 900, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'day 8, q3weeks x 6 cycles' }
+            ]
+        },
+        'Gemcitabine-Vinorelbine': {
+            name: 'Gemcitabine + Vinorelbine',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' },
+                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+            ]
+        },
+        'VAC-IE': {
+            name: 'VAC/IE (Vincristine + Dactinomycin + Cyclophosphamide / Ifosfamide + Etoposide) - Ewing sarcoma',
+            cycles: 12,
+            drugs: [
+                { name: 'Vincristine', dose: 2, unit: 'mg/m²', schedule: 'day 1 (VAC cycles), max 2mg' },
+                { name: 'Dactinomycin', dose: 1.25, unit: 'mg/m²', schedule: 'day 1 (VAC cycles)' },
+                { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'day 1 (VAC cycles)' },
+                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IE cycles)' },
+                { name: 'Mesna', dose: 360, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IE cycles)' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IE cycles)' }
+            ]
+        },
+        'OGS-2012': {
+            name: 'OGS-2012 Protocol (TMH Mumbai - Osteosarcoma)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'day 1, cycles 1, 3, 5' },
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'day 1, cycles 2, 4, 6' },
+                { name: 'High-dose Methotrexate', dose: 12000, unit: 'mg/m²', schedule: 'day 1, all cycles (with leucovorin rescue)' },
+                { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'q6h starting 24h post-MTX until levels <0.1' }
+            ]
+        },
+        'Doxorubicin': {
+            name: 'Doxorubicin (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Ifosfamide': {
+            name: 'Ifosfamide (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, q3weeks x 6 cycles' },
+                { name: 'Mesna', dose: 600, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3 (with ifosfamide)' }
+            ]
+        },
+        'Gemcitabine': {
+            name: 'Gemcitabine (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, q4weeks x 6 cycles' }
+            ]
+        },
+        'Doxorubicin-Liposomal': {
+            name: 'Doxorubicin liposomal (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Doxorubicin liposomal', dose: 50, unit: 'mg/m²', schedule: 'q4weeks x 6 cycles' }
+            ]
+        },
+        'Pazopanib': {
+            name: 'Pazopanib (Single agent)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily on empty stomach, continuous' }
+            ]
+        },
+        'Trabectedin': {
+            name: 'Trabectedin (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Trabectedin', dose: 1.5, unit: 'mg/m²', schedule: 'q3weeks x 6 cycles' }
+            ]
+        },
+        'Eribulin': {
+            name: 'Eribulin (Single agent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Eribulin', dose: 1.4, unit: 'mg/m²', schedule: 'days 1, 8, q3weeks x 6 cycles' }
+            ]
+        },
+        'Tazemetostat': {
+            name: 'Tazemetostat (EZH2 inhibitor)',
+            cycles: 8,
+            drugs: [
+                { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Pexidartinib': {
+            name: 'Pexidartinib (CSF1R inhibitor - TGCT)',
+            cycles: 6,
+            drugs: [
+                { name: 'Pexidartinib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Atezolizumab': {
+            name: 'Atezolizumab (PD-L1 inhibitor)',
+            cycles: 8,
+            drugs: [
+                { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'q2weeks x 8 cycles, then 1200mg q3weeks' }
+            ]
         }
     },
     pancreatic: {
