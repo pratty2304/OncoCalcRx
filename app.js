@@ -3004,6 +3004,207 @@ const protocolDatabase = {
             ]
         }
     },
+    stem_cell_transplant: {
+        // Myeloablative Conditioning (MAC) - Autologous
+        'Melphalan-200': {
+            name: 'High-Dose Melphalan (MEL-200) - Multiple Myeloma',
+            cycles: 1,
+            drugs: [
+                { name: 'Melphalan', dose: 200, unit: 'mg/m²', schedule: 'single dose D-1 (autologous SCT)', days: 'D-1' }
+            ]
+        },
+        'BEAM': {
+            name: 'BEAM - Lymphoma Autologous SCT',
+            cycles: 1,
+            drugs: [
+                { name: 'BCNU (Carmustine)', dose: 300, unit: 'mg/m²', schedule: 'D-6', days: 'D-6' },
+                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2 (q12h x 8 doses)', days: 'D-5 to D-2' },
+                { name: 'Cytarabine (Ara-C)', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2 (q12h x 8 doses)', days: 'D-5 to D-2' },
+                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1', days: 'D-1' }
+            ]
+        },
+        'BEAC': {
+            name: 'BEAC - Lymphoma Autologous SCT',
+            cycles: 1,
+            drugs: [
+                { name: 'BCNU (Carmustine)', dose: 300, unit: 'mg/m²', schedule: 'D-6', days: 'D-6' },
+                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2 (q12h x 8 doses)', days: 'D-5 to D-2' },
+                { name: 'Cytarabine (Ara-C)', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2 (q12h x 8 doses)', days: 'D-5 to D-2' },
+                { name: 'Cyclophosphamide', dose: 140, unit: 'mg/kg', schedule: 'D-1', days: 'D-1' }
+            ]
+        },
+        'CBV': {
+            name: 'CBV - Lymphoma Autologous SCT',
+            cycles: 1,
+            drugs: [
+                { name: 'BCNU (Carmustine)', dose: 300, unit: 'mg/m²', schedule: 'D-6', days: 'D-6' },
+                { name: 'Cyclophosphamide', dose: 7200, unit: 'mg/m²', schedule: 'D-5 to D-2 (1800 mg/m² daily)', days: 'D-5 to D-2' },
+                { name: 'Etoposide', dose: 2400, unit: 'mg/m²', schedule: 'D-5 to D-2 (600 mg/m² daily)', days: 'D-5 to D-2' }
+            ]
+        },
+        'Bu-Cy': {
+            name: 'Busulfan + Cyclophosphamide (BuCy) - AML/MDS',
+            cycles: 1,
+            drugs: [
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-7 to D-4 (q6h x 16 doses, IV)', days: 'D-7 to D-4' },
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3, D-2', days: 'D-3, D-2' }
+            ]
+        },
+        'Bu-Mel': {
+            name: 'Busulfan + Melphalan (BuMel) - AML/MDS',
+            cycles: 1,
+            drugs: [
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-5 to D-2 (q6h x 16 doses, IV)', days: 'D-5 to D-2' },
+                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1', days: 'D-1' }
+            ]
+        },
+        'Bu-Cy-Eto': {
+            name: 'Busulfan + Cyclophosphamide + Etoposide - Pediatric',
+            cycles: 1,
+            drugs: [
+                { name: 'Busulfan', dose: 1.1, unit: 'mg/kg', schedule: 'D-9 to D-6 (q6h x 16 doses)', days: 'D-9 to D-6' },
+                { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'D-5 to D-2', days: 'D-5 to D-2' },
+                { name: 'Etoposide', dose: 60, unit: 'mg/kg', schedule: 'D-3 (single dose)', days: 'D-3' }
+            ]
+        },
+        
+        // Myeloablative Conditioning (MAC) - Allogeneic
+        'Bu-Flu': {
+            name: 'Busulfan + Fludarabine (BuFlu) - Myeloablative',
+            cycles: 1,
+            drugs: [
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-5 to D-2 (q6h x 16 doses, IV)', days: 'D-5 to D-2' },
+                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'D-6 to D-2', days: 'D-6 to D-2' }
+            ]
+        },
+        'Cy-TBI': {
+            name: 'Cyclophosphamide + TBI (CyTBI) - ALL/AML',
+            cycles: 1,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Total Body Irradiation (TBI)', dose: 1200, unit: 'cGy', schedule: 'D-1 (fractionated 200 cGy BID)', days: 'D-1' }
+            ]
+        },
+        'Bu-Cy-ATG': {
+            name: 'Busulfan + Cyclophosphamide + ATG - Unrelated Donor',
+            cycles: 1,
+            drugs: [
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-7 to D-4 (q6h x 16 doses)', days: 'D-7 to D-4' },
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Anti-thymocyte Globulin', dose: 2.5, unit: 'mg/kg', schedule: 'D-3, D-2, D-1', days: 'D-3, D-2, D-1' }
+            ]
+        },
+        'Flu-TBI': {
+            name: 'Fludarabine + TBI (FluTBI) - ALL',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D-4 to D-2', days: 'D-4 to D-2' },
+                { name: 'Total Body Irradiation (TBI)', dose: 1200, unit: 'cGy', schedule: 'D-1 (fractionated)', days: 'D-1' }
+            ]
+        },
+        
+        // Reduced Intensity Conditioning (RIC)
+        'Flu-Mel-RIC': {
+            name: 'Fludarabine + Melphalan (RIC) - Elderly/Comorbid',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-6 to D-2', days: 'D-6 to D-2' },
+                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1', days: 'D-1' }
+            ]
+        },
+        'Flu-Bu-RIC': {
+            name: 'Fludarabine + Busulfan (RIC) - Elderly/Comorbid',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-6 to D-2', days: 'D-6 to D-2' },
+                { name: 'Busulfan', dose: 0.8, unit: 'mg/kg', schedule: 'D-3, D-2 (q6h x 8 doses)', days: 'D-3, D-2' }
+            ]
+        },
+        'Flu-Cy-TBI-RIC': {
+            name: 'Fludarabine + Cyclophosphamide + Low-dose TBI (RIC)',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-4 to D-2', days: 'D-4 to D-2' },
+                { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'D-1', days: 'D-1' },
+                { name: 'Total Body Irradiation (TBI)', dose: 200, unit: 'cGy', schedule: 'D0 (single fraction)', days: 'D0' }
+            ]
+        },
+        'Flu-Mel-Alemtuzumab': {
+            name: 'Fludarabine + Melphalan + Alemtuzumab (RIC)',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-7 to D-3', days: 'D-7 to D-3' },
+                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-2', days: 'D-2' },
+                { name: 'Alemtuzumab', dose: 20, unit: 'mg', schedule: 'D-8 to D-4', days: 'D-8 to D-4' }
+            ]
+        },
+        
+        // Non-Myeloablative (NMA)
+        'Flu-Cy-NMA': {
+            name: 'Fludarabine + Cyclophosphamide (Non-myeloablative)',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-4 to D-2', days: 'D-4 to D-2' },
+                { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'D-1', days: 'D-1' }
+            ]
+        },
+        'TBI-NMA': {
+            name: 'Low-dose TBI (Non-myeloablative)',
+            cycles: 1,
+            drugs: [
+                { name: 'Total Body Irradiation (TBI)', dose: 200, unit: 'cGy', schedule: 'D0 (single fraction)', days: 'D0' }
+            ]
+        },
+        
+        // Haploidentical Conditioning
+        'PT-Cy': {
+            name: 'Post-Transplant Cyclophosphamide (Haploidentical)',
+            cycles: 1,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'D+3, D+4 (post-transplant)', days: 'D+3, D+4' },
+                { name: 'Mycophenolate Mofetil', dose: 15, unit: 'mg/kg', schedule: 'D+5 to D+35 (BID)', days: 'D+5 to D+35' },
+                { name: 'Tacrolimus', dose: 0.02, unit: 'mg/kg', schedule: 'D+5 to D+180 (target 5-15 ng/mL)', days: 'D+5 to D+180' }
+            ]
+        },
+        'Flu-Cy-TBI-Haplo': {
+            name: 'Fludarabine + Cyclophosphamide + TBI (Haploidentical)',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-6 to D-2', days: 'D-6 to D-2' },
+                { name: 'Cyclophosphamide', dose: 14.5, unit: 'mg/kg', schedule: 'D-6, D-5', days: 'D-6, D-5' },
+                { name: 'Total Body Irradiation (TBI)', dose: 400, unit: 'cGy', schedule: 'D-1 (single fraction)', days: 'D-1' }
+            ]
+        },
+        
+        // Alternative/Specialized Regimens
+        'Thiotepa-Busulfan-Flu': {
+            name: 'Thiotepa + Busulfan + Fludarabine (TBF)',
+            cycles: 1,
+            drugs: [
+                { name: 'Thiotepa', dose: 5, unit: 'mg/kg', schedule: 'D-7, D-6', days: 'D-7, D-6' },
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-5 to D-3 (q6h x 12 doses)', days: 'D-5 to D-3' },
+                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'D-6 to D-3', days: 'D-6 to D-3' }
+            ]
+        },
+        'Treosulfan-Fludarabine': {
+            name: 'Treosulfan + Fludarabine (TreoFlu)',
+            cycles: 1,
+            drugs: [
+                { name: 'Treosulfan', dose: 14, unit: 'g/m²', schedule: 'D-6 to D-4', days: 'D-6 to D-4' },
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-6 to D-2', days: 'D-6 to D-2' }
+            ]
+        },
+        'FLAMSA-RIC': {
+            name: 'FLAMSA-RIC (Sequential Conditioning)',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-12 to D-9, D-6 to D-2', days: 'D-12 to D-9, D-6 to D-2' },
+                { name: 'Cytarabine (Ara-C)', dose: 2000, unit: 'mg/m²', schedule: 'D-12 to D-9', days: 'D-12 to D-9' },
+                { name: 'Amsacrine', dose: 100, unit: 'mg/m²', schedule: 'D-12 to D-9', days: 'D-12 to D-9' },
+                { name: 'ATG or Alemtuzumab', dose: 10, unit: 'mg/kg', schedule: 'D-8 to D-6', days: 'D-8 to D-6' }
+            ]
+        }
+    },
     testicular: {
         'BEP': {
             name: 'BEP (Bleomycin + Etoposide + Cisplatin) - Standard risk',

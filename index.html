@@ -372,11 +372,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🏥 ChemoCalc RX</h1>
-            <p>Calculate chemotherapy doses based on patient parameters</p>
-        </div>
-
         <!-- Progress Bar -->
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 33%;"></div>
@@ -384,6 +379,11 @@
 
         <!-- Page 1: Patient Information -->
         <div id="page1" class="page active">
+            <div class="header">
+                <h1>🏥 ChemoCalc RX</h1>
+                <p>Calculate chemotherapy doses based on patient parameters</p>
+            </div>
+            
             <div class="form-section">
                 <div class="page-title">
                     <div class="page-number">1</div>
@@ -500,6 +500,7 @@
                             <option value="testicular">Testicular Cancer</option>
                             <option value="thymoma">Thymoma</option>
                             <option value="thyroid">Thyroid Cancer</option>
+                            <option value="stem_cell_transplant">Stem Cell Transplant Conditioning</option>
                             <option value="tumor_agnostic">Tumor Agnostic Therapy</option>
                             <option value="vulvar_vaginal">Vulvar & Vaginal Cancer</option>
                         </select>
