@@ -6788,6 +6788,494 @@ const protocolDatabase = {
                     { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily x 21 days, then 7 days off' }
                 ]
             }
+        },
+        all: {
+            'BFM-95': {
+                name: 'BFM-95 Protocol - Standard Risk ALL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D28 (induction), then maintenance' },
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D8,D15,D22,D29 (max 2mg)' },
+                    { name: 'Daunorubicin', dose: 30, unit: 'mg/m²', schedule: 'D8,D15,D22,D29' },
+                    { name: 'L-Asparaginase', dose: 10000, unit: 'units/m²', schedule: 'D12,D15,D18,D21,D24,D27,D30,D33' },
+                    { name: 'Methotrexate (IT)', dose: 12, unit: 'mg', schedule: 'D1,D12 (CNS prophylaxis)' },
+                    { name: 'Cytarabine (IT)', dose: 30, unit: 'mg', schedule: 'D1,D12 (CNS prophylaxis)' },
+                    { name: 'Hydrocortisone (IT)', dose: 15, unit: 'mg', schedule: 'D1,D12 (CNS prophylaxis)' }
+                ]
+            },
+            'Linker-Regimen': {
+                name: 'Linker Regimen - Adult ALL',
+                cycles: 30,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1 (induction)' },
+                    { name: 'Daunorubicin', dose: 45, unit: 'mg/m²', schedule: 'D1,D2,D3 (induction)' },
+                    { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1,D8,D15,D22 (max 2mg)' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D21 (induction)' },
+                    { name: 'L-Asparaginase', dose: 6000, unit: 'units/m²', schedule: 'D5,D8,D11,D15,D18,D22' },
+                    { name: 'Methotrexate (IT)', dose: 12, unit: 'mg', schedule: 'D1,D8,D15,D22 (CNS prophylaxis)' },
+                    { name: 'Cytarabine (IT)', dose: 30, unit: 'mg', schedule: 'D1,D8,D15,D22 (CNS prophylaxis)' }
+                ]
+            },
+            'Larson-Regimen': {
+                name: 'Larson Regimen - Adult ALL',
+                cycles: 30,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1,D22 (intensification)' },
+                    { name: 'Cytarabine', dose: 75, unit: 'mg/m²', schedule: 'D1-D4,D8-D11,D15-D18,D22-D25' },
+                    { name: 'Mercaptopurine', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (consolidation)' },
+                    { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D15,D22,D29,D36 (max 2mg)' },
+                    { name: 'L-Asparaginase', dose: 6000, unit: 'units/m²', schedule: 'D15,D18,D22,D25' },
+                    { name: 'Methotrexate (IT)', dose: 15, unit: 'mg', schedule: 'weekly x 8 (CNS prophylaxis)' }
+                ]
+            },
+            'Hyper-CVAD-A': {
+                name: 'Hyper-CVAD Part A - Adult ALL',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1-D3 q12h x 6 doses' },
+                    { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D4,D11 (max 2mg)' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 50, unit: 'mg/m²', schedule: 'D4 (24h infusion)' },
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1-D4,D11-D14' },
+                    { name: 'Methotrexate (IT)', dose: 12, unit: 'mg', schedule: 'D2 (CNS prophylaxis)' },
+                    { name: 'Cytarabine (IT)', dose: 100, unit: 'mg', schedule: 'D8 (CNS prophylaxis)' }
+                ]
+            },
+            'Hyper-CVAD-B': {
+                name: 'Hyper-CVAD Part B - Adult ALL',
+                cycles: 4,
+                drugs: [
+                    { name: 'Methotrexate', dose: 200, unit: 'mg/m²', schedule: 'D1 (2h infusion), then 800mg/m² over 22h' },
+                    { name: 'Cytarabine', dose: 3000, unit: 'mg/m²', schedule: 'D2,D3 q12h x 4 doses' },
+                    { name: 'Leucovorin', dose: 50, unit: 'mg', schedule: 'q6h x 8 doses (MTX rescue)' },
+                    { name: 'Methotrexate (IT)', dose: 12, unit: 'mg', schedule: 'D2 (CNS prophylaxis)' },
+                    { name: 'Cytarabine (IT)', dose: 100, unit: 'mg', schedule: 'D8 (CNS prophylaxis)' }
+                ]
+            },
+            'CALGB-8811': {
+                name: 'CALGB-8811 - Adult ALL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1,D29 (induction)' },
+                    { name: 'Daunorubicin', dose: 45, unit: 'mg/m²', schedule: 'D1,D2,D3,D29,D30,D31' },
+                    { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1,D8,D15,D22,D29,D36 (max 2mg)' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D21' },
+                    { name: 'L-Asparaginase', dose: 6000, unit: 'units/m²', schedule: 'D5,D8,D11,D15,D18,D22' },
+                    { name: 'Methotrexate (HD)', dose: 1500, unit: 'mg/m²', schedule: 'D11,D25 (consolidation)' }
+                ]
+            },
+            'GMALL-07/2003': {
+                name: 'GMALL-07/2003 - Standard Risk Adult ALL',
+                cycles: 18,
+                drugs: [
+                    { name: 'Prednisolone', dose: 60, unit: 'mg/m²', schedule: 'D1-D28 (induction)' },
+                    { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1,D8,D15,D22 (max 2mg)' },
+                    { name: 'Daunorubicin', dose: 45, unit: 'mg/m²', schedule: 'D1,D8,D15,D22' },
+                    { name: 'L-Asparaginase', dose: 5000, unit: 'units/m²', schedule: 'D12-D33' },
+                    { name: 'Cyclophosphamide', dose: 650, unit: 'mg/m²', schedule: 'D29,D43,D57' },
+                    { name: 'Cytarabine', dose: 75, unit: 'mg/m²', schedule: 'D31-D34,D38-D41,D45-D48,D52-D55' }
+                ]
+            },
+            'Imatinib-ALL': {
+                name: 'Imatinib (BCR-ABL TKI) - Ph+ ALL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Imatinib', dose: 600, unit: 'mg', schedule: 'daily until progression (Ph+ ALL)' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
+                ]
+            },
+            'Dasatinib-ALL': {
+                name: 'Dasatinib (BCR-ABL TKI) - Ph+ ALL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'daily until progression (Ph+ ALL)' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
+                ]
+            },
+            'Nilotinib-ALL': {
+                name: 'Nilotinib (BCR-ABL TKI) - Ph+ ALL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice daily until progression (Ph+ ALL)' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
+                ]
+            },
+            'Ponatinib-ALL': {
+                name: 'Ponatinib (BCR-ABL TKI) - T315I mutant Ph+ ALL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Ponatinib', dose: 45, unit: 'mg', schedule: 'daily (reduce to 30mg based on response)' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
+                ]
+            },
+            'Blinatumomab': {
+                name: 'Blinatumomab (CD19/CD3 BiTE) - Relapsed/Refractory B-ALL',
+                cycles: 2,
+                drugs: [
+                    { name: 'Blinatumomab', dose: 28, unit: 'mcg/day', schedule: 'continuous IV x 28 days (cycle 1: 9mcg/day week 1, 28mcg/day weeks 2-4)' },
+                    { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'premedication (cytokine release syndrome prevention)' }
+                ]
+            },
+            'Inotuzumab': {
+                name: 'Inotuzumab Ozogamicin (CD22-ADC) - Relapsed/Refractory B-ALL',
+                cycles: 4,
+                drugs: [
+                    { name: 'Inotuzumab Ozogamicin', dose: 1.8, unit: 'mg/m²', schedule: 'D1,D8,D15 cycle 1, then D1 q3weeks x 3 cycles (fractionated dosing)' }
+                ]
+            },
+            'Tisagenlecleucel': {
+                name: 'Tisagenlecleucel (CD19 CAR-T) - Relapsed/Refractory B-ALL',
+                cycles: 1,
+                drugs: [
+                    { name: 'Tisagenlecleucel', dose: 0.2, unit: 'million cells/kg', schedule: 'single infusion after lymphodepletion (≤25 years)' },
+                    { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-4 to D-2 (lymphodepletion)' },
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D-4 to D-2 (lymphodepletion)' }
+                ]
+            },
+            'Brexucabtagene-Autoleucel': {
+                name: 'Brexucabtagene Autoleucel (CD19 CAR-T) - Relapsed/Refractory B-ALL',
+                cycles: 1,
+                drugs: [
+                    { name: 'Brexucabtagene Autoleucel', dose: 1, unit: 'million cells/kg', schedule: 'single infusion after lymphodepletion (adults)' },
+                    { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-5 to D-3 (lymphodepletion)' },
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D-5 to D-3 (lymphodepletion)' }
+                ]
+            },
+            'Clofarabine': {
+                name: 'Clofarabine (nucleoside analog) - Relapsed/Refractory ALL',
+                cycles: 6,
+                drugs: [
+                    { name: 'Clofarabine', dose: 52, unit: 'mg/m²', schedule: 'D1-D5 q3-6weeks x 6 cycles' }
+                ]
+            },
+            'Nelarabine': {
+                name: 'Nelarabine (T-cell specific) - T-ALL Relapsed/Refractory',
+                cycles: 3,
+                drugs: [
+                    { name: 'Nelarabine', dose: 1500, unit: 'mg/m²', schedule: 'D1,D3,D5 q3weeks x 3 cycles (T-ALL specific)' }
+                ]
+            },
+            'CNS-Prophylaxis': {
+                name: 'CNS Prophylaxis - Intrathecal Therapy',
+                cycles: 8,
+                drugs: [
+                    { name: 'Methotrexate (IT)', dose: 12, unit: 'mg', schedule: 'weekly x 8 doses' },
+                    { name: 'Cytarabine (IT)', dose: 30, unit: 'mg', schedule: 'weekly x 8 doses' },
+                    { name: 'Hydrocortisone (IT)', dose: 15, unit: 'mg', schedule: 'weekly x 8 doses' }
+                ]
+            },
+            'CNS-Treatment': {
+                name: 'CNS Treatment - Cranial Radiation + IT',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cranial Radiation', dose: 1800, unit: 'cGy', schedule: 'total dose over 2-3 weeks' },
+                    { name: 'Methotrexate (IT)', dose: 15, unit: 'mg', schedule: 'twice weekly x 4 weeks' },
+                    { name: 'Cytarabine (IT)', dose: 50, unit: 'mg', schedule: 'twice weekly x 4 weeks' }
+                ]
+            },
+            'Venetoclax-ALL': {
+                name: 'Venetoclax (BCL-2 inhibitor) - Relapsed/Refractory ALL',
+                cycles: 8,
+                drugs: [
+                    { name: 'Venetoclax', dose: 400, unit: 'mg', schedule: 'daily (ramp-up from 20mg for TLS prevention)' },
+                    { name: 'Navitoclax', dose: 300, unit: 'mg', schedule: 'daily (BCL-2 family inhibitor combination)' }
+                ]
+            },
+            'Mini-Hyper-CVD': {
+                name: 'Mini-Hyper-CVD - Elderly/Unfit ALL',
+                cycles: 8,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 150, unit: 'mg/m²', schedule: 'D1-D3 q12h (reduced dose)' },
+                    { name: 'Vincristine', dose: 1, unit: 'mg', schedule: 'D4,D11 (max 1mg elderly)' },
+                    { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D4 (reduced dose)' },
+                    { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1-D4,D11-D14 (reduced dose)' }
+                ]
+            }
+        },
+        aml: {
+            // Standard Induction Regimens
+            '7+3-Daunorubicin': {
+                name: '7+3 Induction - Cytarabine + Daunorubicin',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion x 7 days', days: 'D1-D7' },
+                    { name: 'Daunorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1-D3 (age <60 years)', days: 'D1-D3' }
+                ]
+            },
+            '7+3-Idarubicin': {
+                name: '7+3 Induction - Cytarabine + Idarubicin',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion x 7 days', days: 'D1-D7' },
+                    { name: 'Idarubicin', dose: 12, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' }
+                ]
+            },
+            '7+3-Doxorubicin': {
+                name: '7+3 Induction - Cytarabine + Doxorubicin',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion x 7 days', days: 'D1-D7' },
+                    { name: 'Doxorubicin', dose: 45, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' }
+                ]
+            },
+            'Gemtuzumab-7+3': {
+                name: 'Cytarabine + Daunorubicin + Gemtuzumab Ozogamicin',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion', days: 'D1-D7' },
+                    { name: 'Daunorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' },
+                    { name: 'Gemtuzumab Ozogamicin', dose: 3, unit: 'mg/m²', schedule: 'D1,D4,D7 (CD33+ AML)', days: 'D1,D4,D7' }
+                ]
+            },
+            'Quizartinib-7+3-Daunorubicin': {
+                name: 'Cytarabine + Daunorubicin + Quizartinib (FLT3-ITD+ AML)',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion', days: 'D1-D7' },
+                    { name: 'Daunorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' },
+                    { name: 'Quizartinib', dose: 40, unit: 'mg', schedule: 'D8-D21 daily (FLT3-ITD+ AML)', days: 'D8-D21' }
+                ]
+            },
+            'Quizartinib-7+3-Idarubicin': {
+                name: 'Cytarabine + Idarubicin + Quizartinib (FLT3-ITD+ AML)',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion', days: 'D1-D7' },
+                    { name: 'Idarubicin', dose: 12, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' },
+                    { name: 'Quizartinib', dose: 40, unit: 'mg', schedule: 'D8-D21 daily (FLT3-ITD+ AML)', days: 'D8-D21' }
+                ]
+            },
+            'Midostaurin-7+3': {
+                name: 'Cytarabine + Daunorubicin + Midostaurin (FLT3+ AML)',
+                cycles: 1,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D7 continuous infusion', days: 'D1-D7' },
+                    { name: 'Daunorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' },
+                    { name: 'Midostaurin', dose: 50, unit: 'mg', schedule: 'D8-D21 twice daily (FLT3+ AML)', days: 'D8-D21' }
+                ]
+            },
+            'Clofarabine-AraC': {
+                name: 'Cytarabine + Clofarabine',
+                cycles: 1,
+                drugs: [
+                    { name: 'Clofarabine', dose: 40, unit: 'mg/m²', schedule: 'D1-D5', days: 'D1-D5' },
+                    { name: 'Cytarabine (Ara-C)', dose: 20, unit: 'mg/m²', schedule: 'D1-D5', days: 'D1-D5' }
+                ]
+            },
+            
+            // APML (Acute Promyelocytic Leukemia) Regimens
+            'AIDA': {
+                name: 'AIDA Protocol - Tretinoin + Idarubicin (APML)',
+                cycles: 2,
+                drugs: [
+                    { name: 'Tretinoin (ATRA)', dose: 45, unit: 'mg/m²', schedule: 'D1-D90 divided twice daily (APML)', days: 'D1-D90' },
+                    { name: 'Idarubicin', dose: 12, unit: 'mg/m²', schedule: 'D2,D4,D6,D8 (induction)', days: 'D2,D4,D6,D8' }
+                ]
+            },
+            'Tretinoin-Daunorubicin-AraC': {
+                name: 'Tretinoin + Daunorubicin + Cytarabine (APML)',
+                cycles: 1,
+                drugs: [
+                    { name: 'Tretinoin (ATRA)', dose: 45, unit: 'mg/m²', schedule: 'D1-D90 divided twice daily (APML)', days: 'D1-D90' },
+                    { name: 'Daunorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1-D3', days: 'D1-D3' },
+                    { name: 'Cytarabine (Ara-C)', dose: 200, unit: 'mg/m²', schedule: 'D3-D9 continuous infusion', days: 'D3-D9' }
+                ]
+            },
+            'Tretinoin-Arsenic': {
+                name: 'Tretinoin + Arsenic Trioxide (APML)',
+                cycles: 1,
+                drugs: [
+                    { name: 'Tretinoin (ATRA)', dose: 45, unit: 'mg/m²', schedule: 'daily until CR, then maintenance (APML)', days: 'Daily' },
+                    { name: 'Arsenic Trioxide', dose: 0.15, unit: 'mg/kg/day', schedule: 'D1-D60 (5 days/week) until CR (APML)', days: 'D1-D60' }
+                ]
+            },
+            
+            // Consolidation Regimens
+            'Consolidation-AraC-Daunorubicin': {
+                name: 'Consolidation - Cytarabine + Daunorubicin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 continuous infusion q4weeks x 4', days: 'D1-D5' },
+                    { name: 'Daunorubicin', dose: 45, unit: 'mg/m²', schedule: 'D1,D2 q4weeks x 4', days: 'D1,D2' }
+                ]
+            },
+            'Consolidation-AraC-Idarubicin': {
+                name: 'Consolidation - Cytarabine + Idarubicin',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 continuous infusion q4weeks x 4', days: 'D1-D5' },
+                    { name: 'Idarubicin', dose: 12, unit: 'mg/m²', schedule: 'D1,D2 q4weeks x 4', days: 'D1,D2' }
+                ]
+            },
+            'HiDAC': {
+                name: 'High-Dose Cytarabine (HiDAC) - Consolidation',
+                cycles: 4,
+                drugs: [
+                    { name: 'Cytarabine (Ara-C)', dose: 3000, unit: 'mg/m²', schedule: 'D1,D3,D5 (q12h x 6 doses) q4weeks x 4', days: 'D1,D3,D5' }
+                ]
+            },
+            'Liposomal-Daunorubicin-AraC': {
+                name: 'Liposomal Daunorubicin + Cytarabine (CPX-351)',
+                cycles: 2,
+                drugs: [
+                    { name: 'CPX-351 (Daunorubicin:Cytarabine 1:5)', dose: 44, unit: 'units/m²', schedule: 'D1,D3,D5 (induction), D1,D3 (consolidation)', days: 'D1,D3,D5' }
+                ]
+            },
+            
+            // Hypomethylating Agent Combinations
+            'Venetoclax-Azacitidine': {
+                name: 'Venetoclax + Azacitidine',
+                cycles: 12,
+                drugs: [
+                    { name: 'Azacitidine', dose: 75, unit: 'mg/m²', schedule: 'D1-D7 q4weeks', days: 'D1-D7' },
+                    { name: 'Venetoclax', dose: 400, unit: 'mg', schedule: 'D1-D28 daily (ramp-up from 100mg for TLS prevention)', days: 'D1-D28' }
+                ]
+            },
+            'Venetoclax-Decitabine': {
+                name: 'Venetoclax + Decitabine',
+                cycles: 12,
+                drugs: [
+                    { name: 'Decitabine', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 q4weeks', days: 'D1-D5' },
+                    { name: 'Venetoclax', dose: 400, unit: 'mg', schedule: 'D1-D28 daily (ramp-up from 100mg for TLS prevention)', days: 'D1-D28' }
+                ]
+            },
+            'Glasdegib-AraC': {
+                name: 'Glasdegib + Low-Dose Cytarabine',
+                cycles: 12,
+                drugs: [
+                    { name: 'Glasdegib', dose: 100, unit: 'mg', schedule: 'D1-D28 daily q4weeks', days: 'D1-D28' },
+                    { name: 'Cytarabine (Ara-C)', dose: 20, unit: 'mg/m²', schedule: 'D1-D10 subcutaneous twice daily q4weeks', days: 'D1-D10' }
+                ]
+            },
+            'Ivosidenib-Azacitidine': {
+                name: 'Ivosidenib + Azacitidine (IDH1 mutant AML)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'daily continuous (IDH1 mutant AML)', days: 'Daily' },
+                    { name: 'Azacitidine', dose: 75, unit: 'mg/m²', schedule: 'D1-D7 q4weeks', days: 'D1-D7' }
+                ]
+            },
+            
+            // Salvage Regimens
+            'FLAG': {
+                name: 'FLAG - Fludarabine + Cytarabine + G-CSF',
+                cycles: 2,
+                drugs: [
+                    { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D2-D6', days: 'D2-D6' },
+                    { name: 'Cytarabine (Ara-C)', dose: 2000, unit: 'mg/m²', schedule: 'D2-D6 (2h after fludarabine)', days: 'D2-D6' },
+                    { name: 'G-CSF (Filgrastim)', dose: 5, unit: 'mcg/kg', schedule: 'D1-D6 subcutaneous', days: 'D1-D6' }
+                ]
+            },
+            'Mitoxantrone-Etoposide': {
+                name: 'Mitoxantrone + Etoposide (Salvage)',
+                cycles: 2,
+                drugs: [
+                    { name: 'Mitoxantrone', dose: 8, unit: 'mg/m²', schedule: 'D1-D5', days: 'D1-D5' },
+                    { name: 'Etoposide', dose: 80, unit: 'mg/m²', schedule: 'D1-D5', days: 'D1-D5' }
+                ]
+            },
+            
+            // Single Agent Therapies
+            'Cladribine': {
+                name: 'Cladribine (2-CdA)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cladribine', dose: 5, unit: 'mg/m²', schedule: 'D1-D5 continuous infusion q4-6weeks x 6', days: 'D1-D5' }
+                ]
+            },
+            'Clofarabine': {
+                name: 'Clofarabine',
+                cycles: 6,
+                drugs: [
+                    { name: 'Clofarabine', dose: 40, unit: 'mg/m²', schedule: 'D1-D5 q3-6weeks x 6', days: 'D1-D5' }
+                ]
+            },
+            'Tretinoin-APML': {
+                name: 'Tretinoin (ATRA) - APML Maintenance',
+                cycles: 24,
+                drugs: [
+                    { name: 'Tretinoin (ATRA)', dose: 45, unit: 'mg/m²', schedule: 'D1-D15 every 3 months x 2 years (APML maintenance)', days: 'D1-D15' }
+                ]
+            },
+            'Arsenic-Trioxide-APML': {
+                name: 'Arsenic Trioxide - APML',
+                cycles: 5,
+                drugs: [
+                    { name: 'Arsenic Trioxide', dose: 0.15, unit: 'mg/kg/day', schedule: 'D1-D5 weekly x 25 weeks (APML)', days: 'D1-D5' }
+                ]
+            },
+            'Azacitidine': {
+                name: 'Azacitidine',
+                cycles: 12,
+                drugs: [
+                    { name: 'Azacitidine', dose: 75, unit: 'mg/m²', schedule: 'D1-D7 q4weeks x 12', days: 'D1-D7' }
+                ]
+            },
+            'Decitabine': {
+                name: 'Decitabine',
+                cycles: 12,
+                drugs: [
+                    { name: 'Decitabine', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 q4weeks x 12', days: 'D1-D5' }
+                ]
+            },
+            'Sorafenib': {
+                name: 'Sorafenib',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily continuous', days: 'Daily' }
+                ]
+            },
+            'Gilteritinib': {
+                name: 'Gilteritinib (FLT3 mutant AML)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Gilteritinib', dose: 120, unit: 'mg', schedule: 'daily continuous (FLT3 mutant AML)', days: 'Daily' }
+                ]
+            },
+            'Ivosidenib': {
+                name: 'Ivosidenib (IDH1 mutant AML)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'daily continuous (IDH1 mutant AML)', days: 'Daily' }
+                ]
+            },
+            'Enasidenib': {
+                name: 'Enasidenib (IDH2 mutant AML)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Enasidenib', dose: 100, unit: 'mg', schedule: 'daily continuous (IDH2 mutant AML)', days: 'Daily' }
+                ]
+            },
+            'Olutasidenib': {
+                name: 'Olutasidenib (IDH1 mutant AML)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Olutasidenib', dose: 150, unit: 'mg', schedule: 'twice daily continuous (IDH1 mutant AML)', days: 'Daily' }
+                ]
+            },
+            
+            // Additional NCCN-Listed Regimens
+            'Maintenance-6-Mercaptopurine': {
+                name: 'Maintenance - 6-Mercaptopurine + Methotrexate',
+                cycles: 24,
+                drugs: [
+                    { name: '6-Mercaptopurine', dose: 60, unit: 'mg/m²', schedule: 'daily for 2 years', days: 'Daily' },
+                    { name: 'Methotrexate', dose: 20, unit: 'mg/m²', schedule: 'weekly for 2 years', days: 'Weekly' }
+                ]
+            },
+            'GO-Monotherapy': {
+                name: 'Gemtuzumab Ozogamicin (GO) - Monotherapy',
+                cycles: 3,
+                drugs: [
+                    { name: 'Gemtuzumab Ozogamicin', dose: 9, unit: 'mg/m²', schedule: 'D1,D15 q4weeks x 3 (CD33+ AML, elderly)', days: 'D1,D15' }
+                ]
+            },
+            'CPX-351': {
+                name: 'CPX-351 (Daunorubicin/Cytarabine Liposome)',
+                cycles: 2,
+                drugs: [
+                    { name: 'CPX-351', dose: 44, unit: 'units/m²', schedule: 'D1,D3,D5 (induction), then D1,D3 (consolidation)', days: 'D1,D3,D5' }
+                ]
+            }
         }
     },
     lung: {
