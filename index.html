@@ -22,6 +22,8 @@
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .header {
@@ -361,11 +363,14 @@
 
         /* Splash Screen Styles */
         .splash-content {
-            min-height: 70vh;
+            min-height: 80vh;
             background: url('splash-bg.png') center center / cover no-repeat;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
 
@@ -394,18 +399,31 @@
         }
 
         @media (max-width: 480px) {
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+            
             .form-row {
                 flex-direction: column;
             }
             
             .container {
                 padding: 10px;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                min-width: 0;
             }
 
             /* Compact form sections on mobile */
             .form-section {
                 padding: 15px;
                 margin-bottom: 15px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .form-section h2 {
@@ -437,6 +455,8 @@
             input, select {
                 padding: 10px;
                 font-size: 16px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             /* Larger sex dropdown on mobile */
@@ -481,6 +501,12 @@
             .progress-bar {
                 height: 4px;
                 margin-bottom: 15px;
+            }
+
+            .splash-content {
+                min-height: 70vh;
+                margin: 10px 0;
+                border-radius: 10px;
             }
 
             .splash-content h1 {
@@ -738,10 +764,19 @@
     <script>
         // Splash screen logic
         document.addEventListener('DOMContentLoaded', function() {
+            // Ensure splash screen is visible on all devices
+            const splashScreen = document.getElementById('splashScreen');
+            const page1 = document.getElementById('page1');
+            
+            // Force show splash screen initially
+            splashScreen.style.display = 'block';
+            splashScreen.classList.add('active');
+            page1.classList.remove('active');
+            
             // Auto-transition from splash screen to page 1 after 2 seconds
             setTimeout(function() {
-                document.getElementById('splashScreen').classList.remove('active');
-                document.getElementById('page1').classList.add('active');
+                splashScreen.classList.remove('active');
+                page1.classList.add('active');
                 // Update progress bar to show page 1
                 document.getElementById('progressFill').style.width = '33%';
             }, 2000);
