@@ -9096,7 +9096,7 @@ document.getElementById('startOver').addEventListener('click', function() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Chemo Protocol Calculator loaded successfully');
+    console.log('OncoCalcRx loaded successfully');
     buildProtocolIndex(); // Build search index
     // Note: showPage(1) removed to allow splash screen to display first
 });
