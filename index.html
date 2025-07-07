@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OncoCalcRx</title>
     <style>
         * {
@@ -16,12 +16,6 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
-            min-height: 100vh;
-            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-        }
-
-        html {
-            height: 100%;
         }
 
         .container {
@@ -52,22 +46,22 @@
 
         .form-section {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-section h2 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 20px;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         label {
@@ -168,7 +162,7 @@
         .nav-buttons {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .btn {
@@ -224,7 +218,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .page-number {
@@ -243,9 +237,9 @@
         /* Search functionality styles */
         .search-section {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             border: 2px dashed #e9ecef;
         }
 
@@ -253,7 +247,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .search-icon {
@@ -307,7 +301,7 @@
 
         .divider {
             text-align: center;
-            margin: 15px 0;
+            margin: 25px 0;
             position: relative;
             color: #7f8c8d;
             font-weight: 600;
@@ -332,7 +326,7 @@
         }
 
         .browse-section {
-            padding: 15px;
+            padding: 20px;
             background: #fff;
             border-radius: 8px;
             border: 2px solid #e9ecef;
@@ -342,7 +336,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .selected-protocol-info {
@@ -406,33 +400,22 @@
             
             .container {
                 padding: 10px;
-                padding-bottom: max(10px, env(safe-area-inset-bottom));
-            }
-            
-            body {
-                padding: env(safe-area-inset-top) env(safe-area-inset-right) max(10px, env(safe-area-inset-bottom)) env(safe-area-inset-left);
-                position: fixed;
-                overflow: hidden;
-            }
-            
-            .container {
-                height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
             }
 
             /* Compact form sections on mobile */
             .form-section {
                 padding: 15px;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
 
             .form-section h2 {
                 font-size: 18px;
-                margin-bottom: 10px;
-                padding-bottom: 6px;
+                margin-bottom: 15px;
+                padding-bottom: 8px;
             }
 
             .page-title {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
 
             .page-number {
@@ -443,7 +426,7 @@
 
             /* Compact form inputs */
             .form-group {
-                margin-bottom: 12px;
+                margin-bottom: 15px;
             }
 
             label {
@@ -476,12 +459,12 @@
 
             /* Compact search and browse sections */
             .search-section, .browse-section {
-                padding: 12px;
-                margin-bottom: 10px;
+                padding: 15px;
+                margin-bottom: 15px;
             }
 
             .search-header, .browse-header {
-                margin-bottom: 8px;
+                margin-bottom: 12px;
             }
 
             .search-header h3, .browse-header h3 {
@@ -490,7 +473,7 @@
 
             /* Compact divider */
             .divider {
-                margin: 10px 0;
+                margin: 15px 0;
                 font-size: 14px;
             }
 
@@ -557,7 +540,6 @@
                 margin-bottom: 10px;
                 font-size: 14px;
             }
-
         }
     </style>
 </head>
