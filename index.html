@@ -421,6 +421,49 @@
             .splash-content p {
                 font-size: 18px;
             }
+
+            /* Mobile responsive table */
+            .responsive-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .responsive-table table {
+                min-width: 100%;
+                font-size: 12px;
+            }
+
+            .responsive-table th,
+            .responsive-table td {
+                padding: 8px 6px !important;
+                font-size: 11px !important;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+
+            .responsive-table th {
+                font-size: 12px !important;
+                font-weight: 600;
+            }
+
+            /* Adjust column widths for mobile */
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1) {
+                width: 35%;
+                min-width: 100px;
+            }
+
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2) {
+                width: 30%;
+                min-width: 80px;
+            }
+
+            .responsive-table th:nth-child(3),
+            .responsive-table td:nth-child(3) {
+                width: 35%;
+                min-width: 100px;
+            }
         }
     </style>
 </head>

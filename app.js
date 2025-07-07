@@ -8810,38 +8810,40 @@ function displayResults(results, patientData) {
     resultsContent.innerHTML = `
         <div style="margin-bottom: 20px;">
             <h3 style="color: #2c3e50; margin-bottom: 15px;">Drug Calculations:</h3>
-            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-                <thead>
-                    <tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
-                        <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Drug Name</th>
-                        <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Standard Dose</th>
-                        <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Calculated Dose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${results.drugs.map(drug => `
-                        <tr style="border-bottom: 1px solid #dee2e6;">
-                            <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}${drug.days ? ` (${drug.days})` : ''}</td>
-                            <td style="padding: 12px; border: 1px solid #dee2e6;">
-                                ${drug.hasLoadingDose ? 
-                                    `<div style="font-size: 13px;">
-                                        <div style="color: #007bff;">🔄 Loading: ${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
-                                        <div style="color: #28a745;">📅 Maintenance: ${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
-                                    </div>` 
-                                    : `${drug.originalDose}${drug.originalUnit === 'AUC' && drug.originalDose.toString().includes('AUC') ? '' : ' ' + drug.originalUnit}`}
-                            </td>
-                            <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e8f5e8; font-weight: 600;">
-                                ${drug.hasLoadingDose ? 
-                                    `<div style="font-size: 13px;">
-                                        <div style="color: #007bff;">🔄 ${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
-                                        <div style="color: #28a745;">📅 ${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
-                                    </div>` 
-                                    : `${drug.calculatedDose} ${drug.doseUnit}`}
-                            </td>
+            <div class="responsive-table">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Drug Name</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Standard Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Calculated Dose</th>
                         </tr>
-                    `).join('')}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        ${results.drugs.map(drug => `
+                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}${drug.days ? ` (${drug.days})` : ''}</td>
+                                <td style="padding: 12px; border: 1px solid #dee2e6;">
+                                    ${drug.hasLoadingDose ? 
+                                        `<div style="font-size: 13px;">
+                                            <div style="color: #007bff;">🔄 Loading: ${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
+                                            <div style="color: #28a745;">📅 Maintenance: ${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
+                                        </div>` 
+                                        : `${drug.originalDose}${drug.originalUnit === 'AUC' && drug.originalDose.toString().includes('AUC') ? '' : ' ' + drug.originalUnit}`}
+                                </td>
+                                <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e8f5e8; font-weight: 600;">
+                                    ${drug.hasLoadingDose ? 
+                                        `<div style="font-size: 13px;">
+                                            <div style="color: #007bff;">🔄 ${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
+                                            <div style="color: #28a745;">📅 ${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
+                                        </div>` 
+                                        : `${drug.calculatedDose} ${drug.doseUnit}`}
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
         </div>
         
         <div class="result-item" style="margin-bottom: 20px;">
