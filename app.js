@@ -8808,27 +8808,7 @@ function displayResults(results, patientData) {
     const resultsContent = document.getElementById('resultsContent');
     
     resultsContent.innerHTML = `
-        <div class="result-item">
-            <strong>Patient:</strong> ${patientData.age} year old ${patientData.sex}, ${patientData.weight} kg, ${patientData.height} cm
-        </div>
-        <div class="result-item">
-            <strong>BSA (Mosteller):</strong> ${results.bsa} m²
-        </div>
-        <div class="result-item">
-            <strong>Creatinine Clearance:</strong> ${results.crCl} mL/min
-        </div>
-        <div class="result-item">
-            <strong>Protocol:</strong> ${results.protocolName}
-        </div>
-        <div class="result-item">
-            <strong>Schedule:</strong> ${results.drugs[0].schedule.includes('q3weeks') ? 'Every 3 weeks' : results.drugs[0].schedule.includes('q2weeks') ? 'Every 2 weeks' : 'Per protocol'}
-        </div>
-        ${results.hasCarboplatin && results.selectedAuc ? `
-        <div class="result-item">
-            <strong>Chosen AUC value:</strong> AUC ${results.selectedAuc}
-        </div>
-        ` : ''}
-        <div style="margin-top: 20px;">
+        <div style="margin-bottom: 20px;">
             <h3 style="color: #2c3e50; margin-bottom: 15px;">Drug Calculations:</h3>
             <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
                 <thead>
@@ -8863,7 +8843,15 @@ function displayResults(results, patientData) {
                 </tbody>
             </table>
         </div>
-        <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
+        
+        <div class="result-item" style="margin-bottom: 20px;">
+            <strong>Patient Summary</strong><br>
+            ${patientData.age} year old ${patientData.sex}, ${patientData.weight} kg, ${patientData.height} cm<br>
+            BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
+            Protocol: ${results.protocolName} | Schedule: ${results.drugs[0].schedule.includes('q3weeks') ? 'Every 3 weeks' : results.drugs[0].schedule.includes('q2weeks') ? 'Every 2 weeks' : 'Per protocol'}${results.hasCarboplatin && results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}
+        </div>
+        
+        <div style="margin-top: 20px; padding: 8px 12px; background-color: #fff3cd; border-left: 3px solid #ffc107; border-radius: 3px; font-size: 12px;">
             <strong>⚠️ Important:</strong> Please verify all calculations and check for contraindications before administration. This tool is for reference only.
         </div>
     `;

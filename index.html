@@ -620,13 +620,13 @@
     <script>
         // Splash screen logic
         document.addEventListener('DOMContentLoaded', function() {
-            // Auto-transition from splash screen to page 1 after 1 second
+            // Auto-transition from splash screen to page 1 after 2 seconds
             setTimeout(function() {
                 document.getElementById('splashScreen').classList.remove('active');
                 document.getElementById('page1').classList.add('active');
                 // Update progress bar to show page 1
                 document.getElementById('progressFill').style.width = '33%';
-            }, 1000);
+            }, 2000);
         });
     </script>
     <script src="app.js"></script>
