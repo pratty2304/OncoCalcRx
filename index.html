@@ -16,14 +16,16 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 10px 20px;
-            width: 100%;
-            box-sizing: border-box;
+            padding: 0 20px 20px 20px;
+            position: relative;
+            min-height: 100vh;
         }
 
         .header {
@@ -48,22 +50,23 @@
 
         .form-section {
             background: white;
-            padding: 20px;
+            padding: 5px 20px 20px 20px !important;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 0 !important;
         }
 
         .form-section h2 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 20px;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         label {
@@ -154,6 +157,8 @@
             display: none;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
         }
 
         .page.active {
@@ -164,7 +169,7 @@
         .nav-buttons {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .btn {
@@ -205,8 +210,18 @@
             background: #ecf0f1;
             height: 6px;
             border-radius: 3px;
-            margin-bottom: 10px;
+            margin-bottom: 0 !important;
             overflow: hidden;
+        }
+
+        /* SIMPLE FIX - DIRECT POSITIONING */
+        .page.active {
+            position: absolute;
+            top: 26px;
+            left: 20px;
+            right: 20px;
+            margin: 0;
+            padding: 0;
         }
 
         .progress-fill {
@@ -221,6 +236,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 15px;
+            margin-top: 0;
         }
 
         .page-number {
@@ -239,9 +255,9 @@
         /* Search functionality styles */
         .search-section {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             border: 2px dashed #e9ecef;
         }
 
@@ -249,7 +265,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .search-icon {
@@ -303,7 +319,7 @@
 
         .divider {
             text-align: center;
-            margin: 15px 0;
+            margin: 25px 0;
             position: relative;
             color: #7f8c8d;
             font-weight: 600;
@@ -328,7 +344,7 @@
         }
 
         .browse-section {
-            padding: 15px;
+            padding: 20px;
             background: #fff;
             border-radius: 8px;
             border: 2px solid #e9ecef;
@@ -338,7 +354,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .selected-protocol-info {
@@ -399,41 +415,28 @@
         }
 
         @media (max-width: 480px) {
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                overflow-x: hidden;
-            }
-            
             .form-row {
                 flex-direction: column;
             }
             
             .container {
-                padding: 5px 10px;
-                width: 100%;
-                max-width: 100%;
-                margin: 0;
-                min-width: 0;
+                padding: 10px;
             }
 
             /* Compact form sections on mobile */
             .form-section {
                 padding: 15px;
-                margin-bottom: 10px;
-                width: 100%;
-                box-sizing: border-box;
+                margin-bottom: 15px;
             }
 
             .form-section h2 {
                 font-size: 18px;
-                margin-bottom: 10px;
-                padding-bottom: 6px;
+                margin-bottom: 15px;
+                padding-bottom: 8px;
             }
 
             .page-title {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
 
             .page-number {
@@ -444,7 +447,7 @@
 
             /* Compact form inputs */
             .form-group {
-                margin-bottom: 12px;
+                margin-bottom: 15px;
             }
 
             label {
@@ -455,8 +458,6 @@
             input, select {
                 padding: 10px;
                 font-size: 16px;
-                width: 100%;
-                box-sizing: border-box;
             }
 
             /* Larger sex dropdown on mobile */
@@ -479,12 +480,12 @@
 
             /* Compact search and browse sections */
             .search-section, .browse-section {
-                padding: 12px;
-                margin-bottom: 10px;
+                padding: 15px;
+                margin-bottom: 15px;
             }
 
             .search-header, .browse-header {
-                margin-bottom: 8px;
+                margin-bottom: 12px;
             }
 
             .search-header h3, .browse-header h3 {
@@ -493,20 +494,14 @@
 
             /* Compact divider */
             .divider {
-                margin: 10px 0;
+                margin: 15px 0;
                 font-size: 14px;
             }
 
             /* Compact progress bar */
             .progress-bar {
                 height: 4px;
-                margin-bottom: 5px;
-            }
-
-            .splash-content {
-                min-height: 70vh;
-                margin: 10px 0;
-                border-radius: 10px;
+                margin-bottom: 15px;
             }
 
             .splash-content h1 {
@@ -567,6 +562,7 @@
                 font-size: 14px;
             }
         }
+        
     </style>
 </head>
 <body>
@@ -575,14 +571,11 @@
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
         </div>
-
         <!-- Splash Screen -->
         <div id="splashScreen" class="page active">
             <div class="splash-content">
             </div>
         </div>
-
-
         <!-- Page 1: Patient Information -->
         <div id="page1" class="page">
             <div class="form-section">
