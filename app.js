@@ -8507,6 +8507,9 @@ function calculateDoses(formData) {
     // Check if protocol has carboplatin
     const hasCarboplatin = protocolData.drugs.some(drug => drug.name.toLowerCase().includes('carboplatin'));
     
+    // Get appropriate reference
+    const reference = getReference(cancerType, cancerSubtype);
+    
     return {
         bsa: bsa.toFixed(2),
         crCl: crCl.toFixed(1),
@@ -8514,7 +8517,8 @@ function calculateDoses(formData) {
         cycles: protocolData.cycles,
         drugs: calculatedDrugs,
         hasCarboplatin: hasCarboplatin,
-        selectedAuc: auc ? parseFloat(auc) : null
+        selectedAuc: auc ? parseFloat(auc) : null,
+        reference: reference
     };
 }
 
@@ -8803,6 +8807,82 @@ function checkForCarboplatinSearch(protocol) {
     }
 }
 
+// Get reference for cancer type
+function getReference(cancerType, cancerSubtype) {
+    // Skip referencing for stem cell transplant and specific leukemia subtypes
+    if (cancerType === 'stem_cell_transplant') {
+        return null; // Will be added later
+    }
+    
+    if (cancerType === 'leukemia' && ['all', 'aml', 'cml', 'cll'].includes(cancerSubtype)) {
+        return null; // Will be added later
+    }
+    
+    // NCCN references for all other cancer types
+    const references = {
+        'adrenocortical': 'NCCN Neuroendocrine and Adrenal Tumors Guidelines',
+        'anal': 'NCCN Anal Carcinoma Guidelines',
+        'basal_cell': 'NCCN Basal Cell Skin Cancer Guidelines',
+        'biliary': 'NCCN Hepatobiliary Cancers Guidelines',
+        'bladder': 'NCCN Bladder Cancer Guidelines',
+        'brain': 'NCCN Central Nervous System Cancers Guidelines',
+        'breast': 'NCCN Breast Cancer Guidelines',
+        'carcinoma_unknown_primary': 'NCCN Occult Primary Guidelines',
+        'cervical': 'NCCN Cervical Cancer Guidelines',
+        'colorectal': 'NCCN Colon Cancer Guidelines',
+        'endometrial': 'NCCN Uterine Neoplasms Guidelines',
+        'esophageal': 'NCCN Esophageal and Esophagogastric Junction Cancers Guidelines',
+        'gastric': 'NCCN Gastric Cancer Guidelines',
+        'gist': 'NCCN Gastrointestinal Stromal Tumors Guidelines',
+        'head_neck': 'NCCN Head and Neck Cancers Guidelines',
+        'hepatocellular': 'NCCN Hepatocellular Carcinoma Guidelines',
+        'lung': 'NCCN Non-Small Cell Lung Cancer Guidelines',
+        'lymphoma': 'NCCN Hodgkin Lymphoma Guidelines',
+        'melanoma': 'NCCN Melanoma: Cutaneous Guidelines',
+        'merkel_cell': 'NCCN Merkel Cell Carcinoma Guidelines',
+        'mesothelioma': 'NCCN Pleural Mesothelioma Guidelines',
+        'multiple_myeloma': 'NCCN Multiple Myeloma Guidelines',
+        'neuroendocrine': 'NCCN Neuroendocrine and Adrenal Tumors Guidelines',
+        'osteosarcoma': 'NCCN Bone Cancer Guidelines',
+        'ovarian': 'NCCN Ovarian Cancer Guidelines',
+        'pancreatic': 'NCCN Pancreatic Adenocarcinoma Guidelines',
+        'penile': 'NCCN Penile Cancer Guidelines',
+        'prostate': 'NCCN Prostate Cancer Guidelines',
+        'renal': 'NCCN Kidney Cancer Guidelines',
+        'sarcoma': 'NCCN Soft Tissue Sarcoma Guidelines',
+        'testicular': 'NCCN Testicular Cancer Guidelines',
+        'thymoma': 'NCCN Thymomas and Thymic Carcinomas Guidelines',
+        'thyroid': 'NCCN Thyroid Carcinoma Guidelines',
+        'tumor_agnostic': 'NCCN Guidelines for Cancer of Unknown Primary',
+        'vulvar_vaginal': 'NCCN Vulvar Cancer Guidelines'
+    };
+    
+    // Handle special cases for leukemia (only HCL gets reference now)
+    if (cancerType === 'leukemia' && cancerSubtype === 'hcl') {
+        return 'NCCN Hairy Cell Leukemia Guidelines';
+    }
+    
+    // Handle lymphoma subtypes
+    if (cancerType === 'lymphoma') {
+        if (cancerSubtype === 'hodgkins') {
+            return 'NCCN Hodgkin Lymphoma Guidelines';
+        } else if (cancerSubtype === 'non_hodgkins') {
+            return 'NCCN B-Cell Lymphomas Guidelines';
+        }
+    }
+    
+    // Handle lung cancer subtypes
+    if (cancerType === 'lung') {
+        if (cancerSubtype === 'nsclc') {
+            return 'NCCN Non-Small Cell Lung Cancer Guidelines';
+        } else if (cancerSubtype === 'sclc') {
+            return 'NCCN Small Cell Lung Cancer Guidelines';
+        }
+    }
+    
+    return references[cancerType] || 'NCCN Clinical Practice Guidelines';
+}
+
 // Display results
 function displayResults(results, patientData) {
     const resultsContent = document.getElementById('resultsContent');
@@ -8845,6 +8925,12 @@ function displayResults(results, patientData) {
                 </table>
             </div>
         </div>
+        
+        ${results.reference ? `
+        <div style="margin-bottom: 20px; padding: 8px 12px; background-color: #f8f9fa; border-left: 3px solid #6c757d; border-radius: 3px; font-size: 12px;">
+            <strong>📚 Reference:</strong> ${results.reference}
+        </div>
+        ` : ''}
         
         <div class="result-item" style="margin-bottom: 20px;">
             <strong>Patient Summary</strong><br>
