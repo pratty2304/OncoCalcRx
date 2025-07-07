@@ -6419,6 +6419,377 @@ const protocolDatabase = {
             ]
         }
     },
+    leukemia: {
+        cml: {
+            'Imatinib-First-line': {
+                name: 'Imatinib (BCR-ABL TKI) - First-line Chronic Phase',
+                cycles: 12,
+                drugs: [
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily until progression (600-800mg if inadequate response)' }
+                ]
+            },
+            'Dasatinib-First-line': {
+                name: 'Dasatinib (BCR-ABL TKI) - First-line Chronic Phase',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Nilotinib-First-line': {
+                name: 'Nilotinib (BCR-ABL TKI) - First-line Chronic Phase',
+                cycles: 12,
+                drugs: [
+                    { name: 'Nilotinib', dose: 300, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Bosutinib-First-line': {
+                name: 'Bosutinib (BCR-ABL TKI) - First-line Chronic Phase',
+                cycles: 12,
+                drugs: [
+                    { name: 'Bosutinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Dasatinib-Second-line': {
+                name: 'Dasatinib (BCR-ABL TKI) - Imatinib-resistant/intolerant',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dasatinib', dose: 140, unit: 'mg', schedule: 'daily (100mg if chronic phase, 140mg if accelerated)' }
+                ]
+            },
+            'Nilotinib-Second-line': {
+                name: 'Nilotinib (BCR-ABL TKI) - Imatinib-resistant/intolerant',
+                cycles: 12,
+                drugs: [
+                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Bosutinib-Second-line': {
+                name: 'Bosutinib (BCR-ABL TKI) - Second-line',
+                cycles: 12,
+                drugs: [
+                    { name: 'Bosutinib', dose: 500, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Ponatinib': {
+                name: 'Ponatinib (BCR-ABL TKI) - T315I mutation or Multiple TKI-resistant',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ponatinib', dose: 45, unit: 'mg', schedule: 'daily (reduce to 30mg or 15mg based on response)' }
+                ]
+            },
+            'Asciminib': {
+                name: 'Asciminib (STAMP inhibitor) - T315I mutation CML',
+                cycles: 12,
+                drugs: [
+                    { name: 'Asciminib', dose: 200, unit: 'mg', schedule: 'twice daily (T315I) or 40mg twice daily (other mutations)' }
+                ]
+            },
+            'Busulfan': {
+                name: 'Busulfan - Historical/Blast Crisis',
+                cycles: 4,
+                drugs: [
+                    { name: 'Busulfan', dose: 4, unit: 'mg', schedule: 'daily (adjust based on response)' }
+                ]
+            },
+            'Hydroxyurea': {
+                name: 'Hydroxyurea - Cytoreduction/Bridge Therapy',
+                cycles: 6,
+                drugs: [
+                    { name: 'Hydroxyurea', dose: 1000, unit: 'mg', schedule: 'twice daily (titrate 500-3000mg daily)' }
+                ]
+            },
+            'Interferon-alpha-2a': {
+                name: 'Interferon alpha-2a - Pre-TKI Era/Special Circumstances',
+                cycles: 12,
+                drugs: [
+                    { name: 'Interferon alpha-2a', dose: 5000000, unit: 'units', schedule: 'daily subcutaneous injection' }
+                ]
+            },
+            'Omacetaxine': {
+                name: 'Omacetaxine (Protein synthesis inhibitor) - T315I resistant CML',
+                cycles: 6,
+                drugs: [
+                    { name: 'Omacetaxine', dose: 1.25, unit: 'mg/m²', schedule: 'subcutaneous twice daily x 14 days q4weeks' }
+                ]
+            },
+            'Interferon-Cytarabine': {
+                name: 'Interferon alpha + Cytarabine - Pre-TKI Era',
+                cycles: 12,
+                drugs: [
+                    { name: 'Interferon alpha-2a', dose: 5000000, unit: 'units', schedule: 'daily subcutaneous' },
+                    { name: 'Cytarabine', dose: 20, unit: 'mg/m²', schedule: 'daily subcutaneous x 10 days monthly' }
+                ]
+            }
+        },
+        cll: {
+            'FCR': {
+                name: 'Fludarabine + Cyclophosphamide + Rituximab (FCR) - First-line Fit Patients',
+                cycles: 6,
+                drugs: [
+                    { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D1-D3 q4weeks x 6 cycles' },
+                    { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D3 q4weeks x 6 cycles' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q4weeks x 5 cycles' }
+                ]
+            },
+            'PCR': {
+                name: 'Pentostatin + Cyclophosphamide + Rituximab (PCR) - First-line Alternative',
+                cycles: 6,
+                drugs: [
+                    { name: 'Pentostatin', dose: 2, unit: 'mg/m²', schedule: 'D1 q3weeks x 6 cycles' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1 q3weeks x 6 cycles' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q3weeks x 5 cycles' }
+                ]
+            },
+            'BR': {
+                name: 'Bendamustine + Rituximab (BR) - First-line',
+                cycles: 6,
+                drugs: [
+                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', schedule: 'D1-D2 q4weeks x 6 cycles' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q4weeks x 5 cycles' }
+                ]
+            },
+            'Obinutuzumab-Chlorambucil': {
+                name: 'Obinutuzumab + Chlorambucil - First-line Elderly/Unfit',
+                cycles: 6,
+                drugs: [
+                    { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'D1,D8,D15 cycle 1, then D1 q4weeks x 5 cycles' },
+                    { name: 'Chlorambucil', dose: 0.5, unit: 'mg/kg', schedule: 'D1,D15 q4weeks x 6 cycles' }
+                ]
+            },
+            'Obinutuzumab-Venetoclax': {
+                name: 'Obinutuzumab + Venetoclax - First-line',
+                cycles: 12,
+                drugs: [
+                    { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'D1,D8,D15 cycle 1, then D1 q4weeks x 5 cycles' },
+                    { name: 'Venetoclax', dose: 400, unit: 'mg', schedule: 'daily x 12 cycles (ramp-up from 20mg)' }
+                ]
+            },
+            'Acalabrutinib-Obinutuzumab': {
+                name: 'Acalabrutinib + Obinutuzumab (BTK inhibitor) - First-line',
+                cycles: 6,
+                drugs: [
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' },
+                    { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'D1,D8,D15 cycle 1, then D1 q4weeks x 5 cycles' }
+                ]
+            },
+            'Ibrutinib-Rituximab': {
+                name: 'Ibrutinib + Rituximab (BTK inhibitor) - First-line',
+                cycles: 6,
+                drugs: [
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'daily until progression' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q4weeks x 5 cycles' }
+                ]
+            },
+            'Venetoclax-Rituximab': {
+                name: 'Venetoclax + Rituximab (BCL-2 inhibitor) - Relapsed/Refractory',
+                cycles: 12,
+                drugs: [
+                    { name: 'Venetoclax', dose: 400, unit: 'mg', schedule: 'daily x 24 cycles (ramp-up from 20mg)' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q4weeks x 5 cycles' }
+                ]
+            },
+            'Idelalisib-Rituximab': {
+                name: 'Idelalisib + Rituximab (PI3K inhibitor) - Relapsed/Refractory',
+                cycles: 8,
+                drugs: [
+                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'twice daily until progression' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q2weeks x 7 cycles' }
+                ]
+            },
+            'CVP': {
+                name: 'Cyclophosphamide + Vincristine + Prednisone (CVP) - Historical',
+                cycles: 8,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1 q3weeks x 8 cycles' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1 q3weeks x 8 cycles (max 2mg)' },
+                    { name: 'Prednisone', dose: 40, unit: 'mg/m²', schedule: 'D1-D5 q3weeks x 8 cycles' }
+                ]
+            },
+            'CF': {
+                name: 'Cyclophosphamide + Fludarabine (CF) - Historical',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D3 q4weeks x 6 cycles' },
+                    { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D1-D3 q4weeks x 6 cycles' }
+                ]
+            },
+            'FP': {
+                name: 'Fludarabine + Prednisone (FP) - Historical',
+                cycles: 6,
+                drugs: [
+                    { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D1-D5 q4weeks x 6 cycles' },
+                    { name: 'Prednisone', dose: 30, unit: 'mg/m²', schedule: 'D1-D5 q4weeks x 6 cycles' }
+                ]
+            },
+            'CP': {
+                name: 'Chlorambucil + Prednisone (CP) - Historical',
+                cycles: 12,
+                drugs: [
+                    { name: 'Chlorambucil', dose: 0.7, unit: 'mg/kg', schedule: 'D1-D14 q4weeks x 12 cycles' },
+                    { name: 'Prednisone', dose: 80, unit: 'mg', schedule: 'D1-D7 q4weeks x 12 cycles' }
+                ]
+            },
+            'FR': {
+                name: 'Fludarabine + Rituximab (FR) - Relapsed/Refractory',
+                cycles: 6,
+                drugs: [
+                    { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D1-D5 q4weeks x 6 cycles' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² q4weeks x 5 cycles' }
+                ]
+            },
+            'Alemtuzumab': {
+                name: 'Alemtuzumab (CD52 mAb) - Relapsed/Refractory p53 mutated',
+                cycles: 3,
+                drugs: [
+                    { name: 'Alemtuzumab', dose: 30, unit: 'mg', schedule: '3x weekly x 12 weeks (escalate from 3mg → 10mg → 30mg)' }
+                ]
+            },
+            'Chlorambucil': {
+                name: 'Chlorambucil (single agent) - Elderly/Unfit',
+                cycles: 12,
+                drugs: [
+                    { name: 'Chlorambucil', dose: 0.5, unit: 'mg/kg', schedule: 'D1,D15 q4weeks x 12 cycles' }
+                ]
+            },
+            'Cladribine': {
+                name: 'Cladribine (single agent) - Historical',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cladribine', dose: 0.1, unit: 'mg/kg', schedule: 'D1-D7 q4weeks x 6 cycles' }
+                ]
+            },
+            'Fludarabine': {
+                name: 'Fludarabine (single agent) - Historical',
+                cycles: 6,
+                drugs: [
+                    { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D1-D5 q4weeks x 6 cycles' }
+                ]
+            },
+            'Rituximab': {
+                name: 'Rituximab (single agent) - Maintenance',
+                cycles: 8,
+                drugs: [
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 4 weeks, then q3months x 4 cycles' }
+                ]
+            },
+            'Ofatumumab': {
+                name: 'Ofatumumab (CD20 mAb) - Fludarabine-refractory',
+                cycles: 8,
+                drugs: [
+                    { name: 'Ofatumumab', dose: 2000, unit: 'mg', schedule: 'weekly x 8 weeks, then monthly x 4 cycles' }
+                ]
+            },
+            'Pentostatin': {
+                name: 'Pentostatin (single agent) - Historical',
+                cycles: 6,
+                drugs: [
+                    { name: 'Pentostatin', dose: 4, unit: 'mg/m²', schedule: 'q2weeks x 6 cycles' }
+                ]
+            },
+            'Bendamustine': {
+                name: 'Bendamustine (single agent) - Relapsed/Refractory',
+                cycles: 6,
+                drugs: [
+                    { name: 'Bendamustine', dose: 100, unit: 'mg/m²', schedule: 'D1-D2 q4weeks x 6 cycles' }
+                ]
+            },
+            'Lenalidomide': {
+                name: 'Lenalidomide (immunomodulator) - Relapsed/Refractory',
+                cycles: 8,
+                drugs: [
+                    { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'D1-D21 q4weeks x 8 cycles' }
+                ]
+            },
+            'Ibrutinib': {
+                name: 'Ibrutinib (BTK inhibitor) - Relapsed/Refractory',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Acalabrutinib': {
+                name: 'Acalabrutinib (BTK inhibitor) - Relapsed/Refractory',
+                cycles: 12,
+                drugs: [
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Zanubrutinib': {
+                name: 'Zanubrutinib (BTK inhibitor) - Relapsed/Refractory',
+                cycles: 12,
+                drugs: [
+                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Venetoclax': {
+                name: 'Venetoclax (BCL-2 inhibitor) - 17p deletion CLL',
+                cycles: 24,
+                drugs: [
+                    { name: 'Venetoclax', dose: 400, unit: 'mg', schedule: 'daily x 24 cycles (ramp-up from 20mg)' }
+                ]
+            },
+            'Duvelisib': {
+                name: 'Duvelisib (PI3K inhibitor) - Relapsed/Refractory',
+                cycles: 8,
+                drugs: [
+                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            }
+        },
+        hcl: {
+            'Cladribine-Rituximab': {
+                name: 'Cladribine + Rituximab - First-line Hairy Cell Leukemia',
+                cycles: 2,
+                drugs: [
+                    { name: 'Cladribine', dose: 0.15, unit: 'mg/kg', schedule: 'D1-D5 x 2 cycles (8 weeks apart)' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 8 weeks' }
+                ]
+            },
+            'Moxetumomab-pasudotox': {
+                name: 'Moxetumomab pasudotox-tdfk (CD22-directed immunotoxin) - Relapsed/Refractory',
+                cycles: 6,
+                drugs: [
+                    { name: 'Moxetumomab pasudotox-tdfk', dose: 40, unit: 'mcg/kg', schedule: 'D1,D3,D5 q4weeks x 6 cycles' }
+                ]
+            },
+            'Cladribine': {
+                name: 'Cladribine (single agent) - First-line Standard',
+                cycles: 2,
+                drugs: [
+                    { name: 'Cladribine', dose: 0.15, unit: 'mg/kg', schedule: 'D1-D5 x 2 cycles (8 weeks apart)' }
+                ]
+            },
+            'Pentostatin': {
+                name: 'Pentostatin (single agent) - First-line Alternative',
+                cycles: 6,
+                drugs: [
+                    { name: 'Pentostatin', dose: 4, unit: 'mg/m²', schedule: 'q2weeks until CR, then 2 additional cycles' }
+                ]
+            },
+            'Interferon-alpha-2a': {
+                name: 'Interferon alpha-2a - Historical/Special Circumstances',
+                cycles: 12,
+                drugs: [
+                    { name: 'Interferon alpha-2a', dose: 2000000, unit: 'units/m²', schedule: 'daily subcutaneous x 12 cycles' }
+                ]
+            },
+            'Rituximab': {
+                name: 'Rituximab (single agent) - Minimal Residual Disease',
+                cycles: 8,
+                drugs: [
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 8 weeks' }
+                ]
+            },
+            'BRAF-MEK-Inhibitors': {
+                name: 'Vemurafenib + Cobimetinib - BRAF V600E mutated HCL',
+                cycles: 8,
+                drugs: [
+                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice daily until remission' },
+                    { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily x 21 days, then 7 days off' }
+                ]
+            }
+        }
+    },
     lung: {
         nsclc: {
             // First-line combinations with immunotherapy
@@ -7286,6 +7657,30 @@ function populateSubtypes(cancerType) {
         // Reset protocol dropdown
         protocolSelect.innerHTML = '<option value="">Select lymphoma type first</option>';
         protocolSelect.disabled = true;
+    } else if (cancerType === 'leukemia') {
+        subtypeGroup.style.display = 'block';
+        subtypeSelect.disabled = false;
+        subtypeSelect.required = true;
+        subtypeSelect.innerHTML = '<option value="">Select leukemia type</option>';
+        
+        const subtypes = {
+            'cml': 'Chronic Myeloid Leukemia (CML)',
+            'cll': 'Chronic Lymphocytic Leukemia (CLL)',
+            'all': 'Acute Lymphoblastic Leukemia (ALL)',
+            'aml': 'Acute Myeloid Leukemia (AML)',
+            'hcl': 'Hairy Cell Leukemia (HCL)'
+        };
+        
+        Object.keys(subtypes).forEach(key => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = subtypes[key];
+            subtypeSelect.appendChild(option);
+        });
+        
+        // Reset protocol dropdown
+        protocolSelect.innerHTML = '<option value="">Select leukemia type first</option>';
+        protocolSelect.disabled = true;
     } else {
         subtypeGroup.style.display = 'none';
         subtypeSelect.disabled = true;
@@ -7303,9 +7698,9 @@ function populateProtocols(cancerType, subtype) {
     if (cancerType && protocolDatabase[cancerType]) {
         let protocols;
         
-        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma') && subtype) {
+        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') && subtype) {
             protocols = protocolDatabase[cancerType][subtype];
-        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma') {
+        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia') {
             protocols = protocolDatabase[cancerType];
         }
         
@@ -7333,9 +7728,9 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
     if (protocolKey && cancerType && protocolDatabase[cancerType]) {
         let protocolData;
         
-        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma') && subtype && protocolDatabase[cancerType][subtype]) {
+        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') && subtype && protocolDatabase[cancerType][subtype]) {
             protocolData = protocolDatabase[cancerType][subtype][protocolKey];
-        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma') {
+        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia') {
             protocolData = protocolDatabase[cancerType][protocolKey];
         }
         
@@ -7370,7 +7765,7 @@ function calculateDoses(formData) {
     const crCl = calculateCrCl(parseInt(age), parseFloat(weight), parseFloat(creatinine), sex);
     
     let protocolData;
-    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma') && cancerSubtype) {
+    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') && cancerSubtype) {
         protocolData = protocolDatabase[cancerType][cancerSubtype][protocol];
     } else {
         protocolData = protocolDatabase[cancerType][protocol];
@@ -7492,14 +7887,15 @@ function validatePage2() {
         return false;
     }
     
-    // Check if breast cancer, lung cancer, or lymphoma requires subtype
-    if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma') {
+    // Check if breast cancer, lung cancer, lymphoma, or leukemia requires subtype
+    if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') {
         const subtype = document.getElementById('cancerSubtype').value;
         if (!subtype) {
             let cancerTypeName = 'cancer';
             if (cancerType === 'breast') cancerTypeName = 'breast cancer';
             else if (cancerType === 'lung') cancerTypeName = 'lung cancer';
             else if (cancerType === 'lymphoma') cancerTypeName = 'lymphoma';
+            else if (cancerType === 'leukemia') cancerTypeName = 'leukemia';
             alert(`Please select a ${cancerTypeName} subtype.`);
             return false;
         }
@@ -7530,8 +7926,8 @@ function buildProtocolIndex() {
     Object.keys(protocolDatabase).forEach(cancerType => {
         const cancerName = getCancerDisplayName(cancerType);
         
-        if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma') {
-            // Handle breast cancer, lung cancer, and lymphoma subtypes
+        if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') {
+            // Handle breast cancer, lung cancer, lymphoma, and leukemia subtypes
             Object.keys(protocolDatabase[cancerType]).forEach(subtype => {
                 const subtypeName = getSubtypeDisplayName(subtype);
                 Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
@@ -7696,7 +8092,7 @@ function clearSearchSection() {
 function checkForCarboplatinSearch(protocol) {
     let protocolData;
     
-    if ((protocol.cancerType === 'breast' || protocol.cancerType === 'lung' || protocol.cancerType === 'lymphoma') && protocol.subtype) {
+    if ((protocol.cancerType === 'breast' || protocol.cancerType === 'lung' || protocol.cancerType === 'lymphoma' || protocol.cancerType === 'leukemia') && protocol.subtype) {
         protocolData = protocolDatabase[protocol.cancerType][protocol.subtype][protocol.key];
     } else {
         protocolData = protocolDatabase[protocol.cancerType][protocol.key];
