@@ -9022,5 +9022,5 @@ document.getElementById('startOver').addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Chemo Protocol Calculator loaded successfully');
     buildProtocolIndex(); // Build search index
-    showPage(1);
+    // Note: showPage(1) removed to allow splash screen to display first
 });
