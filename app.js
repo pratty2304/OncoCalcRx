@@ -8413,6 +8413,9 @@ function populateProtocols(cancerType, subtype) {
 function checkForCarboplatin(protocolKey, cancerType, subtype) {
     const aucGroup = document.getElementById('aucGroup');
     const aucSelect = document.getElementById('auc');
+    const carboplatinParams = document.getElementById('carboplatinParams');
+    const ageInput = document.getElementById('age');
+    const creatinineInput = document.getElementById('creatinine');
     
     if (protocolKey && cancerType && protocolDatabase[cancerType]) {
         let protocolData;
@@ -8427,22 +8430,40 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
             const hasCarboplatin = protocolData.drugs.some(drug => drug.name.toLowerCase().includes('carboplatin'));
             
             if (hasCarboplatin) {
+                carboplatinParams.style.display = 'block';
                 aucGroup.style.display = 'block';
                 aucSelect.required = true;
+                ageInput.required = true;
+                creatinineInput.required = true;
             } else {
+                carboplatinParams.style.display = 'none';
                 aucGroup.style.display = 'none';
                 aucSelect.required = false;
                 aucSelect.value = '';
+                ageInput.required = false;
+                ageInput.value = '';
+                creatinineInput.required = false;
+                creatinineInput.value = '';
             }
         } else {
+            carboplatinParams.style.display = 'none';
             aucGroup.style.display = 'none';
             aucSelect.required = false;
             aucSelect.value = '';
+            ageInput.required = false;
+            ageInput.value = '';
+            creatinineInput.required = false;
+            creatinineInput.value = '';
         }
     } else {
+        carboplatinParams.style.display = 'none';
         aucGroup.style.display = 'none';
         aucSelect.required = false;
         aucSelect.value = '';
+        ageInput.required = false;
+        ageInput.value = '';
+        creatinineInput.required = false;
+        creatinineInput.value = '';
     }
 }
 
@@ -8451,7 +8472,12 @@ function calculateDoses(formData) {
     const { height, weight, age, sex, creatinine, cancerType, cancerSubtype, protocol, auc } = formData;
     
     const bsa = calculateBSA(parseFloat(height), parseFloat(weight));
-    const crCl = calculateCrCl(parseInt(age), parseFloat(weight), parseFloat(creatinine), sex);
+    
+    // Only calculate crCl for carboplatin-containing regimens
+    let crCl = null;
+    if (age && creatinine) {
+        crCl = calculateCrCl(parseInt(age), parseFloat(weight), parseFloat(creatinine), sex);
+    }
     
     let protocolData;
     if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') && cancerSubtype) {
@@ -8512,7 +8538,7 @@ function calculateDoses(formData) {
     
     return {
         bsa: bsa.toFixed(2),
-        crCl: crCl.toFixed(1),
+        crCl: crCl ? crCl.toFixed(1) : null,
         protocolName: protocolData.name,
         cycles: protocolData.cycles,
         drugs: calculatedDrugs,
@@ -8544,15 +8570,13 @@ function showPage(pageNumber) {
 function validatePage1() {
     const height = document.getElementById('height').value;
     const weight = document.getElementById('weight').value;
-    const age = document.getElementById('age').value;
     const sexMale = document.getElementById('sexMale');
     const sexFemale = document.getElementById('sexFemale');
-    const creatinine = document.getElementById('creatinine').value;
     
     // Check if at least one sex checkbox is checked
     const sexValid = sexMale && sexFemale && (sexMale.checked || sexFemale.checked);
     
-    return height && weight && age && sexValid && creatinine;
+    return height && weight && sexValid;
 }
 
 function updatePatientInfoCard() {
@@ -8568,12 +8592,23 @@ function validatePage2() {
     // Check if protocol is selected via search
     if (selectedSearchProtocol) {
         console.log('Using search protocol'); // Debug log
-        // Check if carboplatin protocol requires AUC
+        // Check if carboplatin protocol requires AUC, age, and creatinine
         const aucGroup = document.getElementById('aucGroup');
         if (aucGroup.style.display !== 'none') {
             const auc = document.getElementById('auc').value;
+            const age = document.getElementById('age').value;
+            const creatinine = document.getElementById('creatinine').value;
+            
             if (!auc) {
                 alert('Please select an AUC value for this carboplatin protocol.');
+                return false;
+            }
+            if (!age) {
+                alert('Please enter the patient age for carboplatin dosing calculation.');
+                return false;
+            }
+            if (!creatinine) {
+                alert('Please enter the patient creatinine level for carboplatin dosing calculation.');
                 return false;
             }
         }
@@ -8605,12 +8640,23 @@ function validatePage2() {
         }
     }
     
-    // Check if carboplatin protocol requires AUC
+    // Check if carboplatin protocol requires AUC, age, and creatinine
     const aucGroup = document.getElementById('aucGroup');
     if (aucGroup.style.display !== 'none') {
         const auc = document.getElementById('auc').value;
+        const age = document.getElementById('age').value;
+        const creatinine = document.getElementById('creatinine').value;
+        
         if (!auc) {
             alert('Please select an AUC value for this carboplatin protocol.');
+            return false;
+        }
+        if (!age) {
+            alert('Please enter the patient age for carboplatin dosing calculation.');
+            return false;
+        }
+        if (!creatinine) {
+            alert('Please enter the patient creatinine level for carboplatin dosing calculation.');
             return false;
         }
     }
@@ -8806,14 +8852,25 @@ function checkForCarboplatinSearch(protocol) {
         const hasCarboplatin = protocolData.drugs.some(drug => drug.name.toLowerCase().includes('carboplatin'));
         const aucGroup = document.getElementById('aucGroup');
         const aucSelect = document.getElementById('auc');
+        const carboplatinParams = document.getElementById('carboplatinParams');
+        const ageInput = document.getElementById('age');
+        const creatinineInput = document.getElementById('creatinine');
         
         if (hasCarboplatin) {
+            carboplatinParams.style.display = 'block';
             aucGroup.style.display = 'block';
             aucSelect.required = true;
+            ageInput.required = true;
+            creatinineInput.required = true;
         } else {
+            carboplatinParams.style.display = 'none';
             aucGroup.style.display = 'none';
             aucSelect.required = false;
             aucSelect.value = '';
+            ageInput.required = false;
+            ageInput.value = '';
+            creatinineInput.required = false;
+            creatinineInput.value = '';
         }
     }
 }
@@ -8945,9 +9002,14 @@ function displayResults(results, patientData) {
         
         <div class="result-item" style="margin-bottom: 20px;">
             <strong>Patient Summary</strong><br>
-            ${patientData.age} year old ${patientData.sex}, ${patientData.weight} kg, ${patientData.height} cm<br>
-            BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
-            Protocol: ${results.protocolName} | Schedule: ${results.drugs[0].schedule.includes('q3weeks') ? 'Every 3 weeks' : results.drugs[0].schedule.includes('q2weeks') ? 'Every 2 weeks' : 'Per protocol'}${results.hasCarboplatin && results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}
+            ${results.hasCarboplatin ? 
+                `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
+                BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
+                Protocol: ${results.protocolName}${results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}` :
+                `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
+                BSA: ${results.bsa} m²<br>
+                Protocol: ${results.protocolName}`
+            }
         </div>
         
         <div style="margin-top: 20px; padding: 8px 12px; background-color: #fff3cd; border-left: 3px solid #ffc107; border-radius: 3px; font-size: 12px;">
@@ -9096,6 +9158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset UI state
         document.getElementById('subtypeGroup').style.display = 'none';
         document.getElementById('aucGroup').style.display = 'none';
+        document.getElementById('carboplatinParams').style.display = 'none';
         document.getElementById('protocol').disabled = true;
         document.getElementById('cancerSubtype').disabled = true;
         
@@ -9103,8 +9166,8 @@ document.addEventListener('DOMContentLoaded', function() {
         showPage(1);
     });
     
-    // Add event listeners for patient information card updates
-    const patientFields = ['height', 'weight', 'age', 'creatinine'];
+    // Add event listeners for patient information card updates (page 1 fields only)
+    const patientFields = ['height', 'weight'];
     patientFields.forEach(fieldId => {
         const field = document.getElementById(fieldId);
         if (field) {
@@ -9122,6 +9185,61 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sexFemale) {
         sexFemale.addEventListener('change', updatePatientInfoCard);
     }
+    
+    // Add missing event listeners for browse dropdowns
+    document.getElementById('cancerType').addEventListener('change', function() {
+        const cancerType = this.value;
+        const protocolSelect = document.getElementById('protocol');
+        const subtypeGroup = document.getElementById('subtypeGroup');
+        const cancerSubtypeSelect = document.getElementById('cancerSubtype');
+        
+        if (cancerType) {
+            // Show/hide subtype group for certain cancer types
+            if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia') {
+                subtypeGroup.style.display = 'block';
+                cancerSubtypeSelect.disabled = false;
+                protocolSelect.disabled = true;
+            } else {
+                subtypeGroup.style.display = 'none';
+                cancerSubtypeSelect.disabled = true;
+                protocolSelect.disabled = false;
+                // Load protocols for this cancer type
+                loadProtocols(cancerType);
+            }
+        } else {
+            subtypeGroup.style.display = 'none';
+            cancerSubtypeSelect.disabled = true;
+            protocolSelect.disabled = true;
+        }
+        
+        // Reset carboplatin fields
+        checkForCarboplatin('', cancerType, '');
+    });
+    
+    document.getElementById('cancerSubtype').addEventListener('change', function() {
+        const cancerType = document.getElementById('cancerType').value;
+        const subtype = this.value;
+        const protocolSelect = document.getElementById('protocol');
+        
+        if (subtype && cancerType) {
+            protocolSelect.disabled = false;
+            loadProtocols(cancerType, subtype);
+        } else {
+            protocolSelect.disabled = true;
+        }
+        
+        // Reset carboplatin fields
+        checkForCarboplatin('', cancerType, subtype);
+    });
+    
+    document.getElementById('protocol').addEventListener('change', function() {
+        const protocolKey = this.value;
+        const cancerType = document.getElementById('cancerType').value;
+        const subtype = document.getElementById('cancerSubtype').value;
+        
+        // Check for carboplatin and show/hide fields accordingly
+        checkForCarboplatin(protocolKey, cancerType, subtype);
+    });
     
     // Note: showPage(1) removed to allow splash screen to display first
 });
