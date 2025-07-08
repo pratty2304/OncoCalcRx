@@ -214,7 +214,7 @@ const protocolDatabase = {
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 12 cycles' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 12 cycles' },
+                    { name: 'Carboplatin', dose: 'AUC 1.5-2', unit: 'AUC', schedule: 'weekly x 12 cycles' },
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 4 cycles' }
                 ]
             },
@@ -8545,10 +8545,21 @@ function validatePage1() {
     const height = document.getElementById('height').value;
     const weight = document.getElementById('weight').value;
     const age = document.getElementById('age').value;
-    const sex = document.getElementById('sex').value;
+    const sexMale = document.getElementById('sexMale');
+    const sexFemale = document.getElementById('sexFemale');
     const creatinine = document.getElementById('creatinine').value;
     
-    return height && weight && age && sex && creatinine;
+    // Check if at least one sex checkbox is checked
+    const sexValid = sexMale && sexFemale && (sexMale.checked || sexFemale.checked);
+    
+    return height && weight && age && sexValid && creatinine;
+}
+
+function updatePatientInfoCard() {
+    // Patient info card elements were removed during cleanup
+    // This function is no longer needed but kept for compatibility
+    console.log('updatePatientInfoCard called - patient info card elements not present');
+    return;
 }
 
 function validatePage2() {
@@ -9007,31 +9018,35 @@ document.getElementById('protocolSearch').addEventListener('focus', function() {
     }
 });
 
-// Page navigation event listeners
-document.getElementById('nextToPage2').addEventListener('click', function() {
-    if (validatePage1()) {
-        showPage(2);
-    } else {
-        alert('Please fill in all patient information fields.');
-    }
-});
+// Event listeners moved to DOMContentLoaded
 
-document.getElementById('backToPage1').addEventListener('click', function() {
-    showPage(1);
-});
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('OncoCalcRx loaded successfully');
+    buildProtocolIndex(); // Build search index
+    
+    // Page navigation event listeners
+    document.getElementById('nextToPage2').addEventListener('click', function() {
+        if (validatePage1()) {
+            updatePatientInfoCard(); // Ensure patient card is updated
+            showPage(2);
+        } else {
+            alert('Please fill in all patient information fields.');
+        }
+    });
 
-document.getElementById('calculateDoses').addEventListener('click', function() {
-    if (validatePage2()) {
-        let formData;
-        
-        // Collect form data based on selection method
+    document.getElementById('backToPage1').addEventListener('click', function() {
+        showPage(1);
+    });
+
+    document.getElementById('calculateDoses').addEventListener('click', function() {
         if (selectedSearchProtocol) {
             // Using search selection
             formData = {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
                 age: document.getElementById('age').value,
-                sex: document.getElementById('sex').value,
+                sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
                 creatinine: document.getElementById('creatinine').value,
                 cancerType: selectedSearchProtocol.cancerType,
                 cancerSubtype: selectedSearchProtocol.subtype,
@@ -9044,7 +9059,7 @@ document.getElementById('calculateDoses').addEventListener('click', function() {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
                 age: document.getElementById('age').value,
-                sex: document.getElementById('sex').value,
+                sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
                 creatinine: document.getElementById('creatinine').value,
                 cancerType: document.getElementById('cancerType').value,
                 cancerSubtype: document.getElementById('cancerSubtype').value,
@@ -9053,50 +9068,60 @@ document.getElementById('calculateDoses').addEventListener('click', function() {
             };
         }
         
-        try {
-            const results = calculateDoses(formData);
-            displayResults(results, formData);
-        } catch (error) {
-            alert('Error calculating doses. Please check your inputs and try again.');
-            console.error('Calculation error:', error);
+        const results = calculateDoses(formData);
+        displayResults(results, formData);
+        showPage(3);
+    });
+
+    document.getElementById('backToPage2').addEventListener('click', function() {
+        showPage(2);
+    });
+
+    document.getElementById('startOver').addEventListener('click', function() {
+        // Reset all form fields
+        document.getElementById('height').value = '';
+        document.getElementById('weight').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('sexMale').checked = false;
+        document.getElementById('sexFemale').checked = false;
+        document.getElementById('creatinine').value = '';
+        document.getElementById('cancerType').value = '';
+        document.getElementById('cancerSubtype').value = '';
+        document.getElementById('protocol').value = '';
+        document.getElementById('auc').value = '';
+        
+        // Reset search
+        clearSearchSection();
+        
+        // Reset UI state
+        document.getElementById('subtypeGroup').style.display = 'none';
+        document.getElementById('aucGroup').style.display = 'none';
+        document.getElementById('protocol').disabled = true;
+        document.getElementById('cancerSubtype').disabled = true;
+        
+        // Go back to first page
+        showPage(1);
+    });
+    
+    // Add event listeners for patient information card updates
+    const patientFields = ['height', 'weight', 'age', 'creatinine'];
+    patientFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+            field.addEventListener('input', updatePatientInfoCard);
+            field.addEventListener('change', updatePatientInfoCard);
         }
-    } else {
-        alert('Please complete all required selections.');
+    });
+    
+    // Add event listeners for sex checkboxes
+    const sexMale = document.getElementById('sexMale');
+    const sexFemale = document.getElementById('sexFemale');
+    if (sexMale) {
+        sexMale.addEventListener('change', updatePatientInfoCard);
     }
-});
-
-document.getElementById('backToPage2').addEventListener('click', function() {
-    showPage(2);
-});
-
-document.getElementById('startOver').addEventListener('click', function() {
-    // Reset form
-    document.getElementById('height').value = '';
-    document.getElementById('weight').value = '';
-    document.getElementById('age').value = '';
-    document.getElementById('sex').value = '';
-    document.getElementById('creatinine').value = '';
-    document.getElementById('cancerType').value = '';
-    document.getElementById('cancerSubtype').value = '';
-    document.getElementById('protocol').value = '';
-    document.getElementById('auc').value = '';
+    if (sexFemale) {
+        sexFemale.addEventListener('change', updatePatientInfoCard);
+    }
     
-    // Reset search
-    clearSearchSection();
-    
-    // Reset UI state
-    document.getElementById('subtypeGroup').style.display = 'none';
-    document.getElementById('aucGroup').style.display = 'none';
-    document.getElementById('protocol').disabled = true;
-    document.getElementById('cancerSubtype').disabled = true;
-    
-    // Go back to first page
-    showPage(1);
-});
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('OncoCalcRx loaded successfully');
-    buildProtocolIndex(); // Build search index
     // Note: showPage(1) removed to allow splash screen to display first
 });
