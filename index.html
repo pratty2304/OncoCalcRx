@@ -50,11 +50,11 @@
 
         .form-section {
             background: white;
-            padding: 5px 20px 20px 20px !important;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px 30px 30px 30px !important;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             margin-bottom: 20px;
-            margin-top: 0 !important;
+            margin-top: 20px !important;
         }
 
         .form-section h2 {
@@ -217,11 +217,26 @@
         /* SIMPLE FIX - DIRECT POSITIONING */
         .page.active {
             position: absolute;
-            top: 26px;
+            top: 50px;
             left: 20px;
             right: 20px;
             margin: 0;
             padding: 0;
+        }
+
+        /* Better vertical centering for page 1 */
+        #page1.page.active {
+            top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: calc(100vh - 120px);
+        }
+
+        #page1 .form-section {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 40px;
         }
 
         .progress-fill {
@@ -425,8 +440,19 @@
 
             /* Compact form sections on mobile */
             .form-section {
-                padding: 15px;
+                padding: 20px !important;
                 margin-bottom: 15px;
+                margin-top: 15px !important;
+            }
+
+            /* Adjust page 1 positioning on mobile */
+            #page1.page.active {
+                top: 60px;
+                min-height: calc(100vh - 100px);
+            }
+
+            #page1 .form-section {
+                margin-top: 20px;
             }
 
             .form-section h2 {
