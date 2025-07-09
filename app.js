@@ -5275,21 +5275,21 @@ const protocolDatabase = {
             name: 'Cemiplimab (PD-1 inhibitor) - Advanced/Metastatic',
             cycles: 8,
             drugs: [
-                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'q3weeks x 8 cycles' }
+                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
             ]
         },
         'Pembrolizumab': {
             name: 'Pembrolizumab (PD-1 inhibitor) - Advanced/Metastatic',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'q3weeks x 8 cycles' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 3 weeks' }
             ]
         },
         'Nivolumab': {
             name: 'Nivolumab (PD-1 inhibitor) - Advanced/Metastatic',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'q2weeks x 8 cycles, then 480mg q4weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
             ]
         }
     },
