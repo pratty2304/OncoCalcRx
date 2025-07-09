@@ -712,7 +712,10 @@
                         <h3 style="margin: 0; color: #2c3e50;">Quick Regimen Search</h3>
                     </div>
                     <div class="search-input">
-                        <input type="text" id="protocolSearch" placeholder="Search regimens (e.g., FOLFOX, AC-T, Pembrolizumab...)" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                        <div style="position: relative;">
+                            <input type="text" id="protocolSearch" placeholder="Search regimens (e.g., FOLFOX, AC-T, Pembrolizumab...)" style="width: 100%; padding: 12px 40px 12px 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                            <button type="button" id="clearSearch" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 18px; color: #999; cursor: pointer; width: 24px; height: 24px; display: none; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s;" onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.color='#666'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#999'">×</button>
+                        </div>
                         <div class="search-suggestions" id="searchSuggestions"></div>
                     </div>
                     <div class="selected-protocol-info" id="selectedProtocolInfo">
@@ -879,6 +882,39 @@
                 if (this.checked) {
                     sexMaleCheckbox.checked = false;
                 }
+            });
+
+            // Clear search functionality
+            const protocolSearchInput = document.getElementById('protocolSearch');
+            const clearSearchButton = document.getElementById('clearSearch');
+            
+            // Show/hide clear button based on input content
+            function toggleClearButton() {
+                if (protocolSearchInput.value.trim() !== '') {
+                    clearSearchButton.style.display = 'flex';
+                } else {
+                    clearSearchButton.style.display = 'none';
+                }
+            }
+            
+            // Listen for input changes to show/hide clear button
+            protocolSearchInput.addEventListener('input', toggleClearButton);
+            protocolSearchInput.addEventListener('focus', toggleClearButton);
+            
+            // Clear search when X button is clicked
+            clearSearchButton.addEventListener('click', function() {
+                protocolSearchInput.value = '';
+                protocolSearchInput.focus();
+                clearSearchButton.style.display = 'none';
+                
+                // Hide search suggestions and selected protocol info
+                const searchSuggestions = document.getElementById('searchSuggestions');
+                const selectedProtocolInfo = document.getElementById('selectedProtocolInfo');
+                if (searchSuggestions) searchSuggestions.style.display = 'none';
+                if (selectedProtocolInfo) selectedProtocolInfo.style.display = 'none';
+                
+                // Trigger input event to reset any search filters
+                protocolSearchInput.dispatchEvent(new Event('input', { bubbles: true }));
             });
         });
     </script>
