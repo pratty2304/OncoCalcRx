@@ -5121,18 +5121,18 @@ const protocolDatabase = {
             name: 'Etoposide + Doxorubicin + Cisplatin + Mitotane (EDP-M) - First-line',
             cycles: 6,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 q4weeks x 6 cycles' },
-                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1 q4weeks x 6 cycles' },
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1 q4weeks x 6 cycles' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (titrate to 6-10g daily)' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 every 28 days' },
+                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1, D8 every 28 days' },
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, D9 every 28 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (target 14-20 mcg/ml)' }
             ]
         },
         'Streptozocin-Mitotane': {
             name: 'Streptozocin + Mitotane - Second-line',
             cycles: 6,
             drugs: [
-                { name: 'Streptozocin', dose: 2000, unit: 'mg/m²', schedule: 'D1-D5 q6weeks x 6 cycles' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (titrate to 6-10g daily)' }
+                { name: 'Streptozocin', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5 cycle 1, then 2000 mg/m² D1 subsequent cycles every 21 days' },
+                { name: 'Mitotane', dose: 1000, unit: 'mg', schedule: 'daily (titrate to 1000-4000 mg daily, target >14 mcg/ml)' }
             ]
         },
         'Mitotane': {
@@ -5146,17 +5146,59 @@ const protocolDatabase = {
             name: 'Gemcitabine + Capecitabine - Second-line',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1,D8 q3weeks x 6 cycles' },
-                { name: 'Capecitabine', dose: 750, unit: 'mg/m²', schedule: 'twice daily D1-D14 q3weeks x 6 cycles' }
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Capecitabine', dose: 1500, unit: 'mg', schedule: 'daily every 21 days' }
             ]
         },
         'Temozolomide': {
-            name: 'Temozolomide (single agent) - Second-line',
+            name: 'Temozolomide - Second-line',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-D5 q4weeks x 6 cycles' }
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' }
             ]
-        }
+        },
+        'EDP-M-Carboplatin': {
+            name: 'EDP-M with Carboplatin - First-line alternative',
+            cycles: 6,
+            drugs: [
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 every 28 days' },
+                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1, D8 every 28 days' },
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, D9 every 28 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (target 14-20 mcg/ml)' }
+            ]
+        },
+        'Gemcitabine-Capecitabine-Mitotane': {
+            name: 'Gemcitabine + Capecitabine + Mitotane - Second-line',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Capecitabine', dose: 1500, unit: 'mg', schedule: 'daily every 21 days' },
+                { name: 'Mitotane', dose: 4000, unit: 'mg', schedule: 'daily every 21 days' }
+            ]
+        },
+        'Docetaxel-Cisplatin': {
+            name: 'Docetaxel + Cisplatin - Second-line',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+            ]
+        },
+        'Nivolumab-Ipilimumab': {
+            name: 'Nivolumab + Ipilimumab - Third-line/Investigational',
+            cycles: 6,
+            drugs: [
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'every 21 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'every 21 days' }
+            ]
+        },
+        'Cabozantinib': {
+            name: 'Cabozantinib - Third-line/Investigational',
+            cycles: 12,
+            drugs: [
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily' }
+            ]
+        },
     },
     basal_cell: {
         'Vismodegib': {
@@ -8965,6 +9007,7 @@ function displayResults(results, patientData) {
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Drug Name</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Standard Dose</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Calculated Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Schedule</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -8987,6 +9030,9 @@ function displayResults(results, patientData) {
                                         </div>` 
                                         : `${drug.calculatedDose} ${drug.doseUnit}`}
                                 </td>
+                                <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
+                                    ${drug.schedule || 'Per protocol'}
+                                </td>
                             </tr>
                         `).join('')}
                     </tbody>
@@ -9005,10 +9051,10 @@ function displayResults(results, patientData) {
             ${results.hasCarboplatin ? 
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
-                Protocol: ${results.protocolName}${results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}` :
+                Regimen: ${results.protocolName}${results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}` :
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m²<br>
-                Protocol: ${results.protocolName}`
+                Regimen: ${results.protocolName}`
             }
         </div>
         
