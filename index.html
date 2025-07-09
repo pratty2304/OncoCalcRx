@@ -565,46 +565,60 @@
             }
 
             .responsive-table table {
-                min-width: 100%;
-                font-size: 12px;
+                width: 100%;
+                font-size: 10px;
+                table-layout: fixed;
             }
 
             .responsive-table th,
             .responsive-table td {
-                padding: 8px 6px !important;
-                font-size: 11px !important;
+                padding: 6px 4px !important;
+                font-size: 10px !important;
                 word-wrap: break-word;
                 hyphens: auto;
+                line-height: 1.2;
             }
 
             .responsive-table th {
-                font-size: 12px !important;
+                font-size: 10px !important;
                 font-weight: 600;
             }
 
             /* Adjust column widths for mobile (4 columns now) */
             .responsive-table th:nth-child(1),
             .responsive-table td:nth-child(1) {
-                width: 25%;
-                min-width: 80px;
+                width: 22%;
+                min-width: 60px;
             }
 
             .responsive-table th:nth-child(2),
             .responsive-table td:nth-child(2) {
-                width: 20%;
-                min-width: 70px;
+                width: 18%;
+                min-width: 50px;
             }
 
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3) {
-                width: 25%;
-                min-width: 80px;
+                width: 22%;
+                min-width: 60px;
             }
 
             .responsive-table th:nth-child(4),
             .responsive-table td:nth-child(4) {
-                width: 30%;
-                min-width: 90px;
+                width: 38%;
+                min-width: 80px;
+            }
+
+            /* Additional mobile table optimizations */
+            .responsive-table td {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .responsive-table td:nth-child(4) {
+                white-space: normal;
+                word-break: break-word;
             }
 
             /* Compact result items */
