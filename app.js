@@ -55,13 +55,14 @@ const protocolDatabase = {
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 2 weeks' }
                 ]
             },
-            'FEC': {
-                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide (Neoadjuvant/Adjuvant)',
-                cycles: 6,
+            'FEC-T': {
+                name: 'FEC → Docetaxel (Neoadjuvant/Adjuvant)',
+                cycles: 9,
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days (after FEC)' }
                 ]
             },
             'CAF': {
@@ -244,8 +245,8 @@ const protocolDatabase = {
                 ]
             },
             // Chemotherapy for Metastatic Disease
-            'Paclitaxel-Carboplatin': {
-                name: 'Paclitaxel + Carboplatin (Metastatic)',
+            'Paclitaxel-Carboplatin-3weekly': {
+                name: 'Paclitaxel + Carboplatin (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -276,8 +277,8 @@ const protocolDatabase = {
                     { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, D8, every 21 days' }
                 ]
             },
-            'Weekly-Paclitaxel-Carboplatin': {
-                name: 'Weekly Paclitaxel + Carboplatin (Metastatic)',
+            'Paclitaxel-Carboplatin-weekly': {
+                name: 'Paclitaxel + Carboplatin (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
@@ -330,8 +331,9 @@ const protocolDatabase = {
             }
         },
         'triple_negative': {
+            // Neoadjuvant Therapy
             'Paclitaxel-Carboplatin-Pembrolizumab': {
-                name: 'Paclitaxel + Carboplatin + Pembrolizumab (KEYNOTE-522)',
+                name: 'Paclitaxel + Carboplatin + Pembrolizumab (Neoadjuvant - KEYNOTE-522)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
@@ -340,34 +342,42 @@ const protocolDatabase = {
                 ]
             },
             'AC-Pembrolizumab': {
-                name: 'Adriamycin + Cyclophosphamide + Pembrolizumab (KEYNOTE-522)',
+                name: 'Adriamycin + Cyclophosphamide + Pembrolizumab (Neoadjuvant - KEYNOTE-522)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
                 ]
             },
+            'Pembrolizumab-Maintenance': {
+                name: 'Pembrolizumab Maintenance (Adjuvant - KEYNOTE-522)',
+                cycles: 9,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+                ]
+            },
+            // Neoadjuvant/Adjuvant Therapy
             'AC-T': {
-                name: 'Adriamycin + Cyclophosphamide → Taxol (AC-T)',
+                name: 'Adriamycin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'every 21 days (after AC)' }
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days (after AC)' }
                 ]
             },
             'TAC': {
-                name: 'Docetaxel + Adriamycin + Cyclophosphamide (TAC)',
+                name: 'Docetaxel + Adriamycin + Cyclophosphamide (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 50, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Dose-Dense-AC': {
-                name: 'Dose Dense AC (ddAC)',
+                name: 'Dose Dense AC (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 2 weeks' },
@@ -375,130 +385,254 @@ const protocolDatabase = {
                 ]
             },
             'Dose-Dense-Paclitaxel': {
-                name: 'Dose Dense Paclitaxel (ddT)',
+                name: 'Dose Dense Paclitaxel (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 2 weeks' }
                 ]
             },
-            'Nab-Paclitaxel-Carboplatin-3weekly': {
-                name: '3-weekly Nab-paclitaxel + Carboplatin (3w-nPC)',
-                cycles: 6,
-                drugs: [
-                    { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'every 21 days' }
-                ]
-            },
-            'Nab-Paclitaxel-Carboplatin-weekly': {
-                name: 'Weekly Nab-paclitaxel + Carboplatin (w-nPC)',
-                cycles: 6,
-                drugs: [
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly x 12 weeks' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 12 weeks' }
-                ]
-            },
             'TC': {
-                name: 'Docetaxel + Cyclophosphamide (TC)',
+                name: 'Docetaxel + Cyclophosphamide (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' }
-                ]
-            },
-            'Paclitaxel-Carboplatin': {
-                name: 'Paclitaxel + Carboplatin (PC)',
-                cycles: 6,
-                drugs: [
-                    { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'every 21 days' }
-                ]
-            },
-            'Gemcitabine-Carboplatin': {
-                name: 'Gemcitabine + Carboplatin (GC)',
-                cycles: 6,
-                drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'FEC': {
-                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide (FEC)',
+                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
-                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' }
-                ]
-            },
-            'FAC': {
-                name: '5-Fluorouracil + Adriamycin + Cyclophosphamide (FAC)',
-                cycles: 6,
-                drugs: [
-                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 50, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF)',
+                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'CMF': {
-                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (CMF)',
+                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Methotrexate', dose: 40, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Methotrexate', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'Single-Capecitabine': {
-                name: 'Single agent Capecitabine (X)',
-                cycles: 6,
+            // PARP Inhibitors (Germline BRCA1/2 mutation)
+            'Olaparib-BRCA': {
+                name: 'Olaparib (Metastatic - germline BRCA1/2 mutation)',
+                cycles: 12,
                 drugs: [
-                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                    { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
-            'Eribulin': {
-                name: 'Single agent Eribulin (E)',
-                cycles: 6,
+            'Talazoparib-BRCA': {
+                name: 'Talazoparib (Metastatic - germline BRCA1/2 mutation)',
+                cycles: 12,
                 drugs: [
-                    { name: 'Eribulin', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'PO daily' }
                 ]
             },
-            'Single-Nab-Paclitaxel': {
-                name: 'Single agent Nab-paclitaxel (nP)',
+            // First-line Metastatic Therapy
+            'Paclitaxel-Carboplatin-3weekly': {
+                name: 'Paclitaxel + Carboplatin (3-weekly) (First-line metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Paclitaxel-Carboplatin-weekly': {
+                name: 'Paclitaxel + Carboplatin (weekly) (First-line metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly' }
+                ]
+            },
+            'Nab-Paclitaxel-Carboplatin-3weekly': {
+                name: 'Nab-paclitaxel + Carboplatin (3-weekly) (First-line metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Nab-Paclitaxel-Carboplatin-weekly': {
+                name: 'Nab-paclitaxel + Carboplatin (weekly) (First-line metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly' }
+                ]
+            },
+            'Gemcitabine-Carboplatin': {
+                name: 'Gemcitabine + Carboplatin (First-line metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, D8, every 21 days' }
+                ]
+            },
+            'Carboplatin-Docetaxel': {
+                name: 'Carboplatin + Docetaxel (First-line metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Paclitaxel-Bevacizumab': {
+                name: 'Paclitaxel + Bevacizumab (First-line metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 90, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                    { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, D15, every 28 days' }
+                ]
+            },
+            // Second-line and Later Metastatic Therapy
+            'Sacituzumab-Govitecan': {
+                name: 'Sacituzumab Govitecan (Second-line metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Sacituzumab Govitecan', dose: 10, unit: 'mg/kg', schedule: 'D1, D8, every 21 days' }
+                ]
+            },
+            'Capecitabine-Docetaxel': {
+                name: 'Capecitabine + Docetaxel (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, D1-D14, every 21 days' },
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Capecitabine-Paclitaxel': {
+                name: 'Capecitabine + Paclitaxel (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-D14, every 21 days' },
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Capecitabine-Navelbine': {
+                name: 'Capecitabine + Vinorelbine (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-D14, every 21 days' },
+                    { name: 'Vinorelbine (Navelbine)', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                ]
+            },
+            'Capecitabine-Ixabepilone': {
+                name: 'Capecitabine + Ixabepilone (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-D14, every 21 days' },
+                    { name: 'Ixabepilone', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Docetaxel-Doxorubicin': {
+                name: 'Docetaxel + Doxorubicin (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Doxorubicin-Liposome-Docetaxel': {
-                name: 'Doxorubicin liposome + Docetaxel (PLD-D)',
+                name: 'Doxorubicin liposome + Docetaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Doxorubicin liposome', dose: 30, unit: 'mg/m²', schedule: 'every 21 days' },
-                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: 'Doxorubicin liposome', dose: 30, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Docetaxel', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'Single-Docetaxel': {
-                name: 'Single agent Docetaxel (D)',
+            'Doxorubicin-Paclitaxel': {
+                name: 'Doxorubicin + Paclitaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'every 21 days' }
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'Weekly-Paclitaxel-Carboplatin': {
-                name: 'Weekly Paclitaxel + Carboplatin (wPC)',
+            'Gemcitabine-Paclitaxel': {
+                name: 'Gemcitabine + Paclitaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 12 weeks' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 12 weeks' }
+                    { name: 'Gemcitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Gemcitabine-Capecitabine': {
+                name: 'Gemcitabine + Capecitabine (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Capecitabine', dose: 1500, unit: 'mg', schedule: 'PO twice daily, D1-D14, every 21 days' }
+                ]
+            },
+            // Single Agent Therapies
+            'Single-Paclitaxel-3weekly': {
+                name: 'Single agent Paclitaxel (3-weekly) (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Single-Paclitaxel-weekly': {
+                name: 'Single agent Paclitaxel (weekly) (Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' }
+                ]
+            },
+            'Single-Nab-Paclitaxel-3weekly': {
+                name: 'Single agent Nab-paclitaxel (3-weekly) (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Single-Nab-Paclitaxel-weekly': {
+                name: 'Single agent Nab-paclitaxel (weekly) (Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly' }
+                ]
+            },
+            'Docetaxel': {
+                name: 'Docetaxel (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Single-Capecitabine': {
+                name: 'Single agent Capecitabine (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, days 1-14, every 21 days' }
+                ]
+            },
+            'Single-Vinorelbine': {
+                name: 'Single agent Vinorelbine (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                ]
+            },
+            'Eribulin': {
+                name: 'Single agent Eribulin (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Eribulin', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             }
         },
