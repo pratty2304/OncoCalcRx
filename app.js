@@ -5437,9 +5437,9 @@ const protocolDatabase = {
             name: 'Procarbazine + CCNU + Vincristine (PCV) - Oligodendroglioma/Anaplastic',
             cycles: 6,
             drugs: [
-                { name: 'Procarbazine', dose: 60, unit: 'mg/m²', schedule: 'D8-D21 every 6 weeks' },
-                { name: 'CCNU (Lomustine)', dose: 110, unit: 'mg/m²', schedule: 'D1 every 6 weeks' },
-                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D8,D29 every 6 weeks (max 2mg)' }
+                { name: 'Procarbazine', dose: 60, unit: 'mg/m²', schedule: 'PO D8-D21, every 8 weeks' },
+                { name: 'CCNU (Lomustine)', dose: 130, unit: 'mg/m²', schedule: 'PO D1, every 8 weeks' },
+                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D8,D29, every 8 weeks (max 2mg)' }
             ]
         },
         'Temozolomide-Bevacizumab': {
@@ -5454,7 +5454,7 @@ const protocolDatabase = {
             name: 'Irinotecan + Bevacizumab - Recurrent GBM',
             cycles: 6,
             drugs: [
-                { name: 'Irinotecan', dose: 340, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
+                { name: 'Irinotecan', dose: 125, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1 every 2 weeks' }
             ]
         },
@@ -5462,17 +5462,17 @@ const protocolDatabase = {
             name: 'Carboplatin + Irinotecan + Bevacizumab - Recurrent GBM',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 every 28 days', requiresAUC: true },
-                { name: 'Irinotecan', dose: 340, unit: 'mg/m²', schedule: 'D1 every 28 days' },
-                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1 every 28 days' }
+                { name: 'Carboplatin', dose: 'AUC 4-5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
+                { name: 'Irinotecan', dose: 340, unit: 'mg/m²', schedule: 'D1, D14, every 28 days' },
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, D14, every 28 days' }
             ]
         },
         'Temozolomide-Lomustine': {
             name: 'Temozolomide + Lomustine - Recurrent GBM',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-D5 every 6 weeks' },
-                { name: 'Lomustine (CCNU)', dose: 90, unit: 'mg/m²', schedule: 'D1 every 6 weeks' }
+                { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'PO D2-D6, every 28 days' },
+                { name: 'Lomustine (CCNU)', dose: 100, unit: 'mg/m²', schedule: 'PO D1, every 28 days' }
             ]
         },
         'Carmustine': {
@@ -5493,7 +5493,7 @@ const protocolDatabase = {
             name: 'Procarbazine (single agent) - Recurrent GBM',
             cycles: 6,
             drugs: [
-                { name: 'Procarbazine', dose: 150, unit: 'mg/m²', schedule: 'D1-D28 every 6 weeks' }
+                { name: 'Procarbazine', dose: 150, unit: 'mg/m²', schedule: 'PO daily divided into 3 doses' }
             ]
         },
         'Temozolomide': {
@@ -5514,7 +5514,7 @@ const protocolDatabase = {
             name: 'Bevacizumab (single agent) - Recurrent GBM',
             cycles: 8,
             drugs: [
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'every 2 weeks' }
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'every 21 days' }
             ]
         },
         'Tumor-Treating-Fields': {
@@ -5523,6 +5523,52 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' },
                 { name: 'TTFields', dose: 'Device', unit: 'continuous', schedule: '18+ hours daily' }
+            ]
+        },
+        // Ependymoma Regimens
+        'Cisplatin-Etoposide-Ependymoma': {
+            name: 'Cisplatin + Etoposide (Ependymoma)',
+            cycles: 6,
+            drugs: [
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        // Adult Medulloblastoma Regimens
+        'Cisplatin-Cyclophosphamide-Vincristine': {
+            name: 'Cisplatin + Cyclophosphamide + Vincristine (Adult Medulloblastoma)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cyclophosphamide', dose: 1500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' }
+            ]
+        },
+        'Carboplatin-Etoposide-Cyclophosphamide': {
+            name: 'Carboplatin + Etoposide + Cyclophosphamide (Adult Medulloblastoma)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days', requiresAUC: true },
+                { name: 'Etoposide', dose: 150, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-Etoposide-Cyclophosphamide': {
+            name: 'Cisplatin + Etoposide + Cyclophosphamide (Adult Medulloblastoma)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Etoposide', dose: 150, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cyclophosphamide', dose: 1500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-Lomustine-Vincristine': {
+            name: 'Cisplatin + Lomustine + Vincristine (Adult Medulloblastoma)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 42 days' },
+                { name: 'Lomustine (CCNU)', dose: 75, unit: 'mg/m²', schedule: 'PO D1, every 42 days' },
+                { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, D8, every 42 days (max 2mg)' }
             ]
         }
     },
