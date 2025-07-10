@@ -316,6 +316,37 @@
             display: none;
         }
 
+        /* Copyright Footer Styles */
+        .app-footer {
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 20px 0;
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .copyright-line {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .brand-line {
+            font-size: 13px;
+            color: #868e96;
+            font-weight: 400;
+        }
+
         .suggestion-item {
             padding: 12px;
             cursor: pointer;
@@ -644,6 +675,25 @@
                 margin-bottom: 8px;
                 font-size: 12px;
             }
+
+            /* Mobile footer adjustments */
+            .app-footer {
+                padding: 15px 0;
+                margin-top: 30px;
+            }
+
+            .copyright-line {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+
+            .brand-line {
+                font-size: 12px;
+            }
+
+            .footer-content {
+                padding: 0 15px;
+            }
         }
         
     </style>
@@ -847,6 +897,14 @@
             </div>
         </div>
     </div>
+
+    <!-- Copyright Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="copyright-line">© 2025 Dr. Prathyusha Eaga</div>
+            <div class="brand-line">OncoCalcRx - All rights reserved.</div>
+        </div>
+    </footer>
 
     <script>
         // Splash screen logic
