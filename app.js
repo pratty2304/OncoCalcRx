@@ -108,6 +108,22 @@ const protocolDatabase = {
                     { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO daily' }
                 ]
             },
+            'Ribociclib-AI-Adjuvant': {
+                name: 'Ribociclib + Aromatase Inhibitor (Adjuvant - high-risk early breast cancer)',
+                cycles: 36,
+                drugs: [
+                    { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days x 3 years' },
+                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO daily x 3 years' }
+                ]
+            },
+            'Ribociclib-Letrozole-Adjuvant': {
+                name: 'Ribociclib + Letrozole (Adjuvant - high-risk early breast cancer)',
+                cycles: 36,
+                drugs: [
+                    { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days x 3 years' },
+                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO daily x 3 years' }
+                ]
+            },
             // Hormone Therapy (Adjuvant/Metastatic)
             'Tamoxifen': {
                 name: 'Tamoxifen (Adjuvant/Metastatic)',
@@ -242,6 +258,30 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Capivasertib', dose: 400, unit: 'mg', schedule: 'PO twice daily for 4 days, then 3 days off' },
                     { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                ]
+            },
+            'Camizestrant-Palbociclib': {
+                name: 'Camizestrant + Palbociclib (ESR1 mutation detected during first-line treatment)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days' }
+                ]
+            },
+            'Camizestrant-Ribociclib': {
+                name: 'Camizestrant + Ribociclib (ESR1 mutation detected during first-line treatment)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days' }
+                ]
+            },
+            'Camizestrant-Abemaciclib': {
+                name: 'Camizestrant + Abemaciclib (ESR1 mutation detected during first-line treatment)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Abemaciclib', dose: 150, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             // Chemotherapy for Metastatic Disease
@@ -452,6 +492,14 @@ const protocolDatabase = {
                 ]
             },
             // First-line Metastatic Therapy
+            'Sacituzumab-Govitecan-Pembrolizumab': {
+                name: 'Sacituzumab Govitecan + Pembrolizumab (First-line metastatic - PD-L1+)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Sacituzumab Govitecan', dose: 10, unit: 'mg/kg', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                ]
+            },
             'Paclitaxel-Carboplatin-3weekly': {
                 name: 'Paclitaxel + Carboplatin (3-weekly) (First-line metastatic)',
                 cycles: 6,
@@ -972,6 +1020,36 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            }
+        },
+        'her2_low_ultralow': {
+            // HER2-Low/Ultralow: IHC 1+ or IHC 2+/ISH- or IHC 0 with membrane staining
+            
+            // First-line Metastatic
+            'TDxd-HER2Low-1L': {
+                name: 'Trastuzumab deruxtecan (First-line Metastatic - HER2-low/ultralow)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+                ]
+            },
+            
+            // Second-line+ Metastatic  
+            'TDxd-HER2Low-2L': {
+                name: 'Trastuzumab deruxtecan (Second-line+ Metastatic - HER2-low/ultralow, post-endocrine therapy)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+                ]
+            },
+            
+            // Post-chemotherapy setting
+            'TDxd-HER2Low-PostChemo': {
+                name: 'Trastuzumab deruxtecan (Post-chemotherapy - HER2-low/ultralow)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             }
         }
@@ -8962,7 +9040,8 @@ function populateSubtypes(cancerType) {
         const subtypes = {
             'hormone_positive': 'Hormone Positive (ER+/PR+)',
             'triple_negative': 'Triple Negative (ER-/PR-/HER2-)',
-            'her2_positive': 'HER2 Positive'
+            'her2_positive': 'HER2 Positive',
+            'her2_low_ultralow': 'HER2-Low/Ultralow'
         };
         
         Object.keys(subtypes).forEach(key => {
@@ -9409,6 +9488,7 @@ function getSubtypeDisplayName(subtype) {
         hormone_positive: 'Hormone Positive (ER+/PR+)',
         triple_negative: 'Triple Negative (ER-/PR-/HER2-)',
         her2_positive: 'HER2 Positive',
+        her2_low_ultralow: 'HER2-Low/Ultralow',
         nsclc: 'Non-Small Cell Lung Cancer (NSCLC)',
         sclc: 'Small Cell Lung Cancer (SCLC)',
         hodgkins: 'Hodgkin\'s Lymphoma',
