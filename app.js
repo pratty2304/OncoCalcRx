@@ -4210,159 +4210,244 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Infigratinib', dose: 125, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
             ]
+        },
+        'Single-Pembrolizumab': {
+            name: 'Single agent Pembrolizumab (MSI/dMMR/TMB-H)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Futibatinib': {
+            name: 'Futibatinib (FGFR2 fusions)',
+            cycles: 12,
+            drugs: [
+                { name: 'Futibatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression' }
+            ]
         }
     },
     bladder: {
+        // Neoadjuvant/Adjuvant Therapy
         'ddGC': {
-            name: 'Dose-dense Gemcitabine + Cisplatin (ddGC)',
+            name: 'Dose-dense Gemcitabine + Cisplatin (Neoadjuvant/Adjuvant)',
             cycles: 4,
             drugs: [
                 { name: 'Gemcitabine', dose: 2500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Cisplatin', dose: 35, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
-            ]
-        },
-        'GC': {
-            name: 'Gemcitabine + Cisplatin (GC)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, 15, every 28 days' },
-                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 28 days' }
-            ]
-        },
-        'ITP': {
-            name: 'Ifosfamide + Paclitaxel + Cisplatin (ITP)',
-            cycles: 4,
-            drugs: [
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'days 1-3, every 21 days' },
-                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'GCa': {
-            name: 'Gemcitabine + Carboplatin',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'GP': {
-            name: 'Gemcitabine + Paclitaxel (GP)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'GD': {
-            name: 'Gemcitabine + Docetaxel (GD)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Cisplatin', dose: 35, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' }
             ]
         },
         'ddMVAC': {
-            name: 'Dose-dense MVAC (ddMVAC)',
+            name: 'Dose-dense MVAC (Neoadjuvant/Adjuvant)',
             cycles: 4,
             drugs: [
                 { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 2 weeks' },
+                { name: 'Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D2, every 2 weeks' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D2, every 2 weeks' }
+            ]
+        },
+        'GC-Neoadjuvant': {
+            name: 'Gemcitabine + Cisplatin (Neoadjuvant)',
+            cycles: 4,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 28 days' }
+            ]
+        },
+        'GC-Durvalumab-Perioperative': {
+            name: 'Gemcitabine + Cisplatin + Durvalumab (Perioperative - NIAGARA)',
+            cycles: 4,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Durvalumab-Maintenance': {
+            name: 'Durvalumab (Maintenance after NIAGARA)',
+            cycles: 8,
+            drugs: [
+                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' }
+            ]
+        },
+        // Adjuvant Therapy
+        'Nivolumab-Adjuvant': {
+            name: 'Nivolumab (Adjuvant)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        // First-line Metastatic Therapy
+        'GC': {
+            name: 'Gemcitabine + Cisplatin (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 28 days' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-Nivolumab': {
+            name: 'Gemcitabine + Cisplatin + Nivolumab (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        'Enfortumab-Vedotin-Pembrolizumab': {
+            name: 'Enfortumab Vedotin + Pembrolizumab (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Enfortumab Vedotin', dose: 1.25, unit: 'mg/kg (max 125mg)', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'PC': {
+            name: 'Paclitaxel + Carboplatin (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'GCa': {
+            name: 'Gemcitabine + Carboplatin (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
             ]
         },
         'DC': {
-            name: 'Docetaxel + Cisplatin (DC)',
+            name: 'Docetaxel + Cisplatin (First-line metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'PC': {
-            name: 'Paclitaxel + Carboplatin (PC)',
-            cycles: 6,
-            drugs: [
-                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
-            ]
-        },
         'CAP': {
-            name: 'Cyclophosphamide + Doxorubicin + Cisplatin (CAP)',
+            name: 'Cyclophosphamide + Doxorubicin + Cisplatin (First-line metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cyclophosphamide', dose: 400, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D2, every 21 days' }
             ]
         },
         'MCV': {
-            name: 'Methotrexate + Carboplatin + Vinblastine (MCV)',
+            name: 'Methotrexate + Carboplatin + Vinblastine (First-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, D15, D22, every 28 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
+                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'D1, D15, D22, every 28 days' }
             ]
         },
-        '5FU-MMC-RT': {
-            name: '5-FU + Mitomycin-C + RT',
-            cycles: 2,
-            drugs: [
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'daily x 4 days, weeks 1 and 4' },
-                { name: 'Mitomycin-C', dose: 12, unit: 'mg/m²', schedule: 'day 1 and day 28' }
-            ]
-        },
-        'Enfortumab-Vedotin': {
-            name: 'Enfortumab Vedotin',
+        'CMV': {
+            name: 'Cisplatin + Methotrexate + Vinblastine (First-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Enfortumab Vedotin', dose: 1.25, unit: 'mg/kg', schedule: 'days 1, 8, 15, every 28 days' }
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D2, every 21 days' },
+                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
-        'Single-Gemcitabine': {
-            name: 'Single agent Gemcitabine',
+        'ITP': {
+            name: 'Ifosfamide + Paclitaxel + Cisplatin (First-line metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Ifosfamide-Doxorubicin-Gemcitabine': {
+            name: 'Ifosfamide + Doxorubicin + Gemcitabine (First-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, 15, every 28 days' }
+                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
-        'Single-Paclitaxel': {
-            name: 'Single agent Paclitaxel',
-            cycles: 6,
-            drugs: [
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 21 days' }
-            ]
-        },
-        'Single-Pembrolizumab': {
-            name: 'Single agent Pembrolizumab',
-            cycles: 12,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
-            ]
-        },
+        // Maintenance Therapy
         'Avelumab': {
-            name: 'Avelumab maintenance',
+            name: 'Avelumab maintenance (After first-line chemotherapy)',
             cycles: 12,
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'every 2 weeks' }
             ]
         },
-        'Single-Nivolumab': {
-            name: 'Single agent Nivolumab',
+        // Second-line and Later Metastatic Therapy
+        'Enfortumab-Vedotin': {
+            name: 'Enfortumab Vedotin (Second-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Enfortumab Vedotin', dose: 1.25, unit: 'mg/kg (max 125mg)', schedule: 'D1, D8, D15, every 28 days' }
+            ]
+        },
+        'Single-Pembrolizumab': {
+            name: 'Single agent Pembrolizumab (Second-line metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+            ]
+        },
+        'Single-Nivolumab': {
+            name: 'Single agent Nivolumab (Second-line metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
             ]
         },
         'Durvalumab': {
-            name: 'Durvalumab',
+            name: 'Durvalumab (Second-line metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Durvalumab', dose: 1200, unit: 'mg', schedule: 'every 28 days' }
             ]
         },
+        'Sacituzumab-Govitecan': {
+            name: 'Sacituzumab Govitecan (Second-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Sacituzumab Govitecan', dose: 10, unit: 'mg/kg', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'GP': {
+            name: 'Gemcitabine + Paclitaxel (Second-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'GD': {
+            name: 'Gemcitabine + Docetaxel (Second-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Single-Gemcitabine': {
+            name: 'Single agent Gemcitabine (Second-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
+            ]
+        },
+        'Single-Paclitaxel': {
+            name: 'Single agent Paclitaxel (Second-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 21 days' }
+            ]
+        },
+        // Targeted Therapy
         'Erdafitinib': {
             name: 'Erdafitinib (FGFR mutation)',
             cycles: 12,
@@ -4370,11 +4455,13 @@ const protocolDatabase = {
                 { name: 'Erdafitinib', dose: 8, unit: 'mg', schedule: 'daily' }
             ]
         },
-        'Sacituzumab-Govitecan': {
-            name: 'Sacituzumab Govitecan',
-            cycles: 6,
+        // Concurrent Chemoradiation
+        '5FU-MMC-RT': {
+            name: '5-FU + Mitomycin-C + RT (Concurrent chemoRT)',
+            cycles: 2,
             drugs: [
-                { name: 'Sacituzumab Govitecan', dose: 10, unit: 'mg/kg', schedule: 'D1, D8, every 21 days' }
+                { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'CI daily D1-D5 and D16-D20 of RT' },
+                { name: 'Mitomycin-C', dose: 12, unit: 'mg/m²', schedule: 'D1' }
             ]
         }
     },
