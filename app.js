@@ -9,18 +9,18 @@ const protocolDatabase = {
                 name: 'Adriamycin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days (after AC)' }
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
                 ]
             },
             'EC-T': {
                 name: 'Epirubicin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Epirubicin', dose: 90, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days (after EC)' }
+                    { name: 'Epirubicin', dose: 90, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles EC)' }
                 ]
             },
             'TAC': {
@@ -59,10 +59,10 @@ const protocolDatabase = {
                 name: 'FEC → Docetaxel (Neoadjuvant/Adjuvant)',
                 cycles: 9,
                 drugs: [
-                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days (after FEC)' }
+                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
+                    { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles (after 3 cycles FEC)' }
                 ]
             },
             'CAF': {
@@ -362,9 +362,9 @@ const protocolDatabase = {
                 name: 'Adriamycin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days (after AC)' }
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
                 ]
             },
             'TAC': {
@@ -399,13 +399,23 @@ const protocolDatabase = {
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'FEC': {
-                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide (Neoadjuvant/Adjuvant)',
-                cycles: 6,
+            'EC-T': {
+                name: 'Epirubicin + Cyclophosphamide → Docetaxel (Neoadjuvant/Adjuvant)',
+                cycles: 8,
                 drugs: [
-                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                    { name: 'Epirubicin', dose: 90, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles EC)' }
+                ]
+            },
+            'FEC-T': {
+                name: 'FEC → Docetaxel (Neoadjuvant/Adjuvant)',
+                cycles: 9,
+                drugs: [
+                    { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
+                    { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles (after 3 cycles FEC)' }
                 ]
             },
             'CAF': {
