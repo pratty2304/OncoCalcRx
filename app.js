@@ -9645,16 +9645,20 @@ function displayResults(results, patientData) {
                                 <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}${drug.days ? ` (${drug.days})` : ''}</td>
                                 <td style="padding: 12px; border: 1px solid #dee2e6;">
                                     ${drug.hasLoadingDose ? 
-                                        `<div style="font-size: 13px;">
-                                            <div style="color: #007bff;">Loading: ${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
-                                            <div style="color: #28a745;">Maintenance: ${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
+                                        `<div style="font-size: 12px; line-height: 1.3;">
+                                            <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                            <div style="color: #007bff; margin-bottom: 8px;">${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
+                                            <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                            <div style="color: #28a745;">${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
                                         </div>` 
                                         : `${drug.originalDose}${drug.originalUnit === 'AUC' && drug.originalDose.toString().includes('AUC') ? '' : ' ' + drug.originalUnit}`}
                                 </td>
                                 <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e8f5e8; font-weight: 600;">
                                     ${drug.hasLoadingDose ? 
-                                        `<div style="font-size: 13px;">
-                                            <div style="color: #007bff;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
+                                        `<div style="font-size: 12px; line-height: 1.3;">
+                                            <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                            <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
+                                            <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                             <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
                                         </div>` 
                                         : `${drug.calculatedDose} ${drug.doseUnit}`}
