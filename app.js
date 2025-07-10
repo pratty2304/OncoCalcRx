@@ -4072,6 +4072,13 @@ const protocolDatabase = {
                 { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
+        'Capecitabine-RT': {
+            name: 'Capecitabine + RT (Adjuvant)',
+            cycles: 1,
+            drugs: [
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD on days of RT' }
+            ]
+        },
         // First-line Metastatic Therapy
         'Gemcitabine-Cisplatin-Durvalumab': {
             name: 'Gemcitabine + Cisplatin + Durvalumab (First-line metastatic)',
@@ -4095,7 +4102,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Capecitabine', dose: 830, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'twice daily D1-D14, every 21 days' }
             ]
         },
         'GEMOX': {
@@ -4112,6 +4119,32 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-Nabpaclitaxel': {
+            name: 'Gemcitabine + Cisplatin + Nab-paclitaxel (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-Pembrolizumab': {
+            name: 'Gemcitabine + Cisplatin + Pembrolizumab (First-line metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Capecitabine-Cisplatin': {
+            name: 'Capecitabine + Cisplatin (First-line metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' },
+                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         // Second-line Metastatic Therapy
