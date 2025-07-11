@@ -823,14 +823,21 @@ const protocolDatabase = {
             
             // First-line Metastatic
             'TDM1': {
-                name: 'Trastuzumab emtansine (First-line Metastatic)',
+                name: 'Trastuzumab emtansine (Second-line Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab emtansine', dose: 3.6, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
-            'TDxd': {
-                name: 'Trastuzumab deruxtecan (First-line Metastatic)',
+            'TDxd-DESTINY-Breast03': {
+                name: 'Trastuzumab deruxtecan (Second-line Metastatic / DESTINY-Breast03)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'TDxd-DESTINY-Breast02': {
+                name: 'Trastuzumab deruxtecan (Third-line+ Metastatic / DESTINY-Breast02)',
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
@@ -1026,27 +1033,18 @@ const protocolDatabase = {
         'her2_low_ultralow': {
             // HER2-Low/Ultralow: IHC 1+ or IHC 2+/ISH- or IHC 0 with membrane staining
             
-            // First-line Metastatic
-            'TDxd-HER2Low-1L': {
-                name: 'Trastuzumab deruxtecan (First-line Metastatic - HER2-low/ultralow)',
+            // Post-endocrine therapy (DESTINY-Breast06)
+            'TDxd-DESTINY-Breast06': {
+                name: 'Trastuzumab deruxtecan (Metastatic / DESTINY-Breast06)',
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
             
-            // Second-line+ Metastatic  
-            'TDxd-HER2Low-2L': {
-                name: 'Trastuzumab deruxtecan (Second-line+ Metastatic - HER2-low/ultralow, post-endocrine therapy)',
-                cycles: 6,
-                drugs: [
-                    { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
-                ]
-            },
-            
-            // Post-chemotherapy setting
-            'TDxd-HER2Low-PostChemo': {
-                name: 'Trastuzumab deruxtecan (Post-chemotherapy - HER2-low/ultralow)',
+            // Post-chemotherapy (DESTINY-Breast04)  
+            'TDxd-DESTINY-Breast04': {
+                name: 'Trastuzumab deruxtecan (Metastatic / DESTINY-Breast04)',
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
