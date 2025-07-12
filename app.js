@@ -6551,11 +6551,43 @@ const protocolDatabase = {
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
-        'Atezolizumab-Bevacizumab-Metastatic': {
-            name: 'Atezolizumab + Bevacizumab (First-line Metastatic)',
-            cycles: 12,
+        'Carboplatin-Paclitaxel-Atezolizumab-Bevacizumab-Metastatic': {
+            name: 'Carboplatin + Paclitaxel + Atezolizumab + Bevacizumab (First-line Metastatic)',
+            cycles: 6,
             drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-Paclitaxel-Atezolizumab-Bevacizumab-Metastatic': {
+            name: 'Cisplatin + Paclitaxel + Atezolizumab + Bevacizumab (First-line Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-Pembrolizumab-Bevacizumab-Metastatic': {
+            name: 'Carboplatin + Paclitaxel + Pembrolizumab + Bevacizumab (First-line Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-Paclitaxel-Pembrolizumab-Bevacizumab-Metastatic': {
+            name: 'Cisplatin + Paclitaxel + Pembrolizumab + Bevacizumab (First-line Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' },
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
