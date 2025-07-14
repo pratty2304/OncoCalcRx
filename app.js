@@ -5812,48 +5812,125 @@ const protocolDatabase = {
         }
     },
     gist: {
+        // NEOADJUVANT THERAPY
+        'Imatinib-Neoadjuvant': {
+            name: 'Imatinib (Neoadjuvant) - Borderline Resectable/Large GIST',
+            cycles: 6,
+            drugs: [
+                { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily for 3-6 months preoperatively' }
+            ]
+        },
+        'Avapritinib-Neoadjuvant': {
+            name: 'Avapritinib (Neoadjuvant) - Imatinib-insensitive GIST (PDGFRA D842V)',
+            cycles: 6,
+            drugs: [
+                { name: 'Avapritinib', dose: 300, unit: 'mg', schedule: 'daily preoperatively' }
+            ]
+        },
+        'Larotrectinib-Neoadjuvant': {
+            name: 'Larotrectinib (NAVIGATE) (Neoadjuvant) - NTRK fusion GIST',
+            cycles: 6,
+            drugs: [
+                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily preoperatively' }
+            ]
+        },
+        'Entrectinib-Neoadjuvant': {
+            name: 'Entrectinib (STARTRK-2) (Neoadjuvant) - NTRK fusion GIST',
+            cycles: 6,
+            drugs: [
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily preoperatively' }
+            ]
+        },
+        'Repotrectinib-Neoadjuvant': {
+            name: 'Repotrectinib (TRIDENT-1) (Neoadjuvant) - NTRK fusion GIST',
+            cycles: 6,
+            drugs: [
+                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily preoperatively' }
+            ]
+        },
+        'Sunitinib-Neoadjuvant-SDH': {
+            name: 'Sunitinib (Neoadjuvant) - SDH deficient GIST',
+            cycles: 6,
+            drugs: [
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily x 4 weeks, then 2 weeks off preoperatively' }
+            ]
+        },
+        'Dabrafenib-Trametinib-Neoadjuvant': {
+            name: 'Dabrafenib + Trametinib (Neoadjuvant) - BRAF V600E mutation GIST',
+            cycles: 6,
+            drugs: [
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily preoperatively' },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily preoperatively' }
+            ]
+        },
+
+        // ADJUVANT THERAPY
         'Imatinib-Adjuvant': {
-            name: 'Imatinib (Adjuvant) - High-risk Resected GIST',
+            name: 'Imatinib (ACOSOG Z9001) (Adjuvant) - High-risk Resected GIST',
             cycles: 36,
             drugs: [
                 { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily x 3 years (high-risk features)' }
             ]
         },
+
+        // FIRST-LINE METASTATIC THERAPY
         'Imatinib-Metastatic': {
-            name: 'Imatinib (First-line) - Metastatic GIST',
+            name: 'Imatinib (B2222) (First-line) - Metastatic GIST',
             cycles: 12,
             drugs: [
                 { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily until progression (800mg if exon 9 mutation)' }
             ]
         },
-        'Sunitinib': {
-            name: 'Sunitinib (Second-line) - Imatinib-resistant GIST',
-            cycles: 8,
-            drugs: [
-                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily x 4 weeks, then 2 weeks off' }
-            ]
-        },
-        'Regorafenib': {
-            name: 'Regorafenib (Third-line) - Imatinib/Sunitinib-resistant GIST',
-            cycles: 8,
-            drugs: [
-                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'daily x 21 days, then 7 days off' }
-            ]
-        },
-        'Ripretinib': {
-            name: 'Ripretinib (Fourth-line) - Multiple TKI-resistant GIST',
-            cycles: 8,
-            drugs: [
-                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'daily until progression' }
-            ]
-        },
-        'Avapritinib': {
-            name: 'Avapritinib - PDGFRA D842V mutant GIST',
+        'Avapritinib-PDGFRA': {
+            name: 'Avapritinib (NAVIGATOR) - PDGFRA D842V mutant GIST',
             cycles: 8,
             drugs: [
                 { name: 'Avapritinib', dose: 300, unit: 'mg', schedule: 'daily until progression' }
             ]
         },
+
+        // SECOND-LINE METASTATIC THERAPY
+        'Sunitinib': {
+            name: 'Sunitinib (A6181004) (Second-line) - Imatinib-resistant GIST',
+            cycles: 8,
+            drugs: [
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily x 4 weeks, then 2 weeks off' }
+            ]
+        },
+
+        // THIRD-LINE METASTATIC THERAPY
+        'Regorafenib': {
+            name: 'Regorafenib (GRID) (Third-line) - Imatinib/Sunitinib-resistant GIST',
+            cycles: 8,
+            drugs: [
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'daily x 21 days, then 7 days off' }
+            ]
+        },
+
+        // FOURTH-LINE+ METASTATIC THERAPY
+        'Ripretinib': {
+            name: 'Ripretinib (INVICTUS) (Fourth-line) - Multiple TKI-resistant GIST',
+            cycles: 8,
+            drugs: [
+                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'daily until progression' }
+            ]
+        },
+        'Cabozantinib': {
+            name: 'Cabozantinib - Multiple TKI-resistant GIST',
+            cycles: 8,
+            drugs: [
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily until progression' }
+            ]
+        },
+        'Everolimus': {
+            name: 'Everolimus - Multiple TKI-resistant GIST',
+            cycles: 8,
+            drugs: [
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily until progression' }
+            ]
+        },
+
+        // ADDITIONAL OPTIONS
         'Nilotinib': {
             name: 'Nilotinib - Imatinib-resistant GIST',
             cycles: 8,
@@ -5873,13 +5950,6 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
-            ]
-        },
-        'Cabozantinib': {
-            name: 'Cabozantinib - Multiple TKI-resistant GIST',
-            cycles: 8,
-            drugs: [
-                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily until progression' }
             ]
         },
         'Pazopanib': {
