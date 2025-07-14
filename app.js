@@ -7749,93 +7749,148 @@ const protocolDatabase = {
         }
     },
     head_neck: {
-        'TPF': {
-            name: 'TPF (Docetaxel + Cisplatin + 5-FU)',
+        // DEFINITIVE CHEMORADIOTHERAPY
+        'Cisplatin-RT': {
+            name: 'Cisplatin + Radiation Therapy (Definitive)',
+            cycles: 3,
+            drugs: [
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days with concurrent RT' }
+            ]
+        },
+        'Cisplatin-RT-Weekly': {
+            name: 'Cisplatin + Radiation Therapy (weekly) (Definitive)',
+            cycles: 7,
+            drugs: [
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, weekly x 7 weeks with concurrent RT' }
+            ]
+        },
+        'Cetuximab-RT': {
+            name: 'Cetuximab + Radiation Therapy (Definitive)',
+            cycles: 7,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22, D29, D36, D43, D50 at 250 mg/m² with concurrent RT', hasLoadingDose: true }
+            ]
+        },
+        'Carboplatin-Paclitaxel-RT': {
+            name: 'Carboplatin + Paclitaxel + Radiation Therapy (weekly) (Definitive)',
+            cycles: 7,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly x 7 weeks with concurrent RT' },
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, weekly x 7 weeks with concurrent RT' }
+            ]
+        },
+
+        // NEOADJUVANT THERAPY
+        'TPF-Neoadjuvant': {
+            name: 'TPF (TAX-323/324) (Neoadjuvant) - Docetaxel + Cisplatin + 5-FU',
             cycles: 3,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'TPF-Modified': {
-            name: 'TPF Modified (Docetaxel + Cisplatin + 5-FU)',
+        'TPF-Modified-Neoadjuvant': {
+            name: 'TPF Modified (Neoadjuvant) - Docetaxel + Cisplatin + 5-FU',
             cycles: 3,
             drugs: [
                 { name: 'Docetaxel', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'TIP': {
-            name: 'TIP (Docetaxel + Ifosfamide + Cisplatin)',
+        'TIP-Neoadjuvant': {
+            name: 'TIP (Neoadjuvant) - Docetaxel + Ifosfamide + Cisplatin',
             cycles: 4,
             drugs: [
                 { name: 'Docetaxel', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, every 21 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, every 21 days' }
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (same dose as Ifosfamide)' }
             ]
         },
-        'Carboplatin-Paclitaxel-HN': {
-            name: 'Carboplatin + Paclitaxel (Head & Neck)',
-            cycles: 6,
+        'Paclitaxel-Ifosfamide-Cisplatin-Neoadjuvant': {
+            name: 'Paclitaxel + Ifosfamide + Cisplatin (Neoadjuvant)',
+            cycles: 4,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Ifosfamide', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (same dose as Ifosfamide)' }
             ]
         },
-        'Carboplatin-Paclitaxel-Weekly-HN': {
-            name: 'Carboplatin + Paclitaxel (weekly, Head & Neck)',
-            cycles: 6,
+        'Paclitaxel-Ifosfamide-Carboplatin-Neoadjuvant': {
+            name: 'Paclitaxel + Ifosfamide + Carboplatin (Neoadjuvant)',
+            cycles: 4,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 18 weeks' },
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Ifosfamide', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (same dose as Ifosfamide)' }
             ]
         },
-        'Cisplatin-Paclitaxel-HN': {
-            name: 'Cisplatin + Paclitaxel (Head & Neck)',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 21 days' }
-            ]
-        },
-        'Cisplatin-5FU-HN': {
-            name: 'Cisplatin + 5-FU (Head & Neck)',
-            cycles: 6,
+        'Cisplatin-5FU-Neoadjuvant': {
+            name: 'Cisplatin + 5-FU (Neoadjuvant)',
+            cycles: 3,
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'Carboplatin-5FU-HN': {
-            name: 'Carboplatin + 5-FU (Head & Neck)',
+        'Carboplatin-Paclitaxel-Neoadjuvant': {
+            name: 'Carboplatin + Paclitaxel (Neoadjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+
+        // ADJUVANT THERAPY
+        'Cisplatin-RT-Adjuvant': {
+            name: 'Cisplatin + Radiation Therapy (RTOG 9501/EORTC 22931) (Adjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days with concurrent RT' }
+            ]
+        },
+        'Cisplatin-RT-Weekly-Adjuvant': {
+            name: 'Cisplatin + Radiation Therapy (weekly) (Adjuvant)',
+            cycles: 7,
+            drugs: [
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, weekly x 7 weeks with concurrent RT' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-RT-Adjuvant': {
+            name: 'Carboplatin + Paclitaxel + Radiation Therapy (weekly) (Adjuvant)',
+            cycles: 7,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly x 7 weeks with concurrent RT' },
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, weekly x 7 weeks with concurrent RT' }
+            ]
+        },
+
+        // FIRST-LINE METASTATIC THERAPY
+        'Pembrolizumab-Cisplatin-5FU-1L': {
+            name: 'Pembrolizumab + Cisplatin + 5-FU (KEYNOTE-048) (First-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'Pembrolizumab-Carboplatin-5FU': {
-            name: 'Pembrolizumab + Carboplatin + 5-FU (all patients)',
+        'Pembrolizumab-Carboplatin-5FU-1L': {
+            name: 'Pembrolizumab + Carboplatin + 5-FU (KEYNOTE-048) (First-line metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'Pembrolizumab-Cisplatin-5FU': {
-            name: 'Pembrolizumab + Cisplatin + 5-FU (all patients)',
-            cycles: 6,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
-            ]
-        },
-        'Pembrolizumab-Carboplatin-Paclitaxel': {
-            name: 'Pembrolizumab + Carboplatin + Paclitaxel',
+        'Pembrolizumab-Carboplatin-Paclitaxel-1L': {
+            name: 'Pembrolizumab + Carboplatin + Paclitaxel (KEYNOTE-048) (First-line metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
@@ -7843,115 +7898,128 @@ const protocolDatabase = {
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Carboplatin-5FU-Cetuximab': {
-            name: 'Carboplatin + 5-FU + Cetuximab (EXTREME)',
-            cycles: 6,
+        'Single-Pembrolizumab-CPS20-1L': {
+            name: 'Single agent Pembrolizumab (KEYNOTE-048) (First-line metastatic, PD-L1 CPS≥20)',
+            cycles: 12,
             drugs: [
-                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
-        'Cisplatin-5FU-Cetuximab': {
-            name: 'Cisplatin + 5-FU + Cetuximab (EXTREME)',
+        'Cisplatin-5FU-Cetuximab-1L': {
+            name: 'Cisplatin + 5-FU + Cetuximab (EXTREME) (First-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22 at 250 mg/m², every 21 days', hasLoadingDose: true },
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', days: 'D1-D4', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'Cisplatin-Cetuximab': {
-            name: 'Cisplatin + Cetuximab',
+        'Carboplatin-5FU-Cetuximab-1L': {
+            name: 'Carboplatin + 5-FU + Cetuximab (EXTREME) (First-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22 at 250 mg/m², every 21 days', hasLoadingDose: true },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'Cisplatin-RT': {
-            name: 'Cisplatin + Radiation Therapy',
-            cycles: 3,
+        'Cisplatin-5FU-1L': {
+            name: 'Cisplatin + 5-FU (First-line metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days with concurrent RT' }
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion, every 21 days' }
             ]
         },
-        'Cisplatin-RT-Weekly': {
-            name: 'Cisplatin + Radiation Therapy (weekly)',
-            cycles: 7,
+        'Carboplatin-Paclitaxel-1L': {
+            name: 'Carboplatin + Paclitaxel (First-line metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'weekly x 7 weeks with concurrent RT' }
+                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Cisplatin-Vinorelbine-NPC': {
-            name: 'Cisplatin + Vinorelbine (Nasopharyngeal)',
+        'Cisplatin-Paclitaxel-1L': {
+            name: 'Cisplatin + Paclitaxel (First-line metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Gemcitabine-Cisplatin-NPC': {
-            name: 'Gemcitabine + Cisplatin (Nasopharyngeal)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Toripalimab-Gemcitabine-Cisplatin': {
-            name: 'Toripalimab + Gemcitabine + Cisplatin (Nasopharyngeal)',
+
+        // NASOPHARYNGEAL CARCINOMA SPECIFIC
+        'Toripalimab-Gemcitabine-Cisplatin-NPC': {
+            name: 'Toripalimab + Gemcitabine + Cisplatin (JUPITER-02) (First-line metastatic NPC)',
             cycles: 6,
             drugs: [
                 { name: 'Toripalimab', dose: 240, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Docetaxel-HN': {
-            name: 'Single agent Docetaxel (Head & Neck)',
+        'Gemcitabine-Cisplatin-NPC': {
+            name: 'Gemcitabine + Cisplatin (First-line metastatic NPC)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Paclitaxel-HN': {
-            name: 'Single agent Paclitaxel (Head & Neck)',
+        'Cisplatin-Vinorelbine-NPC': {
+            name: 'Cisplatin + Vinorelbine (First-line metastatic NPC)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
-        'Single-Paclitaxel-Weekly-HN': {
-            name: 'Single agent Paclitaxel (weekly, Head & Neck)',
+
+        // SECOND-LINE METASTATIC THERAPY
+        'Single-Pembrolizumab-CPS1-2L': {
+            name: 'Single agent Pembrolizumab (KEYNOTE-040) (Second-line metastatic, PD-L1 CPS≥1)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
+            ]
+        },
+        'Single-Nivolumab-CPS1-2L': {
+            name: 'Single agent Nivolumab (CheckMate-141) (Second-line metastatic, PD-L1 CPS≥1)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+            ]
+        },
+        'Single-Cetuximab-2L': {
+            name: 'Single agent Cetuximab (Second-line metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22 at 250 mg/m², every 21 days', hasLoadingDose: true }
+            ]
+        },
+        'Single-Docetaxel-2L': {
+            name: 'Single agent Docetaxel (Second-line metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Pembrolizumab-CPS1': {
-            name: 'Single agent Pembrolizumab (PD-L1 CPS≥1)',
-            cycles: 12,
+        'Single-Paclitaxel-2L': {
+            name: 'Single agent Paclitaxel (Second-line metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Nivolumab-CPS1': {
-            name: 'Single agent Nivolumab (PD-L1 CPS≥1)',
-            cycles: 12,
+        'Single-Paclitaxel-Weekly-2L': {
+            name: 'Single agent Paclitaxel (weekly) (Second-line metastatic)',
+            cycles: 18,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, weekly x 18 weeks' }
             ]
         },
-        'Single-Cetuximab': {
-            name: 'Single agent Cetuximab',
-            cycles: 12,
-            drugs: [
-                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'loading dose, then 250 mg/m² weekly', hasLoadingDose: true }
-            ]
-        },
-        'Single-Methotrexate': {
-            name: 'Single agent Methotrexate',
+        'Single-Methotrexate-2L': {
+            name: 'Single agent Methotrexate (Second-line metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Methotrexate', dose: 40, unit: 'mg/m²', schedule: 'weekly' }
