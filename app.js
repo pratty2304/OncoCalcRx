@@ -3647,77 +3647,139 @@ const protocolDatabase = {
         }
     },
     hepatocellular: {
+        // FIRST-LINE THERAPY
         'Atezolizumab-Bevacizumab': {
             name: 'Atezolizumab + Bevacizumab (IMbrave150)',
             cycles: 8,
             drugs: [
-                { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'every 21 days' },
-                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'every 21 days' }
+                { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
         'Durvalumab-Tremelimumab': {
             name: 'Durvalumab + Tremelimumab (HIMALAYA)',
             cycles: 6,
             drugs: [
-                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'every 28 days' },
-                { name: 'Tremelimumab', dose: 300, unit: 'mg', schedule: 'every 28 days, then durvalumab alone' }
+                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' },
+                { name: 'Tremelimumab', dose: 300, unit: 'mg', schedule: 'D1, cycle 1 only (single dose)' }
             ]
         },
-        'Ipilimumab-Nivolumab': {
-            name: 'Ipilimumab + Nivolumab (CheckMate 040)',
-            cycles: 6,
+        'Durvalumab-Monotherapy': {
+            name: 'Durvalumab (HIMALAYA)',
+            cycles: 8,
             drugs: [
-                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'every 21 days' },
-                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'every 21 days, then nivolumab 240mg every 2 weeks' }
+                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
         'Sorafenib': {
-            name: 'Sorafenib (TKI)',
+            name: 'Sorafenib (SHARP)',
             cycles: 8,
             drugs: [
-                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily' }
+                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' }
             ]
         },
         'Lenvatinib': {
             name: 'Lenvatinib (REFLECT)',
             cycles: 8,
             drugs: [
-                { name: 'Lenvatinib', dose: 8, unit: 'mg', schedule: 'daily (≥60kg) or 12mg daily (<60kg)' }
+                { name: 'Lenvatinib', dose: 12, unit: 'mg', schedule: 'PO daily (≥60kg) or 8mg daily (<60kg)' }
+            ]
+        },
+
+        // SECOND-LINE THERAPY
+        'Ipilimumab-Nivolumab': {
+            name: 'Ipilimumab + Nivolumab (CheckMate 040)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles' },
+                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 2 weeks' }
             ]
         },
         'Cabozantinib': {
             name: 'Cabozantinib (CELESTIAL)',
             cycles: 8,
             drugs: [
-                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily' }
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily, continuous' }
             ]
         },
         'Regorafenib': {
             name: 'Regorafenib (RESORCE)',
             cycles: 8,
             drugs: [
-                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
-            ]
-        },
-        'Nivolumab': {
-            name: 'Nivolumab (CheckMate 040)',
-            cycles: 8,
-            drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks, then 480mg every 28 days' }
-            ]
-        },
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (KEYNOTE-224)',
-            cycles: 8,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO daily D1-D21, then 7 days off, every 28 days' }
             ]
         },
         'Ramucirumab': {
             name: 'Ramucirumab (REACH-2)',
             cycles: 8,
             drugs: [
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'every 2 weeks' }
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks (AFP ≥400)' }
+            ]
+        },
+
+        // IMMUNOTHERAPY MONOTHERAPY
+        'Nivolumab': {
+            name: 'Nivolumab (CheckMate 040)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+            ]
+        },
+        'Pembrolizumab': {
+            name: 'Pembrolizumab (KEYNOTE-224)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
+            ]
+        },
+        'Tislelizumab': {
+            name: 'Tislelizumab (RATIONALE-301)',
+            cycles: 8,
+            drugs: [
+                { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+
+        // NEWER TARGETED THERAPIES
+        'Donafenib': {
+            name: 'Donafenib (ZGDH3)',
+            cycles: 8,
+            drugs: [
+                { name: 'Donafenib', dose: 200, unit: 'mg', schedule: 'PO twice daily, continuous' }
+            ]
+        },
+        'Apatinib': {
+            name: 'Apatinib (Second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Apatinib', dose: 500, unit: 'mg', schedule: 'PO daily, continuous' }
+            ]
+        },
+
+        // LOCOREGIONAL THERAPY
+        'GEMOX': {
+            name: 'Gemcitabine + Oxaliplatin (GEMOX)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        'FOLFOX4': {
+            name: 'FOLFOX4 (Oxaliplatin + 5-FU + Leucovorin)',
+            cycles: 6,
+            drugs: [
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1-D2, 22-hour infusion, every 2 weeks' }
+            ]
+        },
+        'Doxorubicin-TACE': {
+            name: 'Doxorubicin (TACE)',
+            cycles: 4,
+            drugs: [
+                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'Intra-arterial, every 6-8 weeks' }
             ]
         }
     },
