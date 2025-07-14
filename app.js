@@ -1083,335 +1083,356 @@ const protocolDatabase = {
         }
     },
     gastric: {
-        'FLOT4': {
-            name: 'Fluorouracil + Leucovorin + Oxaliplatin + Docetaxel (FLOT4)',
+        // NEOADJUVANT/PERIOPERATIVE THERAPY
+        'FLOT4-Perioperative': {
+            name: 'FLOT4 (Perioperative) - Docetaxel + Oxaliplatin + Leucovorin + 5-FU',
             cycles: 8,
             drugs: [
-                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, every 2 weeks' }
+                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' }
             ]
         },
-        'DCF': {
-            name: 'Docetaxel + Cisplatin + 5-Fluorouracil (DCF)',
+        'ECF-Neoadjuvant': {
+            name: 'ECF (Neoadjuvant) - Epirubicin + Cisplatin + 5-FU',
+            cycles: 3,
+            drugs: [
+                { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 200, unit: 'mg/m²', schedule: 'D1-D21, CI over 21 days, every 21 days' }
+            ]
+        },
+        'DCF-Neoadjuvant': {
+            name: 'DCF (Neoadjuvant) - Docetaxel + Cisplatin + 5-FU',
+            cycles: 3,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 750, unit: 'mg/m²', schedule: 'D1-D5, CI over 5 days, every 21 days' }
+            ]
+        },
+        'mFOLFOX6-Neoadjuvant': {
+            name: 'mFOLFOX6 (Neoadjuvant)',
+            cycles: 4,
+            drugs: [
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+            ]
+        },
+        'CAPEOX-Neoadjuvant': {
+            name: 'CAPEOX (Neoadjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
+            ]
+        },
+
+        // ADJUVANT THERAPY
+        'mFOLFOX6-Adjuvant': {
+            name: 'mFOLFOX6 (Adjuvant)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: '5-Fluorouracil infusion', dose: 750, unit: 'mg/m²', schedule: 'daily x 5 days, every 21 days' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
-        'ECF': {
-            name: 'Epirubicin + Cisplatin + 5-Fluorouracil (ECF)',
+        'CAPEOX-Adjuvant': {
+            name: 'CAPEOX (Adjuvant)',
+            cycles: 4,
+            drugs: [
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
+            ]
+        },
+        'Capecitabine-Adjuvant': {
+            name: 'Capecitabine (Adjuvant)',
             cycles: 6,
             drugs: [
-                { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: '5-Fluorouracil infusion', dose: 200, unit: 'mg/m²', schedule: 'daily continuous infusion' }
+                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
             ]
         },
-        'ECX': {
-            name: 'Epirubicin + Cisplatin + Capecitabine (ECX)',
+        '5FU-LV-Adjuvant': {
+            name: '5-FU + Leucovorin (Adjuvant)',
             cycles: 6,
             drugs: [
-                { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Leucovorin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 28 days' },
+                { name: '5-Fluorouracil', dose: 425, unit: 'mg/m²', schedule: 'D1-D5, every 28 days' }
             ]
         },
-        'EOX': {
-            name: 'Epirubicin + Oxaliplatin + Capecitabine (EOX)',
+
+        // FIRST-LINE METASTATIC THERAPY
+        'Nivolumab-Ipilimumab-MSI-1L': {
+            name: 'Nivolumab + Ipilimumab (1st Line Metastatic, MSI-H/dMMR)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 2 weeks x 4, then 480mg flat dose every 28 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 doses' }
+            ]
+        },
+        'Pembrolizumab-MSI-1L': {
+            name: 'Pembrolizumab (1st Line Metastatic, MSI-H/dMMR)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
+            ]
+        },
+        'Pembrolizumab-PD-L1-1L': {
+            name: 'Pembrolizumab (1st Line Metastatic, PD-L1 CPS≥1)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Pembrolizumab-5FU-Cisplatin-1L': {
+            name: 'Pembrolizumab + 5-FU + Cisplatin (1st Line Metastatic, PD-L1 CPS≥1)',
             cycles: 6,
             drugs: [
-                { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 800, unit: 'mg/m²', schedule: 'D1-D5, CI over 5 days, every 21 days' }
             ]
         },
-        'CAPEOX': {
-            name: 'Capecitabine + Oxaliplatin (CAPEOX)',
+        'mFOLFOX6-Tislelizumab-1L': {
+            name: 'mFOLFOX6 + Tislelizumab (1st Line Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'CAPEOX-Tislelizumab-1L': {
+            name: 'CAPEOX + Tislelizumab (1st Line Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
+                { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
-        'mFOLFOX6': {
-            name: 'Modified FOLFOX6 (mFOLFOX6)',
+        'mFOLFOX6-Zolbetuximab-1L': {
+            name: 'mFOLFOX6 + Zolbetuximab (1st Line Metastatic, CLDN18.2+)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' }
+                { name: 'Zolbetuximab', dose: 800, unit: 'mg/m²', schedule: 'D1, cycle 1, then 600 mg/m² every 21 days' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
-        'mFOLFIRI': {
-            name: 'Modified FOLFIRI (mFOLFIRI)',
-            cycles: 12,
-            drugs: [
-                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' }
-            ]
-        },
-        'Cisplatin-5FU': {
-            name: 'Cisplatin + 5-Fluorouracil (CF)',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: '5-Fluorouracil infusion', dose: 1000, unit: 'mg/m²', schedule: 'daily x 4 days, every 21 days' }
-            ]
-        },
-        'FLO': {
-            name: 'Fluorouracil + Leucovorin + Oxaliplatin (FLO)',
+        'CAPEOX-Zolbetuximab-1L': {
+            name: 'CAPEOX + Zolbetuximab (1st Line Metastatic, CLDN18.2+)',
             cycles: 8,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, every 2 weeks' }
+                { name: 'Zolbetuximab', dose: 800, unit: 'mg/m²', schedule: 'D1, cycle 1, then 600 mg/m² every 21 days' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
             ]
         },
-        'Docetaxel-Cisplatin': {
-            name: 'Docetaxel + Cisplatin (DC)',
+        'Trastuzumab-Pertuzumab-HER2-1L': {
+            name: 'Trastuzumab + Pertuzumab (1st Line Metastatic, HER2+)',
+            cycles: 12,
+            drugs: [
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'loading dose D1, then 420 mg every 21 days', hasLoadingDose: true }
+            ]
+        },
+        'XP-Trastuzumab-HER2-1L': {
+            name: 'XP + Trastuzumab (1st Line Metastatic, HER2+)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
             ]
         },
-        'Capecitabine-Cisplatin': {
-            name: 'Capecitabine + Cisplatin (XP)',
-            cycles: 6,
+        'mFOLFOX6-1L': {
+            name: 'mFOLFOX6 (1st Line Metastatic)',
+            cycles: 12,
             drugs: [
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' },
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
-        'XP-Trastuzumab': {
-            name: 'XP + Trastuzumab (HER2 positive)',
-            cycles: 6,
-            drugs: [
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' },
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
-            ]
-        },
-        '5FU-Cisplatin-Trastuzumab': {
-            name: '5-FU + Cisplatin + Trastuzumab (HER2 positive)',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: '5-Fluorouracil infusion', dose: 800, unit: 'mg/m²', schedule: 'daily x 5 days, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
-            ]
-        },
-        'Paclitaxel-Ramucirumab': {
-            name: 'Paclitaxel + Ramucirumab',
+        'CAPEOX-1L': {
+            name: 'CAPEOX (1st Line Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 12 weeks' },
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
             ]
         },
-        'FOLFIRI-Ramucirumab': {
-            name: 'FOLFIRI + Ramucirumab',
-            cycles: 12,
-            drugs: [
-                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' },
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'every 2 weeks' }
-            ]
-        },
-        'Irinotecan-Ramucirumab': {
-            name: 'Irinotecan + Ramucirumab',
-            cycles: 12,
-            drugs: [
-                { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'every 2 weeks' }
-            ]
-        },
-        'Pembrolizumab-Cisplatin-5FU': {
-            name: 'Pembrolizumab + Cisplatin + 5-FU (PD-L1 positive)',
+        'ECX-1L': {
+            name: 'ECX (1st Line Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' },
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: '5-Fluorouracil infusion', dose: 800, unit: 'mg/m²', schedule: 'daily x 5 days, every 21 days' }
+                { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
             ]
         },
-        'mFOLFOX6-Nivolumab': {
-            name: 'mFOLFOX6 + Nivolumab',
-            cycles: 12,
+        'EOX-1L': {
+            name: 'EOX (1st Line Metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' },
-                { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'every 21 days' }
+                { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
             ]
         },
-        'Nivolumab-CAPEOX': {
-            name: 'Nivolumab + CAPEOX',
+        'DCF-1L': {
+            name: 'DCF (1st Line Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 750, unit: 'mg/m²', schedule: 'D1-D5, CI over 5 days, every 21 days' }
+            ]
+        },
+        'FLO-1L': {
+            name: 'FLO (1st Line Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'every 21 days' },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks' }
             ]
         },
-        'Nivolumab-Ipilimumab': {
-            name: 'Nivolumab + Ipilimumab (MSI-H/dMMR)',
-            cycles: 12,
-            drugs: [
-                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'every 2 weeks x 4, then 480mg flat dose every 28 days' },
-                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'every 6 weeks x 4 doses' }
-            ]
-        },
-        'Pembrolizumab-Trastuzumab-CAPEOX': {
-            name: 'Pembrolizumab + Trastuzumab + CAPEOX (HER2+/PD-L1+)',
+
+        // SECOND-LINE METASTATIC THERAPY
+        'Paclitaxel-Ramucirumab-2L': {
+            name: 'Paclitaxel + Ramucirumab (2nd Line Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', days: 'D1-D14', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, D15, every 28 days' }
             ]
         },
-        'Pembrolizumab-Trastuzumab-5FU-Cisplatin': {
-            name: 'Pembrolizumab + Trastuzumab + 5FU + Cisplatin (HER2+/PD-L1+)',
-            cycles: 6,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'every 21 days' },
-                { name: '5-Fluorouracil infusion', dose: 800, unit: 'mg/m²', schedule: 'daily x 5 days, every 21 days' }
-            ]
-        },
-        '5FU-LV-RT': {
-            name: '5-FU + LV with RT',
-            cycles: 2,
-            drugs: [
-                { name: 'Leucovorin', dose: 20, unit: 'mg/m²', schedule: 'daily during radiation therapy' },
-                { name: '5-Fluorouracil', dose: 425, unit: 'mg/m²', schedule: 'daily during radiation therapy' }
-            ]
-        },
-        'Capecitabine-RT': {
-            name: 'Capecitabine with RT',
-            cycles: 2,
-            drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily, days 1-14 during radiation therapy' }
-            ]
-        },
-        'Capecitabine-Docetaxel': {
-            name: 'Capecitabine + Docetaxel (XD)',
-            cycles: 6,
-            drugs: [
-                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' },
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
-            ]
-        },
-        'Trastuzumab-Pertuzumab': {
-            name: 'Trastuzumab + Pertuzumab (HER2 positive)',
+        'FOLFIRI-Ramucirumab-2L': {
+            name: 'FOLFIRI + Ramucirumab (2nd Line Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'loading dose, then 420 mg every 21 days', hasLoadingDose: true }
+                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
             ]
         },
-        'Single-5FU': {
-            name: 'Single agent 5-Fluorouracil',
-            cycles: 6,
-            drugs: [
-                { name: '5-Fluorouracil infusion', dose: 2600, unit: 'mg/m²', days: 'D1 (24hr CI)', schedule: '24-hour infusion, weekly x 6 weeks' }
-            ]
-        },
-        'Single-Paclitaxel': {
-            name: 'Single agent Paclitaxel',
-            cycles: 6,
-            drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 12 weeks' }
-            ]
-        },
-        'Single-Docetaxel': {
-            name: 'Single agent Docetaxel',
-            cycles: 6,
-            drugs: [
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
-            ]
-        },
-        'Single-Irinotecan-weekly': {
-            name: 'Single agent Irinotecan (weekly)',
+        'Irinotecan-Ramucirumab-2L': {
+            name: 'Irinotecan + Ramucirumab (2nd Line Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Irinotecan', dose: 125, unit: 'mg/m²', schedule: 'weekly x 4, then 2 weeks rest, repeat' }
+                { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
             ]
         },
-        'Single-Irinotecan-2weekly': {
-            name: 'Single agent Irinotecan (every 2 weeks)',
+        'T-DXd-HER2-2L': {
+            name: 'Trastuzumab Deruxtecan (T-DXd) (2nd Line Metastatic, HER2+ DESTINY-Gastric01)',
             cycles: 12,
             drugs: [
-                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'every 2 weeks' }
+                { name: 'Trastuzumab Deruxtecan', dose: 6.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Irinotecan-3weekly': {
-            name: 'Single agent Irinotecan (every 21 days)',
+        'mFOLFIRI-2L': {
+            name: 'mFOLFIRI (2nd Line Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+            ]
+        },
+        'Docetaxel-2L': {
+            name: 'Docetaxel (2nd Line Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Paclitaxel-2L': {
+            name: 'Paclitaxel (2nd Line Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, weekly' }
+            ]
+        },
+        'Irinotecan-2L': {
+            name: 'Irinotecan (2nd Line Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Irinotecan', dose: 350, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Irinotecan', dose: 350, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Ramucirumab': {
-            name: 'Single agent Ramucirumab',
-            cycles: 12,
-            drugs: [
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'every 2 weeks' }
-            ]
-        },
-        'Single-Pembrolizumab': {
-            name: 'Single agent Pembrolizumab (PD-L1 positive)',
-            cycles: 12,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
-            ]
-        },
-        'Single-Nivolumab': {
-            name: 'Single agent Nivolumab',
-            cycles: 12,
-            drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
-            ]
-        },
-        'Single-Cisplatin': {
-            name: 'Single agent Cisplatin',
+
+        // THIRD-LINE+ METASTATIC THERAPY
+        'TAS-102-3L': {
+            name: 'Trifluridine/Tipiracil (TAS-102) (3rd Line+ Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'TAS-102', dose: 35, unit: 'mg/m²', schedule: 'D1-D5, D8-D12, twice daily, every 28 days' }
             ]
         },
-        'TAS-102': {
-            name: 'Trifluridine/Tipiracil (TAS-102)',
+        'Ramucirumab-3L': {
+            name: 'Ramucirumab (3rd Line+ Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        'Nivolumab-3L': {
+            name: 'Nivolumab (3rd Line+ Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+            ]
+        },
+        'Pembrolizumab-3L': {
+            name: 'Pembrolizumab (3rd Line+ Metastatic, PD-L1 CPS≥1)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
+            ]
+        },
+        'Dostarlimab-MSI-3L': {
+            name: 'Dostarlimab (3rd Line+ Metastatic, MSI-H/dMMR)',
+            cycles: 12,
+            drugs: [
+                { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4, then 1000mg every 6 weeks' }
+            ]
+        },
+        'Capecitabine-Docetaxel-3L': {
+            name: 'Capecitabine + Docetaxel (3rd Line+ Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'TAS-102', dose: 35, unit: 'mg/m²', schedule: 'twice daily, days 1-5 and 8-12, every 28 days' }
+                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Dostarlimab': {
-            name: 'Dostarlimab (MSI-H/dMMR)',
-            cycles: 12,
+        'Cisplatin-3L': {
+            name: 'Cisplatin (3rd Line+ Metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'every 21 days x 4, then 1000mg every 6 weeks' }
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'T-DXd-Gastric': {
-            name: 'Trastuzumab deruxtecan (T-DXd) (HER2 positive)',
-            cycles: 12,
+        '5FU-3L': {
+            name: '5-Fluorouracil (3rd Line+ Metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Trastuzumab deruxtecan', dose: 6.4, unit: 'mg/kg', schedule: 'every 21 days' }
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, weekly' }
             ]
         }
     },
@@ -7043,7 +7064,7 @@ const protocolDatabase = {
                 cycles: 8,
                 drugs: [
                     { name: 'Irinotecan', dose: 350, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cetuximab', dose: '400 → 250', unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true, originalDose: '400 → 250', originalUnit: 'mg/m²' }
+                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'XELIRI-Bevacizumab-Metastatic': {
@@ -7088,7 +7109,7 @@ const protocolDatabase = {
                     { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Cetuximab', dose: '400 → 250', unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true, originalDose: '400 → 250', originalUnit: 'mg/m²' }
+                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'mFOLFOX6-Encorafenib-Panitumumab-BRAF': {
@@ -7109,7 +7130,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO BD daily' },
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Cetuximab', dose: '400 → 250', unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true, originalDose: '400 → 250', originalUnit: 'mg/m²' }
+                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'Binimetinib-Encorafenib-Cetuximab-BRAF': {
@@ -7118,7 +7139,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'PO BD daily' },
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Cetuximab', dose: '400 → 250', unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true, originalDose: '400 → 250', originalUnit: 'mg/m²' }
+                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'Encorafenib-Cetuximab-BRAF': {
@@ -7126,7 +7147,7 @@ const protocolDatabase = {
                 cycles: 12,
                 drugs: [
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Cetuximab', dose: '400 → 250', unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true, originalDose: '400 → 250', originalUnit: 'mg/m²' }
+                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'Encorafenib-Panitumumab-BRAF': {
@@ -7153,7 +7174,7 @@ const protocolDatabase = {
                 name: 'Trastuzumab + Lapatinib (HER2 positive)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Trastuzumab', dose: '8 → 6', unit: 'mg/kg', schedule: 'weekly (loading dose 8 mg/kg, then 6 mg/kg)', hasLoadingDose: true, originalDose: '8 → 6', originalUnit: 'mg/kg' },
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'weekly (loading dose 8 mg/kg, then 6 mg/kg)', hasLoadingDose: true },
                     { name: 'Lapatinib', dose: 1000, unit: 'mg', schedule: 'daily' }
                 ]
             },
@@ -7161,7 +7182,7 @@ const protocolDatabase = {
                 name: 'Trastuzumab + Tucatinib (HER2 positive)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Trastuzumab', dose: '8 → 6', unit: 'mg/kg', schedule: 'weekly (loading dose 8 mg/kg, then 6 mg/kg)', hasLoadingDose: true, originalDose: '8 → 6', originalUnit: 'mg/kg' },
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'weekly (loading dose 8 mg/kg, then 6 mg/kg)', hasLoadingDose: true },
                     { name: 'Tucatinib', dose: 300, unit: 'mg', schedule: 'PO BD daily' }
                 ]
             },
@@ -7169,8 +7190,8 @@ const protocolDatabase = {
                 name: 'Trastuzumab + Pertuzumab (HER2 positive)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Trastuzumab', dose: '8 → 6', unit: 'mg/kg', schedule: 'weekly (loading dose 8 mg/kg, then 6 mg/kg)', hasLoadingDose: true, originalDose: '8 → 6', originalUnit: 'mg/kg' },
-                    { name: 'Pertuzumab', dose: '840 → 420', unit: 'mg', schedule: 'every 21 days (loading dose 840 mg, then 420 mg)', hasLoadingDose: true, originalDose: '840 → 420', originalUnit: 'mg' }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'weekly (loading dose 8 mg/kg, then 6 mg/kg)', hasLoadingDose: true },
+                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'every 21 days (loading dose 840 mg, then 420 mg)', hasLoadingDose: true }
                 ]
             },
 
@@ -7200,7 +7221,7 @@ const protocolDatabase = {
                 name: 'Cetuximab (Single agent / KRAS/NRAS/BRAF WT)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Cetuximab', dose: '400 → 250', unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true, originalDose: '400 → 250', originalUnit: 'mg/m²' }
+                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'Panitumumab-Single': {
@@ -7421,17 +7442,6 @@ const protocolDatabase = {
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 17 cycles (postoperative)' }
             ]
         },
-        'Adjuvant-FLOT4': {
-            name: 'FLOT4 (Adjuvant) - postoperative component',
-            cycles: 4,
-            drugs: [
-                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 2 weeks x 4 cycles (postoperative)' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks x 4 cycles (postoperative)' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks x 4 cycles (postoperative)' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks x 4 cycles (postoperative)' }
-            ]
-        },
-
         // DEFINITIVE CHEMORADIATION (SQUAMOUS CELL CARCINOMA)
         'Definitive-5FU-Cisplatin-RT': {
             name: '5-FU + Cisplatin + RT (Definitive, Squamous)',
@@ -7439,24 +7449,6 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, week 1 and 5 with RT' },
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion week 1 and 5 with RT' }
-            ]
-        },
-        'Definitive-Carboplatin-Paclitaxel-RT': {
-            name: 'Carboplatin + Paclitaxel + RT (Definitive, Squamous)',
-            cycles: 6,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly x 6 weeks with RT' },
-                { name: 'Paclitaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, weekly x 6 weeks with RT' }
-            ]
-        },
-        'Definitive-FOLFOX-RT': {
-            name: 'mFOLFOX6 + RT (Definitive)',
-            cycles: 3,
-            drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks with RT' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks with RT' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks with RT' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks with RT' }
             ]
         },
         'Definitive-Pembrolizumab-Squamous': {
