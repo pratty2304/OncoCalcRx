@@ -4048,98 +4048,268 @@ const protocolDatabase = {
         }
     },
     thyroid: {
-        'Doxorubicin-Cisplatin': {
-            name: 'Doxorubicin + Cisplatin (Anaplastic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
+        'differentiated': {
+            // Radioactive Iodine-Refractory Differentiated Thyroid Cancer
+            'Lenvatinib-DTC': {
+                name: 'Lenvatinib (SELECT) - RAI-refractory DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Sorafenib-DTC': {
+                name: 'Sorafenib (DECISION) - RAI-refractory DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Pazopanib-DTC': {
+                name: 'Pazopanib - Follicular/Hurthle Cell Thyroid Cancer',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Selpercatinib-RET-DTC': {
+                name: 'Selpercatinib - RET-altered DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Pralsetinib-RET-DTC': {
+                name: 'Pralsetinib - RET-altered DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Larotrectinib-NTRK-DTC': {
+                name: 'Larotrectinib - NTRK fusion-positive DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Entrectinib-NTRK-DTC': {
+                name: 'Entrectinib - NTRK fusion-positive DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Repotrectinib-NTRK-DTC': {
+                name: 'Repotrectinib - NTRK fusion-positive DTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            }
         },
-        'Doxorubicin': {
-            name: 'Doxorubicin (single agent)',
-            cycles: 6,
-            drugs: [
-                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
-            ]
+        'medullary': {
+            // First-line Targeted Therapy for Advanced MTC
+            'Selpercatinib-RET-MTC': {
+                name: 'Selpercatinib - RET-mutant MTC (First-line)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Pralsetinib-RET-MTC': {
+                name: 'Pralsetinib - RET-mutant MTC (First-line)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Vandetanib-MTC': {
+                name: 'Vandetanib - Advanced MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Cabozantinib-MTC': {
+                name: 'Cabozantinib - Advanced MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Sunitinib-MTC': {
+                name: 'Sunitinib - Advanced MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily for 4 weeks, then 2 weeks off' }
+                ]
+            },
+            'Sorafenib-MTC': {
+                name: 'Sorafenib - Advanced MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Lenvatinib-MTC': {
+                name: 'Lenvatinib - Advanced MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Larotrectinib-NTRK-MTC': {
+                name: 'Larotrectinib - NTRK fusion-positive MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Entrectinib-NTRK-MTC': {
+                name: 'Entrectinib - NTRK fusion-positive MTC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Pembrolizumab-TMB-MTC': {
+                name: 'Pembrolizumab - High TMB MTC (≥10 mut/Mb)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+                ]
+            }
         },
-        'Sorafenib': {
-            name: 'Sorafenib (DECISION trial)',
-            cycles: 8,
-            drugs: [
-                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily' }
-            ]
-        },
-        'Sunitinib': {
-            name: 'Sunitinib (medullary thyroid cancer)',
-            cycles: 8,
-            drugs: [
-                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily for 4 weeks, then 2 weeks off' }
-            ]
-        },
-        'Pazopanib': {
-            name: 'Pazopanib (follicular thyroid cancer)',
-            cycles: 8,
-            drugs: [
-                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily' }
-            ]
-        },
-        'Vandetanib': {
-            name: 'Vandetanib (medullary thyroid cancer)',
-            cycles: 8,
-            drugs: [
-                { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'daily' }
-            ]
-        },
-        'Cabozantinib': {
-            name: 'Cabozantinib (medullary thyroid cancer)',
-            cycles: 8,
-            drugs: [
-                { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'daily' }
-            ]
-        },
-        'Lenvatinib': {
-            name: 'Lenvatinib (SELECT trial)',
-            cycles: 8,
-            drugs: [
-                { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily' }
-            ]
-        },
-        'Selpercatinib': {
-            name: 'Selpercatinib (RET fusion positive)',
-            cycles: 8,
-            drugs: [
-                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily' }
-            ]
-        },
-        'Pralsetinib': {
-            name: 'Pralsetinib (RET fusion positive)',
-            cycles: 8,
-            drugs: [
-                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily' }
-            ]
-        },
-        'Dabrafenib-Trametinib': {
-            name: 'Dabrafenib + Trametinib (BRAF V600E positive)',
-            cycles: 8,
-            drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily' }
-            ]
-        },
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (anaplastic thyroid cancer)',
-            cycles: 8,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
-            ]
-        },
-        'Larotrectinib': {
-            name: 'Larotrectinib (NTRK fusion positive)',
-            cycles: 8,
-            drugs: [
-                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily' }
-            ]
+        'anaplastic': {
+            // BRAF V600E-mutant Anaplastic Thyroid Cancer
+            'Dabrafenib-Trametinib-ATC': {
+                name: 'Dabrafenib + Trametinib - BRAF V600E-mutant ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily until progression' },
+                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Vemurafenib-Cobimetinib-ATC': {
+                name: 'Vemurafenib + Cobimetinib - BRAF V600E-mutant ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice daily until progression' },
+                    { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
+                ]
+            },
+            // RET-altered Anaplastic Thyroid Cancer
+            'Selpercatinib-RET-ATC': {
+                name: 'Selpercatinib - RET-altered ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Pralsetinib-RET-ATC': {
+                name: 'Pralsetinib - RET-altered ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            // NTRK fusion-positive Anaplastic Thyroid Cancer
+            'Larotrectinib-NTRK-ATC': {
+                name: 'Larotrectinib - NTRK fusion-positive ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Entrectinib-NTRK-ATC': {
+                name: 'Entrectinib - NTRK fusion-positive ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Repotrectinib-NTRK-ATC': {
+                name: 'Repotrectinib - NTRK fusion-positive ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            // Multi-kinase Inhibitors for ATC
+            'Lenvatinib-ATC': {
+                name: 'Lenvatinib - Advanced ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            'Sorafenib-ATC': {
+                name: 'Sorafenib - Advanced ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                ]
+            },
+            'Cabozantinib-ATC': {
+                name: 'Cabozantinib - Advanced ATC',
+                cycles: 12,
+                drugs: [
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'daily until progression' }
+                ]
+            },
+            // Immunotherapy for ATC
+            'Pembrolizumab-ATC': {
+                name: 'Pembrolizumab - Advanced ATC',
+                cycles: 8,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+                ]
+            },
+            'Nivolumab-ATC': {
+                name: 'Nivolumab - Advanced ATC',
+                cycles: 8,
+                drugs: [
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days or 480 mg every 28 days' }
+                ]
+            },
+            'Spartalizumab-ATC': {
+                name: 'Spartalizumab - Advanced ATC',
+                cycles: 8,
+                drugs: [
+                    { name: 'Spartalizumab', dose: 300, unit: 'mg', schedule: 'every 21 days' }
+                ]
+            },
+            // Chemotherapy for ATC
+            'Doxorubicin-Cisplatin-ATC': {
+                name: 'Doxorubicin + Cisplatin - Advanced ATC',
+                cycles: 6,
+                drugs: [
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Doxorubicin-ATC': {
+                name: 'Doxorubicin - Advanced ATC',
+                cycles: 6,
+                drugs: [
+                    { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Paclitaxel-Carboplatin-ATC': {
+                name: 'Paclitaxel + Carboplatin - Advanced ATC',
+                cycles: 6,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Docetaxel-ATC': {
+                name: 'Docetaxel - Advanced ATC',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            }
         }
     },
     pancreatic: {
@@ -10048,6 +10218,28 @@ function populateSubtypes(cancerType) {
         // Reset protocol dropdown
         protocolSelect.innerHTML = '<option value="">Select colorectal type first</option>';
         protocolSelect.disabled = true;
+    } else if (cancerType === 'thyroid') {
+        subtypeGroup.style.display = 'block';
+        subtypeSelect.disabled = false;
+        subtypeSelect.required = true;
+        subtypeSelect.innerHTML = '<option value="">Select thyroid cancer type</option>';
+        
+        const subtypes = {
+            'differentiated': 'Differentiated Thyroid Cancer (DTC)',
+            'medullary': 'Medullary Thyroid Cancer (MTC)',
+            'anaplastic': 'Anaplastic Thyroid Cancer (ATC)'
+        };
+        
+        Object.keys(subtypes).forEach(key => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = subtypes[key];
+            subtypeSelect.appendChild(option);
+        });
+        
+        // Reset protocol dropdown
+        protocolSelect.innerHTML = '<option value="">Select thyroid cancer type first</option>';
+        protocolSelect.disabled = true;
     } else {
         subtypeGroup.style.display = 'none';
         subtypeSelect.disabled = true;
@@ -10065,9 +10257,9 @@ function populateProtocols(cancerType, subtype) {
     if (cancerType && protocolDatabase[cancerType]) {
         let protocols;
         
-        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal') && subtype) {
+        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid') && subtype) {
             protocols = protocolDatabase[cancerType][subtype];
-        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia' && cancerType !== 'colorectal') {
+        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia' && cancerType !== 'colorectal' && cancerType !== 'thyroid') {
             protocols = protocolDatabase[cancerType];
         }
         
@@ -10158,7 +10350,7 @@ function calculateDoses(formData) {
     }
     
     let protocolData;
-    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal') && cancerSubtype) {
+    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid') && cancerSubtype) {
         protocolData = protocolDatabase[cancerType][cancerSubtype][protocol];
     } else {
         protocolData = protocolDatabase[cancerType][protocol];
@@ -10884,51 +11076,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sexFemale.addEventListener('change', updatePatientInfoCard);
     }
     
-    // Add missing event listeners for browse dropdowns
-    document.getElementById('cancerType').addEventListener('change', function() {
-        const cancerType = this.value;
-        const protocolSelect = document.getElementById('protocol');
-        const subtypeGroup = document.getElementById('subtypeGroup');
-        const cancerSubtypeSelect = document.getElementById('cancerSubtype');
-        
-        if (cancerType) {
-            // Show/hide subtype group for certain cancer types
-            if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal') {
-                subtypeGroup.style.display = 'block';
-                cancerSubtypeSelect.disabled = false;
-                protocolSelect.disabled = true;
-            } else {
-                subtypeGroup.style.display = 'none';
-                cancerSubtypeSelect.disabled = true;
-                protocolSelect.disabled = false;
-                // Load protocols for this cancer type
-                loadProtocols(cancerType);
-            }
-        } else {
-            subtypeGroup.style.display = 'none';
-            cancerSubtypeSelect.disabled = true;
-            protocolSelect.disabled = true;
-        }
-        
-        // Reset carboplatin fields
-        checkForCarboplatin('', cancerType, '');
-    });
-    
-    document.getElementById('cancerSubtype').addEventListener('change', function() {
-        const cancerType = document.getElementById('cancerType').value;
-        const subtype = this.value;
-        const protocolSelect = document.getElementById('protocol');
-        
-        if (subtype && cancerType) {
-            protocolSelect.disabled = false;
-            loadProtocols(cancerType, subtype);
-        } else {
-            protocolSelect.disabled = true;
-        }
-        
-        // Reset carboplatin fields
-        checkForCarboplatin('', cancerType, subtype);
-    });
     
     document.getElementById('protocol').addEventListener('change', function() {
         const protocolKey = this.value;
