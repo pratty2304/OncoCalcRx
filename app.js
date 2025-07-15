@@ -4144,7 +4144,7 @@ const protocolDatabase = {
     },
     pancreatic: {
         'mFOLFIRINOX': {
-            name: 'Modified FOLFIRINOX (mFOLFIRINOX)',
+            name: 'mFOLFIRINOX',
             cycles: 12,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'every 2 weeks' },
@@ -4330,7 +4330,7 @@ const protocolDatabase = {
             ]
         },
         'mFOLFOX6': {
-            name: 'Modified FOLFOX6 (mFOLFOX6)',
+            name: 'mFOLFOX6',
             cycles: 12,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
@@ -4504,7 +4504,7 @@ const protocolDatabase = {
         },
         // Second-line Metastatic Therapy
         'mFOLFOX6': {
-            name: 'Modified FOLFOX6 (Second-line metastatic)',
+            name: 'mFOLFOX6 (Second-line metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
@@ -7657,13 +7657,6 @@ const protocolDatabase = {
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 2 doses (preoperative)' }
             ]
         },
-        'Neoadjuvant-Pembrolizumab': {
-            name: 'Pembrolizumab (Neoadjuvant)',
-            cycles: 3,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 3 cycles (preoperative)' }
-            ]
-        },
         'Neoadjuvant-FOLFOX-Pembrolizumab': {
             name: 'mFOLFOX6 + Pembrolizumab (Neoadjuvant)',
             cycles: 4,
@@ -7693,13 +7686,6 @@ const protocolDatabase = {
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks x 16 cycles (postoperative)' }
             ]
         },
-        'Adjuvant-Pembrolizumab': {
-            name: 'Pembrolizumab (Adjuvant)',
-            cycles: 17,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 17 cycles (postoperative)' }
-            ]
-        },
         // DEFINITIVE CHEMORADIATION (SQUAMOUS CELL CARCINOMA)
         'Definitive-5FU-Cisplatin-RT': {
             name: '5-FU + Cisplatin + RT (Definitive, Squamous)',
@@ -7707,13 +7693,6 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, week 1 and 5 with RT' },
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, continuous infusion week 1 and 5 with RT' }
-            ]
-        },
-        'Definitive-Pembrolizumab-Squamous': {
-            name: 'Pembrolizumab (Definitive, Squamous, PD-L1 CPS≥10)',
-            cycles: 12,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 12 cycles' }
             ]
         },
 
@@ -7726,16 +7705,9 @@ const protocolDatabase = {
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 doses' }
             ]
         },
-        'Metastatic-Pembrolizumab-MSI': {
-            name: 'Pembrolizumab (1st Line Metastatic, MSI-H/dMMR)',
-            cycles: 12,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
-            ]
-        },
-        'Metastatic-Pembrolizumab-PDL1-Squamous': {
-            name: 'Pembrolizumab (1st Line Metastatic, Squamous, PD-L1 CPS≥10)',
-            cycles: 12,
+        'Pembrolizumab': {
+            name: 'Pembrolizumab (Neoadjuvant/Adjuvant/Metastatic, MSI-H/dMMR or PD-L1 CPS ≥1)',
+            cycles: 17,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
