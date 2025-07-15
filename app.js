@@ -5288,10 +5288,17 @@ const protocolDatabase = {
     },
     vulvar_vaginal: {
         'Cisplatin-RT': {
-            name: 'Cisplatin + RT - Neoadjuvant/Adjuvant',
-            cycles: 2,
+            name: 'Cisplatin + RT (Definitive)',
+            cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'weekly during RT x 6 weeks' }
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, weekly during RT x 6 weeks' }
+            ]
+        },
+        'Carboplatin-RT': {
+            name: 'Carboplatin + RT (Definitive)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly during RT x 6 weeks', requiresAUC: true }
             ]
         },
         'Carboplatin-Paclitaxel': {
@@ -5311,10 +5318,10 @@ const protocolDatabase = {
             ]
         },
         'Capecitabine-RT': {
-            name: 'Capecitabine + RT - Neoadjuvant/Adjuvant',
-            cycles: 2,
+            name: 'Capecitabine + RT (Definitive)',
+            cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily during RT' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily during RT x 6 weeks' }
             ]
         },
         'Gemcitabine-Cisplatin': {
@@ -5360,7 +5367,103 @@ const protocolDatabase = {
             name: 'Topotecan (single agent) - Second-line',
             cycles: 6,
             drugs: [
-                { name: 'Topotecan', dose: 1.25, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Topotecan', dose: 1.25, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        'Cisplatin-Paclitaxel-Bevacizumab': {
+            name: 'Cisplatin + Paclitaxel + Bevacizumab (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-Bevacizumab': {
+            name: 'Carboplatin + Paclitaxel + Bevacizumab (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
+                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-Paclitaxel-Bevacizumab-Pembrolizumab': {
+            name: 'Cisplatin + Paclitaxel + Bevacizumab + Pembrolizumab (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-Bevacizumab-Pembrolizumab': {
+            name: 'Carboplatin + Paclitaxel + Bevacizumab + Pembrolizumab (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
+                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cemiplimab': {
+            name: 'Cemiplimab (Advanced/Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Nivolumab-HPV': {
+            name: 'Nivolumab (HPV-related tumor)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 4 weeks' }
+            ]
+        },
+        'Trastuzumab-Deruxtecan-HER2': {
+            name: 'Trastuzumab Deruxtecan (T-DXd) (HER2+ tumors)',
+            cycles: 12,
+            drugs: [
+                { name: 'Trastuzumab Deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-5FU-RT': {
+            name: 'Cisplatin + 5-FU + RT (Definitive)',
+            cycles: 2,
+            drugs: [
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, week 1 and 5 with RT' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, CI, week 1 and 5 with RT' }
+            ]
+        },
+        'Mitomycin-Capecitabine-RT': {
+            name: 'Mitomycin + Capecitabine + RT (Definitive)',
+            cycles: 2,
+            drugs: [
+                { name: 'Mitomycin', dose: 10, unit: 'mg/m²', schedule: 'D1, D29 with RT' },
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily during RT' }
+            ]
+        },
+        'Erlotinib': {
+            name: 'Erlotinib (Second-line)',
+            cycles: 12,
+            drugs: [
+                { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily' }
+            ]
+        },
+        'Larotrectinib-NTRK': {
+            name: 'Larotrectinib (NTRK gene fusion-positive tumors)',
+            cycles: 12,
+            drugs: [
+                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
+            ]
+        },
+        'Entrectinib-NTRK': {
+            name: 'Entrectinib (NTRK gene fusion-positive tumors)',
+            cycles: 12,
+            drugs: [
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily' }
             ]
         }
     },
