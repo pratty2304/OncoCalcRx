@@ -3659,167 +3659,414 @@ const protocolDatabase = {
     },
     sarcoma: {
         'AD': {
-            name: 'AD (Doxorubicin + Dacarbazine)',
+            name: 'AD (Doxorubicin + Dacarbazine) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Dacarbazine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Dacarbazine', dose: 1000, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
-        'AI': {
-            name: 'AI (Doxorubicin + Ifosfamide)',
+        'AIM': {
+            name: 'AIM (Doxorubicin + Ifosfamide + Mesna) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Ifosfamide', dose: 10000, unit: 'mg/m²', schedule: 'continuous infusion days 1-3, every 21 days' },
-                { name: 'Mesna', dose: 2000, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' }
+                { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
+                { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
+                { name: 'Mesna', dose: 1500, unit: 'mg/m²', schedule: 'D1-D4 every 21 days (uroprotection)' }
             ]
         },
         'MAID': {
-            name: 'MAID (Mesna + Doxorubicin + Ifosfamide + Dacarbazine)',
+            name: 'MAID (Mesna + Doxorubicin + Ifosfamide + Dacarbazine) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
-                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', days: 'D1-D3', schedule: 'continuous infusion days 1-3, every 21 days' },
-                { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', days: 'D1-D3', schedule: 'continuous infusion days 1-3, every 21 days' },
-                { name: 'Dacarbazine', dose: 300, unit: 'mg/m²', days: 'D1-D3', schedule: 'continuous infusion days 1-3, every 21 days' }
+                { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4 every 21 days (uroprotection)' },
+                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
+                { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
+                { name: 'Dacarbazine', dose: 300, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
             ]
         },
         'CYVADIC': {
-            name: 'CYVADIC (Cyclophosphamide + Vincristine + Doxorubicin + Dacarbazine)',
+            name: 'CYVADIC (Cyclophosphamide + Vincristine + Doxorubicin + Dacarbazine) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days (max 2mg)' },
-                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Dacarbazine', dose: 250, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8 every 21 days (max 2mg)' },
+                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Dacarbazine', dose: 250, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
             ]
         },
         'IAP': {
-            name: 'IAP (Ifosfamide + Doxorubicin + Cisplatin)',
+            name: 'IAP (Ifosfamide + Doxorubicin + Cisplatin) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Mesna', dose: 400, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (with ifosfamide)' },
-                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' },
+                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+            ]
+        },
+        'IAC': {
+            name: 'IAC (Ifosfamide + Actinomycin + Cisplatin) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' },
+                { name: 'Actinomycin D', dose: 0.5, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
             ]
         },
         'AP': {
-            name: 'AP (Doxorubicin + Cisplatin)',
+            name: 'AP (Doxorubicin + Cisplatin) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Gemcitabine-Docetaxel': {
-            name: 'Gemcitabine + Docetaxel',
+            name: 'Gemcitabine + Docetaxel (Leiomyosarcoma/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 900, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'day 8, every 21 days' }
+                { name: 'Gemcitabine', dose: 900, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D8 every 21 days' }
             ]
         },
         'Gemcitabine-Vinorelbine': {
-            name: 'Gemcitabine + Vinorelbine',
+            name: 'Gemcitabine + Vinorelbine (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' }
             ]
         },
         'VAC-IE': {
-            name: 'VAC/IE (Vincristine + Dactinomycin + Cyclophosphamide / Ifosfamide + Etoposide) - Ewing sarcoma',
+            name: 'VAC/IE (Vincristine + Dactinomycin + Cyclophosphamide / Ifosfamide + Etoposide) - Ewing sarcoma (Neoadjuvant/Adjuvant)',
             cycles: 12,
             drugs: [
-                { name: 'Vincristine', dose: 2, unit: 'mg/m²', schedule: 'day 1 (VAC cycles), max 2mg' },
-                { name: 'Dactinomycin', dose: 1.25, unit: 'mg/m²', schedule: 'day 1 (VAC cycles)' },
-                { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'day 1 (VAC cycles)' },
-                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IE cycles)' },
-                { name: 'Mesna', dose: 360, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IE cycles)' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IE cycles)' }
-            ]
-        },
-        'OGS-2012': {
-            name: 'OGS-2012 Protocol (TMH Mumbai - Osteosarcoma)',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'day 1, cycles 1, 3, 5' },
-                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'day 1, cycles 2, 4, 6' },
-                { name: 'High-dose Methotrexate', dose: 12000, unit: 'mg/m²', schedule: 'day 1, all cycles (with leucovorin rescue)' },
-                { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'q6h starting 24h post-MTX until levels <0.1' }
+                { name: 'Vincristine', dose: 2, unit: 'mg/m²', schedule: 'D1 (VAC cycles) every 21 days, max 2mg' },
+                { name: 'Dactinomycin', dose: 1.25, unit: 'mg/m²', schedule: 'D1 (VAC cycles) every 21 days' },
+                { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1 (VAC cycles) every 21 days' },
+                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5 (IE cycles) every 21 days' },
+                { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5 (IE cycles) every 21 days (uroprotection)' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 (IE cycles) every 21 days' }
             ]
         },
         'Doxorubicin': {
-            name: 'Doxorubicin (Single agent)',
+            name: 'Doxorubicin (Single agent) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Ifosfamide': {
-            name: 'Ifosfamide (Single agent)',
+            name: 'Ifosfamide (Single agent) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, every 21 days' },
-                { name: 'Mesna', dose: 600, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3 (with ifosfamide)' }
+                { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
+                { name: 'Mesna', dose: 600, unit: 'mg/m²', schedule: 'D1-D3 every 21 days (uroprotection)' }
             ]
         },
         'Gemcitabine': {
-            name: 'Gemcitabine (Single agent)',
+            name: 'Gemcitabine (Single agent) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15 every 28 days' }
             ]
         },
         'Doxorubicin-Liposomal': {
-            name: 'Doxorubicin liposomal (Single agent)',
+            name: 'Doxorubicin liposomal (Single agent) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Doxorubicin liposomal', dose: 50, unit: 'mg/m²', schedule: 'every 28 days' }
+                { name: 'Doxorubicin liposomal', dose: 50, unit: 'mg/m²', schedule: 'D1 every 28 days' }
             ]
         },
         'Pazopanib': {
-            name: 'Pazopanib (Single agent)',
+            name: 'Pazopanib (Single agent) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily on empty stomach, continuous' }
+                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily on empty stomach continuously' }
             ]
         },
         'Trabectedin': {
-            name: 'Trabectedin (Single agent)',
+            name: 'Trabectedin (Single agent) (Liposarcoma/Leiomyosarcoma/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Trabectedin', dose: 1.5, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Trabectedin', dose: 1.5, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Eribulin': {
-            name: 'Eribulin (Single agent)',
+            name: 'Eribulin (Single agent) (Liposarcoma/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Eribulin', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                { name: 'Eribulin', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' }
             ]
         },
         'Tazemetostat': {
-            name: 'Tazemetostat (EZH2 inhibitor)',
+            name: 'Tazemetostat (EZH2 inhibitor) (Epithelioid sarcoma/Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'twice daily, continuous' }
+                { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'twice daily continuously' }
             ]
         },
         'Pexidartinib': {
-            name: 'Pexidartinib (CSF1R inhibitor - TGCT)',
+            name: 'Pexidartinib (CSF1R inhibitor) (Tenosynovial Giant Cell Tumor/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Pexidartinib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous' }
+                { name: 'Pexidartinib', dose: 400, unit: 'mg', schedule: 'twice daily continuously' }
             ]
         },
         'Atezolizumab': {
-            name: 'Atezolizumab (PD-L1 inhibitor)',
+            name: 'Atezolizumab (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'every 2 weeks, then 1200mg every 21 days' }
+                { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'D1 every 14 days, then 1200mg every 21 days' }
+            ]
+        },
+        
+        // Additional Single Agent Regimens
+        'Epirubicin': {
+            name: 'Epirubicin (Single agent) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Epirubicin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+            ]
+        },
+        'Ifosfamide-Epirubicin': {
+            name: 'Ifosfamide + Epirubicin (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
+                { name: 'Epirubicin', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'D1-D3 every 21 days (uroprotection)' }
+            ]
+        },
+        'Trabectedin-Doxorubicin': {
+            name: 'Trabectedin + Doxorubicin (Liposarcoma/Leiomyosarcoma/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Trabectedin', dose: 1.1, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+            ]
+        },
+        'Gemcitabine-Dacarbazine': {
+            name: 'Gemcitabine + Dacarbazine (Leiomyosarcoma/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Dacarbazine', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+            ]
+        },
+        
+        // Pediatric Regimens
+        'VAC': {
+            name: 'VAC (Vincristine + Actinomycin D + Cyclophosphamide) (Rhabdomyosarcoma/Neoadjuvant/Adjuvant)',
+            cycles: 12,
+            drugs: [
+                { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1 every 21 days (max 2mg)' },
+                { name: 'Actinomycin D', dose: 0.015, unit: 'mg/kg', schedule: 'D1 every 21 days' },
+                { name: 'Cyclophosphamide', dose: 2200, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+            ]
+        },
+        'Cyclophosphamide-Topotecan': {
+            name: 'Cyclophosphamide + Topotecan (Rhabdomyosarcoma/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Topotecan', dose: 0.75, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+            ]
+        },
+        'Vincristine-Irinotecan-Temozolomide': {
+            name: 'Vincristine + Irinotecan + Temozolomide (VIT) (Rhabdomyosarcoma/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, D8 every 21 days (max 2mg)' },
+                { name: 'Irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+            ]
+        },
+        'Vinorelbine': {
+            name: 'Vinorelbine (Single agent) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' }
+            ]
+        },
+        'Docetaxel': {
+            name: 'Docetaxel (Single agent) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+            ]
+        },
+        
+        // Immunotherapy Regimens
+        'Pembrolizumab': {
+            name: 'Pembrolizumab (TMB-H) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days' }
+            ]
+        },
+        'Pembrolizumab-Axitinib': {
+            name: 'Pembrolizumab + Axitinib (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days' },
+                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        'Ipilimumab-Nivolumab': {
+            name: 'Ipilimumab + Nivolumab (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1 every 6 weeks' },
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1 every 14 days' }
+            ]
+        },
+        'Bevacizumab': {
+            name: 'Bevacizumab (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1 every 21 days' }
+            ]
+        },
+        
+        // Targeted Therapy - Histology Specific
+        'Imatinib': {
+            name: 'Imatinib (GIST/DFSP) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily continuously' }
+            ]
+        },
+        'Larotrectinib': {
+            name: 'Larotrectinib (NTRK fusion-positive) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        'Entrectinib': {
+            name: 'Entrectinib (NTRK fusion-positive) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily continuously' }
+            ]
+        },
+        'Repotrectinib': {
+            name: 'Repotrectinib (NTRK fusion-positive) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily continuously' }
+            ]
+        },
+        'Crizotinib': {
+            name: 'Crizotinib (ALK-positive) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        'Alectinib': {
+            name: 'Alectinib (ALK-positive) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        'Brigatinib': {
+            name: 'Brigatinib (ALK-positive) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'daily continuously (after 7-day lead-in at 90mg)' }
+            ]
+        },
+        'Sirolimus': {
+            name: 'Sirolimus (PEComa) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'daily continuously' }
+            ]
+        },
+        'Temsirolimus': {
+            name: 'Temsirolimus (PEComa) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Temsirolimus', dose: 25, unit: 'mg', schedule: 'IV weekly' }
+            ]
+        },
+        'Everolimus': {
+            name: 'Everolimus (PEComa) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily continuously' }
+            ]
+        },
+        'Nirogacestat': {
+            name: 'Nirogacestat (Desmoid tumors) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nirogacestat', dose: 150, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        
+        // Rare Sarcoma Subtypes
+        'Sunitinib-GIST': {
+            name: 'Sunitinib (GIST) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily for 4 weeks, then 2 weeks off' }
+            ]
+        },
+        'Regorafenib': {
+            name: 'Regorafenib (GIST) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'daily for 3 weeks, then 1 week off' }
+            ]
+        },
+        'Ripretinib': {
+            name: 'Ripretinib (GIST) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'daily continuously' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-Bevacizumab': {
+            name: 'Carboplatin + Paclitaxel + Bevacizumab (Angiosarcoma) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1 every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1 every 21 days' }
+            ]
+        },
+        'Propranolol': {
+            name: 'Propranolol (Angiosarcoma) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Propranolol', dose: 40, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        'Sorafenib': {
+            name: 'Sorafenib (Epithelioid Hemangioendothelioma) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily continuously' }
+            ]
+        },
+        'Sunitinib-SFT': {
+            name: 'Sunitinib (Solitary Fibrous Tumor) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily for 4 weeks, then 2 weeks off' }
+            ]
+        },
+        'Temozolomide': {
+            name: 'Temozolomide (Extraskeletal Myxoid Chondrosarcoma) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' }
             ]
         }
     },
