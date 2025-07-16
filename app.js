@@ -5898,54 +5898,90 @@ const protocolDatabase = {
     },
     penile: {
         'TIP': {
-            name: 'Paclitaxel + Ifosfamide + Cisplatin (TIP) - Metastatic - 1L',
+            name: 'Paclitaxel + Ifosfamide + Cisplatin (TIP) - (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Mesna', dose: 240, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Mesna', dose: 240, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (uroprotection)' }
+            ]
+        },
+        'TPF': {
+            name: 'Docetaxel + Cisplatin + 5-FU (TPF) - Metastatic',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 750, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        'Cisplatin-RT': {
+            name: 'Cisplatin + Radiation Therapy - Locally Advanced',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'weekly during RT' },
+                { name: 'Radiation Therapy', dose: 54, unit: 'Gy', schedule: '54-57 Gy nodal, 63 Gy primary' }
+            ]
+        },
+        'TIP-RT-InPACT': {
+            name: 'TIP + Radiation Therapy (InPACT) - Locally Advanced',
+            cycles: 4,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days (4 cycles)' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (4 cycles)' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (4 cycles)' },
+                { name: 'Mesna', dose: 240, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (4 cycles)' },
+                { name: 'Radiation Therapy', dose: 45, unit: 'Gy', schedule: 'with concurrent weekly cisplatin' }
             ]
         },
         'Cisplatin-5FU': {
-            name: 'Cisplatin + 5-Fluorouracil (Cisplatin-5FU) - Metastatic - 1L',
+            name: 'Cisplatin + 5-Fluorouracil - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
-        'Carboplatin-Paclitaxel-Weekly': {
-            name: 'Carboplatin + Paclitaxel (Weekly) - Metastatic - 1L',
-            cycles: 12,
+        'Cisplatin-5FU-Pembrolizumab-HERCULES': {
+            name: 'Cisplatin + 5-FU + Pembrolizumab (HERCULES) - Metastatic',
+            cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 weekly', requiresAUC: true },
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1 weekly' }
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (continue maintenance up to 34 cycles)' }
+            ]
+        },
+        'Carboplatin-5FU-Pembrolizumab-HERCULES': {
+            name: 'Carboplatin + 5-FU + Pembrolizumab (HERCULES) - Metastatic',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (continue maintenance up to 34 cycles)' }
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel (3-weekly) - Metastatic - 1L',
+            name: 'Carboplatin + Paclitaxel - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 every 21 days', requiresAUC: true },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Cisplatin-Paclitaxel': {
-            name: 'Cisplatin + Paclitaxel - Metastatic - 1L',
+            name: 'Cisplatin + Paclitaxel - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Cisplatin-5FU-Pembrolizumab': {
-            name: 'Cisplatin + 5-FU + Pembrolizumab - Metastatic - 1L',
-            cycles: 6,
+        'Pembrolizumab-Single': {
+            name: 'Pembrolizumab (Single Agent) - Metastatic (dMMR/MSI-H/TMB-H)',
+            cycles: 35,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days until progression' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Carboplatin-5FU-Pembrolizumab': {
