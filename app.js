@@ -3500,109 +3500,160 @@ const protocolDatabase = {
     },
     testicular: {
         'BEP': {
-            name: 'BEP (Bleomycin + Etoposide + Cisplatin) - Standard risk',
-            cycles: 3,
+            name: 'BEP (Bleomycin + Etoposide + Cisplatin) (Good risk/Intermediate risk/Poor risk/Adjuvant)',
+            cycles: '3-4',
             drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15 every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
             ]
         },
         'EP': {
-            name: 'EP (Etoposide + Cisplatin) - Standard risk',
+            name: 'EP (Etoposide + Cisplatin) - Good risk (Adjuvant)',
             cycles: 4,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
             ]
         },
         'Carboplatin-Single': {
-            name: 'Carboplatin (Single agent - Stage I seminoma)',
+            name: 'Carboplatin (Single agent - Stage I seminoma) (Adjuvant)',
             cycles: 1,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'single dose' }
             ]
         },
         'VIP': {
-            name: 'VIP (Vinblastine + Ifosfamide + Cisplatin) - Salvage',
+            name: 'VIP (Etoposide + Ifosfamide + Cisplatin) - Intermediate risk (Adjuvant)',
             cycles: 4,
             drugs: [
-                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', days: 'D1-D2', schedule: 'days 1-2, every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Mesna', dose: 400, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (with ifosfamide)' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
             ]
         },
         'TIP': {
-            name: 'TIP (Paclitaxel + Ifosfamide + Cisplatin) - Salvage',
+            name: 'TIP (Paclitaxel + Ifosfamide + Cisplatin) - Salvage (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', days: 'D2-D6', schedule: 'days 2-6, every 21 days' },
-                { name: 'Mesna', dose: 500, unit: 'mg/m²', days: 'D2-D6', schedule: 'days 2-6 (with ifosfamide)' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', days: 'D2-D6', schedule: 'days 2-6, every 21 days' }
+                { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D2-D5 every 21 days' },
+                { name: 'Mesna', dose: 500, unit: 'mg/m²', schedule: 'D2-D5 every 21 days (uroprotection)' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D2-D5 every 21 days' }
             ]
         },
         'VeIP': {
-            name: 'VeIP (Vinblastine + Ifosfamide + Cisplatin) - Salvage',
+            name: 'VeIP (Vinblastine + Ifosfamide + Cisplatin) - Salvage (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', days: 'D1-D2', schedule: 'days 1-2, every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Mesna', dose: 400, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (with ifosfamide)' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', schedule: 'D1-D2 every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
             ]
         },
         'PVB': {
-            name: 'PVB (Cisplatin + Vinblastine + Bleomycin) - Historical',
+            name: 'PVB (Cisplatin + Vinblastine + Bleomycin) - Historical (Adjuvant)',
             cycles: 3,
             drugs: [
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Vinblastine', dose: 0.15, unit: 'mg/kg', days: 'D1-D2', schedule: 'days 1-2, every 21 days' },
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, every 21 days' }
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
+                { name: 'Vinblastine', dose: 0.15, unit: 'mg/kg', schedule: 'D1-D2 every 21 days' },
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15 every 21 days' }
             ]
         },
         'VAB-6': {
-            name: 'VAB-6 (Vinblastine + Actinomycin D + Bleomycin + Cisplatin + Cyclophosphamide) - Historical',
+            name: 'VAB-6 (Vinblastine + Actinomycin D + Bleomycin + Cisplatin + Cyclophosphamide) - Historical (Adjuvant)',
             cycles: 3,
             drugs: [
-                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Actinomycin D', dose: 1, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, every 21 days' },
-                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'day 4, every 21 days' },
-                { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Actinomycin D', dose: 1, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15 every 21 days' },
+                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'D4 every 21 days' },
+                { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Paclitaxel-Gemcitabine': {
-            name: 'Paclitaxel + Gemcitabine (Salvage)',
+            name: 'Paclitaxel + Gemcitabine (Salvage) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' },
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15 every 28 days' },
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, D15 every 28 days' }
             ]
         },
         'Paclitaxel-Gemcitabine-Oxaliplatin': {
-            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (Salvage)',
+            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (Salvage) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Gemcitabine-Oxaliplatin': {
-            name: 'Gemcitabine + Oxaliplatin (Salvage)',
+            name: 'Gemcitabine + Oxaliplatin (Salvage) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Etoposide-Single': {
-            name: 'Etoposide (Single agent)',
+            name: 'Etoposide (Single agent) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+            ]
+        },
+        
+        // High-dose Chemotherapy
+        'Carboplatin-Etoposide-HD': {
+            name: 'Carboplatin + Etoposide (High-dose) (Metastatic)',
+            cycles: 3,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'D1-D3 every 21 days' },
+                { name: 'Etoposide', dose: 750, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
+            ]
+        },
+        
+        // Standard dose Carboplatin + Etoposide
+        'Carboplatin-Etoposide': {
+            name: 'Carboplatin + Etoposide (Metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days' },
+                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
+            ]
+        },
+        
+        // Paclitaxel + Ifosfamide + Carboplatin + Etoposide (PICE)
+        'PICE': {
+            name: 'Paclitaxel + Ifosfamide + Carboplatin + Etoposide (PICE) (Metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
+                { name: 'Mesna', dose: 500, unit: 'mg/m²', schedule: 'D1-D3 every 21 days (uroprotection)' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days' },
+                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
+            ]
+        },
+        
+        // Pembrolizumab for select cases
+        'Pembrolizumab': {
+            name: 'Pembrolizumab (MSI-H/dMMR/TMB-H) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days' }
+            ]
+        },
+        
+        // Oral Etoposide
+        'Etoposide-Oral': {
+            name: 'Etoposide (Oral) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Etoposide (oral)', dose: 50, unit: 'mg', schedule: 'twice daily D1-D10 every 21 days' }
             ]
         }
     },
