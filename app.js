@@ -3127,166 +3127,219 @@ const protocolDatabase = {
     },
     renal: {
         'Nivolumab-Ipilimumab': {
-            name: 'Nivolumab + Ipilimumab (Metastatic intermediate/poor risk)',
+            name: 'Nivolumab + Ipilimumab (CheckMate-214) (Metastatic intermediate/poor risk)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'every 21 days, then 240mg every 2 weeks' },
-                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'every 21 days only' }
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles only' }
+            ]
+        },
+        'Nivolumab-Ipilimumab-Favorable': {
+            name: 'Nivolumab + Ipilimumab (CheckMate-214) (Metastatic favorable risk)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles only' }
             ]
         },
         'Pembrolizumab-Axitinib': {
-            name: 'Pembrolizumab + Axitinib (Metastatic)',
+            name: 'Pembrolizumab + Axitinib (KEYNOTE-426) (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days, then 400mg every 6 weeks' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then 400mg every 42 days' },
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
         'Avelumab-Axitinib': {
-            name: 'Avelumab + Axitinib (Metastatic)',
+            name: 'Avelumab + Axitinib (JAVELIN Renal 101) (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'every 2 weeks' },
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' },
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
         'Lenvatinib-Pembrolizumab': {
-            name: 'Lenvatinib + Pembrolizumab (Metastatic)',
+            name: 'Lenvatinib + Pembrolizumab (CLEAR) (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
                 { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'daily, continuous' },
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days, then 400mg every 6 weeks' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then 400mg every 42 days' }
             ]
         },
         'Nivolumab-Cabozantinib': {
-            name: 'Nivolumab + Cabozantinib (Metastatic)',
+            name: 'Nivolumab + Cabozantinib (CheckMate-9ER) (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks, then 480mg every 28 days' },
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days, then 480mg every 28 days' },
                 { name: 'Cabozantinib', dose: 40, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
+        'Cabozantinib-Nivolumab-Ipilimumab': {
+            name: 'Cabozantinib + Nivolumab + Ipilimumab (COSMIC-313) (Metastatic intermediate/poor risk)',
+            cycles: 8,
+            drugs: [
+                { name: 'Cabozantinib', dose: 40, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles only' }
+            ]
+        },
+        'Pembrolizumab-Adjuvant': {
+            name: 'Pembrolizumab (KEYNOTE-564) (Adjuvant high-risk clear cell)',
+            cycles: 17,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 17 cycles (1 year)' }
+            ]
+        },
         'Lenvatinib-Everolimus': {
-            name: 'Lenvatinib + Everolimus (Metastatic)',
+            name: 'Lenvatinib + Everolimus (Study 205) (Metastatic second-line)',
             cycles: 8,
             drugs: [
                 { name: 'Lenvatinib', dose: 18, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'Everolimus', dose: 5, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
-        'Bevacizumab-Everolimus': {
-            name: 'Bevacizumab + Everolimus (Metastatic)',
+        'Lenvatinib-Belzutifan': {
+            name: 'Lenvatinib + Belzutifan (KEYMAKER-U03) (Metastatic second-line)',
             cycles: 8,
             drugs: [
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'every 2 weeks' },
+                { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'Belzutifan', dose: 120, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Bevacizumab-Everolimus': {
+            name: 'Bevacizumab + Everolimus (Metastatic second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Erlotinib-Bevacizumab': {
+            name: 'Erlotinib + Bevacizumab (Hereditary leiomyomatosis RCC)',
+            cycles: 8,
+            drugs: [
+                { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Bevacizumab-Interferon': {
             name: 'Bevacizumab + Interferon alfa-2a (Historical metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'every 2 weeks' },
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                 { name: 'Interferon alfa-2a', dose: 9, unit: 'MIU', schedule: 'SC 3x/week, continuous' }
             ]
         },
-        'Interferon-IL2': {
-            name: 'Interferon alfa + IL-2 (Historical combination)',
-            cycles: 6,
-            drugs: [
-                { name: 'Interferon alfa-2a', dose: 6, unit: 'MIU', schedule: 'SC daily x 5 days/week' },
-                { name: 'Interleukin-2 (IL-2)', dose: 18, unit: 'MIU/m²', schedule: 'SC daily x 5 days/week' }
-            ]
-        },
         'Sunitinib': {
-            name: 'Sunitinib (Metastatic)',
+            name: 'Sunitinib (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
-                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily x 4 weeks, then 2 weeks off' }
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily D1-28, then 14 days off (6-week cycle)' }
+            ]
+        },
+        'Sunitinib-Continuous': {
+            name: 'Sunitinib continuous (Metastatic all risk groups)',
+            cycles: 8,
+            drugs: [
+                { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
         'Pazopanib': {
-            name: 'Pazopanib (Metastatic)',
+            name: 'Pazopanib (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
                 { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily on empty stomach, continuous' }
             ]
         },
+        'Regorafenib': {
+            name: 'Regorafenib (Metastatic second-line)',
+            cycles: 8,
+            drugs: [
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'daily D1-21, then 7 days off (28-day cycle)' }
+            ]
+        },
         'Cabozantinib': {
-            name: 'Cabozantinib (Metastatic)',
+            name: 'Cabozantinib (METEOR) (Metastatic second-line)',
             cycles: 8,
             drugs: [
                 { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
         'Nivolumab': {
-            name: 'Nivolumab (Metastatic)',
+            name: 'Nivolumab (CheckMate-025) (Metastatic second-line)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks, then 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days, then 480mg every 28 days' }
             ]
         },
         'Axitinib': {
-            name: 'Axitinib (Metastatic)',
+            name: 'Axitinib (AXIS) (Metastatic second-line)',
             cycles: 8,
             drugs: [
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
         'Sorafenib': {
-            name: 'Sorafenib (Metastatic)',
+            name: 'Sorafenib (TARGET) (Metastatic all risk groups)',
             cycles: 8,
             drugs: [
                 { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
         'Lenvatinib': {
-            name: 'Lenvatinib (Metastatic)',
+            name: 'Lenvatinib (Metastatic second-line)',
             cycles: 8,
             drugs: [
                 { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
         'Everolimus': {
-            name: 'Everolimus (Metastatic)',
+            name: 'Everolimus (RECORD-1) (Metastatic second-line)',
             cycles: 8,
             drugs: [
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
-        'Temsirolimus': {
-            name: 'Temsirolimus (Poor-risk first-line)',
+        'Belzutifan': {
+            name: 'Belzutifan (von Hippel-Lindau disease)',
             cycles: 8,
             drugs: [
-                { name: 'Temsirolimus', dose: 25, unit: 'mg', schedule: 'IV weekly, continuous' }
+                { name: 'Belzutifan', dose: 120, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Temsirolimus': {
+            name: 'Temsirolimus (ARCC) (Metastatic poor-risk)',
+            cycles: 8,
+            drugs: [
+                { name: 'Temsirolimus', dose: 25, unit: 'mg', schedule: 'IV D1, every 7 days' }
             ]
         },
         'Tivozanib': {
-            name: 'Tivozanib (Metastatic)',
+            name: 'Tivozanib (TIVO-1) (Metastatic second-line)',
             cycles: 8,
             drugs: [
-                { name: 'Tivozanib', dose: 1340, unit: 'mcg', schedule: 'daily x 21 days, then 7 days off' }
+                { name: 'Tivozanib', dose: 1340, unit: 'mcg', schedule: 'daily D1-21, then 7 days off (28-day cycle)' }
             ]
         },
         'Bevacizumab': {
             name: 'Bevacizumab (Single agent)',
             cycles: 8,
             drugs: [
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'every 2 weeks' }
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Pembrolizumab': {
-            name: 'Pembrolizumab (Metastatic)',
+            name: 'Pembrolizumab (Metastatic second-line)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days, then 400mg every 6 weeks' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then 400mg every 42 days' }
             ]
         },
         'Interleukin-2': {
-            name: 'Interleukin-2 (High-dose)',
+            name: 'Interleukin-2 (High-dose) (Historical)',
             cycles: 2,
             drugs: [
-                { name: 'Interleukin-2 (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'q8h x 14 doses (cycle 1), then q8h x 14 doses (cycle 2)' }
+                { name: 'Interleukin-2 (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'every 8 hours x 14 doses (cycle 1), then every 8 hours x 14 doses (cycle 2)' }
             ]
         },
         'Interferon-alpha': {
