@@ -2844,19 +2844,19 @@ const protocolDatabase = {
     },
     prostate: {
         'Docetaxel-Prednisone': {
-            name: 'Docetaxel + Prednisone (mCSPC/mCRPC metastatic)',
+            name: 'Docetaxel + Prednisone (TAX-327) (mCSPC/mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
-        'Docetaxel-Leuprolide': {
-            name: 'Docetaxel + Leuprolide (mCSPC)',
+        'Docetaxel-ADT': {
+            name: 'Docetaxel + ADT (CHAARTED/STAMPEDE) (mCSPC)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM q3months, continuous' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
@@ -2870,10 +2870,18 @@ const protocolDatabase = {
             ]
         },
         'Cabazitaxel-Prednisone': {
-            name: 'Cabazitaxel + Prednisone (mCRPC post-docetaxel)',
+            name: 'Cabazitaxel + Prednisone (TROPIC) (mCRPC post-docetaxel)',
             cycles: 8,
             drugs: [
                 { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Prednisone', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
+            ]
+        },
+        'Cabazitaxel-25': {
+            name: 'Cabazitaxel 25mg/m² + Prednisone (PROSELICA) (mCRPC post-docetaxel)',
+            cycles: 8,
+            drugs: [
+                { name: 'Cabazitaxel', dose: 25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
@@ -2885,19 +2893,55 @@ const protocolDatabase = {
                 { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' }
             ]
         },
-        'Abiraterone-Prednisone': {
-            name: 'Abiraterone + Prednisone (mCSPC/mCRPC)',
+        'Abiraterone-Prednisone-mCSPC': {
+            name: 'Abiraterone + Prednisone (LATITUDE/STAMPEDE) (mCSPC)',
             cycles: 12,
             drugs: [
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
         },
+        'Abiraterone-Prednisone-mCRPC': {
+            name: 'Abiraterone + Prednisone (COU-AA-301/302) (mCRPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Abiraterone-Docetaxel-ADT': {
+            name: 'Abiraterone + Docetaxel + ADT (PEACE-1) (mCSPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days x 6 cycles' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
+            ]
+        },
+        'Darolutamide-Docetaxel-ADT': {
+            name: 'Darolutamide + Docetaxel + ADT (ARASENS) (mCSPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Darolutamide', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days x 6 cycles' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
+            ]
+        },
         'Niraparib-Abiraterone-Prednisone': {
-            name: 'Niraparib + Abiraterone + Prednisone (mCRPC - HRR mutations)',
+            name: 'Niraparib + Abiraterone + Prednisone (MAGNITUDE) (mCRPC - HRR mutations)',
             cycles: 12,
             drugs: [
                 { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'daily, continuous (HRR gene mutations)' },
+                { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
+                { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
+            ]
+        },
+        'Niraparib-Abiraterone-mCSPC': {
+            name: 'Niraparib + Abiraterone + Prednisone (AMPLITUDE) (mCSPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
             ]
@@ -2960,51 +3004,77 @@ const protocolDatabase = {
             ]
         },
         'Flutamide-Leuprolide': {
-            name: 'Flutamide + Leuprolide (ADT combination)',
+            name: 'Flutamide + Leuprolide (Combined androgen blockade)',
             cycles: 12,
             drugs: [
                 { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' },
-                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM q3months, continuous' }
+                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
             ]
         },
         'Flutamide-Goserelin': {
-            name: 'Flutamide + Goserelin (ADT combination)',
+            name: 'Flutamide + Goserelin (Combined androgen blockade)',
             cycles: 12,
             drugs: [
                 { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' },
-                { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC q3months, continuous' }
+                { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC D1, every 84 days, continuous' }
             ]
         },
-        'Enzalutamide': {
-            name: 'Enzalutamide (mCSPC/mCRPC)',
+        'Enzalutamide-mCSPC': {
+            name: 'Enzalutamide + ADT (ARCHES/ENZAMET) (mCSPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
+            ]
+        },
+        'Enzalutamide-mCRPC': {
+            name: 'Enzalutamide (AFFIRM/PREVAIL) (mCRPC)',
             cycles: 12,
             drugs: [
                 { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
-        'Apalutamide': {
-            name: 'Apalutamide (nmCRPC/mCSPC)',
+        'Enzalutamide-M0HSPC': {
+            name: 'Enzalutamide ± Leuprolide (EMBARK) (M0 high-risk HSPC)',
             cycles: 12,
             drugs: [
-                { name: 'Apalutamide', dose: 240, unit: 'mg', schedule: 'daily, continuous' }
+                { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'Leuprolide (optional)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
             ]
         },
-        'Darolutamide': {
-            name: 'Darolutamide (nmCRPC)',
+        'Apalutamide-nmCRPC': {
+            name: 'Apalutamide + ADT (SPARTAN) (nmCRPC)',
             cycles: 12,
             drugs: [
-                { name: 'Darolutamide', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' }
+                { name: 'Apalutamide', dose: 240, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
+            ]
+        },
+        'Apalutamide-mCSPC': {
+            name: 'Apalutamide + ADT (TITAN) (mCSPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Apalutamide', dose: 240, unit: 'mg', schedule: 'daily, continuous' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
+            ]
+        },
+        'Darolutamide-nmCRPC': {
+            name: 'Darolutamide + ADT (ARAMIS) (nmCRPC)',
+            cycles: 12,
+            drugs: [
+                { name: 'Darolutamide', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' },
+                { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
             ]
         },
         'Olaparib': {
-            name: 'Olaparib (mCRPC - HRR gene mutations)',
+            name: 'Olaparib (PROfound) (mCRPC - HRR gene mutations)',
             cycles: 12,
             drugs: [
                 { name: 'Olaparib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous (germline/somatic HRR mutations)' }
             ]
         },
         'Rucaparib': {
-            name: 'Rucaparib (mCRPC - BRCA mutations)',
+            name: 'Rucaparib (TRITON2) (mCRPC - BRCA mutations)',
             cycles: 12,
             drugs: [
                 { name: 'Rucaparib', dose: 600, unit: 'mg', schedule: 'twice daily, continuous (BRCA1/2 mutations)' }
@@ -3014,35 +3084,49 @@ const protocolDatabase = {
             name: 'Pembrolizumab (mCRPC - MSI-H/dMMR)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days (MSI-H/dMMR)' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (MSI-H/dMMR)' }
             ]
         },
         'Leuprolide': {
             name: 'Leuprolide (ADT monotherapy)',
             cycles: 12,
             drugs: [
-                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM q3months, continuous' }
+                { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
+            ]
+        },
+        'Leuprolide-Monthly': {
+            name: 'Leuprolide monthly (ADT monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Leuprolide', dose: 7.5, unit: 'mg', schedule: 'IM D1, every 28 days, continuous' }
             ]
         },
         'Goserelin': {
             name: 'Goserelin (ADT monotherapy)',
             cycles: 12,
             drugs: [
-                { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC q3months, continuous' }
+                { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC D1, every 84 days, continuous' }
+            ]
+        },
+        'Goserelin-Monthly': {
+            name: 'Goserelin monthly (ADT monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC D1, every 28 days, continuous' }
             ]
         },
         'Degarelix': {
             name: 'Degarelix (GnRH antagonist)',
             cycles: 12,
             drugs: [
-                { name: 'Degarelix', dose: 240, unit: 'mg', schedule: 'SC loading dose, then 80mg monthly' }
+                { name: 'Degarelix', dose: 240, unit: 'mg', schedule: 'SC loading dose D1, then 80mg every 28 days' }
             ]
         },
         'Relugolix': {
-            name: 'Relugolix (Oral GnRH antagonist)',
+            name: 'Relugolix (HERO) (Oral GnRH antagonist)',
             cycles: 12,
             drugs: [
-                { name: 'Relugolix', dose: 120, unit: 'mg', schedule: 'daily, continuous' }
+                { name: 'Relugolix', dose: 360, unit: 'mg', schedule: 'loading dose D1, then 120mg daily, continuous' }
             ]
         },
         'Bicalutamide': {
@@ -3083,24 +3167,24 @@ const protocolDatabase = {
             ]
         },
         'Sipuleucel-T': {
-            name: 'Sipuleucel-T (Immunotherapy)',
+            name: 'Sipuleucel-T (IMPACT) (Immunotherapy)',
             cycles: 1,
             drugs: [
-                { name: 'Sipuleucel-T', dose: '50×10⁶', unit: 'autologous CD54+ cells', schedule: '3 infusions every 2 weeks (weeks 0, 2, 4)' }
+                { name: 'Sipuleucel-T', dose: '50×10⁶', unit: 'autologous CD54+ cells', schedule: '3 infusions D1, D15, D29' }
             ]
         },
         'Paclitaxel-Single': {
             name: 'Paclitaxel (Single agent - mCRPC)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Docetaxel-Single': {
             name: 'Docetaxel (Single agent - mCRPC)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Estramustine': {
@@ -3111,17 +3195,62 @@ const protocolDatabase = {
             ]
         },
         'Radium-223': {
-            name: 'Radium-223 (Bone-targeted therapy)',
+            name: 'Radium-223 (ALSYMPCA) (Bone-targeted therapy)',
             cycles: 6,
             drugs: [
-                { name: 'Radium-223 dichloride', dose: 55, unit: 'kBq/kg', schedule: 'IV every 28 days (bone metastases)' }
+                { name: 'Radium-223 dichloride', dose: 55, unit: 'kBq/kg', schedule: 'IV D1, every 28 days (bone metastases)' }
             ]
         },
         'Lutetium-177-PSMA': {
-            name: 'Lutetium-177 PSMA-617 (PSMA-targeted therapy)',
+            name: 'Lutetium-177 PSMA-617 (VISION) (PSMA-targeted therapy)',
             cycles: 6,
             drugs: [
-                { name: 'Lutetium-177 PSMA-617', dose: 7400, unit: 'MBq', schedule: 'IV every 6 weeks (PSMA+ mCRPC)' }
+                { name: 'Lutetium-177 PSMA-617', dose: 7400, unit: 'MBq', schedule: 'IV D1, every 42 days (PSMA+ mCRPC)' }
+            ]
+        },
+        'Carboplatin-Cabazitaxel': {
+            name: 'Carboplatin + Cabazitaxel (Aggressive variant CRPC)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Carboplatin-Docetaxel-NEPC': {
+            name: 'Carboplatin + Docetaxel (Neuroendocrine prostate cancer)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cisplatin-Etoposide-NEPC': {
+            name: 'Cisplatin + Etoposide (Neuroendocrine prostate cancer)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
+            ]
+        },
+        'Triptorelin': {
+            name: 'Triptorelin (ADT monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Triptorelin', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
+            ]
+        },
+        'Histrelin': {
+            name: 'Histrelin (ADT monotherapy)',
+            cycles: 12,
+            drugs: [
+                { name: 'Histrelin', dose: 50, unit: 'mg', schedule: 'SC implant, every 12 months' }
+            ]
+        },
+        'Orchiectomy': {
+            name: 'Bilateral orchiectomy (Surgical castration)',
+            cycles: 1,
+            drugs: [
+                { name: 'Surgical castration', dose: 'N/A', unit: 'procedure', schedule: 'One-time surgical procedure' }
             ]
         }
     },
