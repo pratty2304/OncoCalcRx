@@ -3119,14 +3119,14 @@ const protocolDatabase = {
             name: 'Degarelix (GnRH antagonist)',
             cycles: 12,
             drugs: [
-                { name: 'Degarelix', dose: 240, unit: 'mg', schedule: 'SC loading dose D1, then 80mg every 28 days' }
+                { name: 'Degarelix', dose: 240, maintenanceDose: 80, unit: 'mg', schedule: 'SC loading dose D1, then 80mg every 28 days', hasLoadingDose: true }
             ]
         },
         'Relugolix': {
             name: 'Relugolix (HERO) (Oral GnRH antagonist)',
             cycles: 12,
             drugs: [
-                { name: 'Relugolix', dose: 360, unit: 'mg', schedule: 'loading dose D1, then 120mg daily, continuous' }
+                { name: 'Relugolix', dose: 360, maintenanceDose: 120, unit: 'mg', schedule: 'loading dose D1, then 120mg daily, continuous', hasLoadingDose: true }
             ]
         },
         'Bicalutamide': {
@@ -3147,7 +3147,7 @@ const protocolDatabase = {
             name: 'Nilutamide (Antiandrogen)',
             cycles: 12,
             drugs: [
-                { name: 'Nilutamide', dose: 300, unit: 'mg', schedule: 'daily x 30 days, then 150mg daily' }
+                { name: 'Nilutamide', dose: 300, maintenanceDose: 150, unit: 'mg', schedule: 'daily x 30 days, then 150mg daily', hasLoadingDose: true }
             ]
         },
         'Ketoconazole': {
