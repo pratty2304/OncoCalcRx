@@ -11188,7 +11188,15 @@ function populateSubtypes(cancerType) {
         subtypeGroup.style.display = 'block';
         subtypeSelect.disabled = false;
         subtypeSelect.required = true;
-        subtypeSelect.innerHTML = '<option value="">Select bone cancer type</option>';
+        
+        // Force clear the dropdown first
+        subtypeSelect.innerHTML = '';
+        
+        // Add default option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Select bone cancer type';
+        subtypeSelect.appendChild(defaultOption);
         
         const subtypes = {
             'osteosarcoma': 'Osteosarcoma',
@@ -11204,6 +11212,13 @@ function populateSubtypes(cancerType) {
             option.textContent = subtypes[key];
             subtypeSelect.appendChild(option);
         });
+        
+        // Force refresh the select element on mobile
+        setTimeout(() => {
+            subtypeSelect.blur();
+            subtypeSelect.focus();
+            subtypeSelect.blur();
+        }, 10);
         
         // Reset protocol dropdown
         protocolSelect.innerHTML = '<option value="">Select bone cancer type first</option>';
