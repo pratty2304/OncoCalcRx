@@ -4439,7 +4439,7 @@ const protocolDatabase = {
                     { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                     { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                     { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
+                    { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'every 4 hours, D1-D5, every 21 days (uroprotection)' }
                 ]
             },
             'HD-MTX': {
