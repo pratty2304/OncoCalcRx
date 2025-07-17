@@ -4852,58 +4852,60 @@ const protocolDatabase = {
     },
     pancreatic: {
         'mFOLFIRINOX': {
-            name: 'mFOLFIRINOX',
+            name: 'mFOLFIRINOX (Modified FOLFIRINOX) - (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
             ]
         },
         'Gemcitabine-Nabpaclitaxel': {
-            name: 'Gemcitabine + Nab-paclitaxel',
+            name: 'Gemcitabine + Nab-paclitaxel - (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'days 1, 8, 15, every 28 days' },
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'days 1, 8, 15, every 28 days' }
+                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
-        'Gemcitabine-Capecitabine': {
-            name: 'Gemcitabine + Capecitabine',
+        'Gemcitabine-Capecitabine-ESPAC': {
+            name: 'Gemcitabine + Capecitabine (ESPAC-4) - Adjuvant',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Capecitabine', dose: 830, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Capecitabine', dose: 830, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' }
             ]
         },
-        'Single-Gemcitabine': {
-            name: 'Single agent Gemcitabine',
+        'Single-Gemcitabine-CONKO': {
+            name: 'Single agent Gemcitabine (CONKO-001) - Adjuvant',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
-        'Single-Capecitabine': {
-            name: 'Single agent Capecitabine',
+        'Single-Capecitabine-Metastatic': {
+            name: 'Single agent Capecitabine - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' }
             ]
         },
         'Capecitabine-RT': {
-            name: 'Capecitabine with RT',
-            cycles: 2,
+            name: 'Capecitabine + Radiation Therapy - Neoadjuvant/Adjuvant',
+            cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily, days 1-14 during radiation therapy' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD during RT' },
+                { name: 'Radiation Therapy', dose: 50.4, unit: 'Gy', schedule: '28 fractions over 5.5 weeks' }
             ]
         },
         'Gemcitabine-RT': {
-            name: 'Gemcitabine with RT',
-            cycles: 2,
+            name: 'Gemcitabine + Radiation Therapy - Neoadjuvant/Adjuvant',
+            cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 600, unit: 'mg/m²', schedule: 'days 1, 8 during radiation therapy' }
+                { name: 'Gemcitabine', dose: 600, unit: 'mg/m²', schedule: 'D1, D8 during RT' },
+                { name: 'Radiation Therapy', dose: 50.4, unit: 'Gy', schedule: '28 fractions over 5.5 weeks' }
             ]
         },
         'SCALOP': {
@@ -4956,8 +4958,8 @@ const protocolDatabase = {
                 { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'daily' }
             ]
         },
-        'Liposomal-Irinotecan-5FU-LV': {
-            name: 'Liposomal Irinotecan + 5-FU + LV (NAPOLI-1)',
+        'Liposomal-Irinotecan-5FU-LV-NAPOLI': {
+            name: 'Liposomal Irinotecan + 5-FU + LV (NAPOLI-1) - Second-line',
             cycles: 12,
             drugs: [
                 { name: 'Liposomal Irinotecan', dose: 70, unit: 'mg/m²', schedule: 'every 2 weeks' },
@@ -4965,18 +4967,59 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' }
             ]
         },
-        'Single-Olaparib': {
-            name: 'Single agent Olaparib (BRCA mutation)',
-            cycles: 12,
+        'Olaparib-Maintenance': {
+            name: 'Olaparib (Maintenance) - Metastatic (BRCA1/2+)',
+            cycles: 24,
             drugs: [
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'twice daily' }
             ]
         },
-        'Single-Pembrolizumab': {
-            name: 'Single agent Pembrolizumab (MSI-H/dMMR)',
+        'Single-Pembrolizumab-MSI': {
+            name: 'Single agent Pembrolizumab - Metastatic (MSI-H/dMMR)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
+            ]
+        },
+        'NALIRIFOX-Metastatic': {
+            name: 'NALIRIFOX (NAPOLI-3) - Metastatic (Preferred)',
+            cycles: 12,
+            drugs: [
+                { name: 'Nanoliposomal irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1, D15, every 28 days' },
+                { name: 'Oxaliplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, D15, every 28 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, D15, every 28 days' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1, D15, every 28 days' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-BRCA': {
+            name: 'Gemcitabine + Cisplatin - Metastatic (BRCA1/2/PALB2+)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D3, D10, every 21 days' },
+                { name: 'Gemcitabine', dose: 600, unit: 'mg/m²', schedule: 'D3, D10, every 21 days' }
+            ]
+        },
+        'NABPLAGEM-PLATINUM': {
+            name: 'Nab-paclitaxel + Gemcitabine + Cisplatin (PLATINUM) - Second-line (BRCA1/2/PALB2+)',
+            cycles: 6,
+            drugs: [
+                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D3, D10, every 21 days' }
+            ]
+        },
+        'Sotorasib-KRAS': {
+            name: 'Sotorasib - Metastatic (KRAS G12C+)',
+            cycles: 12,
+            drugs: [
+                { name: 'Sotorasib', dose: 960, unit: 'mg', schedule: 'PO daily, continuous' }
+            ]
+        },
+        'Adagrasib-KRAS': {
+            name: 'Adagrasib - Metastatic (KRAS G12C+)',
+            cycles: 12,
+            drugs: [
+                { name: 'Adagrasib', dose: 600, unit: 'mg', schedule: 'PO BD, continuous' }
             ]
         }
     },
