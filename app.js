@@ -6772,72 +6772,192 @@ const protocolDatabase = {
         }
     },
     merkel_cell: {
-        'EP': {
-            name: 'Etoposide + Cisplatin (EP) - Metastatic - 1L',
-            cycles: 6,
-            drugs: [
-                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
-                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
-        },
-        'EC': {
-            name: 'Etoposide + Carboplatin (EC) - Metastatic - 1L',
-            cycles: 6,
-            drugs: [
-                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 every 21 days', requiresAUC: true }
-            ]
-        },
-        'CAV': {
-            name: 'Cyclophosphamide + Adriamycin + Vincristine (CAV) - Metastatic - 1L',
-            cycles: 6,
-            drugs: [
-                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Doxorubicin (Adriamycin)', dose: 45, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1 every 21 days (max 2mg)' }
-            ]
-        },
-        'Topotecan-Cyclophosphamide': {
-            name: 'Topotecan + Cyclophosphamide - Metastatic',
-            cycles: 6,
-            drugs: [
-                { name: 'Topotecan', dose: 1.7, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
-        },
+        // First-Line Immunotherapy (Preferred)
         'Avelumab': {
-            name: 'Avelumab (PD-L1 inhibitor) - Metastatic',
+            name: 'Avelumab (JAVELIN Merkel 200) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'every 2 weeks, then every 28 days' }
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
             ]
         },
         'Pembrolizumab': {
-            name: 'Pembrolizumab (PD-1 inhibitor) - Metastatic',
+            name: 'Pembrolizumab (KEYNOTE-017) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Nivolumab': {
-            name: 'Nivolumab (PD-1 inhibitor) - Metastatic',
+            name: 'Nivolumab (CheckMate 358) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks, then 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
             ]
         },
         'Retifanlimab': {
-            name: 'Retifanlimab (PD-1 inhibitor) - Metastatic',
+            name: 'Retifanlimab (POD1UM-201) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Retifanlimab', dose: 500, unit: 'mg', schedule: 'every 28 days' }
+                { name: 'Retifanlimab', dose: 500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
-        'Temozolomide': {
-            name: 'Temozolomide (single agent) - Metastatic',
+        
+        // Neoadjuvant/Adjuvant Immunotherapy
+        'Avelumab-Neoadjuvant': {
+            name: 'Avelumab (Neoadjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        'Avelumab-Adjuvant': {
+            name: 'Avelumab (Adjuvant)',
+            cycles: 12,
+            drugs: [
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        'Pembrolizumab-Neoadjuvant': {
+            name: 'Pembrolizumab (Neoadjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Pembrolizumab-Adjuvant': {
+            name: 'Pembrolizumab (Adjuvant)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // First-Line Chemotherapy (Alternative)
+        'EP': {
+            name: 'Etoposide + Cisplatin (EP) - (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'EC': {
+            name: 'Etoposide + Carboplatin (EC) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'CAV': {
+            name: 'Cyclophosphamide + Adriamycin + Vincristine (CAV) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Doxorubicin (Adriamycin)', dose: 45, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1, every 21 days (max 2mg)' }
+            ]
+        },
+        'Topotecan-Cyclophosphamide': {
+            name: 'Topotecan + Cyclophosphamide - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Topotecan', dose: 1.7, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Second-Line Chemotherapy
+        'Temozolomide': {
+            name: 'Temozolomide (single agent) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 28 days' }
+            ]
+        },
+        'Paclitaxel': {
+            name: 'Paclitaxel (single agent) - (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
+            ]
+        },
+        'Docetaxel': {
+            name: 'Docetaxel (single agent) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Gemcitabine': {
+            name: 'Gemcitabine (single agent) - (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'Vinorelbine': {
+            name: 'Vinorelbine (single agent) - (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, every 7 days' }
+            ]
+        },
+        'Doxorubicin': {
+            name: 'Doxorubicin (single agent) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Cyclophosphamide': {
+            name: 'Cyclophosphamide (single agent) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Combination Chemotherapy Options
+        'Paclitaxel-Carboplatin': {
+            name: 'Paclitaxel + Carboplatin - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Gemcitabine-Carboplatin': {
+            name: 'Gemcitabine + Carboplatin - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Docetaxel-Carboplatin': {
+            name: 'Docetaxel + Carboplatin - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Investigational/Newer Agents
+        'Ipilimumab-Nivolumab': {
+            name: 'Ipilimumab + Nivolumab (Investigational) - (Metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 cycles' },
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+            ]
+        },
+        'Dostarlimab': {
+            name: 'Dostarlimab (Investigational) - (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 1000mg every 42 days' }
             ]
         }
     },
