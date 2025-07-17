@@ -2058,7 +2058,7 @@ const protocolDatabase = {
                 name: 'Carfilzomib (Proteasome inhibitor - MM)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Carfilzomib', dose: 27, unit: 'mg/m²', schedule: 'days 1, 2, 8, 9, 15, 16, every 28 days' }
+                    { name: 'Carfilzomib', dose: 27, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' }
                 ]
             },
             'FC': {
@@ -5899,91 +5899,101 @@ const protocolDatabase = {
         }
     },
     multiple_myeloma: {
-        // Metastatic therapy for transplant-eligible patients
+        // Transplant-Eligible Patients - Induction Therapy
         'VRd': {
-            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd) - Transplant Eligible',
+            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd / SWOG S0777) - Transplant Eligible',
             cycles: 4,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
-                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D14 every 21 days' },
-                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
         },
         'VTD': {
-            name: 'Bortezomib + Thalidomide + Dexamethasone (VTD) - Transplant Eligible',
+            name: 'Bortezomib + Thalidomide + Dexamethasone (VTD / GIMEMA) - Transplant Eligible',
             cycles: 4,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
-                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'daily' },
-                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D4,D8,D11 every 21 days' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
         'CyBorD': {
             name: 'Cyclophosphamide + Bortezomib + Dexamethasone (CyBorD) - Transplant Eligible',
             cycles: 4,
             drugs: [
-                { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1,D8,D15 every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
-                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D4,D8,D11 every 21 days' }
+                { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
         'Dara-VTD': {
-            name: 'Daratumumab + Bortezomib + Thalidomide + Dexamethasone (Dara-VTD) - Transplant Eligible',
+            name: 'Daratumumab + Bortezomib + Thalidomide + Dexamethasone (Dara-VTD / CASSIOPEIA) - Transplant Eligible',
             cycles: 4,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 8 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
-                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'daily' },
-                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D4,D8,D11 every 21 days' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
         'Dara-VRd': {
-            name: 'Daratumumab + Bortezomib + Lenalidomide + Dexamethasone (Dara-VRd) - Transplant Eligible',
+            name: 'Daratumumab + Bortezomib + Lenalidomide + Dexamethasone (Dara-VRd / GRIFFIN) - Transplant Eligible',
             cycles: 4,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 8 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
-                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D14 every 21 days' },
-                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
         },
         'Isa-VRd': {
-            name: 'Isatuximab + Bortezomib + Lenalidomide + Dexamethasone (Isa-VRd) - Transplant Eligible',
+            name: 'Isatuximab + Bortezomib + Lenalidomide + Dexamethasone (Isa-VRd / GMMG-HD7) - Transplant Eligible',
             cycles: 4,
             drugs: [
                 { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 2 weeks' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
-                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D14 every 21 days' },
-                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D4,D8,D11 every 21 days' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
         },
-        // Metastatic therapy for transplant-ineligible patients
+        // Transplant-Ineligible Patients - Initial Therapy
         'VRd-Lite': {
-            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd-Lite) - Transplant Ineligible',
+            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd-Lite / SWOG S0777) - Transplant Ineligible',
             cycles: 9,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D8,D15 every 28 days x 9 cycles' },
-                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days x 9 cycles' },
-                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D8,D15 every 28 days x 9 cycles' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days x 9 cycles' },
+                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days x 9 cycles' },
+                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1, D8, D15, every 28 days x 9 cycles' }
             ]
         },
         'Dara-Rd': {
-            name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd) - Transplant Ineligible',
+            name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd / MAIA) - Transplant Ineligible',
             cycles: 12,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' },
-                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days until progression' },
-                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'weekly until progression' }
+                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days until progression' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days until progression' }
             ]
         },
         'Dara-VMP': {
-            name: 'Daratumumab + Bortezomib + Melphalan + Prednisone (Dara-VMP) - Transplant Ineligible',
+            name: 'Daratumumab + Bortezomib + Melphalan + Prednisone (Dara-VMP / ALCYONE) - Transplant Ineligible',
             cycles: 9,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 6 weeks, then every 21 days x 16 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 6 weeks, then D1,D8,D15,D22 every 6 weeks' },
-                { name: 'Melphalan', dose: 9, unit: 'mg/m²', schedule: 'D1-D4 every 6 weeks x 9 cycles' },
-                { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D4 every 6 weeks x 9 cycles' }
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 6 weeks' },
+                { name: 'Melphalan', dose: 9, unit: 'mg/m²', schedule: 'D1-D4, every 6 weeks x 9 cycles' },
+                { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D4, every 6 weeks x 9 cycles' }
+            ]
+        },
+        'Dara-CyBorD': {
+            name: 'Daratumumab + Cyclophosphamide + Bortezomib + Dexamethasone (Dara-CyBorD) - Transplant Ineligible',
+            cycles: 9,
+            drugs: [
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' },
+                { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
         'MPT': {
@@ -6005,20 +6015,20 @@ const protocolDatabase = {
         },
         // Relapsed/Refractory regimens
         'KRd': {
-            name: 'Carfilzomib + Lenalidomide + Dexamethasone (KRd) - Relapsed/Refractory',
+            name: 'Carfilzomib + Lenalidomide + Dexamethasone (KRd / ASPIRE) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1,D2,D8,D9,D15,D16 every 28 days' },
-                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days' },
-                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D8,D9,D15,D16,D22,D23 every 28 days' }
+                { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' },
+                { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days' },
+                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1-D2, D8-D9, D15-D16, D22-D23, every 28 days' }
             ]
         },
         'Kd': {
-            name: 'Carfilzomib + Dexamethasone (Kd) - Relapsed/Refractory',
+            name: 'Carfilzomib + Dexamethasone (Kd / ENDEAVOR) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1,D2,D8,D9,D15,D16 every 28 days' },
-                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D8,D9,D15,D16,D22,D23 every 28 days' }
+                { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' },
+                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1-D2, D8-D9, D15-D16, D22-D23, every 28 days' }
             ]
         },
         'PVd': {
@@ -6152,7 +6162,7 @@ const protocolDatabase = {
             name: 'Carfilzomib (single agent) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1,D2,D8,D9,D15,D16 every 28 days' }
+                { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' }
             ]
         },
         'Lenalidomide': {
