@@ -3977,18 +3977,6 @@ const protocolDatabase = {
                 { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' }
             ]
         },
-        'VAC-IE': {
-            name: 'VAC/IE (Vincristine + Dactinomycin + Cyclophosphamide / Ifosfamide + Etoposide) - Ewing sarcoma (Neoadjuvant/Adjuvant)',
-            cycles: 12,
-            drugs: [
-                { name: 'Vincristine', dose: 2, unit: 'mg/m²', schedule: 'D1 (VAC cycles) every 21 days, max 2mg' },
-                { name: 'Dactinomycin', dose: 1.25, unit: 'mg/m²', schedule: 'D1 (VAC cycles) every 21 days' },
-                { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1 (VAC cycles) every 21 days' },
-                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5 (IE cycles) every 21 days' },
-                { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5 (IE cycles) every 21 days (uroprotection)' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 (IE cycles) every 21 days' }
-            ]
-        },
         'Doxorubicin': {
             name: 'Doxorubicin (Single agent) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
@@ -4424,73 +4412,329 @@ const protocolDatabase = {
             ]
         }
     },
-    osteosarcoma: {
-        'MAP': {
-            name: 'Methotrexate + Adriamycin + Cisplatin (MAP)',
-            cycles: 6,
-            drugs: [
-                { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1 every 21 days (with leucovorin rescue)' },
-                { name: 'Doxorubicin (Adriamycin)', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
+    bone: {
+        osteosarcoma: {
+            'AP': {
+                name: 'AP (Adriamycin + Cisplatin) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'MAP': {
+                name: 'MAP (Methotrexate + Adriamycin + Cisplatin) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 21 days (with leucovorin rescue)' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' }
+                ]
+            },
+            'IAP': {
+                name: 'IAP (Ifosfamide + Adriamycin + Cisplatin) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
+                ]
+            },
+            'HD-MTX': {
+                name: 'HD-MTX (High-Dose Methotrexate) - (Neoadjuvant/Adjuvant)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 14 days (with leucovorin rescue)' },
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' }
+                ]
+            },
+            'Gemcitabine-Docetaxel': {
+                name: 'Gemcitabine + Docetaxel - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Gemcitabine', dose: 675, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8, every 21 days' }
+                ]
+            },
+            'Sorafenib': {
+                name: 'Sorafenib - (Relapsed/Refractory)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' }
+                ]
+            },
+            'Cyclophosphamide-Etoposide': {
+                name: 'Cyclophosphamide + Etoposide (CE) - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                ]
+            },
+            'Cabozantinib': {
+                name: 'Cabozantinib - (Relapsed/Refractory)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Sorafenib-Everolimus': {
+                name: 'Sorafenib + Everolimus - (Relapsed/Refractory)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' },
+                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Cyclophosphamide-Topotecan': {
+                name: 'Cyclophosphamide + Topotecan - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Topotecan', dose: 0.75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                ]
+            },
+            'Ifosfamide-Carboplatin-Etoposide': {
+                name: 'Ifosfamide + Carboplatin + Etoposide (ICE) - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
+                ]
+            },
+            'HDMTX-Etoposide-Ifosfamide': {
+                name: 'HDMTX + Etoposide + Ifosfamide - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 21 days (with leucovorin rescue)' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' },
+                    { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
+                ]
+            }
         },
-        'IE': {
-            name: 'Ifosfamide + Etoposide (IE)',
-            cycles: 6,
-            drugs: [
-                { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' }
-            ]
+        chordoma: {
+            'Imatinib': {
+                name: 'Imatinib - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Dasatinib': {
+                name: 'Dasatinib - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Sunitinib': {
+                name: 'Sunitinib - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO once daily, D1-D28 every 42 days (4 weeks on, 2 weeks off)' }
+                ]
+            },
+            'Imatinib-Cisplatin': {
+                name: 'Imatinib + Cisplatin - (Recurrent/Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' },
+                    { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Imatinib-Sirolimus': {
+                name: 'Imatinib + Sirolimus - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' },
+                    { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Erlotinib': {
+                name: 'Erlotinib - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Lapatinib': {
+                name: 'Lapatinib (EGFR positive) - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Lapatinib', dose: 1500, unit: 'mg', schedule: 'PO once daily, continuous (EGFR positive)' }
+                ]
+            },
+            'Sorafenib': {
+                name: 'Sorafenib - (Recurrent/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' }
+                ]
+            }
         },
-        'IAP': {
-            name: 'Ifosfamide + Adriamycin + Cisplatin (IAP)',
-            cycles: 6,
-            drugs: [
-                { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Doxorubicin (Adriamycin)', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'D1-D5 every 21 days (uroprotection)' }
-            ]
+        ewings_sarcoma: {
+            'VDC-IE': {
+                name: 'VDC/IE Alternating (EE2012) - (Neoadjuvant/Adjuvant)',
+                cycles: 14,
+                drugs: [
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Dactinomycin', dose: 1.25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna (for cyclophosphamide)', dose: 240, unit: 'mg/m²', schedule: 'every 4 hours x 3 doses on D1, every 21 days' },
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (alternating)' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (alternating)' },
+                    { name: 'Mesna (for ifosfamide)', dose: 360, unit: 'mg/m²', schedule: 'every 4 hours x 3 doses D1-D5, every 21 days (alternating)' }
+                ]
+            },
+            'VAC-IE': {
+                name: 'VAC/IE Alternating - (Neoadjuvant/Adjuvant/Metastatic)',
+                cycles: 14,
+                drugs: [
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna (for cyclophosphamide)', dose: 240, unit: 'mg/m²', schedule: 'every 4 hours x 3 doses on D1, every 21 days' },
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (alternating)' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (alternating)' },
+                    { name: 'Mesna (for ifosfamide)', dose: 360, unit: 'mg/m²', schedule: 'every 4 hours x 3 doses D1-D5, every 21 days (alternating)' }
+                ]
+            },
+            'VAC': {
+                name: 'VAC (Vincristine + Adriamycin + Cyclophosphamide) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna (for cyclophosphamide)', dose: 240, unit: 'mg/m²', schedule: 'every 4 hours x 3 doses on D1, every 21 days' }
+                ]
+            },
+            'VDC': {
+                name: 'VDC (Vincristine + Dactinomycin + Cyclophosphamide) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Dactinomycin', dose: 1.25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 1200, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna (for cyclophosphamide)', dose: 240, unit: 'mg/m²', schedule: 'every 4 hours x 3 doses on D1, every 21 days' }
+                ]
+            },
+            'IE': {
+                name: 'IE (Ifosfamide + Etoposide) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
+                ]
+            },
+            'VIDE': {
+                name: 'VIDE (Vincristine + Ifosfamide + Doxorubicin + Etoposide) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Etoposide', dose: 150, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Mesna', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (uroprotection)' }
+                ]
+            },
+            'VAIA': {
+                name: 'VAIA (Vincristine + Adriamycin + Ifosfamide + Actinomycin) - (Neoadjuvant/Adjuvant)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Actinomycin D', dose: 0.5, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
+                ]
+            },
+            'Cyclophosphamide-Topotecan': {
+                name: 'Cyclophosphamide + Topotecan - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Topotecan', dose: 0.75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                ]
+            },
+            'Irinotecan-Temozolomide-Vincristine': {
+                name: 'Irinotecan + Temozolomide + Vincristine - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' }
+                ]
+            },
+            'Cabozantinib': {
+                name: 'Cabozantinib - (Relapsed/Refractory)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Docetaxel-Gemcitabine': {
+                name: 'Docetaxel + Gemcitabine - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                ]
+            },
+            'Ifosfamide-High-Dose': {
+                name: 'Ifosfamide High-Dose - (Relapsed/Refractory)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Mesna', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (uroprotection)' }
+                ]
+            },
+            'Regorafenib': {
+                name: 'Regorafenib - (Relapsed/Refractory)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily, D1-D21 every 28 days' }
+                ]
+            }
         },
-        'AP': {
-            name: 'Adriamycin + Cisplatin (AP)',
-            cycles: 6,
-            drugs: [
-                { name: 'Doxorubicin (Adriamycin)', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
+        chondrosarcoma: {
+            'Dasatinib': {
+                name: 'Dasatinib - (Metastatic/Unresectable)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Pazopanib': {
+                name: 'Pazopanib - (Metastatic/Unresectable)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Ivosidenib': {
+                name: 'Ivosidenib (IDH1 mutation) - (Advanced/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO once daily, continuous (IDH1 mutation required)' }
+                ]
+            }
         },
-        'HD-MTX': {
-            name: 'High-Dose Methotrexate (HD-MTX)',
-            cycles: 8,
-            drugs: [
-                { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1 every 2 weeks (with leucovorin rescue)' },
-                { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' }
-            ]
-        },
-        'Gemcitabine-Docetaxel': {
-            name: 'Gemcitabine + Docetaxel (Relapsed)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 675, unit: 'mg/m²', schedule: 'D1,D8 every 21 days' },
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8 every 21 days' }
-            ]
-        },
-        'Sorafenib': {
-            name: 'Sorafenib (Relapsed)',
-            cycles: 8,
-            drugs: [
-                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily' }
-            ]
-        },
-        'Cyclophosphamide-Etoposide': {
-            name: 'Cyclophosphamide + Etoposide (CE)',
-            cycles: 6,
-            drugs: [
-                { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
-            ]
+        giant_cell_tumor: {
+            'Denosumab': {
+                name: 'Denosumab - (Unresectable/Metastatic)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Denosumab', dose: 120, unit: 'mg', schedule: 'SC D1, D8, D15, then every 28 days' }
+                ]
+            }
         }
     },
     thymoma: {
@@ -10940,6 +11184,30 @@ function populateSubtypes(cancerType) {
         // Reset protocol dropdown
         protocolSelect.innerHTML = '<option value="">Select thyroid cancer type first</option>';
         protocolSelect.disabled = true;
+    } else if (cancerType === 'bone') {
+        subtypeGroup.style.display = 'block';
+        subtypeSelect.disabled = false;
+        subtypeSelect.required = true;
+        subtypeSelect.innerHTML = '<option value="">Select bone cancer type</option>';
+        
+        const subtypes = {
+            'osteosarcoma': 'Osteosarcoma',
+            'chordoma': 'Chordoma',
+            'ewings_sarcoma': 'Ewing\'s Sarcoma',
+            'chondrosarcoma': 'Chondrosarcoma',
+            'giant_cell_tumor': 'Giant Cell Tumor of Bone'
+        };
+        
+        Object.keys(subtypes).forEach(key => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = subtypes[key];
+            subtypeSelect.appendChild(option);
+        });
+        
+        // Reset protocol dropdown
+        protocolSelect.innerHTML = '<option value="">Select bone cancer type first</option>';
+        protocolSelect.disabled = true;
     } else {
         subtypeGroup.style.display = 'none';
         subtypeSelect.disabled = true;
@@ -10957,9 +11225,9 @@ function populateProtocols(cancerType, subtype) {
     if (cancerType && protocolDatabase[cancerType]) {
         let protocols;
         
-        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid') && subtype) {
+        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') && subtype) {
             protocols = protocolDatabase[cancerType][subtype];
-        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia' && cancerType !== 'colorectal' && cancerType !== 'thyroid') {
+        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia' && cancerType !== 'colorectal' && cancerType !== 'thyroid' && cancerType !== 'bone') {
             protocols = protocolDatabase[cancerType];
         }
         
@@ -10990,9 +11258,9 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
     if (protocolKey && cancerType && protocolDatabase[cancerType]) {
         let protocolData;
         
-        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal') && subtype && protocolDatabase[cancerType][subtype]) {
+        if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') && subtype && protocolDatabase[cancerType][subtype]) {
             protocolData = protocolDatabase[cancerType][subtype][protocolKey];
-        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia' && cancerType !== 'colorectal') {
+        } else if (cancerType !== 'breast' && cancerType !== 'lung' && cancerType !== 'lymphoma' && cancerType !== 'leukemia' && cancerType !== 'colorectal' && cancerType !== 'thyroid' && cancerType !== 'bone') {
             protocolData = protocolDatabase[cancerType][protocolKey];
         }
         
@@ -11050,7 +11318,7 @@ function calculateDoses(formData) {
     }
     
     let protocolData;
-    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid') && cancerSubtype) {
+    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') && cancerSubtype) {
         protocolData = protocolDatabase[cancerType][cancerSubtype][protocol];
     } else {
         protocolData = protocolDatabase[cancerType][protocol];
@@ -11203,8 +11471,8 @@ function validatePage2() {
         return false;
     }
     
-    // Check if breast cancer, lung cancer, lymphoma, leukemia, or colorectal cancer requires subtype
-    if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal') {
+    // Check if breast cancer, lung cancer, lymphoma, leukemia, colorectal cancer, thyroid cancer, or bone cancer requires subtype
+    if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') {
         const subtype = document.getElementById('cancerSubtype').value;
         if (!subtype) {
             let cancerTypeName = 'cancer';
@@ -11213,6 +11481,8 @@ function validatePage2() {
             else if (cancerType === 'lymphoma') cancerTypeName = 'lymphoma';
             else if (cancerType === 'leukemia') cancerTypeName = 'leukemia';
             else if (cancerType === 'colorectal') cancerTypeName = 'colorectal cancer';
+            else if (cancerType === 'thyroid') cancerTypeName = 'thyroid cancer';
+            else if (cancerType === 'bone') cancerTypeName = 'bone cancer';
             alert(`Please select a ${cancerTypeName} subtype.`);
             return false;
         }
@@ -11254,8 +11524,8 @@ function buildProtocolIndex() {
     Object.keys(protocolDatabase).forEach(cancerType => {
         const cancerName = getCancerDisplayName(cancerType);
         
-        if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal') {
-            // Handle breast cancer, lung cancer, lymphoma, leukemia, and colorectal subtypes
+        if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') {
+            // Handle breast cancer, lung cancer, lymphoma, leukemia, colorectal, thyroid, and bone cancer subtypes
             Object.keys(protocolDatabase[cancerType]).forEach(subtype => {
                 const subtypeName = getSubtypeDisplayName(subtype);
                 Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
@@ -11295,6 +11565,7 @@ function getCancerDisplayName(cancerType) {
         anal: 'Anal Cancer',
         biliary: 'Biliary Tract Cancer',
         bladder: 'Bladder Cancer',
+        bone: 'Bone Cancer',
         breast: 'Breast Cancer',
         cervical: 'Cervical Cancer',
         colorectal: 'Colorectal Cancer',
@@ -11323,7 +11594,12 @@ function getSubtypeDisplayName(subtype) {
         non_hodgkins: 'Non-Hodgkin\'s Lymphoma',
         colon_cancer: 'Colon Cancer',
         rectal_cancer: 'Rectal Cancer',
-        metastatic_colorectal: 'Metastatic Colorectal Cancer'
+        metastatic_colorectal: 'Metastatic Colorectal Cancer',
+        osteosarcoma: 'Osteosarcoma',
+        chordoma: 'Chordoma',
+        ewings_sarcoma: 'Ewing\'s Sarcoma',
+        chondrosarcoma: 'Chondrosarcoma',
+        giant_cell_tumor: 'Giant Cell Tumor of Bone'
     };
     return names[subtype] || subtype;
 }
@@ -11493,7 +11769,7 @@ function getReference(cancerType, cancerSubtype) {
         'mesothelioma': 'NCCN Pleural Mesothelioma Guidelines',
         'multiple_myeloma': 'NCCN Multiple Myeloma Guidelines',
         'neuroendocrine': 'NCCN Neuroendocrine and Adrenal Tumors Guidelines',
-        'osteosarcoma': 'NCCN Bone Cancer Guidelines',
+        'bone': 'NCCN Bone Cancer Guidelines',
         'ovarian': 'NCCN Ovarian Cancer Guidelines',
         'pancreatic': 'NCCN Pancreatic Adenocarcinoma Guidelines',
         'penile': 'NCCN Penile Cancer Guidelines',
