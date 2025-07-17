@@ -7460,79 +7460,142 @@ const protocolDatabase = {
         }
     },
     neuroendocrine: {
-        'Cisplatin-Etoposide': {
-            name: 'Cisplatin + Etoposide',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, every 21 days' }
-            ]
-        },
+        // Somatostatin Analogs - First Line for Functional NETs
         'Octreotide-LAR': {
-            name: 'Octreotide LAR',
+            name: 'Octreotide LAR (PROMID Trial) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Octreotide LAR', dose: 20, unit: 'mg', schedule: 'monthly injection x 12 months' }
+                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
         'Lanreotide': {
-            name: 'Lanreotide',
+            name: 'Lanreotide (CLARINET Trial) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Lanreotide', dose: 120, unit: 'mg', schedule: 'monthly injection x 12 months' }
+                { name: 'Lanreotide', dose: 120, unit: 'mg', schedule: 'D1, every 28 days' }
+            ]
+        },
+        
+        // Targeted Therapy for Advanced NETs
+        'Everolimus': {
+            name: 'Everolimus (RADIANT-4 Trial) - (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuous' }
             ]
         },
         'Everolimus-Octreotide': {
-            name: 'Everolimus + Octreotide LAR',
+            name: 'Everolimus + Octreotide LAR (RADIANT-2 Trial) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily' },
-                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'monthly injection x 12 months' }
-            ]
-        },
-        '5FU-Streptozocin': {
-            name: '5-FU + Streptozocin',
-            cycles: 6,
-            drugs: [
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'days 1-5, every 6 weeks' },
-                { name: 'Streptozocin', dose: 500, unit: 'mg/m²', schedule: 'days 1-5, every 6 weeks' }
-            ]
-        },
-        'Doxorubicin-Streptozocin': {
-            name: 'Doxorubicin + Streptozocin',
-            cycles: 6,
-            drugs: [
-                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Streptozocin', dose: 500, unit: 'mg/m²', schedule: 'days 1-5, every 21 days' }
-            ]
-        },
-        'Capecitabine-Temozolomide': {
-            name: 'Capecitabine + Temozolomide (CAPTEM)',
-            cycles: 6,
-            drugs: [
-                { name: 'Capecitabine', dose: 750, unit: 'mg', schedule: 'twice daily, days 1-14, every 28 days' },
-                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'daily, days 10-14, every 28 days' }
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuous' },
+                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
         'Sunitinib': {
-            name: 'Sunitinib',
+            name: 'Sunitinib (Pancreatic NETs) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'daily' }
+                { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'PO daily, continuous' }
             ]
         },
-        'Everolimus': {
-            name: 'Everolimus',
-            cycles: 12,
-            drugs: [
-                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily' }
-            ]
-        },
+        
+        // Peptide Receptor Radionuclide Therapy
         'Lutetium-177': {
-            name: 'Lutetium Lu 177 Dotatate',
+            name: 'Lutetium Lu 177 Dotatate (NETTER-1 Trial) - (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Lutetium Lu 177 Dotatate', dose: 7.4, unit: 'GBq', schedule: 'q8weeks' }
+                { name: 'Lutetium Lu 177 Dotatate', dose: 7.4, unit: 'GBq', schedule: 'D1, every 8 weeks' }
+            ]
+        },
+        
+        // Chemotherapy for High-Grade NETs
+        'Cisplatin-Etoposide': {
+            name: 'Cisplatin + Etoposide (High-Grade NETs) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
+            ]
+        },
+        'Carboplatin-Etoposide': {
+            name: 'Carboplatin + Etoposide (High-Grade NETs) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
+            ]
+        },
+        'Temozolomide': {
+            name: 'Temozolomide (Pancreatic NETs) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 28 days' }
+            ]
+        },
+        'Capecitabine-Temozolomide': {
+            name: 'Capecitabine + Temozolomide (CAPTEM) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Capecitabine', dose: 750, unit: 'mg/m²', schedule: 'PO BID D1-D14, every 28 days' },
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D10-D14, every 28 days' }
+            ]
+        },
+        
+        // Alkylating Agents for Pancreatic NETs
+        'Streptozocin-5FU': {
+            name: 'Streptozocin + 5-FU (Pancreatic NETs) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Streptozocin', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 6 weeks' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1-D5, every 6 weeks' }
+            ]
+        },
+        'Streptozocin-Doxorubicin': {
+            name: 'Streptozocin + Doxorubicin (Pancreatic NETs) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Streptozocin', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 6 weeks' },
+                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 6 weeks' }
+            ]
+        },
+        'Dacarbazine': {
+            name: 'Dacarbazine (DTIC) - (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Dacarbazine', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        
+        // Newer Targeted Agents
+        'Cabozantinib': {
+            name: 'Cabozantinib (Advanced NETs) - (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily, continuous' }
+            ]
+        },
+        'Lenvatinib': {
+            name: 'Lenvatinib (Advanced NETs) - (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily, continuous' }
+            ]
+        },
+        'Axitinib': {
+            name: 'Axitinib (Advanced NETs) - (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO BID, continuous' }
+            ]
+        },
+        
+        // Interferon (Historical)
+        'Interferon-Alpha': {
+            name: 'Interferon Alpha-2b (Historical) - (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Interferon Alpha-2b', dose: 5, unit: 'MU', schedule: 'SC TIW, continuous' }
             ]
         }
     },
