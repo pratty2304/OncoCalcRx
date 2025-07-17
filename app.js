@@ -2576,36 +2576,12 @@ const protocolDatabase = {
         }
     },
     ovarian: {
-        'Carboplatin-Paclitaxel-3weekly': {
-            name: 'Carboplatin + Paclitaxel (3-weekly - Metastatic)',
+        'Carboplatin-Paclitaxel': {
+            name: 'Carboplatin + Paclitaxel (GOG-158) - (Neoadjuvant/Adjuvant/Advanced)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Carboplatin-Paclitaxel-weekly': {
-            name: 'Carboplatin + Paclitaxel (Weekly - Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'day 1, weekly x 18 weeks' },
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'day 1, weekly x 18 weeks' }
-            ]
-        },
-        'Carboplatin-Paclitaxel-Bevacizumab': {
-            name: 'Carboplatin + Paclitaxel + Bevacizumab (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days, then maintenance' }
-            ]
-        },
-        'Bevacizumab-Maintenance': {
-            name: 'Bevacizumab Maintenance (Post first-line)',
-            cycles: 12,
-            drugs: [
-                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'every 21 days (maintenance)' }
             ]
         },
         'Carboplatin-Docetaxel': {
@@ -2836,9 +2812,89 @@ const protocolDatabase = {
             name: 'BEP (Bleomycin + Etoposide + Cisplatin) - Germ Cell',
             cycles: 3,
             drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'days 1, 8, 15, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5, every 21 days' }
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        'Durvalumab-Olaparib-Bevacizumab-Carboplatin-Paclitaxel': {
+            name: 'Durvalumab + Olaparib + Bevacizumab + Carboplatin + Paclitaxel (DUO-O) - (Advanced)',
+            cycles: 6,
+            drugs: [
+                { name: 'Durvalumab', dose: 1120, unit: 'mg', schedule: 'D1, every 21 days' },
+                { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'twice daily, from cycle 1' },
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Carboplatin-Paclitaxel-Weekly': {
+            name: 'Carboplatin + Paclitaxel Weekly (GOG-262) - (Neoadjuvant/Advanced)',
+            cycles: 18,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days' },
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
+            ]
+        },
+        'Docetaxel-Carboplatin': {
+            name: 'Docetaxel + Carboplatin (SCOTROC) - (Neoadjuvant/Advanced)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Bevacizumab-Carboplatin-Paclitaxel': {
+            name: 'Bevacizumab + Carboplatin + Paclitaxel (GOG-218/ICON7) - (Advanced)',
+            cycles: 6,
+            drugs: [
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Carboplatin-Pegylated-Liposomal-Doxorubicin': {
+            name: 'Carboplatin + Pegylated Liposomal Doxorubicin (CALYPSO) - (Platinum-sensitive recurrent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
+                { name: 'Pegylated Liposomal Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D1, every 28 days' }
+            ]
+        },
+        'Carboplatin-Gemcitabine': {
+            name: 'Carboplatin + Gemcitabine (AGO-OVAR-2.5) - (Platinum-sensitive recurrent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'Topotecan': {
+            name: 'Topotecan (Platinum-resistant recurrent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Topotecan', dose: 1.5, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        'Trabectedin': {
+            name: 'Trabectedin (Platinum-resistant recurrent)',
+            cycles: 6,
+            drugs: [
+                { name: 'Trabectedin', dose: 1.3, unit: 'mg/m²', schedule: 'D1, every 21 days (24-hour infusion)' }
+            ]
+        },
+        'Mirvetuximab-Soravtansine': {
+            name: 'Mirvetuximab Soravtansine (SORAYA/MIRASOL) - (FRα+ platinum-resistant)',
+            cycles: 6,
+            drugs: [
+                { name: 'Mirvetuximab Soravtansine', dose: 6, unit: 'mg/kg', schedule: 'D1, every 21 days (folate receptor α positive)' }
+            ]
+        },
+        'Bevacizumab-Maintenance': {
+            name: 'Bevacizumab Maintenance (GOG-218) - (After primary therapy)',
+            cycles: 22,
+            drugs: [
+                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         }
     },
