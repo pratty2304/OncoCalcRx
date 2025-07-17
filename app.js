@@ -4909,7 +4909,7 @@ const protocolDatabase = {
             ]
         },
         'SCALOP': {
-            name: 'SCALOP Regimen (Gem + Cap + RT)',
+            name: 'SCALOP Regimen (Gem + Cap + RT) - Neoadjuvant',
             cycles: 4,
             drugs: [
                 { name: 'Gemcitabine', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, every 21 days, then with RT' },
@@ -4917,16 +4917,16 @@ const protocolDatabase = {
             ]
         },
         '5FU-LV': {
-            name: '5-Fluorouracil + Leucovorin',
+            name: '5-Fluorouracil + Leucovorin - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' }
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
             ]
         },
         'GTX': {
-            name: 'Gemcitabine + Docetaxel + Capecitabine (GTX)',
+            name: 'Gemcitabine + Docetaxel + Capecitabine (GTX) - Metastatic',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 750, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4935,36 +4935,36 @@ const protocolDatabase = {
             ]
         },
         'GEMOX': {
-            name: 'Gemcitabine + Oxaliplatin (GEMOX)',
+            name: 'Gemcitabine + Oxaliplatin (GEMOX) - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Gemcitabine-Erlotinib': {
-            name: 'Gemcitabine + Erlotinib',
+            name: 'Gemcitabine + Erlotinib - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'daily' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'PO daily, continuous' }
             ]
         },
         'Capecitabine-Erlotinib': {
-            name: 'Capecitabine + Erlotinib',
+            name: 'Capecitabine + Erlotinib - Metastatic',
             cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' },
-                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'daily' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' },
+                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'PO daily, continuous' }
             ]
         },
         'Liposomal-Irinotecan-5FU-LV-NAPOLI': {
             name: 'Liposomal Irinotecan + 5-FU + LV (NAPOLI-1) - Second-line',
             cycles: 12,
             drugs: [
-                { name: 'Liposomal Irinotecan', dose: 70, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', days: 'D1-D2 (46hr CI)', schedule: '46-hour infusion, every 2 weeks' }
+                { name: 'Liposomal Irinotecan', dose: 70, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
             ]
         },
         'Olaparib-Maintenance': {
@@ -4991,21 +4991,21 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1, D15, every 28 days' }
             ]
         },
-        'Gemcitabine-Cisplatin-BRCA': {
-            name: 'Gemcitabine + Cisplatin - Metastatic (BRCA1/2/PALB2+)',
+        'Gemcitabine-Cisplatin-POLO': {
+            name: 'Gemcitabine + Cisplatin (POLO) - Metastatic (BRCA1/2/PALB2+)',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D3, D10, every 21 days' },
-                { name: 'Gemcitabine', dose: 600, unit: 'mg/m²', schedule: 'D3, D10, every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'NABPLAGEM-PLATINUM': {
             name: 'Nab-paclitaxel + Gemcitabine + Cisplatin (PLATINUM) - Second-line (BRCA1/2/PALB2+)',
             cycles: 6,
             drugs: [
-                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D3, D10, every 21 days' }
+                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'Sotorasib-KRAS': {
@@ -5020,6 +5020,33 @@ const protocolDatabase = {
             cycles: 12,
             drugs: [
                 { name: 'Adagrasib', dose: 600, unit: 'mg', schedule: 'PO BD, continuous' }
+            ]
+        },
+        'mFOLFOX6': {
+            name: 'mFOLFOX6 (Modified FOLFOX6) - Metastatic',
+            cycles: 12,
+            drugs: [
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
+            ]
+        },
+        'mFOLFIRI': {
+            name: 'mFOLFIRI (Modified FOLFIRI) - Metastatic',
+            cycles: 12,
+            drugs: [
+                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
+            ]
+        },
+        'Fixed-Dose-Rate-Gemcitabine': {
+            name: 'Fixed Dose Rate Gemcitabine - Metastatic',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine (FDR)', dose: 10, unit: 'mg/m²/min', schedule: 'D1, D8, D15, every 28 days' }
             ]
         }
     },
