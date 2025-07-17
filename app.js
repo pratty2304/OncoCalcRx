@@ -1676,7 +1676,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', days: 'D1-D4', schedule: 'days 1-4, every 21 days' },
-                    { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D4', schedule: 'days 1, 4, every 21 days' },
+                    { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D4, every 21 days' },
                     { name: 'Vinorelbine', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'days 1-5, every 21 days' }
                 ]
@@ -1819,16 +1819,16 @@ const protocolDatabase = {
                 name: 'GVD (Gemcitabine + Vinorelbine + Doxorubicin)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                    { name: 'Vinorelbine', dose: 20, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                    { name: 'Doxorubicin (Liposomal)', dose: 15, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Vinorelbine', dose: 20, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Doxorubicin (Liposomal)', dose: 15, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Gemcitabine-Single': {
                 name: 'Gemcitabine (Single Agent)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Brentuximab-Single': {
@@ -2012,7 +2012,7 @@ const protocolDatabase = {
                 name: 'Copanlisib (PI3K inhibitor - Relapsed/Refractory FL)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Copanlisib', dose: 60, unit: 'mg', schedule: 'days 1, 8, 15, every 28 days' }
+                    { name: 'Copanlisib', dose: 60, unit: 'mg', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Tazemetostat': {
@@ -2095,7 +2095,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', days: 'D1,D8', schedule: 'days 1, 8, every 28 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'days 1, 8, every 28 days' },
                     { name: 'Etoposide', dose: 70, unit: 'mg/m²', days: 'D1-D3', schedule: 'days 1-3, every 28 days' },
                     { name: 'Procarbazine', dose: 60, unit: 'mg/m²', days: 'D1-D10', schedule: 'days 1-10, every 28 days' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', days: 'D1-D10', schedule: 'days 1-10, every 28 days' }
@@ -2148,7 +2148,7 @@ const protocolDatabase = {
                 cycles: 3,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Dexamethasone', dose: 40, unit: 'mg', days: 'D1-D4', schedule: 'days 1-4, every 21 days' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
@@ -2273,7 +2273,7 @@ const protocolDatabase = {
                 name: 'Romidepsin (HDAC inhibitor - PTCL)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Romidepsin', dose: 14, unit: 'mg/m²', schedule: 'days 1, 8, 15, every 28 days' }
+                    { name: 'Romidepsin', dose: 14, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Pralatrexate': {
@@ -2321,7 +2321,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Cisplatin', dose: 25, unit: 'mg/m²', days: 'D1-D4', schedule: 'days 1-4, every 21 days' },
                     { name: 'Dexamethasone', dose: 40, unit: 'mg', days: 'D1-D4', schedule: 'days 1-4, every 21 days' },
-                    { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Pegaspargase', dose: 2500, unit: 'units/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -2604,7 +2604,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Doxorubicin liposomal (Recurrent)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Doxorubicin liposomal', dose: 30, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
@@ -2612,7 +2612,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Cisplatin (Recurrent)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
@@ -2620,7 +2620,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Carboplatin (Recurrent)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' }
             ]
         },
@@ -2719,7 +2719,7 @@ const protocolDatabase = {
             name: 'Gemcitabine (Single agent - recurrent)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Etoposide': {
@@ -10083,7 +10083,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -10166,7 +10166,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Cisplatin-Etoposide-RT-NSCLC': {
@@ -10199,7 +10199,7 @@ const protocolDatabase = {
                 name: 'Vinorelbine + Cisplatin',
                 cycles: 4,
                 drugs: [
-                    { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -10231,7 +10231,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' }
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Carboplatin-Paclitaxel-Weekly': {
@@ -10265,7 +10265,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Cisplatin + Bevacizumab',
                 cycles: 4,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
@@ -10299,14 +10299,14 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Docetaxel', dose: 85, unit: 'mg/m²', schedule: 'day 8, every 21 days' },
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Gemcitabine-Cisplatin': {
                 name: 'Gemcitabine + Cisplatin',
                 cycles: 4,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -10314,7 +10314,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Carboplatin',
                 cycles: 4,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -10322,8 +10322,8 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Vinorelbine',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
-                    { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Docetaxel-Bevacizumab': {
@@ -10354,7 +10354,7 @@ const protocolDatabase = {
                 name: 'Nab-paclitaxel + Carboplatin',
                 cycles: 4,
                 drugs: [
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 28 days' }
                 ]
             },
@@ -10370,7 +10370,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Cisplatin + Necitumumab',
                 cycles: 4,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Necitumumab', dose: 800, unit: 'mg', schedule: 'D1, D8, every 21 days' }
                 ]
@@ -10397,7 +10397,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' }
                 ]
             },
@@ -10406,7 +10406,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' },
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -10467,7 +10467,7 @@ const protocolDatabase = {
                 name: 'Single agent Gemcitabine',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Single-Vinorelbine': {
@@ -10704,7 +10704,7 @@ const protocolDatabase = {
                 name: 'Irinotecan + Cisplatin (SCLC)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Irinotecan', dose: 60, unit: 'mg/m²', days: 'D1,D8,D15', schedule: 'days 1, 8, 15, every 28 days' },
+                    { name: 'Irinotecan', dose: 60, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                     { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 28 days' }
                 ]
             },
@@ -10760,7 +10760,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine (Single Agent SCLC)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', days: 'D1,D8', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Nivolumab-SCLC': {
