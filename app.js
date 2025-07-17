@@ -6026,7 +6026,7 @@ const protocolDatabase = {
             name: 'Cetuximab (EGFR inhibitor) - Metastatic',
             cycles: 8,
             drugs: [
-                { name: 'Cetuximab', dose: 400, unit: 'mg/m²', schedule: 'loading dose, then 250mg/m² weekly' }
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
             ]
         }
     },
@@ -6088,8 +6088,8 @@ const protocolDatabase = {
             name: 'Cisplatin + Cetuximab - Metastatic - 1L',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cetuximab', dose: 400, unit: 'mg/m²', schedule: 'loading dose, then 250mg/m² weekly' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
             ]
         },
         'Pembrolizumab': {
@@ -7992,7 +7992,7 @@ const protocolDatabase = {
                 name: 'mFOLFOX6 + Cetuximab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true },
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
@@ -8032,7 +8032,7 @@ const protocolDatabase = {
                 name: 'FOLFIRI + Cetuximab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true },
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
@@ -8128,7 +8128,7 @@ const protocolDatabase = {
                 name: 'Cetuximab + Bevacizumab + Irinotecan (Metastatic)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true },
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
                 ]
@@ -8137,7 +8137,7 @@ const protocolDatabase = {
                 name: 'Cetuximab + Bevacizumab (Metastatic)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true },
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
                 ]
             },
@@ -8191,7 +8191,7 @@ const protocolDatabase = {
                     { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                     { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
                 ]
             },
             'mFOLFOX6-Encorafenib-Panitumumab-BRAF': {
@@ -8212,7 +8212,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO BD daily' },
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
                 ]
             },
             'Binimetinib-Encorafenib-Cetuximab-BRAF': {
