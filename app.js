@@ -12178,13 +12178,14 @@ function buildProtocolIndex() {
                 const subtypeName = getSubtypeDisplayName(subtype);
                 Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
                     const protocol = protocolDatabase[cancerType][subtype][protocolKey];
+                    const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
                     allProtocols.push({
                         key: protocolKey,
                         name: protocol.name,
                         cancerType: cancerType,
                         cancerName: `${cancerName} - ${subtypeName}`,
                         subtype: subtype,
-                        searchText: `${protocol.name} ${cancerName} ${subtypeName}`.toLowerCase()
+                        searchText: `${protocol.name} ${cancerName} ${subtypeName} ${drugNames}`.toLowerCase()
                     });
                 });
             });
@@ -12192,13 +12193,14 @@ function buildProtocolIndex() {
             // Handle other cancer types
             Object.keys(protocolDatabase[cancerType]).forEach(protocolKey => {
                 const protocol = protocolDatabase[cancerType][protocolKey];
+                const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
                 allProtocols.push({
                     key: protocolKey,
                     name: protocol.name,
                     cancerType: cancerType,
                     cancerName: cancerName,
                     subtype: null,
-                    searchText: `${protocol.name} ${cancerName}`.toLowerCase()
+                    searchText: `${protocol.name} ${cancerName} ${drugNames}`.toLowerCase()
                 });
             });
         }
@@ -12210,22 +12212,43 @@ function buildProtocolIndex() {
 
 function getCancerDisplayName(cancerType) {
     const names = {
+        adrenocortical: 'Adrenocortical Cancer',
         anal: 'Anal Cancer',
+        basal_cell: 'Basal Cell Carcinoma',
         biliary: 'Biliary Tract Cancer',
         bladder: 'Bladder Cancer',
         bone: 'Bone Cancer',
+        brain: 'Brain Cancer',
         breast: 'Breast Cancer',
+        carcinoma_unknown_primary: 'Carcinoma of Unknown Primary',
         cervical: 'Cervical Cancer',
         colorectal: 'Colorectal Cancer',
         endometrial: 'Endometrial Cancer',
         esophageal: 'Esophageal & Esophagogastric Junction Cancer',
         gastric: 'Gastric Cancer',
+        gist: 'Gastrointestinal Stromal Tumor (GIST)',
         head_neck: 'Head & Neck Cancer',
+        hepatocellular: 'Hepatocellular Carcinoma',
+        leukemia: 'Leukemia',
         lung: 'Lung Cancer',
         lymphoma: 'Lymphoma',
+        melanoma: 'Malignant Melanoma',
+        merkel_cell: 'Merkel Cell Carcinoma',
+        mesothelioma: 'Mesothelioma',
+        multiple_myeloma: 'Multiple Myeloma',
         neuroendocrine: 'Neuroendocrine Tumors',
         ovarian: 'Ovarian Cancer',
-        pancreatic: 'Pancreatic Cancer'
+        pancreatic: 'Pancreatic Cancer',
+        penile: 'Penile Cancer',
+        prostate: 'Prostate Cancer',
+        renal: 'Renal Cell Cancer',
+        sarcoma: 'Soft Tissue Sarcoma',
+        testicular: 'Testicular Cancer',
+        thymoma: 'Thymoma',
+        thyroid: 'Thyroid Cancer',
+        stem_cell_transplant: 'Stem Cell Transplant Conditioning',
+        tumor_agnostic: 'Tumor Agnostic Therapy',
+        vulvar_vaginal: 'Vulvar & Vaginal Cancer'
     };
     return names[cancerType] || cancerType;
 }
@@ -12240,6 +12263,11 @@ function getSubtypeDisplayName(subtype) {
         sclc: 'Small Cell Lung Cancer (SCLC)',
         hodgkins: 'Hodgkin\'s Lymphoma',
         non_hodgkins: 'Non-Hodgkin\'s Lymphoma',
+        all: 'Acute Lymphoblastic Leukemia (ALL)',
+        aml: 'Acute Myeloid Leukemia (AML)',
+        cml: 'Chronic Myeloid Leukemia (CML)',
+        cll: 'Chronic Lymphocytic Leukemia (CLL)',
+        hairy_cell: 'Hairy Cell Leukemia',
         colon_cancer: 'Colon Cancer',
         rectal_cancer: 'Rectal Cancer',
         metastatic_colorectal: 'Metastatic Colorectal Cancer',
@@ -12247,7 +12275,10 @@ function getSubtypeDisplayName(subtype) {
         chordoma: 'Chordoma',
         ewings_sarcoma: 'Ewing\'s Sarcoma',
         chondrosarcoma: 'Chondrosarcoma',
-        giant_cell_tumor: 'Giant Cell Tumor of Bone'
+        giant_cell_tumor: 'Giant Cell Tumor of Bone',
+        differentiated_thyroid: 'Differentiated Thyroid Cancer',
+        medullary_thyroid: 'Medullary Thyroid Cancer',
+        anaplastic_thyroid: 'Anaplastic Thyroid Cancer'
     };
     return names[subtype] || subtype;
 }
@@ -12267,7 +12298,7 @@ function searchProtocols(query) {
         return aExact - bExact;
     });
     
-    return results.slice(0, 8); // Limit to 8 suggestions
+    return results.slice(0, 50); // Limit to 50 suggestions to show more comprehensive results
 }
 
 function displaySearchSuggestions(suggestions) {
