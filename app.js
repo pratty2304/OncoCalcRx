@@ -5475,14 +5475,6 @@ const protocolDatabase = {
                 { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1, D29' }
             ]
         },
-        '5FU-MMC-RT-EORTC': {
-            name: '5-FU + Mitomycin-C + RT (EORTC)',
-            cycles: 2,
-            drugs: [
-                { name: '5-Fluorouracil', dose: 200, unit: 'mg/m²/day', schedule: 'continuous infusion D1-D26' },
-                { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1, D29' }
-            ]
-        },
         'Capecitabine-MMC-RT': {
             name: 'Capecitabine + Mitomycin-C + RT',
             cycles: 2,
@@ -12069,7 +12061,8 @@ function showPage(pageNumber) {
     
     // Update progress bar
     const progressFill = document.getElementById('progressFill');
-    const progressPercent = (pageNumber / 3) * 100;
+    const maxPages = 5; // Now we have 5 pages
+    const progressPercent = (pageNumber / maxPages) * 100;
     progressFill.style.width = `${progressPercent}%`;
     
     // Scroll to top
@@ -12458,6 +12451,10 @@ function checkForCarboplatinSearch(protocol) {
 let cancerSpecificProtocols = [];
 let selectedCancerSearchProtocol = null;
 
+// Dose adjustment functionality
+let originalResults = null;
+let currentReductions = {};
+
 function buildCancerSpecificIndex(cancerType, subtype = null) {
     console.log('Building cancer-specific index for:', cancerType, subtype);
     cancerSpecificProtocols = [];
@@ -12677,6 +12674,13 @@ function getReference(cancerType, cancerSubtype) {
 
 // Display results
 function displayResults(results, patientData) {
+    // Store original results for dose adjustment functionality
+    originalResults = {
+        results: results,
+        patientData: patientData
+    };
+    currentReductions = {}; // Reset reductions
+    
     const resultsContent = document.getElementById('resultsContent');
     
     resultsContent.innerHTML = `
@@ -12751,6 +12755,229 @@ function displayResults(results, patientData) {
     
     // Show results page
     showPage(3);
+}
+
+// Dose adjustment functions
+function showDoseAdjustmentPage() {
+    if (!originalResults) return;
+    
+    const { results, patientData } = originalResults;
+    
+    // Populate patient summary
+    const patientInfo = `${patientData.weight}kg, ${patientData.height}cm, BSA ${results.bsa}m²`;
+    const regimenInfo = results.protocolName;
+    
+    document.getElementById('patientInfo').textContent = patientInfo;
+    document.getElementById('regimenInfo').textContent = regimenInfo;
+    
+    // Initialize current reductions if empty
+    results.drugs.forEach(drug => {
+        if (!(drug.name in currentReductions)) {
+            currentReductions[drug.name] = 0;
+        }
+    });
+    
+    // Build dose adjustment table
+    buildDoseAdjustmentTable();
+    
+    showPage(4);
+}
+
+function buildDoseAdjustmentTable() {
+    if (!originalResults) return;
+    
+    const { results } = originalResults;
+    const tableContainer = document.getElementById('doseAdjustmentTable');
+    
+    tableContainer.innerHTML = `
+        <div style="display: grid; grid-template-columns: 2fr 1fr 80px 1fr; gap: 10px; align-items: center; padding: 10px; background: #f8f9fa; border-radius: 5px; font-weight: 600; margin-bottom: 10px;">
+            <div>Drug</div>
+            <div>Original</div>
+            <div>Reduce</div>
+            <div>Final</div>
+        </div>
+        ${results.drugs.map(drug => {
+            const reduction = currentReductions[drug.name] || 0;
+            const originalDose = drug.calculatedDose;
+            const finalDose = originalDose * (1 - reduction / 100);
+            
+            return `
+                <div style="display: grid; grid-template-columns: 2fr 1fr 80px 1fr; gap: 10px; align-items: center; padding: 10px; border-bottom: 1px solid #dee2e6;">
+                    <div style="font-weight: 600; color: #2c3e50;">${drug.name}</div>
+                    <div>${originalDose}</div>
+                    <div style="position: relative;">
+                        <input type="number" 
+                               id="reduction_${drug.name.replace(/\s+/g, '_')}" 
+                               value="${reduction}" 
+                               min="0" 
+                               max="100" 
+                               placeholder="%" 
+                               style="width: 100%; padding: 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;"
+                               onchange="updateDrugReduction('${drug.name}', this.value)">
+                        <span style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
+                    </div>
+                    <div id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
+                        ${finalDose.toFixed(1)}${drug.unit || 'mg'}
+                    </div>
+                </div>
+            `;
+        }).join('')}
+    `;
+}
+
+function updateDrugReduction(drugName, reductionValue) {
+    const reduction = Math.max(0, Math.min(100, parseFloat(reductionValue) || 0));
+    currentReductions[drugName] = reduction;
+    
+    // Update the final dose display
+    const drug = originalResults.results.drugs.find(d => d.name === drugName);
+    if (drug) {
+        const finalDose = drug.calculatedDose * (1 - reduction / 100);
+        const finalElement = document.getElementById(`final_${drugName.replace(/\s+/g, '_')}`);
+        if (finalElement) {
+            finalElement.textContent = `${finalDose.toFixed(1)}${drug.unit || 'mg'}`;
+        }
+    }
+}
+
+function applyGlobalReduction() {
+    const globalValue = parseFloat(document.getElementById('globalReduction').value) || 0;
+    const clampedValue = Math.max(0, Math.min(100, globalValue));
+    
+    // Update all drug reductions
+    Object.keys(currentReductions).forEach(drugName => {
+        currentReductions[drugName] = clampedValue;
+        const inputElement = document.getElementById(`reduction_${drugName.replace(/\s+/g, '_')}`);
+        if (inputElement) {
+            inputElement.value = clampedValue;
+        }
+    });
+    
+    // Rebuild the table to update all final doses
+    buildDoseAdjustmentTable();
+}
+
+function resetAllReductions() {
+    // Reset all reductions to 0
+    Object.keys(currentReductions).forEach(drugName => {
+        currentReductions[drugName] = 0;
+    });
+    
+    // Clear global input
+    document.getElementById('globalReduction').value = '';
+    
+    // Rebuild the table
+    buildDoseAdjustmentTable();
+}
+
+function showFinalPrescription() {
+    if (!originalResults) return;
+    
+    const { results, patientData } = originalResults;
+    
+    // Build the final results table
+    const finalResultsContent = document.getElementById('finalResultsContent');
+    
+    finalResultsContent.innerHTML = `
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">Final Prescription Doses:</h3>
+            <div class="responsive-table">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Drug Name</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Standard Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Calculated Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Reduced Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${results.drugs.map(drug => {
+                            const reduction = currentReductions[drug.name] || 0;
+                            const reducedDose = drug.calculatedDose * (1 - reduction / 100);
+                            
+                            return `
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}${drug.days ? ` (${drug.days})` : ''}</td>
+                                    <td style="padding: 12px; border: 1px solid #dee2e6;">
+                                        ${drug.hasLoadingDose ? 
+                                            `<div style="font-size: 12px; line-height: 1.3;">
+                                                <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                                <div style="color: #007bff; margin-bottom: 8px;">${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
+                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #28a745;">${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
+                                            </div>` 
+                                            : `${drug.originalDose}${drug.originalUnit === 'AUC' && drug.originalDose.toString().includes('AUC') ? '' : ' ' + drug.originalUnit}`}
+                                    </td>
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e8f5e8; font-weight: 600;">
+                                        ${drug.hasLoadingDose ? 
+                                            `<div style="font-size: 12px; line-height: 1.3;">
+                                                <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                                <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
+                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
+                                            </div>` 
+                                            : `${drug.calculatedDose} ${drug.doseUnit}`}
+                                    </td>
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600; color: ${reduction > 0 ? '#e74c3c' : '#27ae60'}; background-color: ${reduction > 0 ? '#fdf2f2' : '#f8f9fa'};">
+                                        ${drug.hasLoadingDose ? 
+                                            (() => {
+                                                const loadingDose = parseFloat(drug.calculatedDose.split(' → ')[0]) * (1 - reduction / 100);
+                                                const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]) * (1 - reduction / 100);
+                                                return `<div style="font-size: 12px; line-height: 1.3;">
+                                                    <div style="font-weight: 600;">Loading</div>
+                                                    <div style="margin-bottom: 8px;">${loadingDose.toFixed(1)} ${drug.doseUnit}</div>
+                                                    <div style="font-weight: 600;">Maintenance</div>
+                                                    <div>${maintenanceDose.toFixed(1)} ${drug.doseUnit}</div>
+                                                </div>`;
+                                            })()
+                                            : `${reducedDose.toFixed(1)} ${drug.doseUnit}`}
+                                    </td>
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
+                                        ${drug.schedule || 'Per protocol'}
+                                    </td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div style="margin-top: 15px; padding: 8px 12px; background-color: #e8f5e8; border-left: 3px solid #27ae60; border-radius: 3px; font-size: 14px;">
+            <strong>Patient Summary:</strong><br>
+            ${patientData.creatinine ? 
+                `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
+                BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
+                Regimen: ${results.protocolName}${results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}` :
+                `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
+                BSA: ${results.bsa} m²<br>
+                Regimen: ${results.protocolName}`
+            }
+        </div>
+    `;
+    
+    // Build reduction summary
+    const reductionList = document.getElementById('reductionList');
+    const appliedReductions = Object.entries(currentReductions).filter(([_, reduction]) => reduction > 0);
+    
+    if (appliedReductions.length === 0) {
+        reductionList.innerHTML = '<div style="color: #27ae60; font-style: italic;">No dose reductions applied</div>';
+    } else {
+        reductionList.innerHTML = appliedReductions.map(([drugName, reduction]) => 
+            `<div style="margin-bottom: 5px;">• <strong>${drugName}:</strong> ${reduction}% reduction</div>`
+        ).join('');
+    }
+    
+    // Add caution message after reduction summary
+    const reductionSummary = document.getElementById('reductionSummary');
+    const cautionMessage = document.createElement('div');
+    cautionMessage.style.cssText = 'margin-top: 20px; padding: 8px 12px; background-color: #fff3cd; border-left: 3px solid #ffc107; border-radius: 3px; font-size: 12px;';
+    cautionMessage.innerHTML = '<strong>⚠️ Important:</strong> Please verify all calculations and check for contraindications before administration. This tool is for reference only.';
+    reductionSummary.appendChild(cautionMessage);
+    
+    showPage(5);
 }
 
 // Event listeners
@@ -12904,6 +13131,46 @@ document.addEventListener('DOMContentLoaded', function() {
         sexFemale.addEventListener('change', updatePatientInfoCard);
     }
     
+    // Dose adjustment event handlers
+    document.getElementById('adjustDoses').addEventListener('click', showDoseAdjustmentPage);
+    document.getElementById('backToPage3').addEventListener('click', () => showPage(3));
+    document.getElementById('finalDoses').addEventListener('click', showFinalPrescription);
+    document.getElementById('backToPage4').addEventListener('click', () => showPage(4));
+    document.getElementById('newCalculationFromPage5').addEventListener('click', function() {
+        // Reset all form fields
+        document.getElementById('height').value = '';
+        document.getElementById('weight').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('sexMale').checked = false;
+        document.getElementById('sexFemale').checked = false;
+        document.getElementById('creatinine').value = '';
+        document.getElementById('cancerType').value = '';
+        document.getElementById('cancerSubtype').value = '';
+        document.getElementById('protocol').value = '';
+        document.getElementById('auc').value = '';
+        
+        // Reset search
+        clearSearchSection();
+        clearCancerSearchSection();
+        
+        // Reset dose adjustment data
+        originalResults = null;
+        currentReductions = {};
+        
+        // Reset UI state
+        document.getElementById('subtypeGroup').style.display = 'none';
+        document.getElementById('aucGroup').style.display = 'none';
+        document.getElementById('carboplatinParams').style.display = 'none';
+        document.getElementById('protocol').disabled = true;
+        document.getElementById('cancerSubtype').disabled = true;
+        
+        // Go back to first page
+        showPage(1);
+    });
+    
+    // Global dose adjustment controls
+    document.getElementById('applyGlobalReduction').addEventListener('click', applyGlobalReduction);
+    document.getElementById('resetReductions').addEventListener('click', resetAllReductions);
     
     document.getElementById('protocol').addEventListener('change', function() {
         const protocolKey = this.value;

@@ -776,6 +776,107 @@
             .footer-content {
                 padding: 0 15px;
             }
+            
+            /* Dose adjustment pages mobile styling */
+            #doseAdjustmentTable {
+                font-size: 14px !important;
+            }
+            
+            #doseAdjustmentTable input[type="number"] {
+                padding: 4px !important;
+                font-size: 13px !important;
+                width: 60px !important;
+            }
+            
+            #patientSummary {
+                font-size: 12px !important;
+                padding: 10px !important;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-buttons .btn {
+                width: 100%;
+                margin: 0;
+            }
+            
+            #globalReduction {
+                width: 60px !important;
+                font-size: 14px !important;
+            }
+            
+            /* Final prescription table mobile */
+            #finalResultsContent .responsive-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+            }
+            
+            #finalResultsContent table {
+                min-width: 600px;
+                width: 100%;
+                font-size: 11px !important;
+                table-layout: fixed;
+            }
+            
+            #finalResultsContent th,
+            #finalResultsContent td {
+                padding: 6px 3px !important;
+                font-size: 10px !important;
+                word-wrap: break-word;
+                hyphens: auto;
+                line-height: 1.2;
+            }
+            
+            /* Fixed column widths for mobile final prescription table */
+            #finalResultsContent th:nth-child(1),
+            #finalResultsContent td:nth-child(1) {
+                width: 20%;
+                min-width: 80px;
+            }
+            
+            #finalResultsContent th:nth-child(2),
+            #finalResultsContent td:nth-child(2) {
+                width: 18%;
+                min-width: 70px;
+            }
+            
+            #finalResultsContent th:nth-child(3),
+            #finalResultsContent td:nth-child(3) {
+                width: 18%;
+                min-width: 70px;
+            }
+            
+            #finalResultsContent th:nth-child(4),
+            #finalResultsContent td:nth-child(4) {
+                width: 18%;
+                min-width: 70px;
+            }
+            
+            #finalResultsContent th:nth-child(5),
+            #finalResultsContent td:nth-child(5) {
+                width: 26%;
+                min-width: 90px;
+            }
+            
+            /* Allow drug names and schedule to wrap */
+            #finalResultsContent td:nth-child(1),
+            #finalResultsContent td:nth-child(5) {
+                white-space: normal;
+                word-break: break-word;
+            }
+            
+            /* Keep dose columns compact */
+            #finalResultsContent td:nth-child(2),
+            #finalResultsContent td:nth-child(3),
+            #finalResultsContent td:nth-child(4) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
         
     </style>
@@ -985,7 +1086,85 @@
 
                 <div class="nav-buttons">
                     <button type="button" class="btn btn-secondary" id="backToPage2">Back to Regimen Selection</button>
+                    <button type="button" class="btn btn-primary" id="adjustDoses">Adjust Doses</button>
                     <button type="button" class="btn btn-primary" id="startOver">Start New Calculation</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4: Dose Adjustment -->
+        <div id="page4" class="page">
+            <div class="form-section">
+                <div class="page-title">
+                    <div class="page-number">4</div>
+                    <h2>Dose Adjustment</h2>
+                </div>
+                
+                <!-- Patient Summary -->
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3498db;">
+                    <div id="patientSummary" style="font-size: 14px; color: #2c3e50;">
+                        <strong>Patient:</strong> <span id="patientInfo"></span><br>
+                        <strong>Regimen:</strong> <span id="regimenInfo"></span>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div style="background: #fff; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <span style="font-size: 18px;">🎯</span>
+                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Quick Actions</h3>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <label style="margin: 0;">Reduce all doses by:</label>
+                        <input type="number" id="globalReduction" placeholder="%" min="0" max="100" style="width: 80px; padding: 8px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        <button type="button" class="btn btn-primary" id="applyGlobalReduction" style="padding: 8px 16px; font-size: 14px;">Apply All</button>
+                        <button type="button" class="btn btn-secondary" id="resetReductions" style="padding: 8px 16px; font-size: 14px;">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Individual Drug Adjustments -->
+                <div style="background: #fff; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <span style="font-size: 18px;">💊</span>
+                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Individual Drug Adjustments</h3>
+                    </div>
+                    
+                    <div id="doseAdjustmentTable">
+                        <!-- Drug adjustment rows will be populated here -->
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-secondary" id="backToPage3">Back to Results</button>
+                    <button type="button" class="btn btn-primary" id="finalDoses">Final Doses</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 5: Final Prescription -->
+        <div id="page5" class="page">
+            <div class="form-section">
+                <div class="page-title">
+                    <div class="page-number">5</div>
+                    <h2>Final Prescription Doses</h2>
+                </div>
+                
+                <div id="finalResultsContent"></div>
+
+                <!-- Dose Reductions Summary -->
+                <div id="reductionSummary" style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; margin-top: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <span style="font-size: 18px;">📝</span>
+                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Dose Reductions Applied</h3>
+                    </div>
+                    <div id="reductionList">
+                        <!-- Reduction summary will be populated here -->
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-secondary" id="backToPage4">Back to Adjust</button>
+                    <button type="button" class="btn btn-primary" id="newCalculationFromPage5">New Calculation</button>
                 </div>
             </div>
         </div>
