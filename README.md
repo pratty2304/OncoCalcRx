@@ -65,7 +65,7 @@ The app is designed to work offline and can be installed on mobile devices as a 
 - **Responsive Design**: Optimized for mobile devices
 - **Touch-Friendly**: Large buttons and form elements
 - **Offline Capable**: Works without internet connection
-- **Install as App**: Can be added to home screen on mobile devices
+- **Install as App**: Can be added to home screen on mobile devices.
 
 ## 🏥 Medical Disclaimer
 
