@@ -570,8 +570,8 @@
 
             /* Compact search and browse sections */
             .search-section {
-                padding: 8px !important;
-                margin-bottom: 10px !important;
+                padding: 6px !important;
+                margin-bottom: 8px !important;
             }
             
             .browse-section {
@@ -580,7 +580,7 @@
             }
 
             .search-header {
-                margin-bottom: 8px !important;
+                margin-bottom: 6px !important;
             }
             
             .browse-header {
@@ -588,7 +588,7 @@
             }
 
             .search-header h3 {
-                font-size: 12px !important;
+                font-size: 11px !important;
             }
             
             .browse-header h3 {
@@ -597,28 +597,37 @@
             
             /* Compact quick search input on mobile */
             #protocolSearch {
-                padding: 6px 25px 6px 6px !important;
-                font-size: 13px !important;
+                padding: 5px 20px 5px 5px !important;
+                font-size: 12px !important;
             }
             
             /* Compact selected protocol info on mobile */
             .selected-protocol-info {
-                padding: 8px !important;
-                margin-top: 8px !important;
+                padding: 4px !important;
+                margin-top: 4px !important;
             }
             
             .selected-protocol-name {
-                font-size: 12px !important;
-            }
-            
-            .selected-protocol-cancer {
                 font-size: 11px !important;
             }
             
-            /* Cancer-specific search styling on mobile */
-            #cancerSpecificSearchInput {
+            .selected-protocol-cancer {
+                font-size: 9px !important;
+            }
+            
+            /* Ensure consistent sizing for cancer section inputs */
+            #cancerType, #cancerSubtype, #cancerSpecificSearchInput, #protocol {
+                min-height: 44px !important;
                 padding: 10px !important;
                 font-size: 16px !important;
+                box-sizing: border-box !important;
+                height: auto !important;
+            }
+            
+            /* Cancer-specific search styling on mobile - match other inputs exactly */
+            #cancerSpecificSearchInput {
+                border: 2px solid #ddd !important;
+                border-radius: 5px !important;
             }
             
             #cancerSearchDropdown {
@@ -829,21 +838,21 @@
                 </div>
 
                 <!-- Search Section -->
-                <div class="search-section" style="padding: 12px; margin-bottom: 15px;">
-                    <div class="search-header" style="margin-bottom: 10px;">
-                        <span class="search-icon" style="font-size: 16px;">🔍</span>
-                        <h3 style="margin: 0; color: #2c3e50; font-size: 14px;">Quick Search (All Cancers)</h3>
+                <div class="search-section" style="padding: 8px; margin-bottom: 12px;">
+                    <div class="search-header" style="margin-bottom: 8px;">
+                        <span class="search-icon" style="font-size: 14px;">🔍</span>
+                        <h3 style="margin: 0; color: #2c3e50; font-size: 13px;">Quick Search (All Cancers)</h3>
                     </div>
                     <div class="search-input">
                         <div style="position: relative;">
-                            <input type="text" id="protocolSearch" placeholder="Search regimens (e.g., FOLFOX, AC-T...)" style="width: 100%; padding: 8px 30px 8px 8px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;">
-                            <button type="button" id="clearSearch" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 14px; color: #999; cursor: pointer; width: 18px; height: 18px; display: none; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s;" onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.color='#666'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#999'">×</button>
+                            <input type="text" id="protocolSearch" placeholder="Search regimens (e.g., FOLFOX, AC-T...)" style="width: 100%; padding: 6px 25px 6px 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 13px;">
+                            <button type="button" id="clearSearch" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 12px; color: #999; cursor: pointer; width: 16px; height: 16px; display: none; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s;" onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.color='#666'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#999'">×</button>
                         </div>
                         <div class="search-suggestions" id="searchSuggestions"></div>
                     </div>
-                    <div class="selected-protocol-info" id="selectedProtocolInfo" style="padding: 10px; margin-top: 10px;">
-                        <div class="selected-protocol-name" id="selectedProtocolName" style="font-size: 14px;"></div>
-                        <div class="selected-protocol-cancer" id="selectedProtocolCancer" style="font-size: 12px;"></div>
+                    <div class="selected-protocol-info" id="selectedProtocolInfo" style="padding: 6px; margin-top: 6px;">
+                        <div class="selected-protocol-name" id="selectedProtocolName" style="font-size: 12px;"></div>
+                        <div class="selected-protocol-cancer" id="selectedProtocolCancer" style="font-size: 10px;"></div>
                     </div>
                 </div>
 
