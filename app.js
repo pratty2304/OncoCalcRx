@@ -12812,9 +12812,9 @@ function buildDoseAdjustmentTable() {
                                min="0" 
                                max="100" 
                                placeholder="%" 
-                               style="width: 100%; padding: 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;"
+                               style="width: 100%; padding: 6px 25px 6px 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;"
                                onchange="updateDrugReduction('${drug.name}', this.value)">
-                        <span style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
+                        <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
                     </div>
                     <div id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
                         ${finalDose.toFixed(1)}${drug.unit || 'mg'}
@@ -12970,9 +12970,17 @@ function showFinalPrescription() {
         ).join('');
     }
     
-    // Add caution message after reduction summary
+    // Add caution message after reduction summary (check if not already exists)
     const reductionSummary = document.getElementById('reductionSummary');
+    
+    // Remove any existing caution message to prevent duplication
+    const existingCaution = reductionSummary.querySelector('.caution-message');
+    if (existingCaution) {
+        existingCaution.remove();
+    }
+    
     const cautionMessage = document.createElement('div');
+    cautionMessage.className = 'caution-message';
     cautionMessage.style.cssText = 'margin-top: 20px; padding: 8px 12px; background-color: #fff3cd; border-left: 3px solid #ffc107; border-radius: 3px; font-size: 12px;';
     cautionMessage.innerHTML = '<strong>⚠️ Important:</strong> Please verify all calculations and check for contraindications before administration. This tool is for reference only.';
     reductionSummary.appendChild(cautionMessage);
