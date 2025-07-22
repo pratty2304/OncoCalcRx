@@ -1597,12 +1597,12 @@ const protocolDatabase = {
                 ]
             },
             'CHOP': {
-                name: 'CHOP (Cyclophosphamide + Hydroxydaunorubicin + Oncovin + Prednisone)',
+                name: 'CHOP (Cyclophosphamide + Doxorubicin + Vincristine + Prednisone)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
@@ -1612,8 +1612,8 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
@@ -1728,7 +1728,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Mechlorethamine', dose: 6, unit: 'mg/m²', schedule: 'days 1, 8, every 28 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'days 1, 8, every 28 days (max 2mg)' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'days 1, 8, every 28 days (max 2mg)' },
                     { name: 'Procarbazine', dose: 100, unit: 'mg/m²', schedule: 'days 1-14, every 28 days' },
                     { name: 'Prednisone', dose: 40, unit: 'mg/m²', schedule: 'days 1-14, every 28 days' }
                 ]
@@ -1738,7 +1738,7 @@ const protocolDatabase = {
                 cycles: 8,
                 drugs: [
                     { name: 'Mechlorethamine', dose: 6, unit: 'mg/m²', schedule: 'days 1, 8 (MOPP cycles)' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'days 1, 8 (MOPP cycles), max 2mg' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'days 1, 8 (MOPP cycles), max 2mg' },
                     { name: 'Procarbazine', dose: 100, unit: 'mg/m²', schedule: 'days 1-14 (MOPP cycles)' },
                     { name: 'Prednisone', dose: 40, unit: 'mg/m²', schedule: 'days 1-14 (MOPP cycles)' },
                     { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'days 1, 15 (ABVD cycles)' },
@@ -1797,7 +1797,7 @@ const protocolDatabase = {
                     { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' },
                     { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 650, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'day 8, every 21 days (max 2mg)' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'day 8, every 21 days (max 2mg)' },
                     { name: 'Procarbazine', dose: 100, unit: 'mg/m²', days: 'D1-D7', schedule: 'days 1-7, every 21 days' },
                     { name: 'Prednisone', dose: 40, unit: 'mg/m²', days: 'D1-D14', schedule: 'days 1-14, every 21 days' }
                 ]
@@ -1810,7 +1810,7 @@ const protocolDatabase = {
                     { name: 'Etoposide', dose: 200, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' },
                     { name: 'Doxorubicin (Adriamycin)', dose: 35, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 1250, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'day 8, every 21 days (max 2mg)' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'day 8, every 21 days (max 2mg)' },
                     { name: 'Procarbazine', dose: 100, unit: 'mg/m²', days: 'D1-D7', schedule: 'days 1-7, every 21 days' },
                     { name: 'Prednisone', dose: 40, unit: 'mg/m²', days: 'D1-D14', schedule: 'days 1-14, every 21 days' }
                 ]
@@ -1881,8 +1881,8 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
@@ -1893,7 +1893,7 @@ const protocolDatabase = {
                     { name: 'Polatuzumab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
@@ -1947,9 +1947,9 @@ const protocolDatabase = {
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Etoposide', dose: 50, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 0.4, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
+                    { name: 'Vincristine', dose: 0.4, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'day 5, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 10, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' }
+                    { name: 'Doxorubicin', dose: 10, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' }
                 ]
             },
             'DA-R-EPOCH': {
@@ -2108,7 +2108,7 @@ const protocolDatabase = {
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
@@ -2185,7 +2185,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'per protocol schedule' },
                     { name: 'Cyclophosphamide', dose: 800, unit: 'mg/m²', schedule: 'day 1 (CODOX-M)' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.5, unit: 'mg/m²', schedule: 'days 1, 8 (CODOX-M) max 2mg' },
+                    { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'days 1, 8 (CODOX-M) max 2mg' },
                     { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'day 1 (CODOX-M)' },
                     { name: 'Methotrexate (High-dose)', dose: 3000, unit: 'mg/m²', schedule: 'day 10 (CODOX-M)' },
                     { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', days: 'D1-D5', schedule: 'days 1-5 (IVAC)' },
@@ -2218,8 +2218,8 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
@@ -2228,8 +2228,8 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
@@ -2239,8 +2239,8 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine (Oncovin)', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' },
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
@@ -2251,7 +2251,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Hydroxydaunorubicin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
                 ]
             },
