@@ -11863,6 +11863,22 @@ function populateSubtypes(cancerType) {
         subtypeSelect.value = '';
         populateProtocols(cancerType, null);
     }
+    
+    // Show and enable cancer-specific search when cancer type is selected
+    const cancerSearchGroup = document.getElementById('cancerSearchGroup');
+    const cancerSpecificSearch = document.getElementById('cancerSpecificSearch');
+    
+    if (cancerType) {
+        cancerSearchGroup.style.display = 'block';
+        cancerSpecificSearch.disabled = false;
+        cancerSpecificSearch.placeholder = `Search regimens within ${getCancerDisplayName(cancerType)}...`;
+        buildCancerSpecificIndex(cancerType);
+        clearCancerSearchSection(); // Clear any previous selections
+    } else {
+        cancerSearchGroup.style.display = 'none';
+        cancerSpecificSearch.disabled = true;
+        clearCancerSearchSection();
+    }
 }
 
 // Populate protocol dropdown based on cancer type and subtype
@@ -12082,9 +12098,35 @@ function updatePatientInfoCard() {
 function validatePage2() {
     console.log('Validating page 2, selectedSearchProtocol:', selectedSearchProtocol); // Debug log
     
-    // Check if protocol is selected via search
+    // Check if protocol is selected via global search
     if (selectedSearchProtocol) {
-        console.log('Using search protocol'); // Debug log
+        console.log('Using global search protocol'); // Debug log
+        // Check if carboplatin protocol requires AUC, age, and creatinine
+        const aucGroup = document.getElementById('aucGroup');
+        if (aucGroup.style.display !== 'none') {
+            const auc = document.getElementById('auc').value;
+            const age = document.getElementById('age').value;
+            const creatinine = document.getElementById('creatinine').value;
+            
+            if (!auc) {
+                alert('Please select an AUC value for this carboplatin protocol.');
+                return false;
+            }
+            if (!age) {
+                alert('Please enter the patient age for carboplatin dosing calculation.');
+                return false;
+            }
+            if (!creatinine) {
+                alert('Please enter the patient creatinine level for carboplatin dosing calculation.');
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // Check if protocol is selected via cancer-specific search
+    if (selectedCancerSearchProtocol) {
+        console.log('Using cancer-specific search protocol'); // Debug log
         // Check if carboplatin protocol requires AUC, age, and creatinine
         const aucGroup = document.getElementById('aucGroup');
         if (aucGroup.style.display !== 'none') {
@@ -12412,6 +12454,155 @@ function checkForCarboplatinSearch(protocol) {
     }
 }
 
+// Cancer-specific search functionality
+let cancerSpecificProtocols = [];
+let selectedCancerSearchProtocol = null;
+
+function buildCancerSpecificIndex(cancerType, subtype = null) {
+    console.log('Building cancer-specific index for:', cancerType, subtype);
+    cancerSpecificProtocols = [];
+    
+    if (!protocolDatabase[cancerType]) return;
+    
+    const cancerName = getCancerDisplayName(cancerType);
+    
+    if ((cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') && subtype) {
+        const subtypeName = getSubtypeDisplayName(subtype);
+        if (protocolDatabase[cancerType][subtype]) {
+            Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
+                const protocol = protocolDatabase[cancerType][subtype][protocolKey];
+                const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                cancerSpecificProtocols.push({
+                    key: protocolKey,
+                    name: protocol.name,
+                    cancerType: cancerType,
+                    cancerName: `${cancerName} - ${subtypeName}`,
+                    subtype: subtype,
+                    searchText: `${protocol.name} ${drugNames}`.toLowerCase()
+                });
+            });
+        }
+    } else if (cancerType === 'breast' || cancerType === 'lung' || cancerType === 'lymphoma' || cancerType === 'leukemia' || cancerType === 'colorectal' || cancerType === 'thyroid' || cancerType === 'bone') {
+        // Handle cancer types with subtypes but no specific subtype selected yet
+        Object.keys(protocolDatabase[cancerType]).forEach(subtypeKey => {
+            const subtypeName = getSubtypeDisplayName(subtypeKey);
+            Object.keys(protocolDatabase[cancerType][subtypeKey]).forEach(protocolKey => {
+                const protocol = protocolDatabase[cancerType][subtypeKey][protocolKey];
+                const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                cancerSpecificProtocols.push({
+                    key: protocolKey,
+                    name: protocol.name,
+                    cancerType: cancerType,
+                    cancerName: `${cancerName} - ${subtypeName}`,
+                    subtype: subtypeKey,
+                    searchText: `${protocol.name} ${drugNames}`.toLowerCase()
+                });
+            });
+        });
+    } else {
+        // Handle other cancer types without subtypes
+        Object.keys(protocolDatabase[cancerType]).forEach(protocolKey => {
+            const protocol = protocolDatabase[cancerType][protocolKey];
+            const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+            cancerSpecificProtocols.push({
+                key: protocolKey,
+                name: protocol.name,
+                cancerType: cancerType,
+                cancerName: cancerName,
+                subtype: null,
+                searchText: `${protocol.name} ${drugNames}`.toLowerCase()
+            });
+        });
+    }
+    
+    console.log(`Cancer-specific index built, total protocols for ${cancerType}:`, cancerSpecificProtocols.length);
+}
+
+function searchCancerSpecificProtocols(query) {
+    if (!query || query.length < 2) return [];
+    
+    const queryLower = query.toLowerCase();
+    const results = cancerSpecificProtocols.filter(protocol => 
+        protocol.searchText.includes(queryLower)
+    );
+    
+    // Sort by relevance
+    results.sort((a, b) => {
+        const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+        const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+        return aExact - bExact;
+    });
+    
+    return results.slice(0, 20); // Limit to 20 suggestions for cancer-specific search
+}
+
+function displayCancerSearchSuggestions(suggestions) {
+    const suggestionsDiv = document.getElementById('cancerSearchSuggestions');
+    
+    if (suggestions.length === 0) {
+        suggestionsDiv.style.display = 'none';
+        return;
+    }
+    
+    suggestionsDiv.innerHTML = suggestions.map(protocol => `
+        <div class="suggestion-item" data-protocol-key="${protocol.key}" data-cancer-type="${protocol.cancerType}" data-subtype="${protocol.subtype || ''}">
+            <div class="suggestion-protocol">${protocol.name}</div>
+            <div class="suggestion-cancer">${protocol.cancerName}</div>
+        </div>
+    `).join('');
+    
+    suggestionsDiv.style.display = 'block';
+    
+    // Add click handlers
+    suggestionsDiv.querySelectorAll('.suggestion-item').forEach(item => {
+        item.addEventListener('click', function() {
+            selectCancerSearchProtocol({
+                key: this.dataset.protocolKey,
+                cancerType: this.dataset.cancerType,
+                subtype: this.dataset.subtype || null,
+                name: this.querySelector('.suggestion-protocol').textContent,
+                cancerName: this.querySelector('.suggestion-cancer').textContent
+            });
+        });
+    });
+}
+
+function selectCancerSearchProtocol(protocol) {
+    console.log('Selecting cancer-specific protocol:', protocol);
+    selectedCancerSearchProtocol = protocol;
+    
+    // Update search input
+    document.getElementById('cancerSpecificSearch').value = protocol.name;
+    
+    // Hide suggestions
+    document.getElementById('cancerSearchSuggestions').style.display = 'none';
+    
+    // Show selected protocol info
+    document.getElementById('selectedCancerProtocolName').textContent = protocol.name;
+    document.getElementById('selectedCancerProtocolCancer').textContent = protocol.cancerName;
+    document.getElementById('selectedCancerProtocolInfo').style.display = 'block';
+    
+    // Update the dropdown to match the selected protocol
+    if (protocol.subtype) {
+        document.getElementById('cancerSubtype').value = protocol.subtype;
+        populateProtocols(protocol.cancerType, protocol.subtype);
+    }
+    document.getElementById('protocol').value = protocol.key;
+    
+    // Check for carboplatin in selected protocol
+    checkForCarboplatinBrowse(protocol.cancerType, protocol.subtype, protocol.key);
+    
+    // Clear global search section
+    clearSearchSection();
+}
+
+function clearCancerSearchSection() {
+    document.getElementById('cancerSpecificSearch').value = '';
+    document.getElementById('cancerSearchSuggestions').style.display = 'none';
+    document.getElementById('selectedCancerProtocolInfo').style.display = 'none';
+    selectedCancerSearchProtocol = null;
+}
+
 // Get reference for cancer type
 function getReference(cancerType, cancerSubtype) {
     // Skip referencing for stem cell transplant and specific leukemia subtypes
@@ -12577,52 +12768,22 @@ document.getElementById('cancerSubtype').addEventListener('change', function() {
     const cancerType = document.getElementById('cancerType').value;
     populateProtocols(cancerType, this.value);
     checkForCarboplatin('', cancerType, this.value);
+    
+    // Rebuild cancer-specific search index with subtype
+    if (cancerType && this.value) {
+        buildCancerSpecificIndex(cancerType, this.value);
+        const cancerSpecificSearch = document.getElementById('cancerSpecificSearch');
+        const cancerName = getCancerDisplayName(cancerType);
+        const subtypeName = getSubtypeDisplayName(this.value);
+        cancerSpecificSearch.placeholder = `Search regimens within ${cancerName} - ${subtypeName}...`;
+        clearCancerSearchSection();
+    }
 });
 
 document.getElementById('protocol').addEventListener('change', function() {
     const cancerType = document.getElementById('cancerType').value;
     const subtype = document.getElementById('cancerSubtype').value;
     checkForCarboplatin(this.value, cancerType, subtype);
-});
-
-// Search event listeners
-document.getElementById('protocolSearch').addEventListener('input', function() {
-    const query = this.value.trim();
-    console.log('Search query:', query); // Debug log
-    
-    if (query.length < 2) {
-        document.getElementById('searchSuggestions').style.display = 'none';
-        return;
-    }
-    
-    // Make sure index is built
-    if (allProtocols.length === 0) {
-        buildProtocolIndex();
-    }
-    
-    const suggestions = searchProtocols(query);
-    console.log('Search suggestions:', suggestions); // Debug log
-    displaySearchSuggestions(suggestions);
-    
-    // Clear browse section when searching
-    if (query.length > 0) {
-        clearBrowseSection();
-    }
-});
-
-document.getElementById('protocolSearch').addEventListener('blur', function() {
-    // Hide suggestions after a longer delay to allow clicks
-    setTimeout(() => {
-        document.getElementById('searchSuggestions').style.display = 'none';
-    }, 300);
-});
-
-document.getElementById('protocolSearch').addEventListener('focus', function() {
-    const query = this.value.trim();
-    if (query.length >= 2) {
-        const suggestions = searchProtocols(query);
-        displaySearchSuggestions(suggestions);
-    }
 });
 
 // Event listeners moved to DOMContentLoaded
@@ -12648,7 +12809,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('calculateDoses').addEventListener('click', function() {
         if (selectedSearchProtocol) {
-            // Using search selection
+            // Using global search selection
             formData = {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
@@ -12658,6 +12819,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 cancerType: selectedSearchProtocol.cancerType,
                 cancerSubtype: selectedSearchProtocol.subtype,
                 protocol: selectedSearchProtocol.key,
+                auc: document.getElementById('auc').value
+            };
+        } else if (selectedCancerSearchProtocol) {
+            // Using cancer-specific search selection
+            formData = {
+                height: document.getElementById('height').value,
+                weight: document.getElementById('weight').value,
+                age: document.getElementById('age').value,
+                sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
+                creatinine: document.getElementById('creatinine').value,
+                cancerType: selectedCancerSearchProtocol.cancerType,
+                cancerSubtype: selectedCancerSearchProtocol.subtype,
+                protocol: selectedCancerSearchProtocol.key,
                 auc: document.getElementById('auc').value
             };
         } else {
@@ -12699,6 +12873,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset search
         clearSearchSection();
+        clearCancerSearchSection();
         
         // Reset UI state
         document.getElementById('subtypeGroup').style.display = 'none';
@@ -12739,6 +12914,70 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check for carboplatin and show/hide fields accordingly
         checkForCarboplatin(protocolKey, cancerType, subtype);
+    });
+    
+    // Cancer-specific search event listeners
+    document.getElementById('cancerSpecificSearch').addEventListener('input', function() {
+        const query = this.value;
+        const clearButton = document.getElementById('clearCancerSearch');
+        
+        if (query.trim() !== '') {
+            clearButton.style.display = 'flex';
+            const suggestions = searchCancerSpecificProtocols(query);
+            displayCancerSearchSuggestions(suggestions);
+        } else {
+            clearButton.style.display = 'none';
+            document.getElementById('cancerSearchSuggestions').style.display = 'none';
+        }
+    });
+    
+    document.getElementById('clearCancerSearch').addEventListener('click', function() {
+        document.getElementById('cancerSpecificSearch').value = '';
+        this.style.display = 'none';
+        document.getElementById('cancerSearchSuggestions').style.display = 'none';
+        document.getElementById('selectedCancerProtocolInfo').style.display = 'none';
+        selectedCancerSearchProtocol = null;
+    });
+    
+    // Global search event listeners
+    document.getElementById('protocolSearch').addEventListener('input', function() {
+        const query = this.value.trim();
+        const clearButton = document.getElementById('clearSearch');
+        console.log('Search query:', query); // Debug log
+        
+        if (query.length >= 2) {
+            clearButton.style.display = 'flex';
+            
+            // Make sure index is built
+            if (allProtocols.length === 0) {
+                buildProtocolIndex();
+            }
+            
+            const suggestions = searchProtocols(query);
+            console.log('Search suggestions:', suggestions); // Debug log
+            displaySearchSuggestions(suggestions);
+            
+            // Clear browse section when searching
+            clearBrowseSection();
+        } else {
+            clearButton.style.display = 'none';
+            document.getElementById('searchSuggestions').style.display = 'none';
+        }
+    });
+
+    document.getElementById('protocolSearch').addEventListener('blur', function() {
+        // Hide suggestions after a longer delay to allow clicks
+        setTimeout(() => {
+            document.getElementById('searchSuggestions').style.display = 'none';
+        }, 300);
+    });
+
+    document.getElementById('protocolSearch').addEventListener('focus', function() {
+        const query = this.value.trim();
+        if (query.length >= 2) {
+            const suggestions = searchProtocols(query);
+            displaySearchSuggestions(suggestions);
+        }
     });
     
     // Note: showPage(1) removed to allow splash screen to display first
