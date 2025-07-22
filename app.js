@@ -12318,22 +12318,100 @@ function getSubtypeDisplayName(subtype) {
     return names[subtype] || subtype;
 }
 
+// Fuzzy search functionality for auto-correction
+function calculateLevenshteinDistance(str1, str2) {
+    const matrix = [];
+    
+    // Create matrix
+    for (let i = 0; i <= str2.length; i++) {
+        matrix[i] = [i];
+    }
+    
+    for (let j = 0; j <= str1.length; j++) {
+        matrix[0][j] = j;
+    }
+    
+    // Fill matrix
+    for (let i = 1; i <= str2.length; i++) {
+        for (let j = 1; j <= str1.length; j++) {
+            if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
+    }
+    
+    return matrix[str2.length][str1.length];
+}
+
+function fuzzyMatch(query, text, threshold = 0.6) {
+    const queryLower = query.toLowerCase();
+    const textLower = text.toLowerCase();
+    
+    // Direct substring match (highest priority)
+    if (textLower.includes(queryLower)) {
+        return 1.0;
+    }
+    
+    // Split query and text into words for drug name matching
+    const queryWords = queryLower.split(/\s+/);
+    const textWords = textLower.split(/\s+/);
+    
+    let bestScore = 0;
+    
+    // Check each query word against each text word
+    for (const queryWord of queryWords) {
+        if (queryWord.length < 3) continue; // Skip very short words
+        
+        for (const textWord of textWords) {
+            const distance = calculateLevenshteinDistance(queryWord, textWord);
+            const maxLength = Math.max(queryWord.length, textWord.length);
+            const similarity = 1 - (distance / maxLength);
+            
+            if (similarity > bestScore) {
+                bestScore = similarity;
+            }
+        }
+    }
+    
+    return bestScore >= threshold ? bestScore : 0;
+}
+
 function searchProtocols(query) {
     if (!query || query.length < 2) return [];
     
     const queryLower = query.toLowerCase();
-    const results = allProtocols.filter(protocol => 
+    
+    // First try exact/substring matches
+    const exactResults = allProtocols.filter(protocol => 
         protocol.searchText.includes(queryLower)
     );
     
-    // Sort by relevance (exact matches first, then partial matches)
-    results.sort((a, b) => {
-        const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-        const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-        return aExact - bExact;
-    });
+    // If we have exact matches, prioritize them
+    if (exactResults.length > 0) {
+        exactResults.sort((a, b) => {
+            const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+            const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+            return aExact - bExact;
+        });
+        return exactResults.slice(0, 50);
+    }
     
-    return results.slice(0, 50); // Limit to 50 suggestions to show more comprehensive results
+    // If no exact matches, try fuzzy matching for auto-correction
+    const fuzzyResults = allProtocols.map(protocol => {
+        const score = fuzzyMatch(query, protocol.searchText, 0.5);
+        return { protocol, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map(item => item.protocol);
+    
+    return fuzzyResults.slice(0, 50);
 }
 
 function displaySearchSuggestions(suggestions) {
@@ -12519,18 +12597,32 @@ function searchCancerSpecificProtocols(query) {
     if (!query || query.length < 2) return [];
     
     const queryLower = query.toLowerCase();
-    const results = cancerSpecificProtocols.filter(protocol => 
+    
+    // First try exact/substring matches
+    const exactResults = cancerSpecificProtocols.filter(protocol => 
         protocol.searchText.includes(queryLower)
     );
     
-    // Sort by relevance
-    results.sort((a, b) => {
-        const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-        const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-        return aExact - bExact;
-    });
+    // If we have exact matches, prioritize them
+    if (exactResults.length > 0) {
+        exactResults.sort((a, b) => {
+            const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+            const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
+            return aExact - bExact;
+        });
+        return exactResults.slice(0, 20);
+    }
     
-    return results.slice(0, 20); // Limit to 20 suggestions for cancer-specific search
+    // If no exact matches, try fuzzy matching for auto-correction
+    const fuzzyResults = cancerSpecificProtocols.map(protocol => {
+        const score = fuzzyMatch(query, protocol.searchText, 0.5);
+        return { protocol, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map(item => item.protocol);
+    
+    return fuzzyResults.slice(0, 20); // Limit to 20 suggestions for cancer-specific search
 }
 
 function showCancerSearchDropdown(suggestions) {
