@@ -850,9 +850,45 @@
             
             #doseAdjustmentTable > div {
                 min-width: 310px;
-                grid-template-columns: 1.6fr 0.7fr 50px 1.1fr !important;
+                grid-template-columns: 1.4fr 0.7fr 50px 1.1fr !important;
                 gap: 3px !important;
                 padding: 6px !important;
+            }
+            
+            /* Drug name column - enable word wrapping on mobile */
+            #doseAdjustmentTable > div > div:first-child {
+                word-wrap: break-word;
+                word-break: break-word;
+                hyphens: auto;
+                overflow-wrap: break-word;
+                line-height: 1.2;
+                max-width: 0;
+                min-width: 0;
+                font-size: 11px !important;
+            }
+            
+            /* Ensure other columns maintain their sizes */
+            #doseAdjustmentTable > div > div:nth-child(2),
+            #doseAdjustmentTable > div > div:nth-child(4) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                min-width: 0;
+            }
+            
+            /* Allow reduce column to be compact */
+            #doseAdjustmentTable > div > div:nth-child(3) {
+                min-width: 45px;
+                max-width: 50px;
+            }
+            
+            /* Header row styling to match data rows */
+            #doseAdjustmentTable > div:first-child > div:first-child {
+                font-size: 11px !important;
+                font-weight: 600 !important;
+                word-wrap: normal;
+                word-break: normal;
+                hyphens: none;
             }
             
             #doseAdjustmentTable input[type="number"] {
@@ -1254,7 +1290,7 @@
                     <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
                         <label style="margin: 0;">Reduce all doses by:</label>
                         <input type="number" id="globalReduction" placeholder="%" min="0" max="100" style="width: 80px; padding: 8px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;">
-                        <button type="button" class="btn btn-primary" id="applyGlobalReduction" style="padding: 8px 16px; font-size: 14px;">Apply All</button>
+                        <button type="button" class="btn btn-primary" id="applyGlobalReduction" style="padding: 8px 16px; font-size: 14px;">Apply to All</button>
                         <button type="button" class="btn btn-secondary" id="resetReductions" style="padding: 8px 16px; font-size: 14px;">Reset</button>
                     </div>
                 </div>
