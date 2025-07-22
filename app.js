@@ -12807,7 +12807,7 @@ function buildDoseAdjustmentTable() {
                                placeholder="%" 
                                style="width: 100%; padding: 6px 25px 6px 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;"
                                onchange="updateDrugReduction('${drug.name}', this.value)">
-                        <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
+                        <span class="percentage-symbol" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
                     </div>
                     <div id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
                         ${finalDose.toFixed(1)}${drug.unit || 'mg'}
