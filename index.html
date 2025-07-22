@@ -536,6 +536,19 @@
                 padding: 10px;
                 font-size: 16px;
             }
+            
+            /* Ensure cancer-specific search matches other inputs on mobile */
+            #cancerSpecificSearch {
+                padding: 10px 30px 10px 10px !important;
+                font-size: 16px !important;
+            }
+            
+            #clearCancerSearch {
+                right: 6px !important;
+                font-size: 14px !important;
+                width: 18px !important;
+                height: 18px !important;
+            }
 
             /* Larger sex dropdown on mobile */
             #sex {
@@ -599,6 +612,33 @@
             }
             
             .selected-protocol-cancer {
+                font-size: 11px !important;
+            }
+            
+            /* Cancer-specific search styling on mobile */
+            #cancerSpecificSearchInput {
+                padding: 10px !important;
+                font-size: 16px !important;
+            }
+            
+            #cancerSearchDropdown {
+                max-height: 150px !important;
+                border: 1px solid #ddd !important;
+                border-radius: 0 0 4px 4px !important;
+                margin-top: 0 !important;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+            }
+            
+            .cancer-search-item {
+                padding: 8px !important;
+            }
+            
+            .cancer-search-item div:first-child {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+            }
+            
+            .cancer-search-item div:last-child {
                 font-size: 11px !important;
             }
 
@@ -871,15 +911,12 @@
 
                     <!-- Cancer-Specific Search -->
                     <div class="form-group" id="cancerSearchGroup" style="display: none;">
-                        <label for="cancerSpecificSearch">Search Regimens in Selected Cancer Type</label>
+                        <label for="cancerSpecificSearchInput">Search Regimens in Selected Cancer Type</label>
                         <div style="position: relative;">
-                            <input type="text" id="cancerSpecificSearch" placeholder="Search regimens within this cancer type..." style="width: 100%; padding: 12px 40px 12px 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;" disabled>
-                            <button type="button" id="clearCancerSearch" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 18px; color: #999; cursor: pointer; width: 24px; height: 24px; display: none; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s;" onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.color='#666'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#999'">×</button>
-                        </div>
-                        <div class="search-suggestions" id="cancerSearchSuggestions" style="position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px; max-height: 200px; overflow-y: auto; z-index: 1000; display: none;"></div>
-                        <div class="selected-protocol-info" id="selectedCancerProtocolInfo" style="display: none;">
-                            <div class="selected-protocol-name" id="selectedCancerProtocolName"></div>
-                            <div class="selected-protocol-cancer" id="selectedCancerProtocolCancer"></div>
+                            <input type="text" id="cancerSpecificSearchInput" placeholder="Type drug name to search regimens..." style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;" disabled>
+                            <div id="cancerSearchDropdown" style="position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px; max-height: 200px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <!-- Search results will appear here -->
+                            </div>
                         </div>
                     </div>
 

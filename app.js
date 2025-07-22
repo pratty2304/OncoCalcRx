@@ -11866,17 +11866,17 @@ function populateSubtypes(cancerType) {
     
     // Show and enable cancer-specific search when cancer type is selected
     const cancerSearchGroup = document.getElementById('cancerSearchGroup');
-    const cancerSpecificSearch = document.getElementById('cancerSpecificSearch');
+    const cancerSpecificSearchInput = document.getElementById('cancerSpecificSearchInput');
     
     if (cancerType) {
         cancerSearchGroup.style.display = 'block';
-        cancerSpecificSearch.disabled = false;
-        cancerSpecificSearch.placeholder = `Search regimens within ${getCancerDisplayName(cancerType)}...`;
+        cancerSpecificSearchInput.disabled = false;
+        cancerSpecificSearchInput.placeholder = `Type drug name to search regimens in ${getCancerDisplayName(cancerType)}...`;
         buildCancerSpecificIndex(cancerType);
         clearCancerSearchSection(); // Clear any previous selections
     } else {
         cancerSearchGroup.style.display = 'none';
-        cancerSpecificSearch.disabled = true;
+        cancerSpecificSearchInput.disabled = true;
         clearCancerSearchSection();
     }
 }
@@ -12536,70 +12536,66 @@ function searchCancerSpecificProtocols(query) {
     return results.slice(0, 20); // Limit to 20 suggestions for cancer-specific search
 }
 
-function displayCancerSearchSuggestions(suggestions) {
-    const suggestionsDiv = document.getElementById('cancerSearchSuggestions');
+function showCancerSearchDropdown(suggestions) {
+    const dropdown = document.getElementById('cancerSearchDropdown');
     
     if (suggestions.length === 0) {
-        suggestionsDiv.style.display = 'none';
+        dropdown.style.display = 'none';
         return;
     }
     
-    suggestionsDiv.innerHTML = suggestions.map(protocol => `
-        <div class="suggestion-item" data-protocol-key="${protocol.key}" data-cancer-type="${protocol.cancerType}" data-subtype="${protocol.subtype || ''}">
-            <div class="suggestion-protocol">${protocol.name}</div>
-            <div class="suggestion-cancer">${protocol.cancerName}</div>
+    dropdown.innerHTML = suggestions.map(protocol => `
+        <div class="cancer-search-item" data-protocol-key="${protocol.key}" data-cancer-type="${protocol.cancerType}" data-subtype="${protocol.subtype || ''}" style="padding: 10px; cursor: pointer; border-bottom: 1px solid #f0f0f0; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f8f9fa'" onmouseout="this.style.backgroundColor='white'">
+            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 2px;">${protocol.name}</div>
+            <div style="font-size: 12px; color: #666;">${protocol.cancerName}</div>
         </div>
     `).join('');
     
-    suggestionsDiv.style.display = 'block';
+    dropdown.style.display = 'block';
     
     // Add click handlers
-    suggestionsDiv.querySelectorAll('.suggestion-item').forEach(item => {
+    dropdown.querySelectorAll('.cancer-search-item').forEach(item => {
         item.addEventListener('click', function() {
-            selectCancerSearchProtocol({
+            selectCancerProtocol({
                 key: this.dataset.protocolKey,
                 cancerType: this.dataset.cancerType,
                 subtype: this.dataset.subtype || null,
-                name: this.querySelector('.suggestion-protocol').textContent,
-                cancerName: this.querySelector('.suggestion-cancer').textContent
+                name: this.querySelector('div').textContent
             });
         });
     });
 }
 
-function selectCancerSearchProtocol(protocol) {
-    console.log('Selecting cancer-specific protocol:', protocol);
+function selectCancerProtocol(protocol) {
+    console.log('Selecting cancer protocol:', protocol);
     selectedCancerSearchProtocol = protocol;
     
-    // Update search input
-    document.getElementById('cancerSpecificSearch').value = protocol.name;
+    // Update search input to show selected protocol
+    document.getElementById('cancerSpecificSearchInput').value = protocol.name;
     
-    // Hide suggestions
-    document.getElementById('cancerSearchSuggestions').style.display = 'none';
+    // Hide dropdown
+    document.getElementById('cancerSearchDropdown').style.display = 'none';
     
-    // Show selected protocol info
-    document.getElementById('selectedCancerProtocolName').textContent = protocol.name;
-    document.getElementById('selectedCancerProtocolCancer').textContent = protocol.cancerName;
-    document.getElementById('selectedCancerProtocolInfo').style.display = 'block';
-    
-    // Update the dropdown to match the selected protocol
+    // Update the main protocol dropdown to match selection
     if (protocol.subtype) {
         document.getElementById('cancerSubtype').value = protocol.subtype;
         populateProtocols(protocol.cancerType, protocol.subtype);
     }
     document.getElementById('protocol').value = protocol.key;
     
-    // Check for carboplatin in selected protocol
+    // Check for carboplatin
     checkForCarboplatinBrowse(protocol.cancerType, protocol.subtype, protocol.key);
     
-    // Clear global search section
+    // Clear global search
     clearSearchSection();
 }
 
 function clearCancerSearchSection() {
-    document.getElementById('cancerSpecificSearch').value = '';
-    document.getElementById('cancerSearchSuggestions').style.display = 'none';
-    document.getElementById('selectedCancerProtocolInfo').style.display = 'none';
+    const searchInput = document.getElementById('cancerSpecificSearchInput');
+    const dropdown = document.getElementById('cancerSearchDropdown');
+    
+    if (searchInput) searchInput.value = '';
+    if (dropdown) dropdown.style.display = 'none';
     selectedCancerSearchProtocol = null;
 }
 
@@ -12772,10 +12768,12 @@ document.getElementById('cancerSubtype').addEventListener('change', function() {
     // Rebuild cancer-specific search index with subtype
     if (cancerType && this.value) {
         buildCancerSpecificIndex(cancerType, this.value);
-        const cancerSpecificSearch = document.getElementById('cancerSpecificSearch');
+        const searchInput = document.getElementById('cancerSpecificSearchInput');
         const cancerName = getCancerDisplayName(cancerType);
         const subtypeName = getSubtypeDisplayName(this.value);
-        cancerSpecificSearch.placeholder = `Search regimens within ${cancerName} - ${subtypeName}...`;
+        if (searchInput) {
+            searchInput.placeholder = `Type drug name to filter regimens in ${cancerName} - ${subtypeName}...`;
+        }
         clearCancerSearchSection();
     }
 });
@@ -12917,26 +12915,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Cancer-specific search event listeners
-    document.getElementById('cancerSpecificSearch').addEventListener('input', function() {
-        const query = this.value;
-        const clearButton = document.getElementById('clearCancerSearch');
+    document.getElementById('cancerSpecificSearchInput').addEventListener('input', function() {
+        const query = this.value.trim();
         
-        if (query.trim() !== '') {
-            clearButton.style.display = 'flex';
+        if (query.length >= 2) {
             const suggestions = searchCancerSpecificProtocols(query);
-            displayCancerSearchSuggestions(suggestions);
+            showCancerSearchDropdown(suggestions);
         } else {
-            clearButton.style.display = 'none';
-            document.getElementById('cancerSearchSuggestions').style.display = 'none';
+            document.getElementById('cancerSearchDropdown').style.display = 'none';
         }
     });
     
-    document.getElementById('clearCancerSearch').addEventListener('click', function() {
-        document.getElementById('cancerSpecificSearch').value = '';
-        this.style.display = 'none';
-        document.getElementById('cancerSearchSuggestions').style.display = 'none';
-        document.getElementById('selectedCancerProtocolInfo').style.display = 'none';
-        selectedCancerSearchProtocol = null;
+    document.getElementById('cancerSpecificSearchInput').addEventListener('blur', function() {
+        // Hide dropdown after a delay to allow clicks
+        setTimeout(() => {
+            document.getElementById('cancerSearchDropdown').style.display = 'none';
+        }, 300);
+    });
+    
+    document.getElementById('cancerSpecificSearchInput').addEventListener('focus', function() {
+        const query = this.value.trim();
+        if (query.length >= 2) {
+            const suggestions = searchCancerSpecificProtocols(query);
+            showCancerSearchDropdown(suggestions);
+        }
     });
     
     // Global search event listeners
