@@ -12763,13 +12763,6 @@ function showDoseAdjustmentPage() {
     
     const { results, patientData } = originalResults;
     
-    // Populate patient summary
-    const patientInfo = `${patientData.weight}kg, ${patientData.height}cm, BSA ${results.bsa}m²`;
-    const regimenInfo = results.protocolName;
-    
-    document.getElementById('patientInfo').textContent = patientInfo;
-    document.getElementById('regimenInfo').textContent = regimenInfo;
-    
     // Initialize current reductions if empty
     results.drugs.forEach(drug => {
         if (!(drug.name in currentReductions)) {
