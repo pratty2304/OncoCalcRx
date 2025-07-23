@@ -8837,7 +8837,7 @@ const protocolDatabase = {
                 ]
             },
             'XELIRI-Metastatic': {
-                name: 'Capecitabine + Irinotecan (XELIRI / Metastatic)',
+                name: 'Capecitabine + Irinotecan (mXELIRI/CapIRI / Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' },
@@ -8918,7 +8918,7 @@ const protocolDatabase = {
                 ]
             },
             'XELIRI-Bevacizumab-Metastatic': {
-                name: 'XELIRI + Bevacizumab (Metastatic)',
+                name: 'mXELIRI/CapIRI + Bevacizumab (Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' },
