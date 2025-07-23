@@ -6,16 +6,16 @@ const protocolDatabase = {
         'hormone_positive': {
             // Neoadjuvant/Adjuvant Therapy
             'AC-T': {
-                name: 'Adriamycin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
+                name: 'Adriamycin + Cyclophosphamide → Paclitaxel (AC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
-                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
+                    { name: 'Paclitaxel (Paclitaxel)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
                 ]
             },
             'EC-T': {
-                name: 'Epirubicin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
+                name: 'Epirubicin + Cyclophosphamide → Paclitaxel (EC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Epirubicin', dose: 90, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
@@ -24,7 +24,7 @@ const protocolDatabase = {
                 ]
             },
             'TAC': {
-                name: 'Docetaxel + Adriamycin + Cyclophosphamide (BCIRG-001) (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Adriamycin + Cyclophosphamide (TAC) (BCIRG-001) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -33,7 +33,7 @@ const protocolDatabase = {
                 ]
             },
             'TC': {
-                name: 'Docetaxel + Cyclophosphamide (USOR-06-090/TAILORx) (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Cyclophosphamide (TC) (USOR-06-090/TAILORx) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -41,7 +41,7 @@ const protocolDatabase = {
                 ]
             },
             'Dose-Dense-AC': {
-                name: 'Dose Dense AC (CALGB-9741) (Neoadjuvant/Adjuvant)',
+                name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 2 weeks' },
@@ -56,7 +56,7 @@ const protocolDatabase = {
                 ]
             },
             'FEC-T': {
-                name: 'FEC → Docetaxel (Neoadjuvant/Adjuvant)',
+                name: 'FEC → Docetaxel (FEC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 9,
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
@@ -66,7 +66,7 @@ const protocolDatabase = {
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -75,7 +75,7 @@ const protocolDatabase = {
                 ]
             },
             'CMF': {
-                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (CMF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -406,16 +406,16 @@ const protocolDatabase = {
             },
             // Neoadjuvant/Adjuvant Therapy
             'AC-T': {
-                name: 'Adriamycin + Cyclophosphamide → Taxol (Neoadjuvant/Adjuvant)',
+                name: 'Adriamycin + Cyclophosphamide → Paclitaxel (AC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
-                    { name: 'Paclitaxel (Taxol)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
+                    { name: 'Paclitaxel (Paclitaxel)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
                 ]
             },
             'TAC': {
-                name: 'Docetaxel + Adriamycin + Cyclophosphamide (BCIRG-001) (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Adriamycin + Cyclophosphamide (TAC) (BCIRG-001) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -424,7 +424,7 @@ const protocolDatabase = {
                 ]
             },
             'Dose-Dense-AC': {
-                name: 'Dose Dense AC (CALGB-9741) (Neoadjuvant/Adjuvant)',
+                name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 2 weeks' },
@@ -439,7 +439,7 @@ const protocolDatabase = {
                 ]
             },
             'TC': {
-                name: 'Docetaxel + Cyclophosphamide (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Cyclophosphamide (TC) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -447,7 +447,7 @@ const protocolDatabase = {
                 ]
             },
             'EC-T': {
-                name: 'Epirubicin + Cyclophosphamide → Docetaxel (Neoadjuvant/Adjuvant)',
+                name: 'Epirubicin + Cyclophosphamide → Docetaxel (EC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Epirubicin', dose: 90, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
@@ -456,7 +456,7 @@ const protocolDatabase = {
                 ]
             },
             'FEC-T': {
-                name: 'FEC → Docetaxel (Neoadjuvant/Adjuvant)',
+                name: 'FEC → Docetaxel (FEC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 9,
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
@@ -466,7 +466,7 @@ const protocolDatabase = {
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -475,7 +475,7 @@ const protocolDatabase = {
                 ]
             },
             'CMF': {
-                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (CMF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -711,7 +711,7 @@ const protocolDatabase = {
         'her2_positive': {
             // Neoadjuvant/Adjuvant Therapy
             'TCHP': {
-                name: 'Docetaxel + Carboplatin + Trastuzumab + Pertuzumab (KATHERINE/PHERGain) (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Carboplatin + Trastuzumab + Pertuzumab (TCHP) (KATHERINE/PHERGain) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -721,7 +721,7 @@ const protocolDatabase = {
                 ]
             },
             'TCH': {
-                name: 'Docetaxel + Carboplatin + Trastuzumab (BCIRG-006) (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Carboplatin + Trastuzumab (TCH) (BCIRG-006) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -730,7 +730,7 @@ const protocolDatabase = {
                 ]
             },
             'THP': {
-                name: 'Docetaxel + Trastuzumab + Pertuzumab (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Trastuzumab + Pertuzumab (THP) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -739,7 +739,7 @@ const protocolDatabase = {
                 ]
             },
             'PCHP': {
-                name: 'Paclitaxel + Carboplatin + Trastuzumab + Pertuzumab (Neoadjuvant/Adjuvant)',
+                name: 'Paclitaxel + Carboplatin + Trastuzumab + Pertuzumab (Pacli-CHP) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -749,7 +749,7 @@ const protocolDatabase = {
                 ]
             },
             'PCH': {
-                name: 'Paclitaxel + Carboplatin + Trastuzumab (Neoadjuvant/Adjuvant)',
+                name: 'Paclitaxel + Carboplatin + Trastuzumab (Pacli-CH) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -758,7 +758,7 @@ const protocolDatabase = {
                 ]
             },
             'PHP': {
-                name: 'Paclitaxel + Trastuzumab + Pertuzumab (Neoadjuvant/Adjuvant)',
+                name: 'Paclitaxel + Trastuzumab + Pertuzumab (Pacli-HP) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -767,7 +767,7 @@ const protocolDatabase = {
                 ]
             },
             'AC-TH': {
-                name: 'AC → Paclitaxel + Trastuzumab (NSABP-B31/N9831) (Neoadjuvant/Adjuvant)',
+                name: 'AC → Paclitaxel + Trastuzumab (AC-TH) (NSABP-B31/N9831) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
@@ -777,7 +777,7 @@ const protocolDatabase = {
                 ]
             },
             'Dose-Dense-AC': {
-                name: 'Dose Dense AC (CALGB-9741) (Neoadjuvant/Adjuvant)',
+                name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
@@ -793,7 +793,7 @@ const protocolDatabase = {
                 ]
             },
             'TC': {
-                name: 'Docetaxel + Cyclophosphamide (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Cyclophosphamide (TC) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -801,7 +801,7 @@ const protocolDatabase = {
                 ]
             },
             'FEC': {
-                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide (Neoadjuvant/Adjuvant)',
+                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide (FEC) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -810,7 +810,7 @@ const protocolDatabase = {
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -819,7 +819,7 @@ const protocolDatabase = {
                 ]
             },
             'CMF': {
-                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Methotrexate + 5-Fluorouracil (CMF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -842,7 +842,7 @@ const protocolDatabase = {
                 ]
             },
             'EC-T': {
-                name: 'Epirubicin + Cyclophosphamide → Docetaxel (Neoadjuvant/Adjuvant)',
+                name: 'Epirubicin + Cyclophosphamide → Docetaxel (EC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Epirubicin', dose: 90, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
