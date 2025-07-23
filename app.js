@@ -293,7 +293,7 @@ const protocolDatabase = {
             },
             // Chemotherapy for Metastatic Disease
             'Paclitaxel-Carboplatin-3weekly': {
-                name: 'Paclitaxel + Carboplatin (3-weekly) (Metastatic)',
+                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -325,7 +325,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-weekly': {
-                name: 'Paclitaxel + Carboplatin (weekly) (Metastatic)',
+                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
@@ -515,7 +515,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-3weekly': {
-                name: 'Paclitaxel + Carboplatin (3-weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic - 1L)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -523,7 +523,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-weekly': {
-                name: 'Paclitaxel + Carboplatin (weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
@@ -890,7 +890,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-3weekly': {
-                name: 'Paclitaxel + Carboplatin (3 weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic - 1L)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -898,7 +898,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-weekly': {
-                name: 'Paclitaxel + Carboplatin (weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic - 1L)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
@@ -1122,8 +1122,8 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
-        'CAPEOX': {
-            name: 'CAPEOX (Neoadjuvant/Adjuvant/Metastatic)',
+        'CapeOX': {
+            name: 'CapeOX (CAPOX/XELOX) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -2628,7 +2628,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel - Metastatic',
+            name: 'Paclitaxel + Carboplatin (PC) - Metastatic',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -2728,7 +2728,7 @@ const protocolDatabase = {
     },
     ovarian: {
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel (GOG-158) - (Neoadjuvant/Adjuvant/Advanced)',
+            name: 'Paclitaxel + Carboplatin (PC) (GOG-158) - (Neoadjuvant/Adjuvant/Advanced)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -2760,7 +2760,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Cisplatin': {
-            name: 'Gemcitabine + Cisplatin (Recurrent)',
+            name: 'Gemcitabine + Cisplatin (GC) (Recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -2937,7 +2937,7 @@ const protocolDatabase = {
             ]
         },
         'Veliparib-Carboplatin-Paclitaxel': {
-            name: 'Veliparib + Carboplatin + Paclitaxel (BRCA+ metastatic)',
+            name: 'Veliparib + Paclitaxel + Carboplatin (BRCA+ metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Veliparib', dose: 150, unit: 'mg', schedule: 'twice daily, continuous' },
@@ -2969,7 +2969,7 @@ const protocolDatabase = {
             ]
         },
         'Durvalumab-Olaparib-Bevacizumab-Carboplatin-Paclitaxel': {
-            name: 'Durvalumab + Olaparib + Bevacizumab + Carboplatin + Paclitaxel (DUO-O) - (Advanced)',
+            name: 'Durvalumab + Olaparib + Bevacizumab + Paclitaxel + Carboplatin (DUO-O) - (Advanced)',
             cycles: 6,
             drugs: [
                 { name: 'Durvalumab', dose: 1120, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -2980,7 +2980,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Weekly': {
-            name: 'Carboplatin + Paclitaxel Weekly (GOG-262) - (Neoadjuvant/Advanced)',
+            name: 'Paclitaxel + Carboplatin (PC) Weekly (GOG-262) - (Neoadjuvant/Advanced)',
             cycles: 18,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days' },
@@ -2996,7 +2996,7 @@ const protocolDatabase = {
             ]
         },
         'Bevacizumab-Carboplatin-Paclitaxel': {
-            name: 'Bevacizumab + Carboplatin + Paclitaxel (GOG-218/ICON7) - (Advanced)',
+            name: 'Bevacizumab + Paclitaxel + Carboplatin (GOG-218/ICON7) - (Advanced)',
             cycles: 6,
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
@@ -4389,7 +4389,7 @@ const protocolDatabase = {
         
         // Rare Sarcoma Subtypes
         'Carboplatin-Paclitaxel-Bevacizumab': {
-            name: 'Carboplatin + Paclitaxel + Bevacizumab (Angiosarcoma) (Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Bevacizumab (Angiosarcoma) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1 every 21 days' },
@@ -4917,7 +4917,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Ramucirumab': {
-            name: 'Carboplatin + Paclitaxel + Ramucirumab (Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Ramucirumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1 every 21 days' },
@@ -4944,7 +4944,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Paclitaxel + Carboplatin (PC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1 every 21 days' },
@@ -5443,7 +5443,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Cisplatin-POLO': {
-            name: 'Gemcitabine + Cisplatin (POLO) - Metastatic (BRCA1/2/PALB2+)',
+            name: 'Gemcitabine + Cisplatin (GC) (POLO) - Metastatic (BRCA1/2/PALB2+)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5526,7 +5526,7 @@ const protocolDatabase = {
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 4 weeks' }
             ]
         },
-        'CAPEOX-RT': {
+        'CapeOX-RT': {
             name: 'Capecitabine + Oxaliplatin + RT',
             cycles: 2,
             drugs: [
@@ -5543,7 +5543,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel',
+            name: 'Paclitaxel + Carboplatin (PC)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -5571,7 +5571,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Retifanlimab': {
-            name: 'Carboplatin + Paclitaxel + Retifanlimab-dlwr',
+            name: 'Paclitaxel + Carboplatin + Retifanlimab-dlwr',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
@@ -5742,8 +5742,8 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil infusion', dose: 1000, unit: 'mg/m²', schedule: 'daily x 4 days, every 21 days' }
             ]
         },
-        'CAPEOX': {
-            name: 'Capecitabine + Oxaliplatin (CAPEOX) - (Metastatic)',
+        'CapeOX': {
+            name: 'Capecitabine + Oxaliplatin (CAPOX/XELOX) - (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -6485,7 +6485,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel - Metastatic',
+            name: 'Paclitaxel + Carboplatin (PC) - Metastatic',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -6569,7 +6569,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel - Metastatic - 1L',
+            name: 'Paclitaxel + Carboplatin (PC) - Metastatic - 1L',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 every 21 days', requiresAUC: true },
@@ -6623,7 +6623,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Weekly': {
-            name: 'Carboplatin + Paclitaxel (Weekly) - Metastatic - 1L',
+            name: 'Paclitaxel + Carboplatin (PC) (Weekly) - Metastatic - 1L',
             cycles: 12,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 weekly', requiresAUC: true },
@@ -6647,7 +6647,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab': {
-            name: 'Carboplatin + Paclitaxel + Bevacizumab (Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
@@ -6666,7 +6666,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab-Pembrolizumab': {
-            name: 'Carboplatin + Paclitaxel + Bevacizumab + Pembrolizumab (Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Bevacizumab + Pembrolizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
@@ -7137,7 +7137,7 @@ const protocolDatabase = {
         
         // Adenocarcinoma - Triple combinations
         'Gemcitabine-Carboplatin-Paclitaxel': {
-            name: 'Gemcitabine + Carboplatin + Paclitaxel (GCP) - Adenocarcinoma',
+            name: 'Gemcitabine + Paclitaxel + Carboplatin (GCP) - Adenocarcinoma',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -7167,7 +7167,7 @@ const protocolDatabase = {
         
         // Standard doublets - Adenocarcinoma/Squamous
         'Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel - Adenocarcinoma/Squamous',
+            name: 'Paclitaxel + Carboplatin (PC) - Adenocarcinoma/Squamous',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -7185,7 +7185,7 @@ const protocolDatabase = {
         
         // Weekly regimens
         'Carboplatin-Paclitaxel-Weekly': {
-            name: 'Carboplatin + Paclitaxel (weekly) - Adenocarcinoma/Squamous',
+            name: 'Paclitaxel + Carboplatin (PC) (weekly) - Adenocarcinoma/Squamous',
             cycles: 12,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly' },
@@ -7228,8 +7228,8 @@ const protocolDatabase = {
                 { name: 'Irinotecan', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
-        'CAPEOX': {
-            name: 'Capecitabine + Oxaliplatin (CAPEOX) - Colorectal Features',
+        'CapeOX': {
+            name: 'Capecitabine + Oxaliplatin (CapeOX) - Colorectal Features',
             cycles: 8,
             drugs: [
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-D14, every 21 days' },
@@ -7945,7 +7945,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Neo-Adj': {
-            name: 'Carboplatin + Paclitaxel (Neoadjuvant/Adjuvant)',
+            name: 'Paclitaxel + Carboplatin (PC) (Neoadjuvant/Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8016,7 +8016,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Metastatic': {
-            name: 'Carboplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8024,7 +8024,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Weekly-Metastatic': {
-            name: 'Carboplatin + Paclitaxel Weekly (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) Weekly (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly' },
@@ -8032,7 +8032,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Pembrolizumab-Metastatic': {
-            name: 'Carboplatin + Paclitaxel + Pembrolizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Pembrolizumab (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8059,7 +8059,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab-Metastatic': {
-            name: 'Carboplatin + Paclitaxel + Bevacizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Bevacizumab (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8068,7 +8068,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Atezolizumab-Bevacizumab-Metastatic': {
-            name: 'Carboplatin + Paclitaxel + Atezolizumab + Bevacizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Atezolizumab + Bevacizumab (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8088,7 +8088,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Pembrolizumab-Bevacizumab-Metastatic': {
-            name: 'Carboplatin + Paclitaxel + Pembrolizumab + Bevacizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Pembrolizumab + Bevacizumab (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8225,7 +8225,7 @@ const protocolDatabase = {
     endometrial: {
         // Neoadjuvant/Adjuvant Therapy
         'Carboplatin-Paclitaxel-Neo-Adj': {
-            name: 'Carboplatin + Paclitaxel (Neoadjuvant/Adjuvant)',
+            name: 'Paclitaxel + Carboplatin (PC) (Neoadjuvant/Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8233,7 +8233,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Pembrolizumab-Neo-Adj-Met': {
-            name: 'Carboplatin + Paclitaxel + Pembrolizumab (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Pembrolizumab (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8242,7 +8242,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Dostarlimab-Neo-Adj-Met': {
-            name: 'Carboplatin + Paclitaxel + Dostarlimab (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Dostarlimab (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8251,7 +8251,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Durvalumab-dMMR-Neo-Adj-Met': {
-            name: 'Carboplatin + Paclitaxel + Durvalumab (dMMR/Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Durvalumab (dMMR/Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8260,7 +8260,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Trastuzumab-HER2-Neo-Adj-Met': {
-            name: 'Carboplatin + Paclitaxel + Trastuzumab (HER2+ / Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Paclitaxel + Carboplatin + Trastuzumab (HER2+ / Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8269,7 +8269,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab-Neo-Adj-Met': {
-            name: 'Carboplatin + Paclitaxel + Bevacizumab (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Paclitaxel + Carboplatin (PC) + Bevacizumab (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8289,7 +8289,7 @@ const protocolDatabase = {
 
         // Metastatic - 1L
         'Carboplatin-Paclitaxel-Metastatic': {
-            name: 'Carboplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8467,8 +8467,8 @@ const protocolDatabase = {
                     { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
                 ]
             },
-            'CAPEOX-Neo-Adj': {
-                name: 'CAPEOX (Neoadjuvant/Adjuvant)',
+            'CapeOX-Neo-Adj': {
+                name: 'CapeOX (CAPOX/XELOX) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8536,8 +8536,8 @@ const protocolDatabase = {
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' }
                 ]
             },
-            'CAPEOX-Atezolizumab-Adj-dMMR': {
-                name: 'CAPEOX + Atezolizumab (Adjuvant / dMMR/MSI-H/POLE mutation)',
+            'CapeOX-Atezolizumab-Adj-dMMR': {
+                name: 'CapeOX (CAPOX/XELOX) + Atezolizumab (Adjuvant / dMMR/MSI-H/POLE mutation)',
                 cycles: 8,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8559,8 +8559,8 @@ const protocolDatabase = {
                     { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
                 ]
             },
-            'CAPEOX-Rectal-Neo-Adj': {
-                name: 'CAPEOX (Neoadjuvant/Adjuvant)',
+            'CapeOX-Rectal-Neo-Adj': {
+                name: 'CapeOX (CAPOX/XELOX) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8596,8 +8596,8 @@ const protocolDatabase = {
                     { name: 'Oxaliplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, D29, D36 during RT' }
                 ]
             },
-            'CAPEOX-RT-Neo': {
-                name: 'CAPEOX + RT (Neoadjuvant)',
+            'CapeOX-RT-Neo': {
+                name: 'CapeOX (CAPOX/XELOX) + RT (Neoadjuvant)',
                 cycles: 5,
                 drugs: [
                     { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD D1-D14 and D22-D35 during RT' },
@@ -8702,8 +8702,8 @@ const protocolDatabase = {
                     { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
                 ]
             },
-            'CAPEOX-Bevacizumab-Metastatic': {
-                name: 'CAPEOX + Bevacizumab (Metastatic - 1L)',
+            'CapeOX-Bevacizumab-Metastatic': {
+                name: 'CapeOX (CAPOX/XELOX) + Bevacizumab (Metastatic - 1L)',
                 cycles: 8,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8778,8 +8778,8 @@ const protocolDatabase = {
                     { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
                 ]
             },
-            'CAPEOX-Cetuximab-Metastatic': {
-                name: 'CAPEOX + Cetuximab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
+            'CapeOX-Cetuximab-Metastatic': {
+                name: 'CapeOX (CAPOX/XELOX) + Cetuximab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 8,
                 drugs: [
                     { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true },
@@ -8787,8 +8787,8 @@ const protocolDatabase = {
                     { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' }
                 ]
             },
-            'CAPEOX-Panitumumab-Metastatic': {
-                name: 'CAPEOX + Panitumumab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
+            'CapeOX-Panitumumab-Metastatic': {
+                name: 'CapeOX (CAPOX/XELOX) + Panitumumab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 8,
                 drugs: [
                     { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
@@ -8828,8 +8828,8 @@ const protocolDatabase = {
                     { name: 'Irinotecan', dose: 350, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'CAPEOX-Metastatic': {
-                name: 'CAPEOX (Metastatic)',
+            'CapeOX-Metastatic': {
+                name: 'CapeOX (CAPOX/XELOX) (Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9207,7 +9207,7 @@ const protocolDatabase = {
     esophageal: {
         // NEOADJUVANT/PERIOPERATIVE THERAPY
         'CROSS-Neoadjuvant': {
-            name: 'CROSS Protocol (Neoadjuvant) - Carboplatin + Paclitaxel + RT',
+            name: 'CROSS Protocol (Neoadjuvant) - Paclitaxel + Carboplatin (PC) + RT',
             cycles: 5,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly x 5 weeks with RT' },
@@ -9260,8 +9260,8 @@ const protocolDatabase = {
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles (preoperative)' }
             ]
         },
-        'Neoadjuvant-CAPEOX-Trastuzumab-HER2': {
-            name: 'CAPEOX + Trastuzumab (Neoadjuvant, HER2+)',
+        'Neoadjuvant-CapeOX-Trastuzumab-HER2': {
+            name: 'CapeOX (CAPOX/XELOX) + Trastuzumab (Neoadjuvant, HER2+)',
             cycles: 6,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days x 6 cycles (preoperative)' },
@@ -9315,8 +9315,8 @@ const protocolDatabase = {
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (given with every other FOLFOX cycle)' }
             ]
         },
-        'Metastatic-CAPEOX-Trastuzumab-HER2': {
-            name: 'CAPEOX + Trastuzumab (Metastatic - 1L, HER2+)',
+        'Metastatic-CapeOX-Trastuzumab-HER2': {
+            name: 'CapeOX (CAPOX/XELOX) + Trastuzumab (Metastatic - 1L, HER2+)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9335,8 +9335,8 @@ const protocolDatabase = {
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
             ]
         },
-        'Metastatic-CAPEOX-Trastuzumab-Pembrolizumab-HER2': {
-            name: 'CAPEOX + Trastuzumab + Pembrolizumab (Metastatic - 1L, HER2+/PD-L1 CPS≥1)',
+        'Metastatic-CapeOX-Trastuzumab-Pembrolizumab-HER2': {
+            name: 'CapeOX (CAPOX/XELOX) + Trastuzumab + Pembrolizumab (Metastatic - 1L, HER2+/PD-L1 CPS≥1)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9355,8 +9355,8 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
-        'Metastatic-CAPEOX': {
-            name: 'CAPEOX (Metastatic - 1L)',
+        'Metastatic-CapeOX': {
+            name: 'CapeOX (CAPOX/XELOX) (Metastatic - 1L)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9364,7 +9364,7 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-Carboplatin-Paclitaxel': {
-            name: 'Carboplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -9524,7 +9524,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-RT': {
-            name: 'Carboplatin + Paclitaxel + RT (weekly) (Definitive/Adjuvant)',
+            name: 'Paclitaxel + Carboplatin (PC) + RT (weekly) (Definitive/Adjuvant)',
             cycles: 7,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, weekly x 7 weeks with concurrent RT' },
@@ -9590,7 +9590,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Neoadjuvant': {
-            name: 'Carboplatin + Paclitaxel (Neoadjuvant)',
+            name: 'Paclitaxel + Carboplatin (PC) (Neoadjuvant)',
             cycles: 3,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -9620,7 +9620,7 @@ const protocolDatabase = {
             ]
         },
         'Pembrolizumab-Carboplatin-Paclitaxel-1L': {
-            name: 'Pembrolizumab + Carboplatin + Paclitaxel (KEYNOTE-048) (Metastatic - 1L)',
+            name: 'Pembrolizumab + Paclitaxel + Carboplatin (KEYNOTE-048) (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
@@ -9662,7 +9662,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-1L': {
-            name: 'Carboplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -10659,7 +10659,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-Neoadjuvant': {
-                name: 'Carboplatin + Paclitaxel - Neoadjuvant',
+                name: 'Paclitaxel + Carboplatin (PC) (CP) - Neoadjuvant',
                 cycles: 3,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -10667,7 +10667,7 @@ const protocolDatabase = {
                 ]
             },
             'Cisplatin-Pemetrexed-Neoadjuvant': {
-                name: 'Cisplatin + Pemetrexed (Non-squamous) - Neoadjuvant',
+                name: 'Cisplatin + Pemetrexed (CP) (Non-squamous) - Neoadjuvant',
                 cycles: 3,
                 drugs: [
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -10675,7 +10675,7 @@ const protocolDatabase = {
                 ]
             },
             'Cisplatin-Gemcitabine-Neoadjuvant': {
-                name: 'Cisplatin + Gemcitabine (Squamous) - Neoadjuvant',
+                name: 'Cisplatin + Gemcitabine (GC) (Squamous) - Neoadjuvant',
                 cycles: 3,
                 drugs: [
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -10714,7 +10714,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-Adjuvant': {
-                name: 'Carboplatin + Paclitaxel - Adjuvant',
+                name: 'Paclitaxel + Carboplatin (PC) - Adjuvant',
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -10775,7 +10775,7 @@ const protocolDatabase = {
                 ]
             },
             'Pembrolizumab-Carboplatin-Paclitaxel': {
-                name: 'Pembrolizumab + Carboplatin + Paclitaxel (KEYNOTE-407) - Metastatic - 1L - Squamous',
+                name: 'Pembrolizumab + Paclitaxel + Carboplatin (KEYNOTE-407) - Metastatic - 1L - Squamous',
                 cycles: 4,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -11040,7 +11040,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-Weekly': {
-                name: 'Carboplatin + Paclitaxel (weekly) - Metastatic',
+                name: 'Paclitaxel + Carboplatin (PC) (weekly) - Metastatic',
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly x 12 weeks' },
@@ -11048,7 +11048,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-Bevacizumab': {
-                name: 'Carboplatin + Paclitaxel + Bevacizumab - Metastatic - Non-squamous',
+                name: 'Paclitaxel + Carboplatin (PC) + Bevacizumab - Metastatic - Non-squamous',
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -11189,7 +11189,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-Pembrolizumab': {
-                name: 'Carboplatin + Paclitaxel + Pembrolizumab (KEYNOTE-407) - Metastatic - Squamous',
+                name: 'Paclitaxel + Carboplatin (PC) + Pembrolizumab (KEYNOTE-407) - Metastatic - Squamous',
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -11537,7 +11537,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-Etoposide': {
-                name: 'Carboplatin + Paclitaxel + Etoposide - Extensive Stage',
+                name: 'Paclitaxel + Carboplatin (PC) + Etoposide - Extensive Stage',
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -11546,7 +11546,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Paclitaxel-SCLC': {
-                name: 'Carboplatin + Paclitaxel - Extensive Stage',
+                name: 'Paclitaxel + Carboplatin (PC) - Extensive Stage',
                 cycles: 4,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
