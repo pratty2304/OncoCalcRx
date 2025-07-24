@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OncoCalcRx</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z49JKP7QZ4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-Z49JKP7QZ4', {
+            page_title: 'OncoCalcRx - Chemotherapy Dose Calculator',
+            page_location: window.location.href
+        });
+    </script>
     <style>
         * {
             margin: 0;
@@ -379,6 +392,110 @@
             font-size: 13px;
             color: #868e96;
             font-weight: 400;
+        }
+
+        /* Desktop styles for responsive tables */
+        .responsive-table {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        .responsive-table table {
+            width: 100%;
+            font-size: 14px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .responsive-table th,
+        .responsive-table td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            word-wrap: break-word;
+        }
+
+        /* Desktop column widths for Page 3 (4 columns) */
+        .responsive-table th:nth-child(1),
+        .responsive-table td:nth-child(1) {
+            width: 30%;
+        }
+
+        .responsive-table th:nth-child(2),
+        .responsive-table td:nth-child(2) {
+            width: 25%;
+        }
+
+        .responsive-table th:nth-child(3),
+        .responsive-table td:nth-child(3) {
+            width: 25%;
+        }
+
+        .responsive-table th:nth-child(4),
+        .responsive-table td:nth-child(4) {
+            width: 20%;
+        }
+
+        /* Desktop styles for Page 5 final prescription table (5 columns) */
+        #finalResultsContent .responsive-table {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        #finalResultsContent .responsive-table table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            min-width: 600px;
+            max-width: 100%;
+        }
+
+        #finalResultsContent .responsive-table th:nth-child(1),
+        #finalResultsContent .responsive-table td:nth-child(1) {
+            width: 25%;
+        }
+
+        #finalResultsContent .responsive-table th:nth-child(2),
+        #finalResultsContent .responsive-table td:nth-child(2) {
+            width: 18%;
+        }
+
+        #finalResultsContent .responsive-table th:nth-child(3),
+        #finalResultsContent .responsive-table td:nth-child(3) {
+            width: 18%;
+        }
+
+        #finalResultsContent .responsive-table th:nth-child(4),
+        #finalResultsContent .responsive-table td:nth-child(4) {
+            width: 18%;
+        }
+
+        #finalResultsContent .responsive-table th:nth-child(5),
+        #finalResultsContent .responsive-table td:nth-child(5) {
+            width: 21%;
+        }
+
+        /* Allow drug names and schedule to wrap on desktop */
+        .responsive-table td:nth-child(1),
+        .responsive-table td:nth-child(4),
+        #finalResultsContent .responsive-table td:nth-child(1),
+        #finalResultsContent .responsive-table td:nth-child(5) {
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        /* Keep dose columns compact on desktop */
+        .responsive-table td:nth-child(2),
+        .responsive-table td:nth-child(3),
+        #finalResultsContent .responsive-table td:nth-child(2),
+        #finalResultsContent .responsive-table td:nth-child(3),
+        #finalResultsContent .responsive-table td:nth-child(4) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .suggestion-item {
@@ -931,15 +1048,15 @@
                 width: 100%;
             }
             
-            #finalResultsContent table {
+            #finalResultsContent .responsive-table table {
                 min-width: 600px;
                 width: 100%;
                 font-size: 13px !important;
                 table-layout: fixed;
             }
             
-            #finalResultsContent th,
-            #finalResultsContent td {
+            #finalResultsContent .responsive-table th,
+            #finalResultsContent .responsive-table td {
                 padding: 8px 4px !important;
                 font-size: 12px !important;
                 word-wrap: break-word;
@@ -948,68 +1065,52 @@
             }
             
             /* Fixed column widths for mobile final prescription table */
-            #finalResultsContent th:nth-child(1),
-            #finalResultsContent td:nth-child(1) {
+            #finalResultsContent .responsive-table th:nth-child(1),
+            #finalResultsContent .responsive-table td:nth-child(1) {
                 width: 20%;
                 min-width: 80px;
             }
             
-            #finalResultsContent th:nth-child(2),
-            #finalResultsContent td:nth-child(2) {
+            #finalResultsContent .responsive-table th:nth-child(2),
+            #finalResultsContent .responsive-table td:nth-child(2) {
                 width: 18%;
                 min-width: 70px;
             }
             
-            #finalResultsContent th:nth-child(3),
-            #finalResultsContent td:nth-child(3) {
+            #finalResultsContent .responsive-table th:nth-child(3),
+            #finalResultsContent .responsive-table td:nth-child(3) {
                 width: 18%;
                 min-width: 70px;
             }
             
-            #finalResultsContent th:nth-child(4),
-            #finalResultsContent td:nth-child(4) {
+            #finalResultsContent .responsive-table th:nth-child(4),
+            #finalResultsContent .responsive-table td:nth-child(4) {
                 width: 18%;
                 min-width: 70px;
             }
             
-            #finalResultsContent th:nth-child(5),
-            #finalResultsContent td:nth-child(5) {
+            #finalResultsContent .responsive-table th:nth-child(5),
+            #finalResultsContent .responsive-table td:nth-child(5) {
                 width: 26%;
                 min-width: 90px;
             }
             
             /* Allow drug names and schedule to wrap */
-            #finalResultsContent td:nth-child(1),
-            #finalResultsContent td:nth-child(5) {
+            #finalResultsContent .responsive-table td:nth-child(1),
+            #finalResultsContent .responsive-table td:nth-child(5) {
                 white-space: normal;
                 word-break: break-word;
             }
             
             /* Keep dose columns compact */
-            #finalResultsContent td:nth-child(2),
-            #finalResultsContent td:nth-child(3),
-            #finalResultsContent td:nth-child(4) {
+            #finalResultsContent .responsive-table td:nth-child(2),
+            #finalResultsContent .responsive-table td:nth-child(3),
+            #finalResultsContent .responsive-table td:nth-child(4) {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
             
-            /* Page 5 specific mobile improvements - make table content bigger */
-            #finalResultsContent table {
-                min-width: 600px;
-                width: 100%;
-                font-size: 14px !important;
-                table-layout: fixed;
-            }
-            
-            #finalResultsContent th,
-            #finalResultsContent td {
-                padding: 10px 6px !important;
-                font-size: 14px !important;
-                word-wrap: break-word;
-                hyphens: auto;
-                line-height: 1.4;
-            }
             
             /* Make summary boxes more compact on mobile */
             #reductionSummary {
@@ -1343,6 +1444,39 @@
             <div class="brand-line">OncoCalcRx - All rights reserved.</div>
         </div>
     </footer>
+
+    <!-- Analytics Tracking Script -->
+    <script>
+        // Analytics Helper Functions
+        function trackEvent(eventName, parameters = {}) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    custom_parameter_1: parameters.custom_parameter_1 || '',
+                    custom_parameter_2: parameters.custom_parameter_2 || '',
+                    custom_parameter_3: parameters.custom_parameter_3 || '',
+                    value: parameters.value || null,
+                    ...parameters
+                });
+            }
+        }
+
+        function trackPageView(pageName) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: `OncoCalcRx - ${pageName}`,
+                    page_location: window.location.href,
+                    custom_parameter_1: pageName
+                });
+            }
+        }
+
+        // Track app initialization
+        trackEvent('app_start', {
+            timestamp: new Date().toISOString(),
+            user_agent: navigator.userAgent,
+            screen_resolution: `${screen.width}x${screen.height}`
+        });
+    </script>
 
     <script>
         // Splash screen logic

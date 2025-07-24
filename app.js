@@ -12095,6 +12095,19 @@ function showPage(pageNumber) {
     // Show selected page
     document.getElementById(`page${pageNumber}`).classList.add('active');
     
+    // Track page view
+    const pageNames = {
+        1: 'Patient Information',
+        2: 'Regimen Selection', 
+        3: 'Dose Results',
+        4: 'Dose Adjustment',
+        5: 'Final Prescription'
+    };
+    
+    if (typeof trackPageView !== 'undefined') {
+        trackPageView(pageNames[pageNumber] || `Page ${pageNumber}`);
+    }
+    
     // Update progress bar
     const progressFill = document.getElementById('progressFill');
     const maxPages = 5; // Now we have 5 pages
@@ -13150,6 +13163,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Page navigation event listeners
     document.getElementById('nextToPage2').addEventListener('click', function() {
         if (validatePage1()) {
+            // Track patient info completion
+            trackEvent('patient_info_completed', {
+                custom_parameter_1: 'page_navigation',
+                custom_parameter_2: 'patient_to_regimen'
+            });
             updatePatientInfoCard(); // Ensure patient card is updated
             showPage(2);
         } else {
@@ -13163,6 +13181,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('calculateDoses').addEventListener('click', function() {
         if (selectedSearchProtocol) {
+            // Track protocol selection via search
+            trackEvent('protocol_selected', {
+                custom_parameter_1: 'search_method',
+                custom_parameter_2: selectedSearchProtocol.cancer,
+                custom_parameter_3: selectedSearchProtocol.name
+            });
+            
             // Using global search selection
             formData = {
                 height: document.getElementById('height').value,
@@ -13176,6 +13201,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 auc: document.getElementById('auc').value
             };
         } else if (selectedCancerSearchProtocol) {
+            // Track protocol selection via cancer-specific search
+            trackEvent('protocol_selected', {
+                custom_parameter_1: 'cancer_search_method',
+                custom_parameter_2: selectedCancerSearchProtocol.cancerType,
+                custom_parameter_3: selectedCancerSearchProtocol.name
+            });
+            
             // Using cancer-specific search selection
             formData = {
                 height: document.getElementById('height').value,
@@ -13189,6 +13221,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 auc: document.getElementById('auc').value
             };
         } else {
+            // Track protocol selection via browse method
+            const cancerType = document.getElementById('cancerType').value;
+            const protocol = document.getElementById('protocol').value;
+            trackEvent('protocol_selected', {
+                custom_parameter_1: 'browse_method',
+                custom_parameter_2: cancerType,
+                custom_parameter_3: protocol
+            });
+            
             // Using browse selection
             formData = {
                 height: document.getElementById('height').value,
@@ -13202,6 +13243,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 auc: document.getElementById('auc').value
             };
         }
+        
+        // Track dose calculation
+        trackEvent('dose_calculated', {
+            custom_parameter_1: formData.cancerType,
+            custom_parameter_2: formData.protocol,
+            custom_parameter_3: `${formData.height}cm_${formData.weight}kg`,
+            value: 1
+        });
         
         const results = calculateDoses(formData);
         displayResults(results, formData);
@@ -13261,9 +13310,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Dose adjustment event handlers
-    document.getElementById('adjustDoses').addEventListener('click', showDoseAdjustmentPage);
+    document.getElementById('adjustDoses').addEventListener('click', function() {
+        trackEvent('dose_adjustment_started', {
+            custom_parameter_1: 'manual_adjustment',
+            custom_parameter_2: 'page_navigation'
+        });
+        showDoseAdjustmentPage();
+    });
     document.getElementById('backToPage3').addEventListener('click', () => showPage(3));
-    document.getElementById('finalDoses').addEventListener('click', showFinalPrescription);
+    document.getElementById('finalDoses').addEventListener('click', function() {
+        trackEvent('final_prescription_generated', {
+            custom_parameter_1: 'calculation_completed',
+            custom_parameter_2: 'prescription_ready'
+        });
+        showFinalPrescription();
+    });
     document.getElementById('backToPage4').addEventListener('click', () => showPage(4));
     document.getElementById('newCalculationFromPage5').addEventListener('click', function() {
         // Reset all form fields

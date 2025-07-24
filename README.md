@@ -9,6 +9,8 @@ Chemotherapy Dose Calculator - Mobile-First Web Application
 - 38+ cancer types with subtypes
 - Mobile-optimized responsive interface
 - Works on any device with a web browser
+- 📊 Usage analytics with Google Analytics 4
+- Real-time dose adjustments and final prescription generation
 
 ## 🚀 Quick Start
 
@@ -41,12 +43,29 @@ npm run serve
 
 ```
 oncocalcrx/
-├── index.html         # Main web application
-├── app.js            # Application logic & protocol database
-├── splash-bg.png     # Custom splash screen image
-├── package.json      # Project configuration
-└── README.md         # This file
+├── index.html              # Main web application
+├── app.js                  # Application logic & protocol database
+├── splash-bg.png           # Custom splash screen image
+├── package.json            # Project configuration
+├── ANALYTICS_SETUP.md      # Google Analytics configuration guide
+└── README.md               # This file
 ```
+
+## 📊 Analytics Setup
+
+OncoCalcRx includes comprehensive usage analytics to track how medical professionals use the calculator.
+
+**Quick Setup:**
+1. See `ANALYTICS_SETUP.md` for detailed Google Analytics 4 configuration
+2. Replace `GA_MEASUREMENT_ID` in `index.html` with your Analytics ID
+3. View usage reports in your Google Analytics dashboard
+
+**Events Tracked:**
+- App usage and user sessions
+- Protocol selection methods (search vs browse)
+- Dose calculations by cancer type
+- Dose adjustments and final prescriptions
+- User workflow completion rates
 
 ## 🌐 Deployment
 
