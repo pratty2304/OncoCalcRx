@@ -1250,17 +1250,7 @@
                         </div>
                         <div class="form-group">
                             <label for="searchAuc">Carboplatin AUC</label>
-                            <select id="searchAuc" name="searchAuc">
-                                <option value="">Select AUC</option>
-                                <option value="1">AUC 1</option>
-                                <option value="1.5">AUC 1.5</option>
-                                <option value="2">AUC 2</option>
-                                <option value="3">AUC 3</option>
-                                <option value="4">AUC 4</option>
-                                <option value="5">AUC 5</option>
-                                <option value="6">AUC 6</option>
-                                <option value="7">AUC 7</option>
-                            </select>
+                            <input type="number" id="searchAuc" name="searchAuc" min="1" max="10" step="0.1" placeholder="Enter AUC (e.g., 5, 6, 7)">
                         </div>
                     </div>
                 </div>
@@ -1363,17 +1353,7 @@
 
                 <div class="form-group" id="aucGroup" style="display: none;">
                     <label for="auc">Carboplatin AUC</label>
-                    <select id="auc" name="auc">
-                        <option value="">Select AUC</option>
-                        <option value="1">AUC 1</option>
-                        <option value="1.5">AUC 1.5</option>
-                        <option value="2">AUC 2</option>
-                        <option value="3">AUC 3</option>
-                        <option value="4">AUC 4</option>
-                        <option value="5">AUC 5</option>
-                        <option value="6">AUC 6</option>
-                        <option value="7">AUC 7</option>
-                    </select>
+                    <input type="number" id="auc" name="auc" min="1" max="10" step="0.1" placeholder="Enter AUC (e.g., 5, 6, 7)">
                 </div>
 
                 <div class="nav-buttons">
@@ -1576,6 +1556,31 @@
                 if (searchSuggestions) searchSuggestions.style.display = 'none';
                 if (selectedProtocolInfo) selectedProtocolInfo.style.display = 'none';
                 
+                // Hide search carboplatin parameters
+                const searchCarboplatinParams = document.getElementById('searchCarboplatinParams');
+                if (searchCarboplatinParams) {
+                    searchCarboplatinParams.style.display = 'none';
+                    // Clear the values and remove required attributes
+                    const searchAge = document.getElementById('searchAge');
+                    const searchCreatinine = document.getElementById('searchCreatinine');
+                    const searchAuc = document.getElementById('searchAuc');
+                    if (searchAge) {
+                        searchAge.value = '';
+                        searchAge.required = false;
+                    }
+                    if (searchCreatinine) {
+                        searchCreatinine.value = '';
+                        searchCreatinine.required = false;
+                    }
+                    if (searchAuc) {
+                        searchAuc.value = '';
+                        searchAuc.required = false;
+                    }
+                }
+                
+                // Clear selected search protocol
+                selectedSearchProtocol = null;
+                
                 // Trigger input event to reset any search filters
                 protocolSearchInput.dispatchEvent(new Event('input', { bubbles: true }));
             });
@@ -1606,6 +1611,41 @@
                 // Hide cancer search dropdown
                 const cancerSearchDropdown = document.getElementById('cancerSearchDropdown');
                 if (cancerSearchDropdown) cancerSearchDropdown.style.display = 'none';
+                
+                // Hide browse section carboplatin parameters (since cancer search is part of browse)
+                const carboplatinParams = document.getElementById('carboplatinParams');
+                const aucGroup = document.getElementById('aucGroup');
+                if (carboplatinParams) {
+                    carboplatinParams.style.display = 'none';
+                    // Clear the values and remove required attributes
+                    const age = document.getElementById('age');
+                    const creatinine = document.getElementById('creatinine');
+                    if (age) {
+                        age.value = '';
+                        age.required = false;
+                    }
+                    if (creatinine) {
+                        creatinine.value = '';
+                        creatinine.required = false;
+                    }
+                }
+                if (aucGroup) {
+                    aucGroup.style.display = 'none';
+                    const auc = document.getElementById('auc');
+                    if (auc) {
+                        auc.value = '';
+                        auc.required = false;
+                    }
+                }
+                
+                // Clear selected cancer search protocol
+                selectedCancerSearchProtocol = null;
+                
+                // Reset protocol dropdown selection
+                const protocolDropdown = document.getElementById('protocol');
+                if (protocolDropdown) {
+                    protocolDropdown.value = '';
+                }
                 
                 // Trigger input event to reset any search filters
                 cancerSearchInput.dispatchEvent(new Event('input', { bubbles: true }));

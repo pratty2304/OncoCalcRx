@@ -12150,8 +12150,8 @@ function validatePage2() {
             const age = document.getElementById('searchAge').value;
             const creatinine = document.getElementById('searchCreatinine').value;
             
-            if (!auc) {
-                alert('Please select an AUC value for this carboplatin protocol.');
+            if (!auc || auc < 1 || auc > 10) {
+                alert('Please enter a valid AUC value (1-10) for this carboplatin protocol.');
                 return false;
             }
             if (!age) {
@@ -12176,8 +12176,8 @@ function validatePage2() {
             const age = document.getElementById('age').value;
             const creatinine = document.getElementById('creatinine').value;
             
-            if (!auc) {
-                alert('Please select an AUC value for this carboplatin protocol.');
+            if (!auc || auc < 1 || auc > 10) {
+                alert('Please enter a valid AUC value (1-10) for this carboplatin protocol.');
                 return false;
             }
             if (!age) {
