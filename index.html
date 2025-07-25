@@ -1231,6 +1231,40 @@
                     </div>
                 </div>
 
+                <!-- Carboplatin Parameters for Quick Search (conditional) -->
+                <div id="searchCarboplatinParams" style="display: none;">
+                    <div style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                            <i class="fas fa-calculator" style="font-size: 18px; color: #e67e22;"></i>
+                            <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Carboplatin Dosing Parameters</h3>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="searchAge">Age (years)</label>
+                                <input type="number" id="searchAge" name="searchAge" min="1" max="120">
+                            </div>
+                            <div class="form-group">
+                                <label for="searchCreatinine">Creatinine (mg/dL)</label>
+                                <input type="number" id="searchCreatinine" name="searchCreatinine" min="0.3" max="15" step="0.1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="searchAuc">Carboplatin AUC</label>
+                            <select id="searchAuc" name="searchAuc">
+                                <option value="">Select AUC</option>
+                                <option value="1">AUC 1</option>
+                                <option value="1.5">AUC 1.5</option>
+                                <option value="2">AUC 2</option>
+                                <option value="3">AUC 3</option>
+                                <option value="4">AUC 4</option>
+                                <option value="5">AUC 5</option>
+                                <option value="6">AUC 6</option>
+                                <option value="7">AUC 7</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="divider">
                     <span>OR</span>
                 </div>

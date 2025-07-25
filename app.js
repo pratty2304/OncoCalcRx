@@ -12143,12 +12143,12 @@ function validatePage2() {
     // Check if protocol is selected via global search
     if (selectedSearchProtocol) {
         console.log('Using global search protocol'); // Debug log
-        // Check if carboplatin protocol requires AUC, age, and creatinine
-        const aucGroup = document.getElementById('aucGroup');
-        if (aucGroup.style.display !== 'none') {
-            const auc = document.getElementById('auc').value;
-            const age = document.getElementById('age').value;
-            const creatinine = document.getElementById('creatinine').value;
+        // Check if carboplatin protocol requires AUC, age, and creatinine from search section
+        const searchCarboplatinParams = document.getElementById('searchCarboplatinParams');
+        if (searchCarboplatinParams.style.display !== 'none') {
+            const auc = document.getElementById('searchAuc').value;
+            const age = document.getElementById('searchAge').value;
+            const creatinine = document.getElementById('searchCreatinine').value;
             
             if (!auc) {
                 alert('Please select an AUC value for this carboplatin protocol.');
@@ -12535,6 +12535,21 @@ function clearSearchSection() {
     document.getElementById('protocolSearch').value = '';
     document.getElementById('searchSuggestions').style.display = 'none';
     document.getElementById('selectedProtocolInfo').style.display = 'none';
+    
+    // Hide and clear search section carboplatin parameters
+    const searchCarboplatinParams = document.getElementById('searchCarboplatinParams');
+    const searchAgeInput = document.getElementById('searchAge');
+    const searchCreatinineInput = document.getElementById('searchCreatinine');
+    const searchAucSelect = document.getElementById('searchAuc');
+    
+    searchCarboplatinParams.style.display = 'none';
+    searchAgeInput.required = false;
+    searchCreatinineInput.required = false;
+    searchAucSelect.required = false;
+    searchAgeInput.value = '';
+    searchCreatinineInput.value = '';
+    searchAucSelect.value = '';
+    
     selectedSearchProtocol = null;
 }
 
@@ -12549,27 +12564,52 @@ function checkForCarboplatinSearch(protocol) {
     
     if (protocolData) {
         const hasCarboplatin = protocolData.drugs.some(drug => drug.name.toLowerCase().includes('carboplatin'));
-        const aucGroup = document.getElementById('aucGroup');
-        const aucSelect = document.getElementById('auc');
-        const carboplatinParams = document.getElementById('carboplatinParams');
-        const ageInput = document.getElementById('age');
-        const creatinineInput = document.getElementById('creatinine');
+        
+        // Get search section carboplatin elements
+        const searchCarboplatinParams = document.getElementById('searchCarboplatinParams');
+        const searchAgeInput = document.getElementById('searchAge');
+        const searchCreatinineInput = document.getElementById('searchCreatinine');
+        const searchAucSelect = document.getElementById('searchAuc');
+        
+        // Get browse section carboplatin elements (keep hidden when using search)
+        const browseCarboplatinParams = document.getElementById('carboplatinParams');
+        const browseAucGroup = document.getElementById('aucGroup');
+        const browseAucSelect = document.getElementById('auc');
+        const browseAgeInput = document.getElementById('age');
+        const browseCreatinineInput = document.getElementById('creatinine');
         
         if (hasCarboplatin) {
-            carboplatinParams.style.display = 'block';
-            aucGroup.style.display = 'block';
-            aucSelect.required = true;
-            ageInput.required = true;
-            creatinineInput.required = true;
+            // Show carboplatin parameters in search section
+            searchCarboplatinParams.style.display = 'block';
+            searchAgeInput.required = true;
+            searchCreatinineInput.required = true;
+            searchAucSelect.required = true;
+            
+            // Hide browse section carboplatin parameters
+            browseCarboplatinParams.style.display = 'none';
+            browseAucGroup.style.display = 'none';
+            browseAucSelect.required = false;
+            browseAgeInput.required = false;
+            browseCreatinineInput.required = false;
         } else {
-            carboplatinParams.style.display = 'none';
-            aucGroup.style.display = 'none';
-            aucSelect.required = false;
-            aucSelect.value = '';
-            ageInput.required = false;
-            ageInput.value = '';
-            creatinineInput.required = false;
-            creatinineInput.value = '';
+            // Hide search section carboplatin parameters
+            searchCarboplatinParams.style.display = 'none';
+            searchAgeInput.required = false;
+            searchCreatinineInput.required = false;
+            searchAucSelect.required = false;
+            searchAgeInput.value = '';
+            searchCreatinineInput.value = '';
+            searchAucSelect.value = '';
+            
+            // Hide browse section carboplatin parameters as well
+            browseCarboplatinParams.style.display = 'none';
+            browseAucGroup.style.display = 'none';
+            browseAucSelect.required = false;
+            browseAgeInput.required = false;
+            browseCreatinineInput.required = false;
+            browseAucSelect.value = '';
+            browseAgeInput.value = '';
+            browseCreatinineInput.value = '';
         }
     }
 }
@@ -12722,7 +12762,7 @@ function selectCancerProtocol(protocol) {
     document.getElementById('protocol').value = protocol.key;
     
     // Check for carboplatin
-    checkForCarboplatinBrowse(protocol.cancerType, protocol.subtype, protocol.key);
+    checkForCarboplatin(protocol.key, protocol.cancerType, protocol.subtype);
     
     // Clear global search
     clearSearchSection();
@@ -13188,17 +13228,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 custom_parameter_3: selectedSearchProtocol.name
             });
             
-            // Using global search selection
+            // Using global search selection - check if using search section carboplatin fields
+            const searchCarboplatinParams = document.getElementById('searchCarboplatinParams');
+            const useSearchCarboplatin = searchCarboplatinParams.style.display !== 'none';
+            
             formData = {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
-                age: document.getElementById('age').value,
+                age: useSearchCarboplatin ? document.getElementById('searchAge').value : document.getElementById('age').value,
                 sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
-                creatinine: document.getElementById('creatinine').value,
+                creatinine: useSearchCarboplatin ? document.getElementById('searchCreatinine').value : document.getElementById('creatinine').value,
                 cancerType: selectedSearchProtocol.cancerType,
                 cancerSubtype: selectedSearchProtocol.subtype,
                 protocol: selectedSearchProtocol.key,
-                auc: document.getElementById('auc').value
+                auc: useSearchCarboplatin ? document.getElementById('searchAuc').value : document.getElementById('auc').value
             };
         } else if (selectedCancerSearchProtocol) {
             // Track protocol selection via cancer-specific search
