@@ -413,6 +413,101 @@
             padding: 12px;
             border: 1px solid #dee2e6;
             word-wrap: break-word;
+            vertical-align: middle;
+        }
+
+        /* Page 4 dose adjustment table desktop styles */
+        #doseAdjustmentTable .responsive-table {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        #doseAdjustmentTable .responsive-table table {
+            width: 100%;
+            font-size: 14px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        #doseAdjustmentTable .responsive-table th {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            word-wrap: break-word;
+            vertical-align: middle;
+            font-size: 14px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        #doseAdjustmentTable .responsive-table td {
+            padding: 12px;
+            border: 1px solid #e8f4f8;
+            word-wrap: break-word;
+            vertical-align: middle;
+            font-size: 14px;
+            background: #fafbfc;
+        }
+
+        #doseAdjustmentTable .responsive-table tbody tr:nth-child(even) td {
+            background: #f1f8ff;
+        }
+
+        #doseAdjustmentTable .responsive-table tbody tr:hover td {
+            background: #e3f2fd;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Page 4 desktop column widths */
+        #doseAdjustmentTable .responsive-table th:nth-child(1),
+        #doseAdjustmentTable .responsive-table td:nth-child(1) {
+            width: 40%;
+        }
+
+        #doseAdjustmentTable .responsive-table th:nth-child(2),
+        #doseAdjustmentTable .responsive-table td:nth-child(2) {
+            width: 20%;
+        }
+
+        #doseAdjustmentTable .responsive-table th:nth-child(3),
+        #doseAdjustmentTable .responsive-table td:nth-child(3) {
+            width: 20%;
+            text-align: center;
+        }
+
+        #doseAdjustmentTable .responsive-table th:nth-child(4),
+        #doseAdjustmentTable .responsive-table td:nth-child(4) {
+            width: 20%;
+        }
+
+        /* Drug names column - allow wrapping with fixed width */
+        #doseAdjustmentTable .responsive-table td:nth-child(1) {
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        /* Desktop input styling */
+        #doseAdjustmentTable input[type="number"] {
+            padding: 8px 30px 8px 8px;
+            font-size: 14px;
+            width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #doseAdjustmentTable .percentage-symbol {
+            right: 12px;
+            font-size: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            color: #666;
+            pointer-events: none;
+            font-weight: 500;
         }
 
         /* Desktop column widths for Page 3 (4 columns) */
@@ -1038,142 +1133,111 @@
                 padding: 0 15px;
             }
             
-            /* Dose adjustment pages mobile styling */
-            #doseAdjustmentTable {
+            /* Dose adjustment pages mobile styling - now using responsive table structure */
+            #doseAdjustmentTable .responsive-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+            }
+            
+            #doseAdjustmentTable .responsive-table table {
+                width: 100%;
                 font-size: 12px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                overflow-x: hidden !important;
+                table-layout: fixed;
+                min-width: 500px;
+                border-collapse: collapse;
             }
             
-            #doseAdjustmentTable > div {
-                width: 100% !important;
-                max-width: calc(100vw - 16px) !important;
-                grid-template-columns: 2fr 1.2fr 45px 1fr !important;
-                gap: 1px !important;
-                padding: 8px 1px !important;
-                align-items: center !important;
-                box-sizing: border-box !important;
+            #doseAdjustmentTable .responsive-table th {
+                padding: 8px 6px !important;
+                font-size: 12px !important;
+                border: 1px solid #dee2e6;
+                word-wrap: break-word;
+                hyphens: auto;
+                line-height: 1.3;
+                vertical-align: middle;
+                background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%) !important;
+                color: #2c3e50 !important;
+                font-weight: 600;
+            }
+
+            #doseAdjustmentTable .responsive-table td {
+                padding: 8px 6px !important;
+                font-size: 12px !important;
+                border: 1px solid #e8f4f8 !important;
+                word-wrap: break-word;
+                hyphens: auto;
+                line-height: 1.3;
+                vertical-align: middle;
+                background: #fafbfc !important;
+            }
+
+            #doseAdjustmentTable .responsive-table tbody tr:nth-child(even) td {
+                background: #f1f8ff !important;
             }
             
-            /* Data rows should allow flex start for multi-line content */
-            #doseAdjustmentTable > div:not(:first-child) {
-                align-items: flex-start !important;
+            /* Page 4 table column widths for mobile */
+            #doseAdjustmentTable .responsive-table th:nth-child(1),
+            #doseAdjustmentTable .responsive-table td:nth-child(1) {
+                width: 40%;
+                min-width: 120px;
             }
             
-            /* Drug name column - allow text wrapping for long names and notes */
-            #doseAdjustmentTable > div > div:first-child {
-                font-size: 9px !important;
-                line-height: 1.3 !important;
-                word-wrap: break-word !important;
-                white-space: normal !important;
-                min-height: 35px !important;
-                padding: 0 !important;
-                overflow: visible !important;
-                max-width: 100% !important;
-                text-align: left !important;
-                display: block !important;
+            #doseAdjustmentTable .responsive-table th:nth-child(2),
+            #doseAdjustmentTable .responsive-table td:nth-child(2) {
+                width: 20%;
+                min-width: 80px;
             }
             
-            /* Handle the dose reduction warning text in mobile */
-            #doseAdjustmentTable > div > div:first-child > div {
-                font-size: 8px !important;
-                line-height: 1.2 !important;
-                margin-top: 1px !important;
-                word-wrap: break-word !important;
-                white-space: normal !important;
-                overflow: hidden !important;
-                max-width: 100% !important;
+            #doseAdjustmentTable .responsive-table th:nth-child(3),
+            #doseAdjustmentTable .responsive-table td:nth-child(3) {
+                width: 20%;
+                min-width: 80px;
             }
             
-            /* Original dose column - allow text wrapping */
-            #doseAdjustmentTable > div > div:nth-child(2) {
-                font-size: 9px !important;
-                line-height: 1.2 !important;
-                word-wrap: break-word !important;
-                white-space: normal !important;
-                min-height: 35px !important;
-                overflow: visible !important;
-                max-width: 100% !important;
-                text-align: center !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                padding: 0 !important;
+            #doseAdjustmentTable .responsive-table th:nth-child(4),
+            #doseAdjustmentTable .responsive-table td:nth-child(4) {
+                width: 20%;
+                min-width: 80px;
             }
             
-            /* Reduce column - center and size properly */
-            #doseAdjustmentTable > div > div:nth-child(3) {
-                width: 42px !important;
-                max-width: 42px !important;
-                text-align: center !important;
-                font-size: 9px !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                min-height: 35px !important;
-                overflow: hidden !important;
-                padding: 0 !important;
+            /* Allow drug names to wrap */
+            #doseAdjustmentTable .responsive-table td:nth-child(1) {
+                white-space: normal;
+                word-break: break-word;
+                hyphens: auto;
             }
             
-            /* Final dose column - allow text wrapping for notes */
-            #doseAdjustmentTable > div > div:nth-child(4) {
-                font-size: 9px !important;
-                line-height: 1.2 !important;
-                word-wrap: break-word !important;
-                white-space: normal !important;
-                min-height: 35px !important;
-                overflow: visible !important;
-                max-width: 100% !important;
-                text-align: center !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                padding: 0 !important;
+            /* Keep other columns compact */
+            #doseAdjustmentTable .responsive-table td:nth-child(2),
+            #doseAdjustmentTable .responsive-table td:nth-child(4) {
+                white-space: normal;
+                word-break: break-word;
             }
             
-            /* Header row styling to match data rows */
-            #doseAdjustmentTable > div:first-child {
-                align-items: center !important;
-                min-height: 40px !important;
-            }
-            
-            #doseAdjustmentTable > div:first-child > div {
-                font-size: 9px !important;
-                font-weight: 600 !important;
-                word-wrap: normal;
-                word-break: normal;
-                hyphens: none;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                text-align: center !important;
-                overflow: visible !important;
-                max-width: 100% !important;
-                padding: 0 !important;
-            }
-            
-            #doseAdjustmentTable > div:first-child > div:first-child {
-                justify-content: flex-start !important;
-                text-align: left !important;
+            #doseAdjustmentTable .responsive-table td:nth-child(3) {
+                text-align: center;
             }
             
             #doseAdjustmentTable input[type="number"] {
-                padding: 4px 10px 4px 4px !important;
-                font-size: 9px !important;
+                padding: 4px 22px 4px 4px !important;
+                font-size: 12px !important;
                 width: 100% !important;
-                min-width: 38px !important;
-                max-width: 40px !important;
+                min-width: 50px !important;
                 box-sizing: border-box !important;
-                height: 24px !important;
+                border: 1px solid #ddd !important;
                 border-radius: 3px !important;
             }
             
-            /* Adjust percentage symbol position for mobile */
             #doseAdjustmentTable .percentage-symbol {
-                right: 4px !important;
-                font-size: 8px !important;
+                right: 8px !important;
+                font-size: 9px !important;
                 top: 50% !important;
+                transform: translateY(-50%);
+                position: absolute;
+                color: #666 !important;
+                pointer-events: none;
+                font-weight: 500 !important;
             }
             
             #patientSummary {
