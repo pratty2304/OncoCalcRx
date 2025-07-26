@@ -13271,8 +13271,26 @@ document.getElementById('protocol').addEventListener('change', function() {
 
 // Validate carboplatin parameters
 function validateCarboplatinParameters(formData) {
-    // Check if the selected protocol contains carboplatin
-    const protocolData = protocols[formData.protocol];
+    // Find the protocol data by searching through the protocol database
+    let protocolData = null;
+    
+    // Search through all cancer types and subtypes to find the protocol
+    for (const cancerType in protocolDatabase) {
+        if (typeof protocolDatabase[cancerType] === 'object') {
+            // Check if this cancer type has subtypes
+            for (const key in protocolDatabase[cancerType]) {
+                if (key === formData.protocol) {
+                    protocolData = protocolDatabase[cancerType][key];
+                    break;
+                } else if (typeof protocolDatabase[cancerType][key] === 'object' && protocolDatabase[cancerType][key][formData.protocol]) {
+                    protocolData = protocolDatabase[cancerType][key][formData.protocol];
+                    break;
+                }
+            }
+        }
+        if (protocolData) break;
+    }
+    
     if (!protocolData) return true; // If protocol not found, allow to proceed
     
     const containsCarboplatin = protocolData.drugs.some(drug => 
