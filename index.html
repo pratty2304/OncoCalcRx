@@ -645,16 +645,24 @@
                 margin-top: 18px !important;
             }
 
-            /* Adjust page 1 positioning on mobile */
+            /* Better page 1 positioning on mobile - reduced height and centered */
             #page1.page.active {
-                top: 50px;
-                height: calc(100vh - 50px);
-                overflow: hidden;
+                top: 40px;
+                height: auto;
+                min-height: calc(80vh - 40px);
+                max-height: calc(85vh - 40px);
+                overflow: visible;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0;
             }
 
             #page1 .form-section {
-                margin-top: 15px;
-                margin-bottom: 15px;
+                margin-top: 0;
+                margin-bottom: 0;
+                width: 100%;
+                max-width: 500px;
             }
 
             .splash-content h1 {
@@ -1008,10 +1016,13 @@
                 font-size: 12px;
             }
 
-            /* Mobile footer adjustments */
+            /* Mobile footer adjustments - ensure visibility */
             .app-footer {
                 padding: 15px 0;
-                margin-top: 20px;
+                margin-top: 25px;
+                position: relative;
+                z-index: 100;
+                background: #f8f9fa;
             }
 
             .copyright-line {
@@ -1573,13 +1584,13 @@
             splashScreen.classList.add('active');
             page1.classList.remove('active');
             
-            // Auto-transition from splash screen to page 1 after 2 seconds
+            // Auto-transition from splash screen to page 1 after 1.5 seconds
             setTimeout(function() {
                 splashScreen.classList.remove('active');
                 page1.classList.add('active');
                 // Update progress bar to show page 1
                 document.getElementById('progressFill').style.width = '33%';
-            }, 2000);
+            }, 1500);
             
             // Radio buttons handle mutual exclusion automatically - no additional code needed
             // Optional: Add visual feedback for radio button selection
