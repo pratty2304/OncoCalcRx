@@ -468,12 +468,12 @@
 
         #doseAdjustmentTable .responsive-table th:nth-child(2),
         #doseAdjustmentTable .responsive-table td:nth-child(2) {
-            width: 12%;
+            width: 10%;
         }
 
         #doseAdjustmentTable .responsive-table th:nth-child(3),
         #doseAdjustmentTable .responsive-table td:nth-child(3) {
-            width: 14%;
+            width: 12%;
             text-align: center;
         }
 
@@ -497,6 +497,12 @@
             border: 2px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
+        }
+
+        /* Smaller reduce column inputs to match global reduction input */
+        #doseAdjustmentTable .responsive-table td:nth-child(3) input[type="number"] {
+            width: 80px;
+            max-width: 80px;
         }
 
         #doseAdjustmentTable .percentage-symbol {
@@ -1185,14 +1191,14 @@
             
             #doseAdjustmentTable .responsive-table th:nth-child(2),
             #doseAdjustmentTable .responsive-table td:nth-child(2) {
-                width: 12%;
-                min-width: 45px;
+                width: 10%;
+                min-width: 40px;
             }
             
             #doseAdjustmentTable .responsive-table th:nth-child(3),
             #doseAdjustmentTable .responsive-table td:nth-child(3) {
-                width: 14%;
-                min-width: 50px;
+                width: 12%;
+                min-width: 45px;
             }
             
             #doseAdjustmentTable .responsive-table th:nth-child(4),
@@ -1264,6 +1270,12 @@
             #globalReduction {
                 width: 60px !important;
                 font-size: 14px !important;
+            }
+
+            /* Smaller reduce column inputs for mobile to match global reduction input */
+            #doseAdjustmentTable .responsive-table td:nth-child(3) input[type="number"] {
+                width: 60px !important;
+                max-width: 60px !important;
             }
             
             /* Final prescription table mobile */
