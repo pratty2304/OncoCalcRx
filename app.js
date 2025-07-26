@@ -12963,6 +12963,12 @@ function buildDoseAdjustmentTable() {
     const { results } = originalResults;
     const tableContainer = document.getElementById('doseAdjustmentTable');
     
+    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab)
+    function isNonReducibleDrug(drugName) {
+        const nonReducibleDrugs = ['trastuzumab', 'pertuzumab'];
+        return nonReducibleDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+    
     tableContainer.innerHTML = `
         <div style="display: grid; grid-template-columns: 2fr 1fr 80px 1fr; gap: 10px; align-items: center; padding: 10px; background: #f8f9fa; border-radius: 5px; font-weight: 600; margin-bottom: 10px;">
             <div>Drug</div>
@@ -12971,30 +12977,56 @@ function buildDoseAdjustmentTable() {
             <div>Final</div>
         </div>
         ${results.drugs.map(drug => {
+            const isNonReducible = isNonReducibleDrug(drug.name);
             const reduction = currentReductions[drug.name] || 0;
             const originalDose = drug.calculatedDose;
             const finalDose = originalDose * (1 - reduction / 100);
             
-            return `
-                <div style="display: grid; grid-template-columns: 2fr 1fr 80px 1fr; gap: 10px; align-items: center; padding: 10px; border-bottom: 1px solid #dee2e6;">
-                    <div style="font-weight: 600; color: #2c3e50;">${drug.name}</div>
-                    <div>${originalDose}</div>
-                    <div style="position: relative;">
-                        <input type="number" 
-                               id="reduction_${drug.name.replace(/\s+/g, '_')}" 
-                               value="${reduction}" 
-                               min="0" 
-                               max="100" 
-                               placeholder="%" 
-                               style="width: 100%; padding: 6px 25px 6px 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;"
-                               onchange="updateDrugReduction('${drug.name}', this.value)">
-                        <span class="percentage-symbol" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
+            if (isNonReducible) {
+                // For Trastuzumab/Pertuzumab - show original dose, no reduction allowed
+                return `
+                    <div style="display: grid; grid-template-columns: 2fr 1fr 80px 1fr; gap: 10px; align-items: center; padding: 10px; border-bottom: 1px solid #dee2e6;">
+                        <div style="font-weight: 600; color: #2c3e50;">
+                            ${drug.name}
+                            <div style="font-size: 11px; color: #e67e22; font-weight: 500; margin-top: 2px;">
+                                *Dose reduction not recommended
+                            </div>
+                        </div>
+                        <div>${originalDose}</div>
+                        <div style="text-align: center; color: #95a5a6; font-style: italic; font-size: 12px;">
+                            Not Applicable
+                        </div>
+                        <div style="font-weight: 600; color: #2c3e50;">
+                            ${originalDose}
+                            <div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px;">
+                                Withhold if toxicity
+                            </div>
+                        </div>
                     </div>
-                    <div id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
-                        ${finalDose.toFixed(1)}${drug.unit || 'mg'}
+                `;
+            } else {
+                // Regular drugs with dose reduction capability
+                return `
+                    <div style="display: grid; grid-template-columns: 2fr 1fr 80px 1fr; gap: 10px; align-items: center; padding: 10px; border-bottom: 1px solid #dee2e6;">
+                        <div style="font-weight: 600; color: #2c3e50;">${drug.name}</div>
+                        <div>${originalDose}</div>
+                        <div style="position: relative;">
+                            <input type="number" 
+                                   id="reduction_${drug.name.replace(/\s+/g, '_')}" 
+                                   value="${reduction}" 
+                                   min="0" 
+                                   max="100" 
+                                   placeholder="%" 
+                                   style="width: 100%; padding: 6px 25px 6px 6px; border: 2px solid #ddd; border-radius: 4px; font-size: 14px;"
+                                   onchange="updateDrugReduction('${drug.name}', this.value)">
+                            <span class="percentage-symbol" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: #999; font-size: 12px; pointer-events: none;">%</span>
+                        </div>
+                        <div id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
+                            ${finalDose.toFixed(1)}${drug.unit || 'mg'}
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         }).join('')}
     `;
 }
@@ -13068,12 +13100,19 @@ function showFinalPrescription() {
                     </thead>
                     <tbody>
                         ${results.drugs.map(drug => {
+                            // Check if drug is non-reducible (Trastuzumab/Pertuzumab)
+                            const isNonReducible = ['trastuzumab', 'pertuzumab'].some(nonReducibleDrug => 
+                                drug.name.toLowerCase().includes(nonReducibleDrug));
+                            
                             const reduction = currentReductions[drug.name] || 0;
                             const reducedDose = drug.calculatedDose * (1 - reduction / 100);
                             
                             return `
                                 <tr style="border-bottom: 1px solid #dee2e6;">
-                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">${drug.name}${drug.days ? ` (${drug.days})` : ''}</td>
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">
+                                        ${drug.name}${drug.days ? ` (${drug.days})` : ''}
+                                        ${isNonReducible ? '<div style="font-size: 10px; color: #e67e22; margin-top: 2px;">*No dose reduction</div>' : ''}
+                                    </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6;">
                                         ${drug.hasLoadingDose ? 
                                             `<div style="font-size: 12px; line-height: 1.3;">
@@ -13094,19 +13133,33 @@ function showFinalPrescription() {
                                             </div>` 
                                             : `${drug.calculatedDose} ${drug.doseUnit}`}
                                     </td>
-                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600; color: ${reduction > 0 ? '#e74c3c' : '#27ae60'}; background-color: ${reduction > 0 ? '#fdf2f2' : '#f8f9fa'};">
-                                        ${drug.hasLoadingDose ? 
-                                            (() => {
-                                                const loadingDose = parseFloat(drug.calculatedDose.split(' → ')[0]) * (1 - reduction / 100);
-                                                const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]) * (1 - reduction / 100);
-                                                return `<div style="font-size: 12px; line-height: 1.3;">
-                                                    <div style="font-weight: 600;">Loading</div>
-                                                    <div style="margin-bottom: 8px;">${loadingDose.toFixed(1)} ${drug.doseUnit}</div>
-                                                    <div style="font-weight: 600;">Maintenance</div>
-                                                    <div>${maintenanceDose.toFixed(1)} ${drug.doseUnit}</div>
-                                                </div>`;
-                                            })()
-                                            : `${reducedDose.toFixed(1)} ${drug.doseUnit}`}
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600; color: ${isNonReducible ? '#2c3e50' : (reduction > 0 ? '#e74c3c' : '#27ae60')}; background-color: ${isNonReducible ? '#f8f9fa' : (reduction > 0 ? '#fdf2f2' : '#f8f9fa')};">
+                                        ${isNonReducible ? 
+                                            // For non-reducible drugs, show same as calculated dose
+                                            (drug.hasLoadingDose ? 
+                                                `<div style="font-size: 12px; line-height: 1.3;">
+                                                    <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                                    <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
+                                                    <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                                    <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
+                                                    <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic;">Withhold if toxicity</div>
+                                                </div>` 
+                                                : `${drug.calculatedDose} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic;">Withhold if toxicity</div>`)
+                                            :
+                                            // For regular drugs, show reduced dose
+                                            (drug.hasLoadingDose ? 
+                                                (() => {
+                                                    const loadingDose = parseFloat(drug.calculatedDose.split(' → ')[0]) * (1 - reduction / 100);
+                                                    const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]) * (1 - reduction / 100);
+                                                    return `<div style="font-size: 12px; line-height: 1.3;">
+                                                        <div style="font-weight: 600;">Loading</div>
+                                                        <div style="margin-bottom: 8px;">${loadingDose.toFixed(1)} ${drug.doseUnit}</div>
+                                                        <div style="font-weight: 600;">Maintenance</div>
+                                                        <div>${maintenanceDose.toFixed(1)} ${drug.doseUnit}</div>
+                                                    </div>`;
+                                                })()
+                                                : `${reducedDose.toFixed(1)} ${drug.doseUnit}`)
+                                        }
                                     </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
                                         ${drug.schedule || 'Per protocol'}
@@ -13132,9 +13185,18 @@ function showFinalPrescription() {
         </div>
     `;
     
-    // Build reduction summary
+    // Build reduction summary - exclude non-reducible drugs
     const reductionList = document.getElementById('reductionList');
-    const appliedReductions = Object.entries(currentReductions).filter(([_, reduction]) => reduction > 0);
+    
+    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab)
+    function isNonReducibleDrug(drugName) {
+        const nonReducibleDrugs = ['trastuzumab', 'pertuzumab'];
+        return nonReducibleDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+    
+    const appliedReductions = Object.entries(currentReductions).filter(([drugName, reduction]) => 
+        reduction > 0 && !isNonReducibleDrug(drugName)
+    );
     
     if (appliedReductions.length === 0) {
         reductionList.innerHTML = '<div style="color: #27ae60; font-style: italic;">No dose reductions applied</div>';
