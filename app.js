@@ -1118,8 +1118,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
         'CapeOX': {
@@ -1177,8 +1177,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1189,8 +1189,8 @@ const protocolDatabase = {
                 { name: 'Zolbetuximab', dose: 800, unit: 'mg/m²', schedule: 'D1, cycle 1, then 600 mg/m² every 21 days' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
         'Trastuzumab-Pertuzumab-HER2-1L': {
@@ -1216,8 +1216,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
             ]
         },
@@ -1227,8 +1227,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -1294,8 +1294,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
             ]
         },
@@ -1305,8 +1305,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1458,8 +1458,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
             ]
         },
@@ -1484,8 +1484,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
         'Docetaxel-2L': {
@@ -4551,8 +4551,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1-D2, 22-hour infusion, every 2 weeks' }
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 600, unit: 'mg/m²', schedule: 'D1-D2, 22-hour infusion, every 2 weeks' }
             ]
         },
         'Doxorubicin-TACE': {
@@ -9310,8 +9310,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (given with every other FOLFOX cycle)' }
             ]
         },
@@ -9330,8 +9330,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
             ]
         },
@@ -9351,8 +9351,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
         'Metastatic-CapeOX': {
@@ -9405,8 +9405,8 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
             ]
         },
         'Metastatic-Ramucirumab-Paclitaxel-2L': {
@@ -12253,6 +12253,65 @@ function buildProtocolIndex() {
     console.log('Building protocol index...'); // Debug log
     allProtocols = [];
     
+    // Helper function to generate search aliases for common drug abbreviations
+    function generateSearchAliases(text) {
+        let aliases = text;
+        
+        // 5-FU variations
+        if (text.includes('5-fluorouracil')) {
+            aliases += ' 5fu 5 fu 5-fu';
+        }
+        
+        // Protocol abbreviations
+        if (text.includes('oxaliplatin') && text.includes('5-fluorouracil') && text.includes('leucovorin')) {
+            if (text.includes('docetaxel')) {
+                aliases += ' flot';
+            } else {
+                aliases += ' folfox';
+            }
+        }
+        if (text.includes('irinotecan') && text.includes('5-fluorouracil') && text.includes('leucovorin')) {
+            aliases += ' folfiri';
+        }
+        if (text.includes('capecitabine') && text.includes('oxaliplatin')) {
+            aliases += ' xelox capox';
+        }
+        if (text.includes('capecitabine') && text.includes('irinotecan')) {
+            aliases += ' xeliri capiri';
+        }
+        
+        // Other common drug abbreviations
+        if (text.includes('cisplatin')) {
+            aliases += ' cis';
+        }
+        if (text.includes('carboplatin')) {
+            aliases += ' carbo';
+        }
+        if (text.includes('cyclophosphamide')) {
+            aliases += ' cyclo';
+        }
+        if (text.includes('doxorubicin')) {
+            aliases += ' dox';
+        }
+        if (text.includes('docetaxel')) {
+            aliases += ' doc';
+        }
+        if (text.includes('paclitaxel')) {
+            aliases += ' pac';
+        }
+        if (text.includes('vincristine')) {
+            aliases += ' vcr';
+        }
+        if (text.includes('vinblastine')) {
+            aliases += ' vlb';
+        }
+        if (text.includes('etoposide')) {
+            aliases += ' vp16';
+        }
+        
+        return aliases;
+    }
+    
     Object.keys(protocolDatabase).forEach(cancerType => {
         const cancerName = getCancerDisplayName(cancerType);
         
@@ -12263,13 +12322,16 @@ function buildProtocolIndex() {
                 Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
                     const protocol = protocolDatabase[cancerType][subtype][protocolKey];
                     const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                    const baseSearchText = `${protocol.name} ${cancerName} ${subtypeName} ${drugNames}`.toLowerCase();
+                    const searchText = generateSearchAliases(baseSearchText);
+                    
                     allProtocols.push({
                         key: protocolKey,
                         name: protocol.name,
                         cancerType: cancerType,
                         cancerName: `${cancerName} - ${subtypeName}`,
                         subtype: subtype,
-                        searchText: `${protocol.name} ${cancerName} ${subtypeName} ${drugNames}`.toLowerCase()
+                        searchText: searchText
                     });
                 });
             });
@@ -12278,13 +12340,16 @@ function buildProtocolIndex() {
             Object.keys(protocolDatabase[cancerType]).forEach(protocolKey => {
                 const protocol = protocolDatabase[cancerType][protocolKey];
                 const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                const baseSearchText = `${protocol.name} ${cancerName} ${drugNames}`.toLowerCase();
+                const searchText = generateSearchAliases(baseSearchText);
+                
                 allProtocols.push({
                     key: protocolKey,
                     name: protocol.name,
                     cancerType: cancerType,
                     cancerName: cancerName,
                     subtype: null,
-                    searchText: `${protocol.name} ${cancerName} ${drugNames}`.toLowerCase()
+                    searchText: searchText
                 });
             });
         }
