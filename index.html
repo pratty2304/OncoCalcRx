@@ -1050,7 +1050,12 @@
                 grid-template-columns: 1.6fr 0.8fr 65px 1.3fr !important;
                 gap: 4px !important;
                 padding: 8px 4px !important;
-                align-items: start !important;
+                align-items: center !important;
+            }
+            
+            /* Data rows should allow flex start for multi-line content */
+            #doseAdjustmentTable > div:not(:first-child) {
+                align-items: flex-start !important;
             }
             
             /* Drug name column - allow text wrapping for long names and notes */
@@ -1098,12 +1103,26 @@
             }
             
             /* Header row styling to match data rows */
-            #doseAdjustmentTable > div:first-child > div:first-child {
+            #doseAdjustmentTable > div:first-child {
+                align-items: center !important;
+                min-height: 40px !important;
+            }
+            
+            #doseAdjustmentTable > div:first-child > div {
                 font-size: 11px !important;
                 font-weight: 600 !important;
                 word-wrap: normal;
                 word-break: normal;
                 hyphens: none;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
+            
+            #doseAdjustmentTable > div:first-child > div:first-child {
+                justify-content: flex-start !important;
+                text-align: left !important;
             }
             
             #doseAdjustmentTable input[type="number"] {

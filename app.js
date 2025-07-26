@@ -12992,15 +12992,29 @@ function buildDoseAdjustmentTable() {
                                 *Dose reduction not recommended
                             </div>
                         </div>
-                        <div>${originalDose}</div>
+                        <div>
+                            ${drug.hasLoadingDose ? 
+                                `<div style="font-size: 11px; line-height: 1.3;">
+                                    <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                    <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
+                                    <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                    <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
+                                </div>` 
+                                : originalDose}
+                        </div>
                         <div style="text-align: center; color: #95a5a6; font-style: italic; font-size: 12px;">
-                            Not Applicable
+                            N/A
                         </div>
                         <div style="font-weight: 600; color: #2c3e50;">
-                            ${originalDose}
-                            <div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px;">
-                                Withhold if toxicity
-                            </div>
+                            ${drug.hasLoadingDose ? 
+                                `<div style="font-size: 11px; line-height: 1.3;">
+                                    <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                    <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
+                                    <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                    <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
+                                    <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px;">Withhold if toxicity</div>
+                                </div>` 
+                                : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px;">Withhold if toxicity</div>`}
                         </div>
                     </div>
                 `;
