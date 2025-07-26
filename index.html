@@ -1046,30 +1046,55 @@
             }
             
             #doseAdjustmentTable > div {
-                min-width: 310px;
-                grid-template-columns: 1.4fr 0.7fr 50px 1.1fr !important;
-                gap: 3px !important;
-                padding: 6px !important;
+                min-width: 350px;
+                grid-template-columns: 1.6fr 0.8fr 65px 1.3fr !important;
+                gap: 4px !important;
+                padding: 8px 4px !important;
+                align-items: start !important;
             }
             
-            /* Drug name column - normal text display */
+            /* Drug name column - allow text wrapping for long names and notes */
             #doseAdjustmentTable > div > div:first-child {
                 font-size: 11px !important;
+                line-height: 1.3 !important;
+                word-wrap: break-word !important;
+                white-space: normal !important;
+                min-height: 35px !important;
+                padding-right: 2px !important;
             }
             
-            /* Ensure other columns maintain their sizes */
-            #doseAdjustmentTable > div > div:nth-child(2),
-            #doseAdjustmentTable > div > div:nth-child(4) {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                min-width: 0;
+            /* Original dose column - allow text wrapping */
+            #doseAdjustmentTable > div > div:nth-child(2) {
+                font-size: 10px !important;
+                line-height: 1.2 !important;
+                word-wrap: break-word !important;
+                white-space: normal !important;
+                min-height: 35px !important;
+                overflow: visible !important;
+                text-overflow: initial !important;
             }
             
-            /* Allow reduce column to be compact */
+            /* Reduce column - center and size properly */
             #doseAdjustmentTable > div > div:nth-child(3) {
-                min-width: 45px;
-                max-width: 50px;
+                min-width: 60px !important;
+                max-width: 65px !important;
+                text-align: center !important;
+                font-size: 10px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                min-height: 35px !important;
+            }
+            
+            /* Final dose column - allow text wrapping for notes */
+            #doseAdjustmentTable > div > div:nth-child(4) {
+                font-size: 10px !important;
+                line-height: 1.2 !important;
+                word-wrap: break-word !important;
+                white-space: normal !important;
+                min-height: 35px !important;
+                overflow: visible !important;
+                text-overflow: initial !important;
             }
             
             /* Header row styling to match data rows */
@@ -1082,17 +1107,20 @@
             }
             
             #doseAdjustmentTable input[type="number"] {
-                padding: 3px 18px 3px 3px !important;
-                font-size: 11px !important;
+                padding: 4px 20px 4px 4px !important;
+                font-size: 10px !important;
                 width: 100% !important;
-                min-width: 45px !important;
+                min-width: 55px !important;
                 box-sizing: border-box !important;
+                height: 28px !important;
+                border-radius: 3px !important;
             }
             
             /* Adjust percentage symbol position for mobile */
             #doseAdjustmentTable .percentage-symbol {
-                right: 3px !important;
-                font-size: 9px !important;
+                right: 4px !important;
+                font-size: 8px !important;
+                top: 50% !important;
             }
             
             #patientSummary {
