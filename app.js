@@ -13269,6 +13269,41 @@ document.getElementById('protocol').addEventListener('change', function() {
     checkForCarboplatin(this.value, cancerType, subtype);
 });
 
+// Validate carboplatin parameters
+function validateCarboplatinParameters(formData) {
+    // Check if the selected protocol contains carboplatin
+    const protocolData = protocols[formData.protocol];
+    if (!protocolData) return true; // If protocol not found, allow to proceed
+    
+    const containsCarboplatin = protocolData.drugs.some(drug => 
+        drug.name.toLowerCase().includes('carboplatin')
+    );
+    
+    if (!containsCarboplatin) return true; // No carboplatin, no validation needed
+    
+    // Check required carboplatin parameters
+    const requiredFields = [];
+    
+    if (!formData.age || formData.age === '') {
+        requiredFields.push('Age');
+    }
+    
+    if (!formData.creatinine || formData.creatinine === '') {
+        requiredFields.push('Creatinine');
+    }
+    
+    if (!formData.auc || formData.auc === '') {
+        requiredFields.push('AUC');
+    }
+    
+    if (requiredFields.length > 0) {
+        alert(`Please fill in the following required fields for carboplatin calculation:\n\n${requiredFields.join('\n')}`);
+        return false;
+    }
+    
+    return true;
+}
+
 // Event listeners moved to DOMContentLoaded
 
 // Initialize
@@ -13361,6 +13396,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 protocol: document.getElementById('protocol').value,
                 auc: document.getElementById('auc').value
             };
+        }
+        
+        // Validate carboplatin parameters if needed
+        if (!validateCarboplatinParameters(formData)) {
+            return; // Stop execution if validation fails
         }
         
         // Track dose calculation

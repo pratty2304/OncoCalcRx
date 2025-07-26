@@ -1072,9 +1072,18 @@
                 overflow: hidden !important;
                 max-width: 100% !important;
                 text-align: left !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: flex-start !important;
+                display: block !important;
+            }
+            
+            /* Handle the dose reduction warning text in mobile */
+            #doseAdjustmentTable > div > div:first-child > div {
+                font-size: 8px !important;
+                line-height: 1.2 !important;
+                margin-top: 1px !important;
+                word-wrap: break-word !important;
+                white-space: normal !important;
+                overflow: hidden !important;
+                max-width: 100% !important;
             }
             
             /* Original dose column - allow text wrapping */
