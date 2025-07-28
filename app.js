@@ -384,7 +384,7 @@ const protocolDatabase = {
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
-                    { name: 'Carboplatin', dose: 'AUC 1.5-2', unit: 'AUC', schedule: 'weekly' },
+                    { name: 'Carboplatin', dose: 'AUC 1.5', unit: 'AUC', schedule: 'weekly' },
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
                 ]
             },
@@ -12036,7 +12036,16 @@ function roundDose(dose, drugName) {
         'nivolumab', 
         'ipilimumab',
         'atezolizumab',
-        'relatlimab'
+        'relatlimab',
+        'cemiplimab',
+        'dostarlimab',
+        'toripalimab',
+        'tislelizumab',
+        'avelumab',
+        'durvalumab',
+        'tremelimumab',
+        'spartalizumab',
+        'retifanlimab'
     ];
     
     const drugNameLower = drugName.toLowerCase();
@@ -13125,9 +13134,27 @@ function buildDoseAdjustmentTable() {
     const { results } = originalResults;
     const tableContainer = document.getElementById('doseAdjustmentTable');
     
-    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab)
+    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
     function isNonReducibleDrug(drugName) {
-        const nonReducibleDrugs = ['trastuzumab', 'pertuzumab'];
+        const nonReducibleDrugs = [
+            'trastuzumab', 
+            'pertuzumab',
+            // Checkpoint inhibitors and immunotherapy drugs
+            'pembrolizumab',
+            'nivolumab',
+            'ipilimumab',
+            'atezolizumab',
+            'relatlimab',
+            'cemiplimab',
+            'dostarlimab',
+            'toripalimab',
+            'tislelizumab',
+            'avelumab',
+            'durvalumab',
+            'tremelimumab',
+            'spartalizumab',
+            'retifanlimab'
+        ];
         return nonReducibleDrugs.some(drug => drugName.toLowerCase().includes(drug));
     }
     
@@ -13150,7 +13177,7 @@ function buildDoseAdjustmentTable() {
                         const finalDose = originalDose * (1 - reduction / 100);
                         
                         if (isNonReducible) {
-                            // For Trastuzumab/Pertuzumab - show original dose, no reduction allowed
+                            // For Trastuzumab/Pertuzumab/Immunotherapy - show original dose, no reduction allowed
                             return `
                                 <tr>
                                     <td style="font-weight: 600; color: #2c3e50;">
@@ -13284,8 +13311,26 @@ function showFinalPrescription() {
                     </thead>
                     <tbody>
                         ${results.drugs.map(drug => {
-                            // Check if drug is non-reducible (Trastuzumab/Pertuzumab)
-                            const isNonReducible = ['trastuzumab', 'pertuzumab'].some(nonReducibleDrug => 
+                            // Check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
+                            const isNonReducible = [
+                                'trastuzumab', 
+                                'pertuzumab',
+                                // Checkpoint inhibitors and immunotherapy drugs
+                                'pembrolizumab',
+                                'nivolumab',
+                                'ipilimumab',
+                                'atezolizumab',
+                                'relatlimab',
+                                'cemiplimab',
+                                'dostarlimab',
+                                'toripalimab',
+                                'tislelizumab',
+                                'avelumab',
+                                'durvalumab',
+                                'tremelimumab',
+                                'spartalizumab',
+                                'retifanlimab'
+                            ].some(nonReducibleDrug => 
                                 drug.name.toLowerCase().includes(nonReducibleDrug));
                             
                             const reduction = currentReductions[drug.name] || 0;
@@ -13412,9 +13457,27 @@ function showFinalPrescription() {
     // Build reduction summary - exclude non-reducible drugs
     const reductionList = document.getElementById('reductionList');
     
-    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab)
+    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
     function isNonReducibleDrug(drugName) {
-        const nonReducibleDrugs = ['trastuzumab', 'pertuzumab'];
+        const nonReducibleDrugs = [
+            'trastuzumab', 
+            'pertuzumab',
+            // Checkpoint inhibitors and immunotherapy drugs
+            'pembrolizumab',
+            'nivolumab',
+            'ipilimumab',
+            'atezolizumab',
+            'relatlimab',
+            'cemiplimab',
+            'dostarlimab',
+            'toripalimab',
+            'tislelizumab',
+            'avelumab',
+            'durvalumab',
+            'tremelimumab',
+            'spartalizumab',
+            'retifanlimab'
+        ];
         return nonReducibleDrugs.some(drug => drugName.toLowerCase().includes(drug));
     }
     
@@ -13527,6 +13590,15 @@ function validateCarboplatinParameters(formData) {
     if (requiredFields.length > 0) {
         alert(`Please fill in the following required fields for carboplatin calculation:\n\n${requiredFields.join('\n')}`);
         return false;
+    }
+    
+    // Special validation for KEYNOTE-522 regimen (Paclitaxel-Carboplatin-Pembrolizumab)
+    if (formData.protocol === 'Paclitaxel-Carboplatin-Pembrolizumab') {
+        const aucValue = parseFloat(formData.auc);
+        if (aucValue > 1.5) {
+            alert('For KEYNOTE-522 protocol (Paclitaxel + Carboplatin + Pembrolizumab), the maximum allowed AUC is 1.5.\n\nPlease enter an AUC value of 1.5 or lower.');
+            return false;
+        }
     }
     
     return true;
