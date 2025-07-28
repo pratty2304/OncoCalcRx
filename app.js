@@ -11999,14 +11999,34 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
 
 // Dose rounding function
 function roundDose(dose, drugName) {
-    // Never round bortezomib
-    if (drugName.toLowerCase().includes('bortezomib')) {
-        return dose;
-    }
-    
     // Convert dose to number if it's a string
     const numDose = parseFloat(dose);
     
+    // Never round bortezomib
+    if (drugName.toLowerCase().includes('bortezomib')) {
+        return numDose;
+    }
+    
+    // Never round pertuzumab - it has fixed doses (840mg loading, 420mg maintenance)
+    if (drugName.toLowerCase().includes('pertuzumab')) {
+        return numDose;
+    }
+    
+    // Never round immunotherapy drugs - they have constant/fixed doses
+    const immunotherapyDrugs = [
+        'pembrolizumab',
+        'nivolumab', 
+        'ipilimumab',
+        'atezolizumab',
+        'relatlimab'
+    ];
+    
+    const drugNameLower = drugName.toLowerCase();
+    if (immunotherapyDrugs.some(immunoDrug => drugNameLower.includes(immunoDrug))) {
+        return numDose;
+    }
+    
+    // Apply rounding logic for all other drugs
     if (numDose < 10) {
         // Round to nearest 1mg
         return Math.round(numDose);
