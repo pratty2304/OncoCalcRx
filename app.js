@@ -11997,11 +11997,47 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
     }
 }
 
+// Dose rounding function
+function roundDose(dose, drugName) {
+    // Never round bortezomib
+    if (drugName.toLowerCase().includes('bortezomib')) {
+        return dose;
+    }
+    
+    // Convert dose to number if it's a string
+    const numDose = parseFloat(dose);
+    
+    if (numDose < 10) {
+        // Round to nearest 1mg
+        return Math.round(numDose);
+    } else if (numDose >= 10 && numDose < 100) {
+        // Round to nearest 5-10mg - using 5mg as the rounding increment
+        return Math.round(numDose / 5) * 5;
+    } else if (numDose >= 100 && numDose < 1000) {
+        // Round to nearest 10mg or 50mg - using 10mg for 100-500, 50mg for 500-1000
+        if (numDose < 500) {
+            return Math.round(numDose / 10) * 10;
+        } else {
+            return Math.round(numDose / 50) * 50;
+        }
+    } else if (numDose >= 1000) {
+        // Round to nearest 50mg or 100mg - using 50mg for 1000-2000, 100mg for >2000
+        if (numDose < 2000) {
+            return Math.round(numDose / 50) * 50;
+        } else {
+            return Math.round(numDose / 100) * 100;
+        }
+    }
+    
+    return numDose;
+}
+
 // Calculate drug doses
 function calculateDoses(formData) {
     const { height, weight, age, sex, creatinine, cancerType, cancerSubtype, protocol, auc } = formData;
     
-    const bsa = calculateBSA(parseFloat(height), parseFloat(weight));
+    const rawBsa = calculateBSA(parseFloat(height), parseFloat(weight));
+    const bsa = parseFloat(rawBsa.toFixed(2)); // Use rounded BSA for calculations
     
     // Only calculate crCl for carboplatin-containing regimens
     let crCl = null;
@@ -12939,6 +12975,7 @@ function displayResults(results, patientData) {
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Drug Name</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Standard Dose</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Calculated Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Rounded Dose</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Schedule</th>
                         </tr>
                     </thead>
@@ -12966,8 +13003,30 @@ function displayResults(results, patientData) {
                                         </div>` 
                                         : `${drug.calculatedDose} ${drug.doseUnit}`}
                                 </td>
+                                <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #fff3cd; font-weight: 600; color: #856404;">
+                                    ${drug.hasLoadingDose ? 
+                                        (() => {
+                                            const loadingDose = parseFloat(drug.calculatedDose.split(' → ')[0]);
+                                            const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]);
+                                            return `<div style="font-size: 12px; line-height: 1.3;">
+                                                <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                                <div style="color: #007bff; margin-bottom: 8px;">${roundDose(loadingDose, drug.name)} ${drug.doseUnit}</div>
+                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #28a745;">${roundDose(maintenanceDose, drug.name)} ${drug.doseUnit}</div>
+                                            </div>`;
+                                        })()
+                                        : `${roundDose(parseFloat(drug.calculatedDose), drug.name)} ${drug.doseUnit}`}
+                                </td>
                                 <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
-                                    ${drug.schedule || 'Per protocol'}
+                                    ${(() => {
+                                        let schedule = drug.schedule || 'Per protocol';
+                                        // Add vincristine capping logic (except for EPOCH/DA-EPOCH regimens)
+                                        if (drug.name.toLowerCase().includes('vincristine') && 
+                                            !results.protocolName.toLowerCase().includes('epoch')) {
+                                            schedule += '<br><span style="color: #e74c3c; font-weight: 600; font-size: 11px;">⚠️ Cap at 2mg</span>';
+                                        }
+                                        return schedule;
+                                    })()}
                                 </td>
                             </tr>
                         `).join('')}
@@ -13181,6 +13240,7 @@ function showFinalPrescription() {
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Standard Dose</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Calculated Dose</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Reduced Dose</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Rounded Dose</th>
                             <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Schedule</th>
                         </tr>
                     </thead>
@@ -13247,8 +13307,48 @@ function showFinalPrescription() {
                                                 : `${reducedDose.toFixed(1)} ${drug.doseUnit}`)
                                         }
                                     </td>
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #fff3cd; font-weight: 600; color: #856404;">
+                                        ${isNonReducible ? 
+                                            // For non-reducible drugs, show same as calculated dose rounded
+                                            (drug.hasLoadingDose ? 
+                                                (() => {
+                                                    const calcLoadingDose = parseFloat(drug.calculatedDose.split(' → ')[0]);
+                                                    const calcMaintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]);
+                                                    return `<div style="font-size: 12px; line-height: 1.3;">
+                                                        <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                                        <div style="color: #007bff; margin-bottom: 8px;">${roundDose(calcLoadingDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                                        <div style="color: #28a745;">${roundDose(calcMaintenanceDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic;">Withhold if toxicity</div>
+                                                    </div>`;
+                                                })()
+                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic;">Withhold if toxicity</div>`)
+                                            :
+                                            // For regular drugs, show rounded reduced dose
+                                            (drug.hasLoadingDose ? 
+                                                (() => {
+                                                    const loadingDose = parseFloat(drug.calculatedDose.split(' → ')[0]) * (1 - reduction / 100);
+                                                    const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]) * (1 - reduction / 100);
+                                                    return `<div style="font-size: 12px; line-height: 1.3;">
+                                                        <div style="font-weight: 600;">Loading</div>
+                                                        <div style="margin-bottom: 8px;">${roundDose(loadingDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div style="font-weight: 600;">Maintenance</div>
+                                                        <div>${roundDose(maintenanceDose, drug.name)} ${drug.doseUnit}</div>
+                                                    </div>`;
+                                                })()
+                                                : `${roundDose(reducedDose, drug.name)} ${drug.doseUnit}`)
+                                        }
+                                    </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
-                                        ${drug.schedule || 'Per protocol'}
+                                        ${(() => {
+                                            let schedule = drug.schedule || 'Per protocol';
+                                            // Add vincristine capping logic (except for EPOCH/DA-EPOCH regimens)
+                                            if (drug.name.toLowerCase().includes('vincristine') && 
+                                                !results.protocolName.toLowerCase().includes('epoch')) {
+                                                schedule += '<br><span style="color: #e74c3c; font-weight: 600; font-size: 11px;">⚠️ Cap at 2mg</span>';
+                                            }
+                                            return schedule;
+                                        })()}
                                     </td>
                                 </tr>
                             `;

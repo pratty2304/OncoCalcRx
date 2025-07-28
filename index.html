@@ -516,28 +516,37 @@
             font-weight: 500;
         }
 
-        /* Desktop column widths for Page 3 (4 columns) */
+        /* Desktop column widths for Page 3 (5 columns) - Focus on schedule column */
+        .responsive-table table {
+            min-width: 600px;
+        }
+        
         .responsive-table th:nth-child(1),
         .responsive-table td:nth-child(1) {
-            width: 30%;
+            width: 22%;
         }
 
         .responsive-table th:nth-child(2),
         .responsive-table td:nth-child(2) {
-            width: 25%;
+            width: 22%;
         }
 
         .responsive-table th:nth-child(3),
         .responsive-table td:nth-child(3) {
-            width: 25%;
+            width: 22%;
         }
 
         .responsive-table th:nth-child(4),
         .responsive-table td:nth-child(4) {
-            width: 20%;
+            width: 18%;
         }
 
-        /* Desktop styles for Page 5 final prescription table (5 columns) */
+        .responsive-table th:nth-child(5),
+        .responsive-table td:nth-child(5) {
+            width: 26%;
+        }
+
+        /* Desktop styles for Page 5 final prescription table (6 columns) */
         #finalResultsContent .responsive-table {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -549,40 +558,45 @@
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 700px;
             max-width: 100%;
         }
 
         #finalResultsContent .responsive-table th:nth-child(1),
         #finalResultsContent .responsive-table td:nth-child(1) {
-            width: 25%;
+            width: 20%;
         }
 
         #finalResultsContent .responsive-table th:nth-child(2),
         #finalResultsContent .responsive-table td:nth-child(2) {
-            width: 18%;
+            width: 15%;
         }
 
         #finalResultsContent .responsive-table th:nth-child(3),
         #finalResultsContent .responsive-table td:nth-child(3) {
-            width: 18%;
+            width: 15%;
         }
 
         #finalResultsContent .responsive-table th:nth-child(4),
         #finalResultsContent .responsive-table td:nth-child(4) {
-            width: 18%;
+            width: 15%;
         }
 
         #finalResultsContent .responsive-table th:nth-child(5),
         #finalResultsContent .responsive-table td:nth-child(5) {
-            width: 21%;
+            width: 15%;
+        }
+
+        #finalResultsContent .responsive-table th:nth-child(6),
+        #finalResultsContent .responsive-table td:nth-child(6) {
+            width: 20%;
         }
 
         /* Allow drug names and schedule to wrap on desktop */
         .responsive-table td:nth-child(1),
-        .responsive-table td:nth-child(4),
+        .responsive-table td:nth-child(5),
         #finalResultsContent .responsive-table td:nth-child(1),
-        #finalResultsContent .responsive-table td:nth-child(5) {
+        #finalResultsContent .responsive-table td:nth-child(6) {
             white-space: normal;
             word-break: break-word;
             hyphens: auto;
@@ -591,9 +605,11 @@
         /* Keep dose columns compact on desktop */
         .responsive-table td:nth-child(2),
         .responsive-table td:nth-child(3),
+        .responsive-table td:nth-child(4),
         #finalResultsContent .responsive-table td:nth-child(2),
         #finalResultsContent .responsive-table td:nth-child(3),
-        #finalResultsContent .responsive-table td:nth-child(4) {
+        #finalResultsContent .responsive-table td:nth-child(4),
+        #finalResultsContent .responsive-table td:nth-child(5) {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -1065,29 +1081,35 @@
                 font-weight: 600;
             }
 
-            /* Equal column widths for mobile (4 columns) */
+            /* Equal column widths for mobile (5 columns) */
             .responsive-table th:nth-child(1),
             .responsive-table td:nth-child(1) {
-                width: 25%;
-                min-width: 90px;
+                width: 20%;
+                min-width: 80px;
             }
 
             .responsive-table th:nth-child(2),
             .responsive-table td:nth-child(2) {
-                width: 25%;
-                min-width: 90px;
+                width: 20%;
+                min-width: 80px;
             }
 
             .responsive-table th:nth-child(3),
             .responsive-table td:nth-child(3) {
-                width: 25%;
-                min-width: 90px;
+                width: 20%;
+                min-width: 80px;
             }
 
             .responsive-table th:nth-child(4),
             .responsive-table td:nth-child(4) {
-                width: 25%;
-                min-width: 90px;
+                width: 20%;
+                min-width: 80px;
+            }
+
+            .responsive-table th:nth-child(5),
+            .responsive-table td:nth-child(5) {
+                width: 20%;
+                min-width: 80px;
             }
 
             /* Additional mobile table optimizations */
@@ -1309,40 +1331,46 @@
                 line-height: 1.3;
             }
             
-            /* Fixed column widths for mobile final prescription table */
+            /* Fixed column widths for mobile final prescription table (6 columns) */
             #finalResultsContent .responsive-table th:nth-child(1),
             #finalResultsContent .responsive-table td:nth-child(1) {
-                width: 20%;
-                min-width: 80px;
+                width: 18%;
+                min-width: 70px;
             }
             
             #finalResultsContent .responsive-table th:nth-child(2),
             #finalResultsContent .responsive-table td:nth-child(2) {
-                width: 18%;
-                min-width: 70px;
+                width: 15%;
+                min-width: 60px;
             }
             
             #finalResultsContent .responsive-table th:nth-child(3),
             #finalResultsContent .responsive-table td:nth-child(3) {
-                width: 18%;
-                min-width: 70px;
+                width: 15%;
+                min-width: 60px;
             }
             
             #finalResultsContent .responsive-table th:nth-child(4),
             #finalResultsContent .responsive-table td:nth-child(4) {
-                width: 18%;
-                min-width: 70px;
+                width: 15%;
+                min-width: 60px;
             }
             
             #finalResultsContent .responsive-table th:nth-child(5),
             #finalResultsContent .responsive-table td:nth-child(5) {
-                width: 26%;
-                min-width: 90px;
+                width: 15%;
+                min-width: 60px;
+            }
+            
+            #finalResultsContent .responsive-table th:nth-child(6),
+            #finalResultsContent .responsive-table td:nth-child(6) {
+                width: 22%;
+                min-width: 80px;
             }
             
             /* Allow drug names and schedule to wrap */
             #finalResultsContent .responsive-table td:nth-child(1),
-            #finalResultsContent .responsive-table td:nth-child(5) {
+            #finalResultsContent .responsive-table td:nth-child(6) {
                 white-space: normal;
                 word-break: break-word;
             }
@@ -1350,7 +1378,8 @@
             /* Keep dose columns compact */
             #finalResultsContent .responsive-table td:nth-child(2),
             #finalResultsContent .responsive-table td:nth-child(3),
-            #finalResultsContent .responsive-table td:nth-child(4) {
+            #finalResultsContent .responsive-table td:nth-child(4),
+            #finalResultsContent .responsive-table td:nth-child(5) {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
