@@ -638,7 +638,7 @@ const protocolDatabase = {
                 name: 'Gemcitabine + Paclitaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -4939,7 +4939,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Docetaxel (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1,D8 every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8 every 21 days' }
             ]
         },
@@ -4971,14 +4971,14 @@ const protocolDatabase = {
             name: 'Gemcitabine (single agent) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1,D8 every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'Gemcitabine-Capecitabine': {
             name: 'Gemcitabine + Capecitabine (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1,D8 every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'twice daily D1-D14 every 21 days' }
             ]
         },
@@ -5804,14 +5804,6 @@ const protocolDatabase = {
     },
     bladder: {
         // Neoadjuvant/Adjuvant Therapy
-        'ddGC': {
-            name: 'Dose-dense Gemcitabine + Cisplatin (GC) (Neoadjuvant/Adjuvant)',
-            cycles: 4,
-            drugs: [
-                { name: 'Gemcitabine', dose: 2500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Cisplatin', dose: 35, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' }
-            ]
-        },
         'ddMVAC': {
             name: 'Dose-dense MVAC (Neoadjuvant/Adjuvant)',
             cycles: 4,
@@ -5826,8 +5818,8 @@ const protocolDatabase = {
             name: 'Gemcitabine + Cisplatin (GC) (Neoadjuvant)',
             cycles: 4,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 28 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'GC-Durvalumab-Perioperative': {
@@ -5859,17 +5851,17 @@ const protocolDatabase = {
             name: 'Gemcitabine + Cisplatin (GC) (Metastatic - 1L)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 28 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Gemcitabine-Cisplatin-Nivolumab': {
             name: 'Gemcitabine + Cisplatin + Nivolumab (Metastatic - 1L)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Enfortumab-Vedotin-Pembrolizumab': {
@@ -6595,7 +6587,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Cisplatin (GC) - Metastatic - 1L',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1,D8 every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
@@ -6792,7 +6784,7 @@ const protocolDatabase = {
             name: 'Gemcitabine + Cisplatin (GC) - (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
@@ -6874,7 +6866,7 @@ const protocolDatabase = {
             name: 'Gemcitabine (single agent) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Gemcitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'Vinorelbine': {
@@ -10697,7 +10689,7 @@ const protocolDatabase = {
                 cycles: 3,
                 drugs: [
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Gemcitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             
