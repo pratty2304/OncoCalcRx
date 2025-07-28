@@ -5815,7 +5815,7 @@ const protocolDatabase = {
             ]
         },
         'GC-Neoadjuvant': {
-            name: 'Gemcitabine + Cisplatin (GC) (Neoadjuvant)',
+            name: 'Gemcitabine + Cisplatin (GC) (Neoadjuvant/Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5847,14 +5847,6 @@ const protocolDatabase = {
             ]
         },
         // Metastatic - 1L Therapy
-        'GC': {
-            name: 'Gemcitabine + Cisplatin (GC) (Metastatic - 1L)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
         'Gemcitabine-Cisplatin-Nivolumab': {
             name: 'Gemcitabine + Cisplatin + Nivolumab (Metastatic - 1L)',
             cycles: 6,
