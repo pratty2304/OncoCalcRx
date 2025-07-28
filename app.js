@@ -8107,6 +8107,24 @@ const protocolDatabase = {
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
+        'Gemcitabine-Carboplatin-Pembrolizumab-Metastatic': {
+            name: 'Gemcitabine + Carboplatin + Pembrolizumab (Metastatic - 1L)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-Pembrolizumab-Metastatic': {
+            name: 'Gemcitabine + Cisplatin + Pembrolizumab (Metastatic - 1L)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
 
         // Metastatic
         'Pembrolizumab-Metastatic-2L': {
