@@ -7272,33 +7272,33 @@ const protocolDatabase = {
             name: 'Etoposide + Doxorubicin + Cisplatin + Mitotane (EDP-M) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 every 28 days' },
-                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1, D8 every 28 days' },
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, D9 every 28 days' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (target 14-20 mcg/ml)' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4 every 28 days' },
+                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'oral, continuous dosing to maintain serum levels 14-20 mcg/ml (FIRM-ACT)' }
             ]
         },
         'Streptozocin-Mitotane': {
             name: 'Streptozocin + Mitotane (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Streptozocin', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5 cycle 1, then 2000 mg/m² D1 subsequent cycles every 21 days' },
-                { name: 'Mitotane', dose: 1000, unit: 'mg', schedule: 'daily (titrate to 1000-4000 mg daily, target >14 mcg/ml)' }
+                { name: 'Streptozocin', dose: 1000, unit: 'mg/m²', schedule: '1000 mg/m² x 5 days followed by 2000 mg/m² every 28 days' },
+                { name: 'Mitotane', dose: 1000, unit: 'mg', schedule: '1000 mg daily titrate to 1000-4000 mg daily, target >14 mcg/ml' }
             ]
         },
         'Mitotane': {
             name: 'Mitotane (Adjuvant/Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (titrate to 6-10g daily based on levels)' }
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: '2000 mg/day escalate to 4-6 g/day target serum levels 14-20 mcg/ml' }
             ]
         },
         'Gemcitabine-Capecitabine': {
             name: 'Gemcitabine + Capecitabine (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Capecitabine', dose: 1500, unit: 'mg', schedule: 'daily every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BID D1-D14 every 21 days' }
             ]
         },
         'Temozolomide': {
@@ -7312,27 +7312,27 @@ const protocolDatabase = {
             name: 'Etoposide + Doxorubicin + Carboplatin + Mitotane (EDP-M) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 every 28 days' },
-                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1, D8 every 28 days' },
-                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, D9 every 28 days' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (target 14-20 mcg/ml)' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4 every 28 days' },
+                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 28 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'oral, continuous dosing to maintain serum levels 14-20 mcg/ml (FIRM-ACT)' }
             ]
         },
         'Gemcitabine-Capecitabine-Mitotane': {
             name: 'Gemcitabine + Capecitabine + Mitotane (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Capecitabine', dose: 1500, unit: 'mg', schedule: 'daily every 21 days' },
-                { name: 'Mitotane', dose: 4000, unit: 'mg', schedule: 'daily every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BID D1-D14 every 21 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'oral, continuous dosing to maintain serum levels 14-20 mcg/ml' }
             ]
         },
         'Docetaxel-Cisplatin': {
             name: 'Docetaxel + Cisplatin (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Nivolumab-Ipilimumab': {
