@@ -7269,7 +7269,7 @@ const protocolDatabase = {
     },
     adrenocortical: {
         'EDP-M': {
-            name: 'Etoposide + Doxorubicin + Cisplatin + Mitotane (EDP-M) - Metastatic',
+            name: 'Etoposide + Doxorubicin + Cisplatin + Mitotane (EDP-M) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 every 28 days' },
@@ -7279,7 +7279,7 @@ const protocolDatabase = {
             ]
         },
         'Streptozocin-Mitotane': {
-            name: 'Streptozocin + Mitotane - Metastatic',
+            name: 'Streptozocin + Mitotane (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Streptozocin', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5 cycle 1, then 2000 mg/m² D1 subsequent cycles every 21 days' },
@@ -7287,14 +7287,14 @@ const protocolDatabase = {
             ]
         },
         'Mitotane': {
-            name: 'Mitotane (single agent) - Adjuvant/Metastatic',
+            name: 'Mitotane (Adjuvant/Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'daily (titrate to 6-10g daily based on levels)' }
             ]
         },
         'Gemcitabine-Capecitabine': {
-            name: 'Gemcitabine + Capecitabine - Metastatic',
+            name: 'Gemcitabine + Capecitabine (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
@@ -7302,14 +7302,14 @@ const protocolDatabase = {
             ]
         },
         'Temozolomide': {
-            name: 'Temozolomide - Metastatic',
+            name: 'Temozolomide (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' }
             ]
         },
         'EDP-M-Carboplatin': {
-            name: 'EDP-M with Carboplatin - Metastatic alternative',
+            name: 'Etoposide + Doxorubicin + Carboplatin + Mitotane (EDP-M) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D5-D7 every 28 days' },
@@ -7319,7 +7319,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Capecitabine-Mitotane': {
-            name: 'Gemcitabine + Capecitabine + Mitotane - Metastatic',
+            name: 'Gemcitabine + Capecitabine + Mitotane (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
@@ -7328,7 +7328,7 @@ const protocolDatabase = {
             ]
         },
         'Docetaxel-Cisplatin': {
-            name: 'Docetaxel + Cisplatin - Metastatic',
+            name: 'Docetaxel + Cisplatin (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 60, unit: 'mg/m²', schedule: 'D1 every 21 days' },
@@ -7336,7 +7336,7 @@ const protocolDatabase = {
             ]
         },
         'Nivolumab-Ipilimumab': {
-            name: 'Nivolumab + Ipilimumab - Metastatic - 3L+/Investigational',
+            name: 'Nivolumab + Ipilimumab (Metastatic/Investigational)',
             cycles: 6,
             drugs: [
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'every 21 days' },
@@ -7344,7 +7344,7 @@ const protocolDatabase = {
             ]
         },
         'Cabozantinib': {
-            name: 'Cabozantinib - Metastatic - 3L+/Investigational',
+            name: 'Cabozantinib (Metastatic/Investigational)',
             cycles: 12,
             drugs: [
                 { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily' }
