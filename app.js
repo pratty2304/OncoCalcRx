@@ -13119,8 +13119,9 @@ function buildDoseAdjustmentTable() {
     const tableContainer = document.getElementById('doseAdjustmentTable');
     
     // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
-    function isNonReducibleDrug(drugName) {
-        const nonReducibleDrugs = [
+    function isImmunotherapyDrug(drugName) {
+        const immunotherapyDrugs = [
+            // Monoclonal antibodies and targeted IV agents
             'trastuzumab', 
             'pertuzumab',
             // Checkpoint inhibitors and immunotherapy drugs
@@ -13139,7 +13140,78 @@ function buildDoseAdjustmentTable() {
             'spartalizumab',
             'retifanlimab'
         ];
-        return nonReducibleDrugs.some(drug => drugName.toLowerCase().includes(drug));
+        return immunotherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+
+    function isTargetedTherapyDrug(drugName) {
+        const targetedTherapyDrugs = [
+            // CDK4/6 inhibitors
+            'ribociclib',
+            'abemaciclib', 
+            'palbociclib',
+            // Hormonal agents
+            'tamoxifen',
+            'letrozole',
+            'anastrozole',
+            'exemestane',
+            'fulvestrant',
+            // PARP inhibitors
+            'olaparib',
+            'niraparib',
+            'rucaparib',
+            'talazoparib',
+            // Tyrosine kinase inhibitors (TKIs)
+            'erlotinib',
+            'gefitinib',
+            'osimertinib',
+            'crizotinib',
+            'alectinib',
+            'brigatinib',
+            'lorlatinib',
+            'ceritinib',
+            'lapatinib',
+            'afatinib',
+            'dacomitinib',
+            'mobocertinib',
+            'amivantamab',
+            'sotorasib',
+            'adagrasib',
+            'imatinib',
+            'dasatinib',
+            'nilotinib',
+            'bosutinib',
+            'ponatinib',
+            'midostaurin',
+            'gilteritinib',
+            'sorafenib',
+            'sunitinib',
+            'pazopanib',
+            'axitinib',
+            'cabozantinib',
+            'lenvatinib',
+            'regorafenib',
+            'tivozanib',
+            // mTOR inhibitors
+            'everolimus',
+            'temsirolimus',
+            // Other oral targeted therapies
+            'ibrutinib',
+            'acalabrutinib',
+            'zanubrutinib',
+            'idelalisib',
+            'venetoclax',
+            'ruxolitinib',
+            'fedratinib',
+            'pacritinib',
+            'vismodegib',
+            'sonidegib',
+            'glasdegib'
+        ];
+        return targetedTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+
+    function isNonReducibleDrug(drugName) {
+        return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName);
     }
     
     tableContainer.innerHTML = `
@@ -13161,13 +13233,16 @@ function buildDoseAdjustmentTable() {
                         const finalDose = originalDose * (1 - reduction / 100);
                         
                         if (isNonReducible) {
-                            // For Trastuzumab/Pertuzumab/Immunotherapy - show original dose, no reduction allowed
+                            const isImmuno = isImmunotherapyDrug(drug.name);
+                            const noteText = isImmuno ? "*Dose reduction not recommended" : "*Standard dose level reductions apply";
+                            
+                            // For Immunotherapy/Targeted therapy - show original dose, different notes
                             return `
                                 <tr>
                                     <td style="font-weight: 600; color: #2c3e50;">
                                         ${drug.name}
                                         <div style="font-size: 11px; color: #e67e22; font-weight: 500; margin-top: 2px;">
-                                            *Dose reduction not recommended
+                                            ${noteText}
                                         </div>
                                     </td>
                                     <td>
@@ -13190,9 +13265,9 @@ function buildDoseAdjustmentTable() {
                                                 <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
                                                 <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                                 <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
-                                                <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px;">Withhold if toxicity</div>
+                                                <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                             </div>` 
-                                            : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px;">Withhold if toxicity</div>`}
+                                            : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`}
                                     </td>
                                 </tr>
                             `;
@@ -13295,8 +13370,11 @@ function showFinalPrescription() {
                     </thead>
                     <tbody>
                         ${results.drugs.map(drug => {
-                            // Check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
+                            // Check if drug is non-reducible (Immunotherapy/Targeted agents/Oral therapies)
+                            const isImmuno = isImmunotherapyDrug(drug.name);
+                            const isTargeted = isTargetedTherapyDrug(drug.name);
                             const isNonReducible = [
+                                // Monoclonal antibodies and targeted IV agents
                                 'trastuzumab', 
                                 'pertuzumab',
                                 // Checkpoint inhibitors and immunotherapy drugs
@@ -13313,7 +13391,68 @@ function showFinalPrescription() {
                                 'durvalumab',
                                 'tremelimumab',
                                 'spartalizumab',
-                                'retifanlimab'
+                                'retifanlimab',
+                                // CDK4/6 inhibitors
+                                'ribociclib',
+                                'abemaciclib', 
+                                'palbociclib',
+                                // Hormonal agents
+                                'tamoxifen',
+                                'letrozole',
+                                'anastrozole',
+                                'exemestane',
+                                'fulvestrant',
+                                // PARP inhibitors
+                                'olaparib',
+                                'niraparib',
+                                'rucaparib',
+                                'talazoparib',
+                                // Tyrosine kinase inhibitors (TKIs)
+                                'erlotinib',
+                                'gefitinib',
+                                'osimertinib',
+                                'crizotinib',
+                                'alectinib',
+                                'brigatinib',
+                                'lorlatinib',
+                                'ceritinib',
+                                'lapatinib',
+                                'afatinib',
+                                'dacomitinib',
+                                'mobocertinib',
+                                'amivantamab',
+                                'sotorasib',
+                                'adagrasib',
+                                'imatinib',
+                                'dasatinib',
+                                'nilotinib',
+                                'bosutinib',
+                                'ponatinib',
+                                'midostaurin',
+                                'gilteritinib',
+                                'sorafenib',
+                                'sunitinib',
+                                'pazopanib',
+                                'axitinib',
+                                'cabozantinib',
+                                'lenvatinib',
+                                'regorafenib',
+                                'tivozanib',
+                                // mTOR inhibitors
+                                'everolimus',
+                                'temsirolimus',
+                                // Other oral targeted therapies
+                                'ibrutinib',
+                                'acalabrutinib',
+                                'zanubrutinib',
+                                'idelalisib',
+                                'venetoclax',
+                                'ruxolitinib',
+                                'fedratinib',
+                                'pacritinib',
+                                'vismodegib',
+                                'sonidegib',
+                                'glasdegib'
                             ].some(nonReducibleDrug => 
                                 drug.name.toLowerCase().includes(nonReducibleDrug));
                             
@@ -13324,7 +13463,7 @@ function showFinalPrescription() {
                                 <tr style="border-bottom: 1px solid #dee2e6;">
                                     <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">
                                         ${drug.name}${drug.days ? ` (${drug.days})` : ''}
-                                        ${isNonReducible ? '<div style="font-size: 10px; color: #e67e22; margin-top: 2px;">*No dose reduction</div>' : ''}
+                                        ${isNonReducible ? `<div style="font-size: 10px; color: #e67e22; margin-top: 2px;">${isImmuno ? '*No dose reduction' : '*Standard dose level reductions apply'}</div>` : ''}
                                     </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6;">
                                         ${drug.hasLoadingDose ? 
@@ -13355,9 +13494,9 @@ function showFinalPrescription() {
                                                     <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
                                                     <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                                     <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
-                                                    <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic;">Withhold if toxicity</div>
+                                                    <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                 </div>` 
-                                                : `${drug.calculatedDose} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic;">Withhold if toxicity</div>`)
+                                                : `${drug.calculatedDose} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
                                             :
                                             // For regular drugs, show reduced dose
                                             (drug.hasLoadingDose ? 
@@ -13386,10 +13525,10 @@ function showFinalPrescription() {
                                                         <div style="color: #007bff; margin-bottom: 8px;">${roundDose(calcLoadingDose, drug.name)} ${drug.doseUnit}</div>
                                                         <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                                         <div style="color: #28a745;">${roundDose(calcMaintenanceDose, drug.name)} ${drug.doseUnit}</div>
-                                                        <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic;">Withhold if toxicity</div>
+                                                        <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                     </div>`;
                                                 })()
-                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic;">Withhold if toxicity</div>`)
+                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
                                             :
                                             // For regular drugs, show rounded reduced dose
                                             (drug.hasLoadingDose ? 
@@ -13442,8 +13581,9 @@ function showFinalPrescription() {
     const reductionList = document.getElementById('reductionList');
     
     // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
-    function isNonReducibleDrug(drugName) {
-        const nonReducibleDrugs = [
+    function isImmunotherapyDrug(drugName) {
+        const immunotherapyDrugs = [
+            // Monoclonal antibodies and targeted IV agents
             'trastuzumab', 
             'pertuzumab',
             // Checkpoint inhibitors and immunotherapy drugs
@@ -13462,7 +13602,78 @@ function showFinalPrescription() {
             'spartalizumab',
             'retifanlimab'
         ];
-        return nonReducibleDrugs.some(drug => drugName.toLowerCase().includes(drug));
+        return immunotherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+
+    function isTargetedTherapyDrug(drugName) {
+        const targetedTherapyDrugs = [
+            // CDK4/6 inhibitors
+            'ribociclib',
+            'abemaciclib', 
+            'palbociclib',
+            // Hormonal agents
+            'tamoxifen',
+            'letrozole',
+            'anastrozole',
+            'exemestane',
+            'fulvestrant',
+            // PARP inhibitors
+            'olaparib',
+            'niraparib',
+            'rucaparib',
+            'talazoparib',
+            // Tyrosine kinase inhibitors (TKIs)
+            'erlotinib',
+            'gefitinib',
+            'osimertinib',
+            'crizotinib',
+            'alectinib',
+            'brigatinib',
+            'lorlatinib',
+            'ceritinib',
+            'lapatinib',
+            'afatinib',
+            'dacomitinib',
+            'mobocertinib',
+            'amivantamab',
+            'sotorasib',
+            'adagrasib',
+            'imatinib',
+            'dasatinib',
+            'nilotinib',
+            'bosutinib',
+            'ponatinib',
+            'midostaurin',
+            'gilteritinib',
+            'sorafenib',
+            'sunitinib',
+            'pazopanib',
+            'axitinib',
+            'cabozantinib',
+            'lenvatinib',
+            'regorafenib',
+            'tivozanib',
+            // mTOR inhibitors
+            'everolimus',
+            'temsirolimus',
+            // Other oral targeted therapies
+            'ibrutinib',
+            'acalabrutinib',
+            'zanubrutinib',
+            'idelalisib',
+            'venetoclax',
+            'ruxolitinib',
+            'fedratinib',
+            'pacritinib',
+            'vismodegib',
+            'sonidegib',
+            'glasdegib'
+        ];
+        return targetedTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+
+    function isNonReducibleDrug(drugName) {
+        return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName);
     }
     
     const appliedReductions = Object.entries(currentReductions).filter(([drugName, reduction]) => 
