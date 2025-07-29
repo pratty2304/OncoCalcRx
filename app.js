@@ -13588,7 +13588,7 @@ function validateCarboplatinParameters(formData) {
     // Serum creatinine floor validation to prevent dose overestimation
     const creatinineValue = parseFloat(formData.creatinine);
     if (creatinineValue < 0.8) {
-        const userConfirm = confirm('⚠️ CARBOPLATIN DOSING WARNING ⚠️\n\nSerum creatinine values < 0.8 mg/dL may overestimate GFR and lead to carboplatin overdosing, especially in patients with:\n• Low muscle mass\n• Malnutrition\n• Elderly patients\n\nClinical Recommendation:\nConsider using a minimum creatinine value of 0.8 mg/dL for safer dosing.\n\nClick OK to proceed with the entered value, or Cancel to modify the creatinine value.');
+        const userConfirm = confirm('⚠️ CARBOPLATIN DOSING WARNING\n\nSerum creatinine values < 0.8 mg/dL may overestimate GFR and lead to carboplatin overdosing, especially in patients with:\n• Low muscle mass\n• Malnutrition\n• Elderly patients\n\nClinical Recommendation:\nConsider using a minimum creatinine value of 0.8 mg/dL for safer dosing.\n\nClick OK to proceed with the entered value, or Cancel to modify the creatinine value.');
         if (!userConfirm) {
             return false;
         }
