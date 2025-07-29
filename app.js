@@ -349,14 +349,14 @@ const protocolDatabase = {
                 ]
             },
             'Single-Paclitaxel-3weekly': {
-                name: 'Single agent Paclitaxel 3-weekly (Metastatic)',
+                name: 'Paclitaxel 3-weekly (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Single-Paclitaxel-weekly': {
-                name: 'Single agent Paclitaxel weekly (Metastatic)',
+                name: 'Paclitaxel weekly (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' }
@@ -370,7 +370,7 @@ const protocolDatabase = {
                 ]
             },
             'Single-Capecitabine': {
-                name: 'Single agent Capecitabine (Metastatic)',
+                name: 'Capecitabine (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, days 1-14, every 21 days' }
@@ -652,28 +652,28 @@ const protocolDatabase = {
             },
             // Single Agent Therapies
             'Single-Paclitaxel-3weekly': {
-                name: 'Single agent Paclitaxel (3-weekly) (Metastatic)',
+                name: 'Paclitaxel (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Single-Paclitaxel-weekly': {
-                name: 'Single agent Paclitaxel (weekly) (Metastatic)',
+                name: 'Paclitaxel (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' }
                 ]
             },
             'Single-Nab-Paclitaxel-3weekly': {
-                name: 'Single agent Nab-paclitaxel (3-weekly) (Metastatic)',
+                name: 'Nab-paclitaxel (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Single-Nab-Paclitaxel-weekly': {
-                name: 'Single agent Nab-paclitaxel (weekly) (Metastatic)',
+                name: 'Nab-paclitaxel (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly' }
@@ -687,21 +687,21 @@ const protocolDatabase = {
                 ]
             },
             'Single-Capecitabine': {
-                name: 'Single agent Capecitabine (Metastatic)',
+                name: 'Capecitabine (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, days 1-14, every 21 days' }
                 ]
             },
             'Single-Vinorelbine': {
-                name: 'Single agent Vinorelbine (Metastatic)',
+                name: 'Vinorelbine (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Eribulin': {
-                name: 'Single agent Eribulin (Metastatic)',
+                name: 'Eribulin (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Eribulin', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -1039,21 +1039,21 @@ const protocolDatabase = {
                 ]
             },
             'Single-Neratinib': {
-                name: 'Single agent Neratinib (Metastatic)',
+                name: 'Neratinib (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Neratinib', dose: 240, unit: 'mg', schedule: 'PO daily' }
                 ]
             },
             'Single-Capecitabine': {
-                name: 'Single agent Capecitabine (Metastatic)',
+                name: 'Capecitabine (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' }
                 ]
             },
             'Single-Docetaxel': {
-                name: 'Single agent Docetaxel (Metastatic)',
+                name: 'Docetaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -2832,77 +2832,77 @@ const protocolDatabase = {
             ]
         },
         'Altretamine': {
-            name: 'Altretamine (Single agent - recurrent)',
+            name: 'Altretamine (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Altretamine', dose: 260, unit: 'mg/m²', schedule: 'daily x 14 days, every 28 days' }
             ]
         },
         'Doxorubicin-Liposomal': {
-            name: 'Doxorubicin liposomal (Single agent - recurrent)',
+            name: 'Doxorubicin liposomal (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Doxorubicin liposomal', dose: 40, unit: 'mg/m²', schedule: 'every 28 days' }
             ]
         },
         'Paclitaxel-Single': {
-            name: 'Paclitaxel (Single agent - recurrent)',
+            name: 'Paclitaxel (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
             ]
         },
         'Ixabepilone': {
-            name: 'Ixabepilone (Single agent - recurrent)',
+            name: 'Ixabepilone (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Ixabepilone', dose: 40, unit: 'mg/m²', schedule: 'every 21 days' }
             ]
         },
         'Topotecan': {
-            name: 'Topotecan (Single agent - recurrent)',
+            name: 'Topotecan (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Topotecan', dose: 1.5, unit: 'mg/m²', days: 'D1-D5', schedule: 'D1-D5, every 21 days' }
             ]
         },
         'Gemcitabine-Single': {
-            name: 'Gemcitabine (Single agent - recurrent)',
+            name: 'Gemcitabine (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Etoposide': {
-            name: 'Etoposide (Single agent - recurrent)',
+            name: 'Etoposide (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 50, unit: 'mg/m²', days: 'D1-D21', schedule: 'daily x 21 days, every 28 days' }
             ]
         },
         'Vinorelbine': {
-            name: 'Vinorelbine (Single agent - recurrent)',
+            name: 'Vinorelbine (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'weekly x 18 weeks' }
             ]
         },
         'Pemetrexed-Single': {
-            name: 'Pemetrexed (Single agent - recurrent)',
+            name: 'Pemetrexed (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' }
             ]
         },
         'Bevacizumab-Single': {
-            name: 'Bevacizumab (Single agent - recurrent)',
+            name: 'Bevacizumab (- recurrent)',
             cycles: 8,
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'every 21 days' }
             ]
         },
         'Capecitabine': {
-            name: 'Capecitabine (Single agent - recurrent)',
+            name: 'Capecitabine (- recurrent)',
             cycles: 6,
             drugs: [
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily x 14 days, every 21 days' }
@@ -3381,21 +3381,21 @@ const protocolDatabase = {
             ]
         },
         'Paclitaxel-Single': {
-            name: 'Paclitaxel (Single agent - mCRPC)',
+            name: 'Paclitaxel (- mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Docetaxel-Single': {
-            name: 'Docetaxel (Single agent - mCRPC)',
+            name: 'Docetaxel (- mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Estramustine': {
-            name: 'Estramustine (Single agent - mCRPC)',
+            name: 'Estramustine (- mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' }
@@ -3906,7 +3906,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Single': {
-            name: 'Carboplatin (Single agent - Stage I seminoma) (Adjuvant)',
+            name: 'Carboplatin (- Stage I seminoma) (Adjuvant)',
             cycles: 1,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'single dose' }
@@ -5330,14 +5330,14 @@ const protocolDatabase = {
             ]
         },
         'Single-Gemcitabine-CONKO': {
-            name: 'Single agent Gemcitabine (CONKO-001) - Adjuvant',
+            name: 'Gemcitabine (CONKO-001) - Adjuvant',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Single-Capecitabine-Metastatic': {
-            name: 'Single agent Capecitabine - Metastatic',
+            name: 'Capecitabine - Metastatic',
             cycles: 6,
             drugs: [
                 { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' }
@@ -5426,7 +5426,7 @@ const protocolDatabase = {
             ]
         },
         'Single-Pembrolizumab-MSI': {
-            name: 'Single agent Pembrolizumab - Metastatic (MSI-H/dMMR)',
+            name: 'Pembrolizumab - Metastatic (MSI-H/dMMR)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
@@ -5503,55 +5503,55 @@ const protocolDatabase = {
     },
     anal: {
         '5FU-MMC-RT-RTOG': {
-            name: '5-FU + Mitomycin-C + RT (RTOG/ECOG)',
+            name: '5-FU + Mitomycin-C + RT (Definitive)',
             cycles: 2,
             drugs: [
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'daily x 4 days, weeks 1 and 5' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D4 and D29-D32' },
                 { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1, D29' }
             ]
         },
         'Capecitabine-MMC-RT': {
-            name: 'Capecitabine + Mitomycin-C + RT',
+            name: 'Capecitabine + Mitomycin-C + RT (Definitive)',
             cycles: 2,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD on days of RT' },
-                { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1, D29' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BID on days of RT' },
+                { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1 and D29' }
             ]
         },
         '5FU-Cisplatin-RT': {
-            name: '5-FU + Cisplatin + RT',
-            cycles: 3,
+            name: '5-FU + Cisplatin + RT (Definitive)',
+            cycles: 2,
             drugs: [
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D4, every 4 weeks' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 4 weeks' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D4 and D29-D32' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, D29' }
             ]
         },
         'CapeOX-RT': {
-            name: 'Capecitabine + Oxaliplatin + RT',
+            name: 'Capecitabine + Oxaliplatin + RT (Definitive)',
             cycles: 2,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD on days of RT' },
-                { name: 'Oxaliplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, D8, D22, D29' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BID on days of RT' },
+                { name: 'Oxaliplatin', dose: 50, unit: 'mg/m²', schedule: 'D1 and D29' }
             ]
         },
         '5FU-Cisplatin': {
-            name: '5-FU + Cisplatin',
+            name: '5-FU + Cisplatin (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D5, every 28 days' },
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D2, every 28 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D4 every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Paclitaxel + Carboplatin (PC)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days' }
             ]
         },
         'mFOLFOX6': {
-            name: 'mFOLFOX6',
+            name: 'mFOLFOX6 (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
@@ -5561,17 +5561,17 @@ const protocolDatabase = {
             ]
         },
         'FOLCIS': {
-            name: 'FOLCIS',
+            name: 'FOLCIS (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2000, unit: 'mg/m²', schedule: 'CI over 46 hours, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours every 2 weeks' }
             ]
         },
         'Carboplatin-Paclitaxel-Retifanlimab': {
-            name: 'Paclitaxel + Carboplatin + Retifanlimab-dlwr',
+            name: 'Paclitaxel + Carboplatin + Retifanlimab-dlwr (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
@@ -5580,21 +5580,21 @@ const protocolDatabase = {
             ]
         },
         'Single-Cemiplimab': {
-            name: 'Single agent Cemiplimab',
+            name: 'Cemiplimab (Single agent) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
             ]
         },
         'Single-Toripalimab': {
-            name: 'Single agent Toripalimab',
+            name: 'Toripalimab (Single agent) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Toripalimab', dose: 3, unit: 'mg/kg', schedule: 'every 2 weeks' }
             ]
         },
         'Single-Tislelizumab': {
-            name: 'Single agent Tislelizumab',
+            name: 'Tislelizumab (Single agent) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
@@ -5610,21 +5610,21 @@ const protocolDatabase = {
             ]
         },
         'Capecitabine-RT': {
-            name: 'Capecitabine + RT (Concurrent chemoRT)',
+            name: 'Capecitabine + RT (Definitive)',
             cycles: 1,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD on days of RT' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BID on RT days' }
             ]
         },
         'Single-Pembrolizumab': {
-            name: 'Single agent Pembrolizumab (Metastatic)',
+            name: 'Pembrolizumab (Single agent) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
             ]
         },
         'Single-Nivolumab': {
-            name: 'Single agent Nivolumab (Metastatic)',
+            name: 'Nivolumab (Single agent) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
@@ -5634,7 +5634,7 @@ const protocolDatabase = {
     biliary: {
         // Adjuvant Therapy
         'Single-Capecitabine': {
-            name: 'Single agent Capecitabine (Adjuvant)',
+            name: 'Capecitabine (Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
@@ -5751,7 +5751,7 @@ const protocolDatabase = {
             ]
         },
         'Single-Gemcitabine': {
-            name: 'Single agent Gemcitabine (Metastatic)',
+            name: 'Gemcitabine (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -5788,7 +5788,7 @@ const protocolDatabase = {
             ]
         },
         'Single-Pembrolizumab': {
-            name: 'Single agent Pembrolizumab (MSI/dMMR/TMB-H)',
+            name: 'Pembrolizumab (MSI/dMMR/TMB-H)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
@@ -5950,14 +5950,14 @@ const protocolDatabase = {
             ]
         },
         'Single-Pembrolizumab': {
-            name: 'Single agent Pembrolizumab (Metastatic)',
+            name: 'Pembrolizumab (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
             ]
         },
         'Single-Nivolumab': {
-            name: 'Single agent Nivolumab (Metastatic)',
+            name: 'Nivolumab (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
@@ -5994,14 +5994,14 @@ const protocolDatabase = {
             ]
         },
         'Single-Gemcitabine': {
-            name: 'Single agent Gemcitabine (Metastatic)',
+            name: 'Gemcitabine (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Single-Paclitaxel': {
-            name: 'Single agent Paclitaxel (Metastatic)',
+            name: 'Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 21 days' }
@@ -9070,14 +9070,14 @@ const protocolDatabase = {
                 ]
             },
             'Cetuximab-Single': {
-                name: 'Cetuximab (Single agent / KRAS/NRAS/BRAF WT)',
+                name: 'Cetuximab (/ KRAS/NRAS/BRAF WT)',
                 cycles: 8,
                 drugs: [
                     { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'weekly (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
                 ]
             },
             'Panitumumab-Single': {
-                name: 'Panitumumab (Single agent / KRAS/NRAS/BRAF WT)',
+                name: 'Panitumumab (/ KRAS/NRAS/BRAF WT)',
                 cycles: 8,
                 drugs: [
                     { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
@@ -9631,7 +9631,7 @@ const protocolDatabase = {
             ]
         },
         'Single-Pembrolizumab-CPS20-1L': {
-            name: 'Single agent Pembrolizumab (KEYNOTE-048) (Metastatic, PD-L1 CPS≥20)',
+            name: 'Pembrolizumab (KEYNOTE-048) (Metastatic, PD-L1 CPS≥20)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
@@ -9709,56 +9709,56 @@ const protocolDatabase = {
 
         // METASTATIC THERAPY
         'Single-Pembrolizumab-CPS1-2L': {
-            name: 'Single agent Pembrolizumab (KEYNOTE-040) (Metastatic, PD-L1 CPS≥1)',
+            name: 'Pembrolizumab (KEYNOTE-040) (Metastatic, PD-L1 CPS≥1)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
         'Single-Nivolumab-CPS1-2L': {
-            name: 'Single agent Nivolumab (CheckMate-141) (Metastatic, PD-L1 CPS≥1)',
+            name: 'Nivolumab (CheckMate-141) (Metastatic, PD-L1 CPS≥1)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
             ]
         },
         'Single-Cetuximab-2L': {
-            name: 'Single agent Cetuximab (Metastatic)',
+            name: 'Cetuximab (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22 at 250 mg/m², every 21 days', hasLoadingDose: true }
             ]
         },
         'Single-Docetaxel-2L': {
-            name: 'Single agent Docetaxel (Metastatic)',
+            name: 'Docetaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Single-Paclitaxel-2L': {
-            name: 'Single agent Paclitaxel (Metastatic)',
+            name: 'Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Single-Paclitaxel-Weekly-2L': {
-            name: 'Single agent Paclitaxel (weekly) (Metastatic)',
+            name: 'Paclitaxel (weekly) (Metastatic)',
             cycles: 18,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, weekly x 18 weeks' }
             ]
         },
         'Single-Methotrexate-2L': {
-            name: 'Single agent Methotrexate (Metastatic)',
+            name: 'Methotrexate (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Methotrexate', dose: 40, unit: 'mg/m²', schedule: 'weekly' }
             ]
         },
         'Single-Capecitabine-HN': {
-            name: 'Single agent Capecitabine (Head & Neck)',
+            name: 'Capecitabine (Head & Neck)',
             cycles: 6,
             drugs: [
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
@@ -11027,7 +11027,7 @@ const protocolDatabase = {
                 ]
             },
             'Single-Atezolizumab': {
-                name: 'Single agent Atezolizumab - Metastatic',
+                name: 'Atezolizumab - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'every 21 days' }
@@ -11243,42 +11243,42 @@ const protocolDatabase = {
             },
             // Single agents
             'Single-Paclitaxel': {
-                name: 'Single agent Paclitaxel - Metastatic',
+                name: 'Paclitaxel - Metastatic',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'every 21 days' }
                 ]
             },
             'Single-Nab-Paclitaxel': {
-                name: 'Single agent Nab-paclitaxel - Metastatic',
+                name: 'Nab-paclitaxel - Metastatic',
                 cycles: 6,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'every 21 days' }
                 ]
             },
             'Single-Docetaxel': {
-                name: 'Single agent Docetaxel - Metastatic',
+                name: 'Docetaxel - Metastatic',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'every 21 days' }
                 ]
             },
             'Single-Pemetrexed': {
-                name: 'Single agent Pemetrexed - Metastatic - Non-squamous',
+                name: 'Pemetrexed - Metastatic - Non-squamous',
                 cycles: 6,
                 drugs: [
                     { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'every 21 days' }
                 ]
             },
             'Single-Gemcitabine': {
-                name: 'Single agent Gemcitabine - Metastatic',
+                name: 'Gemcitabine - Metastatic',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Single-Vinorelbine': {
-                name: 'Single agent Vinorelbine - Metastatic',
+                name: 'Vinorelbine - Metastatic',
                 cycles: 6,
                 drugs: [
                     { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'weekly' }
@@ -11314,7 +11314,7 @@ const protocolDatabase = {
                 ]
             },
             'Single-Nivolumab': {
-                name: 'Single agent Nivolumab - Metastatic',
+                name: 'Nivolumab - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
@@ -11413,21 +11413,21 @@ const protocolDatabase = {
                 ]
             },
             'Single-Pembrolizumab': {
-                name: 'Single agent Pembrolizumab (KEYNOTE-024/042) (PD-L1 ≥50%) - Metastatic',
+                name: 'Pembrolizumab (KEYNOTE-024/042) (PD-L1 ≥50%) - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
                 ]
             },
             'Single-Durvalumab': {
-                name: 'Single agent Durvalumab (PACIFIC) - Maintenance Post-CRT',
+                name: 'Durvalumab (PACIFIC) - Maintenance Post-CRT',
                 cycles: 12,
                 drugs: [
                     { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'every 28 days' }
                 ]
             },
             'Single-Cemiplimab': {
-                name: 'Single agent Cemiplimab - Metastatic',
+                name: 'Cemiplimab - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1, every 21 days' }
