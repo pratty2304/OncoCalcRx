@@ -13964,6 +13964,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset all form fields
         document.getElementById('height').value = '';
         document.getElementById('weight').value = '';
+        document.getElementById('directBSA').value = '';
         document.getElementById('age').value = '';
         document.getElementById('sexMale').checked = false;
         document.getElementById('sexFemale').checked = false;
@@ -14029,6 +14030,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset all form fields
         document.getElementById('height').value = '';
         document.getElementById('weight').value = '';
+        document.getElementById('directBSA').value = '';
         document.getElementById('age').value = '';
         document.getElementById('sexMale').checked = false;
         document.getElementById('sexFemale').checked = false;

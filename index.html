@@ -1777,6 +1777,13 @@
     <script>
         // Splash screen logic
         document.addEventListener('DOMContentLoaded', function() {
+            // Clear all form fields on page load/refresh
+            document.getElementById('height').value = '';
+            document.getElementById('weight').value = '';
+            document.getElementById('directBSA').value = '';
+            document.getElementById('sexMale').checked = false;
+            document.getElementById('sexFemale').checked = false;
+            
             // Ensure splash screen is visible on all devices
             const splashScreen = document.getElementById('splashScreen');
             const page1 = document.getElementById('page1');
