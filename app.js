@@ -1533,7 +1533,7 @@ const protocolDatabase = {
             ]
         },
         'Dostarlimab-MSI-3L': {
-            name: 'Dostarlimab (Metastatic - 3L+, MSI-H/dMMR)',
+            name: 'Dostarlimab (PD-1 inhibitor) (Metastatic - 3L+, MSI-H/dMMR)',
             cycles: 12,
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4, then 1000mg every 6 weeks' }
@@ -2946,7 +2946,7 @@ const protocolDatabase = {
             ]
         },
         'Dostarlimab': {
-            name: 'Dostarlimab (dMMR/MSI-H recurrent)',
+            name: 'Dostarlimab (PD-1 inhibitor) (dMMR/MSI-H recurrent)',
             cycles: 8,
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'every 21 days, then 1000mg every 6 weeks' }
@@ -4429,7 +4429,7 @@ const protocolDatabase = {
     hepatocellular: {
         // METASTATIC THERAPY
         'Atezolizumab-Bevacizumab': {
-            name: 'Atezolizumab + Bevacizumab (IMbrave150)',
+            name: 'Atezolizumab + Bevacizumab (PD-L1 + VEGF inhibitors) (IMbrave150)',
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -5592,21 +5592,21 @@ const protocolDatabase = {
         },
         // Metastatic Therapy - Single Agent Immunotherapy (Later Lines)
         'Single-Pembrolizumab': {
-            name: 'Pembrolizumab (Metastatic)',
+            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
             ]
         },
         'Single-Nivolumab': {
-            name: 'Nivolumab (Metastatic)',
+            name: 'Nivolumab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
             ]
         },
         'Single-Cemiplimab': {
-            name: 'Cemiplimab (Metastatic)',
+            name: 'Cemiplimab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
@@ -5623,14 +5623,14 @@ const protocolDatabase = {
             ]
         },
         'Single-Toripalimab': {
-            name: 'Toripalimab (Metastatic)',
+            name: 'Toripalimab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Toripalimab', dose: 3, unit: 'mg/kg', schedule: 'every 2 weeks' }
             ]
         },
         'Single-Tislelizumab': {
-            name: 'Tislelizumab (Metastatic)',
+            name: 'Tislelizumab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
@@ -5846,7 +5846,7 @@ const protocolDatabase = {
         },
         // Adjuvant Therapy
         'Nivolumab-Adjuvant': {
-            name: 'Nivolumab (Adjuvant)',
+            name: 'Nivolumab (PD-1 inhibitor) (Adjuvant)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
@@ -5956,21 +5956,21 @@ const protocolDatabase = {
             ]
         },
         'Single-Pembrolizumab': {
-            name: 'Pembrolizumab (Metastatic)',
+            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
             ]
         },
         'Single-Nivolumab': {
-            name: 'Nivolumab (Metastatic)',
+            name: 'Nivolumab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
             ]
         },
         'Durvalumab': {
-            name: 'Durvalumab (Metastatic)',
+            name: 'Durvalumab (PD-L1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Durvalumab', dose: 1200, unit: 'mg', schedule: 'every 28 days' }
@@ -6951,14 +6951,14 @@ const protocolDatabase = {
             ]
         },
         'Pembrolizumab-Neoadjuvant': {
-            name: 'Pembrolizumab (Neoadjuvant)',
+            name: 'Pembrolizumab (PD-1 inhibitor) (Neoadjuvant)',
             cycles: 3,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Pembrolizumab-Adjuvant': {
-            name: 'Pembrolizumab (Adjuvant)',
+            name: 'Pembrolizumab (PD-1 inhibitor) (Adjuvant)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
@@ -7347,7 +7347,7 @@ const protocolDatabase = {
         },
         // Metastatic Therapy - Investigational/Clinical Trials
         'Nivolumab-Ipilimumab': {
-            name: 'Nivolumab + Ipilimumab (Metastatic/Investigational)',
+            name: 'Nivolumab + Ipilimumab (PD-1 + CTLA-4 inhibitors) (Metastatic/Investigational)',
             cycles: 6,
             drugs: [
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'every 21 days' },
@@ -7364,35 +7364,35 @@ const protocolDatabase = {
     },
     basal_cell: {
         'Vismodegib': {
-            name: 'Vismodegib (Hedgehog pathway inhibitor) - Advanced/Metastatic',
+            name: 'Vismodegib (Hedgehog pathway inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Vismodegib', dose: 150, unit: 'mg', schedule: 'daily until progression' }
             ]
         },
         'Sonidegib': {
-            name: 'Sonidegib (Hedgehog pathway inhibitor) - Advanced/Metastatic',
+            name: 'Sonidegib (Hedgehog pathway inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Sonidegib', dose: 200, unit: 'mg', schedule: 'daily until progression' }
             ]
         },
         'Cemiplimab': {
-            name: 'Cemiplimab (PD-1 inhibitor) - Advanced/Metastatic',
+            name: 'Cemiplimab (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
             ]
         },
         'Pembrolizumab': {
-            name: 'Pembrolizumab (PD-1 inhibitor) - Advanced/Metastatic',
+            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 3 weeks' }
             ]
         },
         'Nivolumab': {
-            name: 'Nivolumab (PD-1 inhibitor) - Advanced/Metastatic',
+            name: 'Nivolumab (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
@@ -8123,7 +8123,7 @@ const protocolDatabase = {
 
         // Metastatic
         'Pembrolizumab-Metastatic-2L': {
-            name: 'Pembrolizumab (Metastatic)',
+            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
@@ -8406,7 +8406,7 @@ const protocolDatabase = {
             ]
         },
         'Single-Dostarlimab-dMMR': {
-            name: 'Dostarlimab (dMMR/MSI-H)',
+            name: 'Dostarlimab (PD-1 inhibitor) (dMMR/MSI-H)',
             cycles: 12,
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4, then 1000mg every 6 weeks' }
@@ -9158,7 +9158,7 @@ const protocolDatabase = {
                 ]
             },
             'Dostarlimab-dMMR': {
-                name: 'Dostarlimab (dMMR/MSI-H)',
+                name: 'Dostarlimab (PD-1 inhibitor) (dMMR/MSI-H)',
                 cycles: 12,
                 drugs: [
                     { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days' }
