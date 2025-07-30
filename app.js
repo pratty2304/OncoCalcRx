@@ -5580,6 +5580,15 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours every 2 weeks' }
             ]
         },
+        'Modified-DCF': {
+            name: 'Modified DCF (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 40, unit: 'mg/m²', schedule: 'D1, every 3 weeks' },
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 3 weeks' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours, every 3 weeks' }
+            ]
+        },
         // Metastatic Therapy - Immunotherapy Combinations
         'Carboplatin-Paclitaxel-Retifanlimab': {
             name: 'Paclitaxel + Carboplatin + Retifanlimab-dlwr (Metastatic)',
