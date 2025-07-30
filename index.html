@@ -285,8 +285,8 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            height: calc(100vh - 60px);
-            overflow: hidden;
+            min-height: calc(100vh - 60px);
+            overflow-y: auto;
         }
 
         #page1 .form-section {
@@ -767,11 +767,10 @@
                 top: 40px;
                 height: auto;
                 min-height: calc(80vh - 40px);
-                max-height: calc(85vh - 40px);
-                overflow: visible;
+                overflow-y: auto;
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: flex-start;
                 padding: 20px 0;
             }
 
@@ -1472,6 +1471,15 @@
                     </div>
                 </div>
 
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="directBSA">Enter BSA (m²)</label>
+                    <input type="number" id="directBSA" name="directBSA" min="0.5" max="3.0" step="0.01" placeholder="Enter BSA (e.g., 1.75)">
+                </div>
+
                 <div class="nav-buttons">
                     <button type="button" class="btn btn-primary" id="nextToPage2">Next: Select Regimen</button>
                 </div>
@@ -1875,6 +1883,38 @@
             // Listen for input changes to show/hide clear button
             cancerSearchInput.addEventListener('input', toggleCancerClearButton);
             cancerSearchInput.addEventListener('focus', toggleCancerClearButton);
+            
+            // Add mutual exclusion logic between height/weight/sex and direct BSA
+            const heightInput = document.getElementById('height');
+            const weightInput = document.getElementById('weight');
+            const directBSAInput = document.getElementById('directBSA');
+            const sexInputs = document.querySelectorAll('input[name="sex"]');
+            
+            // When user enters height/weight/sex, clear direct BSA
+            [heightInput, weightInput].forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        directBSAInput.value = '';
+                    }
+                });
+            });
+            
+            sexInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    if (this.checked) {
+                        directBSAInput.value = '';
+                    }
+                });
+            });
+            
+            // When user enters direct BSA, clear height/weight/sex
+            directBSAInput.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    heightInput.value = '';
+                    weightInput.value = '';
+                    sexInputs.forEach(input => input.checked = false);
+                }
+            });
             
             // Clear cancer search when X button is clicked
             clearCancerSearchButton.addEventListener('click', function() {

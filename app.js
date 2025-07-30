@@ -12085,10 +12085,16 @@ function roundDose(dose, drugName) {
 
 // Calculate drug doses
 function calculateDoses(formData) {
-    const { height, weight, age, sex, creatinine, cancerType, cancerSubtype, protocol, auc } = formData;
+    const { height, weight, directBSA, age, sex, creatinine, cancerType, cancerSubtype, protocol, auc } = formData;
     
-    const rawBsa = calculateBSA(parseFloat(height), parseFloat(weight));
-    const bsa = parseFloat(rawBsa.toFixed(2)); // Use rounded BSA for calculations
+    // Use direct BSA if provided, otherwise calculate from height/weight
+    let bsa;
+    if (directBSA && parseFloat(directBSA) > 0) {
+        bsa = parseFloat(parseFloat(directBSA).toFixed(2)); // Use provided BSA
+    } else {
+        const rawBsa = calculateBSA(parseFloat(height), parseFloat(weight));
+        bsa = parseFloat(rawBsa.toFixed(2)); // Use calculated BSA
+    }
     
     // Only calculate crCl for carboplatin-containing regimens
     let crCl = null;
@@ -12208,13 +12214,18 @@ function showPage(pageNumber) {
 function validatePage1() {
     const height = document.getElementById('height').value;
     const weight = document.getElementById('weight').value;
+    const directBSA = document.getElementById('directBSA').value;
     const sexMale = document.getElementById('sexMale');
     const sexFemale = document.getElementById('sexFemale');
     
     // Check if at least one sex checkbox is checked
     const sexValid = sexMale && sexFemale && (sexMale.checked || sexFemale.checked);
     
-    return height && weight && sexValid;
+    // Either height/weight/sex OR direct BSA should be provided
+    const heightWeightValid = height && weight && sexValid;
+    const directBSAValid = directBSA && parseFloat(directBSA) > 0;
+    
+    return heightWeightValid || directBSAValid;
 }
 
 function updatePatientInfoCard() {
@@ -13848,7 +13859,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updatePatientInfoCard(); // Ensure patient card is updated
             showPage(2);
         } else {
-            alert('Please fill in all patient information fields.');
+            alert('Please fill in either Height/Weight/Sex OR Direct BSA.');
         }
     });
 
@@ -13872,6 +13883,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData = {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
+                directBSA: document.getElementById('directBSA').value,
                 age: useSearchCarboplatin ? document.getElementById('searchAge').value : document.getElementById('age').value,
                 sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
                 creatinine: useSearchCarboplatin ? document.getElementById('searchCreatinine').value : document.getElementById('creatinine').value,
@@ -13892,6 +13904,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData = {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
+                directBSA: document.getElementById('directBSA').value,
                 age: document.getElementById('age').value,
                 sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
                 creatinine: document.getElementById('creatinine').value,
@@ -13914,6 +13927,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData = {
                 height: document.getElementById('height').value,
                 weight: document.getElementById('weight').value,
+                directBSA: document.getElementById('directBSA').value,
                 age: document.getElementById('age').value,
                 sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
                 creatinine: document.getElementById('creatinine').value,
@@ -13933,7 +13947,7 @@ document.addEventListener('DOMContentLoaded', function() {
         trackEvent('dose_calculated', {
             custom_parameter_1: formData.cancerType,
             custom_parameter_2: formData.protocol,
-            custom_parameter_3: `${formData.height}cm_${formData.weight}kg`,
+            custom_parameter_3: formData.directBSA ? `BSA_${formData.directBSA}m2` : `${formData.height}cm_${formData.weight}kg`,
             value: 1
         });
         
