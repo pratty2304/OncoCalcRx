@@ -4566,25 +4566,35 @@ const protocolDatabase = {
     bone: {
         osteosarcoma: {
             'AP': {
-                name: 'AP (Adriamycin + Cisplatin) - (Neoadjuvant/Adjuvant)',
+                name: 'Adriamycin + Cisplatin (AP) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                     { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'MAP': {
-                name: 'MAP (Methotrexate + Adriamycin + Cisplatin) - (Neoadjuvant/Adjuvant)',
-                cycles: 6,
+            'MAP-EURAMOS-Neoadjuvant': {
+                name: 'Methotrexate + Adriamycin + Cisplatin (MAP) (EURAMOS-1) (Neoadjuvant)',
+                cycles: 10,
                 drugs: [
-                    { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 21 days (with leucovorin rescue)' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
-                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' }
+                    { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'Week 1, 3, 4, 6, 7, 9, 10 - IV over 4 hours (with leucovorin rescue)' },
+                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'Week 2, 5, 8 - D1' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'Week 2, 5, 8 - D1-D3' },
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: '15 mg/m² start 24 hours after MTX, every 6 hours until serum MTX <0.1 µmol/L' }
+                ]
+            },
+            'MAP-EURAMOS-Adjuvant': {
+                name: 'Methotrexate + Adriamycin + Cisplatin (MAP) (EURAMOS-1) (Adjuvant)',
+                cycles: 19,
+                drugs: [
+                    { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'Week 11, 13, 14, 16, 17, 19, 20 - IV over 4 hours (with leucovorin rescue)' },
+                    { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'Week 12, 15, 18 - D1' },
+                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'Week 12, 15, 18 - D1-D3' },
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: '15 mg/m² start 24 hours after MTX, every 6 hours until serum MTX <0.1 µmol/L' }
                 ]
             },
             'IAP': {
-                name: 'IAP (Ifosfamide + Adriamycin + Cisplatin) - (Neoadjuvant/Adjuvant)',
+                name: 'Ifosfamide + Adriamycin + Cisplatin (IAP) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4594,7 +4604,7 @@ const protocolDatabase = {
                 ]
             },
             'HD-MTX': {
-                name: 'HD-MTX (High-Dose Methotrexate) - (Neoadjuvant/Adjuvant)',
+                name: 'High-Dose Methotrexate (HD-MTX) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
                     { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 14 days (with leucovorin rescue)' },
