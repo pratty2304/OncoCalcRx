@@ -5425,8 +5425,8 @@ const protocolDatabase = {
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'twice daily' }
             ]
         },
-        'Single-Pembrolizumab-MSI': {
-            name: 'Pembrolizumab - Metastatic (MSI-H/dMMR)',
+        'Pembrolizumab-Monotherapy-MSI': {
+            name: 'Pembrolizumab monotherapy - Metastatic (MSI-H/dMMR)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
@@ -5599,23 +5599,23 @@ const protocolDatabase = {
                 { name: 'Retifanlimab-dlwr', dose: 500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
-        // Metastatic Therapy - Single Agent Immunotherapy (Later Lines)
-        'Single-Pembrolizumab': {
-            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
+        // Metastatic Therapy - Immunotherapy Monotherapy (Later Lines)
+        'Pembrolizumab-Monotherapy': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
             ]
         },
-        'Single-Nivolumab': {
-            name: 'Nivolumab (PD-1 inhibitor) (Metastatic)',
+        'Nivolumab-Monotherapy': {
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
             ]
         },
-        'Single-Cemiplimab': {
-            name: 'Cemiplimab (PD-1 inhibitor) (Metastatic)',
+        'Cemiplimab-Monotherapy': {
+            name: 'Cemiplimab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
@@ -5652,11 +5652,11 @@ const protocolDatabase = {
             name: 'Capecitabine (Adjuvant)',
             cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO BID D1-D14, every 21 days' }
             ]
         },
-        'Gemcitabine-Cisplatin-Adjuvant': {
-            name: 'Gemcitabine + Cisplatin (GC) (Adjuvant)',
+        'Gemcitabine-Cisplatin': {
+            name: 'Gemcitabine + Cisplatin (GC) (Adjuvant/Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5670,9 +5670,9 @@ const protocolDatabase = {
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD on days of RT' }
             ]
         },
-        // Metastatic - 1L Therapy
+        // Metastatic Therapy - Most Common First-Line
         'Gemcitabine-Cisplatin-Durvalumab': {
-            name: 'Gemcitabine + Cisplatin + Durvalumab (Metastatic - 1L)',
+            name: 'Gemcitabine + Cisplatin + Durvalumab (TOPAZ-1) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5680,65 +5680,39 @@ const protocolDatabase = {
                 { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
-        'Gemcitabine-Cisplatin': {
-            name: 'Gemcitabine + Cisplatin (GC) (Metastatic - 1L)',
-            cycles: 8,
+        'GEMOX': {
+            name: 'Gemcitabine + Oxaliplatin (GEMOX) (Metastatic)',
+            cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Gemcitabine-Nabpaclitaxel': {
+            name: 'Gemcitabine + Nab-paclitaxel (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'Capecitabine-Cisplatin': {
+            name: 'Capecitabine + Cisplatin (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BID D1-D14, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Gemcitabine-Capecitabine': {
-            name: 'Gemcitabine + Capecitabine (Metastatic - 1L)',
+            name: 'Gemcitabine + Capecitabine (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'twice daily D1-D14, every 21 days' }
             ]
         },
-        'GEMOX': {
-            name: 'Gemcitabine + Oxaliplatin (GEMOX) - (Metastatic - 1L)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Gemcitabine-Nabpaclitaxel': {
-            name: 'Gemcitabine + Nab-paclitaxel (Metastatic - 1L)',
-            cycles: 6,
-            drugs: [
-                { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
-            ]
-        },
-        'Gemcitabine-Cisplatin-Nabpaclitaxel': {
-            name: 'Gemcitabine + Cisplatin + Nab-paclitaxel (Metastatic - 1L)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
-            ]
-        },
-        'Gemcitabine-Cisplatin-Pembrolizumab': {
-            name: 'Gemcitabine + Cisplatin + Pembrolizumab (Metastatic - 1L)',
-            cycles: 8,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Capecitabine-Cisplatin': {
-            name: 'Capecitabine + Cisplatin (Metastatic - 1L)',
-            cycles: 6,
-            drugs: [
-                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' },
-                { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        // Metastatic Therapy
+        // Metastatic Therapy - Less Common
         'mFOLFOX6': {
             name: 'mFOLFOX6 (Metastatic)',
             cycles: 12,
@@ -5758,7 +5732,7 @@ const protocolDatabase = {
             ]
         },
         'CapeOX': {
-            name: 'Capecitabine + Oxaliplatin (CAPOX/XELOX) - (Metastatic)',
+            name: 'Capecitabine + Oxaliplatin (CAPOX/XELOX) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -5772,48 +5746,59 @@ const protocolDatabase = {
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
+        'Gemcitabine-Cisplatin-Nabpaclitaxel': {
+            name: 'Gemcitabine + Cisplatin + Nab-paclitaxel (SWOG S1815) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'Gemcitabine-Cisplatin-Pembrolizumab': {
+            name: 'Gemcitabine + Cisplatin + Pembrolizumab (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
         // Targeted Therapy (Biomarker-directed)
         'Dabrafenib-Trametinib': {
             name: 'Dabrafenib + Trametinib (BRAFV600E mutation)',
             cycles: 12,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily' }
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily', isOralTargeted: true },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily', isOralTargeted: true }
             ]
         },
         'Ivosidenib': {
             name: 'Ivosidenib (IDH1 mutation)',
             cycles: 12,
             drugs: [
-                { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'daily' }
+                { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'daily', isOralTargeted: true }
             ]
         },
         'Pemigatinib': {
             name: 'Pemigatinib (FGFR2 fusions)',
             cycles: 12,
             drugs: [
-                { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'daily for 14 days, then 7 days off' }
-            ]
-        },
-        'Infigratinib': {
-            name: 'Infigratinib (FGFR2 fusions)',
-            cycles: 12,
-            drugs: [
-                { name: 'Infigratinib', dose: 125, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
-            ]
-        },
-        'Single-Pembrolizumab': {
-            name: 'Pembrolizumab (MSI/dMMR/TMB-H)',
-            cycles: 12,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'daily for 14 days, then 7 days off', isOralTargeted: true }
             ]
         },
         'Futibatinib': {
             name: 'Futibatinib (FGFR2 fusions)',
             cycles: 12,
             drugs: [
-                { name: 'Futibatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Futibatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression', isOralTargeted: true }
+            ]
+        },
+        'Pembrolizumab-Monotherapy': {
+            name: 'Pembrolizumab monotherapy (MSI/dMMR/TMB-H)',
+            cycles: 12,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         }
     },
@@ -5964,15 +5949,15 @@ const protocolDatabase = {
                 { name: 'Enfortumab Vedotin', dose: 1.25, unit: 'mg/kg (max 125mg)', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
-        'Single-Pembrolizumab': {
-            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
+        'Pembrolizumab-Monotherapy': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
             ]
         },
-        'Single-Nivolumab': {
-            name: 'Nivolumab (PD-1 inhibitor) (Metastatic)',
+        'Nivolumab-Monotherapy': {
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
@@ -8407,15 +8392,15 @@ const protocolDatabase = {
         },
 
         // Single agents and targeted therapy for dMMR/MSI-H
-        'Single-Pembrolizumab-dMMR': {
-            name: 'Pembrolizumab (dMMR/MSI-H)',
+        'Pembrolizumab-Monotherapy-dMMR': {
+            name: 'Pembrolizumab monotherapy (dMMR/MSI-H)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
-        'Single-Dostarlimab-dMMR': {
-            name: 'Dostarlimab (PD-1 inhibitor) (dMMR/MSI-H)',
+        'Dostarlimab-Monotherapy-dMMR': {
+            name: 'Dostarlimab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)',
             cycles: 12,
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4, then 1000mg every 6 weeks' }
@@ -9650,8 +9635,8 @@ const protocolDatabase = {
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Single-Pembrolizumab-CPS20-1L': {
-            name: 'Pembrolizumab (KEYNOTE-048) (Metastatic, PD-L1 CPS≥20)',
+        'Pembrolizumab-Monotherapy-CPS20-1L': {
+            name: 'Pembrolizumab monotherapy (KEYNOTE-048) (Metastatic, PD-L1 CPS≥20)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
@@ -9728,15 +9713,15 @@ const protocolDatabase = {
         },
 
         // METASTATIC THERAPY
-        'Single-Pembrolizumab-CPS1-2L': {
-            name: 'Pembrolizumab (KEYNOTE-040) (Metastatic, PD-L1 CPS≥1)',
+        'Pembrolizumab-Monotherapy-CPS1-2L': {
+            name: 'Pembrolizumab monotherapy (KEYNOTE-040) (Metastatic, PD-L1 CPS≥1)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
-        'Single-Nivolumab-CPS1-2L': {
-            name: 'Nivolumab (CheckMate-141) (Metastatic, PD-L1 CPS≥1)',
+        'Nivolumab-Monotherapy-CPS1-2L': {
+            name: 'Nivolumab monotherapy (CheckMate-141) (Metastatic, PD-L1 CPS≥1)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
@@ -11046,8 +11031,8 @@ const protocolDatabase = {
                     { name: 'Etoposide', dose: 120, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' }
                 ]
             },
-            'Single-Atezolizumab': {
-                name: 'Atezolizumab - Metastatic',
+            'Atezolizumab-Monotherapy': {
+                name: 'Atezolizumab monotherapy - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'every 21 days' }
@@ -11333,8 +11318,8 @@ const protocolDatabase = {
                     { name: 'Dacomitinib', dose: 45, unit: 'mg', schedule: 'daily' }
                 ]
             },
-            'Single-Nivolumab': {
-                name: 'Nivolumab - Metastatic',
+            'Nivolumab-Monotherapy': {
+                name: 'Nivolumab monotherapy - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
@@ -11432,8 +11417,8 @@ const protocolDatabase = {
                     { name: 'Adagrasib', dose: 600, unit: 'mg', schedule: 'twice daily' }
                 ]
             },
-            'Single-Pembrolizumab': {
-                name: 'Pembrolizumab (KEYNOTE-024/042) (PD-L1 ≥50%) - Metastatic',
+            'Pembrolizumab-Monotherapy': {
+                name: 'Pembrolizumab monotherapy (KEYNOTE-024/042) (PD-L1 ≥50%) - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
@@ -11446,8 +11431,8 @@ const protocolDatabase = {
                     { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'every 28 days' }
                 ]
             },
-            'Single-Cemiplimab': {
-                name: 'Cemiplimab - Metastatic',
+            'Cemiplimab-Monotherapy': {
+                name: 'Cemiplimab monotherapy - Metastatic',
                 cycles: 12,
                 drugs: [
                     { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1, every 21 days' }
@@ -11968,6 +11953,9 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
     const carboplatinParams = document.getElementById('carboplatinParams');
     const ageInput = document.getElementById('age');
     const creatinineInput = document.getElementById('creatinine');
+    const browseBSAAdditionalFields = document.getElementById('browseBSAAdditionalFields');
+    const browseWeightInput = document.getElementById('browseWeight');
+    const browseSexInputs = document.querySelectorAll('input[name="browseSex"]');
     
     if (protocolKey && cancerType && protocolDatabase[cancerType]) {
         let protocolData;
@@ -11978,6 +11966,10 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
             protocolData = protocolDatabase[cancerType][protocolKey];
         }
         
+        // Check if BSA was entered directly (need additional weight and sex for carboplatin)
+        const directBSA = document.getElementById('directBSA').value;
+        const isBSADirectlyEntered = directBSA && parseFloat(directBSA) > 0;
+        
         if (protocolData) {
             const hasCarboplatin = protocolData.drugs.some(drug => drug.name.toLowerCase().includes('carboplatin'));
             
@@ -11987,29 +11979,60 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
                 aucSelect.required = true;
                 ageInput.required = true;
                 creatinineInput.required = true;
+                
+                // Show additional weight and sex fields if BSA was entered directly
+                if (isBSADirectlyEntered) {
+                    browseBSAAdditionalFields.style.display = 'block';
+                    browseWeightInput.required = true;
+                    // Make one of the sex radio buttons required by adding required to both
+                    browseSexInputs.forEach(input => input.required = true);
+                } else {
+                    browseBSAAdditionalFields.style.display = 'none';
+                    browseWeightInput.required = false;
+                    browseWeightInput.value = '';
+                    browseSexInputs.forEach(input => {
+                        input.required = false;
+                        input.checked = false;
+                    });
+                }
             } else {
                 carboplatinParams.style.display = 'none';
                 aucGroup.style.display = 'none';
+                browseBSAAdditionalFields.style.display = 'none';
                 aucSelect.required = false;
                 aucSelect.value = '';
                 ageInput.required = false;
                 ageInput.value = '';
                 creatinineInput.required = false;
                 creatinineInput.value = '';
+                browseWeightInput.required = false;
+                browseWeightInput.value = '';
+                browseSexInputs.forEach(input => {
+                    input.required = false;
+                    input.checked = false;
+                });
             }
         } else {
             carboplatinParams.style.display = 'none';
             aucGroup.style.display = 'none';
+            browseBSAAdditionalFields.style.display = 'none';
             aucSelect.required = false;
             aucSelect.value = '';
             ageInput.required = false;
             ageInput.value = '';
             creatinineInput.required = false;
             creatinineInput.value = '';
+            browseWeightInput.required = false;
+            browseWeightInput.value = '';
+            browseSexInputs.forEach(input => {
+                input.required = false;
+                input.checked = false;
+            });
         }
     } else {
         carboplatinParams.style.display = 'none';
         aucGroup.style.display = 'none';
+        browseBSAAdditionalFields.style.display = 'none';
         aucSelect.required = false;
         aucSelect.value = '';
         ageInput.required = false;
@@ -12733,6 +12756,9 @@ function checkForCarboplatinSearch(protocol) {
         const searchAgeInput = document.getElementById('searchAge');
         const searchCreatinineInput = document.getElementById('searchCreatinine');
         const searchAucSelect = document.getElementById('searchAuc');
+        const searchBSAAdditionalFields = document.getElementById('searchBSAAdditionalFields');
+        const searchWeightInput = document.getElementById('searchWeight');
+        const searchSexInputs = document.querySelectorAll('input[name="searchSex"]');
         
         // Get browse section carboplatin elements (keep hidden when using search)
         const browseCarboplatinParams = document.getElementById('carboplatinParams');
@@ -12741,12 +12767,32 @@ function checkForCarboplatinSearch(protocol) {
         const browseAgeInput = document.getElementById('age');
         const browseCreatinineInput = document.getElementById('creatinine');
         
+        // Check if BSA was entered directly (need additional weight and sex for carboplatin)
+        const directBSA = document.getElementById('directBSA').value;
+        const isBSADirectlyEntered = directBSA && parseFloat(directBSA) > 0;
+        
         if (hasCarboplatin) {
             // Show carboplatin parameters in search section
             searchCarboplatinParams.style.display = 'block';
             searchAgeInput.required = true;
             searchCreatinineInput.required = true;
             searchAucSelect.required = true;
+            
+            // Show additional weight and sex fields if BSA was entered directly
+            if (isBSADirectlyEntered) {
+                searchBSAAdditionalFields.style.display = 'block';
+                searchWeightInput.required = true;
+                // Make one of the sex radio buttons required by adding required to both
+                searchSexInputs.forEach(input => input.required = true);
+            } else {
+                searchBSAAdditionalFields.style.display = 'none';
+                searchWeightInput.required = false;
+                searchWeightInput.value = '';
+                searchSexInputs.forEach(input => {
+                    input.required = false;
+                    input.checked = false;
+                });
+            }
             
             // Hide browse section carboplatin parameters
             browseCarboplatinParams.style.display = 'none';
@@ -12757,9 +12803,12 @@ function checkForCarboplatinSearch(protocol) {
         } else {
             // Hide search section carboplatin parameters
             searchCarboplatinParams.style.display = 'none';
+            searchBSAAdditionalFields.style.display = 'none';
             searchAgeInput.required = false;
             searchCreatinineInput.required = false;
             searchAucSelect.required = false;
+            searchWeightInput.required = false;
+            searchSexInputs.forEach(input => input.required = false);
             searchAgeInput.value = '';
             searchCreatinineInput.value = '';
             searchAucSelect.value = '';
@@ -13880,12 +13929,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const searchCarboplatinParams = document.getElementById('searchCarboplatinParams');
             const useSearchCarboplatin = searchCarboplatinParams.style.display !== 'none';
             
+            // Check if BSA was entered directly and carboplatin params are visible
+            const directBSA = document.getElementById('directBSA').value;
+            const isBSADirectlyEntered = directBSA && parseFloat(directBSA) > 0;
+            const searchBSAAdditionalFields = document.getElementById('searchBSAAdditionalFields');
+            const useSearchBSAAdditional = searchBSAAdditionalFields && searchBSAAdditionalFields.style.display !== 'none';
+            
             formData = {
                 height: document.getElementById('height').value,
-                weight: document.getElementById('weight').value,
-                directBSA: document.getElementById('directBSA').value,
+                weight: (isBSADirectlyEntered && useSearchBSAAdditional && useSearchCarboplatin) ? 
+                    document.getElementById('searchWeight').value : 
+                    document.getElementById('weight').value,
+                directBSA: directBSA,
                 age: useSearchCarboplatin ? document.getElementById('searchAge').value : document.getElementById('age').value,
-                sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
+                sex: (isBSADirectlyEntered && useSearchBSAAdditional && useSearchCarboplatin) ?
+                    (document.getElementById('searchSexMale').checked ? 'male' : (document.getElementById('searchSexFemale').checked ? 'female' : '')) :
+                    (document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : '')),
                 creatinine: useSearchCarboplatin ? document.getElementById('searchCreatinine').value : document.getElementById('creatinine').value,
                 cancerType: selectedSearchProtocol.cancerType,
                 cancerSubtype: selectedSearchProtocol.subtype,
@@ -13900,13 +13959,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 custom_parameter_3: selectedCancerSearchProtocol.name
             });
             
-            // Using cancer-specific search selection
+            // Using cancer-specific search selection - check if BSA was entered directly
+            const directBSA = document.getElementById('directBSA').value;
+            const isBSADirectlyEntered = directBSA && parseFloat(directBSA) > 0;
+            const browseBSAAdditionalFields = document.getElementById('browseBSAAdditionalFields');
+            const useBrowseBSAAdditional = browseBSAAdditionalFields && browseBSAAdditionalFields.style.display !== 'none';
+            
             formData = {
                 height: document.getElementById('height').value,
-                weight: document.getElementById('weight').value,
-                directBSA: document.getElementById('directBSA').value,
+                weight: (isBSADirectlyEntered && useBrowseBSAAdditional) ? 
+                    document.getElementById('browseWeight').value : 
+                    document.getElementById('weight').value,
+                directBSA: directBSA,
                 age: document.getElementById('age').value,
-                sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
+                sex: (isBSADirectlyEntered && useBrowseBSAAdditional) ?
+                    (document.getElementById('browseSexMale').checked ? 'male' : (document.getElementById('browseSexFemale').checked ? 'female' : '')) :
+                    (document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : '')),
                 creatinine: document.getElementById('creatinine').value,
                 cancerType: selectedCancerSearchProtocol.cancerType,
                 cancerSubtype: selectedCancerSearchProtocol.subtype,
@@ -13923,13 +13991,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 custom_parameter_3: protocol
             });
             
-            // Using browse selection
+            // Using browse selection - check if BSA was entered directly
+            const directBSA = document.getElementById('directBSA').value;
+            const isBSADirectlyEntered = directBSA && parseFloat(directBSA) > 0;
+            const browseBSAAdditionalFields = document.getElementById('browseBSAAdditionalFields');
+            const useBrowseBSAAdditional = browseBSAAdditionalFields && browseBSAAdditionalFields.style.display !== 'none';
+            
             formData = {
                 height: document.getElementById('height').value,
-                weight: document.getElementById('weight').value,
-                directBSA: document.getElementById('directBSA').value,
+                weight: (isBSADirectlyEntered && useBrowseBSAAdditional) ? 
+                    document.getElementById('browseWeight').value : 
+                    document.getElementById('weight').value,
+                directBSA: directBSA,
                 age: document.getElementById('age').value,
-                sex: document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : ''),
+                sex: (isBSADirectlyEntered && useBrowseBSAAdditional) ?
+                    (document.getElementById('browseSexMale').checked ? 'male' : (document.getElementById('browseSexFemale').checked ? 'female' : '')) :
+                    (document.getElementById('sexMale').checked ? 'male' : (document.getElementById('sexFemale').checked ? 'female' : '')),
                 creatinine: document.getElementById('creatinine').value,
                 cancerType: document.getElementById('cancerType').value,
                 cancerSubtype: document.getElementById('cancerSubtype').value,
