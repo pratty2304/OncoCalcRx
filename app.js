@@ -44,15 +44,15 @@ const protocolDatabase = {
                 name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 2 weeks' }
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 14 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 14 days' }
                 ]
             },
             'Dose-Dense-Paclitaxel': {
                 name: 'Dose Dense Paclitaxel (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 2 weeks' }
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 14 days' }
                 ]
             },
             'FEC-T': {
@@ -427,15 +427,15 @@ const protocolDatabase = {
                 name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 2 weeks' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 2 weeks' }
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 14 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 14 days' }
                 ]
             },
             'Dose-Dense-Paclitaxel': {
                 name: 'Dose Dense Paclitaxel (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 2 weeks' }
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 14 days' }
                 ]
             },
             'TC': {
@@ -780,16 +780,16 @@ const protocolDatabase = {
                 name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'Dose-Dense-Paclitaxel-Trastuzumab': {
                 name: 'Dose Dense Paclitaxel + Trastuzumab (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 2 weeks', hasLoadingDose: true }
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 14 days', hasLoadingDose: true }
                 ]
             },
             'TC': {
@@ -1088,10 +1088,10 @@ const protocolDatabase = {
             name: 'FLOT4 (Perioperative) - Docetaxel + Oxaliplatin + Leucovorin + 5-FU',
             cycles: 8,
             drugs: [
-                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' }
+                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 14 days (4 cycles preoperative + 4 cycles postoperative)' }
             ]
         },
         'ECF-Neoadjuvant': {
@@ -1116,10 +1116,10 @@ const protocolDatabase = {
             name: 'mFOLFOX6 (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' }
             ]
         },
         'CapeOX': {
@@ -1151,7 +1151,7 @@ const protocolDatabase = {
             name: 'Nivolumab + Ipilimumab (Metastatic - 1L, MSI-H/dMMR)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 2 weeks x 4, then 480mg flat dose every 28 days' },
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days x 4, then 480mg flat dose every 28 days' },
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 doses' }
             ]
         },
@@ -1175,10 +1175,10 @@ const protocolDatabase = {
             name: '5-FU + Oxaliplatin + Tislelizumab',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
                 { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1187,10 +1187,10 @@ const protocolDatabase = {
             cycles: 12,
             drugs: [
                 { name: 'Zolbetuximab', dose: 800, unit: 'mg/m²', schedule: 'D1, cycle 1, then 600 mg/m² every 21 days' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' }
             ]
         },
         'Trastuzumab-Pertuzumab-HER2-1L': {
@@ -1214,10 +1214,10 @@ const protocolDatabase = {
             name: '5-FU + Oxaliplatin + Trastuzumab (Metastatic, HER2+)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
             ]
         },
@@ -1225,10 +1225,10 @@ const protocolDatabase = {
             name: '5-FU + Oxaliplatin + Trastuzumab + Pembrolizumab (Metastatic, HER2+ and PD-L1 CPS >1)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -1283,30 +1283,30 @@ const protocolDatabase = {
             name: 'FLO (Metastatic - 1L)',
             cycles: 8,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 14 days' }
             ]
         },
         '5FU-Oxaliplatin-Nivolumab': {
             name: '5-FU + Oxaliplatin + Nivolumab (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
         '5FU-Oxaliplatin-Pembrolizumab': {
             name: '5-FU + Oxaliplatin + Pembrolizumab (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1373,7 +1373,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
         'Capecitabine-Oxaliplatin-Pembrolizumab': {
@@ -1435,11 +1435,11 @@ const protocolDatabase = {
             name: 'Durvalumab + FLOT (Perioperative - MATTERHORN)',
             cycles: 8,
             drugs: [
-                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks (4 cycles preoperative + 4 cycles postoperative)' }
+                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 14 days (4 cycles preoperative + 4 cycles postoperative)' }
             ]
         },
 
@@ -1456,19 +1456,19 @@ const protocolDatabase = {
             name: 'FOLFIRI + Ramucirumab (RAINBOW) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Irinotecan-Ramucirumab-2L': {
             name: 'Irinotecan + Ramucirumab (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'T-DXd-HER2-2L': {
@@ -1482,10 +1482,10 @@ const protocolDatabase = {
             name: 'mFOLFIRI (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' }
             ]
         },
         'Docetaxel-2L': {
@@ -1522,14 +1522,14 @@ const protocolDatabase = {
             name: 'Ramucirumab (Metastatic - 3L+)',
             cycles: 12,
             drugs: [
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Nivolumab-3L': {
             name: 'Nivolumab (ATTRACTION-2) (Metastatic - 3L+)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
         'Dostarlimab-MSI-3L': {
@@ -1631,7 +1631,7 @@ const protocolDatabase = {
                 cycles: 8,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks x 16 doses' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x 16 doses' }
                 ]
             },
             'ICE-Nivolumab': {
@@ -1641,7 +1641,7 @@ const protocolDatabase = {
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 2, every 21 days' },
                     { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks x 6 doses' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x 6 doses' }
                 ]
             },
             'ICE-Pembrolizumab': {
@@ -1703,8 +1703,8 @@ const protocolDatabase = {
                 name: 'GEMOX (Gemcitabine + Oxaliplatin)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'Vorinostat-Pembrolizumab': {
@@ -1719,7 +1719,7 @@ const protocolDatabase = {
                 name: 'Brentuximab vedotin + AVD (Advanced Stage cHL)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Brentuximab vedotin', dose: 1.2, unit: 'mg/kg', schedule: 'D1, every 2 weeks x 12 doses' },
+                    { name: 'Brentuximab vedotin', dose: 1.2, unit: 'mg/kg', schedule: 'D1, every 14 days x 12 doses' },
                     { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'days 1, 15, every 28 days' },
                     { name: 'Vinblastine', dose: 6, unit: 'mg/m²', schedule: 'days 1, 15, every 28 days' },
                     { name: 'Dacarbazine', dose: 375, unit: 'mg/m²', schedule: 'days 1, 15, every 28 days' }
@@ -1844,7 +1844,7 @@ const protocolDatabase = {
                 name: 'Nivolumab (Single Agent)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks, then 480mg every 28 days' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days, then 480mg every 28 days' }
                 ]
             },
             'Pembrolizumab-Single': {
@@ -2038,10 +2038,10 @@ const protocolDatabase = {
                 name: 'MTR (Methotrexate + Temozolomide + Rituximab) - PCNSL',
                 cycles: 8,
                 drugs: [
-                    { name: 'Methotrexate (High-dose)', dose: 3500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
+                    { name: 'Methotrexate (High-dose)', dose: 3500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Leucovorin', dose: 20, unit: 'mg/m²', schedule: 'q6h starting 24h after MTX until level <0.05' },
-                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'days 1-7, every 2 weeks' },
-                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'days 1-7, every 14 days' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             // Waldenström Macroglobulinemia
@@ -2117,9 +2117,9 @@ const protocolDatabase = {
                 name: 'R-GemOx (Relapsed/Refractory DLBCL/FL)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'R-CEPP': {
@@ -2445,7 +2445,7 @@ const protocolDatabase = {
                 name: 'Mogamulizumab (Relapsed/Refractory CTCL)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Mogamulizumab', dose: 1, unit: 'mg/kg', schedule: 'weekly for 5 doses, then every 2 weeks' }
+                    { name: 'Mogamulizumab', dose: 1, unit: 'mg/kg', schedule: 'weekly for 5 doses, then every 14 days' }
                 ]
             },
             'Romidepsin-CTCL': {
@@ -2509,7 +2509,7 @@ const protocolDatabase = {
             name: 'Dabrafenib + Trametinib (COMBI-d/v) - BRAF V600E/K - Metastatic',
             cycles: 12,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'BID continuously' },
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously' },
                 { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily continuously' }
             ]
         },
@@ -2517,7 +2517,7 @@ const protocolDatabase = {
             name: 'Vemurafenib + Cobimetinib (coBRIM) - BRAF V600E/K - Metastatic',
             cycles: 12,
             drugs: [
-                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'BID continuously' },
+                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily continuously' },
                 { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily D1-21, every 28 days' }
             ]
         },
@@ -2526,7 +2526,7 @@ const protocolDatabase = {
             cycles: 12,
             drugs: [
                 { name: 'Encorafenib', dose: 450, unit: 'mg', schedule: 'daily continuously' },
-                { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'BID continuously' }
+                { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'PO twice daily continuously' }
             ]
         },
         'Atezolizumab-Vemurafenib-Cobimetinib': {
@@ -2534,7 +2534,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'D1, D15, every 28 days' },
-                { name: 'Vemurafenib', dose: 720, unit: 'mg', schedule: 'BID continuously' },
+                { name: 'Vemurafenib', dose: 720, unit: 'mg', schedule: 'PO twice daily continuously' },
                 { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily D1-21, every 28 days' }
             ]
         },
@@ -2558,7 +2558,7 @@ const protocolDatabase = {
             name: 'Dabrafenib + Trametinib (COMBI-AD) - Adjuvant - BRAF V600E/K - Stage III',
             cycles: 26,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'BID continuously x12 months' },
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously x12 months' },
                 { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily continuously x12 months' }
             ]
         },
@@ -2685,14 +2685,14 @@ const protocolDatabase = {
             name: 'Dabrafenib - BRAF V600E/K - Metastatic',
             cycles: 12,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'BID continuously' }
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously' }
             ]
         },
         'Vemurafenib': {
             name: 'Vemurafenib (BRIM-3) - BRAF V600E/K - Metastatic',
             cycles: 12,
             drugs: [
-                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'BID continuously' }
+                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily continuously' }
             ]
         },
         'Encorafenib': {
@@ -2722,7 +2722,7 @@ const protocolDatabase = {
             name: 'Binimetinib - MEK inhibitor - Metastatic',
             cycles: 12,
             drugs: [
-                { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'BID continuously' }
+                { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'PO twice daily continuously' }
             ]
         }
     },
@@ -3191,7 +3191,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' },
-                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'weekly x 6 weeks, then every 2 weeks' }
+                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'weekly x 6 weeks, then every 14 days' }
             ]
         },
         'Paclitaxel-Estramustine': {
@@ -4472,7 +4472,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles' },
-                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 2 weeks' }
+                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' }
             ]
         },
         'Cabozantinib': {
@@ -4493,7 +4493,7 @@ const protocolDatabase = {
             name: 'Ramucirumab (REACH-2)',
             cycles: 8,
             drugs: [
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks (AFP ≥400)' }
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days (AFP ≥400)' }
             ]
         },
 
@@ -4502,7 +4502,7 @@ const protocolDatabase = {
             name: 'Nivolumab (CheckMate 040)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
         'Pembrolizumab': {
@@ -4541,18 +4541,18 @@ const protocolDatabase = {
             name: 'Gemcitabine + Oxaliplatin (GEMOX)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' }
             ]
         },
         'FOLFOX4': {
             name: 'FOLFOX4 (Oxaliplatin + 5-FU + Leucovorin)',
             cycles: 6,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 600, unit: 'mg/m²', schedule: 'D1-D2, 22-hour infusion, every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 600, unit: 'mg/m²', schedule: 'D1-D2, 22-hour infusion, every 14 days' }
             ]
         },
         'Doxorubicin-TACE': {
@@ -4912,7 +4912,7 @@ const protocolDatabase = {
             name: 'Cisplatin + Etoposide (PE) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
             ]
         },
@@ -5001,8 +5001,8 @@ const protocolDatabase = {
             name: '5-FU + Leucovorin (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1 every 14 days' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1 every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2 (46hr CI) every 14 days' }
             ]
         },
@@ -5043,56 +5043,56 @@ const protocolDatabase = {
                 name: 'Lenvatinib (SELECT) - RAI-refractory DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Sorafenib-DTC': {
                 name: 'Sorafenib (DECISION) - RAI-refractory DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Pazopanib-DTC': {
                 name: 'Pazopanib - Follicular/Hurthle Cell Thyroid Cancer',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Selpercatinib-RET-DTC': {
                 name: 'Selpercatinib - RET-altered DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Pralsetinib-RET-DTC': {
                 name: 'Pralsetinib - RET-altered DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Larotrectinib-NTRK-DTC': {
                 name: 'Larotrectinib - NTRK fusion-positive DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Entrectinib-NTRK-DTC': {
                 name: 'Entrectinib - NTRK fusion-positive DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Repotrectinib-NTRK-DTC': {
                 name: 'Repotrectinib - NTRK fusion-positive DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             }
         },
@@ -5102,28 +5102,28 @@ const protocolDatabase = {
                 name: 'Selpercatinib - RET-mutant MTC (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Pralsetinib-RET-MTC': {
                 name: 'Pralsetinib - RET-mutant MTC (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Vandetanib-MTC': {
                 name: 'Vandetanib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Cabozantinib-MTC': {
                 name: 'Cabozantinib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Sunitinib-MTC': {
@@ -5137,28 +5137,28 @@ const protocolDatabase = {
                 name: 'Sorafenib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Lenvatinib-MTC': {
                 name: 'Lenvatinib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Larotrectinib-NTRK-MTC': {
                 name: 'Larotrectinib - NTRK fusion-positive MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Entrectinib-NTRK-MTC': {
                 name: 'Entrectinib - NTRK fusion-positive MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Pembrolizumab-TMB-MTC': {
@@ -5175,15 +5175,15 @@ const protocolDatabase = {
                 name: 'Dabrafenib + Trametinib - BRAF V600E-mutant ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily until progression' },
-                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO daily until progression' },
+                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Vemurafenib-Cobimetinib-ATC': {
                 name: 'Vemurafenib + Cobimetinib - BRAF V600E-mutant ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice daily until progression' },
+                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO daily until progression' },
                     { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
                 ]
             },
@@ -5192,14 +5192,14 @@ const protocolDatabase = {
                 name: 'Selpercatinib - RET-altered ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Pralsetinib-RET-ATC': {
                 name: 'Pralsetinib - RET-altered ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             // NTRK fusion-positive Anaplastic Thyroid Cancer
@@ -5207,21 +5207,21 @@ const protocolDatabase = {
                 name: 'Larotrectinib - NTRK fusion-positive ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Entrectinib-NTRK-ATC': {
                 name: 'Entrectinib - NTRK fusion-positive ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Repotrectinib-NTRK-ATC': {
                 name: 'Repotrectinib - NTRK fusion-positive ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             // Multi-kinase Inhibitors for ATC
@@ -5229,21 +5229,21 @@ const protocolDatabase = {
                 name: 'Lenvatinib - Advanced ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Sorafenib-ATC': {
                 name: 'Sorafenib - Advanced ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Cabozantinib-ATC': {
                 name: 'Cabozantinib - Advanced ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             // Immunotherapy for ATC
@@ -5429,7 +5429,7 @@ const protocolDatabase = {
             name: 'Pembrolizumab monotherapy - Metastatic (MSI-H/dMMR)',
             cycles: 12,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
         'NALIRIFOX-Metastatic': {
@@ -5525,7 +5525,7 @@ const protocolDatabase = {
             cycles: 2,
             drugs: [
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BID on days of RT' },
-                { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1 and D29' }
+                { name: 'Mitomycin-C', dose: 10, unit: 'mg/m²', schedule: 'D1, D29' }
             ]
         },
         'CapeOX-RT': {
@@ -5533,7 +5533,7 @@ const protocolDatabase = {
             cycles: 2,
             drugs: [
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BID on days of RT' },
-                { name: 'Oxaliplatin', dose: 50, unit: 'mg/m²', schedule: 'D1 and D29' }
+                { name: 'Oxaliplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, D29' }
             ]
         },
         'Capecitabine-RT': {
@@ -5548,8 +5548,8 @@ const protocolDatabase = {
             name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days' }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
             ]
         },
         '5FU-Cisplatin': {
@@ -5557,36 +5557,36 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D4 every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'mFOLFOX6': {
             name: 'mFOLFOX6 (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2 (46hr CI), every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2 (46hr CI), every 14 days' }
             ]
         },
         'FOLCIS': {
             name: 'FOLCIS (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours every 2 weeks' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours every 14 days' }
             ]
         },
         'Modified-DCF': {
             name: 'Modified DCF (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 40, unit: 'mg/m²', schedule: 'D1, every 3 weeks' },
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 3 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours, every 3 weeks' }
+                { name: 'Docetaxel', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours, every 21 days' }
             ]
         },
         // Metastatic Therapy - Immunotherapy Combinations
@@ -5604,55 +5604,46 @@ const protocolDatabase = {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days or 400mg every 6 weeks' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
         'Nivolumab-Monotherapy': {
             name: 'Nivolumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks or 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days or 480mg every 28 days' }
             ]
         },
         'Cemiplimab-Monotherapy': {
             name: 'Cemiplimab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
+                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 21 days' }
             ]
         },
         // Metastatic Therapy - Less Common Options
-        'Modified-DCF': {
-            name: 'Modified DCF (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Docetaxel', dose: 40, unit: 'mg/m²', schedule: 'D1, every 3 weeks' },
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 3 weeks' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours, every 3 weeks' }
-            ]
-        },
         'Single-Toripalimab': {
             name: 'Toripalimab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Toripalimab', dose: 3, unit: 'mg/kg', schedule: 'every 2 weeks' }
+                { name: 'Toripalimab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Single-Tislelizumab': {
             name: 'Tislelizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
+                { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         }
     },
     biliary: {
         // Adjuvant Therapy
         'Single-Capecitabine': {
-            name: 'Capecitabine (Adjuvant)',
+            name: 'Capecitabine monotherapy (Adjuvant)',
             cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO BID D1-D14, every 21 days' }
+                { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
             ]
         },
         'Gemcitabine-Cisplatin': {
@@ -5667,7 +5658,7 @@ const protocolDatabase = {
             name: 'Capecitabine + RT (Adjuvant)',
             cycles: 1,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO BD on days of RT' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily on days of RT' }
             ]
         },
         // Metastatic Therapy - Most Common First-Line
@@ -5700,7 +5691,7 @@ const protocolDatabase = {
             name: 'Capecitabine + Cisplatin (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BID D1-D14, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
@@ -5709,7 +5700,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'twice daily D1-D14, every 21 days' }
+                { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
             ]
         },
         // Metastatic Therapy - Less Common
@@ -5717,10 +5708,10 @@ const protocolDatabase = {
             name: 'mFOLFOX6 (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2 (46hr CI), every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2 (46hr CI), every 14 days' }
             ]
         },
         '5FU-Cisplatin': {
@@ -5736,7 +5727,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'twice daily, days 1-14, every 21 days' }
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
             ]
         },
         'Single-Gemcitabine': {
@@ -5769,22 +5760,22 @@ const protocolDatabase = {
             name: 'Dabrafenib + Trametinib (BRAFV600E mutation)',
             cycles: 12,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily', isOralTargeted: true },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily', isOralTargeted: true }
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily', isOralTargeted: true },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO daily', isOralTargeted: true }
             ]
         },
         'Ivosidenib': {
             name: 'Ivosidenib (IDH1 mutation)',
             cycles: 12,
             drugs: [
-                { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'daily', isOralTargeted: true }
+                { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO daily', isOralTargeted: true }
             ]
         },
         'Pemigatinib': {
             name: 'Pemigatinib (FGFR2 fusions)',
             cycles: 12,
             drugs: [
-                { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'daily for 14 days, then 7 days off', isOralTargeted: true }
+                { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'PO daily for 14 days, then 7 days off', isOralTargeted: true }
             ]
         },
         'Futibatinib': {
@@ -5808,10 +5799,10 @@ const protocolDatabase = {
             name: 'Dose-dense MVAC (Neoadjuvant/Adjuvant)',
             cycles: 4,
             drugs: [
-                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 2 weeks' },
-                { name: 'Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D2, every 2 weeks' },
-                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D2, every 2 weeks' }
+                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 14 days' },
+                { name: 'Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D2, every 14 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D2, every 14 days' }
             ]
         },
         'GC-Neoadjuvant': {
@@ -5846,7 +5837,7 @@ const protocolDatabase = {
             name: 'Nivolumab monotherapy (PD-1 inhibitor) (Adjuvant/Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Pembrolizumab-Adjuvant': {
@@ -5889,11 +5880,11 @@ const protocolDatabase = {
             name: 'Avelumab monotherapy (PD-L1 inhibitor) (Maintenance after 1st line chemotherapy) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Erdafitinib': {
-            name: 'Erdafitinib monotherapy (FGFR inhibitor) (Metastatic)',
+            name: 'Erdafitinib (FGFR inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Erdafitinib', dose: 8, unit: 'mg', schedule: 'PO daily' }
@@ -6039,7 +6030,7 @@ const protocolDatabase = {
             name: 'Daratumumab + Bortezomib + Thalidomide + Dexamethasone (Dara-VTD / CASSIOPEIA) - Transplant Eligible',
             cycles: 4,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 8 weeks, then every 28 days' },
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
                 { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
@@ -6049,7 +6040,7 @@ const protocolDatabase = {
             name: 'Daratumumab + Bortezomib + Lenalidomide + Dexamethasone (Dara-VRd / GRIFFIN) - Transplant Eligible',
             cycles: 4,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 8 weeks, then every 28 days' },
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
@@ -6059,7 +6050,7 @@ const protocolDatabase = {
             name: 'Isatuximab + Bortezomib + Lenalidomide + Dexamethasone (Isa-VRd / GMMG-HD7) - Transplant Eligible',
             cycles: 4,
             drugs: [
-                { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 2 weeks' },
+                { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
@@ -6079,7 +6070,7 @@ const protocolDatabase = {
             name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd / MAIA) - Transplant Ineligible',
             cycles: 12,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' },
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days until progression' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days until progression' }
             ]
@@ -6098,7 +6089,7 @@ const protocolDatabase = {
             name: 'Daratumumab + Cyclophosphamide + Bortezomib + Dexamethasone (Dara-CyBorD) - Transplant Ineligible',
             cycles: 9,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' },
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
@@ -6110,7 +6101,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
                 { name: 'Prednisone', dose: 2, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
-                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Rd': {
@@ -6160,7 +6151,7 @@ const protocolDatabase = {
             name: 'Daratumumab + Pomalidomide + Dexamethasone (Dara-Pd) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' },
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
             ]
@@ -6169,7 +6160,7 @@ const protocolDatabase = {
             name: 'Isatuximab + Pomalidomide + Dexamethasone (Isa-Pd) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 2 weeks' },
+                { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
             ]
@@ -6178,7 +6169,7 @@ const protocolDatabase = {
             name: 'Daratumumab + Bortezomib + Dexamethasone (Dara-Vd) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' },
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
             ]
@@ -6187,7 +6178,7 @@ const protocolDatabase = {
             name: 'Elotuzumab + Lenalidomide + Dexamethasone (Elo-Rd) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Elotuzumab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks' },
+                { name: 'Elotuzumab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days' },
                 { name: 'Dexamethasone', dose: 28, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
             ]
@@ -6277,14 +6268,14 @@ const protocolDatabase = {
             name: 'Lenalidomide (single agent) - Maintenance',
             cycles: 12,
             drugs: [
-                { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Thalidomide': {
             name: 'Thalidomide (single agent) - Maintenance',
             cycles: 12,
             drugs: [
-                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Dexamethasone': {
@@ -6298,14 +6289,14 @@ const protocolDatabase = {
             name: 'Daratumumab (single agent) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days' }
+                { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' }
             ]
         },
         'Daratumumab-Hyaluronidase': {
             name: 'Daratumumab + Hyaluronidase (subcutaneous) - Relapsed/Refractory',
             cycles: 8,
             drugs: [
-                { name: 'Daratumumab', dose: 1800, unit: 'mg', schedule: 'weekly x 8 weeks, then every 2 weeks x 16 weeks, then every 28 days (subcutaneous)' },
+                { name: 'Daratumumab', dose: 1800, unit: 'mg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days (subcutaneous)' },
                 { name: 'Hyaluronidase', dose: 30000, unit: 'units', schedule: 'with daratumumab' }
             ]
         },
@@ -6545,7 +6536,7 @@ const protocolDatabase = {
             name: 'Cisplatin + Paclitaxel - Metastatic - 1L',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
@@ -6568,7 +6559,7 @@ const protocolDatabase = {
             name: 'Cisplatin + Docetaxel - Metastatic - 1L',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
@@ -6651,7 +6642,7 @@ const protocolDatabase = {
             name: 'Nivolumab (HPV-related tumor)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 4 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 4 weeks' }
             ]
         },
         'Trastuzumab-Deruxtecan-HER2': {
@@ -6823,7 +6814,7 @@ const protocolDatabase = {
             name: 'Nivolumab (MERIT) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Atezolizumab': {
@@ -6885,7 +6876,7 @@ const protocolDatabase = {
             name: 'Avelumab (JAVELIN Merkel 200) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Pembrolizumab': {
@@ -6899,7 +6890,7 @@ const protocolDatabase = {
             name: 'Nivolumab (CheckMate 358) - (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Retifanlimab': {
@@ -6915,14 +6906,14 @@ const protocolDatabase = {
             name: 'Avelumab (Neoadjuvant)',
             cycles: 3,
             drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Avelumab-Adjuvant': {
             name: 'Avelumab (Adjuvant)',
             cycles: 12,
             drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Pembrolizumab-Neoadjuvant': {
@@ -7058,7 +7049,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 cycles' },
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Dostarlimab': {
@@ -7214,7 +7205,7 @@ const protocolDatabase = {
             name: 'Nivolumab (MSI-H/dMMR) - Metastatic',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         
@@ -7251,10 +7242,10 @@ const protocolDatabase = {
     adrenocortical: {
         // Adjuvant/Maintenance Therapy
         'Mitotane': {
-            name: 'Mitotane (Adjuvant/Metastatic)',
+            name: 'Mitotane monotherapy (Adjuvant/Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: '2000 mg/day escalate to 4-6 g/day target serum levels 14-20 mcg/ml' }
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'PO 2000 mg daily escalate to 4-6 g daily target serum levels 14-20 mcg/ml' }
             ]
         },
         // Metastatic Therapy - First-Line (Most Common)
@@ -7262,10 +7253,10 @@ const protocolDatabase = {
             name: 'Etoposide + Doxorubicin + Cisplatin + Mitotane (EDP-M) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4 every 28 days' },
-                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'oral, continuous dosing to maintain serum levels 14-20 mcg/ml (FIRM-ACT)' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4, every 28 days' },
+                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'PO continuous dosing to maintain serum levels 14-20 mcg/ml (FIRM-ACT)' }
             ]
         },
         'Streptozocin-Mitotane': {
@@ -7273,51 +7264,51 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Streptozocin', dose: 1000, unit: 'mg/m²', schedule: '1000 mg/m² x 5 days followed by 2000 mg/m² every 28 days' },
-                { name: 'Mitotane', dose: 1000, unit: 'mg', schedule: '1000 mg daily titrate to 1000-4000 mg daily, target >14 mcg/ml' }
+                { name: 'Mitotane', dose: 1000, unit: 'mg', schedule: 'PO 1000 mg daily titrate to 1000-4000 mg daily, target >14 mcg/ml' }
             ]
         },
         // Metastatic Therapy - Alternative Regimens
         'EDP-M-Carboplatin': {
-            name: 'Etoposide + Doxorubicin + Carboplatin + Mitotane (EDP-M) (Metastatic)',
+            name: 'Etoposide + Doxorubicin + Carboplatin + Mitotane (EDP-M) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4 every 28 days' },
-                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 28 days' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'oral, continuous dosing to maintain serum levels 14-20 mcg/ml (FIRM-ACT)' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4, every 28 days' },
+                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 28 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'PO continuous dosing to maintain serum levels 14-20 mcg/ml (FIRM-ACT)' }
             ]
         },
         'Gemcitabine-Capecitabine': {
             name: 'Gemcitabine + Capecitabine (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BID D1-D14 every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
             ]
         },
         'Gemcitabine-Capecitabine-Mitotane': {
             name: 'Gemcitabine + Capecitabine + Mitotane (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BID D1-D14 every 21 days' },
-                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'oral, continuous dosing to maintain serum levels 14-20 mcg/ml' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' },
+                { name: 'Mitotane', dose: 2000, unit: 'mg', schedule: 'PO continuous dosing to maintain serum levels 14-20 mcg/ml' }
             ]
         },
         'Docetaxel-Cisplatin': {
             name: 'Docetaxel + Cisplatin (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         // Metastatic Therapy - Later Lines/Less Common
         'Temozolomide': {
-            name: 'Temozolomide (Metastatic)',
+            name: 'Temozolomide monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' }
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'PO D1-D5, every 28 days' }
             ]
         },
         // Metastatic Therapy - Investigational/Clinical Trials
@@ -7325,8 +7316,8 @@ const protocolDatabase = {
             name: 'Nivolumab + Ipilimumab (PD-1 + CTLA-4 inhibitors) (Metastatic/Investigational)',
             cycles: 6,
             drugs: [
-                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'every 21 days' },
-                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'every 21 days' }
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
         'Cabozantinib': {
@@ -7342,35 +7333,35 @@ const protocolDatabase = {
             name: 'Vismodegib (Hedgehog pathway inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Vismodegib', dose: 150, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Vismodegib', dose: 150, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Sonidegib': {
             name: 'Sonidegib (Hedgehog pathway inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Sonidegib', dose: 200, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Sonidegib', dose: 200, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Cemiplimab': {
             name: 'Cemiplimab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'every 3 weeks' }
+                { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 3 weeks' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Nivolumab': {
             name: 'Nivolumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         }
     },
@@ -7403,8 +7394,8 @@ const protocolDatabase = {
             name: 'Irinotecan + Bevacizumab - Recurrent GBM',
             cycles: 6,
             drugs: [
-                { name: 'Irinotecan', dose: 125, unit: 'mg/m²', schedule: 'D1 every 2 weeks' },
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1 every 2 weeks' }
+                { name: 'Irinotecan', dose: 125, unit: 'mg/m²', schedule: 'D1 every 14 days' },
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1 every 14 days' }
             ]
         },
         'Carboplatin-Irinotecan-Bevacizumab': {
@@ -7588,14 +7579,14 @@ const protocolDatabase = {
             name: 'Imatinib (B2222) (Metastatic GIST)',
             cycles: 12,
             drugs: [
-                { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily until progression (800mg if exon 9 mutation)' }
+                { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression (800mg if exon 9 mutation)' }
             ]
         },
         'Avapritinib-PDGFRA': {
             name: 'Avapritinib (NAVIGATOR) - PDGFRA D842V mutant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Avapritinib', dose: 300, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Avapritinib', dose: 300, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
 
@@ -7622,21 +7613,21 @@ const protocolDatabase = {
             name: 'Ripretinib (INVICTUS) (Metastatic) - Multiple TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Cabozantinib': {
             name: 'Cabozantinib - Multiple TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Everolimus': {
             name: 'Everolimus - Multiple TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
 
@@ -7645,28 +7636,28 @@ const protocolDatabase = {
             name: 'Nilotinib - Imatinib-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
             ]
         },
         'Dasatinib': {
             name: 'Dasatinib - Imatinib-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Dasatinib', dose: 70, unit: 'mg', schedule: 'twice daily until progression' }
+                { name: 'Dasatinib', dose: 70, unit: 'mg', schedule: 'twice PO daily until progression' }
             ]
         },
         'Sorafenib': {
             name: 'Sorafenib - TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
             ]
         },
         'Pazopanib': {
             name: 'Pazopanib - TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         }
     },
@@ -7689,43 +7680,43 @@ const protocolDatabase = {
             name: 'Larotrectinib - NTRK Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
             ]
         },
         'Entrectinib': {
             name: 'Entrectinib - NTRK Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Repotrectinib': {
             name: 'Repotrectinib - NTRK Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Selpercatinib': {
             name: 'Selpercatinib - RET Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
             ]
         },
         'Pralsetinib': {
             name: 'Pralsetinib - RET Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Dabrafenib-Trametinib': {
             name: 'Dabrafenib + Trametinib - BRAF V600E-mutant Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice daily until progression' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily until progression' }
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO daily until progression' },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO daily until progression' }
             ]
         },
         'Dostarlimab-MSI-H': {
@@ -7746,7 +7737,7 @@ const protocolDatabase = {
             name: 'Vemurafenib - BRAF V600E-mutant Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice daily until progression' }
+                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO daily until progression' }
             ]
         },
         'Enfortumab-Vedotin-NECTIN4': {
@@ -8449,10 +8440,10 @@ const protocolDatabase = {
                 name: 'mFOLFOX6 (Neoadjuvant/Adjuvant)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'CapeOX-Neo-Adj': {
@@ -8517,10 +8508,10 @@ const protocolDatabase = {
                 name: 'mFOLFOX6 + Atezolizumab (Adjuvant / dMMR/MSI-H/POLE mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -8541,10 +8532,10 @@ const protocolDatabase = {
                 name: 'mFOLFOX6 (Neoadjuvant/Adjuvant)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'CapeOX-Rectal-Neo-Adj': {
@@ -8604,19 +8595,19 @@ const protocolDatabase = {
                 name: 'FOLFOX4 (Adjuvant)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 600, unit: 'mg/m²', schedule: '22-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 600, unit: 'mg/m²', schedule: '22-hour infusion D1-D2, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 14 days' }
                 ]
             },
             '5FU-LV-deGramont-Adj': {
                 name: '5-FU + Leucovorin (deGramont regimen / Adjuvant)',
                 cycles: 12,
                 drugs: [
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 600, unit: 'mg/m²', schedule: '22-hour infusion D1, D2, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' }
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, D2, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 600, unit: 'mg/m²', schedule: '22-hour infusion D1, D2, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 14 days' }
                 ]
             },
             'Capecitabine-Rectal-Adj': {
@@ -8643,51 +8634,51 @@ const protocolDatabase = {
                 name: 'Douillard Regimen (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 600, unit: 'mg/m²', schedule: '22-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 600, unit: 'mg/m²', schedule: '22-hour infusion D1-D2, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'mFOLFIRI-Metastatic': {
                 name: 'mFOLFIRI (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'mFOLFOX6-Metastatic': {
                 name: 'mFOLFOX6 (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'FOLFOXIRI-Metastatic': {
                 name: 'FOLFOXIRI (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 14 days' }
                 ]
             },
             'mFOLFOX6-Bevacizumab-Metastatic': {
                 name: 'mFOLFOX6 + Bevacizumab (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'CapeOX-Bevacizumab-Metastatic': {
@@ -8703,67 +8694,67 @@ const protocolDatabase = {
                 name: 'FOLFIRI + Bevacizumab (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'FOLFIRINOX-Metastatic': {
                 name: 'FOLFIRINOX (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'FOLFIRINOX-Bevacizumab-Metastatic': {
                 name: 'FOLFIRINOX + Bevacizumab (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'FOLFOXIRI-Bevacizumab-Metastatic': {
                 name: 'FOLFOXIRI + Bevacizumab (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 2 weeks' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 3200, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, D2, every 14 days' },
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'mFOLFOX6-Cetuximab-Metastatic': {
                 name: 'mFOLFOX6 + Cetuximab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'mFOLFOX6-Panitumumab-Metastatic': {
                 name: 'mFOLFOX6 + Panitumumab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 14 days' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'CapeOX-Cetuximab-Metastatic': {
@@ -8779,7 +8770,7 @@ const protocolDatabase = {
                 name: 'CapeOX (CAPOX/XELOX) + Panitumumab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
+                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' }
                 ]
@@ -8788,22 +8779,22 @@ const protocolDatabase = {
                 name: 'FOLFIRI + Cetuximab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
             'FOLFIRI-Panitumumab-Metastatic': {
                 name: 'FOLFIRI + Panitumumab (Metastatic / KRAS/NRAS/BRAF WT/Left-sided)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' }
+                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 14 days' },
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' }
                 ]
             },
 
@@ -8862,7 +8853,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, weekly' },
                     { name: 'Leucovorin', dose: 500, unit: 'mg/m²', schedule: 'D1, weekly' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'TAS-102-Bevacizumab-Metastatic': {
@@ -8870,7 +8861,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'TAS-102', dose: 35, unit: 'mg/m²', schedule: 'PO BD D1-5, D8-12, every 28 days' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'TAS-102-Metastatic': {
@@ -8884,17 +8875,17 @@ const protocolDatabase = {
                 name: 'Cetuximab + Bevacizumab + Irinotecan (Metastatic)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' },
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'Cetuximab-Bevacizumab-Metastatic': {
                 name: 'Cetuximab + Bevacizumab (Metastatic)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'Irinotecan-Cetuximab-Metastatic': {
@@ -8918,22 +8909,22 @@ const protocolDatabase = {
                 name: 'FOLFIRI + Ziv-aflibercept (VELOUR) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Ziv-aflibercept', dose: 4, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Ziv-aflibercept', dose: 4, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'FOLFIRI-Ramucirumab-Metastatic': {
                 name: 'FOLFIRI + Ramucirumab (RAISE) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
-                    { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
+                    { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
 
@@ -8942,24 +8933,24 @@ const protocolDatabase = {
                 name: 'mFOLFOX6 + Encorafenib + Cetuximab (BREAKWATER) (BRAF V600E mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'mFOLFOX6-Encorafenib-Panitumumab-BRAF': {
                 name: 'mFOLFOX6 + Encorafenib + Panitumumab (BRAF V600E mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 2 weeks' },
+                    { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil bolus', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: '5-Fluorouracil infusion', dose: 2400, unit: 'mg/m²', schedule: '46-hour infusion D1-D2, every 14 days' },
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'Vemurafenib-Irinotecan-Cetuximab-BRAF': {
@@ -8967,8 +8958,8 @@ const protocolDatabase = {
                 cycles: 8,
                 drugs: [
                     { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO BD daily' },
-                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                    { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Cetuximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'Binimetinib-Encorafenib-Cetuximab-BRAF': {
@@ -8993,7 +8984,7 @@ const protocolDatabase = {
                 cycles: 12,
                 drugs: [
                     { name: 'Encorafenib', dose: 300, unit: 'mg', schedule: 'daily' },
-                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
 
@@ -9002,7 +8993,7 @@ const protocolDatabase = {
                 name: 'Nivolumab + Ipilimumab (CheckMate-142) (dMMR/MSI-H)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 2 weeks' },
+                    { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                     { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'every 6 weeks for 4 doses' }
                 ]
             },
@@ -9066,7 +9057,7 @@ const protocolDatabase = {
                 name: 'Panitumumab (/ KRAS/NRAS/BRAF WT)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Panitumumab', dose: 6, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'Trastuzumab-Deruxtecan-HER2': {
@@ -9094,7 +9085,7 @@ const protocolDatabase = {
                 name: 'Nivolumab (dMMR/MSI-H)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
                 ]
             },
             'Larotrectinib-NTRK': {
@@ -9151,7 +9142,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Trifluridine + Tipiracil', dose: 35, unit: 'mg/m²', schedule: 'PO BD D1-5, D8-12, every 28 days' },
-                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 2 weeks' }
+                    { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
             },
             'Retifanlimab-dMMR': {
@@ -9186,7 +9177,7 @@ const protocolDatabase = {
                 name: 'Nivolumab + Ipilimumab (dMMR/MSI-H)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 doses, then 240mg every 2 weeks or 480mg every 4 weeks' },
+                    { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 doses, then 240mg every 14 days or 480mg every 4 weeks' },
                     { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 doses only' }
                 ]
             }
@@ -9214,10 +9205,10 @@ const protocolDatabase = {
             name: 'FLOT4 (Perioperative) - Docetaxel + Oxaliplatin + Leucovorin + 5-FU',
             cycles: 8,
             drugs: [
-                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preop + 4 cycles postop)' },
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preop + 4 cycles postop)' },
-                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 2 weeks (4 cycles preop + 4 cycles postop)' },
-                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 2 weeks (4 cycles preop + 4 cycles postop)' }
+                { name: 'Docetaxel', dose: 50, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preop + 4 cycles postop)' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preop + 4 cycles postop)' },
+                { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days (4 cycles preop + 4 cycles postop)' },
+                { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, every 14 days (4 cycles preop + 4 cycles postop)' }
             ]
         },
         'ECF-MAGIC-Perioperative': {
@@ -9233,7 +9224,7 @@ const protocolDatabase = {
             name: 'Nivolumab + Ipilimumab (Neoadjuvant)',
             cycles: 3,
             drugs: [
-                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 2 weeks x 6 doses (preoperative)' },
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days x 6 doses (preoperative)' },
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 2 doses (preoperative)' }
             ]
         },
@@ -9241,10 +9232,10 @@ const protocolDatabase = {
             name: 'mFOLFOX6 + Pembrolizumab (Neoadjuvant)',
             cycles: 4,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks x 8 cycles (preoperative)' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks x 8 cycles (preoperative)' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks x 8 cycles (preoperative)' },
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks x 8 cycles (preoperative)' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days x 8 cycles (preoperative)' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days x 8 cycles (preoperative)' },
+                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days x 8 cycles (preoperative)' },
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days x 8 cycles (preoperative)' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles (preoperative)' }
             ]
         },
@@ -9263,7 +9254,7 @@ const protocolDatabase = {
             name: 'Nivolumab (Adjuvant) - post-CRT with residual disease',
             cycles: 16,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks x 16 cycles (postoperative)' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x 16 cycles (postoperative)' }
             ]
         },
         // DEFINITIVE CHEMORADIATION (SQUAMOUS CELL CARCINOMA)
@@ -9281,7 +9272,7 @@ const protocolDatabase = {
             name: 'Nivolumab + Ipilimumab (Metastatic - 1L, MSI-H/dMMR)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 2 weeks x 4, then 480mg flat dose every 28 days' },
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days x 4, then 480mg flat dose every 28 days' },
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 doses' }
             ]
         },
@@ -9296,10 +9287,10 @@ const protocolDatabase = {
             name: 'mFOLFOX6 + Pembrolizumab (Metastatic - 1L, PD-L1 CPS≥1)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (given with every other FOLFOX cycle)' }
             ]
         },
@@ -9316,10 +9307,10 @@ const protocolDatabase = {
             name: 'mFOLFOX6 + Trastuzumab (Metastatic - 1L, HER2+)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
                 { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
             ]
         },
@@ -9337,10 +9328,10 @@ const protocolDatabase = {
             name: 'mFOLFOX6 (Metastatic - 1L)',
             cycles: 12,
             drugs: [
-                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' }
             ]
         },
         'Metastatic-CapeOX': {
@@ -9391,10 +9382,10 @@ const protocolDatabase = {
             name: 'FOLFIRI (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 2 weeks' },
-                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 2 weeks' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' }
+                { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
+                { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' }
             ]
         },
         'Metastatic-Ramucirumab-Paclitaxel-2L': {
@@ -9460,8 +9451,8 @@ const protocolDatabase = {
             name: '5-FU + Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 2 weeks' },
-                { name: 'Paclitaxel', dose: 150, unit: 'mg/m²', schedule: 'D1, every 2 weeks' }
+                { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
+                { name: 'Paclitaxel', dose: 150, unit: 'mg/m²', schedule: 'D1, every 14 days' }
             ]
         },
 
@@ -9705,7 +9696,7 @@ const protocolDatabase = {
             name: 'Nivolumab monotherapy (CheckMate-141) (Metastatic, PD-L1 CPS≥1)',
             cycles: 12,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks or 480mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
         'Single-Cetuximab-2L': {
@@ -9781,28 +9772,28 @@ const protocolDatabase = {
                 name: 'Imatinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'daily until progression (600-800mg if inadequate response)' }
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression (600-800mg if inadequate response)' }
                 ]
             },
             'Dasatinib-Metastatic': {
                 name: 'Dasatinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Nilotinib-Metastatic': {
                 name: 'Nilotinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nilotinib', dose: 300, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Nilotinib', dose: 300, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Bosutinib-Metastatic': {
                 name: 'Bosutinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Bosutinib', dose: 400, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Bosutinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Dasatinib-Metastatic': {
@@ -9816,14 +9807,14 @@ const protocolDatabase = {
                 name: 'Nilotinib (BCR-ABL TKI) - Imatinib-resistant/intolerant',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Bosutinib-Metastatic': {
                 name: 'Bosutinib (BCR-ABL TKI) - Metastatic',
                 cycles: 12,
                 drugs: [
-                    { name: 'Bosutinib', dose: 500, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Bosutinib', dose: 500, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Ponatinib': {
@@ -9924,7 +9915,7 @@ const protocolDatabase = {
                 name: 'Acalabrutinib + Obinutuzumab (BTK inhibitor) - Metastatic',
                 cycles: 6,
                 drugs: [
-                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' },
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' },
                     { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'D1,D8,D15 cycle 1, then D1 every 28 days' }
                 ]
             },
@@ -9932,7 +9923,7 @@ const protocolDatabase = {
                 name: 'Ibrutinib + Rituximab (BTK inhibitor) - Metastatic',
                 cycles: 6,
                 drugs: [
-                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'daily until progression' },
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO daily until progression' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² every 28 days' }
                 ]
             },
@@ -9948,8 +9939,8 @@ const protocolDatabase = {
                 name: 'Idelalisib + Rituximab (PI3K inhibitor) - Relapsed/Refractory',
                 cycles: 8,
                 drugs: [
-                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'twice daily until progression' },
-                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² every 2 weeks x 7 cycles' }
+                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'twice PO daily until progression' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² every 14 days x 7 cycles' }
                 ]
             },
             'CVP': {
@@ -10039,7 +10030,7 @@ const protocolDatabase = {
                 name: 'Pentostatin (single agent) - Historical',
                 cycles: 6,
                 drugs: [
-                    { name: 'Pentostatin', dose: 4, unit: 'mg/m²', schedule: 'every 2 weeks' }
+                    { name: 'Pentostatin', dose: 4, unit: 'mg/m²', schedule: 'every 14 days' }
                 ]
             },
             'Bendamustine': {
@@ -10060,21 +10051,21 @@ const protocolDatabase = {
                 name: 'Ibrutinib (BTK inhibitor) - Relapsed/Refractory',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'daily until progression' }
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Acalabrutinib': {
                 name: 'Acalabrutinib (BTK inhibitor) - Relapsed/Refractory',
                 cycles: 12,
                 drugs: [
-                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Zanubrutinib': {
                 name: 'Zanubrutinib (BTK inhibitor) - Relapsed/Refractory',
                 cycles: 12,
                 drugs: [
-                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             },
             'Venetoclax': {
@@ -10088,7 +10079,7 @@ const protocolDatabase = {
                 name: 'Duvelisib (PI3K inhibitor) - Relapsed/Refractory',
                 cycles: 8,
                 drugs: [
-                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'twice daily until progression' }
+                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'twice PO daily until progression' }
                 ]
             }
         },
@@ -10119,7 +10110,7 @@ const protocolDatabase = {
                 name: 'Pentostatin (single agent) - Metastatic Alternative',
                 cycles: 6,
                 drugs: [
-                    { name: 'Pentostatin', dose: 4, unit: 'mg/m²', schedule: 'every 2 weeks until CR, then 2 additional cycles' }
+                    { name: 'Pentostatin', dose: 4, unit: 'mg/m²', schedule: 'every 14 days until CR, then 2 additional cycles' }
                 ]
             },
             'Interferon-alpha-2a': {
@@ -10235,7 +10226,7 @@ const protocolDatabase = {
                 name: 'Imatinib (BCR-ABL TKI) - Ph+ ALL',
                 cycles: 24,
                 drugs: [
-                    { name: 'Imatinib', dose: 600, unit: 'mg', schedule: 'daily until progression (Ph+ ALL)' },
+                    { name: 'Imatinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression (Ph+ ALL)' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
                 ]
             },
@@ -10243,7 +10234,7 @@ const protocolDatabase = {
                 name: 'Dasatinib (BCR-ABL TKI) - Ph+ ALL',
                 cycles: 24,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'daily until progression (Ph+ ALL)' },
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO daily until progression (Ph+ ALL)' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
                 ]
             },
@@ -10251,7 +10242,7 @@ const protocolDatabase = {
                 name: 'Nilotinib (BCR-ABL TKI) - Ph+ ALL',
                 cycles: 24,
                 drugs: [
-                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice daily until progression (Ph+ ALL)' },
+                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression (Ph+ ALL)' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
                 ]
             },
@@ -10885,7 +10876,7 @@ const protocolDatabase = {
                 name: 'Amivantamab + Lazertinib (MARIPOSA) (EGFR exon19del/L858R) - Metastatic',
                 cycles: 12,
                 drugs: [
-                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg every 2 weeks' },
+                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg every 14 days' },
                     { name: 'Lazertinib', dose: 240, unit: 'mg', schedule: 'daily' }
                 ]
             },
@@ -10900,7 +10891,7 @@ const protocolDatabase = {
                 name: 'Amivantamab - Metastatic - EGFR exon20 insertion',
                 cycles: 12,
                 drugs: [
-                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg every 2 weeks' }
+                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'loading dose 1400mg, then 1050mg every 14 days' }
                 ]
             },
             'Mobocertinib': {
@@ -11207,7 +11198,7 @@ const protocolDatabase = {
                 name: 'Ramucirumab + Erlotinib (EGFR mutation) - Metastatic',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'every 2 weeks' },
+                    { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'every 14 days' },
                     { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'daily' }
                 ]
             },
@@ -11303,7 +11294,7 @@ const protocolDatabase = {
                 name: 'Nivolumab monotherapy - Metastatic',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days' }
                 ]
             },
             // ALK/ROS1 inhibitors
@@ -11575,7 +11566,7 @@ const protocolDatabase = {
                 name: 'Nivolumab (PD-L1 CPS ≥1%) - Metastatic (Second Line)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 2 weeks, then 480mg every 28 days' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days, then 480mg every 28 days' }
                 ]
             },
             'Pembrolizumab-SCLC': {
@@ -11603,7 +11594,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x4' },
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 2 weeks, then 480mg every 4 weeks' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days, then 480mg every 4 weeks' }
                 ]
             },
             'Topotecan-Oral': {
