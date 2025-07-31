@@ -1635,7 +1635,7 @@ const protocolDatabase = {
                 ]
             },
             'ICE-Nivolumab': {
-                name: 'ICE + Nivolumab (Relapsed/Refractory)',
+                name: 'ICE + Nivolumab (Metastatic)',
                 cycles: 3,
                 drugs: [
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
@@ -1645,7 +1645,7 @@ const protocolDatabase = {
                 ]
             },
             'ICE-Pembrolizumab': {
-                name: 'ICE + Pembrolizumab (Relapsed/Refractory)',
+                name: 'ICE + Pembrolizumab (Metastatic)',
                 cycles: 3,
                 drugs: [
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
@@ -1664,7 +1664,7 @@ const protocolDatabase = {
                 ]
             },
             'ICE-BV': {
-                name: 'ICE + Brentuximab vedotin (Relapsed/Refractory)',
+                name: 'ICE + Brentuximab vedotin (Metastatic)',
                 cycles: 3,
                 drugs: [
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
@@ -1708,7 +1708,7 @@ const protocolDatabase = {
                 ]
             },
             'Vorinostat-Pembrolizumab': {
-                name: 'Vorinostat + Pembrolizumab (Relapsed/Refractory)',
+                name: 'Vorinostat + Pembrolizumab (Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Vorinostat', dose: 400, unit: 'mg', schedule: 'daily, continuous' },
@@ -4612,7 +4612,7 @@ const protocolDatabase = {
                 ]
             },
             'Gemcitabine-Docetaxel': {
-                name: 'Gemcitabine + Docetaxel (Relapsed/Refractory)',
+                name: 'Gemcitabine + Docetaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 675, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4620,14 +4620,14 @@ const protocolDatabase = {
                 ]
             },
             'Sorafenib': {
-                name: 'Sorafenib (Relapsed/Refractory)',
+                name: 'Sorafenib (Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily continuously' }
                 ]
             },
             'Cyclophosphamide-Etoposide': {
-                name: 'Cyclophosphamide + Etoposide (CE) (Relapsed/Refractory)',
+                name: 'Cyclophosphamide + Etoposide (CE) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4635,14 +4635,14 @@ const protocolDatabase = {
                 ]
             },
             'Cabozantinib': {
-                name: 'Cabozantinib (Relapsed/Refractory)',
+                name: 'Cabozantinib (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Sorafenib-Everolimus': {
-                name: 'Sorafenib + Everolimus (Relapsed/Refractory)',
+                name: 'Sorafenib + Everolimus (Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily continuously' },
@@ -4650,7 +4650,7 @@ const protocolDatabase = {
                 ]
             },
             'Cyclophosphamide-Topotecan': {
-                name: 'Cyclophosphamide + Topotecan (Relapsed/Refractory)',
+                name: 'Cyclophosphamide + Topotecan (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4658,7 +4658,7 @@ const protocolDatabase = {
                 ]
             },
             'Ifosfamide-Carboplatin-Etoposide': {
-                name: 'Ifosfamide + Carboplatin + Etoposide (ICE) (Relapsed/Refractory)',
+                name: 'Ifosfamide + Carboplatin + Etoposide (ICE) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4668,7 +4668,7 @@ const protocolDatabase = {
                 ]
             },
             'HDMTX-Etoposide-Ifosfamide': {
-                name: 'High-Dose Methotrexate + Etoposide + Ifosfamide (Relapsed/Refractory)',
+                name: 'High-Dose Methotrexate + Etoposide + Ifosfamide (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 21 days (with leucovorin rescue)' },
@@ -4818,7 +4818,7 @@ const protocolDatabase = {
                 ]
             },
             'Cyclophosphamide-Topotecan': {
-                name: 'Cyclophosphamide + Topotecan (Relapsed/Refractory)',
+                name: 'Cyclophosphamide + Topotecan (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4826,7 +4826,7 @@ const protocolDatabase = {
                 ]
             },
             'Irinotecan-Temozolomide-Vincristine': {
-                name: 'Irinotecan + Temozolomide + Vincristine (Relapsed/Refractory)',
+                name: 'Irinotecan + Temozolomide + Vincristine (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4835,14 +4835,14 @@ const protocolDatabase = {
                 ]
             },
             'Cabozantinib': {
-                name: 'Cabozantinib (Relapsed/Refractory)',
+                name: 'Cabozantinib (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Docetaxel-Gemcitabine': {
-                name: 'Docetaxel + Gemcitabine (Relapsed/Refractory)',
+                name: 'Docetaxel + Gemcitabine (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8, every 21 days' },
@@ -4850,7 +4850,7 @@ const protocolDatabase = {
                 ]
             },
             'Ifosfamide-High-Dose': {
-                name: 'Ifosfamide High-Dose (Relapsed/Refractory)',
+                name: 'Ifosfamide High-Dose (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -4858,7 +4858,7 @@ const protocolDatabase = {
                 ]
             },
             'Regorafenib': {
-                name: 'Regorafenib (Relapsed/Refractory)',
+                name: 'Regorafenib (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
@@ -7377,39 +7377,39 @@ const protocolDatabase = {
     },
     brain: {
         'Temozolomide-RT': {
-            name: 'Temozolomide + RT (Stupp Protocol) - Newly Diagnosed GBM',
+            name: 'Temozolomide + Radiotherapy (Stupp Protocol) (Definitive)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 75, unit: 'mg/m²', schedule: 'daily during RT, then 150-200mg/m² D1-D5 every 28 days' }
+                { name: 'Temozolomide', dose: 75, unit: 'mg/m²', schedule: 'PO once daily during RT, then 150-200mg/m² PO once daily D1-D5, every 28 days' }
             ]
         },
         'PCV': {
-            name: 'Procarbazine + CCNU + Vincristine (PCV) - Oligodendroglioma/Anaplastic',
+            name: 'Procarbazine + CCNU + Vincristine (PCV) (Definitive)',
             cycles: 6,
             drugs: [
-                { name: 'Procarbazine', dose: 60, unit: 'mg/m²', schedule: 'PO D8-D21, every 8 weeks' },
-                { name: 'CCNU (Lomustine)', dose: 130, unit: 'mg/m²', schedule: 'PO D1, every 8 weeks' },
-                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D8,D29, every 8 weeks (max 2mg)' }
+                { name: 'Procarbazine', dose: 60, unit: 'mg/m²', schedule: 'PO once daily D8-D21, every 8 weeks' },
+                { name: 'CCNU (Lomustine)', dose: 130, unit: 'mg/m²', schedule: 'PO once daily D1, every 8 weeks' },
+                { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D8, D29, every 8 weeks (max 2mg)' }
             ]
         },
         'Temozolomide-Bevacizumab': {
-            name: 'Temozolomide + Bevacizumab - Recurrent GBM',
+            name: 'Temozolomide + Bevacizumab (Anti-VEGF) (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' },
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1,D15 every 28 days' }
+                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO once daily D1-D5, every 28 days' },
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, D15, every 28 days' }
             ]
         },
         'Irinotecan-Bevacizumab': {
-            name: 'Irinotecan + Bevacizumab - Recurrent GBM',
+            name: 'Irinotecan + Bevacizumab (Anti-VEGF) (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
-                { name: 'Irinotecan', dose: 125, unit: 'mg/m²', schedule: 'D1 every 14 days' },
-                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1 every 14 days' }
+                { name: 'Irinotecan', dose: 125, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Carboplatin-Irinotecan-Bevacizumab': {
-            name: 'Carboplatin + Irinotecan + Bevacizumab - Recurrent GBM',
+            name: 'Carboplatin + Irinotecan + Bevacizumab (Anti-VEGF) (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 4-5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
@@ -7418,66 +7418,66 @@ const protocolDatabase = {
             ]
         },
         'Temozolomide-Lomustine': {
-            name: 'Temozolomide + Lomustine - Recurrent GBM',
+            name: 'Temozolomide + Lomustine (CCNU) (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'PO D2-D6, every 28 days' },
-                { name: 'Lomustine (CCNU)', dose: 100, unit: 'mg/m²', schedule: 'PO D1, every 28 days' }
+                { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'PO once daily D2-D6, every 28 days' },
+                { name: 'Lomustine (CCNU)', dose: 100, unit: 'mg/m²', schedule: 'PO once daily D1, every 28 days' }
             ]
         },
         'Carmustine': {
-            name: 'Carmustine (BCNU) - Recurrent GBM',
+            name: 'Carmustine (BCNU) monotherapy (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
                 { name: 'Carmustine (BCNU)', dose: 200, unit: 'mg/m²', schedule: 'D1 every 6 weeks' }
             ]
         },
         'Lomustine': {
-            name: 'Lomustine (CCNU) - Recurrent GBM',
+            name: 'Lomustine (CCNU) monotherapy (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
                 { name: 'Lomustine (CCNU)', dose: 130, unit: 'mg/m²', schedule: 'D1 every 6 weeks' }
             ]
         },
         'Procarbazine': {
-            name: 'Procarbazine (single agent) - Recurrent GBM',
+            name: 'Procarbazine monotherapy (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
-                { name: 'Procarbazine', dose: 150, unit: 'mg/m²', schedule: 'PO once daily divided into 3 doses' }
+                { name: 'Procarbazine', dose: 150, unit: 'mg/m²', schedule: 'PO divided into 3 doses daily' }
             ]
         },
         'Temozolomide': {
-            name: 'Temozolomide (single agent) - Recurrent GBM',
+            name: 'Temozolomide monotherapy (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' }
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'PO once daily D1-D5, every 28 days' }
             ]
         },
         'Irinotecan': {
-            name: 'Irinotecan (single agent) - Recurrent GBM',
+            name: 'Irinotecan monotherapy (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Irinotecan', dose: 350, unit: 'mg/m²', schedule: 'every 21 days' }
             ]
         },
         'Bevacizumab': {
-            name: 'Bevacizumab (single agent) - Recurrent GBM',
+            name: 'Bevacizumab (Anti-VEGF) monotherapy (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'every 21 days' }
             ]
         },
         'Tumor-Treating-Fields': {
-            name: 'Tumor Treating Fields (TTFields) + Temozolomide - Newly Diagnosed GBM',
+            name: 'Tumor Treating Fields (TTFields) + Temozolomide (Definitive)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-D5 every 28 days' },
+                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO once daily D1-D5, every 28 days' },
                 { name: 'TTFields', dose: 'Device', unit: 'continuous', schedule: '18+ hours daily' }
             ]
         },
         // Ependymoma Regimens
         'Cisplatin-Etoposide-Ependymoma': {
-            name: 'Cisplatin + Etoposide (Ependymoma)',
+            name: 'Cisplatin + Etoposide (Ependymoma) (Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -7486,7 +7486,7 @@ const protocolDatabase = {
         },
         // Adult Medulloblastoma Regimens
         'Cisplatin-Cyclophosphamide-Vincristine': {
-            name: 'Cisplatin + Cyclophosphamide + Vincristine (Adult Medulloblastoma)',
+            name: 'Cisplatin + Cyclophosphamide + Vincristine (Medulloblastoma) (Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7495,7 +7495,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Etoposide-Cyclophosphamide': {
-            name: 'Carboplatin + Etoposide + Cyclophosphamide (Adult Medulloblastoma)',
+            name: 'Carboplatin + Etoposide + Cyclophosphamide (Medulloblastoma) (Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days', requiresAUC: true },
@@ -7504,7 +7504,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Etoposide-Cyclophosphamide': {
-            name: 'Cisplatin + Etoposide + Cyclophosphamide (Adult Medulloblastoma)',
+            name: 'Cisplatin + Etoposide + Cyclophosphamide (Medulloblastoma) (Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7513,11 +7513,11 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Lomustine-Vincristine': {
-            name: 'Cisplatin + Lomustine + Vincristine (Adult Medulloblastoma)',
+            name: 'Cisplatin + Lomustine + Vincristine (Medulloblastoma) (Adjuvant)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 42 days' },
-                { name: 'Lomustine (CCNU)', dose: 75, unit: 'mg/m²', schedule: 'PO D1, every 42 days' },
+                { name: 'Lomustine (CCNU)', dose: 75, unit: 'mg/m²', schedule: 'PO once daily D1, every 42 days' },
                 { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, D8, every 42 days (max 2mg)' }
             ]
         }
