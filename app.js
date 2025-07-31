@@ -4754,7 +4754,7 @@ const protocolDatabase = {
                 ]
             },
             'VAC-IE': {
-                name: 'Vincristine + Adriamycin + Cyclophosphamide/Ifosfamide + Etoposide Alternating (VDC/IE) (Neoadjuvant/Adjuvant/Relapsed/Refractory)',
+                name: 'Vincristine + Doxorubicin + Cyclophosphamide/Ifosfamide + Etoposide Alternating (VAC/IE) (Neoadjuvant/Adjuvant/Relapsed/Refractory)',
                 cycles: 14,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4767,7 +4767,7 @@ const protocolDatabase = {
                 ]
             },
             'VAC': {
-                name: 'Vincristine + Adriamycin + Cyclophosphamide (VDC) (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Doxorubicin + Cyclophosphamide (VAC) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4777,7 +4777,7 @@ const protocolDatabase = {
                 ]
             },
             'VDC': {
-                name: 'Vincristine + Dactinomycin + Cyclophosphamide (VAC) (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Dactinomycin + Cyclophosphamide (VDC) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4807,7 +4807,7 @@ const protocolDatabase = {
                 ]
             },
             'VAIA': {
-                name: 'Vincristine + Adriamycin + Ifosfamide + Actinomycin (VAIA) (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Doxorubicin + Ifosfamide + Actinomycin (VAIA) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4838,7 +4838,7 @@ const protocolDatabase = {
                 name: 'Cabozantinib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily' }
                 ]
             },
             'Docetaxel-Gemcitabine': {
