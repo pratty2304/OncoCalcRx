@@ -292,23 +292,33 @@ if (drugNameLower.includes('vincristine')) {
 - **RET Inhibitors:** Selpercatinib, Pralsetinib
 - **TRK Inhibitors:** Larotrectinib, Entrectinib, Repotrectinib
 
+#### **Hormonal Therapy Drugs:**
+- **Selective Estrogen Receptor Modulators (SERMs):** Tamoxifen, Toremifene
+- **Aromatase Inhibitors:** Anastrozole, Letrozole, Exemestane
+- **Selective Estrogen Receptor Degraders (SERDs):** Fulvestrant, Elacestrant, Camizestrant
+- **GnRH Agonists:** Goserelin, Leuprolide, Triptorelin
+- **Androgen Deprivation Therapy:** Bicalutamide, Flutamide, Enzalutamide, Abiraterone
+
 ### **Drugs INCLUDED in Dose Reduction:**
 - **Chemotherapy agents** (all cytotoxic drugs)
 - **Antibody-Drug Conjugates (ADCs):** Enfortumab Vedotin, Sacituzumab Govitecan, T-DM1
 - **Monoclonal antibodies** (non-immunotherapy): Trastuzumab, Bevacizumab, Cetuximab
-- **Hormonal therapy:** Tamoxifen, Anastrozole, Letrozole, Exemestane
 
 ### **Implementation Logic:**
 ```javascript
 // Identify drugs exempt from dose reduction
 const immunotherapyKeywords = ['pembrolizumab', 'nivolumab', 'durvalumab', 'avelumab', 'ipilimumab'];
 const oralTargetedKeywords = ['imatinib', 'erlotinib', 'palbociclib', 'olaparib', 'ibrutinib'];
+const hormonalTherapyKeywords = ['tamoxifen', 'anastrozole', 'letrozole', 'exemestane', 'fulvestrant', 
+                                'elacestrant', 'camizestrant', 'goserelin', 'leuprolide', 'triptorelin',
+                                'bicalutamide', 'flutamide', 'enzalutamide', 'abiraterone'];
 
 // Check if drug should be excluded from reduction
 function isExemptFromReduction(drugName) {
     const drugLower = drugName.toLowerCase();
     return immunotherapyKeywords.some(keyword => drugLower.includes(keyword)) ||
            oralTargetedKeywords.some(keyword => drugLower.includes(keyword)) ||
+           hormonalTherapyKeywords.some(keyword => drugLower.includes(keyword)) ||
            drugLower.includes('inhibitor') && isOralTargeted;
 }
 ```
@@ -316,7 +326,8 @@ function isExemptFromReduction(drugName) {
 ### **Clinical Rationale:**
 - **Immunotherapy:** Fixed dosing based on pharmacokinetic studies
 - **Oral Targeted Therapy:** Dose optimization through individual titration
-- **Standard Practice:** These drugs are held/discontinued rather than reduced
+- **Hormonal Therapy:** Fixed dosing with standard protocols; toxicity managed by withholding/discontinuation
+- **Standard Practice:** These drugs are held/discontinued rather than reduced for toxicity management
 
 ---
 

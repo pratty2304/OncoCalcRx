@@ -6,12 +6,12 @@ const protocolDatabase = {
         'hormone_positive': {
             // Neoadjuvant/Adjuvant Therapy
             'AC-T': {
-                name: 'Adriamycin + Cyclophosphamide → Paclitaxel (AC-T) (Neoadjuvant/Adjuvant)',
+                name: 'Doxorubicin + Cyclophosphamide → Paclitaxel (AC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
-                    { name: 'Paclitaxel (Paclitaxel)', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' }
                 ]
             },
             'EC-T': {
@@ -24,11 +24,11 @@ const protocolDatabase = {
                 ]
             },
             'TAC': {
-                name: 'Docetaxel + Adriamycin + Cyclophosphamide (TAC) (BCIRG-001) (Neoadjuvant/Adjuvant)',
+                name: 'Docetaxel + Doxorubicin + Cyclophosphamide (TAC) (BCIRG-001) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -44,33 +44,33 @@ const protocolDatabase = {
                 name: 'Dose Dense AC (ddAC) (CALGB-9741) (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'every 14 days' },
-                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'every 14 days' }
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'Dose-Dense-Paclitaxel': {
                 name: 'Dose Dense Paclitaxel (Neoadjuvant/Adjuvant)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'every 14 days' }
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             'FEC-T': {
-                name: 'FEC → Docetaxel (FEC-T) (Neoadjuvant/Adjuvant)',
+                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide → Docetaxel (FEC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 9,
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
                     { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
                     { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
-                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles (after 3 cycles FEC)' }
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles (after 3 cycles 5-Fluorouracil + Epirubicin + Cyclophosphamide)' }
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Doxorubicin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -94,7 +94,7 @@ const protocolDatabase = {
                 ]
             },
             'Olaparib-Adjuvant': {
-                name: 'Olaparib (OlympiA) (Adjuvant - germline BRCA1/2 mutation)',
+                name: 'Olaparib (PARP inhibitor) (OlympiA) (Adjuvant - germline BRCA1/2 mutation)',
                 cycles: 12,
                 drugs: [
                     { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily' }
@@ -109,7 +109,7 @@ const protocolDatabase = {
                 ]
             },
             'Ribociclib-AI-Adjuvant': {
-                name: 'Ribociclib + Aromatase Inhibitor (NATALEE) (Adjuvant - high-risk early breast cancer)',
+                name: 'Ribociclib + Anastrozole (NATALEE) (Adjuvant - high-risk early breast cancer)',
                 cycles: 36,
                 drugs: [
                     { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO once daily, D1-21, every 28 days x 3 years' },
@@ -125,10 +125,10 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Weekly-Adjuvant': {
-                name: 'Paclitaxel weekly (Adjuvant)',
+                name: 'Paclitaxel weekly (Adjuvant)', 
                 cycles: 12,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, weekly x 12 weeks' }
+                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
                 ]
             },
             // Hormone Therapy (Adjuvant/Metastatic)
@@ -162,19 +162,19 @@ const protocolDatabase = {
                 ]
             },
             'Tamoxifen-Goserelin': {
-                name: 'Tamoxifen + Goserelin (Premenopausal)',
+                name: 'Tamoxifen + Goserelin (Adjuvant/Metastatic - Premenopausal)',
                 cycles: 60,
                 drugs: [
                     { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO once daily' },
-                    { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC every 28 days' }
+                    { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC D1, every 28 days' }
                 ]
             },
             'Anastrozole-Goserelin': {
-                name: 'Anastrozole + Goserelin (Premenopausal)',
+                name: 'Anastrozole + Goserelin (Adjuvant/Metastatic - Premenopausal)',
                 cycles: 60,
                 drugs: [
                     { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO once daily' },
-                    { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC every 28 days' }
+                    { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC D1, every 28 days' }
                 ]
             },
             // Metastatic - 1L Therapy
@@ -182,7 +182,7 @@ const protocolDatabase = {
                 name: 'Palbociclib + Letrozole (PALOMA-1/2) (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
                     { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
@@ -190,7 +190,7 @@ const protocolDatabase = {
                 name: 'Ribociclib + Letrozole (MONALEESA-2) (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
+                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
                     { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
@@ -207,16 +207,16 @@ const protocolDatabase = {
                 name: 'Palbociclib + Fulvestrant (PALOMA-3) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
-                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
+                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM D1, every 28 days' }
                 ]
             },
             'Ribociclib-Fulvestrant': {
                 name: 'Ribociclib + Fulvestrant (MONALEESA-3) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
-                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
+                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM D1, every 28 days' }
                 ]
             },
             'Abemaciclib-Fulvestrant': {
@@ -224,7 +224,7 @@ const protocolDatabase = {
                 cycles: 12,
                 drugs: [
                     { name: 'Abemaciclib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
-                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM D1, every 28 days' }
                 ]
             },
             'Everolimus-Exemestane': {
@@ -236,39 +236,39 @@ const protocolDatabase = {
                 ]
             },
             'Alpelisib-Fulvestrant': {
-                name: 'Alpelisib + Fulvestrant (SOLAR-1) (PIK3CA mutation)',
+                name: 'Alpelisib + Fulvestrant (SOLAR-1) (Metastatic - PIK3CA mutation)',
                 cycles: 12,
                 drugs: [
                     { name: 'Alpelisib', dose: 300, unit: 'mg', schedule: 'PO once daily' },
-                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM D1, every 28 days' }
                 ]
             },
             'Elacestrant': {
-                name: 'Elacestrant (EMERALD) (ESR1 mutation)',
+                name: 'Elacestrant (EMERALD) (Metastatic - ESR1 mutation)',
                 cycles: 12,
                 drugs: [
                     { name: 'Elacestrant', dose: 345, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Inavolisib-Palbociclib-Fulvestrant': {
-                name: 'Inavolisib + Palbociclib + Fulvestrant (INAVO120) (PIK3CA mutation)',
+                name: 'Inavolisib + Palbociclib + Fulvestrant (INAVO120) (Metastatic - PIK3CA mutation)',
                 cycles: 12,
                 drugs: [
                     { name: 'Inavolisib', dose: 9, unit: 'mg', schedule: 'PO once daily' },
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
-                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
+                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM D1, every 28 days' }
                 ]
             },
             'Capivasertib-Fulvestrant': {
                 name: 'Capivasertib + Fulvestrant (CAPItello-291) (AKT1/PIK3CA/PTEN alteration)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Capivasertib', dose: 400, unit: 'mg', schedule: 'PO twice daily for 4 days, then 3 days off' },
-                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
+                    { name: 'Capivasertib', dose: 400, unit: 'mg', schedule: 'PO twice daily D1-4, then 3 days off, every 7 days' },
+                    { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM D1, every 28 days' }
                 ]
             },
             'Camizestrant-Palbociclib': {
-                name: 'Camizestrant + Palbociclib (ESR1 mutation detected during 1L treatment)',
+                name: 'Camizestrant + Palbociclib (Metastatic - ESR1 mutation detected during 1L treatment)',
                 cycles: 12,
                 drugs: [
                     { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO once daily' },
@@ -276,7 +276,7 @@ const protocolDatabase = {
                 ]
             },
             'Camizestrant-Ribociclib': {
-                name: 'Camizestrant + Ribociclib (ESR1 mutation detected during 1L treatment)',
+                name: 'Camizestrant + Ribociclib (Metastatic - ESR1 mutation detected during 1L treatment)',
                 cycles: 12,
                 drugs: [
                     { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO once daily' },
@@ -284,7 +284,7 @@ const protocolDatabase = {
                 ]
             },
             'Camizestrant-Abemaciclib': {
-                name: 'Camizestrant + Abemaciclib (ESR1 mutation detected during 1L treatment)',
+                name: 'Camizestrant + Abemaciclib (Metastatic - ESR1 mutation detected during 1L treatment)',
                 cycles: 12,
                 drugs: [
                     { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO once daily' },
@@ -312,8 +312,8 @@ const protocolDatabase = {
                 name: 'Nab-paclitaxel + Carboplatin (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly' }
+                    { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 7 days' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days' }
                 ]
             },
             'Gemcitabine-Carboplatin': {
@@ -328,15 +328,15 @@ const protocolDatabase = {
                 name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' },
-                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'weekly' }
+                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' },
+                    { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days' }
                 ]
             },
             'Capecitabine-Docetaxel': {
                 name: 'Capecitabine + Docetaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, days 1-14, every 21 days' },
+                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' },
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -344,22 +344,22 @@ const protocolDatabase = {
                 name: 'Capecitabine + Paclitaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, days 1-14, every 21 days' },
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' },
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Single-Paclitaxel-3weekly': {
-                name: 'Paclitaxel 3-weekly (Metastatic)',
+                name: 'Paclitaxel 3-weekly monotherapy (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Single-Paclitaxel-weekly': {
-                name: 'Paclitaxel weekly (Metastatic)',
+                name: 'Paclitaxel weekly monotherapy (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'weekly' }
+                    { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
                 ]
             },
             'Docetaxel': {
@@ -392,7 +392,7 @@ const protocolDatabase = {
                 name: 'Adriamycin + Cyclophosphamide + Pembrolizumab (Neoadjuvant - KEYNOTE-522)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days' }
                 ]
@@ -456,21 +456,21 @@ const protocolDatabase = {
                 ]
             },
             'FEC-T': {
-                name: 'FEC → Docetaxel (FEC-T) (Neoadjuvant/Adjuvant)',
+                name: '5-Fluorouracil + Epirubicin + Cyclophosphamide → Docetaxel (FEC-T) (Neoadjuvant/Adjuvant)',
                 cycles: 9,
                 drugs: [
                     { name: '5-Fluorouracil', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
                     { name: 'Epirubicin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
                     { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles' },
-                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles (after 3 cycles FEC)' }
+                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days x 3 cycles (after 3 cycles 5-Fluorouracil + Epirubicin + Cyclophosphamide)' }
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Doxorubicin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -810,11 +810,11 @@ const protocolDatabase = {
                 ]
             },
             'CAF': {
-                name: 'Cyclophosphamide + Adriamycin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
+                name: 'Cyclophosphamide + Doxorubicin + 5-Fluorouracil (CAF) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -13238,12 +13238,6 @@ function buildDoseAdjustmentTable() {
             'ribociclib',
             'abemaciclib', 
             'palbociclib',
-            // Hormonal agents
-            'tamoxifen',
-            'letrozole',
-            'anastrozole',
-            'exemestane',
-            'fulvestrant',
             // PARP inhibitors
             'olaparib',
             'niraparib',
@@ -13300,8 +13294,39 @@ function buildDoseAdjustmentTable() {
         return targetedTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
     }
 
+    function isHormonalTherapyDrug(drugName) {
+        const hormonalTherapyDrugs = [
+            // SERMs (Selective Estrogen Receptor Modulators)
+            'tamoxifen',
+            'toremifene',
+            // Aromatase Inhibitors
+            'anastrozole',
+            'letrozole',
+            'exemestane',
+            // SERDs (Selective Estrogen Receptor Degraders)
+            'fulvestrant',
+            'elacestrant',
+            'camizestrant',
+            // GnRH Agonists
+            'goserelin',
+            'leuprolide',
+            'triptorelin',
+            'histrelin',
+            // Anti-androgens
+            'bicalutamide',
+            'flutamide',
+            'enzalutamide',
+            'apalutamide',
+            'darolutamide',
+            // Other hormonal agents
+            'abiraterone',
+            'degarelix'
+        ];
+        return hormonalTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+
     function isNonReducibleDrug(drugName) {
-        return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName);
+        return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName) || isHormonalTherapyDrug(drugName);
     }
     
     tableContainer.innerHTML = `
@@ -13324,7 +13349,8 @@ function buildDoseAdjustmentTable() {
                         
                         if (isNonReducible) {
                             const isImmuno = isImmunotherapyDrug(drug.name);
-                            const noteText = isImmuno ? "*Dose reduction not recommended" : "*Standard dose level reductions apply";
+                            const isHormonal = isHormonalTherapyDrug(drug.name);
+                            const noteText = (isImmuno || isHormonal) ? "*Dose reduction not recommended" : "*Standard dose level reductions apply";
                             
                             // For Immunotherapy/Targeted therapy - show original dose, different notes
                             return `
@@ -13355,9 +13381,9 @@ function buildDoseAdjustmentTable() {
                                                 <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
                                                 <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                                 <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
-                                                <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
+                                                <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                             </div>` 
-                                            : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`}
+                                            : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`}
                                     </td>
                                 </tr>
                             `;
@@ -13460,9 +13486,10 @@ function showFinalPrescription() {
                     </thead>
                     <tbody>
                         ${results.drugs.map(drug => {
-                            // Check if drug is non-reducible (Immunotherapy/Targeted agents/Oral therapies)
+                            // Check if drug is non-reducible (Immunotherapy/Targeted agents/Hormonal therapies)
                             const isImmuno = isImmunotherapyDrug(drug.name);
                             const isTargeted = isTargetedTherapyDrug(drug.name);
+                            const isHormonal = isHormonalTherapyDrug(drug.name);
                             const isNonReducible = [
                                 // Monoclonal antibodies and targeted IV agents
                                 'trastuzumab', 
@@ -13553,7 +13580,7 @@ function showFinalPrescription() {
                                 <tr style="border-bottom: 1px solid #dee2e6;">
                                     <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">
                                         ${drug.name}${drug.days ? ` (${drug.days})` : ''}
-                                        ${isNonReducible ? `<div style="font-size: 10px; color: #e67e22; margin-top: 2px;">${isImmuno ? '*No dose reduction' : '*Standard dose level reductions apply'}</div>` : ''}
+                                        ${isNonReducible ? `<div style="font-size: 10px; color: #e67e22; margin-top: 2px;">${(isImmuno || isHormonal) ? '*No dose reduction' : '*Standard dose level reductions apply'}</div>` : ''}
                                     </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6;">
                                         ${drug.hasLoadingDose ? 
@@ -13584,9 +13611,9 @@ function showFinalPrescription() {
                                                     <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
                                                     <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                                     <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
-                                                    <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
+                                                    <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                 </div>` 
-                                                : `${drug.calculatedDose} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
+                                                : `${drug.calculatedDose} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
                                             :
                                             // For regular drugs, show reduced dose
                                             (drug.hasLoadingDose ? 
@@ -13615,10 +13642,10 @@ function showFinalPrescription() {
                                                         <div style="color: #007bff; margin-bottom: 8px;">${roundDose(calcLoadingDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                                         <div style="color: #28a745; font-weight: 600;">Maintenance</div>
                                                         <div style="color: #28a745;">${roundDose(calcMaintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
-                                                        <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
+                                                        <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                     </div>`;
                                                 })()
-                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name, selectedProtocol.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
+                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name, selectedProtocol.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
                                             :
                                             // For regular drugs, show rounded reduced dose
                                             (drug.hasLoadingDose ? 
@@ -13701,12 +13728,6 @@ function showFinalPrescription() {
             'ribociclib',
             'abemaciclib', 
             'palbociclib',
-            // Hormonal agents
-            'tamoxifen',
-            'letrozole',
-            'anastrozole',
-            'exemestane',
-            'fulvestrant',
             // PARP inhibitors
             'olaparib',
             'niraparib',
@@ -13763,8 +13784,39 @@ function showFinalPrescription() {
         return targetedTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
     }
 
+    function isHormonalTherapyDrug(drugName) {
+        const hormonalTherapyDrugs = [
+            // SERMs (Selective Estrogen Receptor Modulators)
+            'tamoxifen',
+            'toremifene',
+            // Aromatase Inhibitors
+            'anastrozole',
+            'letrozole',
+            'exemestane',
+            // SERDs (Selective Estrogen Receptor Degraders)
+            'fulvestrant',
+            'elacestrant',
+            'camizestrant',
+            // GnRH Agonists
+            'goserelin',
+            'leuprolide',
+            'triptorelin',
+            'histrelin',
+            // Anti-androgens
+            'bicalutamide',
+            'flutamide',
+            'enzalutamide',
+            'apalutamide',
+            'darolutamide',
+            // Other hormonal agents
+            'abiraterone',
+            'degarelix'
+        ];
+        return hormonalTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+
     function isNonReducibleDrug(drugName) {
-        return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName);
+        return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName) || isHormonalTherapyDrug(drugName);
     }
     
     const appliedReductions = Object.entries(currentReductions).filter(([drugName, reduction]) => 
