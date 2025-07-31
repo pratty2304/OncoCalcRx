@@ -153,6 +153,28 @@
 - Male: `((140-age) × weight) / (72 × creatinine)`
 - Female: `Above × 0.85`
 
+### **Carboplatin Creatinine Floor Validation:**
+- **Minimum Creatinine Value**: 0.7 mg/dL
+- **Clinical Rationale**: Prevents GFR overestimation and carboplatin overdosing
+- **High-Risk Populations**:
+  - Low muscle mass patients
+  - Malnourished patients  
+  - Elderly patients
+- **Implementation**: Warning dialog appears when creatinine < 0.7 mg/dL
+- **User Options**: Proceed with entered value or modify creatinine
+
+**Warning Message Logic:**
+```javascript
+if (creatinineValue < 0.7) {
+    const userConfirm = confirm('⚠️ CARBOPLATIN DOSING WARNING\n\n' +
+        'Serum creatinine values < 0.7 mg/dL may overestimate GFR and lead to ' +
+        'carboplatin overdosing, especially in patients with:\n' +
+        '• Low muscle mass\n• Malnutrition\n• Elderly patients\n\n' +
+        'Clinical Recommendation:\n' +
+        'Consider using a minimum creatinine value of 0.7 mg/dL for safer dosing.');
+}
+```
+
 ### **Dose Rounding Logic:**
 ```javascript
 // < 10mg: Round to nearest 1mg
@@ -162,6 +184,48 @@
 // 1000-2000mg: Round to nearest 50mg
 // >2000mg: Round to nearest 100mg
 ```
+
+### **Vincristine Special Dosing Logic:**
+
+**Calculated Dose Display:**
+- Always show the true calculated dose (BSA × dose/m² = calculated mg)
+- Example: BSA 2.12 × 1.5 mg/m² = 3.18mg (displayed as calculated)
+
+**Rounded Dose Logic:**
+- **EPOCH Regimens (ALL variants):** No rounding applied to vincristine
+  - R-DA-EPOCH, DA-EPOCH, R-EPOCH, EPOCH
+  - Any protocol containing "epoch" (case-insensitive)
+  - Calculated dose = Rounded dose (exact precision maintained)
+  - Example: 3.18mg calculated → 3.18mg rounded
+
+- **Regular Regimens:** Apply normal rounding rules, then cap at 2mg
+  - Apply standard dose rounding first
+  - If rounded dose > 2mg, cap at 2mg maximum
+  - Example: 3.18mg calculated → 3mg rounded → 2mg final (capped)
+
+**Implementation Logic:**
+```javascript
+// In roundDose() function
+if (drugNameLower.includes('vincristine')) {
+    const protocolNameLower = protocolName.toLowerCase();
+    const isEpochRegimen = protocolNameLower.includes('epoch');
+    
+    if (isEpochRegimen) {
+        // All EPOCH variants: No rounding - return original dose
+        return numDose;
+    } else {
+        // Regular regimens: Cap at 2mg after normal rounding
+        if (roundedDose > 2) {
+            roundedDose = 2;
+        }
+    }
+}
+```
+
+**Clinical Rationale:**
+- **EPOCH Regimens:** Require precise dosing per protocol specifications
+- **Regular Regimens:** Safety cap prevents vincristine-induced peripheral neuropathy
+- **Transparency:** Shows actual calculated dose for clinical review
 
 ---
 

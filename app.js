@@ -4597,7 +4597,7 @@ const protocolDatabase = {
                 name: 'Ifosfamide + Adriamycin + Cisplatin (IAP) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                     { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                     { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Mesna', dose: 400, unit: 'mg/m²', schedule: 'every 4 hours, D1-D5, every 21 days (uroprotection)' }
@@ -4608,11 +4608,11 @@ const protocolDatabase = {
                 cycles: 8,
                 drugs: [
                     { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 14 days (with leucovorin rescue)' },
-                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' }
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: '15 mg/m² start 24 hours after MTX, every 6 hours until serum MTX <0.1 µmol/L' }
                 ]
             },
             'Gemcitabine-Docetaxel': {
-                name: 'Gemcitabine + Docetaxel - (Relapsed/Refractory)',
+                name: 'Gemcitabine + Docetaxel (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 675, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4620,14 +4620,14 @@ const protocolDatabase = {
                 ]
             },
             'Sorafenib': {
-                name: 'Sorafenib - (Relapsed/Refractory)',
+                name: 'Sorafenib (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily continuously' }
                 ]
             },
             'Cyclophosphamide-Etoposide': {
-                name: 'Cyclophosphamide + Etoposide (CE) - (Relapsed/Refractory)',
+                name: 'Cyclophosphamide + Etoposide (CE) (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4635,22 +4635,22 @@ const protocolDatabase = {
                 ]
             },
             'Cabozantinib': {
-                name: 'Cabozantinib - (Relapsed/Refractory)',
+                name: 'Cabozantinib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Sorafenib-Everolimus': {
-                name: 'Sorafenib + Everolimus - (Relapsed/Refractory)',
+                name: 'Sorafenib + Everolimus (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' },
-                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily continuously' },
+                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Cyclophosphamide-Topotecan': {
-                name: 'Cyclophosphamide + Topotecan - (Relapsed/Refractory)',
+                name: 'Cyclophosphamide + Topotecan (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4658,7 +4658,7 @@ const protocolDatabase = {
                 ]
             },
             'Ifosfamide-Carboplatin-Etoposide': {
-                name: 'Ifosfamide + Carboplatin + Etoposide (ICE) - (Relapsed/Refractory)',
+                name: 'Ifosfamide + Carboplatin + Etoposide (ICE) (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4668,80 +4668,80 @@ const protocolDatabase = {
                 ]
             },
             'HDMTX-Etoposide-Ifosfamide': {
-                name: 'HDMTX + Etoposide + Ifosfamide - (Relapsed/Refractory)',
+                name: 'High-Dose Methotrexate + Etoposide + Ifosfamide (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Methotrexate (HD)', dose: 12000, unit: 'mg/m²', schedule: 'D1, every 21 days (with leucovorin rescue)' },
                     { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                     { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'rescue per protocol' },
+                    { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: '15 mg/m² start 24 hours after MTX, every 6 hours until serum MTX <0.1 µmol/L' },
                     { name: 'Mesna', dose: 360, unit: 'mg/m²', schedule: 'D1-D5, every 21 days (uroprotection)' }
                 ]
             }
         },
         chordoma: {
             'Imatinib': {
-                name: 'Imatinib - (Recurrent/Metastatic)',
+                name: 'Imatinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Dasatinib': {
-                name: 'Dasatinib - (Recurrent/Metastatic)',
+                name: 'Dasatinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Sunitinib': {
-                name: 'Sunitinib - (Recurrent/Metastatic)',
+                name: 'Sunitinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO once daily, D1-D28 every 42 days (4 weeks on, 2 weeks off)' }
+                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO daily D1-D28, every 42 days (4 weeks on, 2 weeks off)' }
                 ]
             },
             'Imatinib-Cisplatin': {
-                name: 'Imatinib + Cisplatin - (Recurrent/Metastatic)',
+                name: 'Imatinib + Cisplatin (Recurrent/Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' },
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily continuously' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Imatinib-Sirolimus': {
-                name: 'Imatinib + Sirolimus - (Recurrent/Metastatic)',
+                name: 'Imatinib + Sirolimus (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' },
-                    { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily continuously' },
+                    { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Erlotinib': {
-                name: 'Erlotinib - (Recurrent/Metastatic)',
+                name: 'Erlotinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Lapatinib': {
-                name: 'Lapatinib (EGFR positive) - (Recurrent/Metastatic)',
+                name: 'Lapatinib (EGFR positive) (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lapatinib', dose: 1500, unit: 'mg', schedule: 'PO once daily, continuous (EGFR positive)' }
+                    { name: 'Lapatinib', dose: 1500, unit: 'mg', schedule: 'PO daily continuously (EGFR positive)' }
                 ]
             },
             'Sorafenib': {
-                name: 'Sorafenib - (Recurrent/Metastatic)',
+                name: 'Sorafenib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily continuously' }
                 ]
             }
         },
         ewings_sarcoma: {
             'VDC-IE': {
-                name: 'VDC/IE Alternating (EE2012) - (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Dactinomycin + Cyclophosphamide/Ifosfamide + Etoposide Alternating (VDC/IE) (EE2012) (Neoadjuvant/Adjuvant)',
                 cycles: 14,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4754,7 +4754,7 @@ const protocolDatabase = {
                 ]
             },
             'VAC-IE': {
-                name: 'VAC/IE Alternating - (Neoadjuvant/Adjuvant/Metastatic)',
+                name: 'Vincristine + Adriamycin + Cyclophosphamide/Ifosfamide + Etoposide Alternating (VDC/IE) (Neoadjuvant/Adjuvant/Relapsed/Refractory)',
                 cycles: 14,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4767,7 +4767,7 @@ const protocolDatabase = {
                 ]
             },
             'VAC': {
-                name: 'VAC (Vincristine + Adriamycin + Cyclophosphamide) - (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Adriamycin + Cyclophosphamide (VDC) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4777,7 +4777,7 @@ const protocolDatabase = {
                 ]
             },
             'VDC': {
-                name: 'VDC (Vincristine + Dactinomycin + Cyclophosphamide) - (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Dactinomycin + Cyclophosphamide (VAC) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4787,7 +4787,7 @@ const protocolDatabase = {
                 ]
             },
             'IE': {
-                name: 'IE (Ifosfamide + Etoposide) - (Neoadjuvant/Adjuvant)',
+                name: 'Ifosfamide + Etoposide (IE) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4796,7 +4796,7 @@ const protocolDatabase = {
                 ]
             },
             'VIDE': {
-                name: 'VIDE (Vincristine + Ifosfamide + Doxorubicin + Etoposide) - (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Ifosfamide + Doxorubicin + Etoposide (VIDE) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4807,7 +4807,7 @@ const protocolDatabase = {
                 ]
             },
             'VAIA': {
-                name: 'VAIA (Vincristine + Adriamycin + Ifosfamide + Actinomycin) - (Neoadjuvant/Adjuvant)',
+                name: 'Vincristine + Adriamycin + Ifosfamide + Actinomycin (VAIA) (Neoadjuvant/Adjuvant)',
                 cycles: 6,
                 drugs: [
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
@@ -4818,7 +4818,7 @@ const protocolDatabase = {
                 ]
             },
             'Cyclophosphamide-Topotecan': {
-                name: 'Cyclophosphamide + Topotecan - (Relapsed/Refractory)',
+                name: 'Cyclophosphamide + Topotecan (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4826,23 +4826,23 @@ const protocolDatabase = {
                 ]
             },
             'Irinotecan-Temozolomide-Vincristine': {
-                name: 'Irinotecan + Temozolomide + Vincristine - (Relapsed/Refractory)',
+                name: 'Irinotecan + Temozolomide + Vincristine (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                    { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Temozolomide', dose: 100, unit: 'mg/m²', schedule: 'PO D1-D5, every 21 days' },
                     { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' }
                 ]
             },
             'Cabozantinib': {
-                name: 'Cabozantinib - (Relapsed/Refractory)',
+                name: 'Cabozantinib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
             'Docetaxel-Gemcitabine': {
-                name: 'Docetaxel + Gemcitabine - (Relapsed/Refractory)',
+                name: 'Docetaxel + Gemcitabine (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8, every 21 days' },
@@ -4850,7 +4850,7 @@ const protocolDatabase = {
                 ]
             },
             'Ifosfamide-High-Dose': {
-                name: 'Ifosfamide High-Dose - (Relapsed/Refractory)',
+                name: 'Ifosfamide High-Dose (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -4858,10 +4858,10 @@ const protocolDatabase = {
                 ]
             },
             'Regorafenib': {
-                name: 'Regorafenib - (Relapsed/Refractory)',
+                name: 'Regorafenib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily, D1-D21 every 28 days' }
+                    { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO daily D1-D21, every 28 days' }
                 ]
             }
         },
@@ -12025,7 +12025,7 @@ function checkForCarboplatin(protocolKey, cancerType, subtype) {
 }
 
 // Dose rounding function
-function roundDose(dose, drugName) {
+function roundDose(dose, drugName, protocolName = '') {
     // Convert dose to number if it's a string
     const numDose = parseFloat(dose);
     
@@ -12063,29 +12063,46 @@ function roundDose(dose, drugName) {
     }
     
     // Apply rounding logic for all other drugs
+    let roundedDose;
     if (numDose < 10) {
         // Round to nearest 1mg
-        return Math.round(numDose);
+        roundedDose = Math.round(numDose);
     } else if (numDose >= 10 && numDose < 100) {
         // Round to nearest 5-10mg - using 5mg as the rounding increment
-        return Math.round(numDose / 5) * 5;
+        roundedDose = Math.round(numDose / 5) * 5;
     } else if (numDose >= 100 && numDose < 1000) {
         // Round to nearest 10mg or 50mg - using 10mg for 100-500, 50mg for 500-1000
         if (numDose < 500) {
-            return Math.round(numDose / 10) * 10;
+            roundedDose = Math.round(numDose / 10) * 10;
         } else {
-            return Math.round(numDose / 50) * 50;
+            roundedDose = Math.round(numDose / 50) * 50;
         }
     } else if (numDose >= 1000) {
         // Round to nearest 50mg or 100mg - using 50mg for 1000-2000, 100mg for >2000
         if (numDose < 2000) {
-            return Math.round(numDose / 50) * 50;
+            roundedDose = Math.round(numDose / 50) * 50;
         } else {
-            return Math.round(numDose / 100) * 100;
+            roundedDose = Math.round(numDose / 100) * 100;
         }
     }
     
-    return numDose;
+    // Vincristine special logic
+    if (drugNameLower.includes('vincristine')) {
+        const protocolNameLower = protocolName.toLowerCase();
+        const isEpochRegimen = protocolNameLower.includes('epoch');
+        
+        if (isEpochRegimen) {
+            // All EPOCH regimens (R-DA-EPOCH, DA-EPOCH, R-EPOCH, EPOCH): No rounding at all - return original dose
+            return numDose;
+        } else {
+            // Regular regimens: Cap at 2mg after normal rounding
+            if (roundedDose > 2) {
+                roundedDose = 2;
+            }
+        }
+    }
+    
+    return roundedDose;
 }
 
 // Calculate drug doses
@@ -12121,12 +12138,17 @@ function calculateDoses(formData) {
         
         if (drug.unit === 'mg/m²') {
             if (drug.hasLoadingDose) {
-                const loadingDose = (drug.dose * bsa).toFixed(1);
-                const maintenanceDose = (drug.maintenanceDose * bsa).toFixed(1);
-                calculatedDose = `${loadingDose} → ${maintenanceDose}`;
+                let loadingDose = drug.dose * bsa;
+                let maintenanceDose = drug.maintenanceDose * bsa;
+                
+                
+                calculatedDose = `${loadingDose.toFixed(1)} → ${maintenanceDose.toFixed(1)}`;
                 doseUnit = 'mg';
             } else {
-                calculatedDose = (drug.dose * bsa).toFixed(1);
+                let dose = drug.dose * bsa;
+                
+                
+                calculatedDose = dose.toFixed(1);
                 doseUnit = 'mg';
             }
         } else if (drug.unit === 'AUC') {
@@ -12135,12 +12157,17 @@ function calculateDoses(formData) {
             doseUnit = 'mg';
         } else if (drug.unit === 'mg/kg') {
             if (drug.hasLoadingDose) {
-                const loadingDose = (drug.dose * parseFloat(weight)).toFixed(1);
-                const maintenanceDose = (drug.maintenanceDose * parseFloat(weight)).toFixed(1);
-                calculatedDose = `${loadingDose} → ${maintenanceDose}`;
+                let loadingDose = drug.dose * parseFloat(weight);
+                let maintenanceDose = drug.maintenanceDose * parseFloat(weight);
+                
+                
+                calculatedDose = `${loadingDose.toFixed(1)} → ${maintenanceDose.toFixed(1)}`;
                 doseUnit = 'mg';
             } else {
-                calculatedDose = (drug.dose * parseFloat(weight)).toFixed(1);
+                let dose = drug.dose * parseFloat(weight);
+                
+                
+                calculatedDose = dose.toFixed(1);
                 doseUnit = 'mg';
             }
         } else {
@@ -13103,12 +13130,12 @@ function displayResults(results, patientData) {
                                             const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]);
                                             return `<div style="font-size: 12px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
-                                                <div style="color: #007bff; margin-bottom: 8px;">${roundDose(loadingDose, drug.name)} ${drug.doseUnit}</div>
+                                                <div style="color: #007bff; margin-bottom: 8px;">${roundDose(loadingDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                                 <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${roundDose(maintenanceDose, drug.name)} ${drug.doseUnit}</div>
+                                                <div style="color: #28a745;">${roundDose(maintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                             </div>`;
                                         })()
-                                        : `${roundDose(parseFloat(drug.calculatedDose), drug.name)} ${drug.doseUnit}`}
+                                        : `${roundDose(parseFloat(drug.calculatedDose), drug.name, results.protocolName)} ${drug.doseUnit}`}
                                 </td>
                                 <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
                                     ${(() => {
@@ -13585,13 +13612,13 @@ function showFinalPrescription() {
                                                     const calcMaintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]);
                                                     return `<div style="font-size: 12px; line-height: 1.3;">
                                                         <div style="color: #007bff; font-weight: 600;">Loading</div>
-                                                        <div style="color: #007bff; margin-bottom: 8px;">${roundDose(calcLoadingDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div style="color: #007bff; margin-bottom: 8px;">${roundDose(calcLoadingDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                                         <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                        <div style="color: #28a745;">${roundDose(calcMaintenanceDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div style="color: #28a745;">${roundDose(calcMaintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                                         <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                     </div>`;
                                                 })()
-                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
+                                                : `${roundDose(parseFloat(drug.calculatedDose), drug.name, selectedProtocol.name)} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${isImmuno ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
                                             :
                                             // For regular drugs, show rounded reduced dose
                                             (drug.hasLoadingDose ? 
@@ -13600,12 +13627,12 @@ function showFinalPrescription() {
                                                     const maintenanceDose = parseFloat(drug.calculatedDose.split(' → ')[1]) * (1 - reduction / 100);
                                                     return `<div style="font-size: 12px; line-height: 1.3;">
                                                         <div style="font-weight: 600;">Loading</div>
-                                                        <div style="margin-bottom: 8px;">${roundDose(loadingDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div style="margin-bottom: 8px;">${roundDose(loadingDose, drug.name, selectedProtocol.name)} ${drug.doseUnit}</div>
                                                         <div style="font-weight: 600;">Maintenance</div>
-                                                        <div>${roundDose(maintenanceDose, drug.name)} ${drug.doseUnit}</div>
+                                                        <div>${roundDose(maintenanceDose, drug.name, selectedProtocol.name)} ${drug.doseUnit}</div>
                                                     </div>`;
                                                 })()
-                                                : `${roundDose(reducedDose, drug.name)} ${drug.doseUnit}`)
+                                                : `${roundDose(reducedDose, drug.name, selectedProtocol.name)} ${drug.doseUnit}`)
                                         }
                                     </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6; font-size: 13px; color: #6c757d;">
@@ -13862,8 +13889,8 @@ function validateCarboplatinParameters(formData) {
     
     // Serum creatinine floor validation to prevent dose overestimation
     const creatinineValue = parseFloat(formData.creatinine);
-    if (creatinineValue < 0.8) {
-        const userConfirm = confirm('⚠️ CARBOPLATIN DOSING WARNING\n\nSerum creatinine values < 0.8 mg/dL may overestimate GFR and lead to carboplatin overdosing, especially in patients with:\n• Low muscle mass\n• Malnutrition\n• Elderly patients\n\nClinical Recommendation:\nConsider using a minimum creatinine value of 0.8 mg/dL for safer dosing.\n\nClick OK to proceed with the entered value, or Cancel to modify the creatinine value.');
+    if (creatinineValue < 0.7) {
+        const userConfirm = confirm('⚠️ CARBOPLATIN DOSING WARNING\n\nSerum creatinine values < 0.7 mg/dL may overestimate GFR and lead to carboplatin overdosing, especially in patients with:\n• Low muscle mass\n• Malnutrition\n• Elderly patients\n\nClinical Recommendation:\nConsider using a minimum creatinine value of 0.7 mg/dL for safer dosing.\n\nClick OK to proceed with the entered value, or Cancel to modify the creatinine value.');
         if (!userConfirm) {
             return false;
         }
