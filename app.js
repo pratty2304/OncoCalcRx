@@ -5757,7 +5757,7 @@ const protocolDatabase = {
         },
         // Targeted Therapy (Biomarker-directed)
         'Dabrafenib-Trametinib': {
-            name: 'Dabrafenib + Trametinib (BRAFV600E mutation)',
+            name: 'Dabrafenib + Trametinib (BRAFV600E mutation) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily', isOralTargeted: true },
@@ -5765,28 +5765,28 @@ const protocolDatabase = {
             ]
         },
         'Ivosidenib': {
-            name: 'Ivosidenib (IDH1 mutation)',
+            name: 'Ivosidenib (IDH1 mutation) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO daily', isOralTargeted: true }
             ]
         },
         'Pemigatinib': {
-            name: 'Pemigatinib (FGFR2 fusions)',
+            name: 'Pemigatinib (FGFR2 fusions) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'PO daily for 14 days, then 7 days off', isOralTargeted: true }
             ]
         },
         'Futibatinib': {
-            name: 'Futibatinib (FGFR2 fusions)',
+            name: 'Futibatinib (FGFR2 fusions) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Futibatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression', isOralTargeted: true }
             ]
         },
         'Pembrolizumab-Monotherapy': {
-            name: 'Pembrolizumab monotherapy (MSI/dMMR/TMB-H)',
+            name: 'Pembrolizumab monotherapy (MSI/dMMR/TMB-H) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
