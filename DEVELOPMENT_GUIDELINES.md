@@ -88,11 +88,11 @@
 
 ### **Oral Medications:**
 - **ALWAYS prefix with "PO"**
-- `schedule: 'PO daily'`
-- `schedule: 'PO twice daily'` (NOT "BID")
-- `schedule: 'PO daily x 3 years'` (for maintenance)
-- `schedule: 'PO BID D1-D14, every 21 days'`
-- `schedule: 'PO daily D1-21, every 28 days'`
+- `schedule: 'PO once daily'` (for single daily dosing)
+- `schedule: 'PO twice daily'` (for twice daily dosing, NOT "BID")
+- `schedule: 'PO once daily x 3 years'` (for maintenance)
+- `schedule: 'PO BID D1-D14, every 21 days'` (acceptable in RT context)
+- `schedule: 'PO once daily D1-21, every 28 days'`
 
 ### **Intravenous Medications:**
 - `schedule: 'D1, every 21 days'` (single day dosing)
@@ -129,7 +129,7 @@
 ### **FORMATTING CONSISTENCY RULES:**
 1. **Capitalization:** Use D1, D8 (capital D)
 2. **Spacing:** Always space after commas: `D1, D8, every 21 days`
-3. **No Abbreviations:** Use full words (daily, not QD; twice daily, not BID)
+3. **Frequency Clarity:** Use "once daily" and "twice daily" for explicit frequency distinction
 4. **PO Prefix:** ALL oral drugs must start with "PO "
 5. **Time Units:** Use "days" not "weeks" (every 14 days, not every 2 weeks)
 6. **Parentheses:** Use for additional context: `(maintenance)`, `(with RT)`, `(until progression)`

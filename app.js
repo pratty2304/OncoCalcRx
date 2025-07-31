@@ -105,23 +105,23 @@ const protocolDatabase = {
                 cycles: 24,
                 drugs: [
                     { name: 'Abemaciclib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
-                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Ribociclib-AI-Adjuvant': {
                 name: 'Ribociclib + Aromatase Inhibitor (NATALEE) (Adjuvant - high-risk early breast cancer)',
                 cycles: 36,
                 drugs: [
-                    { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days x 3 years' },
-                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO daily x 3 years' }
+                    { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO once daily, D1-21, every 28 days x 3 years' },
+                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO once daily x 3 years' }
                 ]
             },
             'Ribociclib-Letrozole-Adjuvant': {
                 name: 'Ribociclib + Letrozole (NATALEE) (Adjuvant - high-risk early breast cancer)',
                 cycles: 36,
                 drugs: [
-                    { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days x 3 years' },
-                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO daily x 3 years' }
+                    { name: 'Ribociclib', dose: 400, unit: 'mg', schedule: 'PO once daily, D1-21, every 28 days x 3 years' },
+                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily x 3 years' }
                 ]
             },
             'Paclitaxel-Weekly-Adjuvant': {
@@ -136,36 +136,36 @@ const protocolDatabase = {
                 name: 'Tamoxifen (Adjuvant/Metastatic)',
                 cycles: 60,
                 drugs: [
-                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Anastrozole': {
                 name: 'Anastrozole (Adjuvant/Metastatic)',
                 cycles: 60,
                 drugs: [
-                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Letrozole': {
                 name: 'Letrozole (Adjuvant/Metastatic)',
                 cycles: 60,
                 drugs: [
-                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Tamoxifen-Exemestane': {
                 name: 'Tamoxifen → Exemestane (Adjuvant)',
                 cycles: 60,
                 drugs: [
-                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO daily for 2-3 years' },
-                    { name: 'Exemestane', dose: 25, unit: 'mg', schedule: 'PO daily for remaining 5 years' }
+                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO once daily for 2-3 years' },
+                    { name: 'Exemestane', dose: 25, unit: 'mg', schedule: 'PO once daily for remaining 5 years' }
                 ]
             },
             'Tamoxifen-Goserelin': {
                 name: 'Tamoxifen + Goserelin (Premenopausal)',
                 cycles: 60,
                 drugs: [
-                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Tamoxifen', dose: 20, unit: 'mg', schedule: 'PO once daily' },
                     { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC every 28 days' }
                 ]
             },
@@ -173,7 +173,7 @@ const protocolDatabase = {
                 name: 'Anastrozole + Goserelin (Premenopausal)',
                 cycles: 60,
                 drugs: [
-                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Anastrozole', dose: 1, unit: 'mg', schedule: 'PO once daily' },
                     { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC every 28 days' }
                 ]
             },
@@ -182,16 +182,16 @@ const protocolDatabase = {
                 name: 'Palbociclib + Letrozole (PALOMA-1/2) (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' },
-                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
+                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Ribociclib-Letrozole': {
                 name: 'Ribociclib + Letrozole (MONALEESA-2) (Metastatic - 1L)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' },
-                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
+                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Abemaciclib-Letrozole': {
@@ -199,7 +199,7 @@ const protocolDatabase = {
                 cycles: 12,
                 drugs: [
                     { name: 'Abemaciclib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
-                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Letrozole', dose: 2.5, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             // Metastatic+ Therapy
@@ -207,7 +207,7 @@ const protocolDatabase = {
                 name: 'Palbociclib + Fulvestrant (PALOMA-3) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' },
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
                     { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
                 ]
             },
@@ -215,7 +215,7 @@ const protocolDatabase = {
                 name: 'Ribociclib + Fulvestrant (MONALEESA-3) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' },
+                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
                     { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
                 ]
             },
@@ -231,15 +231,15 @@ const protocolDatabase = {
                 name: 'Everolimus + Exemestane (BOLERO-2) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily' },
-                    { name: 'Exemestane', dose: 25, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily' },
+                    { name: 'Exemestane', dose: 25, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Alpelisib-Fulvestrant': {
                 name: 'Alpelisib + Fulvestrant (SOLAR-1) (PIK3CA mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Alpelisib', dose: 300, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Alpelisib', dose: 300, unit: 'mg', schedule: 'PO once daily' },
                     { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
                 ]
             },
@@ -247,15 +247,15 @@ const protocolDatabase = {
                 name: 'Elacestrant (EMERALD) (ESR1 mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Elacestrant', dose: 345, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Elacestrant', dose: 345, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Inavolisib-Palbociclib-Fulvestrant': {
                 name: 'Inavolisib + Palbociclib + Fulvestrant (INAVO120) (PIK3CA mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Inavolisib', dose: 9, unit: 'mg', schedule: 'PO daily' },
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' },
+                    { name: 'Inavolisib', dose: 9, unit: 'mg', schedule: 'PO once daily' },
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily for 21 days, then 7 days off' },
                     { name: 'Fulvestrant', dose: 500, unit: 'mg', schedule: 'IM monthly' }
                 ]
             },
@@ -271,23 +271,23 @@ const protocolDatabase = {
                 name: 'Camizestrant + Palbociclib (ESR1 mutation detected during 1L treatment)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO daily' },
-                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days' }
+                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO once daily' },
+                    { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily, D1-21, every 28 days' }
                 ]
             },
             'Camizestrant-Ribociclib': {
                 name: 'Camizestrant + Ribociclib (ESR1 mutation detected during 1L treatment)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO daily' },
-                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO daily, D1-21, every 28 days' }
+                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO once daily' },
+                    { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily, D1-21, every 28 days' }
                 ]
             },
             'Camizestrant-Abemaciclib': {
                 name: 'Camizestrant + Abemaciclib (ESR1 mutation detected during 1L treatment)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO daily' },
+                    { name: 'Camizestrant', dose: 75, unit: 'mg', schedule: 'PO once daily' },
                     { name: 'Abemaciclib', dose: 150, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
@@ -502,7 +502,7 @@ const protocolDatabase = {
                 name: 'Talazoparib (EMBRACA) (Metastatic - germline BRCA1/2 mutation)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             // Metastatic - 1L Therapy
@@ -943,7 +943,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Lapatinib', dose: 1000, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Lapatinib', dose: 1000, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Capecitabine-Lapatinib': {
@@ -951,7 +951,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' },
-                    { name: 'Lapatinib', dose: 1250, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Lapatinib', dose: 1250, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Trastuzumab-Navelbine': {
@@ -1003,7 +1003,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Capecitabine', dose: 750, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' },
-                    { name: 'Neratinib', dose: 240, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Neratinib', dose: 240, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Margetuximab-Capecitabine': {
@@ -1042,7 +1042,7 @@ const protocolDatabase = {
                 name: 'Neratinib (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Neratinib', dose: 240, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Neratinib', dose: 240, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Single-Capecitabine': {
@@ -4462,7 +4462,7 @@ const protocolDatabase = {
             name: 'Lenvatinib (REFLECT)',
             cycles: 8,
             drugs: [
-                { name: 'Lenvatinib', dose: 12, unit: 'mg', schedule: 'PO daily (≥60kg) or 8mg daily (<60kg)' }
+                { name: 'Lenvatinib', dose: 12, unit: 'mg', schedule: 'PO once daily (≥60kg) or 8mg daily (<60kg)' }
             ]
         },
 
@@ -4479,14 +4479,14 @@ const protocolDatabase = {
             name: 'Cabozantinib (CELESTIAL)',
             cycles: 8,
             drugs: [
-                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Regorafenib': {
             name: 'Regorafenib (RESORCE)',
             cycles: 8,
             drugs: [
-                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO daily D1-D21, then 7 days off, every 28 days' }
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, then 7 days off, every 28 days' }
             ]
         },
         'Ramucirumab': {
@@ -4532,7 +4532,7 @@ const protocolDatabase = {
             name: 'Apatinib (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Apatinib', dose: 500, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Apatinib', dose: 500, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
 
@@ -4638,7 +4638,7 @@ const protocolDatabase = {
                 name: 'Cabozantinib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Sorafenib-Everolimus': {
@@ -4646,7 +4646,7 @@ const protocolDatabase = {
                 cycles: 8,
                 drugs: [
                     { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily continuously' },
-                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Cyclophosphamide-Topotecan': {
@@ -4684,28 +4684,28 @@ const protocolDatabase = {
                 name: 'Imatinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Dasatinib': {
                 name: 'Dasatinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Sunitinib': {
                 name: 'Sunitinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO daily D1-D28, every 42 days (4 weeks on, 2 weeks off)' }
+                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO once daily D1-D28, every 42 days (4 weeks on, 2 weeks off)' }
                 ]
             },
             'Imatinib-Cisplatin': {
                 name: 'Imatinib + Cisplatin (Recurrent/Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily continuously' },
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily continuously' },
                     { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
@@ -4713,22 +4713,22 @@ const protocolDatabase = {
                 name: 'Imatinib + Sirolimus (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily continuously' },
-                    { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily continuously' },
+                    { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Erlotinib': {
                 name: 'Erlotinib (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily continuously' }
+                    { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily continuously' }
                 ]
             },
             'Lapatinib': {
                 name: 'Lapatinib (EGFR positive) (Recurrent/Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lapatinib', dose: 1500, unit: 'mg', schedule: 'PO daily continuously (EGFR positive)' }
+                    { name: 'Lapatinib', dose: 1500, unit: 'mg', schedule: 'PO once daily continuously (EGFR positive)' }
                 ]
             },
             'Sorafenib': {
@@ -4838,7 +4838,7 @@ const protocolDatabase = {
                 name: 'Cabozantinib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily' }
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Docetaxel-Gemcitabine': {
@@ -4861,36 +4861,36 @@ const protocolDatabase = {
                 name: 'Regorafenib (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO daily D1-D21, every 28 days' }
+                    { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
                 ]
             }
         },
         chondrosarcoma: {
-            'Dasatinib': {
-                name: 'Dasatinib - (Metastatic/Unresectable)',
+            'Pazopanib': {
+                name: 'Pazopanib (VEGFR inhibitor) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
-            'Pazopanib': {
-                name: 'Pazopanib - (Metastatic/Unresectable)',
+            'Dasatinib': {
+                name: 'Dasatinib (BCR-ABL inhibitor) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily, continuous' }
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Ivosidenib': {
-                name: 'Ivosidenib (IDH1 mutation) - (Advanced/Metastatic)',
+                name: 'Ivosidenib (IDH1 inhibitor) (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO once daily, continuous (IDH1 mutation required)' }
+                    { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO once daily (IDH1 mutation required)' }
                 ]
             }
         },
         giant_cell_tumor: {
             'Denosumab': {
-                name: 'Denosumab - (Unresectable/Metastatic)',
+                name: 'Denosumab (RANKL inhibitor) (Unresectable)',
                 cycles: 12,
                 drugs: [
                     { name: 'Denosumab', dose: 120, unit: 'mg', schedule: 'SC D1, D8, D15, then every 28 days' }
@@ -5053,56 +5053,56 @@ const protocolDatabase = {
                 name: 'Lenvatinib (SELECT) - RAI-refractory DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Sorafenib-DTC': {
                 name: 'Sorafenib (DECISION) - RAI-refractory DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Pazopanib-DTC': {
                 name: 'Pazopanib - Follicular/Hurthle Cell Thyroid Cancer',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Selpercatinib-RET-DTC': {
                 name: 'Selpercatinib - RET-altered DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Pralsetinib-RET-DTC': {
                 name: 'Pralsetinib - RET-altered DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Larotrectinib-NTRK-DTC': {
                 name: 'Larotrectinib - NTRK fusion-positive DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Entrectinib-NTRK-DTC': {
                 name: 'Entrectinib - NTRK fusion-positive DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Repotrectinib-NTRK-DTC': {
                 name: 'Repotrectinib - NTRK fusion-positive DTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             }
         },
@@ -5112,28 +5112,28 @@ const protocolDatabase = {
                 name: 'Selpercatinib - RET-mutant MTC (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Pralsetinib-RET-MTC': {
                 name: 'Pralsetinib - RET-mutant MTC (Metastatic)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Vandetanib-MTC': {
                 name: 'Vandetanib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Cabozantinib-MTC': {
                 name: 'Cabozantinib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Sunitinib-MTC': {
@@ -5147,28 +5147,28 @@ const protocolDatabase = {
                 name: 'Sorafenib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Lenvatinib-MTC': {
                 name: 'Lenvatinib - Advanced MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Larotrectinib-NTRK-MTC': {
                 name: 'Larotrectinib - NTRK fusion-positive MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Entrectinib-NTRK-MTC': {
                 name: 'Entrectinib - NTRK fusion-positive MTC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Pembrolizumab-TMB-MTC': {
@@ -5185,15 +5185,15 @@ const protocolDatabase = {
                 name: 'Dabrafenib + Trametinib - BRAF V600E-mutant ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO daily until progression' },
-                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO once daily until progression' },
+                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Vemurafenib-Cobimetinib-ATC': {
                 name: 'Vemurafenib + Cobimetinib - BRAF V600E-mutant ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO daily until progression' },
+                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO once daily until progression' },
                     { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
                 ]
             },
@@ -5202,14 +5202,14 @@ const protocolDatabase = {
                 name: 'Selpercatinib - RET-altered ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Pralsetinib-RET-ATC': {
                 name: 'Pralsetinib - RET-altered ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             // NTRK fusion-positive Anaplastic Thyroid Cancer
@@ -5217,21 +5217,21 @@ const protocolDatabase = {
                 name: 'Larotrectinib - NTRK fusion-positive ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Entrectinib-NTRK-ATC': {
                 name: 'Entrectinib - NTRK fusion-positive ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Repotrectinib-NTRK-ATC': {
                 name: 'Repotrectinib - NTRK fusion-positive ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             // Multi-kinase Inhibitors for ATC
@@ -5239,21 +5239,21 @@ const protocolDatabase = {
                 name: 'Lenvatinib - Advanced ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Sorafenib-ATC': {
                 name: 'Sorafenib - Advanced ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Cabozantinib-ATC': {
                 name: 'Cabozantinib - Advanced ATC',
                 cycles: 12,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             // Immunotherapy for ATC
@@ -5408,7 +5408,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Capecitabine-Erlotinib': {
@@ -5416,7 +5416,7 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO BD D1-D14, every 21 days' },
-                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Erlotinib', dose: 100, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Liposomal-Irinotecan-5FU-LV-NAPOLI': {
@@ -5473,7 +5473,7 @@ const protocolDatabase = {
             name: 'Sotorasib - Metastatic (KRAS G12C+)',
             cycles: 12,
             drugs: [
-                { name: 'Sotorasib', dose: 960, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Sotorasib', dose: 960, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Adagrasib-KRAS': {
@@ -5771,28 +5771,28 @@ const protocolDatabase = {
             cycles: 12,
             drugs: [
                 { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily', isOralTargeted: true },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO daily', isOralTargeted: true }
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily', isOralTargeted: true }
             ]
         },
         'Ivosidenib': {
             name: 'Ivosidenib (IDH1 mutation) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO daily', isOralTargeted: true }
+                { name: 'Ivosidenib', dose: 500, unit: 'mg', schedule: 'PO once daily', isOralTargeted: true }
             ]
         },
         'Pemigatinib': {
             name: 'Pemigatinib (FGFR2 fusions) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'PO daily for 14 days, then 7 days off', isOralTargeted: true }
+                { name: 'Pemigatinib', dose: 13.5, unit: 'mg', schedule: 'PO once daily for 14 days, then 7 days off', isOralTargeted: true }
             ]
         },
         'Futibatinib': {
             name: 'Futibatinib (FGFR2 fusions) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Futibatinib', dose: 20, unit: 'mg', schedule: 'PO daily until progression', isOralTargeted: true }
+                { name: 'Futibatinib', dose: 20, unit: 'mg', schedule: 'PO once daily until progression', isOralTargeted: true }
             ]
         },
         'Pembrolizumab-Monotherapy': {
@@ -5897,7 +5897,7 @@ const protocolDatabase = {
             name: 'Erdafitinib (FGFR inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Erdafitinib', dose: 8, unit: 'mg', schedule: 'PO daily' }
+                { name: 'Erdafitinib', dose: 8, unit: 'mg', schedule: 'PO once daily' }
             ]
         },
         'Sacituzumab-Govitecan': {
@@ -6023,7 +6023,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
-                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily' },
+                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
@@ -6042,7 +6042,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
-                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily' },
+                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
@@ -6111,7 +6111,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
                 { name: 'Prednisone', dose: 2, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
-                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Rd': {
@@ -6278,14 +6278,14 @@ const protocolDatabase = {
             name: 'Lenalidomide (single agent) - Maintenance',
             cycles: 12,
             drugs: [
-                { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Thalidomide': {
             name: 'Thalidomide (single agent) - Maintenance',
             cycles: 12,
             drugs: [
-                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Dexamethasone': {
@@ -6682,7 +6682,7 @@ const protocolDatabase = {
             name: 'Erlotinib (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily' }
+                { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily' }
             ]
         },
         'Larotrectinib-NTRK': {
@@ -6696,7 +6696,7 @@ const protocolDatabase = {
             name: 'Entrectinib (NTRK gene fusion-positive tumors)',
             cycles: 12,
             drugs: [
-                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily' }
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
             ]
         }
     },
@@ -6708,7 +6708,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily (start 1-2 weeks before treatment)' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
@@ -6718,7 +6718,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily (start 1-2 weeks before treatment)' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
@@ -6737,7 +6737,7 @@ const protocolDatabase = {
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily (start 1-2 weeks before treatment)' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
@@ -6748,7 +6748,7 @@ const protocolDatabase = {
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily (start 1-2 weeks before treatment)' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
@@ -6800,7 +6800,7 @@ const protocolDatabase = {
             cycles: 12,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks' }
             ]
         },
@@ -6865,7 +6865,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily (start 1-2 weeks before treatment)' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
@@ -6875,7 +6875,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO daily (start 1-2 weeks before treatment)' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         }
@@ -7127,7 +7127,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily' }
+                { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily' }
             ]
         },
         
@@ -7343,14 +7343,14 @@ const protocolDatabase = {
             name: 'Vismodegib (Hedgehog pathway inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Vismodegib', dose: 150, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Vismodegib', dose: 150, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Sonidegib': {
             name: 'Sonidegib (Hedgehog pathway inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Sonidegib', dose: 200, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Sonidegib', dose: 200, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Cemiplimab': {
@@ -7443,7 +7443,7 @@ const protocolDatabase = {
             name: 'Procarbazine (single agent) - Recurrent GBM',
             cycles: 6,
             drugs: [
-                { name: 'Procarbazine', dose: 150, unit: 'mg/m²', schedule: 'PO daily divided into 3 doses' }
+                { name: 'Procarbazine', dose: 150, unit: 'mg/m²', schedule: 'PO once daily divided into 3 doses' }
             ]
         },
         'Temozolomide': {
@@ -7589,14 +7589,14 @@ const protocolDatabase = {
             name: 'Imatinib (B2222) (Metastatic GIST)',
             cycles: 12,
             drugs: [
-                { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression (800mg if exon 9 mutation)' }
+                { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression (800mg if exon 9 mutation)' }
             ]
         },
         'Avapritinib-PDGFRA': {
             name: 'Avapritinib (NAVIGATOR) - PDGFRA D842V mutant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Avapritinib', dose: 300, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Avapritinib', dose: 300, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
 
@@ -7623,21 +7623,21 @@ const protocolDatabase = {
             name: 'Ripretinib (INVICTUS) (Metastatic) - Multiple TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Ripretinib', dose: 150, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Cabozantinib': {
             name: 'Cabozantinib - Multiple TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Everolimus': {
             name: 'Everolimus - Multiple TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
 
@@ -7646,28 +7646,28 @@ const protocolDatabase = {
             name: 'Nilotinib - Imatinib-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
+                { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
             ]
         },
         'Dasatinib': {
             name: 'Dasatinib - Imatinib-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Dasatinib', dose: 70, unit: 'mg', schedule: 'twice PO daily until progression' }
+                { name: 'Dasatinib', dose: 70, unit: 'mg', schedule: 'twice PO once daily until progression' }
             ]
         },
         'Sorafenib': {
             name: 'Sorafenib - TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
+                { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
             ]
         },
         'Pazopanib': {
             name: 'Pazopanib - TKI-resistant GIST',
             cycles: 8,
             drugs: [
-                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         }
     },
@@ -7690,43 +7690,43 @@ const protocolDatabase = {
             name: 'Larotrectinib - NTRK Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
+                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
             ]
         },
         'Entrectinib': {
             name: 'Entrectinib - NTRK Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Repotrectinib': {
             name: 'Repotrectinib - NTRK Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Selpercatinib': {
             name: 'Selpercatinib - RET Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
+                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
             ]
         },
         'Pralsetinib': {
             name: 'Pralsetinib - RET Fusion-positive Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Dabrafenib-Trametinib': {
             name: 'Dabrafenib + Trametinib - BRAF V600E-mutant Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO daily until progression' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO daily until progression' }
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO once daily until progression' },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Dostarlimab-MSI-H': {
@@ -7747,7 +7747,7 @@ const protocolDatabase = {
             name: 'Vemurafenib - BRAF V600E-mutant Solid Tumors',
             cycles: 8,
             drugs: [
-                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO daily until progression' }
+                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO once daily until progression' }
             ]
         },
         'Enfortumab-Vedotin-NECTIN4': {
@@ -7787,14 +7787,14 @@ const protocolDatabase = {
             name: 'Everolimus (RADIANT-4 Trial) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Everolimus-Octreotide': {
             name: 'Everolimus + Octreotide LAR (RADIANT-2 Trial) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuous' },
+                { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily, continuous' },
                 { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
@@ -7802,7 +7802,7 @@ const protocolDatabase = {
             name: 'Sunitinib (Pancreatic NETs) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         
@@ -7878,14 +7878,14 @@ const protocolDatabase = {
             name: 'Cabozantinib (Advanced NETs) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Lenvatinib': {
             name: 'Lenvatinib (Advanced NETs) - (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily, continuous' }
+                { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Axitinib': {
@@ -9478,7 +9478,7 @@ const protocolDatabase = {
             name: 'Regorafenib (Metastatic - 3L+)',
             cycles: 12,
             drugs: [
-                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO daily D1-D21, every 28 days' }
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
             ]
         },
         'Metastatic-Trifluridine-Tipiracil-3L': {
@@ -9782,28 +9782,28 @@ const protocolDatabase = {
                 name: 'Imatinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression (600-800mg if inadequate response)' }
+                    { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression (600-800mg if inadequate response)' }
                 ]
             },
             'Dasatinib-Metastatic': {
                 name: 'Dasatinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Nilotinib-Metastatic': {
                 name: 'Nilotinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nilotinib', dose: 300, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Nilotinib', dose: 300, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Bosutinib-Metastatic': {
                 name: 'Bosutinib (BCR-ABL TKI) - Metastatic Chronic Phase',
                 cycles: 12,
                 drugs: [
-                    { name: 'Bosutinib', dose: 400, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Bosutinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Dasatinib-Metastatic': {
@@ -9817,14 +9817,14 @@ const protocolDatabase = {
                 name: 'Nilotinib (BCR-ABL TKI) - Imatinib-resistant/intolerant',
                 cycles: 12,
                 drugs: [
-                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Bosutinib-Metastatic': {
                 name: 'Bosutinib (BCR-ABL TKI) - Metastatic',
                 cycles: 12,
                 drugs: [
-                    { name: 'Bosutinib', dose: 500, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Bosutinib', dose: 500, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Ponatinib': {
@@ -9925,7 +9925,7 @@ const protocolDatabase = {
                 name: 'Acalabrutinib + Obinutuzumab (BTK inhibitor) - Metastatic',
                 cycles: 6,
                 drugs: [
-                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' },
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' },
                     { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'D1,D8,D15 cycle 1, then D1 every 28 days' }
                 ]
             },
@@ -9933,7 +9933,7 @@ const protocolDatabase = {
                 name: 'Ibrutinib + Rituximab (BTK inhibitor) - Metastatic',
                 cycles: 6,
                 drugs: [
-                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO daily until progression' },
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO once daily until progression' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² every 28 days' }
                 ]
             },
@@ -9949,7 +9949,7 @@ const protocolDatabase = {
                 name: 'Idelalisib + Rituximab (PI3K inhibitor) - Relapsed/Refractory',
                 cycles: 8,
                 drugs: [
-                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'twice PO daily until progression' },
+                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'twice PO once daily until progression' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1 cycle 1, then 500mg/m² every 14 days x 7 cycles' }
                 ]
             },
@@ -10061,21 +10061,21 @@ const protocolDatabase = {
                 name: 'Ibrutinib (BTK inhibitor) - Relapsed/Refractory',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO daily until progression' }
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO once daily until progression' }
                 ]
             },
             'Acalabrutinib': {
                 name: 'Acalabrutinib (BTK inhibitor) - Relapsed/Refractory',
                 cycles: 12,
                 drugs: [
-                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Zanubrutinib': {
                 name: 'Zanubrutinib (BTK inhibitor) - Relapsed/Refractory',
                 cycles: 12,
                 drugs: [
-                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             },
             'Venetoclax': {
@@ -10089,7 +10089,7 @@ const protocolDatabase = {
                 name: 'Duvelisib (PI3K inhibitor) - Relapsed/Refractory',
                 cycles: 8,
                 drugs: [
-                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'twice PO daily until progression' }
+                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'twice PO once daily until progression' }
                 ]
             }
         },
@@ -10236,7 +10236,7 @@ const protocolDatabase = {
                 name: 'Imatinib (BCR-ABL TKI) - Ph+ ALL',
                 cycles: 24,
                 drugs: [
-                    { name: 'Imatinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression (Ph+ ALL)' },
+                    { name: 'Imatinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression (Ph+ ALL)' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
                 ]
             },
@@ -10244,7 +10244,7 @@ const protocolDatabase = {
                 name: 'Dasatinib (BCR-ABL TKI) - Ph+ ALL',
                 cycles: 24,
                 drugs: [
-                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO daily until progression (Ph+ ALL)' },
+                    { name: 'Dasatinib', dose: 100, unit: 'mg', schedule: 'PO once daily until progression (Ph+ ALL)' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
                 ]
             },
@@ -10252,7 +10252,7 @@ const protocolDatabase = {
                 name: 'Nilotinib (BCR-ABL TKI) - Ph+ ALL',
                 cycles: 24,
                 drugs: [
-                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO daily until progression (Ph+ ALL)' },
+                    { name: 'Nilotinib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression (Ph+ ALL)' },
                     { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D14 (with chemotherapy backbone)' }
                 ]
             },
