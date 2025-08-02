@@ -34,6 +34,25 @@
   - `Temozolomide monotherapy`
   - **DO NOT** use "monotherapy" for oral targeted therapies: `Erdafitinib (FGFR inhibitor)` ✅ NOT `Erdafitinib monotherapy`
 
+- **5-Fluorouracil Administration Specificity:** Always distinguish administration method when both exist in same regimen
+  - `5-Fluorouracil (bolus)` - For bolus/push doses
+  - `5-Fluorouracil (continuous infusion)` - For CI/prolonged infusion doses
+  - **Single administration regimens:** Use `5-Fluorouracil` without parenthetical descriptor
+  - **Mixed administration regimens:** MUST specify both `(bolus)` and `(continuous infusion)` for clarity
+
+**Examples:**
+```javascript
+// Mixed regimen (FOLFOX) - Both labels required
+{ name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+{ name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'CI over 46 hours D1-D2, every 14 days' }
+
+// Single CI regimen (FLOT) - No label needed
+{ name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'CI over 24 hours D1, every 14 days' }
+
+// Single bolus regimen (CAF) - No label needed  
+{ name: '5-Fluorouracil', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+```
+
 - **Immunotherapy Targets:** Always specify mechanism
   - `(PD-1 inhibitor)` - Pembrolizumab, Nivolumab, Cemiplimab
   - `(PD-L1 inhibitor)` - Durvalumab, Avelumab
