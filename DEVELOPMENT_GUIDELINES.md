@@ -480,4 +480,112 @@ cancerType: {
 
 ---
 
+## **15. MESNA UROPROTECTION DOSING LOGIC**
+
+### **Clinical Rationale:**
+Mesna (2-mercaptoethanesulfonate) provides uroprotection for alkylating agents by neutralizing toxic metabolites in the urinary tract, preventing hemorrhagic cystitis.
+
+### **Ifosfamide + Mesna Protocols:**
+
+#### **Total Daily Mesna Dose:**
+- **100% of Ifosfamide dose** (equal mg/m² amounts)
+- **Split-dose administration:** 20% - 40% - 40% pattern
+
+#### **Split-Dose Timing:**
+1. **Pre-dose (20%):** Before Ifosfamide infusion
+2. **4-hour post (40%):** 4 hours after Ifosfamide completion  
+3. **8-hour post (40%):** 8 hours after Ifosfamide completion
+
+### **Database Structure - Individual Dose Components:**
+
+**CRITICAL: Represent Mesna as separate drug entries, NOT single total dose**
+
+```javascript
+// ❌ INCORRECT - Single total dose (confusing for clinical use)
+{ name: 'Mesna', dose: 1500, unit: 'mg/m²', schedule: '300 mg/m² before, then 600 mg/m² at 4h and 8h post' }
+
+// ✅ CORRECT - Individual dose components (clinically clear)
+{ name: 'Mesna (pre-dose)', dose: 300, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5 every 21 days' },
+{ name: 'Mesna (4h post)', dose: 600, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D5 every 21 days' },
+{ name: 'Mesna (8h post)', dose: 600, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D5 every 21 days' }
+```
+
+### **Dosing Examples:**
+
+#### **Ifosfamide 1200 mg/m² (e.g., VIP regimen):**
+- **Mesna (pre-dose):** 240 mg/m² (20%)
+- **Mesna (4h post):** 480 mg/m² (40%)
+- **Mesna (8h post):** 480 mg/m² (40%)
+- **Total:** 1200 mg/m² (100%)
+
+#### **Ifosfamide 1500 mg/m² (e.g., TIP, BIP regimens):**
+- **Mesna (pre-dose):** 300 mg/m² (20%)
+- **Mesna (4h post):** 600 mg/m² (40%)
+- **Mesna (8h post):** 600 mg/m² (40%)
+- **Total:** 1500 mg/m² (100%)
+
+#### **Ifosfamide 2500 mg/m² (e.g., AIM regimen):**
+- **Mesna (pre-dose):** 500 mg/m² (20%)
+- **Mesna (4h post):** 1000 mg/m² (40%)
+- **Mesna (8h post):** 1000 mg/m² (40%)
+- **Total:** 2500 mg/m² (100%)
+
+### **High-Dose Cyclophosphamide + Mesna:**
+
+#### **Indication Criteria:**
+- **Cyclophosphamide ≥1000 mg/m²** OR **total dose ≥1 g**
+- Examples: BEACOPP (1250 mg/m²), R-CVP (1000 mg/m²)
+
+#### **Mesna Dosing:**
+- **Total Mesna = 60-100% of Cyclophosphamide dose**
+- **Standard: 80% of Cyclophosphamide dose**
+- **Single dose administration** (unlike Ifosfamide split-dosing)
+
+#### **Examples:**
+```javascript
+// Cyclophosphamide 1250 mg/m² → Mesna 1000 mg/m² (80%)
+{ name: 'Cyclophosphamide', dose: 1250, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+{ name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' }
+
+// Cyclophosphamide 1000 mg/m² → Mesna 800 mg/m² (80%)  
+{ name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+{ name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' }
+```
+
+### **Clinical Benefits of Split-Dose Structure:**
+
+#### **For Prescribers:**
+- **Clear individual dose components** for accurate prescribing
+- **Precise timing intervals** specified for each administration
+- **No confusion** between total daily dose and individual components
+
+#### **For Pharmacists:**
+- **Individual dose calculations** for dispensing preparation
+- **Clear preparation instructions** for each time point
+- **Accurate inventory planning** for multiple administrations
+
+#### **For Nursing Staff:**
+- **Precise administration timing** with clear dose amounts
+- **Individual dose verification** at each time point
+- **Simplified documentation** for each Mesna administration
+
+### **Implementation Requirements:**
+
+#### **Regimen Coverage:**
+- **ALL Ifosfamide-containing regimens** must use split-dose structure
+- **High-dose Cyclophosphamide regimens** require Mesna addition
+- **Cross-cancer type consistency** (testicular, sarcoma, cervical, endometrial, etc.)
+
+#### **Schedule Formatting:**
+- Use standardized timing descriptions: "before Ifosfamide", "4 hours after Ifosfamide", "8 hours after Ifosfamide"
+- Include cycle timing: "D1-D5 every 21 days", "D1-D3 every 21 days"
+- Add dose rationale in parentheses when helpful: "(80% of Cyclophosphamide dose)"
+
+#### **Quality Assurance:**
+- Verify 20-40-40 split adds to 100% of Ifosfamide dose
+- Ensure all three components have matching schedule patterns
+- Confirm naming convention: "Mesna (pre-dose)", "Mesna (4h post)", "Mesna (8h post)"
+
+---
+
 This reference guide should be updated whenever new patterns or logic are introduced to maintain consistency across the application.
