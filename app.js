@@ -179,7 +179,7 @@ const protocolDatabase = {
             },
             // Metastatic - 1L Therapy
             'Palbociclib-Letrozole': {
-                name: 'Palbociclib + Letrozole (PALOMA-1/2) (Metastatic - 1L)',
+                name: 'Palbociclib + Letrozole (PALOMA-1/2) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Palbociclib', dose: 125, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
@@ -187,7 +187,7 @@ const protocolDatabase = {
                 ]
             },
             'Ribociclib-Letrozole': {
-                name: 'Ribociclib + Letrozole (MONALEESA-2) (Metastatic - 1L)',
+                name: 'Ribociclib + Letrozole (MONALEESA-2) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Ribociclib', dose: 600, unit: 'mg', schedule: 'PO once daily D1-21, every 28 days' },
@@ -195,7 +195,7 @@ const protocolDatabase = {
                 ]
             },
             'Abemaciclib-Letrozole': {
-                name: 'Abemaciclib + Letrozole (MONARCH-3) (Metastatic - 1L)',
+                name: 'Abemaciclib + Letrozole (MONARCH-3) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Abemaciclib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
@@ -515,7 +515,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-3weekly': {
-                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -523,7 +523,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-weekly': {
-                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' },
@@ -531,7 +531,7 @@ const protocolDatabase = {
                 ]
             },
             'Nab-Paclitaxel-Carboplatin-3weekly': {
-                name: 'Nab-paclitaxel + Carboplatin (3-weekly) (Metastatic - 1L)',
+                name: 'Nab-paclitaxel + Carboplatin (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -539,7 +539,7 @@ const protocolDatabase = {
                 ]
             },
             'Nab-Paclitaxel-Carboplatin-weekly': {
-                name: 'Nab-paclitaxel + Carboplatin (weekly) (Metastatic - 1L)',
+                name: 'Nab-paclitaxel + Carboplatin (weekly) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 7 days' },
@@ -547,7 +547,7 @@ const protocolDatabase = {
                 ]
             },
             'Gemcitabine-Carboplatin': {
-                name: 'Gemcitabine + Carboplatin (Metastatic - 1L)',
+                name: 'Gemcitabine + Carboplatin (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -555,7 +555,7 @@ const protocolDatabase = {
                 ]
             },
             'Carboplatin-Docetaxel': {
-                name: 'Carboplatin + Docetaxel (Metastatic - 1L)',
+                name: 'Carboplatin + Docetaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -563,7 +563,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Bevacizumab': {
-                name: 'Paclitaxel + Bevacizumab (E2100) (Metastatic - 1L)',
+                name: 'Paclitaxel + Bevacizumab (E2100) (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Paclitaxel', dose: 90, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
@@ -716,8 +716,8 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'TCH': {
@@ -726,7 +726,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'THP': {
@@ -734,8 +734,8 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'PCHP': {
@@ -744,8 +744,8 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'PCH': {
@@ -754,7 +754,7 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'PHP': {
@@ -762,8 +762,8 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                    { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'D1, 840 mg loading dose, then 420 mg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'AC-TH': {
@@ -773,7 +773,7 @@ const protocolDatabase = {
                     { name: 'Doxorubicin (Adriamycin)', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles' },
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days x 4 cycles (after 4 cycles AC)' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'Dose-Dense-AC': {
@@ -789,7 +789,7 @@ const protocolDatabase = {
                 cycles: 4,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 14 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 14 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 14 days', hasLoadingDose: true }
                 ]
             },
             'TC': {
@@ -831,7 +831,7 @@ const protocolDatabase = {
                 name: 'Trastuzumab (Adjuvant)',
                 cycles: 17,
                 drugs: [
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days for 1 year', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days for 1 year', hasLoadingDose: true }
                 ]
             },
             'Paclitaxel-Weekly-Adjuvant': {
@@ -860,37 +860,37 @@ const protocolDatabase = {
                 ]
             },
             'TDxd-DESTINY-Breast03': {
-                name: 'Trastuzumab deruxtecan (Metastatic / DESTINY-Breast03)',
+                name: 'Trastuzumab deruxtecan (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
             'TDxd-DESTINY-Breast02': {
-                name: 'Trastuzumab deruxtecan (Metastatic - 3L+ / DESTINY-Breast02)',
+                name: 'Trastuzumab deruxtecan (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Trastuzumab deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
             'Trastuzumab-Paclitaxel': {
-                name: 'Trastuzumab + Paclitaxel (Metastatic - 1L)',
+                name: 'Trastuzumab + Paclitaxel (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Trastuzumab-Docetaxel': {
-                name: 'Trastuzumab + Docetaxel (CLEOPATRA/M77001) (Metastatic - 1L)',
+                name: 'Trastuzumab + Docetaxel (CLEOPATRA/M77001) (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                     { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Paclitaxel-Carboplatin-3weekly': {
-                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (3-weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -898,7 +898,7 @@ const protocolDatabase = {
                 ]
             },
             'Paclitaxel-Carboplatin-weekly': {
-                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic - 1L)',
+                name: 'Paclitaxel + Carboplatin (PC) (weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
@@ -906,7 +906,7 @@ const protocolDatabase = {
                 ]
             },
             'Nab-Paclitaxel-Carboplatin-3weekly': {
-                name: 'Nab-paclitaxel + Carboplatin (3 weekly) (Metastatic - 1L)',
+                name: 'Nab-paclitaxel + Carboplatin (3 weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 260, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -914,7 +914,7 @@ const protocolDatabase = {
                 ]
             },
             'Nab-Paclitaxel-Carboplatin-weekly': {
-                name: 'Nab-paclitaxel + Carboplatin (weekly) (Metastatic - 1L)',
+                name: 'Nab-paclitaxel + Carboplatin (weekly) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Nab-paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
@@ -922,7 +922,7 @@ const protocolDatabase = {
                 ]
             },
             'Gemcitabine-Carboplatin': {
-                name: 'Gemcitabine + Carboplatin (Metastatic - 1L)',
+                name: 'Gemcitabine + Carboplatin (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -930,61 +930,61 @@ const protocolDatabase = {
                 ]
             },
             'Gemcitabine-Carboplatin-Trastuzumab': {
-                name: 'Gemcitabine + Carboplatin + Trastuzumab (Metastatic - 1L)',
+                name: 'Gemcitabine + Carboplatin + Trastuzumab (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, D8, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'Trastuzumab-Lapatinib': {
-                name: 'Trastuzumab + Lapatinib (EGF104900) (Metastatic - 1L)',
+                name: 'Trastuzumab + Lapatinib (EGF104900) (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                     { name: 'Lapatinib', dose: 1000, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Capecitabine-Lapatinib': {
-                name: 'Capecitabine + Lapatinib (EGF100151) (Metastatic - 1L)',
+                name: 'Capecitabine + Lapatinib (EGF100151) (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' },
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' },
                     { name: 'Lapatinib', dose: 1250, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Trastuzumab-Navelbine': {
-                name: 'Trastuzumab + Navelbine (Metastatic - 1L)',
+                name: 'Trastuzumab + Navelbine (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Trastuzumab', dose: 4, maintenanceDose: 2, unit: 'mg/kg', schedule: 'D1, 4 mg/kg loading dose, then 2 mg/kg weekly', hasLoadingDose: true },
-                    { name: 'Vinorelbine (Navelbine)', dose: 25, unit: 'mg/m²', schedule: 'D1, weekly' }
+                    { name: 'Trastuzumab', dose: 4, maintenanceDose: 2, unit: 'mg/kg', schedule: 'D1, 4 mg/kg loading dose, then 2 mg/kg every 7 days', hasLoadingDose: true },
+                    { name: 'Vinorelbine (Navelbine)', dose: 25, unit: 'mg/m²', schedule: 'D1, every 7 days' }
                 ]
             },
             'Trastuzumab-Capecitabine': {
-                name: 'Trastuzumab + Capecitabine (Metastatic - 1L)',
+                name: 'Trastuzumab + Capecitabine (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' }
                 ]
             },
             'CHP': {
-                name: 'Paclitaxel + Cyclophosphamide + Trastuzumab (Metastatic - 1L)',
+                name: 'Paclitaxel + Cyclophosphamide + Trastuzumab (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             'CH': {
-                name: 'Paclitaxel + Trastuzumab (Metastatic - 1L)',
+                name: 'Paclitaxel + Trastuzumab (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
                 ]
             },
             
@@ -994,15 +994,15 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Tucatinib', dose: 300, unit: 'mg', schedule: 'PO twice daily' },
-                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' }
+                    { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'D1, 8 mg/kg loading dose, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' }
                 ]
             },
             'Capecitabine-Neratinib': {
                 name: 'Capecitabine + Neratinib (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Capecitabine', dose: 750, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' },
+                    { name: 'Capecitabine', dose: 750, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' },
                     { name: 'Neratinib', dose: 240, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
@@ -1011,7 +1011,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Margetuximab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' }
+                    { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' }
                 ]
             },
             'Margetuximab-Eribulin': {
@@ -1046,14 +1046,14 @@ const protocolDatabase = {
                 ]
             },
             'Single-Capecitabine': {
-                name: 'Capecitabine (Metastatic)',
+                name: 'Capecitabine monotherapy (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily, D1-14, every 21 days' }
+                    { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'PO twice daily D1-14, every 21 days' }
                 ]
             },
             'Single-Docetaxel': {
-                name: 'Docetaxel (Metastatic)',
+                name: 'Docetaxel monotherapy (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -1197,8 +1197,8 @@ const protocolDatabase = {
             name: 'Trastuzumab + Pertuzumab (Metastatic - 1L, HER2+)',
             cycles: 12,
             drugs: [
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'loading dose D1, then 420 mg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'loading dose D1, then 420 mg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'XP-Trastuzumab-HER2-1L': {
@@ -1207,7 +1207,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         '5FU-Oxaliplatin-Trastuzumab': {
@@ -1218,7 +1218,7 @@ const protocolDatabase = {
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
                 { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         '5FU-Oxaliplatin-Trastuzumab-Pembrolizumab': {
@@ -1229,7 +1229,7 @@ const protocolDatabase = {
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
                 { name: '5-Fluorouracil (continuous infusion)', dose: 1200, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1239,7 +1239,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: '5-Fluorouracil', dose: 800, unit: 'mg/m²', schedule: 'D1-D5, CI over 5 days, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         '5FU-Cisplatin-Trastuzumab-Pembrolizumab': {
@@ -1248,12 +1248,12 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: '5-Fluorouracil', dose: 800, unit: 'mg/m²', schedule: 'D1-D5, CI over 5 days, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'ECX-1L': {
-            name: 'ECX (Metastatic - 1L)',
+            name: 'ECX (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -1262,7 +1262,7 @@ const protocolDatabase = {
             ]
         },
         'EOX-1L': {
-            name: 'EOX (Metastatic - 1L)',
+            name: 'EOX (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -1271,7 +1271,7 @@ const protocolDatabase = {
             ]
         },
         'DCF-1L': {
-            name: 'DCF (Metastatic - 1L)',
+            name: 'DCF (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -1280,7 +1280,7 @@ const protocolDatabase = {
             ]
         },
         'FLO-1L': {
-            name: 'FLO (Metastatic - 1L)',
+            name: 'FLO (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -1335,7 +1335,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'Capecitabine-Oxaliplatin-Trastuzumab-Pembrolizumab': {
@@ -1344,7 +1344,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1354,7 +1354,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'Capecitabine-Cisplatin-Trastuzumab-Pembrolizumab': {
@@ -1363,7 +1363,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
@@ -1426,7 +1426,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' }
             ]
@@ -1512,21 +1512,21 @@ const protocolDatabase = {
 
         // METASTATIC - 3L+ THERAPY
         'TAS-102-3L': {
-            name: 'Trifluridine/Tipiracil (TAS-102) (Metastatic - 3L+)',
+            name: 'Trifluridine/Tipiracil (TAS-102) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'TAS-102', dose: 35, unit: 'mg/m²', schedule: 'D1-D5, D8-D12, twice daily, every 28 days' }
             ]
         },
         'Ramucirumab-3L': {
-            name: 'Ramucirumab (Metastatic - 3L+)',
+            name: 'Ramucirumab (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
         'Nivolumab-3L': {
-            name: 'Nivolumab (ATTRACTION-2) (Metastatic - 3L+)',
+            name: 'Nivolumab (ATTRACTION-2) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
@@ -1540,7 +1540,7 @@ const protocolDatabase = {
             ]
         },
         'Capecitabine-Docetaxel-3L': {
-            name: 'Capecitabine + Docetaxel (Metastatic - 3L+)',
+            name: 'Capecitabine + Docetaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Capecitabine', dose: 1250, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
@@ -1548,14 +1548,14 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-3L': {
-            name: 'Cisplatin (Metastatic - 3L+)',
+            name: 'Cisplatin (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         '5FU-3L': {
-            name: '5-Fluorouracil (Metastatic - 3L+)',
+            name: '5-Fluorouracil (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: '5-Fluorouracil', dose: 2600, unit: 'mg/m²', schedule: 'D1, CI over 24 hours, weekly' }
@@ -7979,7 +7979,7 @@ const protocolDatabase = {
 
         // Metastatic - 1L
         'Cisplatin-Paclitaxel-Metastatic': {
-            name: 'Cisplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7987,7 +7987,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Metastatic': {
-            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -7995,7 +7995,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Weekly-Metastatic': {
-            name: 'Paclitaxel + Carboplatin (PC) Weekly (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) Weekly (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days' },
@@ -8003,7 +8003,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Pembrolizumab-Metastatic': {
-            name: 'Paclitaxel + Carboplatin + Pembrolizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Pembrolizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8012,7 +8012,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Paclitaxel-Pembrolizumab-Metastatic': {
-            name: 'Cisplatin + Paclitaxel + Pembrolizumab (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel + Pembrolizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8021,7 +8021,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Paclitaxel-Bevacizumab-Metastatic': {
-            name: 'Cisplatin + Paclitaxel + Bevacizumab (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8030,7 +8030,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab-Metastatic': {
-            name: 'Paclitaxel + Carboplatin + Bevacizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8039,7 +8039,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Atezolizumab-Bevacizumab-Metastatic': {
-            name: 'Paclitaxel + Carboplatin + Atezolizumab + Bevacizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Atezolizumab + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8049,7 +8049,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Paclitaxel-Atezolizumab-Bevacizumab-Metastatic': {
-            name: 'Cisplatin + Paclitaxel + Atezolizumab + Bevacizumab (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel + Atezolizumab + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8059,7 +8059,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Pembrolizumab-Bevacizumab-Metastatic': {
-            name: 'Paclitaxel + Carboplatin + Pembrolizumab + Bevacizumab (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin + Pembrolizumab + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8069,7 +8069,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Paclitaxel-Pembrolizumab-Bevacizumab-Metastatic': {
-            name: 'Cisplatin + Paclitaxel + Pembrolizumab + Bevacizumab (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel + Pembrolizumab + Bevacizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8079,7 +8079,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Carboplatin-Pembrolizumab-Metastatic': {
-            name: 'Gemcitabine + Carboplatin + Pembrolizumab (Metastatic - 1L)',
+            name: 'Gemcitabine + Carboplatin + Pembrolizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -8088,7 +8088,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Cisplatin-Pembrolizumab-Metastatic': {
-            name: 'Gemcitabine + Cisplatin + Pembrolizumab (Metastatic - 1L)',
+            name: 'Gemcitabine + Cisplatin + Pembrolizumab (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -8254,7 +8254,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose 8 mg/kg, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose 8 mg/kg, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab-Neo-Adj-Met': {
@@ -8278,7 +8278,7 @@ const protocolDatabase = {
 
         // Metastatic - 1L
         'Carboplatin-Paclitaxel-Metastatic': {
-            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8286,7 +8286,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Docetaxel-Metastatic': {
-            name: 'Carboplatin + Docetaxel (Metastatic - 1L)',
+            name: 'Carboplatin + Docetaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -8294,7 +8294,7 @@ const protocolDatabase = {
             ]
         },
         'Lenvatinib-Pembrolizumab-Metastatic': {
-            name: 'Lenvatinib + Pembrolizumab (Metastatic - 1L)',
+            name: 'Lenvatinib + Pembrolizumab (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'daily, continuous' },
@@ -8651,7 +8651,7 @@ const protocolDatabase = {
                 ]
             },
             'mFOLFIRI-Metastatic': {
-                name: 'mFOLFIRI (Metastatic - 1L)',
+                name: 'mFOLFIRI (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8661,7 +8661,7 @@ const protocolDatabase = {
                 ]
             },
             'mFOLFOX6-Metastatic': {
-                name: 'mFOLFOX6 (Metastatic - 1L)',
+                name: 'mFOLFOX6 (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8671,7 +8671,7 @@ const protocolDatabase = {
                 ]
             },
             'FOLFOXIRI-Metastatic': {
-                name: 'FOLFOXIRI (Metastatic - 1L)',
+                name: 'FOLFOXIRI (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8681,7 +8681,7 @@ const protocolDatabase = {
                 ]
             },
             'mFOLFOX6-Bevacizumab-Metastatic': {
-                name: 'mFOLFOX6 + Bevacizumab (Metastatic - 1L)',
+                name: 'mFOLFOX6 + Bevacizumab (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8692,7 +8692,7 @@ const protocolDatabase = {
                 ]
             },
             'CapeOX-Bevacizumab-Metastatic': {
-                name: 'CapeOX (CAPOX/XELOX) + Bevacizumab (Metastatic - 1L)',
+                name: 'CapeOX (CAPOX/XELOX) + Bevacizumab (Metastatic)',
                 cycles: 8,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8701,7 +8701,7 @@ const protocolDatabase = {
                 ]
             },
             'FOLFIRI-Bevacizumab-Metastatic': {
-                name: 'FOLFIRI + Bevacizumab (Metastatic - 1L)',
+                name: 'FOLFIRI + Bevacizumab (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8712,7 +8712,7 @@ const protocolDatabase = {
                 ]
             },
             'FOLFIRINOX-Metastatic': {
-                name: 'FOLFIRINOX (Metastatic - 1L)',
+                name: 'FOLFIRINOX (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8723,7 +8723,7 @@ const protocolDatabase = {
                 ]
             },
             'FOLFIRINOX-Bevacizumab-Metastatic': {
-                name: 'FOLFIRINOX + Bevacizumab (Metastatic - 1L)',
+                name: 'FOLFIRINOX + Bevacizumab (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -8735,7 +8735,7 @@ const protocolDatabase = {
                 ]
             },
             'FOLFOXIRI-Bevacizumab-Metastatic': {
-                name: 'FOLFOXIRI + Bevacizumab (Metastatic - 1L)',
+                name: 'FOLFOXIRI + Bevacizumab (Metastatic)',
                 cycles: 12,
                 drugs: [
                     { name: 'Irinotecan', dose: 165, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -9255,7 +9255,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days x 6 cycles (preoperative)' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days x 6 cycles (preoperative)' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days x 6 cycles (preoperative)', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days x 6 cycles (preoperative)', hasLoadingDose: true }
             ]
         },
 
@@ -9310,7 +9310,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'Metastatic-FOLFOX-Trastuzumab-HER2': {
@@ -9321,7 +9321,7 @@ const protocolDatabase = {
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, bolus, every 14 days' },
                 { name: '5-Fluorouracil (continuous infusion)', dose: 2400, unit: 'mg/m²', schedule: 'D1-D2, CI over 46 hours, every 14 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'Metastatic-CapeOX-Trastuzumab-Pembrolizumab-HER2': {
@@ -9330,12 +9330,12 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1-D14, twice daily, every 21 days' },
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Metastatic-FOLFOX': {
-            name: 'mFOLFOX6 (Metastatic - 1L)',
+            name: 'mFOLFOX6 (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -9345,7 +9345,7 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-CapeOX': {
-            name: 'CapeOX (CAPOX/XELOX) (Metastatic - 1L)',
+            name: 'CapeOX (CAPOX/XELOX) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9353,7 +9353,7 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-Carboplatin-Paclitaxel': {
-            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -9361,7 +9361,7 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-Cisplatin-Paclitaxel': {
-            name: 'Cisplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9369,7 +9369,7 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-ECX': {
-            name: 'ECX (Metastatic - 1L)',
+            name: 'ECX (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9378,7 +9378,7 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-EOX': {
-            name: 'EOX (Metastatic - 1L)',
+            name: 'EOX (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Epirubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9417,8 +9417,8 @@ const protocolDatabase = {
             name: 'Trastuzumab + Pertuzumab (Metastatic, HER2+)',
             cycles: 12,
             drugs: [
-                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg every 21 days', hasLoadingDose: true },
-                { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'loading dose D1, then 420 mg every 21 days', hasLoadingDose: true }
+                { name: 'Trastuzumab', dose: 8, maintenanceDose: 6, unit: 'mg/kg', schedule: 'loading dose D1, then 6 mg/kg D1, every 21 days', hasLoadingDose: true },
+                { name: 'Pertuzumab', dose: 840, maintenanceDose: 420, unit: 'mg', schedule: 'loading dose D1, then 420 mg D1, every 21 days', hasLoadingDose: true }
             ]
         },
         'Metastatic-Paclitaxel-2L': {
@@ -9475,14 +9475,14 @@ const protocolDatabase = {
             ]
         },
         'Metastatic-Regorafenib-3L': {
-            name: 'Regorafenib (Metastatic - 3L+)',
+            name: 'Regorafenib (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
             ]
         },
         'Metastatic-Trifluridine-Tipiracil-3L': {
-            name: 'Trifluridine/Tipiracil (TAS-102) (Metastatic - 3L+)',
+            name: 'Trifluridine/Tipiracil (TAS-102) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Trifluridine/Tipiracil', dose: 35, unit: 'mg/m²', schedule: 'PO twice daily D1-D5, D8-D12, every 28 days' }
@@ -9591,7 +9591,7 @@ const protocolDatabase = {
 
         // METASTATIC THERAPY
         'Pembrolizumab-Cisplatin-5FU-1L': {
-            name: 'Pembrolizumab + Cisplatin + 5-FU (KEYNOTE-048) (Metastatic - 1L)',
+            name: 'Pembrolizumab + Cisplatin + 5-FU (KEYNOTE-048) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
@@ -9600,7 +9600,7 @@ const protocolDatabase = {
             ]
         },
         'Pembrolizumab-Carboplatin-5FU-1L': {
-            name: 'Pembrolizumab + Carboplatin + 5-FU (KEYNOTE-048) (Metastatic - 1L)',
+            name: 'Pembrolizumab + Carboplatin + 5-FU (KEYNOTE-048) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
@@ -9609,7 +9609,7 @@ const protocolDatabase = {
             ]
         },
         'Pembrolizumab-Carboplatin-Paclitaxel-1L': {
-            name: 'Pembrolizumab + Paclitaxel + Carboplatin (KEYNOTE-048) (Metastatic - 1L)',
+            name: 'Pembrolizumab + Paclitaxel + Carboplatin (KEYNOTE-048) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then maintenance' },
@@ -9625,7 +9625,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-5FU-Cetuximab-1L': {
-            name: 'Cisplatin + 5-FU + Cetuximab (EXTREME) (Metastatic - 1L)',
+            name: 'Cisplatin + 5-FU + Cetuximab (EXTREME) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22 at 250 mg/m², every 21 days', hasLoadingDose: true },
@@ -9634,7 +9634,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-5FU-Cetuximab-1L': {
-            name: 'Carboplatin + 5-FU + Cetuximab (EXTREME) (Metastatic - 1L)',
+            name: 'Carboplatin + 5-FU + Cetuximab (EXTREME) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1 loading dose 400 mg/m², then D8, D15, D22 at 250 mg/m², every 21 days', hasLoadingDose: true },
@@ -9643,7 +9643,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-5FU-1L': {
-            name: 'Cisplatin + 5-FU (Metastatic - 1L)',
+            name: 'Cisplatin + 5-FU (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -9651,7 +9651,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-1L': {
-            name: 'Paclitaxel + Carboplatin (PC) (Metastatic - 1L)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -9659,7 +9659,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Paclitaxel-1L': {
-            name: 'Cisplatin + Paclitaxel (Metastatic - 1L)',
+            name: 'Cisplatin + Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
