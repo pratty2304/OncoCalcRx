@@ -3741,6 +3741,9 @@ const protocolDatabase = {
             drugs: [
                 { name: 'BCNU (Carmustine)', dose: 300, unit: 'mg/m²', schedule: 'D-6', days: 'D-6' },
                 { name: 'Cyclophosphamide', dose: 7200, unit: 'mg/m²', schedule: 'D-5 to D-2 (1800 mg/m² daily)', days: 'D-5 to D-2' },
+                { name: 'Mesna (pre-dose)', dose: 1440, unit: 'mg/m²', schedule: 'before Cyclophosphamide, D-5 to D-2 (360 mg/m² daily)', days: 'D-5 to D-2' },
+                { name: 'Mesna (4h post)', dose: 1440, unit: 'mg/m²', schedule: '4 hours after Cyclophosphamide, D-5 to D-2 (360 mg/m² daily)', days: 'D-5 to D-2' },
+                { name: 'Mesna (8h post)', dose: 1440, unit: 'mg/m²', schedule: '8 hours after Cyclophosphamide, D-5 to D-2 (360 mg/m² daily)', days: 'D-5 to D-2' },
                 { name: 'Etoposide', dose: 2400, unit: 'mg/m²', schedule: 'D-5 to D-2 (600 mg/m² daily)', days: 'D-5 to D-2' }
             ]
         },
@@ -3749,7 +3752,10 @@ const protocolDatabase = {
             cycles: 1,
             drugs: [
                 { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-7 to D-4 (q6h x 16 doses, IV)', days: 'D-7 to D-4' },
-                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3, D-2', days: 'D-3, D-2' }
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Mesna (pre-dose)', dose: 12, unit: 'mg/kg', schedule: 'before Cyclophosphamide, D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Mesna (4h post)', dose: 12, unit: 'mg/kg', schedule: '4 hours after Cyclophosphamide, D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Mesna (8h post)', dose: 12, unit: 'mg/kg', schedule: '8 hours after Cyclophosphamide, D-3, D-2', days: 'D-3, D-2' }
             ]
         },
         'Bu-Mel': {
@@ -3766,6 +3772,9 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Busulfan', dose: 1.1, unit: 'mg/kg', schedule: 'D-9 to D-6 (q6h x 16 doses)', days: 'D-9 to D-6' },
                 { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'D-5 to D-2', days: 'D-5 to D-2' },
+                { name: 'Mesna (pre-dose)', dose: 10, unit: 'mg/kg', schedule: 'before Cyclophosphamide, D-5 to D-2', days: 'D-5 to D-2' },
+                { name: 'Mesna (4h post)', dose: 10, unit: 'mg/kg', schedule: '4 hours after Cyclophosphamide, D-5 to D-2', days: 'D-5 to D-2' },
+                { name: 'Mesna (8h post)', dose: 10, unit: 'mg/kg', schedule: '8 hours after Cyclophosphamide, D-5 to D-2', days: 'D-5 to D-2' },
                 { name: 'Etoposide', dose: 60, unit: 'mg/kg', schedule: 'D-3 (single dose)', days: 'D-3' }
             ]
         },
@@ -3793,6 +3802,9 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-7 to D-4 (q6h x 16 doses)', days: 'D-7 to D-4' },
                 { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Mesna (pre-dose)', dose: 12, unit: 'mg/kg', schedule: 'before Cyclophosphamide, D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Mesna (4h post)', dose: 12, unit: 'mg/kg', schedule: '4 hours after Cyclophosphamide, D-3, D-2', days: 'D-3, D-2' },
+                { name: 'Mesna (8h post)', dose: 12, unit: 'mg/kg', schedule: '8 hours after Cyclophosphamide, D-3, D-2', days: 'D-3, D-2' },
                 { name: 'Anti-thymocyte Globulin', dose: 2.5, unit: 'mg/kg', schedule: 'D-3, D-2, D-1', days: 'D-3, D-2, D-1' }
             ]
         },
@@ -4275,7 +4287,10 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1 every 21 days (max 2mg)' },
                 { name: 'Actinomycin D', dose: 0.015, unit: 'mg/kg', schedule: 'D1 every 21 days' },
-                { name: 'Cyclophosphamide', dose: 2200, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Cyclophosphamide', dose: 2200, unit: 'mg/m²', schedule: 'D1 every 21 days' },
+                { name: 'Mesna (pre-dose)', dose: 440, unit: 'mg/m²', schedule: 'before Cyclophosphamide, D1 every 21 days' },
+                { name: 'Mesna (4h post)', dose: 440, unit: 'mg/m²', schedule: '4 hours after Cyclophosphamide, D1 every 21 days' },
+                { name: 'Mesna (8h post)', dose: 440, unit: 'mg/m²', schedule: '8 hours after Cyclophosphamide, D1 every 21 days' }
             ]
         },
         'Cyclophosphamide-Topotecan': {
