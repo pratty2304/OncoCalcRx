@@ -1591,9 +1591,9 @@ const protocolDatabase = {
     },
     lymphoma: {
         'hodgkins_lymphoma': {
-            // Classical Hodgkin Lymphoma - First Line
+            // FIRST-LINE THERAPY - Classical Hodgkin Lymphoma
             'ABVD': {
-                name: 'ABVD (Early Stage and Advanced Classical HL)',
+                name: 'Doxorubicin + Bleomycin + Vinblastine + Dacarbazine (ABVD) (First-Line)',
                 cycles: 6,
                 drugs: [
                     { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D1, D15, every 28 days' },
@@ -1603,7 +1603,7 @@ const protocolDatabase = {
                 ]
             },
             'Nivolumab-AVD': {
-                name: 'Nivolumab + AVD (Advanced Classical HL - NCCN Preferred)',
+                name: 'Nivolumab (PD-1 inhibitor) + Doxorubicin + Vinblastine + Dacarbazine (N-AVD) (SWOG S1826) (First-Line)',
                 cycles: 6,
                 drugs: [
                     { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x 12 doses' },
@@ -1613,7 +1613,7 @@ const protocolDatabase = {
                 ]
             },
             'BrECADD': {
-                name: 'BrECADD (Advanced Classical HL - NCCN Preferred)',
+                name: 'Brentuximab vedotin + Etoposide + Cyclophosphamide + Doxorubicin + Dacarbazine + Dexamethasone (BrECADD) (First-Line)',
                 cycles: 6,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
@@ -1625,7 +1625,7 @@ const protocolDatabase = {
                 ]
             },
             'Brentuximab-AVD': {
-                name: 'Brentuximab vedotin + AVD (Advanced Classical HL)',
+                name: 'Brentuximab vedotin + Doxorubicin + Vinblastine + Dacarbazine (BV-AVD) (First-Line)',
                 cycles: 6,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.2, unit: 'mg/kg', schedule: 'D1, every 28 days' },
@@ -1636,25 +1636,54 @@ const protocolDatabase = {
             },
             // NLPHL (Nodular Lymphocyte Predominant Hodgkin Lymphoma)
             'R-CHOP-NLPHL': {
-                name: 'R-CHOP - NLPHL Advanced Stage (First Line)',
+                name: 'Rituximab + Cyclophosphamide + Doxorubicin + Vincristine + Prednisone (R-CHOP) (NLPHL) (First-Line)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
+            'BEACOPP': {
+                name: 'BEACOPP (First-Line)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Bleomycin', dose: 10, unit: 'units/m²', schedule: 'D8, every 21 days' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 650, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D8, every 21 days (max 2mg)' },
+                    { name: 'Procarbazine', dose: 100, unit: 'mg/m²', schedule: 'D1-D7, every 21 days' },
+                    { name: 'Prednisone', dose: 40, unit: 'mg/m²', schedule: 'D1-D14, every 21 days' }
+                ]
+            },
+            'BEACOPP-Escalated': {
+                name: 'BEACOPP Escalated (high-dose) (HD15 study) (First-Line)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Bleomycin', dose: 10, unit: 'units/m²', schedule: 'D8, every 21 days' },
+                    { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                    { name: 'Doxorubicin', dose: 35, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Cyclophosphamide', dose: 1250, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
+                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D8, every 21 days (max 2mg)' },
+                    { name: 'Procarbazine', dose: 100, unit: 'mg/m²', schedule: 'D1-D7, every 21 days' },
+                    { name: 'Prednisone', dose: 40, unit: 'mg/m²', schedule: 'D1-D14, every 21 days' }
+                ]
+            },
+            
+            // RELAPSED/REFRACTORY THERAPY
             'Brentuximab-Vedotin': {
-                name: 'Brentuximab vedotin (BV)',
+                name: 'Brentuximab vedotin monotherapy (CD30 ADC) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
             'BV-Nivolumab': {
-                name: 'Brentuximab vedotin + Nivolumab',
+                name: 'Brentuximab vedotin (CD30 ADC) + Nivolumab (PD-1 inhibitor) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
@@ -1662,7 +1691,7 @@ const protocolDatabase = {
                 ]
             },
             'ICE-Nivolumab': {
-                name: 'ICE + Nivolumab (Metastatic)',
+                name: 'Ifosfamide + Carboplatin + Etoposide + Nivolumab (ICE-N) (Relapsed/Refractory)',
                 cycles: 3,
                 drugs: [
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
@@ -1675,7 +1704,7 @@ const protocolDatabase = {
                 ]
             },
             'ICE-Pembrolizumab': {
-                name: 'ICE + Pembrolizumab (Metastatic)',
+                name: 'Ifosfamide + Carboplatin + Etoposide + Pembrolizumab (ICE-P) (Relapsed/Refractory)',
                 cycles: 3,
                 drugs: [
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
@@ -1688,16 +1717,16 @@ const protocolDatabase = {
                 ]
             },
             'DHAP': {
-                name: 'DHAP (Dexamethasone + High-dose Ara-C + Cisplatin)',
+                name: 'Dexamethasone + Cytarabine + Cisplatin (DHAP) (Relapsed/Refractory)',
                 cycles: 3,
                 drugs: [
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 1-4, every 21 days' },
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1-D4, every 21 days' },
                     { name: 'Cytarabine (High-dose Ara-C)', dose: 2000, unit: 'mg/m²', schedule: 'day 2, q12h x 2 doses, every 21 days' },
                     { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'ICE-BV': {
-                name: 'ICE + Brentuximab vedotin (Metastatic)',
+                name: 'Ifosfamide + Carboplatin + Etoposide + Brentuximab vedotin (ICE-BV) (Relapsed/Refractory)',
                 cycles: 3,
                 drugs: [
                     { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
@@ -1710,7 +1739,7 @@ const protocolDatabase = {
                 ]
             },
             'IGEV': {
-                name: 'IGEV (Ifosfamide + Gemcitabine + Vinorelbine + Prednisone)',
+                name: 'Ifosfamide + Gemcitabine + Vinorelbine + Prednisone (IGEV) (Relapsed/Refractory)',
                 cycles: 4,
                 drugs: [
                     { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', days: 'D1-D4', schedule: 'days 1-4, every 21 days' },
@@ -1719,53 +1748,59 @@ const protocolDatabase = {
                     { name: 'Mesna (8h post)', dose: 800, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D4, every 21 days' },
                     { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D4, every 21 days' },
                     { name: 'Vinorelbine', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'Bendamustine': {
-                name: 'Bendamustine (Single Agent)',
+                name: 'Bendamustine monotherapy (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Bendamustine', dose: 120, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 28 days' }
+                    { name: 'Bendamustine', dose: 120, unit: 'mg/m²', schedule: 'D1-D2, every 28 days' }
                 ]
             },
             'Bendamustine-Carboplatin-Etoposide': {
-                name: 'Bendamustine + Carboplatin + Etoposide',
+                name: 'Bendamustine + Carboplatin + Etoposide (BeECAR) (Relapsed/Refractory)',
                 cycles: 4,
                 drugs: [
-                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 21 days' },
+                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', schedule: 'D1-D2, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' }
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
                 ]
             },
             'GEMOX': {
-                name: 'GEMOX (Gemcitabine + Oxaliplatin)',
+                name: 'Gemcitabine + Oxaliplatin (GEMOX) (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
+            'Pembrolizumab-Monotherapy': {
+                name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-204) (Relapsed/Refractory)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
+                ]
+            },
+            'Nivolumab-Monotherapy': {
+                name: 'Nivolumab monotherapy (PD-1 inhibitor) (CheckMate 205) (Relapsed/Refractory)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
+                ]
+            },
             'Vorinostat-Pembrolizumab': {
-                name: 'Vorinostat + Pembrolizumab (Metastatic)',
+                name: 'Vorinostat (HDAC inhibitor) + Pembrolizumab (PD-1 inhibitor) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Vorinostat', dose: 400, unit: 'mg', schedule: 'daily, continuous' },
+                    { name: 'Vorinostat', dose: 400, unit: 'mg', schedule: 'PO daily, continuous' },
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
                 ]
             },
-            'Brentuximab-AVD': {
-                name: 'Brentuximab vedotin + AVD (Advanced Stage cHL)',
-                cycles: 6,
-                drugs: [
-                    { name: 'Brentuximab vedotin', dose: 1.2, unit: 'mg/kg', schedule: 'D1, every 14 days x 12 doses' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'days 1, 15, every 28 days' },
-                    { name: 'Vinblastine', dose: 6, unit: 'mg/m²', schedule: 'days 1, 15, every 28 days' },
-                    { name: 'Dacarbazine', dose: 375, unit: 'mg/m²', schedule: 'days 1, 15, every 28 days' }
-                ]
-            },
+            
+            // HISTORICAL REGIMENS
             'MOPP': {
-                name: 'MOPP (Mechlorethamine + Oncovin + Procarbazine + Prednisone)',
+                name: 'Mechlorethamine + Vincristine + Procarbazine + Prednisone (MOPP) (Historical)',
                 cycles: 6,
                 drugs: [
                     { name: 'Mechlorethamine', dose: 6, unit: 'mg/m²', schedule: 'days 1, 8, every 28 days' },
@@ -1775,7 +1810,7 @@ const protocolDatabase = {
                 ]
             },
             'MOPP-ABVD': {
-                name: 'MOPP/ABVD (Alternating)',
+                name: 'MOPP/ABVD alternating (Historical)',
                 cycles: 8,
                 drugs: [
                     { name: 'Mechlorethamine', dose: 6, unit: 'mg/m²', schedule: 'days 1, 8 (MOPP cycles)' },
@@ -1789,7 +1824,7 @@ const protocolDatabase = {
                 ]
             },
             'Stanford-V': {
-                name: 'Stanford V',
+                name: 'Stanford V (Historical)',
                 cycles: 3,
                 drugs: [
                     { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'weeks 1, 3, 5, 7, 9, 11' },
@@ -1830,35 +1865,8 @@ const protocolDatabase = {
                     { name: 'Melphalan', dose: 30, unit: 'mg/m²', schedule: 'day 6, every 28 days' }
                 ]
             },
-            'BEACOPP': {
-                name: 'BEACOPP (Bleomycin + Etoposide + Adriamycin + Cyclophosphamide + Oncovin + Procarbazine + Prednisone)',
-                cycles: 8,
-                drugs: [
-                    { name: 'Bleomycin', dose: 10, unit: 'units/m²', schedule: 'day 8, every 21 days' },
-                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 650, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'day 8, every 21 days (max 2mg)' },
-                    { name: 'Procarbazine', dose: 100, unit: 'mg/m²', days: 'D1-D7', schedule: 'days 1-7, every 21 days' },
-                    { name: 'Prednisone', dose: 40, unit: 'mg/m²', days: 'D1-D14', schedule: 'days 1-14, every 21 days' }
-                ]
-            },
-            'BEACOPP-Escalated': {
-                name: 'BEACOPP Escalated (High-dose)',
-                cycles: 8,
-                drugs: [
-                    { name: 'Bleomycin', dose: 10, unit: 'units/m²', schedule: 'day 8, every 21 days' },
-                    { name: 'Etoposide', dose: 200, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' },
-                    { name: 'Doxorubicin (Adriamycin)', dose: 35, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 1250, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
-                    { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'day 8, every 21 days (max 2mg)' },
-                    { name: 'Procarbazine', dose: 100, unit: 'mg/m²', days: 'D1-D7', schedule: 'days 1-7, every 21 days' },
-                    { name: 'Prednisone', dose: 40, unit: 'mg/m²', days: 'D1-D14', schedule: 'days 1-14, every 21 days' }
-                ]
-            },
             'GVD': {
-                name: 'GVD (Gemcitabine + Vinorelbine + Doxorubicin)',
+                name: 'Gemcitabine + Vinorelbine + Doxorubicin (GVD) (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -1867,143 +1875,143 @@ const protocolDatabase = {
                 ]
             },
             'Gemcitabine-Single': {
-                name: 'Gemcitabine (Single Agent)',
+                name: 'Gemcitabine monotherapy (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
                 ]
             },
             'Brentuximab-Single': {
-                name: 'Brentuximab vedotin (Single Agent)',
+                name: 'Brentuximab vedotin monotherapy (CD30 ADC) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
             'Nivolumab-Single': {
-                name: 'Nivolumab (Single Agent)',
+                name: 'Nivolumab monotherapy (PD-1 inhibitor) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
                     { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days, then 480mg every 28 days' }
                 ]
             },
             'Pembrolizumab-Single': {
-                name: 'Pembrolizumab (Single Agent)',
+                name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'every 21 days, then 400mg every 6 weeks' }
                 ]
             },
             'Bendamustine-Single': {
-                name: 'Bendamustine (Single Agent)',
+                name: 'Bendamustine monotherapy (Relapsed/Refractory)',
                 cycles: 6,
                 drugs: [
                     { name: 'Bendamustine', dose: 120, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 28 days' }
                 ]
             },
             'Everolimus-Single': {
-                name: 'Everolimus (Single Agent)',
+                name: 'Everolimus (mTOR inhibitor) (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
                     { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
                 ]
             },
             'Lenalidomide-Single': {
-                name: 'Lenalidomide (Single Agent)',
+                name: 'Lenalidomide monotherapy (immunomodulatory drug) (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'days 1-21, every 28 days' }
+                    { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days' }
                 ]
             }
         },
         'b_cell_nhl': {
             // First-line regimens for multiple B-cell lymphomas
             'R-CHOP': {
-                name: 'R-CHOP (First-line DLBCL/FL/PMBCL/MZL)',
+                name: 'Rituximab + Cyclophosphamide + Doxorubicin + Vincristine + Prednisone (R-CHOP) (First-Line DLBCL/FL/PMBCL/MZL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'Pola-R-CHP': {
-                name: 'Polatuzumab vedotin + R-CHP (First-line DLBCL)',
+                name: 'Polatuzumab vedotin + Rituximab + Cyclophosphamide + Doxorubicin + Prednisone (Pola-R-CHP) (First-Line DLBCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Polatuzumab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'R-CVP': {
-                name: 'R-CVP (First-line FL/MZL)',
+                name: 'Rituximab + Cyclophosphamide + Vincristine + Prednisone (R-CVP) (First-Line FL/MZL)',
                 cycles: 8,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'R-Bendamustine': {
-                name: 'R-Bendamustine (First-line FL/MCL/MZL)',
+                name: 'Rituximab + Bendamustine (R-Bendamustine) (First-Line FL/MCL/MZL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 28 days' }
+                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'D1-D2, every 28 days' }
                 ]
             },
             'Obinutuzumab-Bendamustine': {
-                name: 'Obinutuzumab + Bendamustine (First-line FL)',
+                name: 'Obinutuzumab + Bendamustine (O-Bendamustine) (First-Line FL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'cycle 1: days 1,8,15; then D1, every 28 days' },
-                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 28 days' }
+                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'D1-D2, every 28 days' }
                 ]
             },
             'R-mini-CHOP': {
-                name: 'R-mini-CHOP (Elderly DLBCL/FL)',
+                name: 'Rituximab + Cyclophosphamide + Doxorubicin + Vincristine + Prednisone - Reduced dose (R-mini-CHOP) (First-Line Elderly DLBCL/FL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 400, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1, unit: 'mg', schedule: 'D1, every 21 days (max 1mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'R-EPOCH': {
-                name: 'R-EPOCH (First-line DLBCL/PMBCL/High-grade B-cell)',
+                name: 'Rituximab + Etoposide + Prednisone + Vincristine + Cyclophosphamide + Doxorubicin (R-EPOCH) (First-Line DLBCL/PMBCL/High-grade B-cell)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Etoposide', dose: 50, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
-                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'PO D1-D5, every 21 days' },
                     { name: 'Vincristine', dose: 0.4, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'day 5, every 21 days' },
                     { name: 'Doxorubicin', dose: 10, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' }
                 ]
             },
             'DA-R-EPOCH': {
-                name: 'DA-R-EPOCH (First-line DLBCL/PMBCL/High-grade B-cell)',
+                name: 'Dose-Adjusted Rituximab + Etoposide + Prednisone + Vincristine + Cyclophosphamide + Doxorubicin (DA-R-EPOCH) (First-Line DLBCL/PMBCL/High-grade B-cell)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Etoposide', dose: 50, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days (dose-adjusted)' },
-                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                    { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'PO D1-D5, every 21 days' },
                     { name: 'Vincristine', dose: 0.4, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'day 5, every 21 days (dose-adjusted)' },
                     { name: 'Doxorubicin', dose: 10, unit: 'mg/m²', schedule: 'continuous infusion days 1-4, every 21 days (dose-adjusted)' }
                 ]
             },
             'Rituximab-Monotherapy': {
-                name: 'Rituximab Monotherapy (First-line FL/MZL)',
+                name: 'Rituximab monotherapy (CD20 monoclonal antibody) (First-Line FL/MZL)',
                 cycles: 4,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 4 doses, then maintenance q8weeks' }
@@ -2011,7 +2019,7 @@ const protocolDatabase = {
             },
             // MCL First-line regimens
             'R-HyperCVAD-MCL': {
-                name: 'R-HyperCVAD/MA (First-line MCL)',
+                name: 'Rituximab + Hyperfractionated Cyclophosphamide + Vincristine + Doxorubicin + Dexamethasone / Methotrexate + Cytarabine (R-HyperCVAD/MA) (First-Line MCL)',
                 cycles: 8,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'day 1, alternating cycles' },
@@ -2026,7 +2034,7 @@ const protocolDatabase = {
             },
             // Burkitt and High-grade B-cell
             'HyperCVAD-MA-R': {
-                name: 'HyperCVAD/MA + R (Burkitt/High-grade B-cell)',
+                name: 'Hyperfractionated Cyclophosphamide + Vincristine + Doxorubicin + Dexamethasone / Methotrexate + Cytarabine + Rituximab (HyperCVAD/MA-R) (First-Line Burkitt/High-grade B-cell)',
                 cycles: 8,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'day 1, alternating cycles' },
@@ -2040,7 +2048,7 @@ const protocolDatabase = {
                 ]
             },
             'R-CODOX-M-IVAC': {
-                name: 'R-CODOX-M/IVAC (Burkitt/High-grade B-cell)',
+                name: 'Rituximab + Cyclophosphamide + Vincristine + Doxorubicin + Methotrexate / Ifosfamide + Etoposide + Cytarabine (R-CODOX-M/IVAC) (First-Line Burkitt/High-grade B-cell)',
                 cycles: 4,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'per protocol schedule' },
@@ -2059,7 +2067,7 @@ const protocolDatabase = {
             },
             // Primary CNS Lymphoma
             'MTX-Ara-C-PCNSL': {
-                name: 'High-dose MTX + Ara-C (First-line PCNSL)',
+                name: 'High-dose Methotrexate + Cytarabine (HD-MTX + Ara-C) (First-Line PCNSL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Methotrexate (High-dose)', dose: 3500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -2068,7 +2076,7 @@ const protocolDatabase = {
                 ]
             },
             'R-MPV-PCNSL': {
-                name: 'R-MPV (First-line PCNSL)',
+                name: 'Rituximab + Methotrexate + Procarbazine + Vincristine (R-MPV) (First-Line PCNSL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -2079,65 +2087,68 @@ const protocolDatabase = {
                 ]
             },
             'MTR-PCNSL': {
-                name: 'MTR (Methotrexate + Temozolomide + Rituximab) - PCNSL',
+                name: 'Methotrexate + Temozolomide + Rituximab (MTR) (First-Line PCNSL)',
                 cycles: 8,
                 drugs: [
                     { name: 'Methotrexate (High-dose)', dose: 3500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Leucovorin', dose: 20, unit: 'mg/m²', schedule: 'q6h starting 24h after MTX until level <0.05' },
-                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'days 1-7, every 14 days' },
+                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO D1-D7, every 14 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 14 days' }
                 ]
             },
             // Waldenström Macroglobulinemia
             'DRC-WM': {
-                name: 'DRC (First-line Waldenström Macroglobulinemia)',
+                name: 'Dexamethasone + Rituximab + Cyclophosphamide (DRC) (First-Line Waldenström Macroglobulinemia)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 1, 8, 15, 22, q5weeks' },
-                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'day 1, q5weeks' },
-                    { name: 'Cyclophosphamide', dose: 100, unit: 'mg/m²', schedule: 'days 1-5, q5weeks' }
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1, D8, D15, D22, every 35 days' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 35 days' },
+                    { name: 'Cyclophosphamide', dose: 100, unit: 'mg/m²', schedule: 'PO D1-D5, every 35 days' }
                 ]
             },
             'BDR-WM': {
-                name: 'BDR (First-line Waldenström Macroglobulinemia)',
+                name: 'Bortezomib + Dexamethasone + Rituximab (BDR) (First-Line Waldenström Macroglobulinemia)',
                 cycles: 6,
                 drugs: [
                     { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'days 1, 4, 8, 11, every 21 days' },
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 1, 4, 8, 11, every 21 days' },
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1, D4, D8, D11, every 21 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'BR-WM': {
-                name: 'BR (Bendamustine + Rituximab) - WM',
+                name: 'Bendamustine + Rituximab (BR) (First-Line Waldenström Macroglobulinemia)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 28 days' },
+                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'D1-D2, every 28 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 28 days' }
                 ]
             },
             // Relapsed/Refractory regimens (multiple B-cell lymphomas)
             'R-ICE': {
-                name: 'R-ICE (Relapsed/Refractory DLBCL/FL/MCL)',
+                name: 'Rituximab + Ifosfamide + Carboplatin + Etoposide (R-ICE) (Relapsed/Refractory DLBCL/FL/MCL)',
                 cycles: 3,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'day 2, every 21 days' },
-                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'day 2, every 21 days' },
+                    { name: 'Ifosfamide', dose: 5000, unit: 'mg/m²', schedule: 'D2, every 21 days' },
+                    { name: 'Mesna (pre-dose)', dose: 1000, unit: 'mg/m²', schedule: 'before Ifosfamide, D2, every 21 days' },
+                    { name: 'Mesna (4h post)', dose: 2000, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D2, every 21 days' },
+                    { name: 'Mesna (8h post)', dose: 2000, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D2, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D2, every 21 days' },
                     { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' }
                 ]
             },
             'R-DHAP': {
-                name: 'R-DHAP (Relapsed/Refractory DLBCL/FL)',
+                name: 'Rituximab + Dexamethasone + Cytarabine + Cisplatin (R-DHAP) (Relapsed/Refractory DLBCL/FL)',
                 cycles: 3,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 1-4, every 21 days' },
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1-D4, every 21 days' },
                     { name: 'Cytarabine (High-dose)', dose: 2000, unit: 'mg/m²', schedule: 'day 2, q12h x 2 doses, every 21 days' },
                     { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'R-ESHAP': {
-                name: 'R-ESHAP (Relapsed/Refractory DLBCL/FL)',
+                name: 'Rituximab + Etoposide + Methylprednisolone + Cytarabine + Cisplatin (R-ESHAP) (Relapsed/Refractory DLBCL/FL)',
                 cycles: 3,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -2148,7 +2159,7 @@ const protocolDatabase = {
                 ]
             },
             'R-GDP': {
-                name: 'R-GDP (Relapsed/Refractory DLBCL/FL)',
+                name: 'Rituximab + Gemcitabine + Dexamethasone + Cisplatin (R-GDP) (Relapsed/Refractory DLBCL/FL)',
                 cycles: 3,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -2158,7 +2169,7 @@ const protocolDatabase = {
                 ]
             },
             'R-GemOx': {
-                name: 'R-GemOx (Relapsed/Refractory DLBCL/FL)',
+                name: 'Rituximab + Gemcitabine + Oxaliplatin (R-GemOx) (Relapsed/Refractory DLBCL/FL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -2167,7 +2178,7 @@ const protocolDatabase = {
                 ]
             },
             'R-CEPP': {
-                name: 'R-CEPP (Relapsed/Refractory B-cell NHL)',
+                name: 'Rituximab + Cyclophosphamide + Etoposide + Procarbazine + Prednisone (R-CEPP) (Relapsed/Refractory B-cell NHL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 28 days' },
@@ -2178,133 +2189,133 @@ const protocolDatabase = {
                 ]
             },
             'R-CDOP': {
-                name: 'R-CDOP (Relapsed/Refractory B-cell NHL)',
+                name: 'Rituximab + Cyclophosphamide + Doxorubicin + Vincristine + Prednisone (R-CDOP) (Relapsed/Refractory B-cell NHL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'Pola-BR': {
-                name: 'Pola-BR (Relapsed/Refractory DLBCL)',
+                name: 'Polatuzumab vedotin + Bendamustine + Rituximab (Pola-BR) (Relapsed/Refractory DLBCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Polatuzumab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'days 1-2, every 21 days' },
+                    { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'D1-D2, every 21 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
             'Tafasitamab-Lenalidomide': {
-                name: 'Tafasitamab + Lenalidomide (Relapsed/Refractory DLBCL)',
+                name: 'Tafasitamab + Lenalidomide (Tafa-Len) (Relapsed/Refractory DLBCL)',
                 cycles: 12,
                 drugs: [
                     { name: 'Tafasitamab', dose: 12, unit: 'mg/kg', schedule: 'days 1, 8, 15, 22 (cycle 1); days 1, 15 (cycles 2-3); day 1 (cycles 4-12)' },
-                    { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'days 1-21, every 28 days' }
+                    { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days' }
                 ]
             },
             // Follicular Lymphoma specific relapsed/refractory
             'Lenalidomide-Rituximab': {
-                name: 'Lenalidomide + Rituximab (Relapsed/Refractory FL)',
+                name: 'Lenalidomide + Rituximab (Len-R) (Relapsed/Refractory FL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenalidomide', dose: 20, unit: 'mg', schedule: 'days 1-21, every 28 days' },
+                    { name: 'Lenalidomide', dose: 20, unit: 'mg', schedule: 'PO D1-D21, every 28 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 4, then q8weeks x 5 doses' }
                 ]
             },
             'Tazemetostat-FL': {
-                name: 'Tazemetostat (EZH2-mutated FL)',
+                name: 'Tazemetostat (EZH2 inhibitor) (Relapsed/Refractory EZH2-mutated FL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Copanlisib-FL': {
-                name: 'Copanlisib (Relapsed/Refractory FL)',
+                name: 'Copanlisib (PI3K inhibitor) (Relapsed/Refractory FL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Copanlisib', dose: 60, unit: 'mg', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Duvelisib-FL': {
-                name: 'Duvelisib (Relapsed/Refractory FL)',
+                name: 'Duvelisib (PI3K inhibitor) (Relapsed/Refractory FL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Duvelisib', dose: 25, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Idelalisib-Rituximab-FL': {
-                name: 'Idelalisib + Rituximab (Relapsed/Refractory FL)',
+                name: 'Idelalisib + Rituximab (Idela-R) (Relapsed/Refractory FL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'twice daily, continuous' },
+                    { name: 'Idelalisib', dose: 150, unit: 'mg', schedule: 'PO twice daily, continuous' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 8, then q12weeks' }
                 ]
             },
             // MCL relapsed/refractory
             'Ibrutinib-MCL': {
-                name: 'Ibrutinib (Relapsed/Refractory MCL)',
+                name: 'Ibrutinib (BTK inhibitor) (Relapsed/Refractory MCL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ibrutinib', dose: 560, unit: 'mg', schedule: 'daily, continuous' }
+                    { name: 'Ibrutinib', dose: 560, unit: 'mg', schedule: 'PO once daily, continuous' }
                 ]
             },
             'Acalabrutinib-MCL': {
-                name: 'Acalabrutinib (Relapsed/Refractory MCL)',
+                name: 'Acalabrutinib (BTK inhibitor) (Relapsed/Refractory MCL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Acalabrutinib', dose: 100, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Zanubrutinib-MCL': {
-                name: 'Zanubrutinib (Relapsed/Refractory MCL)',
+                name: 'Zanubrutinib (BTK inhibitor) (Relapsed/Refractory MCL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Bortezomib-MCL': {
-                name: 'Bortezomib (Relapsed/Refractory MCL)',
+                name: 'Bortezomib monotherapy (proteasome inhibitor) (Relapsed/Refractory MCL)',
                 cycles: 8,
                 drugs: [
                     { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'days 1, 4, 8, 11, every 21 days' }
                 ]
             },
             'Lenalidomide-MCL': {
-                name: 'Lenalidomide (Relapsed/Refractory MCL)',
+                name: 'Lenalidomide monotherapy (immunomodulatory drug) (Relapsed/Refractory MCL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'days 1-21, every 28 days' }
+                    { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days' }
                 ]
             },
             // WM additional regimens
             'Ibrutinib-WM': {
-                name: 'Ibrutinib (Waldenström Macroglobulinemia)',
+                name: 'Ibrutinib (BTK inhibitor) (First-Line/Relapsed/Refractory Waldenström Macroglobulinemia)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'daily, continuous' }
+                    { name: 'Ibrutinib', dose: 420, unit: 'mg', schedule: 'PO once daily, continuous' }
                 ]
             },
             'Zanubrutinib-WM': {
-                name: 'Zanubrutinib (Waldenström Macroglobulinemia)',
+                name: 'Zanubrutinib (BTK inhibitor) (First-Line/Relapsed/Refractory Waldenström Macroglobulinemia)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Zanubrutinib', dose: 160, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Carfilzomib-Rituximab-Dex-WM': {
-                name: 'CaRD (Carfilzomib + Rituximab + Dexamethasone) - WM',
+                name: 'Carfilzomib + Rituximab + Dexamethasone (CaRD) (Relapsed/Refractory Waldenström Macroglobulinemia)',
                 cycles: 6,
                 drugs: [
                     { name: 'Carfilzomib', dose: 36, unit: 'mg/m²', schedule: 'days 1, 2, 8, 9, 15, 16, every 28 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 1, 8, 15, 22, every 28 days' }
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1, D8, D15, D22, every 28 days' }
                 ]
             },
             'CAR-T-DLBCL': {
-                name: 'CAR-T Cell Therapy (Relapsed/Refractory DLBCL)',
+                name: 'CAR-T Cell Therapy (CD19-directed) (Relapsed/Refractory DLBCL)',
                 cycles: 1,
                 drugs: [
                     { name: 'CAR-T Cell Infusion', dose: 'per protocol', unit: 'infusion', schedule: 'single infusion after lymphodepletion' }
@@ -2313,7 +2324,7 @@ const protocolDatabase = {
             // Primary CNS Lymphoma - First-line
             // Burkitt Lymphoma - First-line
             'R-CODOX-M-IVAC-Burkitt': {
-                name: 'R-CODOX-M/IVAC (First-line Burkitt Lymphoma)',
+                name: 'Rituximab + Cyclophosphamide + Vincristine + Doxorubicin + Methotrexate / Ifosfamide + Etoposide + Cytarabine (R-CODOX-M/IVAC) (First-Line Burkitt Lymphoma)',
                 cycles: 4,
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'per protocol schedule' },
@@ -2332,7 +2343,7 @@ const protocolDatabase = {
             },
             // CAR-T Cell Therapy for B-cell NHL
             'Axicabtagene-ciloleucel': {
-                name: 'Axicabtagene ciloleucel (CAR-T for DLBCL/PMBCL)',
+                name: 'Axicabtagene ciloleucel (CD19 CAR-T) (Relapsed/Refractory DLBCL/PMBCL)',
                 cycles: 1,
                 drugs: [
                     { name: 'Fludarabine', dose: 25, unit: 'mg/m²', days: 'D-5 to D-3', schedule: 'lymphodepletion' },
@@ -2341,7 +2352,7 @@ const protocolDatabase = {
                 ]
             },
             'Tisagenlecleucel': {
-                name: 'Tisagenlecleucel (CAR-T for DLBCL/FL)',
+                name: 'Tisagenlecleucel (CD19 CAR-T) (Relapsed/Refractory DLBCL/FL)',
                 cycles: 1,
                 drugs: [
                     { name: 'Fludarabine', dose: 25, unit: 'mg/m²', days: 'D-4 to D-2', schedule: 'lymphodepletion' },
@@ -2350,163 +2361,251 @@ const protocolDatabase = {
                 ]
             },
             'Lisocabtagene-maraleucel': {
-                name: 'Lisocabtagene maraleucel (CAR-T for DLBCL)',
+                name: 'Lisocabtagene maraleucel (CD19 CAR-T) (Relapsed/Refractory DLBCL)',
                 cycles: 1,
                 drugs: [
                     { name: 'Fludarabine', dose: 30, unit: 'mg/m²', days: 'D-5 to D-3', schedule: 'lymphodepletion' },
                     { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', days: 'D-5 to D-3', schedule: 'lymphodepletion' },
                     { name: 'Lisocabtagene maraleucel', dose: '100 x 10^6', unit: 'CAR+ T cells', schedule: 'single infusion on day 0' }
                 ]
+            },
+            // Bispecific antibodies
+            'Glofitamab-GemOx': {
+                name: 'Glofitamab + Gemcitabine + Oxaliplatin (Glofit-GemOx) (STARGLO) (Relapsed/Refractory DLBCL)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Obinutuzumab', dose: 1000, unit: 'mg', schedule: 'D7 (cycle 1 only) - pretreatment' },
+                    { name: 'Glofitamab', dose: 2.5, unit: 'mg', schedule: 'D1, every 21 days (cycles 1-8), then monotherapy D1 every 21 days (cycles 9-12)' },
+                    { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days (cycles 1-8)' },
+                    { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days (cycles 1-8)' }
+                ]
+            },
+            'Epcoritamab': {
+                name: 'Epcoritamab monotherapy (CD20xCD3 bispecific antibody) (Relapsed/Refractory DLBCL)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Epcoritamab', dose: 48, unit: 'mg', schedule: 'weekly x 3, then every 14 days x 5, then every 28 days' }
+                ]
+            },
+            'Mosunetuzumab': {
+                name: 'Mosunetuzumab monotherapy (CD20xCD3 bispecific antibody) (Relapsed/Refractory FL)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Mosunetuzumab', dose: 60, unit: 'mg', schedule: 'D1, D8, D15 (cycle 1); D1, D15 (cycles 2-3); D1 (cycles 4-8)' }
+                ]
+            },
+            'Loncastuximab-tesirine': {
+                name: 'Loncastuximab tesirine (CD19 ADC) (Relapsed/Refractory DLBCL)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Loncastuximab tesirine', dose: 150, unit: 'mcg/kg', schedule: 'D1, every 21 days' }
+                ]
+            },
+            'Selinexor-Dexamethasone': {
+                name: 'Selinexor + Dexamethasone (Sel-Dex) (Relapsed/Refractory DLBCL)',
+                cycles: 8,
+                drugs: [
+                    { name: 'Selinexor', dose: 60, unit: 'mg', schedule: 'PO twice weekly, every 7 days' },
+                    { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'PO twice weekly, every 7 days' }
+                ]
+            },
+            'Rituximab-Maintenance': {
+                name: 'Rituximab monotherapy (CD20 monoclonal antibody) (Maintenance therapy post-induction)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 56 days (every 8 weeks)' }
+                ]
+            },
+            'Ibrutinib-Rituximab-MCL': {
+                name: 'Ibrutinib + Rituximab (IBR-R) (First-Line MCL)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Ibrutinib', dose: 560, unit: 'mg', schedule: 'PO once daily, continuous' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'weekly x 4 (cycle 1), then D1 every 56 days (cycles 2-6)' }
+                ]
             }
         },
         't_cell_nhl': {
             // Peripheral T-cell Lymphoma - First-line
             'CHOP-PTCL': {
-                name: 'CHOP (First-line PTCL)',
+                name: 'Cyclophosphamide + Doxorubicin + Vincristine + Prednisone (CHOP) (First-Line PTCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'CHOEP-PTCL': {
-                name: 'CHOEP (First-line PTCL)',
+                name: 'Cyclophosphamide + Doxorubicin + Vincristine + Etoposide + Prednisone (CHOEP) (First-Line PTCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Etoposide', dose: 100, unit: 'mg/m²', days: 'D1-D3', schedule: 'D1-D3, every 21 days' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'Brentuximab-CHP-CD30': {
-                name: 'Brentuximab vedotin + CHP (CD30+ PTCL)',
+                name: 'Brentuximab vedotin + Cyclophosphamide + Doxorubicin + Prednisone (BV-CHP) (First-Line CD30+ PTCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             // Anaplastic Large Cell Lymphoma - First-line
             'CHOP-ALCL': {
-                name: 'CHOP (First-line ALCL)',
+                name: 'Cyclophosphamide + Doxorubicin + Vincristine + Prednisone (CHOP) (First-Line ALCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             'Brentuximab-CHP-ALCL': {
-                name: 'Brentuximab vedotin + CHP (ALK-negative ALCL)',
+                name: 'Brentuximab vedotin + Cyclophosphamide + Doxorubicin + Prednisone (BV-CHP) (First-Line ALK-negative ALCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                     { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'D1-D5, every 21 days' }
+                    { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
             },
             // ALK-positive ALCL
             'Crizotinib-ALCL': {
-                name: 'Crizotinib (ALK-positive ALCL)',
+                name: 'Crizotinib (ALK inhibitor) (First-Line/Relapsed/Refractory ALK-positive ALCL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Alectinib-ALCL': {
-                name: 'Alectinib (ALK-positive ALCL)',
+                name: 'Alectinib (ALK inhibitor) (First-Line/Relapsed/Refractory ALK-positive ALCL)',
                 cycles: 12,
                 drugs: [
-                    { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' }
+                    { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             // Extranodal NK/T-cell Lymphoma
             'SMILE-ENKTL': {
-                name: 'SMILE (Extranodal NK/T-cell Lymphoma)',
+                name: 'Dexamethasone + Methotrexate + Ifosfamide + L-asparaginase + Etoposide (SMILE) (First-Line Extranodal NK/T-cell Lymphoma)',
                 cycles: 3,
                 drugs: [
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 2-4, every 21 days' },
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D2-D4, every 21 days' },
                     { name: 'Methotrexate', dose: 2000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'q6h starting 24h after MTX until level <0.05' },
-                    { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'days 2-4, every 21 days' },
-                    { name: 'L-asparaginase', dose: 6000, unit: 'units/m²', schedule: 'days 8, 10, 12, 14, 16, 18, 20, every 21 days' },
-                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'days 2-4, every 21 days' }
+                    { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D2-D4, every 21 days' },
+                    { name: 'Mesna (pre-dose)', dose: 300, unit: 'mg/m²', schedule: 'before Ifosfamide, D2-D4, every 21 days' },
+                    { name: 'Mesna (4h post)', dose: 600, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D2-D4, every 21 days' },
+                    { name: 'Mesna (8h post)', dose: 600, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D2-D4, every 21 days' },
+                    { name: 'L-asparaginase', dose: 6000, unit: 'units/m²', schedule: 'D8, D10, D12, D14, D16, D18, D20, every 21 days' },
+                    { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D2-D4, every 21 days' }
                 ]
             },
             'AspaMetDex-ENKTL': {
-                name: 'AspaMetDex (Extranodal NK/T-cell Lymphoma)',
+                name: 'L-asparaginase + Methotrexate + Dexamethasone (AspaMetDex) (First-Line Extranodal NK/T-cell Lymphoma)',
                 cycles: 6,
                 drugs: [
-                    { name: 'L-asparaginase', dose: 6000, unit: 'units/m²', schedule: 'days 1, 3, 5, 7, 9, 11, every 21 days' },
+                    { name: 'L-asparaginase', dose: 6000, unit: 'units/m²', schedule: 'D1, D3, D5, D7, D9, D11, every 21 days' },
                     { name: 'Methotrexate', dose: 3000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'q6h starting 24h after MTX until level <0.05' },
-                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'days 1-4, every 21 days' }
+                    { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1-D4, every 21 days' }
                 ]
             },
             // T-cell Lymphoma - Relapsed/Refractory
             'Brentuximab-PTCL': {
-                name: 'Brentuximab vedotin (Relapsed/Refractory CD30+ PTCL)',
+                name: 'Brentuximab vedotin monotherapy (CD30 ADC) (Relapsed/Refractory CD30+ PTCL)',
                 cycles: 8,
                 drugs: [
                     { name: 'Brentuximab vedotin', dose: 1.8, unit: 'mg/kg', schedule: 'D1, every 21 days' }
                 ]
             },
             'Belinostat-PTCL': {
-                name: 'Belinostat (Relapsed/Refractory PTCL)',
+                name: 'Belinostat monotherapy (HDAC inhibitor) (Relapsed/Refractory PTCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Belinostat', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
                 ]
             },
             'Romidepsin-PTCL': {
-                name: 'Romidepsin (Relapsed/Refractory PTCL)',
+                name: 'Romidepsin monotherapy (HDAC inhibitor) (Relapsed/Refractory PTCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Romidepsin', dose: 14, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Pralatrexate-PTCL': {
-                name: 'Pralatrexate (Relapsed/Refractory PTCL)',
+                name: 'Pralatrexate monotherapy (antifolate) (Relapsed/Refractory PTCL)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Pralatrexate', dose: 30, unit: 'mg/m²', schedule: 'weekly x 6 weeks, then 1 week rest' }
+                    { name: 'Pralatrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, D29, D36, then 1 week rest, every 49 days' }
                 ]
             },
             'Alemtuzumab-PTCL': {
-                name: 'Alemtuzumab (Relapsed/Refractory T-cell Lymphoma)',
+                name: 'Alemtuzumab monotherapy (CD52 monoclonal antibody) (Relapsed/Refractory T-cell Lymphoma)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Alemtuzumab', dose: 30, unit: 'mg', schedule: 'days 1, 3, 5 weekly' }
+                    { name: 'Alemtuzumab', dose: 30, unit: 'mg', schedule: 'D1, D3, D5, every 7 days' }
                 ]
             },
             // Cutaneous T-cell Lymphoma
             'Mogamulizumab-CTCL': {
-                name: 'Mogamulizumab (Relapsed/Refractory CTCL)',
+                name: 'Mogamulizumab monotherapy (CCR4 monoclonal antibody) (Relapsed/Refractory CTCL)',
                 cycles: 8,
                 drugs: [
                     { name: 'Mogamulizumab', dose: 1, unit: 'mg/kg', schedule: 'weekly for 5 doses, then every 14 days' }
                 ]
             },
             'Romidepsin-CTCL': {
-                name: 'Romidepsin (Relapsed/Refractory CTCL)',
+                name: 'Romidepsin monotherapy (HDAC inhibitor) (Relapsed/Refractory CTCL)',
                 cycles: 6,
                 drugs: [
                     { name: 'Romidepsin', dose: 14, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
                 ]
             },
             'Vorinostat-CTCL': {
-                name: 'Vorinostat (Relapsed/Refractory CTCL)',
+                name: 'Vorinostat (HDAC inhibitor) (Relapsed/Refractory CTCL)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Vorinostat', dose: 400, unit: 'mg', schedule: 'daily, continuous' }
+                    { name: 'Vorinostat', dose: 400, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            // Novel targeted agents for PTCL
+            'Valemetostat-PTCL': {
+                name: 'Valemetostat (EZH1/EZH2 dual inhibitor) (Relapsed/Refractory PTCL)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Valemetostat', dose: 200, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Chidamide-PTCL': {
+                name: 'Chidamide (HDAC inhibitor) (Relapsed/Refractory PTCL)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Chidamide', dose: 30, unit: 'mg', schedule: 'PO twice weekly' }
+                ]
+            },
+            // Additional ALK inhibitors for ALK+ ALCL
+            'Ceritinib-ALCL': {
+                name: 'Ceritinib (ALK inhibitor) (Relapsed/Refractory ALK-positive ALCL)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Ceritinib', dose: 750, unit: 'mg', schedule: 'PO once daily, continuous' }
+                ]
+            },
+            'Brigatinib-ALCL': {
+                name: 'Brigatinib (ALK inhibitor) (Relapsed/Refractory ALK-positive ALCL)',
+                cycles: 12,
+                drugs: [
+                    { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'PO once daily, continuous (after 7-day lead-in at 90 mg)' }
                 ]
             }
         }

@@ -631,4 +631,59 @@ Mesna (2-mercaptoethanesulfonate) provides uroprotection for alkylating agents b
 
 ---
 
+## **16. REGIMEN VALIDATION & UPDATES**
+
+### **Cross-Reference with Latest Guidelines:**
+
+#### **Dose Verification Protocol:**
+- **MANDATORY**: Cross-check ALL regimen doses against latest NCCN and ASCO guidelines
+- **Sources to verify**: 
+  - NCCN Guidelines (current version for each cancer type)
+  - ASCO Annual Meeting abstracts and updates
+  - FDA-approved dosing schedules
+  - Pivotal clinical trial publications
+- **Action Required**: If any doses are incorrect or outdated, MUST correct to match current evidence-based standards
+- **Documentation**: Note source and date of verification for dose corrections
+
+#### **Missing Regimen Assessment:**
+- **MANDATORY**: Cross-check with latest NCCN and ASCO guidelines for any missing regimens
+- **Evaluation Criteria**:
+  - NCCN Category 1, 2A, or 2B recommendations
+  - FDA-approved regimens not yet included
+  - Practice-changing clinical trial results from recent ASCO meetings
+  - Breakthrough therapy designations
+- **Action Required**: Add missing regimens that meet evidence standards
+- **Priority Guidelines**:
+  - **High Priority**: FDA-approved, NCCN Category 1 recommendations
+  - **Medium Priority**: NCCN Category 2A, practice-changing trial results
+  - **Low Priority**: Investigational regimens with promising but preliminary data
+
+#### **Update Frequency:**
+- **Annual Review**: Complete cross-reference with updated NCCN guidelines (typically released annually)
+- **Post-ASCO Review**: Assess for practice-changing abstracts and breakthrough results
+- **FDA Approval Monitoring**: Add newly approved regimens within 30 days of approval
+- **Emergency Updates**: Critical safety updates or dose modifications implemented immediately
+
+#### **Quality Assurance Process:**
+1. **Systematic Review**: Go through each cancer type methodically
+2. **Documentation**: Record what was checked, when, and what changes were made
+3. **Evidence Grading**: Note the level of evidence for each regimen (Phase III trial, FDA approval, etc.)
+4. **Cross-Validation**: Have clinical expertise review major changes before implementation
+
+### **Implementation Workflow:**
+```
+1. Select cancer type for review
+2. Access latest NCCN guidelines for that cancer type
+3. Cross-reference every existing regimen:
+   - Verify drug names, doses, schedules, cycles
+   - Check for any dose modifications or updates
+4. Review NCCN recommendations for missing regimens
+5. Search ASCO abstracts for breakthrough results
+6. Add missing regimens following development guidelines format
+7. Document all changes with evidence sources
+8. Update version control and change log
+```
+
+---
+
 This reference guide should be updated whenever new patterns or logic are introduced to maintain consistency across the application.
