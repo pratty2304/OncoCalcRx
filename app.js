@@ -4503,9 +4503,9 @@ const protocolDatabase = {
         }
     },
     hepatocellular: {
-        // METASTATIC THERAPY
+        // METASTATIC THERAPY - First-Line (Most Common)
         'Atezolizumab-Bevacizumab': {
-            name: 'Atezolizumab + Bevacizumab (PD-L1 + VEGF inhibitors) (IMbrave150)',
+            name: 'Atezolizumab (PD-L1 inhibitor) + Bevacizumab (VEGF inhibitor) (IMbrave150) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -4513,99 +4513,101 @@ const protocolDatabase = {
             ]
         },
         'Durvalumab-Tremelimumab': {
-            name: 'Durvalumab + Tremelimumab (HIMALAYA)',
+            name: 'Durvalumab (PD-L1 inhibitor) + Tremelimumab (CTLA-4 inhibitor) (HIMALAYA) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' },
                 { name: 'Tremelimumab', dose: 300, unit: 'mg', schedule: 'D1, cycle 1 only (single dose)' }
             ]
         },
-        'Durvalumab-Monotherapy': {
-            name: 'Durvalumab (HIMALAYA)',
-            cycles: 8,
-            drugs: [
-                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' }
-            ]
-        },
         'Sorafenib': {
-            name: 'Sorafenib (SHARP)',
+            name: 'Sorafenib (multi-kinase inhibitor) (SHARP) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuous' }
             ]
         },
         'Lenvatinib': {
-            name: 'Lenvatinib (REFLECT)',
+            name: 'Lenvatinib (multi-kinase inhibitor) (REFLECT) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Lenvatinib', dose: 12, unit: 'mg', schedule: 'PO once daily (≥60kg) or 8mg daily (<60kg)' }
             ]
         },
 
-        // METASTATIC THERAPY
-        'Ipilimumab-Nivolumab': {
-            name: 'Ipilimumab + Nivolumab (CheckMate 040)',
-            cycles: 6,
-            drugs: [
-                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles' },
-                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' }
-            ]
-        },
+        // METASTATIC THERAPY - Second-Line  
         'Cabozantinib': {
-            name: 'Cabozantinib (CELESTIAL)',
+            name: 'Cabozantinib (multi-kinase inhibitor) (CELESTIAL) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Regorafenib': {
-            name: 'Regorafenib (RESORCE)',
+            name: 'Regorafenib (multi-kinase inhibitor) (RESORCE) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, then 7 days off, every 28 days' }
+                { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-21, then 7 days off, every 28 days' }
             ]
         },
         'Ramucirumab': {
-            name: 'Ramucirumab (REACH-2)',
+            name: 'Ramucirumab (VEGFR-2 inhibitor) (REACH-2) (AFP ≥400 ng/mL) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days (AFP ≥400)' }
+                { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
             ]
         },
 
-        // IMMUNOTHERAPY MONOTHERAPY
-        'Nivolumab': {
-            name: 'Nivolumab (CheckMate 040)',
+        // METASTATIC THERAPY - Immunotherapy Combinations
+        'Ipilimumab-Nivolumab': {
+            name: 'Ipilimumab (CTLA-4 inhibitor) + Nivolumab (PD-1 inhibitor) (CheckMate-040) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles' },
+                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' }
+            ]
+        },
+
+        // METASTATIC THERAPY - Immunotherapy Monotherapy
+        'Nivolumab-Monotherapy': {
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (CheckMate-040) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (KEYNOTE-224)',
+        'Pembrolizumab-Monotherapy': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-224) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
-        'Tislelizumab': {
-            name: 'Tislelizumab (RATIONALE-301)',
+        'Durvalumab-Monotherapy': {
+            name: 'Durvalumab monotherapy (PD-L1 inhibitor) (HIMALAYA) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' }
+            ]
+        },
+        'Tislelizumab-Monotherapy': {
+            name: 'Tislelizumab monotherapy (PD-1 inhibitor) (RATIONALE-301) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Tislelizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
 
-        // NEWER TARGETED THERAPIES
+        // METASTATIC THERAPY - Other Targeted Therapies
         'Donafenib': {
-            name: 'Donafenib (ZGDH3)',
+            name: 'Donafenib (multi-kinase inhibitor) (ZGDH3) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Donafenib', dose: 200, unit: 'mg', schedule: 'PO twice daily, continuous' }
             ]
         },
         'Apatinib': {
-            name: 'Apatinib (Metastatic)',
+            name: 'Apatinib (VEGFR-2 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Apatinib', dose: 500, unit: 'mg', schedule: 'PO once daily, continuous' }
@@ -4613,26 +4615,26 @@ const protocolDatabase = {
         },
 
         // LOCOREGIONAL THERAPY
-        'GEMOX': {
-            name: 'Gemcitabine + Oxaliplatin (GEMOX)',
+        'GEMOX-Locoregional': {
+            name: 'Gemcitabine + Oxaliplatin (GEMOX) (Locoregional)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' }
             ]
         },
-        'FOLFOX4': {
-            name: 'FOLFOX4 (Oxaliplatin + 5-FU + Leucovorin)',
+        'FOLFOX4-Locoregional': {
+            name: 'FOLFOX4 (Oxaliplatin + 5-FU + Leucovorin) (Locoregional)',
             cycles: 6,
             drugs: [
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: 'Leucovorin', dose: 200, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: '5-Fluorouracil (bolus)', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
-                { name: '5-Fluorouracil (continuous infusion)', dose: 600, unit: 'mg/m²', schedule: 'D1-D2, 22-hour infusion, every 14 days' }
+                { name: '5-Fluorouracil (continuous infusion)', dose: 600, unit: 'mg/m²', schedule: 'CI over 22 hours D1-D2, every 14 days' }
             ]
         },
         'Doxorubicin-TACE': {
-            name: 'Doxorubicin (TACE)',
+            name: 'Doxorubicin (TACE) (Locoregional)',
             cycles: 4,
             drugs: [
                 { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'Intra-arterial, every 6-8 weeks' }
@@ -9589,14 +9591,14 @@ const protocolDatabase = {
     head_neck: {
         // DEFINITIVE CHEMORADIOTHERAPY
         'Cisplatin-RT': {
-            name: 'Cisplatin + Radiotherapy (Definitive Chemoradiotherapy)',
+            name: 'Cisplatin + Radiotherapy (Definitive/Adjuvant Chemoradiotherapy)',
             cycles: 3,
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days concurrent with RT' }
             ]
         },
         'Cisplatin-RT-Weekly': {
-            name: 'Cisplatin + Radiotherapy (weekly) (Definitive Chemoradiotherapy)',
+            name: 'Cisplatin + Radiotherapy (weekly) (Definitive/Adjuvant Chemoradiotherapy)',
             cycles: 7,
             drugs: [
                 { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 7 days x 7 weeks concurrent with RT' }
@@ -9637,24 +9639,28 @@ const protocolDatabase = {
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI over 4 days D1-D4, every 21 days' }
             ]
         },
-        'TIP-Neoadjuvant': {
-            name: 'Docetaxel + Ifosfamide + Cisplatin (TIP) (Neoadjuvant)',
+        'DIC-Neoadjuvant': {
+            name: 'Docetaxel + Ifosfamide + Cisplatin (DIC) (Neoadjuvant)',
             cycles: 4,
             drugs: [
-                { name: 'Docetaxel', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
-                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D3 every 21 days' },
+                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D3 every 21 days' },
+                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D3 every 21 days' }
             ]
         },
-        'Paclitaxel-Ifosfamide-Cisplatin-Neoadjuvant': {
-            name: 'Paclitaxel + Ifosfamide + Cisplatin (PIC) (Neoadjuvant)',
+        'TIP-Neoadjuvant': {
+            name: 'Paclitaxel + Ifosfamide + Cisplatin (TIP) (Neoadjuvant)',
             cycles: 4,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Ifosfamide', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
+                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D3 every 21 days' },
+                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D3 every 21 days' },
+                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D3 every 21 days' }
             ]
         },
         'Paclitaxel-Ifosfamide-Carboplatin-Neoadjuvant': {
@@ -9662,9 +9668,11 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Ifosfamide', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: 'Mesna', dose: 1000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
+                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D3 every 21 days' },
+                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D3 every 21 days' },
+                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D3 every 21 days' }
             ]
         },
         'Cisplatin-5FU-Neoadjuvant': {
@@ -9685,20 +9693,6 @@ const protocolDatabase = {
         },
 
         // ADJUVANT THERAPY
-        'Cisplatin-RT-Adjuvant': {
-            name: 'Cisplatin + Radiotherapy (Adjuvant Chemoradiotherapy)',
-            cycles: 3,
-            drugs: [
-                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days concurrent with RT' }
-            ]
-        },
-        'Cisplatin-RT-Weekly-Adjuvant': {
-            name: 'Cisplatin + Radiotherapy (weekly) (Adjuvant Chemoradiotherapy)',
-            cycles: 7,
-            drugs: [
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 7 days x 7 weeks concurrent with RT' }
-            ]
-        },
         'Carboplatin-Paclitaxel-RT-Adjuvant': {
             name: 'Paclitaxel + Carboplatin + Radiotherapy (weekly) (Adjuvant Chemoradiotherapy)',
             cycles: 7,
@@ -9797,7 +9791,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Cisplatin-NPC': {
-            name: 'Gemcitabine + Cisplatin (Nasopharyngeal) (Metastatic)',
+            name: 'Gemcitabine + Cisplatin (Nasopharyngeal) (Neoadjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -12178,8 +12172,78 @@ function roundDose(dose, drugName, protocolName = '') {
         'retifanlimab'
     ];
     
+    // Never round oral targeted therapy drugs - they have specific dosing requirements
+    const oralTargetedTherapyDrugs = [
+        // CDK4/6 inhibitors
+        'palbociclib', 'ribociclib', 'abemaciclib',
+        // PARP inhibitors
+        'olaparib', 'rucaparib', 'niraparib', 'talazoparib',
+        // EGFR inhibitors
+        'erlotinib', 'gefitinib', 'osimertinib', 'afatinib', 'dacomitinib', 'mobocertinib',
+        // ALK/ROS1 inhibitors
+        'crizotinib', 'alectinib', 'ceritinib', 'brigatinib', 'lorlatinib',
+        // BTK inhibitors
+        'ibrutinib', 'acalabrutinib', 'zanubrutinib',
+        // Tyrosine kinase inhibitors
+        'imatinib', 'dasatinib', 'nilotinib', 'bosutinib', 'ponatinib',
+        // PI3K inhibitors
+        'idelalisib', 'duvelisib', 'umbralisib',
+        // BCL-2 inhibitors
+        'venetoclax',
+        // FLT3 inhibitors
+        'midostaurin', 'gilteritinib', 'quizartinib',
+        // FGFR inhibitors
+        'erdafitinib', 'pemigatinib', 'futibatinib', 'infigratinib',
+        // Hedgehog pathway inhibitors
+        'vismodegib', 'sonidegib', 'glasdegib',
+        // RET inhibitors
+        'selpercatinib', 'pralsetinib',
+        // TRK inhibitors
+        'larotrectinib', 'entrectinib', 'repotrectinib',
+        // BRAF/MEK inhibitors
+        'dabrafenib', 'trametinib', 'vemurafenib', 'cobimetinib', 'encorafenib', 'binimetinib',
+        // HCC multi-kinase inhibitors
+        'sorafenib', 'lenvatinib', 'cabozantinib', 'regorafenib', 'donafenib',
+        // VEGFR inhibitors
+        'apatinib', 'ramucirumab', 'sunitinib', 'pazopanib', 'axitinib', 'tivozanib',
+        // mTOR inhibitors
+        'everolimus', 'temsirolimus',
+        // GIST-specific
+        'avapritinib', 'ripretinib',
+        // Other oral targeted therapies
+        'tucatinib', 'ruxolitinib', 'fedratinib', 'pacritinib'
+    ];
+    
+    // Never round hormonal therapy drugs - they have standard fixed doses
+    const hormonalTherapyDrugs = [
+        // SERMs
+        'tamoxifen', 'toremifene',
+        // Aromatase Inhibitors
+        'anastrozole', 'letrozole', 'exemestane',
+        // SERDs
+        'fulvestrant', 'elacestrant', 'camizestrant',
+        // GnRH agonists
+        'goserelin', 'leuprolide', 'triptorelin',
+        // Anti-androgens
+        'bicalutamide', 'flutamide', 'enzalutamide', 'apalutamide', 'darolutamide',
+        // Other hormonal agents
+        'abiraterone', 'degarelix'
+    ];
+    
     const drugNameLower = drugName.toLowerCase();
+    
+    // Check immunotherapy exclusion
     if (immunotherapyDrugs.some(immunoDrug => drugNameLower.includes(immunoDrug))) {
+        return numDose;
+    }
+    
+    // Check oral targeted therapy exclusion
+    if (oralTargetedTherapyDrugs.some(targetedDrug => drugNameLower.includes(targetedDrug))) {
+        return numDose;
+    }
+    
+    // Check hormonal therapy exclusion
+    if (hormonalTherapyDrugs.some(hormonalDrug => drugNameLower.includes(hormonalDrug))) {
         return numDose;
     }
     
@@ -13395,6 +13459,9 @@ function buildDoseAdjustmentTable() {
             'lenvatinib',
             'regorafenib',
             'tivozanib',
+            'donafenib',
+            'apatinib',
+            'ramucirumab',
             // mTOR inhibitors
             'everolimus',
             'temsirolimus',
@@ -13914,6 +13981,9 @@ function showFinalPrescription() {
             'lenvatinib',
             'regorafenib',
             'tivozanib',
+            'donafenib',
+            'apatinib',
+            'ramucirumab',
             // mTOR inhibitors
             'everolimus',
             'temsirolimus',
