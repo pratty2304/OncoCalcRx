@@ -3,14 +3,23 @@
 ## **1. REGIMEN ORGANIZATION HIERARCHY**
 
 ### **Treatment Setting Order (Always follow this sequence):**
+
+#### **For Solid Tumors:**
 1. **Neoadjuvant/Adjuvant** 
 2. **Perioperative**
 3. **Adjuvant** 
 4. **Definitive** (Concurrent chemoRT)
 5. **Metastatic** (Most commonly used → Least commonly used)
 
-### **Metastatic Regimen Ordering Logic:**
-- Order by clinical frequency of use (most common first)
+#### **For Hematologic Malignancies (Leukemia/Lymphoma):**
+1. **First-Line** (Newly diagnosed)
+2. **Second-Line** (First relapse/resistance)
+3. **Third-Line and Beyond** (Multiple relapses)
+4. **Relapsed/Refractory** (Salvage regimens)
+
+### **Advanced Disease Regimen Ordering Logic:**
+- **Solid Tumors**: Order metastatic regimens by clinical frequency
+- **Hematologic Malignancies**: Order relapsed/refractory regimens by line of therapy
 - Combination therapies before monotherapies
 - Targeted therapies in order of approval/adoption
 - Immunotherapies grouped together
@@ -21,13 +30,28 @@
 ## **2. NAMING CONVENTIONS & FORMATTING**
 
 ### **Treatment Setting Labels:**
+
+#### **For Solid Tumors:**
 - `(Neoadjuvant/Adjuvant)` - Dual indication
 - `(Perioperative)` - Pre and post-operative
 - `(Adjuvant)` - Post-operative only
 - `(Definitive)` - Primary treatment (usually with RT)
 - `(Metastatic)` - Advanced/metastatic disease
 
+#### **For Hematologic Malignancies:**
+- `(First-Line)` - Newly diagnosed, treatment-naïve
+- `(Second-Line)` - First relapse or resistance
+- `(Third-Line)` - Multiple prior therapies
+- `(Relapsed/Refractory)` - Salvage therapy, multiple relapses
+- `(Maintenance)` - Post-induction/consolidation therapy
+
 ### **Drug Labels & Descriptions:**
+- **Regimen Abbreviations:** Drug regimen expansion should be followed by abbreviation in parentheses
+  - `Cyclophosphamide + Doxorubicin + Vincristine (CAV)`
+  - `Cisplatin + Etoposide (CE)`
+  - `Atezolizumab + Carboplatin + Etoposide (ACE)`
+  - `Durvalumab + Carboplatin + Etoposide (DCE)`
+
 - **Monotherapy:** Add "monotherapy" for single agents (ONLY for immunotherapy and chemotherapy drugs)
   - `Pembrolizumab monotherapy (PD-1 inhibitor)`
   - `Gemcitabine monotherapy`
