@@ -17,6 +17,11 @@
 3. **Third-Line and Beyond** (Multiple relapses)
 4. **Relapsed/Refractory** (Salvage regimens)
 
+#### **For Multiple Myeloma (Special Case):**
+1. **First-Line - Transplant-Eligible** (Newly diagnosed, fit for autologous SCT)
+2. **First-Line - Transplant-Ineligible** (Newly diagnosed, unfit for autologous SCT)
+3. **Relapsed/Refractory** (Second-line and beyond)
+
 ### **Advanced Disease Regimen Ordering Logic:**
 - **Solid Tumors**: Order metastatic regimens by clinical frequency
 - **Hematologic Malignancies**: Order relapsed/refractory regimens by line of therapy
@@ -44,6 +49,11 @@
 - `(Third-Line)` - Multiple prior therapies
 - `(Relapsed/Refractory)` - Salvage therapy, multiple relapses
 - `(Maintenance)` - Post-induction/consolidation therapy
+
+#### **For Multiple Myeloma (Special Labels):**
+- `(transplant-eligible) (First-Line)` - Newly diagnosed, fit for autologous SCT
+- `(transplant-ineligible) (First-Line)` - Newly diagnosed, unfit for autologous SCT
+- `(Relapsed/Refractory)` - Second-line and beyond regimens
 
 ### **Drug Labels & Descriptions:**
 - **Regimen Abbreviations:** Drug regimen expansion should be followed by abbreviation in parentheses
@@ -751,6 +761,146 @@ Mesna (2-mercaptoethanesulfonate) provides uroprotection for alkylating agents b
 - **Improved user experience** - fewer redundant options
 - **Cleaner codebase** with less repetitive entries
 - **Easier updates** - change once, applies to all settings
+
+---
+
+## **18. MULTIPLE MYELOMA TRANSPLANT ELIGIBILITY CLASSIFICATION**
+
+### **Clinical Rationale:**
+Multiple myeloma treatment approach is fundamentally determined by autologous stem cell transplant (ASCT) eligibility, which affects both induction regimen selection and treatment goals.
+
+### **Transplant-Eligible Criteria:**
+#### **Patient Factors:**
+- **Age:** Typically ≤70 years (some centers extend to 75)
+- **Performance Status:** ECOG 0-2, adequate functional status
+- **Organ Function:** Adequate cardiac, pulmonary, hepatic, and renal function
+- **Comorbidities:** Absence of major comorbidities that contraindicate ASCT
+
+#### **Disease Factors:**
+- **Stage:** Any stage (ISS I-III acceptable)
+- **Cytogenetics:** High-risk cytogenetics do not exclude transplant eligibility
+- **Response Goals:** Aim for maximal response before ASCT
+
+### **Transplant-Ineligible Criteria:**
+#### **Patient Factors:**
+- **Age:** Typically >70-75 years (institutional variation)
+- **Performance Status:** ECOG ≥3, poor functional status
+- **Comorbidities:** Significant cardiac, pulmonary, or other organ dysfunction
+- **Frailty:** Geriatric assessment indicating frailty
+
+#### **Treatment Approach:**
+- **Extended Induction:** Longer treatment courses (9-12+ cycles)
+- **Continuous Therapy:** Often continued until progression
+- **Lower Intensity:** May require dose modifications
+
+### **Regimen Design Differences:**
+
+#### **Transplant-Eligible Regimens:**
+- **Cycle Count:** Typically 3-4 cycles of induction
+- **Intensity:** Full-dose, intensive regimens acceptable
+- **Goal:** Achieve rapid, deep response before ASCT
+- **Examples:** VRd × 4, Dara-VRd × 4, VTD × 4
+
+#### **Transplant-Ineligible Regimens:**
+- **Cycle Count:** Extended courses (9-12+ cycles)
+- **Intensity:** May require dose reductions (e.g., VRd-Lite)
+- **Goal:** Sustained disease control with manageable toxicity
+- **Maintenance:** Often includes continuous therapy until progression
+- **Examples:** VRd-Lite × 9, Dara-Rd (continuous), MPT
+
+### **Naming Convention Implementation:**
+
+#### **Transplant-Eligible Format:**
+```javascript
+// Format: Drug Name (Trial) (transplant-eligible) (First-Line)
+name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd) (SWOG S0777) (transplant-eligible) (First-Line)'
+```
+
+#### **Transplant-Ineligible Format:**
+```javascript
+// Format: Drug Name (Trial) (transplant-ineligible) (First-Line)
+name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd) (MAIA) (transplant-ineligible) (First-Line)'
+```
+
+### **Clinical Decision Support:**
+The transplant eligibility designation helps clinicians:
+1. **Select Appropriate Regimens:** Match treatment intensity to patient fitness
+2. **Set Treatment Goals:** Different depth of response expectations
+3. **Plan Treatment Duration:** Short induction vs. extended therapy
+4. **Anticipate Toxicity:** Adjust for patient tolerance
+5. **Coordinate Care:** Plan for ASCT evaluation and timing
+
+### **Implementation Requirements:**
+- **ALL first-line multiple myeloma regimens** must include transplant eligibility designation
+- **Relapsed/refractory regimens** do not require this designation (treatment approach similar regardless)
+- **Maintenance regimens** should specify post-transplant vs. primary maintenance context
+- **Cross-reference with NCCN guidelines** for current eligibility criteria
+
+### **Quality Assurance:**
+- Verify regimen classifications match current clinical practice standards
+- Ensure cycle counts and dosing align with transplant eligibility status
+- Confirm trial references support the designated patient population
+- Review annually with updated transplant eligibility guidelines
+
+---
+
+## **18. MULTIPLE MYELOMA TRANSPLANT ELIGIBILITY LOGIC**
+
+### **Clinical Rationale:**
+Multiple myeloma treatment is uniquely stratified by transplant eligibility due to significant differences in treatment intensity, duration, and outcomes between transplant-eligible and transplant-ineligible patients.
+
+### **Transplant Eligibility Criteria:**
+
+#### **Transplant-Eligible Patients:**
+- **Age:** Typically ≤70 years (varies by center, some extend to 75)
+- **Performance Status:** ECOG 0-2
+- **Organ Function:** Adequate cardiac, pulmonary, renal, hepatic function
+- **Patient Preference:** Willing to undergo autologous stem cell transplant
+
+#### **Transplant-Ineligible Patients:**
+- **Age:** Typically >70-75 years
+- **Performance Status:** ECOG 3-4 or significant frailty
+- **Organ Dysfunction:** Cardiac, pulmonary, renal, or hepatic impairment
+- **Patient Preference:** Declines transplant option
+
+### **Treatment Strategy Differences:**
+
+#### **Transplant-Eligible Regimens:**
+- **Induction Phase:** 3-4 cycles of intensive triplet/quadruplet therapy
+- **Autologous SCT:** High-dose melphalan conditioning
+- **Post-Transplant:** Maintenance therapy
+- **Goal:** Deep response (≥VGPR) before transplant
+
+#### **Transplant-Ineligible Regimens:**
+- **Extended Therapy:** 9-12 cycles or continuous treatment
+- **Lower Intensity:** Reduced doses, especially dexamethasone
+- **Continuous Maintenance:** Until progression or intolerance
+- **Goal:** Prolonged disease control with acceptable toxicity
+
+### **Labeling Requirements:**
+
+#### **Mandatory Label Format:**
+- **Pattern:** `Drug Name (TRIAL) (transplant-eligible/transplant-ineligible) (First-Line)`
+- **Placement:** Transplant eligibility label comes BEFORE treatment setting
+- **Consistency:** ALL first-line multiple myeloma regimens must include eligibility status
+
+#### **Examples:**
+- ✅ `Bortezomib + Lenalidomide + Dexamethasone (VRd) (SWOG S0777) (transplant-eligible) (First-Line)`
+- ✅ `Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd) (MAIA) (CD38 mAb) (transplant-ineligible) (First-Line)`
+
+### **Implementation:**
+
+#### **Database Organization:**
+```javascript
+// First-Line - Transplant-Eligible Patients
+// First-Line - Transplant-Ineligible Patients  
+// Relapsed/Refractory - Second-Line and Beyond
+```
+
+#### **Key Differences:**
+- **Cycle Number:** Transplant-eligible (3-4 cycles) vs Transplant-ineligible (9-12 cycles)
+- **Dexamethasone:** Standard dose (40mg) vs Reduced dose (20mg in elderly)
+- **Duration:** Fixed induction vs Continuous until progression
 
 ---
 

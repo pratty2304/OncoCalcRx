@@ -6219,9 +6219,9 @@ const protocolDatabase = {
         }
     },
     multiple_myeloma: {
-        // Transplant-Eligible Patients - Induction Therapy
+        // First-Line - Transplant-Eligible Patients
         'VRd': {
-            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd / SWOG S0777) - Transplant Eligible',
+            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd) (SWOG S0777) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
@@ -6230,7 +6230,7 @@ const protocolDatabase = {
             ]
         },
         'VTD': {
-            name: 'Bortezomib + Thalidomide + Dexamethasone (VTD / GIMEMA) - Transplant Eligible',
+            name: 'Bortezomib + Thalidomide + Dexamethasone (VTD) (GIMEMA) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
@@ -6239,7 +6239,7 @@ const protocolDatabase = {
             ]
         },
         'CyBorD': {
-            name: 'Cyclophosphamide + Bortezomib + Dexamethasone (CyBorD) - Transplant Eligible',
+            name: 'Cyclophosphamide + Bortezomib + Dexamethasone (CyBorD) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
                 { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
@@ -6248,7 +6248,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-VTD': {
-            name: 'Daratumumab + Bortezomib + Thalidomide + Dexamethasone (Dara-VTD / CASSIOPEIA) - Transplant Eligible',
+            name: 'Daratumumab + Bortezomib + Thalidomide + Dexamethasone (Dara-VTD) (CASSIOPEIA) (CD38 mAb) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
@@ -6258,7 +6258,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-VRd': {
-            name: 'Daratumumab + Bortezomib + Lenalidomide + Dexamethasone (Dara-VRd / GRIFFIN) - Transplant Eligible',
+            name: 'Daratumumab + Bortezomib + Lenalidomide + Dexamethasone (Dara-VRd) (GRIFFIN) (CD38 mAb) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
@@ -6268,7 +6268,7 @@ const protocolDatabase = {
             ]
         },
         'Isa-VRd': {
-            name: 'Isatuximab + Bortezomib + Lenalidomide + Dexamethasone (Isa-VRd / GMMG-HD7) - Transplant Eligible',
+            name: 'Isatuximab + Bortezomib + Lenalidomide + Dexamethasone (Isa-VRd) (GMMG-HD7) (CD38 mAb) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
                 { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
@@ -6277,9 +6277,10 @@ const protocolDatabase = {
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
         },
-        // Transplant-Ineligible Patients - Initial Therapy
+        
+        // First-Line - Transplant-Ineligible Patients
         'VRd-Lite': {
-            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd-Lite / SWOG S0777) - Transplant Ineligible',
+            name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd-Lite) (SWOG S0777) (transplant-ineligible) (First-Line)',
             cycles: 9,
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days x 9 cycles' },
@@ -6288,7 +6289,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-Rd': {
-            name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd / MAIA) - Transplant Ineligible',
+            name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd) (MAIA) (CD38 mAb) (transplant-ineligible) (First-Line)',
             cycles: 12,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
@@ -6297,7 +6298,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-VMP': {
-            name: 'Daratumumab + Bortezomib + Melphalan + Prednisone (Dara-VMP / ALCYONE) - Transplant Ineligible',
+            name: 'Daratumumab + Bortezomib + Melphalan + Prednisone (Dara-VMP) (ALCYONE) (CD38 mAb) (transplant-ineligible) (First-Line)',
             cycles: 9,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 6 weeks, then every 21 days x 16 weeks, then every 28 days' },
@@ -6307,7 +6308,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-CyBorD': {
-            name: 'Daratumumab + Cyclophosphamide + Bortezomib + Dexamethasone (Dara-CyBorD) - Transplant Ineligible',
+            name: 'Daratumumab + Cyclophosphamide + Bortezomib + Dexamethasone (Dara-CyBorD) (CD38 mAb) (transplant-ineligible) (First-Line)',
             cycles: 9,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
@@ -6317,7 +6318,7 @@ const protocolDatabase = {
             ]
         },
         'MPT': {
-            name: 'Melphalan + Prednisone + Thalidomide (MPT) - Transplant Ineligible',
+            name: 'Melphalan + Prednisone + Thalidomide (MPT) (transplant-ineligible) (First-Line)',
             cycles: 12,
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
@@ -6326,16 +6327,17 @@ const protocolDatabase = {
             ]
         },
         'Rd': {
-            name: 'Lenalidomide + Dexamethasone (Rd) - Transplant Ineligible',
+            name: 'Lenalidomide + Dexamethasone (Rd) (transplant-ineligible) (First-Line)',
             cycles: 12,
             drugs: [
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days until progression' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days until progression' }
             ]
         },
-        // Relapsed/Refractory regimens
+        
+        // Relapsed/Refractory - Second-Line and Beyond
         'KRd': {
-            name: 'Carfilzomib + Lenalidomide + Dexamethasone (KRd / ASPIRE) - Relapsed/Refractory',
+            name: 'Carfilzomib + Lenalidomide + Dexamethasone (KRd) (ASPIRE) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' },
@@ -6344,7 +6346,7 @@ const protocolDatabase = {
             ]
         },
         'Kd': {
-            name: 'Carfilzomib + Dexamethasone (Kd / ENDEAVOR) - Relapsed/Refractory',
+            name: 'Carfilzomib + Dexamethasone (Kd) (ENDEAVOR) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' },
@@ -6352,7 +6354,7 @@ const protocolDatabase = {
             ]
         },
         'PVd': {
-            name: 'Pomalidomide + Bortezomib + Dexamethasone (PVd) - Relapsed/Refractory',
+            name: 'Pomalidomide + Bortezomib + Dexamethasone (PVd) (IMiD/proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D14 every 21 days' },
@@ -6361,7 +6363,7 @@ const protocolDatabase = {
             ]
         },
         'Pd': {
-            name: 'Pomalidomide + Dexamethasone (Pd) - Relapsed/Refractory',
+            name: 'Pomalidomide + Dexamethasone (Pd) (IMiD) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
@@ -6369,7 +6371,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-Pd': {
-            name: 'Daratumumab + Pomalidomide + Dexamethasone (Dara-Pd) - Relapsed/Refractory',
+            name: 'Daratumumab + Pomalidomide + Dexamethasone (Dara-Pd) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
@@ -6378,7 +6380,7 @@ const protocolDatabase = {
             ]
         },
         'Isa-Pd': {
-            name: 'Isatuximab + Pomalidomide + Dexamethasone (Isa-Pd) - Relapsed/Refractory',
+            name: 'Isatuximab + Pomalidomide + Dexamethasone (Isa-Pd) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
@@ -6387,7 +6389,7 @@ const protocolDatabase = {
             ]
         },
         'Dara-Vd': {
-            name: 'Daratumumab + Bortezomib + Dexamethasone (Dara-Vd) - Relapsed/Refractory',
+            name: 'Daratumumab + Bortezomib + Dexamethasone (Dara-Vd) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
@@ -6396,7 +6398,7 @@ const protocolDatabase = {
             ]
         },
         'Elo-Rd': {
-            name: 'Elotuzumab + Lenalidomide + Dexamethasone (Elo-Rd) - Relapsed/Refractory',
+            name: 'Elotuzumab + Lenalidomide + Dexamethasone (Elo-Rd) (SLAMF7 mAb) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Elotuzumab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days' },
@@ -6405,7 +6407,7 @@ const protocolDatabase = {
             ]
         },
         'Panobinostat-Vd': {
-            name: 'Panobinostat + Bortezomib + Dexamethasone (Panobinostat-Vd) - Relapsed/Refractory',
+            name: 'Panobinostat + Bortezomib + Dexamethasone (Panobinostat-Vd) (HDAC inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Panobinostat', dose: 20, unit: 'mg', schedule: 'D1,D3,D5,D8,D10,D12 every 21 days' },
@@ -6414,7 +6416,7 @@ const protocolDatabase = {
             ]
         },
         'IRd': {
-            name: 'Ixazomib + Lenalidomide + Dexamethasone (IRd) - Relapsed/Refractory',
+            name: 'Ixazomib + Lenalidomide + Dexamethasone (IRd) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Ixazomib', dose: 4, unit: 'mg', schedule: 'D1,D8,D15 every 28 days' },
@@ -6423,7 +6425,7 @@ const protocolDatabase = {
             ]
         },
         'Selinexor-d': {
-            name: 'Selinexor + Dexamethasone (Selinexor-d) - Relapsed/Refractory',
+            name: 'Selinexor + Dexamethasone (Selinexor-d) (XPO1 inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Selinexor', dose: 80, unit: 'mg', schedule: 'twice weekly' },
@@ -6431,16 +6433,17 @@ const protocolDatabase = {
             ]
         },
         'Melflufen-d': {
-            name: 'Melphalan Flufenamide + Dexamethasone (Melflufen-d) - Relapsed/Refractory',
+            name: 'Melphalan Flufenamide + Dexamethasone (Melflufen-d) (alkylating agent) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Melphalan Flufenamide', dose: 40, unit: 'mg', schedule: 'D1 every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
             ]
         },
-        // High-dose regimens
+        
+        // High-Dose/Intensive Regimens
         'VTD-PACE': {
-            name: 'Bortezomib + Thalidomide + Dexamethasone + Cisplatin + Adriamycin + Cyclophosphamide + Etoposide (VTD-PACE)',
+            name: 'Bortezomib + Thalidomide + Dexamethasone + Cisplatin + Doxorubicin + Cyclophosphamide + Etoposide (VTD-PACE) (High-dose)',
             cycles: 2,
             drugs: [
                 { name: 'Bortezomib', dose: 1, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
@@ -6449,11 +6452,12 @@ const protocolDatabase = {
                 { name: 'Cisplatin', dose: 10, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
                 { name: 'Doxorubicin', dose: 10, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
                 { name: 'Cyclophosphamide', dose: 400, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
+                { name: 'Mesna', dose: 320, unit: 'mg/m²', schedule: 'D1-D4 every 21 days (80% of Cyclophosphamide dose)' },
                 { name: 'Etoposide', dose: 40, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' }
             ]
         },
         'VAD': {
-            name: 'Vincristine + Adriamycin + Dexamethasone (VAD) - Historical',
+            name: 'Vincristine + Adriamycin + Dexamethasone (VAD) (Historical)',
             cycles: 4,
             drugs: [
                 { name: 'Vincristine', dose: 0.4, unit: 'mg', schedule: 'D1-D4 continuous infusion every 28 days' },
@@ -6462,7 +6466,7 @@ const protocolDatabase = {
             ]
         },
         'DVD': {
-            name: 'Doxorubicin Liposomal + Vincristine + Dexamethasone (DVD) - Relapsed/Refractory',
+            name: 'Doxorubicin Liposomal + Vincristine + Dexamethasone (DVD) (Relapsed/Refractory)',
             cycles: 6,
             drugs: [
                 { name: 'Doxorubicin Liposomal', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
@@ -6470,51 +6474,52 @@ const protocolDatabase = {
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1-D4 every 28 days' }
             ]
         },
-        // Single agents
+        
+        // Monotherapy Agents
         'Bortezomib': {
-            name: 'Bortezomib (single agent) - Relapsed/Refractory',
+            name: 'Bortezomib monotherapy (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' }
             ]
         },
         'Carfilzomib': {
-            name: 'Carfilzomib (single agent) - Relapsed/Refractory',
+            name: 'Carfilzomib monotherapy (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' }
             ]
         },
         'Lenalidomide': {
-            name: 'Lenalidomide (single agent) - Maintenance',
+            name: 'Lenalidomide monotherapy (IMiD) (Maintenance)',
             cycles: 12,
             drugs: [
                 { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Thalidomide': {
-            name: 'Thalidomide (single agent) - Maintenance',
+            name: 'Thalidomide monotherapy (IMiD) (Maintenance)',
             cycles: 12,
             drugs: [
                 { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
         },
         'Dexamethasone': {
-            name: 'Dexamethasone (single agent) - Relapsed/Refractory',
+            name: 'Dexamethasone monotherapy (corticosteroid) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1-D4,D9-D12,D17-D20 every 28 days' }
             ]
         },
         'Daratumumab': {
-            name: 'Daratumumab (single agent) - Relapsed/Refractory',
+            name: 'Daratumumab monotherapy (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' }
             ]
         },
         'Daratumumab-Hyaluronidase': {
-            name: 'Daratumumab + Hyaluronidase (subcutaneous) - Relapsed/Refractory',
+            name: 'Daratumumab + Hyaluronidase (subcutaneous) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Daratumumab', dose: 1800, unit: 'mg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days (subcutaneous)' },
@@ -6522,42 +6527,68 @@ const protocolDatabase = {
             ]
         },
         'Belantamab-Mafodotin': {
-            name: 'Belantamab Mafodotin (BCMA-ADC) - Relapsed/Refractory',
+            name: 'Belantamab Mafodotin monotherapy (BCMA-ADC) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
+        'Belantamab-Pd': {
+            name: 'Belantamab Mafodotin + Pomalidomide + Dexamethasone (DREAMM-8) (BCMA-ADC) (Relapsed/Refractory)',
+            cycles: 8,
+            drugs: [
+                { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
+                { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
+            ]
+        },
+        'Belantamab-Vd': {
+            name: 'Belantamab Mafodotin + Bortezomib + Dexamethasone (DREAMM-7) (BCMA-ADC) (Relapsed/Refractory)',
+            cycles: 8,
+            drugs: [
+                { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
+            ]
+        },
         'Teclistamab': {
-            name: 'Teclistamab (BCMA BiTE) - Relapsed/Refractory',
+            name: 'Teclistamab (BCMA BiTE) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Teclistamab', dose: 1.5, unit: 'mg/kg', schedule: 'weekly after step-up dosing' }
             ]
         },
         'Talquetamab': {
-            name: 'Talquetamab (GPRC5D BiTE) - Relapsed/Refractory',
+            name: 'Talquetamab monotherapy (GPRC5D BiTE) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Talquetamab', dose: 405, unit: 'mcg/kg', schedule: 'weekly after step-up dosing' }
             ]
         },
+        'Teclistamab-Talquetamab': {
+            name: 'Teclistamab + Talquetamab (BCMA/GPRC5D BiTE combination) (ASCO 2024) (Relapsed/Refractory)',
+            cycles: 8,
+            drugs: [
+                { name: 'Teclistamab', dose: 1.5, unit: 'mg/kg', schedule: 'weekly after step-up dosing' },
+                { name: 'Talquetamab', dose: 405, unit: 'mcg/kg', schedule: 'weekly after step-up dosing' }
+            ]
+        },
         'Idecabtagene-Vicleucel': {
-            name: 'Idecabtagene Vicleucel (IDE-CEL CAR-T) - Relapsed/Refractory',
+            name: 'Idecabtagene Vicleucel (IDE-CEL CAR-T) (Relapsed/Refractory)',
             cycles: 1,
             drugs: [
                 { name: 'Idecabtagene Vicleucel', dose: 450, unit: 'million cells', schedule: 'single infusion after lymphodepletion' }
             ]
         },
         'Ciltacabtagene-Vicleucel': {
-            name: 'Ciltacabtagene Vicleucel (CILTA-CEL CAR-T) - Relapsed/Refractory',
+            name: 'Ciltacabtagene Vicleucel (CILTA-CEL CAR-T) (Relapsed/Refractory)',
             cycles: 1,
             drugs: [
                 { name: 'Ciltacabtagene Vicleucel', dose: 0.75, unit: 'million cells/kg', schedule: 'single infusion after lymphodepletion' }
             ]
         },
         'Ibrutinib': {
-            name: 'Ibrutinib (BTK inhibitor) - Relapsed/Refractory',
+            name: 'Ibrutinib (BTK inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Ibrutinib', dose: 560, unit: 'mg', schedule: 'PO once daily' }
@@ -6565,14 +6596,14 @@ const protocolDatabase = {
         },
         // Additional NCCN regimens
         'Melphalan': {
-            name: 'Melphalan (single agent) - Palliative',
+            name: 'Melphalan (single agent) (Palliative)',
             cycles: 8,
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' }
             ]
         },
         'MP': {
-            name: 'Melphalan + Prednisone (MP) - Transplant Ineligible',
+            name: 'Melphalan + Prednisone (MP) (transplant-ineligible) (First-Line)',
             cycles: 12,
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
@@ -6580,7 +6611,7 @@ const protocolDatabase = {
             ]
         },
         'Td': {
-            name: 'Thalidomide + Dexamethasone (Td) - Transplant Ineligible',
+            name: 'Thalidomide + Dexamethasone (Td) (transplant-ineligible) (First-Line)',
             cycles: 8,
             drugs: [
                 { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO once daily' },
@@ -6588,7 +6619,7 @@ const protocolDatabase = {
             ]
         },
         'Vd': {
-            name: 'Bortezomib + Dexamethasone (Vd) - Relapsed/Refractory',
+            name: 'Bortezomib + Dexamethasone (Vd) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
