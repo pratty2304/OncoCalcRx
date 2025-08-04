@@ -5153,265 +5153,292 @@ const protocolDatabase = {
     },
     thyroid: {
         'differentiated': {
-            // Radioactive Iodine-Refractory Differentiated Thyroid Cancer
+            // First-Line Targeted Therapy for RAI-Refractory DTC
             'Lenvatinib-DTC': {
-                name: 'Lenvatinib (SELECT) - RAI-refractory DTC',
-                cycles: 12,
+                name: 'Lenvatinib (SELECT) (multi-kinase inhibitor) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily until progression' }
-                ]
-            },
-            'Sorafenib-DTC': {
-                name: 'Sorafenib (DECISION) - RAI-refractory DTC',
-                cycles: 12,
-                drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
-                ]
-            },
-            'Pazopanib-DTC': {
-                name: 'Pazopanib - Follicular/Hurthle Cell Thyroid Cancer',
-                cycles: 12,
-                drugs: [
-                    { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Selpercatinib-RET-DTC': {
-                name: 'Selpercatinib - RET-altered DTC',
-                cycles: 12,
+                name: 'Selpercatinib (RET inhibitor) (RET gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Pralsetinib-RET-DTC': {
-                name: 'Pralsetinib - RET-altered DTC',
-                cycles: 12,
+                name: 'Pralsetinib (RET inhibitor) (RET gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Larotrectinib-NTRK-DTC': {
-                name: 'Larotrectinib - NTRK fusion-positive DTC',
-                cycles: 12,
+                name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Entrectinib-NTRK-DTC': {
-                name: 'Entrectinib - NTRK fusion-positive DTC',
-                cycles: 12,
+                name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Repotrectinib-NTRK-DTC': {
-                name: 'Repotrectinib - NTRK fusion-positive DTC',
-                cycles: 12,
+                name: 'Repotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily' }
+                ]
+            },
+            
+            // Second-Line Therapy for RAI-Refractory DTC
+            'Cabozantinib-DTC': {
+                name: 'Cabozantinib (COSMIC-311) (multi-kinase inhibitor) (post-lenvatinib/sorafenib) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily' }
+                ]
+            },
+            'Sorafenib-DTC': {
+                name: 'Sorafenib (DECISION) (multi-kinase inhibitor) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily' }
+                ]
+            },
+            
+            // Combination Therapy
+            'Pembrolizumab-Lenvatinib-DTC': {
+                name: 'Pembrolizumab + Lenvatinib (PD-1 inhibitor + multi-kinase inhibitor) (post-lenvatinib progression) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' },
+                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily' }
+                ]
+            },
+            
+            // BRAF-Mutant DTC
+            'Dabrafenib-Trametinib-DTC': {
+                name: 'Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant) (post-multi-kinase inhibitor failure) (RAI-refractory DTC) (Metastatic)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
+                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily' }
                 ]
             }
         },
         'medullary': {
-            // Metastatic Targeted Therapy for Advanced MTC
+            // First-Line Targeted Therapy for Advanced MTC
             'Selpercatinib-RET-MTC': {
-                name: 'Selpercatinib - RET-mutant MTC (Metastatic)',
-                cycles: 12,
+                name: 'Selpercatinib (RET inhibitor) (RET-mutant) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Pralsetinib-RET-MTC': {
-                name: 'Pralsetinib - RET-mutant MTC (Metastatic)',
-                cycles: 12,
+                name: 'Pralsetinib (RET inhibitor) (RET-mutant) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Vandetanib-MTC': {
-                name: 'Vandetanib - Advanced MTC',
-                cycles: 12,
+                name: 'Vandetanib (multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Cabozantinib-MTC': {
-                name: 'Cabozantinib - Advanced MTC',
-                cycles: 12,
+                name: 'Cabozantinib (multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
-            'Sunitinib-MTC': {
-                name: 'Sunitinib - Advanced MTC',
-                cycles: 12,
-                drugs: [
-                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily for 4 weeks, then 2 weeks off' }
-                ]
-            },
+            
+            // Alternative Multi-Kinase Inhibitors for MTC
             'Sorafenib-MTC': {
-                name: 'Sorafenib - Advanced MTC',
-                cycles: 12,
+                name: 'Sorafenib (multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Lenvatinib-MTC': {
-                name: 'Lenvatinib - Advanced MTC',
-                cycles: 12,
+                name: 'Lenvatinib (multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
-            'Larotrectinib-NTRK-MTC': {
-                name: 'Larotrectinib - NTRK fusion-positive MTC',
-                cycles: 12,
+            'Sunitinib-MTC': {
+                name: 'Sunitinib (multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO once daily D1-28, every 42 days (4 weeks on, 2 weeks off)' }
+                ]
+            },
+            
+            // Biomarker-Directed Therapy for MTC
+            'Larotrectinib-NTRK-MTC': {
+                name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
+                cycles: 35,
+                drugs: [
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Entrectinib-NTRK-MTC': {
-                name: 'Entrectinib - NTRK fusion-positive MTC',
-                cycles: 12,
+                name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Pembrolizumab-TMB-MTC': {
-                name: 'Pembrolizumab - High TMB MTC (≥10 mut/Mb)',
-                cycles: 8,
+                name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (TMB-H ≥10 mut/Mb) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
                 ]
             }
         },
         'anaplastic': {
-            // BRAF V600E-mutant Anaplastic Thyroid Cancer
+            // First-line: Biomarker-Directed Targeted Therapy
+            // BRAF V600E-mutant (Metastatic)
             'Dabrafenib-Trametinib-ATC': {
-                name: 'Dabrafenib + Trametinib - BRAF V600E-mutant ATC',
-                cycles: 12,
+                name: 'Dabrafenib (BRAF inhibitor) + Trametinib (MEK inhibitor) (BRAF V600E-mutant) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO once daily until progression' },
-                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
+                    { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Vemurafenib-Cobimetinib-ATC': {
-                name: 'Vemurafenib + Cobimetinib - BRAF V600E-mutant ATC',
-                cycles: 12,
+                name: 'Vemurafenib (BRAF inhibitor) + Cobimetinib (MEK inhibitor) (BRAF V600E-mutant) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO once daily until progression' },
-                    { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily for 21 days, then 7 days off' }
+                    { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily' },
+                    { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' }
                 ]
             },
-            // RET-altered Anaplastic Thyroid Cancer
+            // RET-altered (Metastatic)
             'Selpercatinib-RET-ATC': {
-                name: 'Selpercatinib - RET-altered ATC',
-                cycles: 12,
+                name: 'Selpercatinib monotherapy (RET inhibitor) (RET-altered) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Pralsetinib-RET-ATC': {
-                name: 'Pralsetinib - RET-altered ATC',
-                cycles: 12,
+                name: 'Pralsetinib monotherapy (RET inhibitor) (RET-altered) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
-            // NTRK fusion-positive Anaplastic Thyroid Cancer
+            // NTRK fusion-positive (Metastatic)
             'Larotrectinib-NTRK-ATC': {
-                name: 'Larotrectinib - NTRK fusion-positive ATC',
-                cycles: 12,
+                name: 'Larotrectinib monotherapy (TRK inhibitor) (NTRK fusion-positive) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Entrectinib-NTRK-ATC': {
-                name: 'Entrectinib - NTRK fusion-positive ATC',
-                cycles: 12,
+                name: 'Entrectinib monotherapy (TRK inhibitor) (NTRK fusion-positive) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Repotrectinib-NTRK-ATC': {
-                name: 'Repotrectinib - NTRK fusion-positive ATC',
-                cycles: 12,
+                name: 'Repotrectinib monotherapy (TRK inhibitor) (NTRK fusion-positive) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
-            // Multi-kinase Inhibitors for ATC
+            // First-line: Multi-kinase Inhibitors (Metastatic)
             'Lenvatinib-ATC': {
-                name: 'Lenvatinib - Advanced ATC',
-                cycles: 12,
+                name: 'Lenvatinib monotherapy (Multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
             'Sorafenib-ATC': {
-                name: 'Sorafenib - Advanced ATC',
-                cycles: 12,
+                name: 'Sorafenib monotherapy (Multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                    { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily' }
                 ]
             },
             'Cabozantinib-ATC': {
-                name: 'Cabozantinib - Advanced ATC',
-                cycles: 12,
+                name: 'Cabozantinib monotherapy (Multi-kinase inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily until progression' }
+                    { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily' }
                 ]
             },
-            // Immunotherapy for ATC
+            // First-line: Immunotherapy (Metastatic)
             'Pembrolizumab-ATC': {
-                name: 'Pembrolizumab - Advanced ATC',
-                cycles: 8,
+                name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                    { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
                 ]
             },
             'Nivolumab-ATC': {
-                name: 'Nivolumab - Advanced ATC',
-                cycles: 8,
+                name: 'Nivolumab monotherapy (PD-1 inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
-                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days or 480 mg every 28 days' }
+                    { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480 mg every 28 days' }
                 ]
             },
             'Spartalizumab-ATC': {
-                name: 'Spartalizumab - Advanced ATC',
-                cycles: 8,
+                name: 'Spartalizumab monotherapy (PD-1 inhibitor) (Metastatic)',
+                cycles: 35,
                 drugs: [
                     { name: 'Spartalizumab', dose: 300, unit: 'mg', schedule: 'D1, every 21 days' }
                 ]
             },
-            // Chemotherapy for ATC
+            // First-line: Chemotherapy (Metastatic)
             'Doxorubicin-Cisplatin-ATC': {
-                name: 'Doxorubicin + Cisplatin - Advanced ATC',
+                name: 'Doxorubicin + Cisplatin (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
+            'Paclitaxel-Carboplatin-ATC': {
+                name: 'Paclitaxel + Carboplatin (Metastatic)',
+                cycles: 6,
+                drugs: [
+                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
+                ]
+            },
             'Doxorubicin-ATC': {
-                name: 'Doxorubicin - Advanced ATC',
+                name: 'Doxorubicin monotherapy (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             },
-            'Paclitaxel-Carboplatin-ATC': {
-                name: 'Paclitaxel + Carboplatin - Advanced ATC',
-                cycles: 6,
-                drugs: [
-                    { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
-                ]
-            },
             'Docetaxel-ATC': {
-                name: 'Docetaxel - Advanced ATC',
+                name: 'Docetaxel monotherapy (Metastatic)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                    { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
             }
         }
