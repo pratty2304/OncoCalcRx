@@ -2611,128 +2611,16 @@ const protocolDatabase = {
         }
     },
     melanoma: {
-        // First-line Immunotherapy - Preferred (Metastatic)
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (KEYNOTE-006) - Metastatic - 1L',
-            cycles: 8,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Nivolumab': {
-            name: 'Nivolumab (CheckMate 066) - Metastatic - 1L',
-            cycles: 8,
-            drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
-            ]
-        },
-        'Nivolumab-Ipilimumab': {
-            name: 'Nivolumab + Ipilimumab (CheckMate 067) - Metastatic - 1L',
-            cycles: 8,
-            drugs: [
-                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x4 cycles' },
-                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x4 cycles' }
-            ]
-        },
-        'Nivolumab-Relatlimab': {
-            name: 'Nivolumab + Relatlimab (RELATIVITY-047) - Metastatic - 1L',
-            cycles: 8,
-            drugs: [
-                { name: 'Nivolumab', dose: 480, unit: 'mg', schedule: 'D1, every 28 days' },
-                { name: 'Relatlimab', dose: 160, unit: 'mg', schedule: 'D1, every 28 days' }
-            ]
-        },
-        'Ipilimumab': {
-            name: 'Ipilimumab (MDX010-20) - Metastatic - 1L',
-            cycles: 4,
-            drugs: [
-                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x4 cycles' }
-            ]
-        },
-        
-        // BRAF-mutated Melanoma - Combination Therapy (Metastatic)
-        'Dabrafenib-Trametinib': {
-            name: 'Dabrafenib + Trametinib (COMBI-d/v) - BRAF V600E/K - Metastatic',
-            cycles: 12,
-            drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily continuously' }
-            ]
-        },
-        'Vemurafenib-Cobimetinib': {
-            name: 'Vemurafenib + Cobimetinib (coBRIM) - BRAF V600E/K - Metastatic',
-            cycles: 12,
-            drugs: [
-                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily continuously' },
-                { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily D1-21, every 28 days' }
-            ]
-        },
-        'Encorafenib-Binimetinib': {
-            name: 'Encorafenib + Binimetinib (COLUMBUS) - BRAF V600E/K - Metastatic',
-            cycles: 12,
-            drugs: [
-                { name: 'Encorafenib', dose: 450, unit: 'mg', schedule: 'daily continuously' },
-                { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'PO twice daily continuously' }
-            ]
-        },
-        'Atezolizumab-Vemurafenib-Cobimetinib': {
-            name: 'Atezolizumab + Vemurafenib + Cobimetinib (IMspire150) - BRAF V600 - Metastatic',
-            cycles: 8,
-            drugs: [
-                { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'D1, D15, every 28 days' },
-                { name: 'Vemurafenib', dose: 720, unit: 'mg', schedule: 'PO twice daily continuously' },
-                { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily D1-21, every 28 days' }
-            ]
-        },
-        
-        // Adjuvant Therapy
-        'Pembrolizumab-Adjuvant': {
-            name: 'Pembrolizumab (KEYNOTE-716) - Adjuvant - Stage IIB/IIC/III',
-            cycles: 17,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x17 cycles' }
-            ]
-        },
-        'Nivolumab-Adjuvant': {
-            name: 'Nivolumab (CheckMate 238) - Adjuvant - Stage III/IV',
-            cycles: 26,
-            drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x12 months' }
-            ]
-        },
-        'Dabrafenib-Trametinib-Adjuvant': {
-            name: 'Dabrafenib + Trametinib (COMBI-AD) - Adjuvant - BRAF V600E/K - Stage III',
-            cycles: 26,
-            drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously x12 months' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily continuously x12 months' }
-            ]
-        },
-        'Interferon-alpha-2b-Adjuvant': {
-            name: 'Interferon alfa-2b (E1684) - Adjuvant - High-risk',
-            cycles: 12,
-            drugs: [
-                { name: 'Interferon alfa-2b', dose: 20, unit: 'MIU/m²', schedule: 'D1-5 weekly x4 weeks, then 10 MIU/m² TIW x48 weeks' }
-            ]
-        },
-        'Peg-Interferon-alpha-2b-Adjuvant': {
-            name: 'Peginterferon alfa-2b (EORTC 18991) - Adjuvant - High-risk',
-            cycles: 12,
-            drugs: [
-                { name: 'Peginterferon alfa-2b', dose: 6, unit: 'mcg/kg', schedule: 'SC weekly x8 weeks, then 3 mcg/kg weekly' }
-            ]
-        },
-        
-        // Neoadjuvant Therapy
+        // NEOADJUVANT THERAPY
         'Pembrolizumab-Neoadjuvant': {
-            name: 'Pembrolizumab (KEYNOTE-716) - Neoadjuvant - Stage III/IV',
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-716) (Neoadjuvant Stage III/IV)',
             cycles: 3,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x3 cycles' }
             ]
         },
         'Nivolumab-Ipilimumab-Neoadjuvant': {
-            name: 'Nivolumab + Ipilimumab (OpACIN-neo) - Neoadjuvant - Stage III',
+            name: 'Nivolumab + Ipilimumab (Nivo-Ipi) (OpACIN-neo) (Neoadjuvant Stage III)',
             cycles: 2,
             drugs: [
                 { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x2 cycles' },
@@ -2740,41 +2628,178 @@ const protocolDatabase = {
             ]
         },
         
-        // Uveal Melanoma
+        // ADJUVANT THERAPY
+        'Pembrolizumab-Adjuvant': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-716) (Adjuvant Stage IIB/IIC/III)',
+            cycles: 17,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x17 cycles' }
+            ]
+        },
+        'Nivolumab-Adjuvant': {
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (CheckMate 238) (Adjuvant Stage III/IV)',
+            cycles: 26,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x12 months' }
+            ]
+        },
+        'Dabrafenib-Trametinib-Adjuvant': {
+            name: 'Dabrafenib + Trametinib (Dab-Tram) (COMBI-AD) (Adjuvant BRAF V600E/K Stage III)',
+            cycles: 26,
+            drugs: [
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously x12 months' },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily continuously x12 months' }
+            ]
+        },
+        'Interferon-alpha-2b-Adjuvant': {
+            name: 'Interferon alfa-2b monotherapy (E1684) (Adjuvant High-risk)',
+            cycles: 12,
+            drugs: [
+                { name: 'Interferon alfa-2b', dose: 20, unit: 'MIU/m²', schedule: 'D1-5 weekly x4 weeks, then 10 MIU/m² TIW x48 weeks' }
+            ]
+        },
+        'Peg-Interferon-alpha-2b-Adjuvant': {
+            name: 'Peginterferon alfa-2b monotherapy (EORTC 18991) (Adjuvant High-risk)',
+            cycles: 12,
+            drugs: [
+                { name: 'Peginterferon alfa-2b', dose: 6, unit: 'mcg/kg', schedule: 'SC weekly x8 weeks, then 3 mcg/kg weekly' }
+            ]
+        },
+        
+        // METASTATIC - First-line Immunotherapy (Most Preferred)
+        'Pembrolizumab': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-006) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Nivolumab': {
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (CheckMate 066) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
+            ]
+        },
+        'Nivolumab-Ipilimumab': {
+            name: 'Nivolumab + Ipilimumab (Nivo-Ipi) (CheckMate 067) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x4 cycles' },
+                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x4 cycles' }
+            ]
+        },
+        'Nivolumab-Relatlimab': {
+            name: 'Nivolumab + Relatlimab (Nivo-Relat) (RELATIVITY-047) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Nivolumab', dose: 480, unit: 'mg', schedule: 'D1, every 28 days' },
+                { name: 'Relatlimab', dose: 160, unit: 'mg', schedule: 'D1, every 28 days' }
+            ]
+        },
+        'Ipilimumab': {
+            name: 'Ipilimumab monotherapy (CTLA-4 inhibitor) (MDX010-20) (Metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x4 cycles' }
+            ]
+        },
+        
+        // METASTATIC - BRAF-mutated Combination Therapy
+        'Dabrafenib-Trametinib': {
+            name: 'Dabrafenib + Trametinib (Dab-Tram) (COMBI-d/v) (BRAF V600E/K) (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously' },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily, continuous' }
+            ]
+        },
+        'Vemurafenib-Cobimetinib': {
+            name: 'Vemurafenib + Cobimetinib (Vem-Cobi) (coBRIM) (BRAF V600E/K) (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily continuously' },
+                { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
+            ]
+        },
+        'Encorafenib-Binimetinib': {
+            name: 'Encorafenib + Binimetinib (Enco-Bini) (COLUMBUS) (BRAF V600E/K) (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Encorafenib', dose: 450, unit: 'mg', schedule: 'PO once daily, continuous' },
+                { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'PO twice daily continuously' }
+            ]
+        },
+        'Atezolizumab-Vemurafenib-Cobimetinib': {
+            name: 'Atezolizumab + Vemurafenib + Cobimetinib (Atezo-Vem-Cobi) (IMspire150) (BRAF V600) (Metastatic)',
+            cycles: 8,
+            drugs: [
+                { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'D1, D15, every 28 days' },
+                { name: 'Vemurafenib', dose: 720, unit: 'mg', schedule: 'PO twice daily continuously' },
+                { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
+            ]
+        },
+        
+        // METASTATIC - Specialized/Niche Therapies
         'Tebentafusp': {
-            name: 'Tebentafusp (IMCnyanza) - Uveal Melanoma - Metastatic',
+            name: 'Tebentafusp monotherapy (gp100 HLA-A*02:01-restricted TCR mimic) (IMCnyanza) (Metastatic Uveal Melanoma)',
             cycles: 12,
             drugs: [
                 { name: 'Tebentafusp', dose: 68, unit: 'mcg', schedule: 'D1, every 7 days' }
             ]
         },
-        
-        // Intralesional Therapy
+        'Lifileucel': {
+            name: 'Lifileucel (TIL therapy - autologous T cells) (Relapsed/Refractory Metastatic)',
+            cycles: 1,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'daily x2 days (lymphodepletion)' },
+                { name: 'Mesna', dose: 12, unit: 'mg/kg', schedule: 'every 4 hours x15 doses (uroprotection)' },
+                { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'daily x5 days (lymphodepletion)' },
+                { name: 'Lifileucel', dose: '21.1 x 10^9', unit: 'viable cells', schedule: 'single infusion on day 0' },
+                { name: 'Aldesleukin (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'every 8-12 hours x6 doses (post-infusion support)' }
+            ]
+        },
+        'Dostarlimab': {
+            name: 'Dostarlimab monotherapy (PD-1 inhibitor) (Advanced Solid Tumors - MSI-H/dMMR)',
+            cycles: 8,
+            drugs: [
+                { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x4 cycles, then 1000 mg every 42 days' }
+            ]
+        },
         'Talimogene-laherparepvec': {
-            name: 'Talimogene laherparepvec (OPTiM) - Intralesional - Metastatic',
+            name: 'Talimogene laherparepvec (oncolytic virus) (OPTiM) (Intralesional Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Talimogene laherparepvec', dose: '10^6 PFU/mL initial, then 10^8 PFU/mL', unit: 'PFU/mL', schedule: 'intralesional D1, then every 14 days' }
             ]
         },
         
-        // Chemotherapy Options (Metastatic)
+        // METASTATIC - Other Immunotherapy/Biologic
+        'Aldesleukin': {
+            name: 'Aldesleukin monotherapy (High-dose IL-2) (Metastatic)',
+            cycles: 2,
+            drugs: [
+                { name: 'Aldesleukin (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'every 8 hours x14 doses, repeat x2 cycles' }
+            ]
+        },
+        
+        // METASTATIC - Chemotherapy Options
         'Dacarbazine': {
-            name: 'Dacarbazine - Metastatic',
+            name: 'Dacarbazine monotherapy (alkylating agent) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Dacarbazine', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Temozolomide': {
-            name: 'Temozolomide - Metastatic',
+            name: 'Temozolomide monotherapy (alkylating agent) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-5, every 28 days' }
+                { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'PO D1-D5, every 28 days' }
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Paclitaxel + Carboplatin (PC) - Metastatic',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -2782,90 +2807,79 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Dacarbazine': {
-            name: 'Cisplatin + Dacarbazine - Metastatic',
+            name: 'Cisplatin + Dacarbazine (Cis-DTIC) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-4, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
                 { name: 'Dacarbazine', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Dacarbazine-Carmustine-Cisplatin': {
-            name: 'DCC (Dacarbazine + Carmustine + Cisplatin) - Metastatic',
+            name: 'Dacarbazine + Carmustine + Cisplatin (DCC) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Dacarbazine', dose: 220, unit: 'mg/m²', schedule: 'D1-3, every 28 days' },
+                { name: 'Dacarbazine', dose: 220, unit: 'mg/m²', schedule: 'D1-D3, every 28 days' },
                 { name: 'Carmustine (BCNU)', dose: 150, unit: 'mg/m²', schedule: 'D1, every 6 weeks (cycles 1, 3, 5)' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1-3, every 28 days' }
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 28 days' }
             ]
         },
         
-        // Interleukin-2 (High-dose)
-        'Aldesleukin': {
-            name: 'Aldesleukin (High-dose IL-2) - Metastatic',
-            cycles: 2,
-            drugs: [
-                { name: 'Aldesleukin (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'every 8 hours x14 doses, repeat x2 cycles' }
-            ]
-        },
-        
-        // Combination Chemotherapy
+        // METASTATIC - Combination Chemotherapy/Bio
         'IFN-Dacarbazine': {
-            name: 'Interferon + Dacarbazine - Metastatic',
+            name: 'Interferon alfa-2b + Dacarbazine (IFN-DTIC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Interferon alfa-2b', dose: 15, unit: 'MIU/m²', schedule: 'SC daily x5 days/week' },
-                { name: 'Dacarbazine', dose: 200, unit: 'mg/m²', schedule: 'D1-5, every 21 days' }
+                { name: 'Dacarbazine', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
         'Temozolomide-Thalidomide': {
-            name: 'Temozolomide + Thalidomide - Metastatic',
+            name: 'Temozolomide + Thalidomide (Temo-Thal) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'D1-5, every 28 days' },
-                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'daily continuously' }
+                { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO D1-D5, every 28 days' },
+                { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         
-        // BRAF inhibitor monotherapy (less preferred)
+        // METASTATIC - Monotherapy Targeted (Less Preferred)
         'Dabrafenib': {
-            name: 'Dabrafenib - BRAF V600E/K - Metastatic',
+            name: 'Dabrafenib (BRAF inhibitor) (BRAF V600E/K) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily continuously' }
             ]
         },
         'Vemurafenib': {
-            name: 'Vemurafenib (BRIM-3) - BRAF V600E/K - Metastatic',
+            name: 'Vemurafenib (BRAF inhibitor) (BRIM-3) (BRAF V600E/K) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily continuously' }
             ]
         },
         'Encorafenib': {
-            name: 'Encorafenib - BRAF V600E/K - Metastatic',
+            name: 'Encorafenib (BRAF inhibitor) (BRAF V600E/K) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Encorafenib', dose: 450, unit: 'mg', schedule: 'daily continuously' }
+                { name: 'Encorafenib', dose: 450, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
-        
-        // MEK inhibitor monotherapy (less preferred)
         'Trametinib': {
-            name: 'Trametinib - MEK inhibitor - Metastatic',
+            name: 'Trametinib (MEK inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'daily continuously' }
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Cobimetinib': {
-            name: 'Cobimetinib - MEK inhibitor - Metastatic',
+            name: 'Cobimetinib (MEK inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'daily D1-21, every 28 days' }
+                { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
             ]
         },
         'Binimetinib': {
-            name: 'Binimetinib - MEK inhibitor - Metastatic',
+            name: 'Binimetinib (MEK inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Binimetinib', dose: 45, unit: 'mg', schedule: 'PO twice daily continuously' }
@@ -7078,69 +7092,78 @@ const protocolDatabase = {
         }
     },
     merkel_cell: {
-        // First-Line Immunotherapy (Preferred)
+        // Neoadjuvant Immunotherapy
+        'Avelumab-Neoadjuvant': {
+            name: 'Avelumab monotherapy (PD-L1 inhibitor) (Neoadjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
+            ]
+        },
+        'Pembrolizumab-Neoadjuvant': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Neoadjuvant)',
+            cycles: 3,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Adjuvant Immunotherapy
+        'Avelumab-Adjuvant': {
+            name: 'Avelumab monotherapy (PD-L1 inhibitor) (Adjuvant)',
+            cycles: 12,
+            drugs: [
+                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
+            ]
+        },
+        'Pembrolizumab-Adjuvant': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Adjuvant)',
+            cycles: 8,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Metastatic - First-Line Immunotherapy (Preferred)
         'Avelumab': {
-            name: 'Avelumab (JAVELIN Merkel 200) - (Metastatic)',
+            name: 'Avelumab monotherapy (JAVELIN Merkel 200) (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Pembrolizumab': {
-            name: 'Pembrolizumab (KEYNOTE-017) - (Metastatic)',
+            name: 'Pembrolizumab monotherapy (KEYNOTE-017) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Nivolumab': {
-            name: 'Nivolumab (CheckMate 358) - (Metastatic)',
+            name: 'Nivolumab monotherapy (CheckMate 358) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Retifanlimab': {
-            name: 'Retifanlimab (POD1UM-201) - (Metastatic)',
+            name: 'Retifanlimab monotherapy (POD1UM-201) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Retifanlimab', dose: 500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
-        
-        // Neoadjuvant/Adjuvant Immunotherapy
-        'Avelumab-Neoadjuvant': {
-            name: 'Avelumab (Neoadjuvant)',
-            cycles: 3,
-            drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
-            ]
-        },
-        'Avelumab-Adjuvant': {
-            name: 'Avelumab (Adjuvant)',
-            cycles: 12,
-            drugs: [
-                { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
-            ]
-        },
-        'Pembrolizumab-Neoadjuvant': {
-            name: 'Pembrolizumab (PD-1 inhibitor) (Neoadjuvant)',
-            cycles: 3,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Pembrolizumab-Adjuvant': {
-            name: 'Pembrolizumab (PD-1 inhibitor) (Adjuvant)',
+        'Retifanlimab-dlwr': {
+            name: 'Retifanlimab-dlwr (Zynyz) monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                { name: 'Retifanlimab-dlwr', dose: 500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
         },
         
-        // First-Line Chemotherapy (Alternative)
+        // Metastatic - First-Line Chemotherapy (Alternative)
         'EP': {
-            name: 'Etoposide + Cisplatin (EP) - (Metastatic)',
+            name: 'Etoposide + Cisplatin (EP) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -7148,7 +7171,7 @@ const protocolDatabase = {
             ]
         },
         'EC': {
-            name: 'Etoposide + Carboplatin (EC) - (Metastatic)',
+            name: 'Etoposide + Carboplatin (EC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -7156,77 +7179,80 @@ const protocolDatabase = {
             ]
         },
         'CAV': {
-            name: 'Cyclophosphamide + Adriamycin + Vincristine (CAV) - (Metastatic)',
+            name: 'Cyclophosphamide + Doxorubicin + Vincristine (CAV) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Doxorubicin (Adriamycin)', dose: 45, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
+                { name: 'Doxorubicin', dose: 45, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1, every 21 days (max 2mg)' }
             ]
         },
         'Topotecan-Cyclophosphamide': {
-            name: 'Topotecan + Cyclophosphamide - (Metastatic)',
+            name: 'Topotecan + Cyclophosphamide (TC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Topotecan', dose: 1.7, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' }
             ]
         },
         
-        // Second-Line Chemotherapy
+        // Metastatic - Second-Line Chemotherapy
         'Temozolomide': {
-            name: 'Temozolomide (single agent) - (Metastatic)',
+            name: 'Temozolomide monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 28 days' }
             ]
         },
         'Paclitaxel': {
-            name: 'Paclitaxel (single agent) - (Metastatic)',
+            name: 'Paclitaxel monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
         },
         'Docetaxel': {
-            name: 'Docetaxel (single agent) - (Metastatic)',
+            name: 'Docetaxel monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Gemcitabine': {
-            name: 'Gemcitabine (single agent) - (Metastatic)',
+            name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'Vinorelbine': {
-            name: 'Vinorelbine (single agent) - (Metastatic)',
+            name: 'Vinorelbine monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
         },
         'Doxorubicin': {
-            name: 'Doxorubicin (single agent) - (Metastatic)',
+            name: 'Doxorubicin monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Cyclophosphamide': {
-            name: 'Cyclophosphamide (single agent) - (Metastatic)',
+            name: 'Cyclophosphamide monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+                { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' }
             ]
         },
         
-        // Combination Chemotherapy Options
+        // Metastatic - Combination Chemotherapy Options
         'Paclitaxel-Carboplatin': {
-            name: 'Paclitaxel + Carboplatin - (Metastatic)',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7234,7 +7260,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Carboplatin': {
-            name: 'Gemcitabine + Carboplatin - (Metastatic)',
+            name: 'Gemcitabine + Carboplatin (GC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -7242,7 +7268,7 @@ const protocolDatabase = {
             ]
         },
         'Docetaxel-Carboplatin': {
-            name: 'Docetaxel + Carboplatin - (Metastatic)',
+            name: 'Docetaxel + Carboplatin (DC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7250,9 +7276,9 @@ const protocolDatabase = {
             ]
         },
         
-        // Investigational/Newer Agents
+        // Metastatic - Investigational/Newer Agents
         'Ipilimumab-Nivolumab': {
-            name: 'Ipilimumab + Nivolumab (Investigational) - (Metastatic)',
+            name: 'Ipilimumab + Nivolumab (CTLA-4/PD-1 inhibitors) (ASCO 2024 data) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 cycles' },
@@ -7260,7 +7286,7 @@ const protocolDatabase = {
             ]
         },
         'Dostarlimab': {
-            name: 'Dostarlimab (Investigational) - (Metastatic)',
+            name: 'Dostarlimab monotherapy (PD-1 inhibitor) (Investigational) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 1000mg every 42 days' }
