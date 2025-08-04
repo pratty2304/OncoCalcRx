@@ -5004,89 +5004,105 @@ const protocolDatabase = {
         }
     },
     thymoma: {
+        // First-Line Chemotherapy for Thymoma (Neoadjuvant/Adjuvant/Metastatic)
         'CAP': {
-            name: 'Cyclophosphamide + Adriamycin + Cisplatin (CAP) (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Cyclophosphamide + Doxorubicin + Cisplatin (CAP) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Doxorubicin (Adriamycin)', dose: 50, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'ADOC': {
-            name: 'Adriamycin + Cisplatin + Vincristine + Cyclophosphamide (ADOC) (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Doxorubicin + Cisplatin + Vincristine + Cyclophosphamide (ADOC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Doxorubicin (Adriamycin)', dose: 40, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Vincristine', dose: 0.6, unit: 'mg/m²', schedule: 'D3 every 21 days (max 2mg)' },
-                { name: 'Cyclophosphamide', dose: 700, unit: 'mg/m²', schedule: 'D4 every 21 days' }
+                { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Vincristine', dose: 0.6, unit: 'mg/m²', schedule: 'D3, every 21 days (max 2 mg)' },
+                { name: 'Cyclophosphamide', dose: 700, unit: 'mg/m²', schedule: 'D4, every 21 days' }
             ]
         },
         'Cisplatin-Etoposide': {
-            name: 'Cisplatin + Etoposide (EP) (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Cisplatin + Etoposide (EP) (Non-anthracycline alternative) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
-            ]
-        },
-        'Carboplatin-Paclitaxel-Ramucirumab': {
-            name: 'Paclitaxel + Carboplatin + Ramucirumab (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1 every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'D1 every 21 days' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
             ]
         },
         'VIP': {
-            name: 'Etoposide + Ifosfamide + Cisplatin (VIP) (Neoadjuvant/Adjuvant/Metastatic)',
+            name: 'Etoposide + Ifosfamide + Cisplatin (VIP) (Alternative regimen) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '360 mg/m² before Ifosfamide, then 720 mg/m² at 4h and 8h post-Ifosfamide, D1-D5 every 21 days' }
+                { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '360 mg/m² before Ifosfamide, then 720 mg/m² at 4h and 8h post-Ifosfamide, D1-D5, every 21 days' }
             ]
         },
+        'Carboplatin-Paclitaxel': {
+            name: 'Paclitaxel + Carboplatin (PC) (Alternative first-line) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // First-Line for Thymic Carcinoma (RELEVENT trial - NEW 2025)
+        'Carboplatin-Paclitaxel-Ramucirumab': {
+            name: 'Paclitaxel + Carboplatin + Ramucirumab (VEGFR-2 inhibitor) (RELEVENT trial) (Thymic carcinoma first-line) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Ramucirumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Targeted Therapy for Thymic Carcinoma (NEW 2025 NCCN)
+        'Lenvatinib': {
+            name: 'Lenvatinib (Multi-kinase inhibitor) (REMORA trial) (Thymic carcinoma) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily' }
+            ]
+        },
+        'Lenvatinib-Pembrolizumab': {
+            name: 'Lenvatinib (Multi-kinase inhibitor) + Pembrolizumab (PD-1 inhibitor) (PECATI trial) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
+            ]
+        },
+        'Avelumab-Axitinib': {
+            name: 'Avelumab (PD-L1 inhibitor) + Axitinib (VEGFR inhibitor) (CAVEATT trial) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Avelumab', dose: 10, unit: 'mg/kg', schedule: 'D1, D15, every 28 days' },
+                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily' }
+            ]
+        },
+        
+        // Immunotherapy
+        'Pembrolizumab': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
+            ]
+        },
+        
+        // Alternative Chemotherapy
         'Gemcitabine-Docetaxel': {
             name: 'Gemcitabine + Docetaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8 every 21 days' }
-            ]
-        },
-        'Carboplatin-Paclitaxel': {
-            name: 'Paclitaxel + Carboplatin (PC) (Neoadjuvant/Adjuvant/Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1 every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
-        },
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (PD-1 inhibitor) (Metastatic)',
-            cycles: 8,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Octreotide': {
-            name: 'Octreotide (for thymic neuroendocrine tumors) (Metastatic)',
-            cycles: 12,
-            drugs: [
-                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'monthly injection' }
-            ]
-        },
-        
-        // Single Agent Regimens
-        'Gemcitabine-Single': {
-            name: 'Gemcitabine (single agent) (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8, every 21 days' }
             ]
         },
         'Gemcitabine-Capecitabine': {
@@ -5094,22 +5110,32 @@ const protocolDatabase = {
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'twice daily D1-D14 every 21 days' }
+                { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
+            ]
+        },
+        
+        // Monotherapy
+        'Gemcitabine-Single': {
+            name: 'Gemcitabine monotherapy (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'Sunitinib': {
-            name: 'Sunitinib (single agent) (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'daily for 4 weeks, then 2 weeks off (6-week cycles)' }
-            ]
-        },
-        'Avelumab-Axitinib': {
-            name: 'Avelumab + Axitinib (Metastatic)',
+            name: 'Sunitinib (Multi-kinase inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
-                { name: 'Avelumab', dose: 10, unit: 'mg/kg', schedule: 'D1,D15 every 28 days' },
-                { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'twice daily continuously' }
+                { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO daily for 4 weeks, then 2 weeks off (6-week cycles)' }
+            ]
+        },
+        
+        // Specialized Therapy
+        'Octreotide': {
+            name: 'Octreotide LAR (Somatostatin analog) (Thymic neuroendocrine tumors) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'IM monthly' }
             ]
         },
         '5FU-Leucovorin': {
@@ -5122,28 +5148,28 @@ const protocolDatabase = {
             ]
         },
         'Paclitaxel-Single': {
-            name: 'Paclitaxel (single agent) (Metastatic)',
+            name: 'Paclitaxel monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Pemetrexed-Single': {
-            name: 'Pemetrexed (single agent) (Metastatic)',
+            name: 'Pemetrexed monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
         },
         'Etoposide-Single': {
-            name: 'Etoposide (single agent) (Metastatic)',
+            name: 'Etoposide monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
             ]
         },
         'Ifosfamide-Single': {
-            name: 'Ifosfamide (single agent) (Metastatic)',
+            name: 'Ifosfamide monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
@@ -6560,7 +6586,7 @@ const protocolDatabase = {
         },
         // Additional NCCN regimens
         'Melphalan': {
-            name: 'Melphalan (single agent) (Palliative)',
+            name: 'Melphalan monotherapy (Palliative)',
             cycles: 8,
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' }
