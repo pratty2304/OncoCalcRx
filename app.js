@@ -6699,87 +6699,68 @@ const protocolDatabase = {
         }
     },
     vulvar_vaginal: {
+        // Definitive Chemoradiation Regimens
         'Cisplatin-RT': {
             name: 'Cisplatin + RT (Definitive)',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 7 days during RT x 6 weeks' }
+                { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 7 days during RT' }
             ]
         },
         'Carboplatin-RT': {
-            name: 'Carboplatin + RT (Definitive)',
+            name: 'Carboplatin + RT (cisplatin-ineligible) (Definitive)',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days during RT x 6 weeks', requiresAUC: true }
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days during RT', requiresAUC: true }
             ]
         },
-        'Carboplatin-Paclitaxel': {
-            name: 'Paclitaxel + Carboplatin (PC) - Metastatic - 1L',
-            cycles: 6,
+        'Cisplatin-5FU-RT': {
+            name: 'Cisplatin + 5-Fluorouracil + RT (Definitive)',
+            cycles: 2,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 every 21 days', requiresAUC: true },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
-        },
-        'Cisplatin-Paclitaxel': {
-            name: 'Cisplatin + Paclitaxel - Metastatic - 1L',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, week 1 and 5 with RT' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI daily D1-D4, week 1 and 5 with RT' }
             ]
         },
         'Capecitabine-RT': {
             name: 'Capecitabine + RT (Definitive)',
             cycles: 6,
             drugs: [
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily during RT x 6 weeks' }
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily during RT' }
             ]
         },
-        'Gemcitabine-Cisplatin': {
-            name: 'Gemcitabine + Cisplatin (GC) - Metastatic - 1L',
-            cycles: 6,
+        'Mitomycin-Capecitabine-RT': {
+            name: 'Mitomycin + Capecitabine + RT (Definitive)',
+            cycles: 2,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
-                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Mitomycin', dose: 10, unit: 'mg/m²', schedule: 'D1, D29 (with concurrent RT)' },
+                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily during RT' }
             ]
         },
-        'Cisplatin-Docetaxel': {
-            name: 'Cisplatin + Docetaxel - Metastatic - 1L',
-            cycles: 6,
-            drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
-        },
-        'Cisplatin-Cetuximab': {
-            name: 'Cisplatin + Cetuximab - Metastatic - 1L',
+        
+        // First-Line Metastatic Regimens
+        'Cisplatin-Paclitaxel': {
+            name: 'Cisplatin + Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1, every 7 days (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (PD-L1 CPS >1, dMMR/MSI-H) - Metastatic',
-            cycles: 8,
+        'Carboplatin-Paclitaxel': {
+            name: 'Carboplatin + Paclitaxel (PC) (cisplatin-ineligible) (Metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days', requiresAUC: true },
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Carboplatin-Paclitaxel-Weekly': {
-            name: 'Paclitaxel + Carboplatin (PC) (Weekly) - Metastatic - 1L',
-            cycles: 12,
+            name: 'Carboplatin + Paclitaxel (Weekly) (cisplatin-ineligible) (Metastatic)',
+            cycles: 18,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 weekly', requiresAUC: true },
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1 weekly' }
-            ]
-        },
-        'Topotecan': {
-            name: 'Topotecan (single agent) - Metastatic',
-            cycles: 6,
-            drugs: [
-                { name: 'Topotecan', dose: 1.25, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days', requiresAUC: true },
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
         },
         'Cisplatin-Paclitaxel-Bevacizumab': {
@@ -6792,7 +6773,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Paclitaxel-Bevacizumab': {
-            name: 'Paclitaxel + Carboplatin + Bevacizumab (Metastatic)',
+            name: 'Carboplatin + Paclitaxel + Bevacizumab (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
@@ -6800,80 +6781,80 @@ const protocolDatabase = {
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
-        'Cisplatin-Paclitaxel-Bevacizumab-Pembrolizumab': {
-            name: 'Cisplatin + Paclitaxel + Bevacizumab + Pembrolizumab (Metastatic)',
+        'Gemcitabine-Cisplatin': {
+            name: 'Gemcitabine + Cisplatin (GC) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
-        'Carboplatin-Paclitaxel-Bevacizumab-Pembrolizumab': {
-            name: 'Paclitaxel + Carboplatin + Bevacizumab + Pembrolizumab (Metastatic)',
+        'Cisplatin-Docetaxel': {
+            name: 'Cisplatin + Docetaxel (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
-                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
-                { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        
+        // Immunotherapy Regimens
+        'Pembrolizumab': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (PD-L1 CPS ≥1 or dMMR/MSI-H) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
         },
         'Cemiplimab': {
-            name: 'Cemiplimab (Advanced/Metastatic)',
-            cycles: 12,
+            name: 'Cemiplimab monotherapy (PD-1 inhibitor) (Metastatic)',
+            cycles: 35,
             drugs: [
                 { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
-        'Nivolumab-HPV': {
-            name: 'Nivolumab (HPV-related tumor)',
-            cycles: 12,
+        'Nivolumab': {
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (HPV-associated) (Metastatic)',
+            cycles: 35,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 4 weeks' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480 mg every 28 days' }
             ]
         },
-        'Trastuzumab-Deruxtecan-HER2': {
-            name: 'Trastuzumab Deruxtecan (T-DXd) (HER2+ tumors)',
-            cycles: 12,
+        
+        // Single Agent Chemotherapy
+        'Topotecan': {
+            name: 'Topotecan monotherapy (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Topotecan', dose: 1.25, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        
+        // Targeted Therapy
+        'Trastuzumab-Deruxtecan': {
+            name: 'Trastuzumab Deruxtecan (T-DXd) (Trop-2 ADC) (HER2-positive) (Metastatic)',
+            cycles: 35,
             drugs: [
                 { name: 'Trastuzumab Deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
-        'Cisplatin-5FU-RT': {
-            name: 'Cisplatin + 5-FU + RT (Definitive)',
-            cycles: 2,
-            drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, week 1 and 5 with RT' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, CI, week 1 and 5 with RT' }
-            ]
-        },
-        'Mitomycin-Capecitabine-RT': {
-            name: 'Mitomycin + Capecitabine + RT (Definitive)',
-            cycles: 2,
-            drugs: [
-                { name: 'Mitomycin', dose: 10, unit: 'mg/m²', schedule: 'D1, D29 with RT' },
-                { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily during RT' }
-            ]
-        },
         'Erlotinib': {
-            name: 'Erlotinib (Metastatic)',
-            cycles: 12,
+            name: 'Erlotinib (EGFR inhibitor) (Metastatic)',
+            cycles: 35,
             drugs: [
                 { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily' }
             ]
         },
-        'Larotrectinib-NTRK': {
-            name: 'Larotrectinib (NTRK gene fusion-positive tumors)',
-            cycles: 12,
+        'Larotrectinib': {
+            name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
+            cycles: 35,
             drugs: [
                 { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
             ]
         },
-        'Entrectinib-NTRK': {
-            name: 'Entrectinib (NTRK gene fusion-positive tumors)',
-            cycles: 12,
+        'Entrectinib': {
+            name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
+            cycles: 35,
             drugs: [
                 { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -7882,96 +7863,108 @@ const protocolDatabase = {
         }
     },
     tumor_agnostic: {
+        // MSI-H/dMMR Biomarker-Directed Therapy
         'Pembrolizumab-MSI-H': {
-            name: 'Pembrolizumab - MSI-H/dMMR Solid Tumors',
-            cycles: 8,
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (MSI-H/dMMR solid tumors)',
+            cycles: 35,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Pembrolizumab-TMB-H': {
-            name: 'Pembrolizumab - TMB-H (≥10 mut/Mb) Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
-            ]
-        },
-        'Larotrectinib': {
-            name: 'Larotrectinib - NTRK Fusion-positive Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'twice PO once daily until progression' }
-            ]
-        },
-        'Entrectinib': {
-            name: 'Entrectinib - NTRK Fusion-positive Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily until progression' }
-            ]
-        },
-        'Repotrectinib': {
-            name: 'Repotrectinib - NTRK Fusion-positive Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily until progression' }
-            ]
-        },
-        'Selpercatinib': {
-            name: 'Selpercatinib - RET Fusion-positive Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'twice PO once daily until progression' }
-            ]
-        },
-        'Pralsetinib': {
-            name: 'Pralsetinib - RET Fusion-positive Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily until progression' }
-            ]
-        },
-        'Dabrafenib-Trametinib': {
-            name: 'Dabrafenib + Trametinib - BRAF V600E-mutant Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'twice PO once daily until progression' },
-                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily until progression' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
         },
         'Dostarlimab-MSI-H': {
-            name: 'Dostarlimab - MSI-H/dMMR Solid Tumors',
-            cycles: 8,
+            name: 'Dostarlimab monotherapy (PD-1 inhibitor) (MSI-H/dMMR solid tumors)',
+            cycles: 35,
             drugs: [
-                { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'every 21 days for 4 cycles, then 1000 mg every 42 days' }
+                { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days for 4 cycles, then 1000 mg every 42 days' }
             ]
         },
         'Nivolumab-MSI-H': {
-            name: 'Nivolumab - MSI-H/dMMR Solid Tumors',
-            cycles: 8,
+            name: 'Nivolumab monotherapy (PD-1 inhibitor) (MSI-H/dMMR solid tumors)',
+            cycles: 35,
             drugs: [
-                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'every 14 days or 480 mg every 28 days' }
+                { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480 mg every 28 days' }
+            ]
+        },
+        'Nivolumab-Ipilimumab-MSI-H': {
+            name: 'Nivolumab + Ipilimumab (CheckMate 8HW) (PD-1/CTLA-4 inhibitors) (MSI-H/dMMR solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days' },
+                { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 42 days for 4 doses' }
+            ]
+        },
+
+        // TMB-H (Tumor Mutational Burden-High) Biomarker-Directed Therapy
+        'Pembrolizumab-TMB-H': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (TMB-H ≥10 mut/Mb solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
+            ]
+        },
+
+        // NTRK Gene Fusion-Positive Biomarker-Directed Therapy
+        'Larotrectinib': {
+            name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
+            ]
+        },
+        'Entrectinib': {
+            name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
+            ]
+        },
+        'Repotrectinib': {
+            name: 'Repotrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily' }
+            ]
+        },
+
+        // RET Gene Fusion-Positive Biomarker-Directed Therapy
+        'Selpercatinib': {
+            name: 'Selpercatinib (RET inhibitor) (RET gene fusion-positive solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
+            ]
+        },
+        'Pralsetinib': {
+            name: 'Pralsetinib (RET inhibitor) (RET gene fusion-positive solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
+            ]
+        },
+
+        // BRAF V600E Mutation Biomarker-Directed Therapy
+        'Dabrafenib-Trametinib': {
+            name: 'Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant solid tumors)',
+            cycles: 35,
+            drugs: [
+                { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
+                { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily' }
             ]
         },
         'Vemurafenib': {
-            name: 'Vemurafenib - BRAF V600E-mutant Solid Tumors',
-            cycles: 8,
+            name: 'Vemurafenib (BRAF inhibitor) (BRAF V600E-mutant solid tumors)',
+            cycles: 35,
             drugs: [
-                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'twice PO once daily until progression' }
+                { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily' }
             ]
         },
-        'Enfortumab-Vedotin-NECTIN4': {
-            name: 'Enfortumab Vedotin - NECTIN-4+ Solid Tumors',
-            cycles: 8,
+
+        // HER2 Overexpression/Amplification Biomarker-Directed Therapy
+        'Trastuzumab-Deruxtecan-HER2': {
+            name: 'Trastuzumab Deruxtecan (T-DXd) (HER2-directed ADC) (HER2-positive solid tumors)',
+            cycles: 35,
             drugs: [
-                { name: 'Enfortumab Vedotin', dose: 1.25, unit: 'mg/kg', schedule: 'D1, D8, D15 every 28 days' }
-            ]
-        },
-        'Tisotumab-Vedotin-TROP2': {
-            name: 'Tisotumab Vedotin - TROP-2+ Solid Tumors',
-            cycles: 8,
-            drugs: [
-                { name: 'Tisotumab Vedotin', dose: 2.0, unit: 'mg/kg', schedule: 'every 21 days until progression' }
+                { name: 'Trastuzumab Deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         }
     },
@@ -13285,6 +13278,9 @@ function buildDoseAdjustmentTable() {
             // mTOR inhibitors
             'everolimus',
             'temsirolimus',
+            // RET inhibitors
+            'selpercatinib',
+            'pralsetinib',
             // Other oral targeted therapies
             'ibrutinib',
             'acalabrutinib',
@@ -13580,6 +13576,9 @@ function showFinalPrescription() {
                                 // mTOR inhibitors
                                 'everolimus',
                                 'temsirolimus',
+                                // RET inhibitors
+                                'selpercatinib',
+                                'pralsetinib',
                                 // Other oral targeted therapies
                                 'ibrutinib',
                                 'acalabrutinib',
@@ -13807,6 +13806,9 @@ function showFinalPrescription() {
             // mTOR inhibitors
             'everolimus',
             'temsirolimus',
+            // RET inhibitors
+            'selpercatinib',
+            'pralsetinib',
             // Other oral targeted therapies
             'ibrutinib',
             'acalabrutinib',
