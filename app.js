@@ -5617,7 +5617,7 @@ const protocolDatabase = {
         
         // BRCA+ Targeted Therapy - First-Line Metastatic
         'NABPLAGEM-PLATINUM-First-line': {
-            name: 'Nab-paclitaxel + Gemcitabine + Cisplatin (BRCA+ Metastatic)',
+            name: 'Nab-paclitaxel + Gemcitabine + Cisplatin (BRCA+) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5642,7 +5642,7 @@ const protocolDatabase = {
             ]
         },
         'Liposomal-Irinotecan-5FU-LV-NAPOLI': {
-            name: 'Liposomal Irinotecan + 5-FU + LV (NAPOLI-1) (Second-line)',
+            name: 'Liposomal Irinotecan + 5-FU + LV (NAPOLI-1) (Second-line Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Liposomal Irinotecan', dose: 70, unit: 'mg/m²', schedule: 'D1, every 14 days' },
@@ -5651,21 +5651,21 @@ const protocolDatabase = {
             ]
         },
         'Olaparib-Maintenance': {
-            name: 'Olaparib (Maintenance) (POLO) (BRCA1/2+ Metastatic)',
+            name: 'Olaparib (Maintenance) (POLO) (BRCA1/2+) (Metastatic)',
             cycles: 24,
             drugs: [
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily, continuous' }
             ]
         },
         'Pembrolizumab-Monotherapy-MSI': {
-            name: 'Pembrolizumab monotherapy (MSI-H/dMMR Metastatic)',
+            name: 'Pembrolizumab monotherapy (MSI-H/dMMR) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
         'Gemcitabine-Cisplatin-POLO': {
-            name: 'Gemcitabine + Cisplatin (GP) (POLO) (BRCA1/2/PALB2+ Metastatic)',
+            name: 'Gemcitabine + Cisplatin (GP) (POLO) (BRCA1/2/PALB2+) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5673,7 +5673,7 @@ const protocolDatabase = {
             ]
         },
         'NABPLAGEM-PLATINUM-Second-line': {
-            name: 'Nab-paclitaxel + Gemcitabine + Cisplatin (PLATINUM) (BRCA+ Second-line Metastatic)',
+            name: 'Nab-paclitaxel + Gemcitabine + Cisplatin (PLATINUM) (BRCA+) (Second-line Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -5682,14 +5682,14 @@ const protocolDatabase = {
             ]
         },
         'Sotorasib-KRAS': {
-            name: 'Sotorasib (KRAS G12C+ Metastatic)',
+            name: 'Sotorasib (KRAS G12C+) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Sotorasib', dose: 960, unit: 'mg', schedule: 'PO once daily, continuous' }
             ]
         },
         'Adagrasib-KRAS': {
-            name: 'Adagrasib (KRAS G12C+ Metastatic)',
+            name: 'Adagrasib (KRAS G12C+) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Adagrasib', dose: 600, unit: 'mg', schedule: 'PO twice daily, continuous' }
