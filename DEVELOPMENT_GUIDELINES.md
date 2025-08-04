@@ -686,4 +686,72 @@ Mesna (2-mercaptoethanesulfonate) provides uroprotection for alkylating agents b
 
 ---
 
+## **17. REGIMEN DEDUPLICATION RULES**
+
+### **No Duplicate Regimens Policy:**
+- **RULE**: No identical drug combination should be repeated multiple times for different treatment settings
+- **SOLUTION**: Use single regimen entry with multiple treatment settings in parentheses
+- **FORMAT**: `Drug1 + Drug2 (Setting1/Setting2/Setting3)`
+
+### **Examples of Proper Deduplication:**
+
+#### **Instead of Multiple Entries:**
+```javascript
+// ❌ INCORRECT - Duplicated regimens
+'Pemetrexed-Cisplatin-Neoadjuvant': {
+    name: 'Pemetrexed + Cisplatin (PC) (Neoadjuvant)'
+},
+'Pemetrexed-Cisplatin-Adjuvant': {
+    name: 'Pemetrexed + Cisplatin (PC) (Adjuvant)' 
+},
+'Pemetrexed-Cisplatin': {
+    name: 'Pemetrexed + Cisplatin (PC) (Metastatic)'
+}
+```
+
+#### **Use Single Combined Entry:**
+```javascript
+// ✅ CORRECT - Single deduplicated regimen
+'Pemetrexed-Cisplatin': {
+    name: 'Pemetrexed + Cisplatin (PC) (Neoadjuvant/Adjuvant/Metastatic)',
+    cycles: 6, // Use most common cycle count or indicate variable
+    drugs: [
+        { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+        { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+    ]
+}
+```
+
+### **Setting Combination Guidelines:**
+
+#### **Common Combinations:**
+- `(Neoadjuvant/Adjuvant)` - Same regimen used pre and post-operatively
+- `(Adjuvant/Metastatic)` - Same regimen for adjuvant and advanced disease
+- `(Neoadjuvant/Adjuvant/Metastatic)` - Regimen used across all settings
+
+#### **Treatment-Specific Variations:**
+- Different doses, cycles, or schedules → Keep as separate entries
+- Different drug names or mechanisms → Keep as separate entries
+- Same drugs, doses, schedules → Combine into single entry
+
+### **Cycle Count for Combined Settings:**
+- Use the most commonly used cycle count
+- If significantly different, note in drug schedule: `'D1, every 21 days (3-6 cycles depending on setting)'`
+
+### **Implementation Workflow:**
+1. **Audit existing regimens** for identical drug combinations
+2. **Identify true duplicates** (same drugs, doses, schedules)
+3. **Combine into single entries** with multiple settings
+4. **Preserve unique regimens** that have different parameters
+5. **Update regimen keys** to remove setting-specific suffixes
+6. **Test functionality** to ensure search/browse methods work correctly
+
+### **Benefits of Deduplication:**
+- **Reduced database size** and maintenance overhead
+- **Improved user experience** - fewer redundant options
+- **Cleaner codebase** with less repetitive entries
+- **Easier updates** - change once, applies to all settings
+
+---
+
 This reference guide should be updated whenever new patterns or logic are introduced to maintain consistency across the application.

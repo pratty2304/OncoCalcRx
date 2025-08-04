@@ -6912,19 +6912,19 @@ const protocolDatabase = {
         }
     },
     mesothelioma: {
-        // First-Line Therapy for Unresectable Pleural Mesothelioma
+        // Combined Treatment Settings
         'Pemetrexed-Cisplatin': {
-            name: 'Pemetrexed + Cisplatin (Standard of Care) - (Metastatic)',
+            name: 'Pemetrexed + Cisplatin (PC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days (3-6 cycles depending on setting)' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days (3-6 cycles depending on setting)' },
                 { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
         'Pemetrexed-Carboplatin': {
-            name: 'Pemetrexed + Carboplatin (Cisplatin-ineligible) - (Metastatic)',
+            name: 'Pemetrexed + Carboplatin (PC) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -6934,7 +6934,7 @@ const protocolDatabase = {
             ]
         },
         'Nivolumab-Ipilimumab': {
-            name: 'Nivolumab + Ipilimumab (CheckMate 743) - (Metastatic)',
+            name: 'Nivolumab + Ipilimumab (CheckMate 743) (PD-1/CTLA-4 inhibitors) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 480mg every 28 days' },
@@ -6942,7 +6942,7 @@ const protocolDatabase = {
             ]
         },
         'Pemetrexed-Cisplatin-Bevacizumab': {
-            name: 'Pemetrexed + Cisplatin + Bevacizumab (MAPS Trial) - (Metastatic)',
+            name: 'Pemetrexed + Cisplatin + Bevacizumab (MAPS Trial) (PCB) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -6953,7 +6953,7 @@ const protocolDatabase = {
             ]
         },
         'Pemetrexed-Carboplatin-Bevacizumab': {
-            name: 'Pemetrexed + Carboplatin + Bevacizumab (Cisplatin-ineligible) - (Metastatic)',
+            name: 'Pemetrexed + Carboplatin + Bevacizumab (PCB) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -6963,10 +6963,32 @@ const protocolDatabase = {
                 { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         },
+        'Pemetrexed-Cisplatin-ADI-PEG20': {
+            name: 'Pemetrexed + Cisplatin + ADI-PEG20 (ATOMIC-Meso) (nonepithelioid) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'ADI-PEG20 (Pegargiminase)', dose: 36, unit: 'mg/m²', schedule: 'IM weekly' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
+                { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
+            ]
+        },
+        'Pemetrexed-Carboplatin-ADI-PEG20': {
+            name: 'Pemetrexed + Carboplatin + ADI-PEG20 (ATOMIC-Meso) (nonepithelioid) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'ADI-PEG20 (Pegargiminase)', dose: 36, unit: 'mg/m²', schedule: 'IM weekly' },
+                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
+                { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
+            ]
+        },
         
-        // Second-Line Therapy
+        // Metastatic - Second-Line Therapy
         'Gemcitabine-Cisplatin': {
-            name: 'Gemcitabine + Cisplatin (GC) - (Metastatic)',
+            name: 'Gemcitabine + Cisplatin (GC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -6974,7 +6996,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Carboplatin': {
-            name: 'Gemcitabine + Carboplatin - (Metastatic)',
+            name: 'Gemcitabine + Carboplatin (GC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -6982,7 +7004,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Vinorelbine': {
-            name: 'Gemcitabine + Vinorelbine - (Metastatic)',
+            name: 'Gemcitabine + Vinorelbine (GV) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -6990,7 +7012,7 @@ const protocolDatabase = {
             ]
         },
         'Vinorelbine-Cisplatin': {
-            name: 'Vinorelbine + Cisplatin - (Metastatic)',
+            name: 'Vinorelbine + Cisplatin (VC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -6998,16 +7020,16 @@ const protocolDatabase = {
             ]
         },
         'Lurbinectedin': {
-            name: 'Lurbinectedin (PM1183) - (Metastatic)',
+            name: 'Lurbinectedin monotherapy (PM1183) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Lurbinectedin', dose: 3.2, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         
-        // Maintenance Therapy
+        // Metastatic - Maintenance Therapy
         'Pemetrexed-Maintenance': {
-            name: 'Pemetrexed Maintenance (after platinum-based therapy) - (Metastatic)',
+            name: 'Pemetrexed monotherapy (maintenance after platinum-based therapy) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7016,78 +7038,72 @@ const protocolDatabase = {
             ]
         },
         'Bevacizumab-Maintenance': {
-            name: 'Bevacizumab Maintenance (after platinum-based therapy) - (Metastatic)',
+            name: 'Bevacizumab monotherapy (maintenance after platinum-based therapy) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
         },
+        'ADI-PEG20-Maintenance': {
+            name: 'ADI-PEG20 monotherapy (Pegargiminase) (maintenance after ADI-PEG20 combination) (Metastatic)',
+            cycles: 24,
+            drugs: [
+                { name: 'ADI-PEG20 (Pegargiminase)', dose: 36, unit: 'mg/m²', schedule: 'IM weekly' }
+            ]
+        },
         
-        // Immunotherapy
+        // Metastatic - Immunotherapy
         'Pembrolizumab': {
-            name: 'Pembrolizumab (KEYNOTE-158) - (Metastatic)',
+            name: 'Pembrolizumab monotherapy (KEYNOTE-158) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Nivolumab': {
-            name: 'Nivolumab (MERIT) - (Metastatic)',
+            name: 'Nivolumab monotherapy (MERIT) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
         },
         'Atezolizumab': {
-            name: 'Atezolizumab (ETOP 9-15) - (Metastatic)',
+            name: 'Atezolizumab monotherapy (ETOP 9-15) (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         
-        // Single Agents
+        // Metastatic - Targeted Therapy
+        'Tazemetostat': {
+            name: 'Tazemetostat (EZH2 inhibitor) (BAP1 mutation) (Metastatic)',
+            cycles: 12,
+            drugs: [
+                { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'PO twice daily' }
+            ]
+        },
+        
+        // Metastatic - Single Agent Chemotherapy
         'Gemcitabine': {
-            name: 'Gemcitabine (single agent) - (Metastatic)',
+            name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
         },
         'Vinorelbine': {
-            name: 'Vinorelbine (single agent) - (Metastatic)',
+            name: 'Vinorelbine monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
         },
         'Doxorubicin': {
-            name: 'Doxorubicin (single agent) - (Metastatic)',
+            name: 'Doxorubicin monotherapy (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
-        
-        // Neoadjuvant/Adjuvant Therapy (Limited Evidence)
-        'Pemetrexed-Cisplatin-Neoadjuvant': {
-            name: 'Pemetrexed + Cisplatin (Neoadjuvant)',
-            cycles: 3,
-            drugs: [
-                { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
-                { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
-            ]
-        },
-        'Pemetrexed-Cisplatin-Adjuvant': {
-            name: 'Pemetrexed + Cisplatin (Adjuvant)',
-            cycles: 4,
-            drugs: [
-                { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily (start 1-2 weeks before treatment)' },
-                { name: 'Vitamin B12', dose: 1000, unit: 'mcg', schedule: 'IM every 9 weeks (start 1-2 weeks before treatment)' }
             ]
         }
     },
