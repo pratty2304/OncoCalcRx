@@ -3371,7 +3371,7 @@ const protocolDatabase = {
             ]
         },
         'Enzalutamide-mCRPC': {
-            name: 'Enzalutamide (AFFIRM/PREVAIL) (mCRPC)',
+            name: 'Enzalutamide Monotherapy (AFFIRM/PREVAIL) (mCRPC)',
             cycles: 12,
             drugs: [
                 { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' }
@@ -3410,91 +3410,91 @@ const protocolDatabase = {
             ]
         },
         'Olaparib': {
-            name: 'Olaparib (PROfound) (mCRPC - HRR gene mutations)',
+            name: 'Olaparib Monotherapy (PROfound) (HRR gene mutations) (mCRPC)',
             cycles: 12,
             drugs: [
                 { name: 'Olaparib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous (germline/somatic HRR mutations)' }
             ]
         },
         'Rucaparib': {
-            name: 'Rucaparib (TRITON2) (mCRPC - BRCA mutations)',
+            name: 'Rucaparib Monotherapy (TRITON2) (BRCA mutations) (mCRPC)',
             cycles: 12,
             drugs: [
                 { name: 'Rucaparib', dose: 600, unit: 'mg', schedule: 'twice daily, continuous (BRCA1/2 mutations)' }
             ]
         },
         'Pembrolizumab-Prostate': {
-            name: 'Pembrolizumab (mCRPC - MSI-H/dMMR)',
+            name: 'Pembrolizumab Monotherapy (MSI-H/dMMR) (mCRPC)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (MSI-H/dMMR)' }
             ]
         },
         'Leuprolide': {
-            name: 'Leuprolide (ADT monotherapy)',
+            name: 'Leuprolide Monotherapy (ADT)',
             cycles: 12,
             drugs: [
                 { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
             ]
         },
         'Leuprolide-Monthly': {
-            name: 'Leuprolide monthly (ADT monotherapy)',
+            name: 'Leuprolide Monthly Monotherapy (ADT)',
             cycles: 12,
             drugs: [
                 { name: 'Leuprolide', dose: 7.5, unit: 'mg', schedule: 'IM D1, every 28 days, continuous' }
             ]
         },
         'Goserelin': {
-            name: 'Goserelin (ADT monotherapy)',
+            name: 'Goserelin Monotherapy (ADT)',
             cycles: 12,
             drugs: [
                 { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC D1, every 84 days, continuous' }
             ]
         },
         'Goserelin-Monthly': {
-            name: 'Goserelin monthly (ADT monotherapy)',
+            name: 'Goserelin Monthly Monotherapy (ADT)',
             cycles: 12,
             drugs: [
                 { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC D1, every 28 days, continuous' }
             ]
         },
         'Degarelix': {
-            name: 'Degarelix (GnRH antagonist)',
+            name: 'Degarelix Monotherapy (GnRH antagonist)',
             cycles: 12,
             drugs: [
                 { name: 'Degarelix', dose: 240, maintenanceDose: 80, unit: 'mg', schedule: 'SC loading dose D1, then 80mg every 28 days', hasLoadingDose: true }
             ]
         },
         'Relugolix': {
-            name: 'Relugolix (HERO) (Oral GnRH antagonist)',
+            name: 'Relugolix Monotherapy (HERO) (Oral GnRH antagonist)',
             cycles: 12,
             drugs: [
                 { name: 'Relugolix', dose: 360, maintenanceDose: 120, unit: 'mg', schedule: 'loading dose D1, then 120mg daily, continuous', hasLoadingDose: true }
             ]
         },
         'Bicalutamide': {
-            name: 'Bicalutamide (Antiandrogen monotherapy)',
+            name: 'Bicalutamide Monotherapy (Antiandrogen)',
             cycles: 12,
             drugs: [
                 { name: 'Bicalutamide', dose: 50, unit: 'mg', schedule: 'daily, continuous' }
             ]
         },
         'Flutamide': {
-            name: 'Flutamide (Antiandrogen monotherapy)',
+            name: 'Flutamide Monotherapy (Antiandrogen)',
             cycles: 12,
             drugs: [
                 { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' }
             ]
         },
         'Nilutamide': {
-            name: 'Nilutamide (Antiandrogen)',
+            name: 'Nilutamide Monotherapy (Antiandrogen)',
             cycles: 12,
             drugs: [
                 { name: 'Nilutamide', dose: 300, maintenanceDose: 150, unit: 'mg', schedule: 'daily x 30 days, then 150mg daily', hasLoadingDose: true }
             ]
         },
         'Ketoconazole': {
-            name: 'Ketoconazole (CYP17 inhibitor)',
+            name: 'Ketoconazole + Hydrocortisone (CYP17 inhibitor)',
             cycles: 6,
             drugs: [
                 { name: 'Ketoconazole', dose: 400, unit: 'mg', schedule: 'three times daily, continuous' },
@@ -3502,7 +3502,7 @@ const protocolDatabase = {
             ]
         },
         'Aminoglutethimide': {
-            name: 'Aminoglutethimide (Adrenal enzyme inhibitor)',
+            name: 'Aminoglutethimide + Hydrocortisone (Adrenal enzyme inhibitor)',
             cycles: 6,
             drugs: [
                 { name: 'Aminoglutethimide', dose: 250, unit: 'mg', schedule: 'four times daily, continuous' },
@@ -3510,28 +3510,28 @@ const protocolDatabase = {
             ]
         },
         'Sipuleucel-T': {
-            name: 'Sipuleucel-T (IMPACT) (Immunotherapy)',
+            name: 'Sipuleucel-T Immunotherapy (IMPACT)',
             cycles: 1,
             drugs: [
                 { name: 'Sipuleucel-T', dose: '50×10⁶', unit: 'autologous CD54+ cells', schedule: '3 infusions D1, D15, D29' }
             ]
         },
         'Paclitaxel-Single': {
-            name: 'Paclitaxel (- mCRPC)',
+            name: 'Paclitaxel Monotherapy (mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Docetaxel-Single': {
-            name: 'Docetaxel (- mCRPC)',
+            name: 'Docetaxel Monotherapy (mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Estramustine': {
-            name: 'Estramustine (- mCRPC)',
+            name: 'Estramustine Monotherapy (mCRPC)',
             cycles: 6,
             drugs: [
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' }
@@ -3576,21 +3576,21 @@ const protocolDatabase = {
             ]
         },
         'Triptorelin': {
-            name: 'Triptorelin (ADT monotherapy)',
+            name: 'Triptorelin Monotherapy (ADT)',
             cycles: 12,
             drugs: [
                 { name: 'Triptorelin', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
             ]
         },
         'Histrelin': {
-            name: 'Histrelin (ADT monotherapy)',
+            name: 'Histrelin Monotherapy (ADT)',
             cycles: 12,
             drugs: [
                 { name: 'Histrelin', dose: 50, unit: 'mg', schedule: 'SC implant, every 12 months' }
             ]
         },
         'Orchiectomy': {
-            name: 'Bilateral orchiectomy (Surgical castration)',
+            name: 'Bilateral Orchiectomy (Surgical castration)',
             cycles: 1,
             drugs: [
                 { name: 'Surgical castration', dose: 'N/A', unit: 'procedure', schedule: 'One-time surgical procedure' }
@@ -6576,16 +6576,16 @@ const protocolDatabase = {
             ]
         },
         'TPF': {
-            name: 'Docetaxel + Cisplatin + 5-FU (TPF) - Metastatic',
+            name: 'Docetaxel + Cisplatin + 5-FU (TPF) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 750, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                { name: '5-Fluorouracil', dose: 750, unit: 'mg/m²', schedule: 'Continuous infusion D1-D5, every 21 days' }
             ]
         },
         'Cisplatin-RT': {
-            name: 'Cisplatin + Radiation Therapy - Locally Advanced',
+            name: 'Cisplatin + Radiation Therapy (Definitive)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'weekly during RT' },
@@ -6593,7 +6593,7 @@ const protocolDatabase = {
             ]
         },
         'TIP-RT-InPACT': {
-            name: 'TIP + Radiation Therapy (InPACT) - Locally Advanced',
+            name: 'TIP + Radiation Therapy (InPACT) (Definitive)',
             cycles: 4,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days (4 cycles)' },
@@ -6604,33 +6604,33 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-5FU': {
-            name: 'Cisplatin + 5-Fluorouracil - Metastatic',
+            name: 'Cisplatin + 5-Fluorouracil (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'Continuous infusion D1-D5, every 21 days' }
             ]
         },
         'Cisplatin-5FU-Pembrolizumab-HERCULES': {
-            name: 'Cisplatin + 5-FU + Pembrolizumab (HERCULES) - Metastatic',
+            name: 'Cisplatin + 5-FU + Pembrolizumab (HERCULES) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'Continuous infusion D1-D4, every 21 days' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (continue maintenance up to 34 cycles)' }
             ]
         },
         'Carboplatin-5FU-Pembrolizumab-HERCULES': {
-            name: 'Carboplatin + 5-FU + Pembrolizumab (HERCULES) - Metastatic',
+            name: 'Carboplatin + 5-FU + Pembrolizumab (HERCULES) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'Continuous infusion D1-D4, every 21 days' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (continue maintenance up to 34 cycles)' }
             ]
         },
         'Carboplatin-Paclitaxel': {
-            name: 'Paclitaxel + Carboplatin (PC) - Metastatic',
+            name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -6638,7 +6638,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-Paclitaxel': {
-            name: 'Cisplatin + Paclitaxel - Metastatic',
+            name: 'Cisplatin + Paclitaxel (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -6646,52 +6646,52 @@ const protocolDatabase = {
             ]
         },
         'Pembrolizumab-Single': {
-            name: 'Pembrolizumab (Single Agent) - Metastatic (dMMR/MSI-H/TMB-H)',
+            name: 'Pembrolizumab Monotherapy (dMMR/MSI-H/TMB-H) (Metastatic)',
             cycles: 35,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Carboplatin-5FU-Pembrolizumab': {
-            name: 'Carboplatin + 5-FU + Pembrolizumab - Metastatic - 1L',
+            name: 'Carboplatin + 5-FU + Pembrolizumab (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC', unit: 'mg', schedule: 'D1 every 21 days', requiresAUC: true },
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days until progression' }
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days', requiresAUC: true },
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'Continuous infusion D1-D4, every 21 days' },
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days until progression' }
             ]
         },
         'Pembrolizumab-Maintenance': {
-            name: 'Pembrolizumab (Maintenance) - Metastatic',
+            name: 'Pembrolizumab Maintenance Monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
         },
         'Capecitabine-RT': {
-            name: 'Capecitabine + RT - Neoadjuvant/Adjuvant',
+            name: 'Capecitabine + RT (Neoadjuvant/Adjuvant)',
             cycles: 2,
             drugs: [
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'twice daily during RT' }
             ]
         },
         '5FU-Mitomycin': {
-            name: '5-Fluorouracil + Mitomycin-C - Neoadjuvant/Adjuvant',
+            name: '5-Fluorouracil + Mitomycin-C (Neoadjuvant/Adjuvant)',
             cycles: 2,
             drugs: [
-                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
-                { name: 'Mitomycin-C', dose: 15, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'Continuous infusion D1-D4, every 21 days' },
+                { name: 'Mitomycin-C', dose: 15, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Paclitaxel': {
-            name: 'Paclitaxel (single agent) - Metastatic',
+            name: 'Paclitaxel Monotherapy (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Cetuximab': {
-            name: 'Cetuximab (EGFR inhibitor) - Metastatic',
+            name: 'Cetuximab Monotherapy (EGFR inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: 'D1, every 7 days (loading dose 400 mg/m², then 250 mg/m²)', hasLoadingDose: true }
@@ -12347,6 +12347,32 @@ function buildProtocolIndex() {
             aliases += ' xeliri capiri';
         }
         
+        // Multiple Myeloma common abbreviations
+        if (text.includes('bortezomib') && text.includes('lenalidomide') && text.includes('dexamethasone')) {
+            aliases += ' vrd vld';
+            if (text.includes('daratumumab')) {
+                aliases += ' dara-vrd daravrd dara vrd';
+            }
+        }
+        if (text.includes('bortezomib') && text.includes('cyclophosphamide') && text.includes('dexamethasone')) {
+            aliases += ' vcd';
+        }
+        if (text.includes('bortezomib') && text.includes('melphalan') && text.includes('prednisone')) {
+            aliases += ' vmp';
+        }
+        if (text.includes('lenalidomide') && text.includes('dexamethasone')) {
+            aliases += ' rd len-dex';
+        }
+        if (text.includes('pomalidomide') && text.includes('dexamethasone')) {
+            aliases += ' pd pom-dex';
+        }
+        if (text.includes('carfilzomib') && text.includes('lenalidomide') && text.includes('dexamethasone')) {
+            aliases += ' krd';
+        }
+        if (text.includes('carfilzomib') && text.includes('cyclophosphamide') && text.includes('dexamethasone')) {
+            aliases += ' kcd';
+        }
+        
         // Other common drug abbreviations
         if (text.includes('cisplatin')) {
             aliases += ' cis';
@@ -12375,6 +12401,24 @@ function buildProtocolIndex() {
         if (text.includes('etoposide')) {
             aliases += ' vp16';
         }
+        if (text.includes('daratumumab')) {
+            aliases += ' dara';
+        }
+        if (text.includes('bortezomib')) {
+            aliases += ' velcade';
+        }
+        if (text.includes('lenalidomide')) {
+            aliases += ' revlimid len';
+        }
+        if (text.includes('pomalidomide')) {
+            aliases += ' pomalyst pom';
+        }
+        if (text.includes('carfilzomib')) {
+            aliases += ' kyprolis';
+        }
+        if (text.includes('dexamethasone')) {
+            aliases += ' dex';
+        }
         
         return aliases;
     }
@@ -12398,7 +12442,8 @@ function buildProtocolIndex() {
                         cancerType: cancerType,
                         cancerName: `${cancerName} - ${subtypeName}`,
                         subtype: subtype,
-                        searchText: searchText
+                        searchText: searchText,
+                        searchTextNormalized: normalizeSearchString(searchText)
                     });
                 });
             });
@@ -12416,7 +12461,8 @@ function buildProtocolIndex() {
                     cancerType: cancerType,
                     cancerName: cancerName,
                     subtype: null,
-                    searchText: searchText
+                    searchText: searchText,
+                    searchTextNormalized: normalizeSearchString(searchText)
                 });
             });
         }
@@ -12563,14 +12609,24 @@ function fuzzyMatch(query, text, threshold = 0.6) {
     return bestScore >= threshold ? bestScore : 0;
 }
 
+// Helper function to normalize search strings for better matching
+function normalizeSearchString(text) {
+    return text.toLowerCase()
+        .replace(/[\-\+\(\)\/]/g, ' ')  // Replace common punctuation with spaces
+        .replace(/\s+/g, ' ')           // Replace multiple spaces with single space
+        .trim();
+}
+
 function searchProtocols(query) {
     if (!query || query.length < 2) return [];
     
     const queryLower = query.toLowerCase();
+    const queryNormalized = normalizeSearchString(query);
     
     // First try exact/substring matches
     const exactResults = allProtocols.filter(protocol => 
-        protocol.searchText.includes(queryLower)
+        protocol.searchText.includes(queryLower) || 
+        protocol.searchTextNormalized.includes(queryNormalized)
     );
     
     // If we have exact matches, prioritize them
@@ -12586,7 +12642,9 @@ function searchProtocols(query) {
     // If no exact matches, try fuzzy matching for auto-correction
     const fuzzyResults = allProtocols.map(protocol => {
         const score = fuzzyMatch(query, protocol.searchText, 0.5);
-        return { protocol, score };
+        const normalizedScore = fuzzyMatch(queryNormalized, protocol.searchTextNormalized, 0.5);
+        const bestScore = Math.max(score, normalizedScore);
+        return { protocol, score: bestScore };
     })
     .filter(item => item.score > 0)
     .sort((a, b) => b.score - a.score)
@@ -12794,13 +12852,15 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
             Object.keys(protocolDatabase[cancerType][subtype]).forEach(protocolKey => {
                 const protocol = protocolDatabase[cancerType][subtype][protocolKey];
                 const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                const searchText = `${protocol.name} ${drugNames}`.toLowerCase();
                 cancerSpecificProtocols.push({
                     key: protocolKey,
                     name: protocol.name,
                     cancerType: cancerType,
                     cancerName: `${cancerName} - ${subtypeName}`,
                     subtype: subtype,
-                    searchText: `${protocol.name} ${drugNames}`.toLowerCase()
+                    searchText: searchText,
+                    searchTextNormalized: normalizeSearchString(searchText)
                 });
             });
         }
@@ -12811,13 +12871,15 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
             Object.keys(protocolDatabase[cancerType][subtypeKey]).forEach(protocolKey => {
                 const protocol = protocolDatabase[cancerType][subtypeKey][protocolKey];
                 const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                const searchText = `${protocol.name} ${drugNames}`.toLowerCase();
                 cancerSpecificProtocols.push({
                     key: protocolKey,
                     name: protocol.name,
                     cancerType: cancerType,
                     cancerName: `${cancerName} - ${subtypeName}`,
                     subtype: subtypeKey,
-                    searchText: `${protocol.name} ${drugNames}`.toLowerCase()
+                    searchText: searchText,
+                    searchTextNormalized: normalizeSearchString(searchText)
                 });
             });
         });
@@ -12826,13 +12888,15 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
         Object.keys(protocolDatabase[cancerType]).forEach(protocolKey => {
             const protocol = protocolDatabase[cancerType][protocolKey];
             const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+            const searchText = `${protocol.name} ${drugNames}`.toLowerCase();
             cancerSpecificProtocols.push({
                 key: protocolKey,
                 name: protocol.name,
                 cancerType: cancerType,
                 cancerName: cancerName,
                 subtype: null,
-                searchText: `${protocol.name} ${drugNames}`.toLowerCase()
+                searchText: searchText,
+                searchTextNormalized: normalizeSearchString(searchText)
             });
         });
     }
@@ -12844,10 +12908,12 @@ function searchCancerSpecificProtocols(query) {
     if (!query || query.length < 2) return [];
     
     const queryLower = query.toLowerCase();
+    const queryNormalized = normalizeSearchString(query);
     
     // First try exact/substring matches
     const exactResults = cancerSpecificProtocols.filter(protocol => 
-        protocol.searchText.includes(queryLower)
+        protocol.searchText.includes(queryLower) || 
+        protocol.searchTextNormalized.includes(queryNormalized)
     );
     
     // If we have exact matches, prioritize them
@@ -12863,7 +12929,9 @@ function searchCancerSpecificProtocols(query) {
     // If no exact matches, try fuzzy matching for auto-correction
     const fuzzyResults = cancerSpecificProtocols.map(protocol => {
         const score = fuzzyMatch(query, protocol.searchText, 0.5);
-        return { protocol, score };
+        const normalizedScore = fuzzyMatch(queryNormalized, protocol.searchTextNormalized, 0.5);
+        const bestScore = Math.max(score, normalizedScore);
+        return { protocol, score: bestScore };
     })
     .filter(item => item.score > 0)
     .sort((a, b) => b.score - a.score)
