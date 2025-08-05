@@ -3978,19 +3978,18 @@ const protocolDatabase = {
         }
     },
     testicular: {
-        // FIRST-LINE THERAPY - Risk-Stratified
-        // Good Risk Nonseminomatous Germ Cell Tumors (NSGCT)
-        'BEP-3-cycles': {
-            name: 'BEP x3 (Bleomycin + Etoposide + Cisplatin) (Good risk NSGCT) (Metastatic)',
-            cycles: 3,
+        // FIRST-LINE THERAPY
+        'BEP': {
+            name: 'Bleomycin + Etoposide + Cisplatin (BEP) (Good/Intermediate/Poor risk NSGCT) (Adjuvant/Metastatic)',
+            cycles: '3-4',
             drugs: [
                 { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
-        'EP-4-cycles': {
-            name: 'EP x4 (Etoposide + Cisplatin) (Good risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
+        'EP': {
+            name: 'Etoposide + Cisplatin (EP) (Good risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -3998,65 +3997,16 @@ const protocolDatabase = {
             ]
         },
         
-        // Intermediate Risk NSGCT
-        'BEP-4-cycles': {
-            name: 'BEP x4 (Bleomycin + Etoposide + Cisplatin) (Intermediate risk NSGCT) (Metastatic)',
-            cycles: 4,
-            drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
-            ]
-        },
-        
-        // Poor Risk NSGCT
-        'BEP-4-cycles-poor': {
-            name: 'BEP x4 (Bleomycin + Etoposide + Cisplatin) (Poor risk NSGCT) (Metastatic)',
-            cycles: 4,
-            drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
-            ]
-        },
-        
-        // ADJUVANT THERAPY
-        'Carboplatin-Adjuvant': {
+        'Carboplatin': {
             name: 'Carboplatin (Stage I seminoma) (Adjuvant)',
-            cycles: 1,
+            cycles: '1-2',
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'Single dose' }
-            ]
-        },
-        'Carboplatin-2-cycles': {
-            name: 'Carboplatin x2 (Stage I seminoma) (Alternative adjuvant)',
-            cycles: 2,
-            drugs: [
-                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'Every 21 days' }
-            ]
-        },
-        'BEP-1-cycle': {
-            name: 'BEP x1 (Bleomycin + Etoposide + Cisplatin) (Stage I NSGCT high-risk) (Adjuvant)',
-            cycles: 1,
-            drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'IV/IM on D1, D8, D15' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'IV on D1-D5' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'IV on D1-D5' }
-            ]
-        },
-        'BEP-2-cycles': {
-            name: 'BEP x2 (Bleomycin + Etoposide + Cisplatin) (Stage I NSGCT high-risk) (Adjuvant)',
-            cycles: 2,
-            drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'Single dose or every 21 days x2' }
             ]
         },
         
-        // ALTERNATIVE FIRST-LINE (Bleomycin contraindicated)
         'VIP': {
-            name: 'VIP (Etoposide + Ifosfamide + Cisplatin) (Intermediate/Poor risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
+            name: 'Etoposide + Ifosfamide + Cisplatin (VIP) (Intermediate/Poor risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4066,9 +4016,9 @@ const protocolDatabase = {
             ]
         },
         
-        // SECOND-LINE/SALVAGE THERAPY
+        // SALVAGE THERAPY
         'TIP': {
-            name: 'TIP (Paclitaxel + Ifosfamide + Cisplatin) (First salvage therapy) (Metastatic)',
+            name: 'Paclitaxel + Ifosfamide + Cisplatin (TIP) (First salvage therapy) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'D1 (24-hour infusion), every 21 days' },
@@ -4078,7 +4028,7 @@ const protocolDatabase = {
             ]
         },
         'VeIP': {
-            name: 'VeIP (Vinblastine + Ifosfamide + Cisplatin) (Standard salvage therapy) (Metastatic)',
+            name: 'Vinblastine + Ifosfamide + Cisplatin (VeIP) (Standard salvage therapy) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', schedule: 'D1-D2, every 21 days' },
@@ -4088,9 +4038,8 @@ const protocolDatabase = {
             ]
         },
         
-        // SALVAGE COMBINATION THERAPY
         'Paclitaxel-Gemcitabine-Oxaliplatin': {
-            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (Second/third salvage therapy) (Metastatic)',
+            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (GTP) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4099,7 +4048,7 @@ const protocolDatabase = {
             ]
         },
         'Paclitaxel-Gemcitabine': {
-            name: 'Paclitaxel + Gemcitabine (Second/third salvage therapy) (Metastatic)',
+            name: 'Paclitaxel + Gemcitabine (GT) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
@@ -4107,7 +4056,7 @@ const protocolDatabase = {
             ]
         },
         'Gemcitabine-Oxaliplatin': {
-            name: 'Gemcitabine + Oxaliplatin (Second/third salvage therapy) (Metastatic)',
+            name: 'Gemcitabine + Oxaliplatin (GO) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4115,9 +4064,9 @@ const protocolDatabase = {
             ]
         },
         
-        // HIGH-DOSE CHEMOTHERAPY WITH STEM CELL RESCUE
+        // HIGH-DOSE CHEMOTHERAPY
         'Carboplatin-Etoposide-HD': {
-            name: 'High-dose Carboplatin + Etoposide (Refractory/multiply relapsed) (With ASCT) (Metastatic)',
+            name: 'High-dose Carboplatin + Etoposide (HD-CE) (Refractory/multiply relapsed) (With ASCT) (Metastatic)',
             cycles: 3,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'D1-D3, every 21 days' },
@@ -4125,7 +4074,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-Etoposide': {
-            name: 'Carboplatin + Etoposide (Cisplatin-ineligible patients) (Metastatic)',
+            name: 'Carboplatin + Etoposide (CE) (Cisplatin-ineligible patients) (Metastatic)',
             cycles: 4,
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -4135,7 +4084,7 @@ const protocolDatabase = {
         
         // ADDITIONAL SALVAGE REGIMENS
         'Gemcitabine-Paclitaxel-Carboplatin': {
-            name: 'Gemcitabine + Paclitaxel + Carboplatin (Second/third salvage therapy) (Metastatic)',
+            name: 'Gemcitabine + Paclitaxel + Carboplatin (GTC) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
