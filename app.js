@@ -8085,6 +8085,111 @@ const protocolDatabase = {
             ]
         }
     },
+    ureteric_urethral: {
+        // NEOADJUVANT/ADJUVANT/METASTATIC THERAPY
+        'GC-Split-Dose': {
+            name: 'Gemcitabine + Cisplatin (Split-dose) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: '4-6',
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 35, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
+            ]
+        },
+        'GC-Standard': {
+            name: 'Gemcitabine + Cisplatin (Standard dose) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: '4-6',
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'MVAC': {
+            name: 'Methotrexate + Vinblastine + Doxorubicin + Cisplatin (MVAC) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: '4-6',
+            drugs: [
+                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 28 days (or every 14 days for neoadjuvant/adjuvant)' },
+                { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 28 days (or every 14 days for neoadjuvant/adjuvant)' },
+                { name: 'Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D2, every 28 days (or every 14 days for neoadjuvant/adjuvant)' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D2, every 28 days (or every 14 days for neoadjuvant/adjuvant)' },
+                { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'D1 at 24h post-Methotrexate, every 28 days (or every 14 days for neoadjuvant/adjuvant)' }
+            ]
+        },
+        'ddMVAC': {
+            name: 'Dose-dense MVAC (ddMVAC) (Neoadjuvant/Adjuvant/Metastatic)',
+            cycles: '4-6',
+            drugs: [
+                { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 14 days' },
+                { name: 'Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D2, every 14 days' },
+                { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D2, every 14 days' },
+                { name: 'Leucovorin', dose: 15, unit: 'mg/m²', schedule: 'D1 at 24h post-Methotrexate, every 14 days' }
+            ]
+        },
+
+        // DEFINITIVE CHEMORADIOTHERAPY - URETHRAL CANCER
+        'Cisplatin-RT-Urethral': {
+            name: 'Cisplatin + Radiotherapy (Definitive - urethral cancer)',
+            cycles: 3,
+            drugs: [
+                { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days during RT' }
+            ]
+        },
+        '5FU-MMC-RT-Urethral': {
+            name: '5-Fluorouracil + Mitomycin C + Radiotherapy (Definitive - urethral cancer)',
+            cycles: 2,
+            drugs: [
+                { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, every 28 days during RT' },
+                { name: 'Mitomycin C', dose: 10, unit: 'mg/m²', schedule: 'D1, cycle 1 and 2 only' }
+            ]
+        },
+        'TPF-Urethral': {
+            name: 'Docetaxel + Cisplatin + 5-Fluorouracil (TPF) (Definitive - urethral cancer)',
+            cycles: 3,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: '5-Fluorouracil', dose: 750, unit: 'mg/m²', schedule: 'D1-D5 (continuous infusion), every 21 days' }
+            ]
+        },
+
+        // METASTATIC THERAPY - CISPLATIN-INELIGIBLE & IMMUNOTHERAPY
+        'GC-Carboplatin-Metastatic': {
+            name: 'Gemcitabine + Carboplatin (Cisplatin-ineligible) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Pembrolizumab-Monotherapy': {
+            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (PD-L1+ or cisplatin-ineligible) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
+            ]
+        },
+        'Atezolizumab-Monotherapy': {
+            name: 'Atezolizumab monotherapy (PD-L1 inhibitor) (Cisplatin-ineligible) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Paclitaxel-Monotherapy': {
+            name: 'Paclitaxel monotherapy (Cisplatin-ineligible) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Docetaxel-Monotherapy': {
+            name: 'Docetaxel monotherapy (Cisplatin-ineligible) (Metastatic)',
+            cycles: 6,
+            drugs: [
+                { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
+            ]
+        }
+    },
     neuroendocrine: {
         // Adjuvant Therapy
         'Octreotide-LAR-Adjuvant': {
@@ -12620,6 +12725,7 @@ function getCancerDisplayName(cancerType) {
         thyroid: 'Thyroid Cancer',
         stem_cell_transplant: 'Stem Cell Transplant Conditioning',
         tumor_agnostic: 'Tumor Agnostic Therapy',
+        ureteric_urethral: 'Ureteric & Urethral Cancer',
         vulvar_vaginal: 'Vulvar & Vaginal Cancer'
     };
     return names[cancerType] || cancerType;
