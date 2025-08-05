@@ -139,13 +139,29 @@
    - Use `D1-D3` for consecutive days
    - Use `D1-D5` for 5-day continuous schedules
 
-### **Oral Medications:**
-- **ALWAYS prefix with "PO"**
-- `schedule: 'PO once daily'` (for single daily dosing)
-- `schedule: 'PO twice daily'` (for twice daily dosing, NOT "BID")
-- `schedule: 'PO once daily x 3 years'` (for maintenance)
-- `schedule: 'PO BID D1-D14, every 21 days'` (acceptable in RT context)
-- `schedule: 'PO once daily D1-21, every 28 days'`
+### **Route of Administration Guidelines:**
+
+#### **INCLUDE route specification for:**
+- **Oral drugs:** Always prefix with "PO"
+  - `schedule: 'PO once daily'` (for single daily dosing)
+  - `schedule: 'PO twice daily'` (for twice daily dosing, NOT "BID")
+  - `schedule: 'PO once daily x 3 years'` (for maintenance)
+  - `schedule: 'PO BID D1-D14, every 21 days'` (acceptable in RT context)
+  - `schedule: 'PO once daily D1-21, every 28 days'`
+
+- **Intramuscular drugs:** Include "IM" for specific drugs
+  - Fulvestrant: `schedule: 'IM D1, every 28 days'`
+  - Octreotide LAR: `schedule: 'IM monthly'`
+
+- **Subcutaneous drugs:** Include "SC" for specific drugs
+  - Bortezomib: `schedule: 'SC D1, D8, D15, every 21 days'`
+  - Lanreotide: `schedule: 'SC D1, every 28 days'`
+
+#### **EXCLUDE route specification for:**
+- **Intravenous drugs:** NO "IV" specification (default assumption)
+  - ✅ `schedule: 'D1, every 21 days'` (NOT "IV D1, every 21 days")
+  - ✅ `schedule: 'D1-D5, every 21 days'` (NOT "IV D1-D5, every 21 days")
+  - ✅ `schedule: 'Every 6 hours D-7 to D-4 (16 doses total)'`
 
 ### **Intravenous Medications:**
 - `schedule: 'D1, every 21 days'` (single day dosing)

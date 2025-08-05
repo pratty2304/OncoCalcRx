@@ -2110,7 +2110,7 @@ const protocolDatabase = {
                 name: 'Bortezomib + Dexamethasone + Rituximab (BDR) (First-Line Waldenström Macroglobulinemia)',
                 cycles: 6,
                 drugs: [
-                    { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'days 1, 4, 8, 11, every 21 days' },
+                    { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC days 1, 4, 8, 11, every 21 days' },
                     { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'PO D1, D4, D8, D11, every 21 days' },
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
@@ -2120,7 +2120,7 @@ const protocolDatabase = {
                 cycles: 6,
                 drugs: [
                     { name: 'Bendamustine', dose: 90, unit: 'mg/m²', days: 'D1-D2', schedule: 'D1-D2, every 28 days' },
-                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 28 days' }
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'IM D1, every 28 days' }
                 ]
             },
             // Relapsed/Refractory regimens (multiple B-cell lymphomas)
@@ -2280,7 +2280,7 @@ const protocolDatabase = {
                 name: 'Bortezomib monotherapy (proteasome inhibitor) (Relapsed/Refractory MCL)',
                 cycles: 8,
                 drugs: [
-                    { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'days 1, 4, 8, 11, every 21 days' }
+                    { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC days 1, 4, 8, 11, every 21 days' }
                 ]
             },
             'Lenalidomide-MCL': {
@@ -3823,295 +3823,351 @@ const protocolDatabase = {
         }
     },
     stem_cell_transplant: {
-        // Myeloablative Conditioning (MAC) - Autologous
+        // AUTOLOGOUS CONDITIONING - Multiple Myeloma
         'Melphalan-200': {
-            name: 'High-Dose Melphalan (MEL-200) - Multiple Myeloma',
+            name: 'High-dose Melphalan (MEL-200) (Multiple Myeloma) (Autologous SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Melphalan', dose: 200, unit: 'mg/m²', schedule: 'Single dose D-1' }
+                { name: 'Melphalan', dose: 200, unit: 'mg/m²', schedule: 'D-1 (30-minute infusion)' }
             ]
         },
+        'Melphalan-140': {
+            name: 'Melphalan 140 mg/m² (Multiple Myeloma) (Elderly/reduced intensity) (Autologous SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1 (30-minute infusion)' }
+            ]
+        },
+        
+        // AUTOLOGOUS CONDITIONING - Lymphoma
         'BEAM': {
-            name: 'BEAM - Lymphoma Autologous SCT',
+            name: 'BEAM (BCNU + Etoposide + Cytarabine + Melphalan) (Lymphoma) (Autologous SCT)',
             cycles: 1,
             drugs: [
                 { name: 'Carmustine (BCNU)', dose: 300, unit: 'mg/m²', schedule: 'D-6' },
-                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2' },
-                { name: 'Cytarabine', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2, twice daily' },
+                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'Twice daily D-5 to D-2' },
+                { name: 'Cytarabine', dose: 200, unit: 'mg/m²', schedule: 'Twice daily D-5 to D-2' },
+                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1' }
+            ]
+        },
+        'BeEAM': {
+            name: 'BeEAM (Bendamustine + Etoposide + Cytarabine + Melphalan) (Lymphoma) (BCNU alternative) (Autologous SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Bendamustine', dose: 200, unit: 'mg/m²', schedule: 'D-7 and D-6' },
+                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'Twice daily D-5 to D-2' },
+                { name: 'Cytarabine', dose: 200, unit: 'mg/m²', schedule: 'Twice daily D-5 to D-2' },
                 { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1' }
             ]
         },
         'CBV': {
-            name: 'CBV - Lymphoma Autologous SCT (Alternative to BEAM)',
+            name: 'CBV (Cyclophosphamide + BCNU + Etoposide) (Lymphoma) (Alternative to BEAM) (Autologous SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Cyclophosphamide', dose: 1800, unit: 'mg/m²', schedule: 'D-6 to D-3' },
+                { name: 'Cyclophosphamide', dose: 1800, unit: 'mg/m²', schedule: 'Daily D-6 to D-3' },
                 { name: 'Carmustine (BCNU)', dose: 300, unit: 'mg/m²', schedule: 'D-6' },
-                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'D-6 to D-3, twice daily' }
-            ]
-        },
-        'BeEAM': {
-            name: 'BeEAM - Lymphoma Autologous SCT (Bendamustine-based)',
-            cycles: 1,
-            drugs: [
-                { name: 'Bendamustine', dose: 200, unit: 'mg/m²', schedule: 'D-7 and D-6' },
-                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2' },
-                { name: 'Cytarabine', dose: 200, unit: 'mg/m²', schedule: 'D-5 to D-2, twice daily' },
-                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1' }
-            ]
-        },
-        'Melphalan-140': {
-            name: 'Melphalan 140 mg/m² - Multiple Myeloma (Reduced Intensity)',
-            cycles: 1,
-            drugs: [
-                { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'Single dose D-1' }
+                { name: 'Etoposide', dose: 200, unit: 'mg/m²', schedule: 'Twice daily D-6 to D-3' }
             ]
         },
 
-        // Reduced Intensity Conditioning (RIC) - Allogeneic
-        'Fludarabine-Busulfan-2day': {
-            name: 'Fludarabine + Busulfan (2-day) - RIC Allogeneic SCT',
+        
+        // MYELOABLATIVE CONDITIONING (MAC) - Allogeneic
+        'Busulfan-Cyclophosphamide': {
+            name: 'Busulfan + Cyclophosphamide (BuCy) (Myeloablative conditioning) (Allogeneic SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'D-5 to D-2' },
-                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-3 and D-2' }
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'Every 6 hours D-7 to D-4 (16 doses total)' },
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'Daily on D-3 and D-2' }
             ]
         },
-        'Fludarabine-Busulfan-4day': {
-            name: 'Fludarabine + Busulfan (4-day) - RIC Allogeneic SCT',
+        'Busulfan-Fludarabine-MAC': {
+            name: 'Busulfan + Fludarabine (BuFlu) (Myeloablative conditioning) (Allogeneic SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'D-6 to D-3' },
-                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-6 to D-3' }
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'Every 6 hours D-5 to D-2 (16 doses total)' },
+                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'Daily D-6 to D-3' }
+            ]
+        },
+        'Cyclophosphamide-TBI': {
+            name: 'Cyclophosphamide + Total Body Irradiation (Cy/TBI) (Myeloablative conditioning) (Allogeneic SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'Daily on D-3 and D-2' },
+                { name: 'Total Body Irradiation', dose: 1200, unit: 'cGy', schedule: 'Fractionated D-4 to D-1 (200 cGy twice daily)' }
+            ]
+        },
+        
+        // REDUCED INTENSITY CONDITIONING (RIC) - Allogeneic
+        'Fludarabine-Busulfan-2day': {
+            name: 'Fludarabine + Busulfan 2-day (FluBu2) (Reduced intensity conditioning) (Allogeneic SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'Daily D-5 to D-2' },
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'Every 6 hours on D-3 and D-2 (8 doses total)' }
             ]
         },
         'Fludarabine-Melphalan': {
-            name: 'Fludarabine + Melphalan - RIC Allogeneic SCT',
+            name: 'Fludarabine + Melphalan (FluMel) (Reduced intensity conditioning) (Allogeneic SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'D-5 to D-1' },
+                { name: 'Fludarabine', dose: 25, unit: 'mg/m²', schedule: 'Daily D-5 to D-1' },
                 { name: 'Melphalan', dose: 140, unit: 'mg/m²', schedule: 'D-1' }
             ]
         },
         'Fludarabine-Cyclophosphamide': {
-            name: 'Fludarabine + Cyclophosphamide - RIC Allogeneic SCT',
+            name: 'Fludarabine + Cyclophosphamide (FluCy) (Reduced intensity conditioning) (Allogeneic SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-6 to D-2' },
-                { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D-6 to D-2' }
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'Daily D-6 to D-2' },
+                { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'Daily D-6 to D-2' }
             ]
         },
 
-        // Myeloablative Conditioning (MAC) - Allogeneic
-        'Busulfan-Cyclophosphamide': {
-            name: 'Busulfan + Cyclophosphamide - MAC Allogeneic SCT',
-            cycles: 1,
-            drugs: [
-                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-7 to D-4' },
-                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3 and D-2' }
-            ]
-        },
-        'Cyclophosphamide-TBI': {
-            name: 'Cyclophosphamide + Total Body Irradiation - MAC Allogeneic SCT',
-            cycles: 1,
-            drugs: [
-                { name: 'Cyclophosphamide', dose: 60, unit: 'mg/kg', schedule: 'D-3 and D-2' },
-                { name: 'Total Body Irradiation', dose: 1200, unit: 'cGy', schedule: 'D-4 to D-1 (fractionated)' }
-            ]
-        },
-        'Busulfan-Fludarabine-MAC': {
-            name: 'Busulfan + Fludarabine - MAC Allogeneic SCT',
-            cycles: 1,
-            drugs: [
-                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'D-5 to D-2' },
-                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'D-6 to D-3' }
-            ]
-        },
 
-        // Non-Myeloablative Conditioning (NMA)
+        
+        // NON-MYELOABLATIVE CONDITIONING (NMA) - Allogeneic
         'Fludarabine-TBI-200': {
-            name: 'Fludarabine + Low-Dose TBI - Non-Myeloablative',
+            name: 'Fludarabine + Low-dose TBI (Non-myeloablative conditioning) (Allogeneic SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-4 to D-2' },
-                { name: 'Total Body Irradiation', dose: 200, unit: 'cGy', schedule: 'D0 (single fraction)' }
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'Daily D-4 to D-2' },
+                { name: 'Total Body Irradiation', dose: 200, unit: 'cGy', schedule: 'Single fraction on D0' }
             ]
         },
 
-        // Pediatric Protocols
-        'Busulfan-Cyclophosphamide-Pediatric': {
-            name: 'Busulfan + Cyclophosphamide - Pediatric MAC',
-            cycles: 1,
-            drugs: [
-                { name: 'Busulfan', dose: 1, unit: 'mg/kg', schedule: 'every 6 hours x 16 doses (D-9 to D-6)' },
-                { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'D-5 to D-2' }
-            ]
-        },
-
-        // Haploidentical Conditioning
+        
+        // HAPLOIDENTICAL CONDITIONING
         'Fludarabine-Cyclophosphamide-ATG': {
-            name: 'Fludarabine + Cyclophosphamide + ATG - Haploidentical SCT',
+            name: 'Fludarabine + Cyclophosphamide + ATG (Haploidentical conditioning) (Allogeneic SCT)',
             cycles: 1,
             drugs: [
-                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'D-6 to D-2' },
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'Daily D-6 to D-2' },
                 { name: 'Cyclophosphamide', dose: 14.5, unit: 'mg/kg', schedule: 'D-6 and D-5' },
-                { name: 'Antithymocyte Globulin (ATG)', dose: 2.5, unit: 'mg/kg', schedule: 'D-3 to D-1' }
+                { name: 'Antithymocyte Globulin (Thymoglobulin)', dose: 2.5, unit: 'mg/kg', schedule: 'Daily D-3 to D-1' }
+            ]
+        },
+        
+        // PEDIATRIC CONDITIONING
+        'Busulfan-Cyclophosphamide-Pediatric': {
+            name: 'Busulfan + Cyclophosphamide (Pediatric myeloablative conditioning) (Age <16 years) (Allogeneic SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Busulfan', dose: 1, unit: 'mg/kg', schedule: 'Every 6 hours x 16 doses (D-9 to D-6)' },
+                { name: 'Cyclophosphamide', dose: 50, unit: 'mg/kg', schedule: 'Daily D-5 to D-2' }
+            ]
+        },
+
+        
+        // NEWER/ALTERNATIVE CONDITIONING REGIMENS
+        'Treosulfan-Fludarabine': {
+            name: 'Treosulfan + Fludarabine (TreoFlu) (Myeloablative conditioning) (Alkylator alternative) (Allogeneic SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Treosulfan', dose: 14, unit: 'g/m²', schedule: 'Daily D-6 to D-4' },
+                { name: 'Fludarabine', dose: 30, unit: 'mg/m²', schedule: 'Daily D-6 to D-2' }
+            ]
+        },
+        'Thiotepa-Busulfan-Fludarabine': {
+            name: 'Thiotepa + Busulfan + Fludarabine (TBF) (Primary immunodeficiency) (Allogeneic SCT)',
+            cycles: 1,
+            drugs: [
+                { name: 'Thiotepa', dose: 8, unit: 'mg/kg', schedule: 'D-7' },
+                { name: 'Busulfan', dose: 3.2, unit: 'mg/kg', schedule: 'Every 6 hours D-5 to D-3 (12 doses total)' },
+                { name: 'Fludarabine', dose: 40, unit: 'mg/m²', schedule: 'Daily D-6 to D-3' }
             ]
         }
     },
     testicular: {
-        'BEP': {
-            name: 'BEP (Bleomycin + Etoposide + Cisplatin) (Good risk/Intermediate risk/Poor risk/Adjuvant)',
-            cycles: '3-4',
+        // FIRST-LINE THERAPY - Risk-Stratified
+        // Good Risk Nonseminomatous Germ Cell Tumors (NSGCT)
+        'BEP-3-cycles': {
+            name: 'BEP x3 (Bleomycin + Etoposide + Cisplatin) (Good risk NSGCT) (Metastatic)',
+            cycles: 3,
             drugs: [
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15 every 21 days' },
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
-        'EP': {
-            name: 'EP (Etoposide + Cisplatin) - Good risk (Adjuvant)',
+        'EP-4-cycles': {
+            name: 'EP x4 (Etoposide + Cisplatin) (Good risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
-        'Carboplatin-Single': {
-            name: 'Carboplatin (- Stage I seminoma) (Adjuvant)',
+        
+        // Intermediate Risk NSGCT
+        'BEP-4-cycles': {
+            name: 'BEP x4 (Bleomycin + Etoposide + Cisplatin) (Intermediate risk NSGCT) (Metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        
+        // Poor Risk NSGCT
+        'BEP-4-cycles-poor': {
+            name: 'BEP x4 (Bleomycin + Etoposide + Cisplatin) (Poor risk NSGCT) (Metastatic)',
+            cycles: 4,
+            drugs: [
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        
+        // ADJUVANT THERAPY
+        'Carboplatin-Adjuvant': {
+            name: 'Carboplatin (Stage I seminoma) (Adjuvant)',
             cycles: 1,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'single dose' }
+                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'Single dose' }
             ]
         },
+        'Carboplatin-2-cycles': {
+            name: 'Carboplatin x2 (Stage I seminoma) (Alternative adjuvant)',
+            cycles: 2,
+            drugs: [
+                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'Every 21 days' }
+            ]
+        },
+        'BEP-1-cycle': {
+            name: 'BEP x1 (Bleomycin + Etoposide + Cisplatin) (Stage I NSGCT high-risk) (Adjuvant)',
+            cycles: 1,
+            drugs: [
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'IV/IM on D1, D8, D15' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'IV on D1-D5' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'IV on D1-D5' }
+            ]
+        },
+        'BEP-2-cycles': {
+            name: 'BEP x2 (Bleomycin + Etoposide + Cisplatin) (Stage I NSGCT high-risk) (Adjuvant)',
+            cycles: 2,
+            drugs: [
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
+            ]
+        },
+        
+        // ALTERNATIVE FIRST-LINE (Bleomycin contraindicated)
         'VIP': {
-            name: 'VIP (Etoposide + Ifosfamide + Cisplatin) - Intermediate risk (Adjuvant)',
+            name: 'VIP (Etoposide + Ifosfamide + Cisplatin) (Intermediate/Poor risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5 every 21 days' },
-                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D5 every 21 days' },
-                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '240 mg/m² before Ifosfamide, then 240 mg/m² at 4h and 8h post-Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
+        
+        // SECOND-LINE/SALVAGE THERAPY
         'TIP': {
-            name: 'TIP (Paclitaxel + Ifosfamide + Cisplatin) - Salvage (Metastatic)',
+            name: 'TIP (Paclitaxel + Ifosfamide + Cisplatin) (First salvage therapy) (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D2-D5 every 21 days' },
-                { name: 'Mesna (pre-dose)', dose: 300, unit: 'mg/m²', schedule: 'before Ifosfamide, D2-D5 every 21 days' },
-                { name: 'Mesna (4h post)', dose: 600, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D2-D5 every 21 days' },
-                { name: 'Mesna (8h post)', dose: 600, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D2-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D2-D5 every 21 days' }
+                { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'D1 (24-hour infusion), every 21 days' },
+                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D2-D5, every 21 days' },
+                { name: 'Mesna', dose: 1500, unit: 'mg/m²', schedule: '300 mg/m² before Ifosfamide, then 300 mg/m² at 4h and 8h post-Ifosfamide, D2-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 25, unit: 'mg/m²', schedule: 'D2-D5, every 21 days' }
             ]
         },
         'VeIP': {
-            name: 'VeIP (Vinblastine + Ifosfamide + Cisplatin) - Salvage (Metastatic)',
+            name: 'VeIP (Vinblastine + Ifosfamide + Cisplatin) (Standard salvage therapy) (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', schedule: 'D1-D2 every 21 days' },
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5 every 21 days' },
-                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D5 every 21 days' },
-                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D5 every 21 days' },
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', schedule: 'D1-D2, every 21 days' },
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '240 mg/m² before Ifosfamide, then 240 mg/m² at 4h and 8h post-Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
-        'PVB': {
-            name: 'PVB (Cisplatin + Vinblastine + Bleomycin) - Historical (Adjuvant)',
-            cycles: 3,
+        
+        // SALVAGE COMBINATION THERAPY
+        'Paclitaxel-Gemcitabine-Oxaliplatin': {
+            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (Second/third salvage therapy) (Metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Vinblastine', dose: 0.15, unit: 'mg/kg', schedule: 'D1-D2 every 21 days' },
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15 every 21 days' }
-            ]
-        },
-        'VAB-6': {
-            name: 'VAB-6 (Vinblastine + Actinomycin D + Bleomycin + Cisplatin + Cyclophosphamide) - Historical (Adjuvant)',
-            cycles: 3,
-            drugs: [
-                { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Actinomycin D', dose: 1, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15 every 21 days' },
-                { name: 'Cisplatin', dose: 120, unit: 'mg/m²', schedule: 'D4 every 21 days' },
-                { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         'Paclitaxel-Gemcitabine': {
-            name: 'Paclitaxel + Gemcitabine (Salvage) (Metastatic)',
+            name: 'Paclitaxel + Gemcitabine (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15 every 28 days' },
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, D15 every 28 days' }
-            ]
-        },
-        'Paclitaxel-Gemcitabine-Oxaliplatin': {
-            name: 'Paclitaxel + Gemcitabine + Oxaliplatin (Salvage) (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1 every 21 days' }
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
         },
         'Gemcitabine-Oxaliplatin': {
-            name: 'Gemcitabine + Oxaliplatin (Salvage) (Metastatic)',
+            name: 'Gemcitabine + Oxaliplatin (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8 every 21 days' },
-                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1 every 21 days' }
-            ]
-        },
-        'Etoposide-Single': {
-            name: 'Etoposide (Metastatic)',
-            cycles: 6,
-            drugs: [
-                { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' }
+                { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
         },
         
-        // High-dose Chemotherapy
+        // HIGH-DOSE CHEMOTHERAPY WITH STEM CELL RESCUE
         'Carboplatin-Etoposide-HD': {
-            name: 'Carboplatin + Etoposide (High-dose) (Metastatic)',
+            name: 'High-dose Carboplatin + Etoposide (Refractory/multiply relapsed) (With ASCT) (Metastatic)',
             cycles: 3,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'D1-D3 every 21 days' },
-                { name: 'Etoposide', dose: 750, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
+                { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'D1-D3, every 21 days' },
+                { name: 'Etoposide', dose: 750, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
             ]
         },
-        
-        // Standard dose Carboplatin + Etoposide
         'Carboplatin-Etoposide': {
-            name: 'Carboplatin + Etoposide (Metastatic)',
+            name: 'Carboplatin + Etoposide (Cisplatin-ineligible patients) (Metastatic)',
             cycles: 4,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days' },
-                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
+                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
             ]
         },
         
-        // Paclitaxel + Ifosfamide + Carboplatin + Etoposide (PICE)
-        'PICE': {
-            name: 'Paclitaxel + Ifosfamide + Carboplatin + Etoposide (PICE) (Metastatic)',
-            cycles: 4,
+        // ADDITIONAL SALVAGE REGIMENS
+        'Gemcitabine-Paclitaxel-Carboplatin': {
+            name: 'Gemcitabine + Paclitaxel + Carboplatin (Second/third salvage therapy) (Metastatic)',
+            cycles: 6,
             drugs: [
-                { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1 every 21 days' },
-                { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' },
-                { name: 'Mesna', dose: 1500, unit: 'mg/m²', schedule: '300 mg/m² before Ifosfamide, then 600 mg/m² at 4h and 8h post-Ifosfamide, D1-D3 every 21 days' },
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days' },
-                { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
+                { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
+                { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' }
             ]
         },
         
-        // Pembrolizumab for select cases
-        'Pembrolizumab': {
-            name: 'Pembrolizumab (MSI-H/dMMR/TMB-H) (Metastatic)',
-            cycles: 8,
+        // IMMUNOTHERAPY (Biomarker-Directed)
+        'Pembrolizumab-MSI': {
+            name: 'Pembrolizumab (PD-1 inhibitor) (MSI-H/dMMR) (Metastatic)',
+            cycles: 35,
             drugs: [
-                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days' }
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'IV on D1, every 21 days or 400 mg every 42 days' }
+            ]
+        },
+        'Pembrolizumab-TMB': {
+            name: 'Pembrolizumab (PD-1 inhibitor) (TMB-H ≥10 mut/Mb) (Metastatic)',
+            cycles: 35,
+            drugs: [
+                { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'IV on D1, every 21 days or 400 mg every 42 days' }
+            ]
+        },
+        
+        // HISTORICAL REGIMENS (Limited Use)
+        'PVB': {
+            name: 'PVB (Cisplatin + Vinblastine + Bleomycin) (Historical regimen) (Metastatic)',
+            cycles: 3,
+            drugs: [
+                { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Vinblastine', dose: 0.15, unit: 'mg/kg', schedule: 'D1-D2, every 21 days' },
+                { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' }
             ]
         },
         
@@ -6214,7 +6270,7 @@ const protocolDatabase = {
             name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd) (SWOG S0777) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 21 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
@@ -6223,7 +6279,7 @@ const protocolDatabase = {
             name: 'Bortezomib + Thalidomide + Dexamethasone (VTD) (GIMEMA) (transplant-eligible) (First-Line)',
             cycles: 4,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
                 { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
@@ -6233,7 +6289,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
@@ -6242,7 +6298,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
                 { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
@@ -6252,7 +6308,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 21 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
@@ -6262,7 +6318,7 @@ const protocolDatabase = {
             cycles: 4,
             drugs: [
                 { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 21 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, every 21 days' }
             ]
@@ -6273,7 +6329,7 @@ const protocolDatabase = {
             name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd-Lite) (SWOG S0777) (transplant-ineligible) (First-Line)',
             cycles: 9,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days x 9 cycles' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 28 days x 9 cycles' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days x 9 cycles' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1, D8, D15, every 28 days x 9 cycles' }
             ]
@@ -6292,7 +6348,7 @@ const protocolDatabase = {
             cycles: 9,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 6 weeks, then every 21 days x 16 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 6 weeks' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 6 weeks' },
                 { name: 'Melphalan', dose: 9, unit: 'mg/m²', schedule: 'D1-D4, every 6 weeks x 9 cycles' },
                 { name: 'Prednisone', dose: 60, unit: 'mg/m²', schedule: 'D1-D4, every 6 weeks x 9 cycles' }
             ]
@@ -6303,7 +6359,7 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1, D8, D15, D22, every 28 days' }
             ]
         },
@@ -6348,7 +6404,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D14 every 21 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
             ]
         },
@@ -6383,7 +6439,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
             ]
         },
@@ -6401,7 +6457,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Panobinostat', dose: 20, unit: 'mg', schedule: 'D1,D3,D5,D8,D10,D12 every 21 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
             ]
         },
@@ -6436,7 +6492,7 @@ const protocolDatabase = {
             name: 'Bortezomib + Thalidomide + Dexamethasone + Cisplatin + Doxorubicin + Cyclophosphamide + Etoposide (VTD-PACE) (High-dose)',
             cycles: 2,
             drugs: [
-                { name: 'Bortezomib', dose: 1, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Bortezomib', dose: 1, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Thalidomide', dose: 400, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1-D4 every 21 days' },
                 { name: 'Cisplatin', dose: 10, unit: 'mg/m²', schedule: 'D1-D4 every 21 days' },
@@ -6537,7 +6593,7 @@ const protocolDatabase = {
             cycles: 8,
             drugs: [
                 { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' },
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
             ]
         },
@@ -6612,7 +6668,7 @@ const protocolDatabase = {
             name: 'Bortezomib + Dexamethasone (Vd) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
             drugs: [
-                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' },
+                { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
             ]
         }
@@ -6829,7 +6885,7 @@ const protocolDatabase = {
             name: 'Carboplatin + Paclitaxel + Bevacizumab (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
             drugs: [
-                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days', requiresAUC: true },
+                { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'IM D1, every 28 days', requiresAUC: true },
                 { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -8027,7 +8083,7 @@ const protocolDatabase = {
             name: 'Octreotide LAR (somatostatin analog) (Adjuvant)',
             cycles: 12,
             drugs: [
-                { name: 'Octreotide LAR', dose: 20, unit: 'mg', schedule: 'D1, every 28 days' }
+                { name: 'Octreotide LAR', dose: 20, unit: 'mg', schedule: 'IM D1, every 28 days' }
             ]
         },
         
@@ -8038,14 +8094,14 @@ const protocolDatabase = {
             name: 'Octreotide LAR (PROMID) (somatostatin analog) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'D1, every 28 days' }
+                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'IM D1, every 28 days' }
             ]
         },
         'Lanreotide': {
             name: 'Lanreotide (CLARINET) (somatostatin analog) (Metastatic)',
             cycles: 12,
             drugs: [
-                { name: 'Lanreotide', dose: 120, unit: 'mg', schedule: 'D1, every 28 days' }
+                { name: 'Lanreotide', dose: 120, unit: 'mg', schedule: 'SC D1, every 28 days' }
             ]
         },
         
@@ -8062,7 +8118,7 @@ const protocolDatabase = {
             cycles: 12,
             drugs: [
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' },
-                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'D1, every 28 days' }
+                { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'IM D1, every 28 days' }
             ]
         },
         
