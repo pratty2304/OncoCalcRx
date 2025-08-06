@@ -13567,8 +13567,28 @@ function buildDoseAdjustmentTable() {
         ];
         return hormonalTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
     }
+    
+    function isConditionallyReducibleDrug(drugName) {
+        const conditionalDrugs = ['ramucirumab', 'cetuximab', 'panitumumab'];
+        return conditionalDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+    
+    function getConditionalReductionNote(drugName) {
+        const drugLower = drugName.toLowerCase();
+        if (drugLower.includes('ramucirumab')) {
+            return "*Dose reduction ONLY for proteinuria. Hold/stop for all other toxicities.";
+        }
+        if (drugLower.includes('cetuximab') || drugLower.includes('panitumumab')) {
+            return "*Dose reduction ONLY for skin toxicity. Hold/stop for all other toxicities.";
+        }
+        return "";
+    }
 
     function isNonReducibleDrug(drugName) {
+        // Conditionally reducible drugs take precedence over targeted therapy classification
+        if (isConditionallyReducibleDrug(drugName)) {
+            return false;
+        }
         return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName) || isHormonalTherapyDrug(drugName);
     }
     
@@ -13586,6 +13606,7 @@ function buildDoseAdjustmentTable() {
                 <tbody>
                     ${results.drugs.map(drug => {
                         const isNonReducible = isNonReducibleDrug(drug.name);
+                        const isConditionallyReducible = isConditionallyReducibleDrug(drug.name);
                         const reduction = currentReductions[drug.name] || 0;
                         const originalDose = drug.calculatedDose;
                         const finalDose = originalDose * (1 - reduction / 100);
@@ -13627,6 +13648,42 @@ function buildDoseAdjustmentTable() {
                                                 <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                             </div>` 
                                             : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`}
+                                    </td>
+                                </tr>
+                            `;
+                        } else if (isConditionallyReducible) {
+                            // Conditionally reducible drugs with special notes
+                            const conditionalNote = getConditionalReductionNote(drug.name);
+                            return `
+                                <tr>
+                                    <td style="font-weight: 600; color: #2c3e50;">
+                                        ${drug.name}
+                                        <div style="font-size: 11px; color: #d35400; font-weight: 500; margin-top: 2px; white-space: normal; word-wrap: break-word; line-height: 1.3;">
+                                            ${conditionalNote}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        ${drug.hasLoadingDose ? 
+                                            `<div style="font-size: 11px; line-height: 1.3;">
+                                                <div style="color: #007bff; font-weight: 600;">Loading</div>
+                                                <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
+                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
+                                            </div>` 
+                                            : originalDose}
+                                    </td>
+                                    <td style="position: relative;">
+                                        <input type="number" 
+                                               id="reduction_${drug.name.replace(/\s+/g, '_')}" 
+                                               value="${reduction}" 
+                                               min="0" 
+                                               max="100" 
+                                               placeholder="%" 
+                                               onchange="updateDrugReduction('${drug.name}', this.value)">
+                                        <span class="percentage-symbol">%</span>
+                                    </td>
+                                    <td id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
+                                        ${finalDose.toFixed(1)}${drug.unit || 'mg'}
                                     </td>
                                 </tr>
                             `;
@@ -13733,108 +13790,8 @@ function showFinalPrescription() {
                             const isImmuno = isImmunotherapyDrug(drug.name);
                             const isTargeted = isTargetedTherapyDrug(drug.name);
                             const isHormonal = isHormonalTherapyDrug(drug.name);
-                            const isNonReducible = [
-                                // Monoclonal antibodies and targeted IV agents
-                                'trastuzumab', 
-                                'pertuzumab',
-                                'rituximab',
-                                'bevacizumab',
-                                // Checkpoint inhibitors and immunotherapy drugs
-                                'pembrolizumab',
-                                'nivolumab',
-                                'ipilimumab',
-                                'atezolizumab',
-                                'relatlimab',
-                                'cemiplimab',
-                                'dostarlimab',
-                                'toripalimab',
-                                'tislelizumab',
-                                'avelumab',
-                                'durvalumab',
-                                'tremelimumab',
-                                'spartalizumab',
-                                'retifanlimab',
-                                // CDK4/6 inhibitors
-                                'ribociclib',
-                                'abemaciclib', 
-                                'palbociclib',
-                                // Hormonal agents
-                                'tamoxifen',
-                                'letrozole',
-                                'anastrozole',
-                                'exemestane',
-                                'fulvestrant',
-                                // PARP inhibitors
-                                'olaparib',
-                                'niraparib',
-                                'rucaparib',
-                                'talazoparib',
-                                // Tyrosine kinase inhibitors (TKIs)
-                                'erlotinib',
-                                'gefitinib',
-                                'osimertinib',
-                                'crizotinib',
-                                'alectinib',
-                                'brigatinib',
-                                'lorlatinib',
-                                'ceritinib',
-                                'lapatinib',
-                                'afatinib',
-                                'dacomitinib',
-                                'mobocertinib',
-                                'amivantamab',
-                                'sotorasib',
-                                'adagrasib',
-                                'imatinib',
-                                'dasatinib',
-                                'nilotinib',
-                                'bosutinib',
-                                'ponatinib',
-                                'midostaurin',
-                                'gilteritinib',
-                                'sorafenib',
-                                'sunitinib',
-                                'pazopanib',
-                                'axitinib',
-                                'cabozantinib',
-                                'lenvatinib',
-                                'regorafenib',
-                                'tivozanib',
-                                // mTOR inhibitors
-                                'everolimus',
-                                'temsirolimus',
-                                // RET inhibitors
-                                'selpercatinib',
-                                'pralsetinib',
-                                // Other oral targeted therapies
-                                'ibrutinib',
-                                'acalabrutinib',
-                                'zanubrutinib',
-                                'idelalisib',
-                                'venetoclax',
-                                'ruxolitinib',
-                                'fedratinib',
-                                'pacritinib',
-                                'vismodegib',
-                                'sonidegib',
-                                'glasdegib',
-                                'tucatinib',
-                                // GIST-specific targeted therapies
-                                'avapritinib',
-                                'ripretinib',
-                                // TRK inhibitors
-                                'larotrectinib',
-                                'entrectinib',
-                                'repotrectinib',
-                                // BRAF/MEK inhibitors
-                                'dabrafenib',
-                                'trametinib',
-                                'vemurafenib',
-                                'cobimetinib',
-                                'encorafenib',
-                                'binimetinib'
-                            ].some(nonReducibleDrug => 
-                                drug.name.toLowerCase().includes(nonReducibleDrug));
+                            const isConditionallyReducible = isConditionallyReducibleDrug(drug.name);
+                            const isNonReducible = isNonReducibleDrug(drug.name);
                             
                             const reduction = currentReductions[drug.name] || 0;
                             const reducedDose = drug.calculatedDose * (1 - reduction / 100);
@@ -13844,6 +13801,7 @@ function showFinalPrescription() {
                                     <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600;">
                                         ${drug.name}${drug.days ? ` (${drug.days})` : ''}
                                         ${isNonReducible ? `<div style="font-size: 10px; color: #e67e22; margin-top: 2px;">${(isImmuno || isHormonal) ? '*No dose reduction' : '*Standard dose level reductions apply'}</div>` : ''}
+                                        ${isConditionallyReducible ? `<div style="font-size: 10px; color: #d35400; margin-top: 2px; line-height: 1.3; white-space: normal; word-wrap: break-word;">${getConditionalReductionNote(drug.name)}</div>` : ''}
                                     </td>
                                     <td style="padding: 12px; border: 1px solid #dee2e6;">
                                         ${drug.hasLoadingDose ? 
@@ -14099,8 +14057,28 @@ function showFinalPrescription() {
         ];
         return hormonalTherapyDrugs.some(drug => drugName.toLowerCase().includes(drug));
     }
+    
+    function isConditionallyReducibleDrug(drugName) {
+        const conditionalDrugs = ['ramucirumab', 'cetuximab', 'panitumumab'];
+        return conditionalDrugs.some(drug => drugName.toLowerCase().includes(drug));
+    }
+    
+    function getConditionalReductionNote(drugName) {
+        const drugLower = drugName.toLowerCase();
+        if (drugLower.includes('ramucirumab')) {
+            return "*Dose reduction ONLY for proteinuria. Hold/stop for all other toxicities.";
+        }
+        if (drugLower.includes('cetuximab') || drugLower.includes('panitumumab')) {
+            return "*Dose reduction ONLY for skin toxicity. Hold/stop for all other toxicities.";
+        }
+        return "";
+    }
 
     function isNonReducibleDrug(drugName) {
+        // Conditionally reducible drugs take precedence over targeted therapy classification
+        if (isConditionallyReducibleDrug(drugName)) {
+            return false;
+        }
         return isImmunotherapyDrug(drugName) || isTargetedTherapyDrug(drugName) || isHormonalTherapyDrug(drugName);
     }
     
