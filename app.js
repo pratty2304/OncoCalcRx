@@ -13428,12 +13428,14 @@ function buildDoseAdjustmentTable() {
     const { results } = originalResults;
     const tableContainer = document.getElementById('doseAdjustmentTable');
     
-    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
+    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Rituximab/Bevacizumab/Immunotherapy)
     function isImmunotherapyDrug(drugName) {
         const immunotherapyDrugs = [
             // Monoclonal antibodies and targeted IV agents
             'trastuzumab', 
             'pertuzumab',
+            'rituximab',
+            'bevacizumab',
             // Checkpoint inhibitors and immunotherapy drugs
             'pembrolizumab',
             'nivolumab',
@@ -13735,6 +13737,8 @@ function showFinalPrescription() {
                                 // Monoclonal antibodies and targeted IV agents
                                 'trastuzumab', 
                                 'pertuzumab',
+                                'rituximab',
+                                'bevacizumab',
                                 // Checkpoint inhibitors and immunotherapy drugs
                                 'pembrolizumab',
                                 'nivolumab',
@@ -13956,12 +13960,14 @@ function showFinalPrescription() {
     // Build reduction summary - exclude non-reducible drugs
     const reductionList = document.getElementById('reductionList');
     
-    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Immunotherapy)
+    // Helper function to check if drug is non-reducible (Trastuzumab/Pertuzumab/Rituximab/Bevacizumab/Immunotherapy)
     function isImmunotherapyDrug(drugName) {
         const immunotherapyDrugs = [
             // Monoclonal antibodies and targeted IV agents
             'trastuzumab', 
             'pertuzumab',
+            'rituximab',
+            'bevacizumab',
             // Checkpoint inhibitors and immunotherapy drugs
             'pembrolizumab',
             'nivolumab',

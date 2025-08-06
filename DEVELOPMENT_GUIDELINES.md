@@ -342,7 +342,16 @@ if (drugNameLower.includes('vincristine')) {
 - **PD-1 Inhibitors:** Pembrolizumab, Nivolumab, Cemiplimab, Toripalimab, Tislelizumab
 - **PD-L1 Inhibitors:** Durvalumab, Avelumab, Atezolizumab
 - **CTLA-4 Inhibitors:** Ipilimumab
-- **Other Immunotherapy:** CAR-T therapies, Monoclonal antibodies
+- **Other Immunotherapy:** CAR-T therapies
+
+#### **Monoclonal Antibodies (Withhold-Only):**
+- **Anti-HER2 Agents:** Trastuzumab, Pertuzumab, T-DM1, T-DXd
+- **Anti-CD20 Agents:** Rituximab
+- **Anti-VEGF Agents:** Bevacizumab
+- **Anti-EGFR Agents:** Cetuximab, Panitumumab
+- **Other Monoclonal Antibodies:** Ramucirumab
+- **Clinical Practice:** These agents do not have established dose reduction guidelines. Standard practice is to withhold for toxicity rather than dose reduce.
+- **Implementation Note:** All monoclonal antibodies are handled identically to Trastuzumab - they appear as withhold-only in both dose adjustment and final prescription pages.
 
 #### **Oral Targeted Therapy Drugs:**
 - **Tyrosine Kinase Inhibitors:** Imatinib, Dasatinib, Nilotinib, Bosutinib, Ponatinib
@@ -370,33 +379,46 @@ if (drugNameLower.includes('vincristine')) {
 
 ### **Drugs INCLUDED in Dose Reduction:**
 - **Chemotherapy agents** (all cytotoxic drugs)
-- **Antibody-Drug Conjugates (ADCs):** Enfortumab Vedotin, Sacituzumab Govitecan, T-DM1
-- **Monoclonal antibodies** (non-immunotherapy): Trastuzumab, Bevacizumab, Cetuximab
+- **Antibody-Drug Conjugates (ADCs):** Enfortumab Vedotin, Sacituzumab Govitecan
+- **Note:** Traditional cytotoxic chemotherapy agents follow standard dose reduction algorithms based on toxicity grade and organ function
 
 ### **Implementation Logic:**
 ```javascript
 // Identify drugs exempt from dose reduction
 const immunotherapyKeywords = ['pembrolizumab', 'nivolumab', 'durvalumab', 'avelumab', 'ipilimumab'];
+const monoclonalAntibodyKeywords = ['trastuzumab', 'pertuzumab', 'rituximab', 'bevacizumab', 'cetuximab', 'panitumumab', 'ramucirumab'];
 const oralTargetedKeywords = ['imatinib', 'erlotinib', 'palbociclib', 'olaparib', 'ibrutinib'];
 const hormonalTherapyKeywords = ['tamoxifen', 'anastrozole', 'letrozole', 'exemestane', 'fulvestrant', 
                                 'elacestrant', 'camizestrant', 'goserelin', 'leuprolide', 'triptorelin',
                                 'bicalutamide', 'flutamide', 'enzalutamide', 'abiraterone'];
 
-// Check if drug should be excluded from reduction
-function isExemptFromReduction(drugName) {
+// Check if drug should be excluded from reduction (withhold-only)
+function isNonReducibleDrug(drugName) {
     const drugLower = drugName.toLowerCase();
     return immunotherapyKeywords.some(keyword => drugLower.includes(keyword)) ||
+           monoclonalAntibodyKeywords.some(keyword => drugLower.includes(keyword)) ||
            oralTargetedKeywords.some(keyword => drugLower.includes(keyword)) ||
-           hormonalTherapyKeywords.some(keyword => drugLower.includes(keyword)) ||
-           drugLower.includes('inhibitor') && isOralTargeted;
+           hormonalTherapyKeywords.some(keyword => drugLower.includes(keyword));
 }
 ```
 
 ### **Clinical Rationale:**
 - **Immunotherapy:** Fixed dosing based on pharmacokinetic studies
+- **Monoclonal Antibodies:** No established dose reduction guidelines; standard practice is to withhold for toxicity (bleeding, perforation, cardiac dysfunction, hypersensitivity) rather than dose reduce
 - **Oral Targeted Therapy:** Dose optimization through individual titration
 - **Hormonal Therapy:** Fixed dosing with standard protocols; toxicity managed by withholding/discontinuation
 - **Standard Practice:** These drugs are held/discontinued rather than reduced for toxicity management
+
+### **User Interface Implementation:**
+- **Page 4 (Dose Adjustment):** Non-reducible drugs display "*Dose reduction not recommended" with no input field
+- **Page 5 (Final Prescription):** Shows identical "Calculated Dose" and "Reduced Dose" values with "*No dose reduction" notation
+- **Dose Reduction Summary:** Excludes non-reducible drugs from reduction percentage listing
+
+### **Recent Implementation Updates:**
+- **Rituximab Added:** All rituximab-containing regimens (R-CHOP, R-CVP, R-Bendamustine, etc.) now follow withhold-only logic
+- **Bevacizumab Added:** All bevacizumab-containing regimens across multiple cancer types now follow withhold-only logic
+- **Affected Regimens:** Includes regimens in breast cancer, ovarian cancer, colorectal cancer, lung cancer, renal cell carcinoma, hepatocellular carcinoma, cervical cancer, glioblastoma, sarcoma, and mesothelioma
+- **Code Locations:** Updated `isImmunotherapyDrug()` function in `buildDoseAdjustmentTable()`, `showFinalPrescription()`, and dose reduction summary logic
 
 ---
 
