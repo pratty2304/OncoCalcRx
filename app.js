@@ -14087,10 +14087,10 @@ function showFinalPrescription() {
     );
     
     if (appliedReductions.length === 0) {
-        reductionList.innerHTML = '<div style="color: #27ae60; font-style: italic;">No dose reductions applied</div>';
+        reductionList.innerHTML = '<div style="color: #27ae60; font-style: italic; font-size: 13px;">No dose reductions applied</div>';
     } else {
         reductionList.innerHTML = appliedReductions.map(([drugName, reduction]) => 
-            `<div style="margin-bottom: 5px;">• <strong>${drugName}:</strong> ${reduction}% reduction</div>`
+            `<div style="margin-bottom: 5px; font-size: 13px;">• <strong>${drugName}:</strong> ${reduction}% reduction</div>`
         ).join('');
     }
     
