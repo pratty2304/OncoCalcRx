@@ -1095,7 +1095,7 @@ const protocolDatabase = {
             ]
         },
         'Durvalumab-FLOT-MATTERHORN': {
-            name: 'Durvalumab (PD-L1 inhibitor) + FLOT (MATTERHORN) (Perioperative)',
+            name: 'Durvalumab + FLOT (MATTERHORN) (PD-L1 inhibitor) (Perioperative)',
             cycles: 8,
             drugs: [
                 { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 14 days' },
@@ -1165,7 +1165,7 @@ const protocolDatabase = {
 
         // METASTATIC THERAPY - FIRST LINE
         'Pembrolizumab-5FU-Cisplatin-1L': {
-            name: 'Pembrolizumab (PD-1 inhibitor) + 5-Fluorouracil + Cisplatin (KEYNOTE-590) (PD-L1 CPS≥1) (Metastatic)',
+            name: 'Pembrolizumab + 5-Fluorouracil + Cisplatin (KEYNOTE-590) (PD-L1 CPS≥1) (PD-1 inhibitor) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -1174,7 +1174,7 @@ const protocolDatabase = {
             ]
         },
         'Nivolumab-Ipilimumab-MSI-1L': {
-            name: 'Nivolumab (PD-1 inhibitor) + Ipilimumab (CTLA-4 inhibitor) (CheckMate-032) (MSI-H/dMMR) (Metastatic)',
+            name: 'Nivolumab + Ipilimumab (CheckMate-032) (MSI-H/dMMR) (PD-1 + CTLA-4 inhibitors) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days x 4, then 480mg flat dose every 28 days' },
@@ -1448,7 +1448,7 @@ const protocolDatabase = {
             ]
         },
         'Atezolizumab-Trastuzumab-XELOX': {
-            name: 'Atezolizumab (PD-L1 inhibitor) + Trastuzumab + XELOX (HER2+) (Perioperative/Metastatic)',
+            name: 'Atezolizumab + Trastuzumab + XELOX (HER2+) (PD-L1 inhibitor) (Perioperative/Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -1458,7 +1458,7 @@ const protocolDatabase = {
             ]
         },
         'Durvalumab-FLOT-MATTERHORN': {
-            name: 'Durvalumab (PD-L1 inhibitor) + FLOT (MATTERHORN) (Perioperative)',
+            name: 'Durvalumab + FLOT (MATTERHORN) (PD-L1 inhibitor) (Perioperative)',
             cycles: 8,
             drugs: [
                 { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)' },
@@ -1603,7 +1603,7 @@ const protocolDatabase = {
                 ]
             },
             'Nivolumab-AVD': {
-                name: 'Nivolumab (PD-1 inhibitor) + Doxorubicin + Vinblastine + Dacarbazine (N-AVD) (SWOG S1826) (First-Line)',
+                name: 'Nivolumab + Doxorubicin + Vinblastine + Dacarbazine (N-AVD) (SWOG S1826) (PD-1 inhibitor) (First-Line)',
                 cycles: 6,
                 drugs: [
                     { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days x 12 doses' },
@@ -1790,7 +1790,7 @@ const protocolDatabase = {
                 ]
             },
             'Vorinostat-Pembrolizumab': {
-                name: 'Vorinostat (HDAC inhibitor) + Pembrolizumab (PD-1 inhibitor) (Relapsed/Refractory)',
+                name: 'Vorinostat + Pembrolizumab (HDAC + PD-1 inhibitors) (Relapsed/Refractory)',
                 cycles: 8,
                 drugs: [
                     { name: 'Vorinostat', dose: 400, unit: 'mg', schedule: 'PO daily, continuous' },
@@ -2481,14 +2481,14 @@ const protocolDatabase = {
             },
             // ALK-positive ALCL
             'Crizotinib-ALCL': {
-                name: 'Crizotinib (ALK inhibitor) (First-Line/Relapsed/Refractory ALK-positive ALCL)',
+                name: 'Crizotinib (ALK-positive ALCL inhibitor) (First-Line/Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
                     { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'PO twice daily, continuous' }
                 ]
             },
             'Alectinib-ALCL': {
-                name: 'Alectinib (ALK inhibitor) (First-Line/Relapsed/Refractory ALK-positive ALCL)',
+                name: 'Alectinib (ALK-positive ALCL inhibitor) (First-Line/Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
                     { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'PO twice daily, continuous' }
@@ -2595,14 +2595,14 @@ const protocolDatabase = {
             },
             // Additional ALK inhibitors for ALK+ ALCL
             'Ceritinib-ALCL': {
-                name: 'Ceritinib (ALK inhibitor) (Relapsed/Refractory ALK-positive ALCL)',
+                name: 'Ceritinib (ALK-positive ALCL inhibitor) (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
                     { name: 'Ceritinib', dose: 750, unit: 'mg', schedule: 'PO once daily, continuous' }
                 ]
             },
             'Brigatinib-ALCL': {
-                name: 'Brigatinib (ALK inhibitor) (Relapsed/Refractory ALK-positive ALCL)',
+                name: 'Brigatinib (ALK-positive ALCL inhibitor) (Relapsed/Refractory)',
                 cycles: 12,
                 drugs: [
                     { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'PO once daily, continuous (after 7-day lead-in at 90 mg)' }
@@ -2944,7 +2944,7 @@ const protocolDatabase = {
             ]
         },
         'Veliparib-Carboplatin-Paclitaxel': {
-            name: 'Veliparib + Paclitaxel + Carboplatin (PARP inhibitor) (BRCA+ Metastatic)',
+            name: 'Veliparib + Paclitaxel + Carboplatin (BRCA+) (PARP inhibitor) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Veliparib', dose: 150, unit: 'mg', schedule: 'PO twice daily until progression' },
@@ -3114,14 +3114,14 @@ const protocolDatabase = {
             ]
         },
         'Olaparib': {
-            name: 'Olaparib (PARP inhibitor) (BRCA+ Maintenance)',
+            name: 'Olaparib (BRCA+ Maintenance) (PARP inhibitor)',
             cycles: 24,
             drugs: [
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily until progression (BRCA1/2 mutation)' }
             ]
         },
         'Rucaparib': {
-            name: 'Rucaparib (PARP inhibitor) (BRCA+ or HRD+ Maintenance)',
+            name: 'Rucaparib (BRCA+ or HRD+ Maintenance) (PARP inhibitor)',
             cycles: 24,
             drugs: [
                 { name: 'Rucaparib', dose: 600, unit: 'mg', schedule: 'PO twice daily until progression (BRCA1/2 or HRD+)' }
@@ -3135,7 +3135,7 @@ const protocolDatabase = {
             ]
         },
         'Talazoparib': {
-            name: 'Talazoparib (PARP inhibitor) (BRCA+ Maintenance)',
+            name: 'Talazoparib (BRCA+ Maintenance) (PARP inhibitor)',
             cycles: 24,
             drugs: [
                 { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'PO once daily until progression (BRCA1/2 mutation)' }
@@ -3633,7 +3633,7 @@ const protocolDatabase = {
             ]
         },
         'Nivolumab-Cabozantinib': {
-            name: 'Nivolumab (PD-1 inhibitor) + Cabozantinib (Multi-kinase inhibitor) (CheckMate-9ER) (Metastatic)',
+            name: 'Nivolumab + Cabozantinib (CheckMate-9ER) (PD-1 + Multi-kinase inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days, then 480mg every 28 days' },
@@ -3641,7 +3641,7 @@ const protocolDatabase = {
             ]
         },
         'Avelumab-Axitinib': {
-            name: 'Avelumab (PD-L1 inhibitor) + Axitinib (VEGFR inhibitor) (JAVELIN Renal 101) (Metastatic)',
+            name: 'Avelumab + Axitinib (JAVELIN Renal 101) (PD-L1 + VEGFR inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' },
@@ -3728,7 +3728,7 @@ const protocolDatabase = {
         
         // COMBINATION REGIMENS - Advanced/Less Commonly Used
         'Cabozantinib-Nivolumab-Ipilimumab': {
-            name: 'Cabozantinib (Multi-kinase inhibitor) + Nivolumab (PD-1 inhibitor) + Ipilimumab (CTLA-4 inhibitor) (COSMIC-313) (Metastatic)',
+            name: 'Cabozantinib + Nivolumab + Ipilimumab (COSMIC-313) (Multi-kinase + PD-1 + CTLA-4 inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Cabozantinib', dose: 40, unit: 'mg', schedule: 'PO daily, continuously' },
@@ -3737,7 +3737,7 @@ const protocolDatabase = {
             ]
         },
         'Lenvatinib-Everolimus': {
-            name: 'Lenvatinib (Multi-kinase inhibitor) + Everolimus (mTOR inhibitor) (Study 205) (Metastatic)',
+            name: 'Lenvatinib + Everolimus (Study 205) (Multi-kinase + mTOR inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Lenvatinib', dose: 18, unit: 'mg', schedule: 'PO daily, continuously' },
@@ -3745,7 +3745,7 @@ const protocolDatabase = {
             ]
         },
         'Lenvatinib-Belzutifan': {
-            name: 'Lenvatinib (Multi-kinase inhibitor) + Belzutifan (HIF-2alpha inhibitor) (KEYMAKER-U03) (Metastatic)',
+            name: 'Lenvatinib + Belzutifan (KEYMAKER-U03) (Multi-kinase + HIF-2alpha inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO daily, continuously' },
@@ -3753,7 +3753,7 @@ const protocolDatabase = {
             ]
         },
         'Bevacizumab-Everolimus': {
-            name: 'Bevacizumab (VEGF inhibitor) + Everolimus (mTOR inhibitor) (Metastatic)',
+            name: 'Bevacizumab + Everolimus (VEGF + mTOR inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' },
@@ -3777,7 +3777,7 @@ const protocolDatabase = {
             ]
         },
         'Erlotinib-Bevacizumab': {
-            name: 'Erlotinib (EGFR inhibitor) + Bevacizumab (VEGF inhibitor) (Hereditary leiomyomatosis RCC) (Metastatic)',
+            name: 'Erlotinib + Bevacizumab (Hereditary leiomyomatosis RCC) (EGFR + VEGF inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily, continuously' },
@@ -3794,7 +3794,7 @@ const protocolDatabase = {
         
         // HISTORICAL REGIMENS
         'Bevacizumab-Interferon': {
-            name: 'Bevacizumab (VEGF inhibitor) + Interferon alfa-2a (Historical) (Metastatic)',
+            name: 'Bevacizumab + Interferon alfa-2a (Historical) (VEGF inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' },
@@ -4468,21 +4468,21 @@ const protocolDatabase = {
             ]
         },
         'Crizotinib': {
-            name: 'Crizotinib (ALK inhibitor) (ALK fusion-positive) (Metastatic)',
+            name: 'Crizotinib (ALK fusion inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
         },
         'Alectinib': {
-            name: 'Alectinib (ALK inhibitor) (ALK fusion-positive) (Metastatic)',
+            name: 'Alectinib (ALK fusion inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
         },
         'Brigatinib': {
-            name: 'Brigatinib (ALK inhibitor) (ALK fusion-positive) (Metastatic)',
+            name: 'Brigatinib (ALK fusion inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'PO daily, continuously (after 7-day lead-in at 90mg)' }
@@ -4559,7 +4559,7 @@ const protocolDatabase = {
     hepatocellular: {
         // METASTATIC THERAPY - First-Line (Most Common)
         'Atezolizumab-Bevacizumab': {
-            name: 'Atezolizumab (PD-L1 inhibitor) + Bevacizumab (VEGF inhibitor) (IMbrave150) (Metastatic)',
+            name: 'Atezolizumab + Bevacizumab (IMbrave150) (PD-L1 + VEGF inhibitors) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' },
@@ -4567,7 +4567,7 @@ const protocolDatabase = {
             ]
         },
         'Durvalumab-Tremelimumab': {
-            name: 'Durvalumab (PD-L1 inhibitor) + Tremelimumab (CTLA-4 inhibitor) (HIMALAYA) (Metastatic)',
+            name: 'Durvalumab + Tremelimumab (HIMALAYA) (PD-L1 + CTLA-4 inhibitors) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' },
@@ -4605,7 +4605,7 @@ const protocolDatabase = {
             ]
         },
         'Ramucirumab': {
-            name: 'Ramucirumab (VEGFR-2 inhibitor) (REACH-2) (AFP ≥400 ng/mL) (Metastatic)',
+            name: 'Ramucirumab (REACH-2) (AFP ≥400 ng/mL) (VEGFR-2 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Ramucirumab', dose: 8, unit: 'mg/kg', schedule: 'D1, every 14 days' }
@@ -4614,7 +4614,7 @@ const protocolDatabase = {
 
         // METASTATIC THERAPY - Immunotherapy Combinations
         'Ipilimumab-Nivolumab': {
-            name: 'Ipilimumab (CTLA-4 inhibitor) + Nivolumab (PD-1 inhibitor) (CheckMate-040) (Metastatic)',
+            name: 'Ipilimumab + Nivolumab (CheckMate-040) (CTLA-4 + PD-1 inhibitors) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Ipilimumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles' },
@@ -4624,21 +4624,21 @@ const protocolDatabase = {
 
         // METASTATIC THERAPY - Immunotherapy Monotherapy
         'Nivolumab-Monotherapy': {
-            name: 'Nivolumab monotherapy (PD-1 inhibitor) (CheckMate-040) (Metastatic)',
+            name: 'Nivolumab monotherapy (CheckMate-040) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480mg every 28 days' }
             ]
         },
         'Pembrolizumab-Monotherapy': {
-            name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-224) (Metastatic)',
+            name: 'Pembrolizumab monotherapy (KEYNOTE-224) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400mg every 6 weeks' }
             ]
         },
         'Durvalumab-Monotherapy': {
-            name: 'Durvalumab monotherapy (PD-L1 inhibitor) (HIMALAYA) (Metastatic)',
+            name: 'Durvalumab monotherapy (HIMALAYA) (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
             drugs: [
                 { name: 'Durvalumab', dose: 1500, unit: 'mg', schedule: 'D1, every 28 days' }
@@ -9972,7 +9972,7 @@ const protocolDatabase = {
             ]
         },
         'Cetuximab-RT': {
-            name: 'Cetuximab (EGFR inhibitor) + Radiotherapy (Definitive Chemoradiotherapy)',
+            name: 'Cetuximab + Radiotherapy (EGFR inhibitor) (Definitive Chemoradiotherapy)',
             cycles: 7,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: '400 mg/m² loading dose, then 250 mg/m² weekly concurrent with RT', hasLoadingDose: true }
@@ -9984,6 +9984,13 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days x 7 weeks concurrent with RT' },
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days x 7 weeks concurrent with RT' }
+            ]
+        },
+        'Docetaxel-RT': {
+            name: 'Docetaxel + Radiotherapy (Definitive/Adjuvant Chemoradiotherapy)',
+            cycles: 7,
+            drugs: [
+                { name: 'Docetaxel', dose: 15, unit: 'mg/m²', schedule: 'D1, every 7 days concurrent with RT' }
             ]
         },
 
@@ -10105,7 +10112,7 @@ const protocolDatabase = {
             ]
         },
         'Cisplatin-5FU-Cetuximab-1L': {
-            name: 'Cisplatin + 5-Fluorouracil + Cetuximab (EGFR inhibitor) (EXTREME) (Metastatic)',
+            name: 'Cisplatin + 5-Fluorouracil + Cetuximab (EXTREME) (EGFR inhibitor) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: '400 mg/m² loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
@@ -10114,7 +10121,7 @@ const protocolDatabase = {
             ]
         },
         'Carboplatin-5FU-Cetuximab-1L': {
-            name: 'Carboplatin + 5-Fluorouracil + Cetuximab (EGFR inhibitor) (EXTREME) (Metastatic)',
+            name: 'Carboplatin + 5-Fluorouracil + Cetuximab (EXTREME) (EGFR inhibitor) (Metastatic)',
             cycles: 6,
             drugs: [
                 { name: 'Cetuximab', dose: 400, maintenanceDose: 250, unit: 'mg/m²', schedule: '400 mg/m² loading dose, then 250 mg/m² weekly', hasLoadingDose: true },
@@ -10251,7 +10258,7 @@ const protocolDatabase = {
 
         // TARGETED THERAPY
         'Afatinib': {
-            name: 'Afatinib (EGFR inhibitor) (EGFR mutation+) (Metastatic)',
+            name: 'Afatinib (EGFR mutation inhibitor) (Metastatic)',
             cycles: 12,
             drugs: [
                 { name: 'Afatinib', dose: 40, unit: 'mg', schedule: 'PO once daily until progression' }
@@ -11191,7 +11198,7 @@ const protocolDatabase = {
         nsclc: {
             // NEOADJUVANT THERAPY
             'Nivolumab-Cisplatin-Pemetrexed-Neoadjuvant': {
-                name: 'Nivolumab (PD-1 inhibitor) + Cisplatin + Pemetrexed (CheckMate 816) (Non-squamous) (Neoadjuvant)',
+                name: 'Nivolumab + Cisplatin + Pemetrexed (CheckMate 816) (Non-squamous) (PD-1 inhibitor) (Neoadjuvant)',
                 cycles: 3,
                 drugs: [
                     { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'D1 every 21 days x 3 cycles' },
@@ -11200,7 +11207,7 @@ const protocolDatabase = {
                 ]
             },
             'Pembrolizumab-Carboplatin-Paclitaxel-Neoadjuvant': {
-                name: 'Pembrolizumab (PD-1 inhibitor) + Carboplatin + Paclitaxel (KEYNOTE-671) (Squamous) (Neoadjuvant)',
+                name: 'Pembrolizumab + Carboplatin + Paclitaxel (KEYNOTE-671) (Squamous) (PD-1 inhibitor) (Neoadjuvant)',
                 cycles: 4,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days x 4 cycles' },
@@ -11235,7 +11242,7 @@ const protocolDatabase = {
 
             // PERIOPERATIVE THERAPY
             'Nivolumab-Carboplatin-Paclitaxel-Perioperative': {
-                name: 'Nivolumab (PD-1 inhibitor) + Carboplatin + Paclitaxel (CheckMate 77T) (Perioperative)',
+                name: 'Nivolumab + Carboplatin + Paclitaxel (CheckMate 77T) (PD-1 inhibitor) (Perioperative)',
                 cycles: 4,
                 drugs: [
                     { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'D1 every 21 days (neoadjuvant + adjuvant)' },
@@ -11246,28 +11253,28 @@ const protocolDatabase = {
 
             // ADJUVANT THERAPY
             'Osimertinib-Adjuvant': {
-                name: 'Osimertinib (EGFR inhibitor) (ADAURA) (EGFR exon19del/L858R+) (Adjuvant)',
+                name: 'Osimertinib (ADAURA) (EGFR exon19del/L858R inhibitor) (Adjuvant)',
                 cycles: 36,
                 drugs: [
                     { name: 'Osimertinib', dose: 80, unit: 'mg', schedule: 'PO daily x 3 years' }
                 ]
             },
             'Alectinib-Adjuvant': {
-                name: 'Alectinib (ALK inhibitor) (ALINA) (ALK rearrangement+) (Adjuvant)',
+                name: 'Alectinib (ALINA) (ALK rearrangement inhibitor) (Adjuvant)',
                 cycles: 24,
                 drugs: [
                     { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'PO twice daily x 2 years' }
                 ]
             },
             'Atezolizumab-Adjuvant': {
-                name: 'Atezolizumab (PD-L1 inhibitor) (IMpower010) (Stage IB-IIIA, PD-L1 ≥1%) (Adjuvant)',
+                name: 'Atezolizumab (IMpower010) (Stage IB-IIIA, PD-L1 ≥1%) (PD-L1 inhibitor) (Adjuvant)',
                 cycles: 16,
                 drugs: [
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1 every 21 days x 16 cycles' }
                 ]
             },
             'Pembrolizumab-Adjuvant': {
-                name: 'Pembrolizumab (PD-1 inhibitor) (KEYNOTE-091/PEARLS) (Stage IB-IIIA) (Adjuvant)',
+                name: 'Pembrolizumab (KEYNOTE-091/PEARLS) (Stage IB-IIIA) (PD-1 inhibitor) (Adjuvant)',
                 cycles: 18,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days x 18 cycles (1 year)' }
@@ -11325,7 +11332,7 @@ const protocolDatabase = {
 
             // METASTATIC THERAPY - Immunotherapy Monotherapy (PD-L1 ≥50%)
             'Pembrolizumab-Monotherapy': {
-                name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-024) (PD-L1 ≥50%) (Metastatic)',
+                name: 'Pembrolizumab monotherapy (KEYNOTE-024) (PD-L1 ≥50%) (PD-1 inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days or 400mg every 6 weeks' }
@@ -11339,7 +11346,7 @@ const protocolDatabase = {
                 ]
             },
             'Cemiplimab-Monotherapy': {
-                name: 'Cemiplimab monotherapy (PD-1 inhibitor) (EMPOWER-Lung 1) (PD-L1 ≥50%) (Metastatic)',
+                name: 'Cemiplimab monotherapy (EMPOWER-Lung 1) (PD-L1 ≥50%) (PD-1 inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1 every 21 days' }
@@ -11348,7 +11355,7 @@ const protocolDatabase = {
 
             // METASTATIC THERAPY - Immunotherapy Combinations (Non-squamous)
             'Pembrolizumab-Cisplatin-Pemetrexed': {
-                name: 'Pembrolizumab (PD-1 inhibitor) + Cisplatin + Pemetrexed (KEYNOTE-189) (Non-squamous) (Metastatic)',
+                name: 'Pembrolizumab + Cisplatin + Pemetrexed (KEYNOTE-189) (Non-squamous) (PD-1 inhibitor) (Metastatic)',
                 cycles: 4,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' },
@@ -11357,7 +11364,7 @@ const protocolDatabase = {
                 ]
             },
             'Pembrolizumab-Carboplatin-Pemetrexed': {
-                name: 'Pembrolizumab (PD-1 inhibitor) + Carboplatin + Pemetrexed (KEYNOTE-189) (cisplatin-ineligible) (Non-squamous) (Metastatic)',
+                name: 'Pembrolizumab + Carboplatin + Pemetrexed (KEYNOTE-189) (cisplatin-ineligible) (Non-squamous) (PD-1 inhibitor) (Metastatic)',
                 cycles: 4,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' },
@@ -11366,7 +11373,7 @@ const protocolDatabase = {
                 ]
             },
             'Nivolumab-Ipilimumab-Chemotherapy': {
-                name: 'Nivolumab (PD-1 inhibitor) + Ipilimumab (CTLA-4 inhibitor) + Chemotherapy (CheckMate 9LA) (Metastatic)',
+                name: 'Nivolumab + Ipilimumab + Chemotherapy (CheckMate 9LA) (PD-1 + CTLA-4 inhibitors) (Metastatic)',
                 cycles: 2,
                 drugs: [
                     { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' },
@@ -11376,7 +11383,7 @@ const protocolDatabase = {
                 ]
             },
             'Atezolizumab-Bevacizumab-Carboplatin-Paclitaxel': {
-                name: 'Atezolizumab (PD-L1 inhibitor) + Bevacizumab (VEGF inhibitor) + Carboplatin + Paclitaxel (IMpower150) (Metastatic)',
+                name: 'Atezolizumab + Bevacizumab + Carboplatin + Paclitaxel (IMpower150) (PD-L1 + VEGF inhibitors) (Metastatic)',
                 cycles: 4,
                 drugs: [
                     { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' },
@@ -11385,10 +11392,28 @@ const protocolDatabase = {
                     { name: 'Paclitaxel', dose: 200, unit: 'mg/m²', schedule: 'D1 every 21 days x 4 cycles' }
                 ]
             },
+            'Carboplatin-Pemetrexed-Osimertinib-FLAURA2': {
+                name: 'Carboplatin + Pemetrexed + Osimertinib (FLAURA 2) (EGFR-mutated) (Locally Advanced/Metastatic)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days x 4 cycles' },
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days x 4 cycles, then maintenance' },
+                    { name: 'Osimertinib', dose: 80, unit: 'mg', schedule: 'PO daily continuously' }
+                ]
+            },
+            'Carboplatin-Pemetrexed-Cemiplimab-EMPOWER': {
+                name: 'Carboplatin + Pemetrexed + Cemiplimab (EMPOWER Lung 3) (Non-squamous) (Locally Advanced/Metastatic)',
+                cycles: 4,
+                drugs: [
+                    { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1 every 21 days x 4 cycles' },
+                    { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days x 4 cycles, then maintenance' },
+                    { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' }
+                ]
+            },
 
             // METASTATIC THERAPY - Immunotherapy Combinations (Squamous)
             'Pembrolizumab-Carboplatin-Paclitaxel': {
-                name: 'Pembrolizumab (PD-1 inhibitor) + Carboplatin + Paclitaxel (KEYNOTE-407) (Squamous) (Metastatic)',
+                name: 'Pembrolizumab + Carboplatin + Paclitaxel (KEYNOTE-407) (Squamous) (PD-1 inhibitor) (Metastatic)',
                 cycles: 4,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' },
@@ -11397,7 +11422,7 @@ const protocolDatabase = {
                 ]
             },
             'Pembrolizumab-Carboplatin-Nab-Paclitaxel': {
-                name: 'Pembrolizumab (PD-1 inhibitor) + Carboplatin + Nab-paclitaxel (KEYNOTE-407) (Squamous) (Metastatic)',
+                name: 'Pembrolizumab + Carboplatin + Nab-paclitaxel (KEYNOTE-407) (Squamous) (PD-1 inhibitor) (Metastatic)',
                 cycles: 4,
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1 every 21 days (continue maintenance)' },
@@ -11408,14 +11433,14 @@ const protocolDatabase = {
 
             // METASTATIC THERAPY - EGFR-Targeted Therapy (EGFR+)
             'Osimertinib-Metastatic': {
-                name: 'Osimertinib (EGFR inhibitor) (FLAURA) (EGFR exon19del/L858R+) (Metastatic)',
+                name: 'Osimertinib (FLAURA) (EGFR exon19del/L858R inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Osimertinib', dose: 80, unit: 'mg', schedule: 'PO daily until progression' }
                 ]
             },
             'Amivantamab-Lazertinib': {
-                name: 'Amivantamab (EGFR/MET bispecific antibody) + Lazertinib (EGFR inhibitor) (MARIPOSA) (EGFR exon19del/L858R+) (Metastatic)',
+                name: 'Amivantamab + Lazertinib (MARIPOSA) (EGFR exon19del/L858R inhibitor + bispecific antibody) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'IV D1 (loading), then 1050mg every 14 days' },
@@ -11430,7 +11455,7 @@ const protocolDatabase = {
                 ]
             },
             'Mobocertinib-Exon20': {
-                name: 'Mobocertinib (EGFR inhibitor) (EGFR exon20 insertion+) (Metastatic)',
+                name: 'Mobocertinib (EGFR exon20 insertion inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Mobocertinib', dose: 160, unit: 'mg', schedule: 'PO daily until progression' }
@@ -11439,21 +11464,21 @@ const protocolDatabase = {
 
             // METASTATIC THERAPY - ALK-Targeted Therapy (ALK+)
             'Alectinib-Metastatic': {
-                name: 'Alectinib (ALK inhibitor) (ALEX) (ALK rearrangement+) (Metastatic)',
+                name: 'Alectinib (ALEX) (ALK rearrangement inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'PO twice daily until progression' }
                 ]
             },
             'Brigatinib-ALK': {
-                name: 'Brigatinib (ALK inhibitor) (ALTA-1L) (ALK rearrangement+) (Metastatic)',
+                name: 'Brigatinib (ALTA-1L) (ALK rearrangement inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'PO daily (90mg daily x 7 days lead-in)' }
                 ]
             },
             'Lorlatinib-ALK': {
-                name: 'Lorlatinib (ALK/ROS1 inhibitor) (ALK rearrangement+) (Metastatic)',
+                name: 'Lorlatinib (ALK rearrangement inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Lorlatinib', dose: 100, unit: 'mg', schedule: 'PO daily until progression' }
@@ -11462,14 +11487,14 @@ const protocolDatabase = {
 
             // METASTATIC THERAPY - Other Targeted Therapy
             'Crizotinib-ROS1': {
-                name: 'Crizotinib (ALK/ROS1 inhibitor) (ROS1 rearrangement+) (Metastatic)',
+                name: 'Crizotinib (ROS1 rearrangement inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'PO twice daily until progression' }
                 ]
             },
             'Entrectinib-NTRK': {
-                name: 'Entrectinib (TRK/ROS1/ALK inhibitor) (NTRK fusion+) (Metastatic)',
+                name: 'Entrectinib (NTRK fusion inhibitor) (Metastatic)',
                 cycles: 35,
                 drugs: [
                     { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily until progression' }
@@ -11518,7 +11543,7 @@ const protocolDatabase = {
 
             // METASTATIC THERAPY - Second-Line Options
             'Docetaxel-Ramucirumab': {
-                name: 'Docetaxel + Ramucirumab (VEGFR2 inhibitor) (REVEL) (Second-line) (Metastatic)',
+                name: 'Docetaxel + Ramucirumab (REVEL) (VEGFR2 inhibitor) (Second-line) (Metastatic)',
                 cycles: 6,
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1 every 21 days' },
