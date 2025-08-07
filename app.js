@@ -12564,9 +12564,64 @@ function buildProtocolIndex() {
     function generateSearchAliases(text) {
         let aliases = text;
         
+        // === CANCER TYPE SYNONYMS ===
+        // Add cancer type synonyms to search text
+        if (text.includes('gastric cancer')) {
+            aliases += ' stomach gastro';
+        }
+        if (text.includes('brain cancer')) {
+            aliases += ' glioma glioblastoma glia gbm';
+        }
+        if (text.includes('hepatocellular')) {
+            aliases += ' liver hepatic hcc';
+        }
+        if (text.includes('renal')) {
+            aliases += ' kidney';
+        }
+        if (text.includes('leukemia')) {
+            aliases += ' blood haematological hematological';
+        }
+        if (text.includes('lung cancer')) {
+            aliases += ' pulmonary respiratory';
+        }
+        if (text.includes('head') && text.includes('neck')) {
+            aliases += ' hnc head-neck';
+        }
+        if (text.includes('colorectal')) {
+            aliases += ' crc colon rectal bowel';
+        }
+        if (text.includes('pancreatic')) {
+            aliases += ' pancreas pdac';
+        }
+        if (text.includes('ovarian')) {
+            aliases += ' ovary ovaries';
+        }
+        if (text.includes('endometrial')) {
+            aliases += ' uterine uterus endometrium';
+        }
+        if (text.includes('cervical')) {
+            aliases += ' cervix';
+        }
+        if (text.includes('bladder')) {
+            aliases += ' urothelial';
+        }
+        if (text.includes('testicular')) {
+            aliases += ' testes testis';
+        }
+        if (text.includes('prostate')) {
+            aliases += ' prostatic';
+        }
+        if (text.includes('esophageal')) {
+            aliases += ' esophagus oesophageal oesophagus';
+        }
+        if (text.includes('lymphoma')) {
+            aliases += ' lymph nodes lymphatic';
+        }
+        
+        // === BASIC DRUG ABBREVIATIONS ===
         // 5-FU variations
         if (text.includes('5-fluorouracil')) {
-            aliases += ' 5fu 5 fu 5-fu';
+            aliases += ' 5fu 5 fu 5-fu fluorouracil';
         }
         
         // Protocol abbreviations
@@ -12658,6 +12713,104 @@ function buildProtocolIndex() {
         }
         if (text.includes('dexamethasone')) {
             aliases += ' dex';
+        }
+        if (text.includes('trastuzumab')) {
+            aliases += ' herceptin trastu';
+        }
+        
+        // === ENHANCED BIOMARKER & TARGET SEARCH ===
+        // EGFR-related
+        if (text.includes('egfr') || text.includes('osimertinib') || text.includes('erlotinib') || text.includes('afatinib') || text.includes('mobocertinib') || text.includes('exon19') || text.includes('l858r') || text.includes('exon20')) {
+            aliases += ' egfr egfr-positive egfr+ egfr-mutated egfr-mutation egfr-targeted osimertinib erlotinib afatinib mobocertinib exon19del l858r exon20 tagrisso tarceva gilotrif exkivity';
+        }
+        
+        // ALK-related  
+        if (text.includes('alk') || text.includes('alectinib') || text.includes('crizotinib') || text.includes('brigatinib') || text.includes('lorlatinib') || text.includes('rearrangement')) {
+            aliases += ' alk alk-positive alk+ alk-rearrangement alk-fusion alk-targeted alectinib crizotinib brigatinib lorlatinib alecensa xalkori alunbrig lorbrena';
+        }
+        
+        // PD-1/PD-L1 immunotherapy
+        if (text.includes('pd-1') || text.includes('pdl1') || text.includes('pd-l1') || text.includes('pembrolizumab') || text.includes('nivolumab') || text.includes('cemiplimab') || text.includes('dostarlimab') || text.includes('atezolizumab') || text.includes('durvalumab') || text.includes('avelumab')) {
+            aliases += ' pd1 pd-1 pdl1 pd-l1 immunotherapy checkpoint-inhibitor checkpoint immune pembrolizumab keytruda pembro nivolumab opdivo nivo cemiplimab libtayo dostarlimab jemperli atezolizumab tecentriq atezo durvalumab imfinzi durva avelumab bavencio';
+        }
+        
+        // CTLA-4
+        if (text.includes('ctla') || text.includes('ipilimumab') || text.includes('tremelimumab')) {
+            aliases += ' ctla4 ctla-4 ipilimumab yervoy ipi tremelimumab immunotherapy checkpoint-inhibitor checkpoint immune';
+        }
+        
+        // HER2-related
+        if (text.includes('her2') || text.includes('trastuzumab') || text.includes('pertuzumab') || text.includes('t-dxd') || text.includes('t-dm1')) {
+            aliases += ' her2 her2-positive her2+ her2-targeted her2-amplified trastuzumab herceptin pertuzumab perjeta t-dxd t-dm1 kadcyla enhertu trastu pertuz';
+        }
+        
+        // VEGF/VEGFR angiogenesis
+        if (text.includes('vegf') || text.includes('bevacizumab') || text.includes('ramucirumab') || text.includes('axitinib') || text.includes('pazopanib') || text.includes('angiogenesis')) {
+            aliases += ' vegf vegfr vegfr2 angiogenesis bevacizumab avastin bev ramucirumab cyramza ram axitinib inlyta pazopanib votrient';
+        }
+        
+        // PARP inhibitors
+        if (text.includes('parp') || text.includes('olaparib') || text.includes('rucaparib') || text.includes('niraparib') || text.includes('talazoparib') || text.includes('brca')) {
+            aliases += ' parp parp-inhibitor brca brca-positive brca+ brca1 brca2 hrr hrd homologous-recombination olaparib lynparza rucaparib rubraca niraparib zejula talazoparib talzenna';
+        }
+        
+        // ROS1
+        if (text.includes('ros1') || text.includes('entrectinib')) {
+            aliases += ' ros1 ros1-positive ros1+ ros1-rearrangement ros1-fusion entrectinib rozlytrek';
+        }
+        
+        // NTRK/TRK
+        if (text.includes('ntrk') || text.includes('trk') || text.includes('larotrectinib')) {
+            aliases += ' ntrk trk ntrk-fusion trk-fusion entrectinib rozlytrek larotrectinib vitrakvi';
+        }
+        
+        // BRAF
+        if (text.includes('braf') || text.includes('vemurafenib') || text.includes('dabrafenib') || text.includes('trametinib') || text.includes('v600')) {
+            aliases += ' braf braf-mutated braf+ v600e v600k vemurafenib zelboraf dabrafenib tafinlar trametinib mekinist';
+        }
+        
+        // MSI/MMR
+        if (text.includes('msi') || text.includes('mmr') || text.includes('dmmr') || text.includes('microsatellite')) {
+            aliases += ' msi msi-high msi-h mmr mmr-deficient dmmr microsatellite-instability mismatch-repair deficient';
+        }
+        
+        // TMB
+        if (text.includes('tmb') || text.includes('tumor-mutational') || text.includes('mutational-burden')) {
+            aliases += ' tmb tumor-mutational-burden high-tmb tmb-high mutational-burden';
+        }
+        
+        // === TREATMENT STAGE ALIASES ===
+        if (text.includes('neoadjuvant')) {
+            aliases += ' neoadjuvant neo-adjuvant preoperative pre-operative pre-surgery before-surgery induction neoadj neo';
+        }
+        if (text.includes('adjuvant')) {
+            aliases += ' adjuvant postoperative post-operative post-surgery after-surgery maintenance adj post-op';
+        }
+        if (text.includes('metastatic')) {
+            aliases += ' metastatic advanced stage-iv stage4 stage-4 palliative systemic met mets advanced-disease';
+        }
+        if (text.includes('locally advanced')) {
+            aliases += ' locally-advanced locally advanced unresectable stage-iii stage3 stage-3 local-advanced';
+        }
+        if (text.includes('perioperative')) {
+            aliases += ' perioperative peri-operative around-surgery peri-op';
+        }
+        if (text.includes('definitive')) {
+            aliases += ' definitive concurrent chemoradiation chemoradiotherapy crt radiation';
+        }
+        
+        // === CANCER-SPECIFIC ALIASES ===
+        if (text.includes('nsclc') || text.includes('non-small cell lung') || text.includes('adenocarcinoma') || text.includes('squamous')) {
+            aliases += ' nsclc non-small-cell-lung non-small-cell lung adenocarcinoma squamous-cell-carcinoma large-cell adeno squamous';
+        }
+        if (text.includes('sclc') || text.includes('small cell lung')) {
+            aliases += ' sclc small-cell-lung small-cell oat-cell';
+        }
+        if (text.includes('triple negative') || text.includes('tnbc')) {
+            aliases += ' triple-negative tnbc er-negative pr-negative her2-negative hormone-negative tn';
+        }
+        if (text.includes('hormone positive') || text.includes('er positive') || text.includes('pr positive')) {
+            aliases += ' hormone-positive er-positive pr-positive estrogen-receptor progesterone-receptor luminal hormone-receptor';
         }
         
         return aliases;
@@ -12850,7 +13003,7 @@ function fuzzyMatch(query, text, threshold = 0.6) {
     return bestScore >= threshold ? bestScore : 0;
 }
 
-// Helper function to normalize search strings for better matching
+// Helper function to normalize search strings for better matching with fuzzy search
 function normalizeSearchString(text) {
     return text.toLowerCase()
         .replace(/[\-\+\(\)\/]/g, ' ')  // Replace common punctuation with spaces
@@ -12858,11 +13011,186 @@ function normalizeSearchString(text) {
         .trim();
 }
 
+// Simple fuzzy matching function for handling spelling mistakes
+function fuzzyMatch(query, text, threshold = 0.7) {
+    if (query.length < 3) return text.includes(query);
+    
+    // Calculate Levenshtein distance ratio
+    const distance = levenshteinDistance(query, text);
+    const maxLength = Math.max(query.length, text.length);
+    const similarity = 1 - (distance / maxLength);
+    
+    return similarity >= threshold;
+}
+
+// Calculate Levenshtein distance between two strings
+function levenshteinDistance(str1, str2) {
+    const matrix = [];
+    
+    // Create matrix
+    for (let i = 0; i <= str2.length; i++) {
+        matrix[i] = [i];
+    }
+    for (let j = 0; j <= str1.length; j++) {
+        matrix[0][j] = j;
+    }
+    
+    // Fill matrix
+    for (let i = 1; i <= str2.length; i++) {
+        for (let j = 1; j <= str1.length; j++) {
+            if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
+    }
+    
+    return matrix[str2.length][str1.length];
+}
+
+// Enhanced fuzzy search for common medical misspellings
+function handleCommonMisspellings(query) {
+    const misspellings = {
+        // Common drug misspellings
+        'pembrolizumib': 'pembrolizumab',
+        'pemrolizumab': 'pembrolizumab',
+        'pembro': 'pembrolizumab',
+        'nivolumib': 'nivolumab',
+        'nivolomab': 'nivolumab',
+        'nivo': 'nivolumab',
+        'trastazumab': 'trastuzumab',
+        'trastuzamab': 'trastuzumab',
+        'hercepten': 'herceptin',
+        'trastuzu': 'trastuzumab',
+        'osimertinab': 'osimertinib',
+        'osimertnib': 'osimertinib',
+        'tagresso': 'tagrisso',
+        'carboplaten': 'carboplatin',
+        'carboplatn': 'carboplatin',
+        'cisplaten': 'cisplatin',
+        'cisplatn': 'cisplatin',
+        'paclitazel': 'paclitaxel',
+        'pacilitaxel': 'paclitaxel',
+        'docetazel': 'docetaxel',
+        'docitaxel': 'docetaxel',
+        
+        // Biomarker misspellings
+        'egrf': 'egfr',
+        'efgr': 'egfr',
+        'egfr+': 'egfr positive',
+        'egfr-': 'egfr negative',
+        'pdl1': 'pd-l1',
+        'pd1': 'pd-1',
+        'pdl-1': 'pd-l1',
+        'pd-1+': 'pd-l1 positive',
+        'her-2': 'her2',
+        'her+': 'her2 positive',
+        'her2+': 'her2 positive',
+        'her2-': 'her2 negative',
+        'alk+': 'alk positive',
+        'alk-': 'alk negative',
+        'brca+': 'brca positive',
+        'brca-': 'brca negative',
+        'msi+': 'msi high',
+        'msi-': 'msi low',
+        'msih': 'msi high',
+        'msil': 'msi low',
+        
+        // Treatment stage misspellings
+        'neoadjuvent': 'neoadjuvant',
+        'neo-adjuvent': 'neoadjuvant',
+        'neoadjuvent': 'neoadjuvant',
+        'adjuvent': 'adjuvant',
+        'metastetic': 'metastatic',
+        'metastatic': 'metastatic',
+        'mestastatic': 'metastatic',
+        'localy advanced': 'locally advanced',
+        'locally advansed': 'locally advanced',
+        
+        // Cancer type synonyms and misspellings - map to database names
+        'nsclc': 'lung',
+        'sclc': 'lung',
+        'pulmonary': 'lung',
+        'respiratory': 'lung',
+        'tnbc': 'triple negative breast',
+        'gasterick': 'gastric',
+        'stomach': 'gastric',
+        'gastro': 'gastric',
+        'liver': 'hepatocellular',
+        'hepatic': 'hepatocellular',
+        'hcc': 'hepatocellular',
+        'kidney': 'renal',
+        'renal-cell': 'renal',
+        'rcc': 'renal',
+        'glioma': 'brain',
+        'glioblastoma': 'brain',
+        'gbm': 'brain',
+        'astrocytoma': 'brain',
+        'cns': 'brain',
+        'blood': 'leukemia',
+        'hematologic': 'leukemia',
+        'aml': 'leukemia',
+        'cml': 'leukemia',
+        'cll': 'leukemia',
+        'myeloma': 'leukemia',
+        'hodgkin': 'lymphoma',
+        'nhl': 'lymphoma',
+        'oral': 'head neck',
+        'throat': 'head neck',
+        'mouth': 'head neck',
+        'tongue': 'head neck',
+        'larynx': 'head neck',
+        'gallbladder': 'biliary',
+        'gall-bladder': 'biliary',
+        'bile-duct': 'biliary',
+        'bowel': 'colorectal',
+        'colon': 'colorectal',
+        'rectal': 'colorectal',
+        'intestinal': 'colorectal',
+        'colectal': 'colorectal',
+        'colorectel': 'colorectal',
+        'hepatocelular': 'hepatocellular',
+        'hepatocelluar': 'hepatocellular',
+        'uterine': 'endometrial',
+        'uterus': 'endometrial',
+        'cervix': 'cervical',
+        'ovary': 'ovarian',
+        'testis': 'testicular',
+        'penis': 'penile',
+        'skin': 'melanoma',
+        'pancreas': 'pancreatic',
+        'pdac': 'pancreatic',
+        'esophagus': 'esophageal',
+        'thymus': 'thymoma',
+        'bone': 'bone',
+        'sarcoma': 'bone'
+    };
+    
+    let correctedQuery = query.toLowerCase().trim();
+    
+    // Check for exact misspelling matches first
+    Object.keys(misspellings).forEach(misspelling => {
+        const regex = new RegExp(`\\b${misspelling}\\b`, 'gi');
+        correctedQuery = correctedQuery.replace(regex, misspellings[misspelling]);
+    });
+    
+    return correctedQuery;
+}
+
 function searchProtocols(query) {
     if (!query || query.length < 2) return [];
     
-    const queryLower = query.toLowerCase();
-    const queryNormalized = normalizeSearchString(query);
+    // First handle common misspellings
+    const correctedQuery = handleCommonMisspellings(query);
+    const queryLower = correctedQuery.toLowerCase();
+    const queryNormalized = normalizeSearchString(correctedQuery);
+    
+    console.log(`Search: "${query}" -> "${correctedQuery}"`); // Debug
     
     // First try exact/substring matches
     const exactResults = allProtocols.filter(protocol => 
@@ -12873,25 +13201,198 @@ function searchProtocols(query) {
     // If we have exact matches, prioritize them
     if (exactResults.length > 0) {
         exactResults.sort((a, b) => {
-            const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-            const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-            return aExact - bExact;
+            // Prioritize matches in protocol name vs drug names
+            const aNameMatch = a.name.toLowerCase().includes(queryLower);
+            const bNameMatch = b.name.toLowerCase().includes(queryLower);
+            if (aNameMatch && !bNameMatch) return -1;
+            if (!aNameMatch && bNameMatch) return 1;
+            
+            // Then sort alphabetically
+            return a.name.localeCompare(b.name);
         });
         return exactResults.slice(0, 50);
     }
     
-    // If no exact matches, try fuzzy matching for auto-correction
-    const fuzzyResults = allProtocols.map(protocol => {
-        const score = fuzzyMatch(query, protocol.searchText, 0.5);
-        const normalizedScore = fuzzyMatch(queryNormalized, protocol.searchTextNormalized, 0.5);
-        const bestScore = Math.max(score, normalizedScore);
-        return { protocol, score: bestScore };
-    })
-    .filter(item => item.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .map(item => item.protocol);
+    // Enhanced multi-word search with clinical intelligence
+    const queryWords = queryNormalized.split(' ').filter(word => word.length > 1);
+    if (queryWords.length === 0) return [];
     
-    return fuzzyResults.slice(0, 50);
+    // Enhanced clinical search with cancer type precision
+    const clinicalResults = allProtocols.filter(protocol => {
+        const protocolText = protocol.searchTextNormalized;
+        const protocolWords = protocolText.split(' ');
+        
+        // Simplified cancer type mapping after synonym correction
+        const cancerSynonymMap = {
+            // Direct mapping to database cancer types
+            'lung': 'lung',
+            'breast': 'breast', 
+            'gastric': 'gastric',
+            'colorectal': 'colorectal',
+            'brain': 'brain',
+            'hepatocellular': 'hepatocellular',
+            'renal': 'renal',
+            'pancreatic': 'pancreatic',
+            'head': 'head_neck',
+            'neck': 'head_neck',
+            'esophageal': 'esophageal',
+            'leukemia': 'leukemia',
+            'lymphoma': 'lymphoma',
+            'ovarian': 'ovarian',
+            'endometrial': 'endometrial',
+            'cervical': 'cervical',
+            'prostate': 'prostate',
+            'bladder': 'bladder',
+            'testicular': 'testicular',
+            'penile': 'penile',
+            'melanoma': 'melanoma',
+            'bone': 'bone',
+            'thyroid': 'thyroid',
+            'biliary': 'biliary',
+            'anal': 'anal',
+            'mesothelioma': 'mesothelioma',
+            'thymoma': 'thymoma',
+            'neuroendocrine': 'neuroendocrine',
+            'gist': 'gist',
+            'vulvar': 'vulvar_vaginal',
+            'vaginal': 'vulvar_vaginal',
+            'adrenocortical': 'adrenocortical',
+            'basal': 'basal_cell',
+            'merkel': 'merkel_cell',
+            'triple': 'breast', // for "triple negative breast"
+            'negative': 'breast' // for "triple negative breast"
+        };
+        
+        const cancerTypes = Object.keys(cancerSynonymMap);
+        const queryCancerType = queryWords.find(word => cancerTypes.includes(word));
+        const mappedCancerType = queryCancerType ? cancerSynonymMap[queryCancerType] : null;
+        
+        // If a cancer type is specified, ONLY return protocols from that cancer type
+        if (mappedCancerType) {
+            // Direct comparison using mapped cancer type
+            const protocolCancerMatch = protocol.cancerType === mappedCancerType;
+            
+            console.log(`Search term: "${queryCancerType}" -> Mapped to: "${mappedCancerType}" -> Protocol type: "${protocol.cancerType}" -> Match: ${protocolCancerMatch}`);
+            
+            // If cancer type doesn't match, exclude this protocol
+            if (!protocolCancerMatch) {
+                return false;
+            }
+        }
+        
+        // Enhanced matching logic for remaining words
+        let matchScore = 0;
+        const allCancerRelatedTerms = [...cancerTypes, 'cancer', 'carcinoma', 'adenocarcinoma', 'squamous', 'cell', 'tumor', 'neoplasm'];
+        const nonCancerWords = queryWords.filter(word => !allCancerRelatedTerms.includes(word));
+        const requiredMatches = Math.max(1, Math.min(nonCancerWords.length, 2));
+        
+        nonCancerWords.forEach(queryWord => {
+            // For biomarker searches, be very specific
+            if (['egfr', 'alk', 'ros1', 'ntrk', 'braf'].includes(queryWord)) {
+                // EGFR search should only match EGFR-related protocols
+                if (queryWord === 'egfr' && (protocolWords.some(word => word.includes('egfr')) || protocolWords.some(word => ['osimertinib', 'erlotinib', 'afatinib', 'mobocertinib', 'exon19', 'l858r', 'exon20'].includes(word)))) {
+                    matchScore += 4;
+                }
+                // ALK search should only match ALK-related protocols
+                else if (queryWord === 'alk' && (protocolWords.some(word => word.includes('alk')) || protocolWords.some(word => ['alectinib', 'crizotinib', 'brigatinib', 'lorlatinib', 'rearrangement'].includes(word)))) {
+                    matchScore += 4;
+                }
+                // ROS1 search should only match ROS1-related protocols
+                else if (queryWord === 'ros1' && (protocolWords.some(word => word.includes('ros1')) || protocolWords.some(word => ['entrectinib'].includes(word)))) {
+                    matchScore += 4;
+                }
+                // NTRK search should only match NTRK-related protocols
+                else if (queryWord === 'ntrk' && (protocolWords.some(word => word.includes('ntrk')) || protocolWords.some(word => ['larotrectinib', 'entrectinib'].includes(word)))) {
+                    matchScore += 4;
+                }
+                // BRAF search should only match BRAF-related protocols
+                else if (queryWord === 'braf' && (protocolWords.some(word => word.includes('braf')) || protocolWords.some(word => ['vemurafenib', 'dabrafenib', 'trametinib', 'v600'].includes(word)))) {
+                    matchScore += 4;
+                }
+            }
+            // For PD-1/PD-L1 immunotherapy
+            else if (['pd-1', 'pd-l1', 'pdl1', 'pd1', 'immunotherapy', 'checkpoint'].includes(queryWord)) {
+                if (protocolWords.some(word => ['pd-1', 'pd-l1', 'pembrolizumab', 'nivolumab', 'atezolizumab', 'durvalumab', 'cemiplimab', 'dostarlimab', 'avelumab', 'immunotherapy', 'checkpoint'].includes(word))) {
+                    matchScore += 4;
+                }
+            }
+            // For HER2
+            else if (['her2', 'herceptin', 'trastuzumab'].includes(queryWord)) {
+                if (protocolWords.some(word => ['her2', 'trastuzumab', 'pertuzumab', 't-dxd', 't-dm1', 'herceptin'].includes(word))) {
+                    matchScore += 4;
+                }
+            }
+            // For VEGF (only when specifically searched for)
+            else if (['vegf', 'vegfr', 'angiogenesis', 'bevacizumab', 'avastin'].includes(queryWord)) {
+                if (protocolWords.some(word => ['vegf', 'vegfr', 'bevacizumab', 'ramucirumab', 'axitinib', 'pazopanib', 'angiogenesis'].includes(word))) {
+                    matchScore += 4;
+                }
+            }
+            // For general terms
+            else {
+                // Exact word match
+                if (protocolWords.some(word => word === queryWord)) {
+                    matchScore += 3;
+                }
+                // Substring match
+                else if (protocolWords.some(word => word.includes(queryWord) && queryWord.length > 2)) {
+                    matchScore += 2;
+                }
+                // Fuzzy match for longer words
+                else if (queryWord.length > 4) {
+                    const fuzzyMatches = protocolWords.filter(word => 
+                        word.length > 3 && fuzzyMatch(queryWord, word, 0.75)
+                    );
+                    if (fuzzyMatches.length > 0) {
+                        matchScore += 1;
+                    }
+                }
+            }
+        });
+        
+        // Special boost for biomarker + stage combinations (within the correct cancer type)
+        const isBiomarkerSearch = nonCancerWords.some(word => 
+            ['egfr', 'alk', 'pd-l1', 'pd-1', 'her2', 'brca', 'ros1', 'ntrk', 'braf', 'msi', 'vegf', 'vegfr'].includes(word)
+        );
+        const isStageSearch = nonCancerWords.some(word => 
+            ['neoadjuvant', 'adjuvant', 'metastatic', 'advanced', 'neo', 'adj', 'met'].includes(word)
+        );
+        
+        if (isBiomarkerSearch || isStageSearch) {
+            matchScore += 1; // Small boost for clinical terms
+        }
+        
+        return matchScore >= requiredMatches;
+    });
+    
+    // Sort by relevance and return
+    clinicalResults.sort((a, b) => {
+        const aStrength = calculateMatchStrength(queryWords, a.searchTextNormalized);
+        const bStrength = calculateMatchStrength(queryWords, b.searchTextNormalized);
+        
+        if (aStrength !== bStrength) return bStrength - aStrength;
+        return a.name.localeCompare(b.name);
+    });
+    
+    return clinicalResults.slice(0, 50);
+}
+
+// Helper function to calculate match strength for sorting
+function calculateMatchStrength(queryWords, protocolText) {
+    const protocolWords = protocolText.split(' ');
+    let strength = 0;
+    
+    queryWords.forEach(queryWord => {
+        if (protocolWords.some(word => word === queryWord)) {
+            strength += 3;
+        } else if (protocolWords.some(word => word.includes(queryWord) && queryWord.length > 2)) {
+            strength += 2;
+        } else if (queryWord.length > 4 && protocolWords.some(word => fuzzyMatch(queryWord, word, 0.75))) {
+            strength += 1;
+        }
+    });
+    
+    return strength;
 }
 
 function displaySearchSuggestions(suggestions) {
