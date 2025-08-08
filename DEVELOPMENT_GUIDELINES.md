@@ -942,4 +942,130 @@ Multiple myeloma treatment is uniquely stratified by transplant eligibility due 
 
 ---
 
+---
+
+## **19. SEARCH FUNCTIONALITY & SYNONYM MAPPING**
+
+### **Clinical Search Intelligence:**
+
+#### **Global Search System:**
+- **Scope:** Search across ALL cancer types and protocols
+- **Intelligence:** Biomarker-aware (EGFR, ALK, PD-L1, etc.)
+- **Precision:** Cancer-type specific filtering to prevent cross-contamination
+- **Fuzzy Matching:** Levenshtein distance algorithm for typo tolerance
+
+#### **Medical Synonym Support:**
+- **Purpose:** Allow clinicians to search using common medical terminology
+- **Coverage:** Organ-specific terms, medical abbreviations, and clinical synonyms
+
+### **Synonym Mapping Implementation:**
+
+#### **Two-Layer Synonym System:**
+
+**Layer 1: Query Preprocessing (`handleCommonMisspellings()`)**
+- Converts user search terms to standardized database terms
+- Examples: `'stomach'` → `'gastric'`, `'liver'` → `'hepatocellular'`, `'glioma'` → `'brain'`
+
+**Layer 2: Protocol Indexing (`generateSearchAliases()`)**
+- Adds synonym terms to protocol searchText during database indexing
+- Ensures protocols are discoverable by both original and synonym terms
+
+#### **Cancer Type Synonyms:**
+```javascript
+// Query preprocessing synonyms
+'stomach': 'gastric',           // Stomach cancer → Gastric cancer
+'liver': 'hepatocellular',      // Liver cancer → Hepatocellular carcinoma
+'kidney': 'renal',              // Kidney cancer → Renal cell carcinoma
+'glioma': 'brain',              // Glioma → Brain cancer
+'blood': 'leukemia',            // Blood cancer → Leukemia
+'pulmonary': 'lung',            // Pulmonary → Lung cancer
+'gastro': 'gastric',            // Gastro → Gastric
+'hepatic': 'hepatocellular',    // Hepatic → Hepatocellular
+```
+
+#### **Protocol Indexing Synonyms:**
+```javascript
+// Added to searchText during protocol indexing
+if (text.includes('gastric cancer')) {
+    aliases += ' stomach gastro';
+}
+if (text.includes('brain cancer')) {
+    aliases += ' glioma glioblastoma glia gbm';
+}
+if (text.includes('hepatocellular')) {
+    aliases += ' liver hepatic hcc';
+}
+if (text.includes('renal')) {
+    aliases += ' kidney';
+}
+if (text.includes('leukemia')) {
+    aliases += ' blood haematological hematological';
+}
+```
+
+### **Cancer-Type Precision Logic:**
+
+#### **Strict Cancer Type Filtering:**
+- **Problem:** Searches like "lung neoadjuvant" were returning gastric/breast protocols
+- **Solution:** Implemented `protocolCancerMatch = protocol.cancerType === mappedCancerType`
+- **Result:** Cancer-type specific searches only return protocols from that cancer type
+
+#### **Biomarker Intelligence:**
+- **EGFR Search:** Only returns protocols with EGFR-targeting drugs (osimertinib, erlotinib, etc.)
+- **ALK Search:** Only returns protocols with ALK inhibitors (alectinib, crizotinib, etc.)
+- **PD-L1 Search:** Returns PD-1/PD-L1 inhibitor protocols
+- **Cross-contamination Prevention:** Biomarker searches are cancer-type aware
+
+### **Search Algorithm Flow:**
+
+1. **Misspelling Correction:** Convert user query through medical synonyms
+2. **Exact Match Attempt:** Look for direct substring matches first
+3. **Clinical Intelligence:** Apply biomarker and cancer-type filtering
+4. **Fuzzy Matching:** Use Levenshtein distance for partial matches
+5. **Result Ranking:** Prioritize protocol name matches over drug name matches
+
+### **Implementation Requirements:**
+
+#### **Adding New Cancer Type Synonyms:**
+1. **Add to `handleCommonMisspellings()`:** Map search term to database term
+2. **Add to `generateSearchAliases()`:** Include synonym in protocol searchText
+3. **Test Both Directions:** Ensure search works for both original and synonym terms
+
+#### **Quality Assurance Checklist:**
+- [ ] Synonym works in both global and cancer-specific search
+- [ ] Cancer type filtering prevents cross-contamination
+- [ ] Biomarker searches return only relevant protocols
+- [ ] Fuzzy matching handles common typos
+- [ ] Medical abbreviations are supported (HCC, CRC, NSCLC, etc.)
+
+### **Medical Terminology Coverage:**
+
+#### **Organ-Based Synonyms:**
+- **Gastric:** stomach, gastro, gastric
+- **Hepatocellular:** liver, hepatic, HCC
+- **Renal:** kidney, renal cell
+- **Brain:** glioma, glioblastoma, GBM, glia
+- **Colorectal:** colon, rectal, bowel, CRC
+- **Lung:** pulmonary, respiratory, NSCLC, SCLC
+
+#### **System-Based Synonyms:**
+- **Hematologic:** blood, haematological, hematological
+- **Genitourinary:** GU, urologic
+- **Gynecologic:** GYN, gynecologic
+
+### **Performance Considerations:**
+
+#### **Search Optimization:**
+- **Index Generation:** Synonyms added during app initialization, not at search time
+- **Caching:** Search aliases cached in protocol objects for fast retrieval  
+- **Fuzzy Match Limits:** Limited to reasonable string distance to prevent performance issues
+- **Result Limiting:** Cap results at 50 protocols to maintain responsiveness
+
+#### **Memory Efficiency:**
+- **Shared Synonyms:** Common drug abbreviations shared across protocols
+- **Compressed Storage:** Normalized search strings remove extra whitespace
+- **Lazy Loading:** Fuzzy matching only applied when exact matches insufficient
+
+---
+
 This reference guide should be updated whenever new patterns or logic are introduced to maintain consistency across the application.
