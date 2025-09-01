@@ -1068,4 +1068,178 @@ if (text.includes('leukemia')) {
 
 ---
 
+## **20. FEBRILE NEUTROPENIA (FN) RISK & EMETOGENICITY PROFILES**
+
+### **Clinical Rationale:**
+Every chemotherapy regimen carries specific risks for febrile neutropenia and chemotherapy-induced nausea/vomiting (CINV). These risk profiles directly inform supportive care decisions including G-CSF prophylaxis and antiemetic prescribing.
+
+### **Risk Categories:**
+
+#### **Febrile Neutropenia (FN) Risk:**
+- **High Risk:** ≥20% risk of febrile neutropenia
+- **Intermediate Risk:** 10-20% risk of febrile neutropenia  
+- **Low Risk:** <10% risk of febrile neutropenia
+
+#### **Emetogenicity Profile:**
+- **High (>90%):** >90% of patients experience acute emesis without prophylaxis
+- **Moderate (30-90%):** 30-90% of patients experience acute emesis without prophylaxis
+- **Low (10-30%):** 10-30% of patients experience acute emesis without prophylaxis
+- **Minimal (<10%):** <10% of patients experience acute emesis without prophylaxis
+
+### **Implementation Approach:**
+
+#### **Manual Risk Assignment:**
+- **Method:** Manual assignment per regimen based on clinical evidence
+- **Rationale:** Most accurate approach accounting for combination synergistic effects
+- **Source Verification:** Cross-reference all assignments with latest NCCN guidelines
+- **Maintenance:** Review annually with NCCN guideline updates
+
+#### **Database Structure Addition:**
+```javascript
+'regimen-key': {
+    name: 'Protocol Name (Setting)',
+    cycles: X,
+    fnRisk: 'High|Intermediate|Low',                    // NEW FIELD
+    emetogenicity: 'High|Moderate|Low|Minimal',         // NEW FIELD
+    drugs: [
+        // existing drug structure
+    ]
+}
+```
+
+### **Exception Logic - Regimens EXCLUDED from Risk Profiles:**
+
+#### **Hormonal Therapies:**
+- **Rationale:** Minimal FN risk and emetogenicity, primarily endocrine effects
+- **Exclusion:** Complete exclusion (no FN risk or emetogenicity displayed)
+- **Examples:** Tamoxifen, Anastrozole, Letrozole, Exemestane, Fulvestrant, Elacestrant, Camizestrant, Goserelin, Leuprolide, Triptorelin, Bicalutamide, Flutamide, Enzalutamide, Abiraterone
+
+#### **Oral Targeted Therapies:**
+- **Rationale:** Different toxicity profiles, minimal acute FN/emesis risk
+- **Exclusion:** Complete exclusion (no FN risk or emetogenicity displayed)
+- **Examples:** Erlotinib, Gefitinib, Osimertinib, Afatinib, Imatinib, Dasatinib, Nilotinib, Bosutinib, Ponatinib, Crizotinib, Alectinib, Ceritinib, Brigatinib, Palbociclib, Ribociclib, Abemaciclib, Olaparib, Rucaparib, Niraparib, Ibrutinib, Acalabrutinib, Zanubrutinib
+
+### **Partial Exception Logic - Selective Risk Profile Display:**
+
+#### **Immunotherapy Monotherapies:**
+- **Rationale:** Minimal FN risk but should display emetogenicity for clinical completeness
+- **FN Risk:** Excluded (minimal/negligible neutropenia risk)
+- **Emetogenicity:** Included (minimal emetic risk - important for antiemetic planning)
+- **Examples:** Pembrolizumab monotherapy, Nivolumab monotherapy, Cemiplimab monotherapy, Durvalumab monotherapy, Avelumab monotherapy, Atezolizumab monotherapy, Ipilimumab monotherapy, Toripalimab monotherapy, Tislelizumab monotherapy
+
+#### **Oral Targeted Agents (Selected):**
+- **Rationale:** Some oral agents may have minimal emetogenicity worth displaying
+- **FN Risk:** Excluded for most agents
+- **Emetogenicity:** May be included for specific agents (e.g., Cabozantinib)
+- **Examples:** Cabozantinib (emetogenicity: minimal)
+
+### **Implementation Logic:**
+```javascript
+// Function to check if regimen should display risk profiles
+function shouldShowRiskProfiles(protocol) {
+    const protocolName = protocol.name.toLowerCase();
+    
+    // Hormonal therapy keywords
+    const hormonalKeywords = ['tamoxifen', 'anastrozole', 'letrozole', 'exemestane', 'fulvestrant', 
+                             'elacestrant', 'camizestrant', 'goserelin', 'leuprolide', 'triptorelin',
+                             'bicalutamide', 'flutamide', 'enzalutamide', 'abiraterone'];
+    
+    // Oral targeted therapy keywords
+    const oralTargetedKeywords = ['erlotinib', 'gefitinib', 'osimertinib', 'afatinib', 'imatinib', 
+                                 'dasatinib', 'nilotinib', 'bosutinib', 'ponatinib', 'crizotinib',
+                                 'alectinib', 'ceritinib', 'brigatinib', 'palbociclib', 'ribociclib',
+                                 'abemaciclib', 'olaparib', 'rucaparib', 'niraparib', 'ibrutinib',
+                                 'acalabrutinib', 'zanubrutinib'];
+    
+    // Immunotherapy monotherapy detection
+    const immunoMonoKeywords = ['pembrolizumab monotherapy', 'nivolumab monotherapy', 'cemiplimab monotherapy',
+                               'durvalumab monotherapy', 'avelumab monotherapy', 'atezolizumab monotherapy',
+                               'ipilimumab monotherapy'];
+    
+    // Check for exclusions
+    const isHormonal = hormonalKeywords.some(keyword => protocolName.includes(keyword));
+    const isOralTargeted = oralTargetedKeywords.some(keyword => protocolName.includes(keyword));
+    const isImmunoMono = immunoMonoKeywords.some(keyword => protocolName.includes(keyword));
+    
+    // Return true if should show risk profiles (not in exclusion categories)
+    return !(isHormonal || isOralTargeted || isImmunoMono);
+}
+```
+
+### **Display Requirements:**
+
+#### **Page 3 (Results Display):**
+```
+Patient Summary:
+BSA: 1.85 m²
+Selected Protocol: FOLFOX
+FN Risk: Intermediate (10-20%)
+Emetogenicity: Moderate (30-90%)
+```
+
+#### **Page 5 (Final Prescription):**
+```
+Patient Summary:
+BSA: 1.85 m²
+Protocol: FOLFOX
+FN Risk: Intermediate (10-20%)
+Emetogenicity: Moderate (30-90%)
+Dose Reduction: None applied
+```
+
+### **Quality Assurance Protocol:**
+
+#### **NCCN Cross-Reference Requirements:**
+- **MANDATORY:** Cross-check ALL FN and emetogenicity assignments against latest NCCN guidelines
+- **Sources to verify:**
+  - NCCN Guidelines for Cancer Treatment-Related Infections
+  - NCCN Guidelines for Antiemesis
+  - Cancer-specific NCCN treatment guidelines
+  - ASCO/ONS Antiemetic Guidelines updates
+- **Documentation:** Note NCCN version and date of verification for each assignment
+
+#### **Drug-Specific Emetogenicity Guidelines:**
+
+##### **Carboplatin AUC Rules:**
+- **AUC ≥4**: High Emetogenic Chemotherapy (HEC) - **Emetogenicity = High**
+- **AUC <4**: Moderate Emetogenic Chemotherapy (MEC) - **Emetogenicity = Moderate**
+
+**Clinical Rationale:** Per NCCN/ASCO guidelines, carboplatin emetogenicity is dose-dependent based on AUC (Area Under Curve). Higher AUC values (≥4) significantly increase emetogenic potential, making combination regimens highly emetogenic regardless of other agents.
+
+**Implementation Examples:**
+- `Paclitaxel + Carboplatin AUC 5-6 (3-weekly)` = **High Emetogenicity** (due to carboplatin AUC ≥4)
+- `Paclitaxel + Carboplatin AUC 2 (weekly)` = **Moderate Emetogenicity** (due to carboplatin AUC <4)
+- `Paclitaxel monotherapy (3-weekly)` = **Low Emetogenicity** (no carboplatin)
+
+**IMPORTANT:** When updating emetogenicity profiles, always consider carboplatin AUC in combination regimens - do not solely base emetogenicity on non-platinum agents.
+
+- **Conflict Resolution:** If discrepancies exist, prioritize most recent NCCN recommendation
+
+#### **Assignment Workflow:**
+1. **Alphabetical Implementation:** Process cancer types in alphabetical order
+2. **Evidence Review:** Check latest NCCN guidelines for each regimen
+3. **Risk Assignment:** Assign appropriate FN and emetogenicity categories
+4. **Exception Screening:** Apply exclusion logic for hormonal/oral targeted/immunotherapy monotherapies
+5. **Documentation:** Record evidence source and date of assignment
+6. **Testing:** Verify display appears correctly on Pages 3 and 5
+
+#### **Update Schedule:**
+- **Annual Review:** Complete re-verification with updated NCCN guidelines
+- **Real-time Updates:** Monitor NCCN updates throughout the year for high-impact changes
+- **New Regimen Protocol:** All new regimens must include risk profile assignment from latest guidelines
+
+### **Clinical Benefits:**
+
+#### **For Prescribers:**
+- **G-CSF Decision Support:** Clear FN risk categories guide prophylaxis decisions
+- **Antiemetic Planning:** Emetogenicity profiles inform supportive care prescribing
+- **Patient Counseling:** Risk awareness enables appropriate patient education
+
+#### **For Clinical Teams:**
+- **Standardized Assessment:** Consistent risk evaluation across all regimens
+- **Evidence-Based Decisions:** NCCN-verified risk assignments ensure guideline compliance
+- **Workflow Integration:** Risk profiles support clinical decision-making at point of care
+
+---
+
 This reference guide should be updated whenever new patterns or logic are introduced to maintain consistency across the application.
