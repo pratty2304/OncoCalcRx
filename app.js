@@ -3438,6 +3438,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel': {
             name: 'Paclitaxel + Carboplatin (PC) (GOG-158) (Adjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -3446,6 +3448,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel-Weekly': {
             name: 'Paclitaxel + Carboplatin (PC) Weekly (GOG-262) (Metastatic)',
             cycles: 18,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days' },
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
@@ -3465,6 +3469,8 @@ const protocolDatabase = {
         'Bevacizumab-Carboplatin-Paclitaxel': {
             name: 'Bevacizumab + Paclitaxel + Carboplatin (GOG-218/ICON7) (VEGF inhibitor) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -3474,6 +3480,8 @@ const protocolDatabase = {
         'Durvalumab-Olaparib-Bevacizumab-Carboplatin-Paclitaxel': {
             name: 'Durvalumab + Olaparib + Bevacizumab + Paclitaxel + Carboplatin (DUO-O) (PD-L1 inhibitor + PARP inhibitor) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Durvalumab', dose: 1120, unit: 'mg', schedule: 'D1, every 21 days' },
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily from cycle 1' },
@@ -3486,6 +3494,8 @@ const protocolDatabase = {
         'IP-Cisplatin-Paclitaxel': {
             name: 'IP Cisplatin + IV Paclitaxel + IP Paclitaxel (intraperitoneal therapy) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel (IV)', dose: 135, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin (IP)', dose: 75, unit: 'mg/m²', schedule: 'D2, every 21 days' },
@@ -3495,6 +3505,8 @@ const protocolDatabase = {
         'Veliparib-Carboplatin-Paclitaxel': {
             name: 'Veliparib + Paclitaxel + Carboplatin (BRCA+) (PARP inhibitor) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Veliparib', dose: 150, unit: 'mg', schedule: 'PO twice daily until progression' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -3505,6 +3517,8 @@ const protocolDatabase = {
         'Carboplatin-Cyclophosphamide': {
             name: 'Carboplatin + Cyclophosphamide (elderly/frail patients) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
                 { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 28 days' }
@@ -3515,6 +3529,8 @@ const protocolDatabase = {
         'Carboplatin-Pegylated-Liposomal-Doxorubicin': {
             name: 'Carboplatin + Pegylated Liposomal Doxorubicin (CALYPSO) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 28 days' },
                 { name: 'Pegylated Liposomal Doxorubicin', dose: 30, unit: 'mg/m²', schedule: 'D1, every 28 days' }
@@ -3523,6 +3539,8 @@ const protocolDatabase = {
         'Carboplatin-Gemcitabine': {
             name: 'Gemcitabine + Carboplatin (AGO-OVAR-2.5) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -3531,6 +3549,8 @@ const protocolDatabase = {
         'Gemcitabine-Cisplatin': {
             name: 'Gemcitabine + Cisplatin (GC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -3539,6 +3559,8 @@ const protocolDatabase = {
         'Pemetrexed-Carboplatin': {
             name: 'Pemetrexed + Carboplatin (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -3566,6 +3588,8 @@ const protocolDatabase = {
         'Trabectedin': {
             name: 'Trabectedin monotherapy (alkylating agent) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Trabectedin', dose: 1.3, unit: 'mg/m²', schedule: 'D1, every 21 days (24-hour infusion)' }
             ]
@@ -3573,6 +3597,8 @@ const protocolDatabase = {
         'Mirvetuximab-Soravtansine': {
             name: 'Mirvetuximab Soravtansine (SORAYA/MIRASOL) (FRα-ADC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Mirvetuximab Soravtansine', dose: 6, unit: 'mg/kg', schedule: 'D1, every 21 days (folate receptor α positive)' }
             ]
@@ -3580,6 +3606,8 @@ const protocolDatabase = {
         'Gemcitabine-Doxorubicin-Liposomal': {
             name: 'Gemcitabine + Doxorubicin liposomal (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Doxorubicin liposomal', dose: 30, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -3589,6 +3617,8 @@ const protocolDatabase = {
         'Paclitaxel-Single': {
             name: 'Paclitaxel monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days x 18 weeks' }
             ]
@@ -3596,6 +3626,8 @@ const protocolDatabase = {
         'Doxorubicin-Liposomal': {
             name: 'Doxorubicin liposomal monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Doxorubicin liposomal', dose: 40, unit: 'mg/m²', schedule: 'D1, every 28 days' }
             ]
@@ -3603,6 +3635,8 @@ const protocolDatabase = {
         'Gemcitabine-Single': {
             name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
@@ -3610,6 +3644,8 @@ const protocolDatabase = {
         'Altretamine': {
             name: 'Altretamine monotherapy (alkylating agent) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Altretamine', dose: 260, unit: 'mg/m²', schedule: 'PO once daily D1-D14, every 28 days' }
             ]
@@ -3617,6 +3653,8 @@ const protocolDatabase = {
         'Ixabepilone': {
             name: 'Ixabepilone monotherapy (microtubule inhibitor) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Ixabepilone', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -3624,6 +3662,8 @@ const protocolDatabase = {
         'Etoposide': {
             name: 'Etoposide monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Etoposide', dose: 50, unit: 'mg/m²', schedule: 'PO once daily D1-D21, every 28 days' }
             ]
@@ -3631,6 +3671,8 @@ const protocolDatabase = {
         'Vinorelbine': {
             name: 'Vinorelbine monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, every 7 days x 18 weeks' }
             ]
@@ -3638,6 +3680,8 @@ const protocolDatabase = {
         'Pemetrexed-Single': {
             name: 'Pemetrexed monotherapy (antimetabolite) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -3645,6 +3689,8 @@ const protocolDatabase = {
         'Capecitabine': {
             name: 'Capecitabine monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Capecitabine', dose: 1000, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
             ]
@@ -3653,6 +3699,7 @@ const protocolDatabase = {
         'Olaparib-Bevacizumab': {
             name: 'Olaparib + Bevacizumab (PARP inhibitor + VEGF inhibitor) (Maintenance)',
             cycles: 24,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily until progression' },
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days, then olaparib alone' }
@@ -3661,6 +3708,7 @@ const protocolDatabase = {
         'Niraparib-Bevacizumab': {
             name: 'Niraparib + Bevacizumab (PARP inhibitor + VEGF inhibitor) (Maintenance)',
             cycles: 24,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'PO once daily until progression (individualized dosing)' },
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days, then niraparib alone' }
@@ -3669,6 +3717,7 @@ const protocolDatabase = {
         'Bevacizumab-Maintenance': {
             name: 'Bevacizumab (GOG-218) (VEGF inhibitor) (Maintenance)',
             cycles: 22,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -3676,6 +3725,7 @@ const protocolDatabase = {
         'Olaparib': {
             name: 'Olaparib (BRCA+ Maintenance) (PARP inhibitor)',
             cycles: 24,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'PO twice daily until progression (BRCA1/2 mutation)' }
             ]
@@ -3683,6 +3733,7 @@ const protocolDatabase = {
         'Rucaparib': {
             name: 'Rucaparib (BRCA+ or HRD+ Maintenance) (PARP inhibitor)',
             cycles: 24,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Rucaparib', dose: 600, unit: 'mg', schedule: 'PO twice daily until progression (BRCA1/2 or HRD+)' }
             ]
@@ -3690,6 +3741,7 @@ const protocolDatabase = {
         'Niraparib': {
             name: 'Niraparib (PARP inhibitor) (Maintenance)',
             cycles: 24,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'PO once daily until progression (individualized dosing: 200-300mg)' }
             ]
@@ -3697,6 +3749,7 @@ const protocolDatabase = {
         'Talazoparib': {
             name: 'Talazoparib (BRCA+ Maintenance) (PARP inhibitor)',
             cycles: 24,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'PO once daily until progression (BRCA1/2 mutation)' }
             ]
@@ -3705,6 +3758,7 @@ const protocolDatabase = {
         'Dostarlimab': {
             name: 'Dostarlimab (PD-1 inhibitor) (dMMR/MSI-H Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 1000mg every 42 days' }
             ]
@@ -3712,6 +3766,7 @@ const protocolDatabase = {
         'Pembrolizumab-Ovarian': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (MSI-H/dMMR Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 400mg every 42 days' }
             ]
@@ -3719,6 +3774,7 @@ const protocolDatabase = {
         'Bevacizumab-Single': {
             name: 'Bevacizumab monotherapy (VEGF inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -3728,6 +3784,8 @@ const protocolDatabase = {
         'BEP': {
             name: 'Bleomycin + Etoposide + Cisplatin (BEP) (Germ Cell Features) (Metastatic)',
             cycles: 3,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -3739,6 +3797,8 @@ const protocolDatabase = {
         'Cisplatin-Cyclophosphamide': {
             name: 'Cisplatin + Cyclophosphamide (Historical) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cyclophosphamide', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -3749,6 +3809,8 @@ const protocolDatabase = {
         'Docetaxel-Prednisone': {
             name: 'Docetaxel + Prednisone (TAX-327) (mCSPC/mCRPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
@@ -3757,6 +3819,8 @@ const protocolDatabase = {
         'Docetaxel-ADT': {
             name: 'Docetaxel + ADT (CHAARTED/STAMPEDE) (mCSPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' },
@@ -3766,6 +3830,8 @@ const protocolDatabase = {
         'Docetaxel-Prednisone-Bevacizumab': {
             name: 'Docetaxel + Prednisone + Bevacizumab (mCRPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' },
@@ -3775,6 +3841,8 @@ const protocolDatabase = {
         'Cabazitaxel-Prednisone': {
             name: 'Cabazitaxel + Prednisone (TROPIC) (mCRPC post-docetaxel)',
             cycles: 8,
+            fnRisk: 'High',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
@@ -3783,6 +3851,8 @@ const protocolDatabase = {
         'Cabazitaxel-25': {
             name: 'Cabazitaxel 25mg/m² + Prednisone (PROSELICA) (mCRPC post-docetaxel)',
             cycles: 8,
+            fnRisk: 'High',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Cabazitaxel', dose: 25, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 10, unit: 'mg', schedule: 'daily, continuous' }
@@ -3791,6 +3861,8 @@ const protocolDatabase = {
         'Cabazitaxel-Carboplatin': {
             name: 'Cabazitaxel + Carboplatin (mCRPC - DNA repair defects)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -3799,6 +3871,7 @@ const protocolDatabase = {
         'Abiraterone-Prednisone-mCSPC': {
             name: 'Abiraterone + Prednisone (LATITUDE/STAMPEDE) (mCSPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
@@ -3807,6 +3880,7 @@ const protocolDatabase = {
         'Abiraterone-Prednisone-mCRPC': {
             name: 'Abiraterone + Prednisone (COU-AA-301/302) (mCRPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
@@ -3815,6 +3889,8 @@ const protocolDatabase = {
         'Abiraterone-Docetaxel-ADT': {
             name: 'Abiraterone + Docetaxel + ADT (PEACE-1) (mCSPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' },
@@ -3825,6 +3901,8 @@ const protocolDatabase = {
         'Darolutamide-Docetaxel-ADT': {
             name: 'Darolutamide + Docetaxel + ADT (ARASENS) (mCSPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Darolutamide', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days x 6 cycles' },
@@ -3834,6 +3912,7 @@ const protocolDatabase = {
         'Niraparib-Abiraterone-Prednisone': {
             name: 'Niraparib + Abiraterone + Prednisone (MAGNITUDE) (mCRPC - HRR mutations)',
             cycles: 12,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'daily, continuous (HRR gene mutations)' },
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
@@ -3843,6 +3922,7 @@ const protocolDatabase = {
         'Niraparib-Abiraterone-mCSPC': {
             name: 'Niraparib + Abiraterone + Prednisone (AMPLITUDE) (mCSPC)',
             cycles: 12,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Niraparib', dose: 200, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
@@ -3852,6 +3932,7 @@ const protocolDatabase = {
         'Olaparib-Abiraterone-Prednisone': {
             name: 'Olaparib + Abiraterone + Prednisone (mCRPC - HRR mutations)',
             cycles: 12,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Olaparib', dose: 300, unit: 'mg', schedule: 'twice daily, continuous (HRR gene mutations)' },
                 { name: 'Abiraterone acetate', dose: 1000, unit: 'mg', schedule: 'daily on empty stomach, continuous' },
@@ -3861,6 +3942,7 @@ const protocolDatabase = {
         'Talazoparib-Enzalutamide': {
             name: 'Talazoparib + Enzalutamide (mCRPC - HRR mutations)',
             cycles: 12,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Talazoparib', dose: 1, unit: 'mg', schedule: 'daily, continuous (HRR gene mutations)' },
                 { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' }
@@ -3869,6 +3951,8 @@ const protocolDatabase = {
         'Mitoxantrone-Prednisone': {
             name: 'Mitoxantrone + Prednisone (mCRPC - palliation)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Mitoxantrone', dose: 12, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Prednisone', dose: 5, unit: 'mg', schedule: 'twice daily, continuous' }
@@ -3877,6 +3961,8 @@ const protocolDatabase = {
         'Estramustine-Etoposide': {
             name: 'Estramustine + Etoposide (mCRPC)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily x 21 days' },
                 { name: 'Etoposide', dose: 50, unit: 'mg/m²', days: 'D1-D21', schedule: 'daily x 21 days, every 28 days' }
@@ -3885,6 +3971,8 @@ const protocolDatabase = {
         'Estramustine-Vinblastine': {
             name: 'Estramustine + Vinblastine (mCRPC)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' },
                 { name: 'Vinblastine', dose: 4, unit: 'mg/m²', schedule: 'weekly x 6 weeks, then every 14 days' }
@@ -3893,6 +3981,8 @@ const protocolDatabase = {
         'Paclitaxel-Estramustine': {
             name: 'Paclitaxel + Estramustine (mCRPC)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 100, unit: 'mg/m²', schedule: 'weekly x 6 weeks' },
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' }
@@ -3901,6 +3991,8 @@ const protocolDatabase = {
         'Docetaxel-Estramustine': {
             name: 'Docetaxel + Estramustine (mCRPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, days 1-5' }
@@ -3909,6 +4001,7 @@ const protocolDatabase = {
         'Flutamide-Leuprolide': {
             name: 'Flutamide + Leuprolide (Combined androgen blockade)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' },
                 { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
@@ -3917,6 +4010,7 @@ const protocolDatabase = {
         'Flutamide-Goserelin': {
             name: 'Flutamide + Goserelin (Combined androgen blockade)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' },
                 { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC D1, every 84 days, continuous' }
@@ -3925,6 +4019,7 @@ const protocolDatabase = {
         'Enzalutamide-mCSPC': {
             name: 'Enzalutamide + ADT (ARCHES/ENZAMET) (mCSPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
@@ -3933,6 +4028,7 @@ const protocolDatabase = {
         'Enzalutamide-mCRPC': {
             name: 'Enzalutamide Monotherapy (AFFIRM/PREVAIL) (mCRPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' }
             ]
@@ -3940,6 +4036,7 @@ const protocolDatabase = {
         'Enzalutamide-M0HSPC': {
             name: 'Enzalutamide ± Leuprolide (EMBARK) (M0 high-risk HSPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Enzalutamide', dose: 160, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'Leuprolide (optional)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
@@ -3948,6 +4045,7 @@ const protocolDatabase = {
         'Apalutamide-nmCRPC': {
             name: 'Apalutamide + ADT (SPARTAN) (nmCRPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Apalutamide', dose: 240, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
@@ -3956,6 +4054,7 @@ const protocolDatabase = {
         'Apalutamide-mCSPC': {
             name: 'Apalutamide + ADT (TITAN) (mCSPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Apalutamide', dose: 240, unit: 'mg', schedule: 'daily, continuous' },
                 { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
@@ -3964,6 +4063,7 @@ const protocolDatabase = {
         'Darolutamide-nmCRPC': {
             name: 'Darolutamide + ADT (ARAMIS) (nmCRPC)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Darolutamide', dose: 600, unit: 'mg', schedule: 'twice daily, continuous' },
                 { name: 'ADT (Leuprolide or equivalent)', dose: 22.5, unit: 'mg', schedule: 'IM every 3 months, continuous' }
@@ -3972,6 +4072,7 @@ const protocolDatabase = {
         'Olaparib': {
             name: 'Olaparib Monotherapy (PROfound) (HRR gene mutations) (mCRPC)',
             cycles: 12,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Olaparib', dose: 400, unit: 'mg', schedule: 'twice daily, continuous (germline/somatic HRR mutations)' }
             ]
@@ -3979,6 +4080,7 @@ const protocolDatabase = {
         'Rucaparib': {
             name: 'Rucaparib Monotherapy (TRITON2) (BRCA mutations) (mCRPC)',
             cycles: 12,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Rucaparib', dose: 600, unit: 'mg', schedule: 'twice daily, continuous (BRCA1/2 mutations)' }
             ]
@@ -3986,6 +4088,7 @@ const protocolDatabase = {
         'Pembrolizumab-Prostate': {
             name: 'Pembrolizumab Monotherapy (MSI-H/dMMR) (mCRPC)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days (MSI-H/dMMR)' }
             ]
@@ -3993,6 +4096,7 @@ const protocolDatabase = {
         'Leuprolide': {
             name: 'Leuprolide Monotherapy (ADT)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Leuprolide', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
             ]
@@ -4000,6 +4104,7 @@ const protocolDatabase = {
         'Leuprolide-Monthly': {
             name: 'Leuprolide Monthly Monotherapy (ADT)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Leuprolide', dose: 7.5, unit: 'mg', schedule: 'IM D1, every 28 days, continuous' }
             ]
@@ -4007,6 +4112,7 @@ const protocolDatabase = {
         'Goserelin': {
             name: 'Goserelin Monotherapy (ADT)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Goserelin', dose: 10.8, unit: 'mg', schedule: 'SC D1, every 84 days, continuous' }
             ]
@@ -4014,6 +4120,7 @@ const protocolDatabase = {
         'Goserelin-Monthly': {
             name: 'Goserelin Monthly Monotherapy (ADT)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Goserelin', dose: 3.6, unit: 'mg', schedule: 'SC D1, every 28 days, continuous' }
             ]
@@ -4021,6 +4128,7 @@ const protocolDatabase = {
         'Degarelix': {
             name: 'Degarelix Monotherapy (GnRH antagonist)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Degarelix', dose: 240, maintenanceDose: 80, unit: 'mg', schedule: 'SC loading dose D1, then 80mg every 28 days', hasLoadingDose: true }
             ]
@@ -4028,6 +4136,7 @@ const protocolDatabase = {
         'Relugolix': {
             name: 'Relugolix Monotherapy (HERO) (Oral GnRH antagonist)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Relugolix', dose: 360, maintenanceDose: 120, unit: 'mg', schedule: 'loading dose D1, then 120mg daily, continuous', hasLoadingDose: true }
             ]
@@ -4035,6 +4144,7 @@ const protocolDatabase = {
         'Bicalutamide': {
             name: 'Bicalutamide Monotherapy (Antiandrogen)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Bicalutamide', dose: 50, unit: 'mg', schedule: 'daily, continuous' }
             ]
@@ -4042,6 +4152,7 @@ const protocolDatabase = {
         'Flutamide': {
             name: 'Flutamide Monotherapy (Antiandrogen)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Flutamide', dose: 250, unit: 'mg', schedule: 'three times daily, continuous' }
             ]
@@ -4049,6 +4160,7 @@ const protocolDatabase = {
         'Nilutamide': {
             name: 'Nilutamide Monotherapy (Antiandrogen)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nilutamide', dose: 300, maintenanceDose: 150, unit: 'mg', schedule: 'daily x 30 days, then 150mg daily', hasLoadingDose: true }
             ]
@@ -4056,6 +4168,7 @@ const protocolDatabase = {
         'Ketoconazole': {
             name: 'Ketoconazole + Hydrocortisone (CYP17 inhibitor)',
             cycles: 6,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Ketoconazole', dose: 400, unit: 'mg', schedule: 'three times daily, continuous' },
                 { name: 'Hydrocortisone', dose: 30, unit: 'mg', schedule: 'daily, continuous' }
@@ -4064,6 +4177,7 @@ const protocolDatabase = {
         'Aminoglutethimide': {
             name: 'Aminoglutethimide + Hydrocortisone (Adrenal enzyme inhibitor)',
             cycles: 6,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Aminoglutethimide', dose: 250, unit: 'mg', schedule: 'four times daily, continuous' },
                 { name: 'Hydrocortisone', dose: 40, unit: 'mg', schedule: 'daily, continuous' }
@@ -4072,6 +4186,7 @@ const protocolDatabase = {
         'Sipuleucel-T': {
             name: 'Sipuleucel-T Immunotherapy (IMPACT)',
             cycles: 1,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Sipuleucel-T', dose: '50×10⁶', unit: 'autologous CD54+ cells', schedule: '3 infusions D1, D15, D29' }
             ]
@@ -4079,6 +4194,8 @@ const protocolDatabase = {
         'Paclitaxel-Single': {
             name: 'Paclitaxel Monotherapy (mCRPC)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
@@ -4086,6 +4203,8 @@ const protocolDatabase = {
         'Docetaxel-Single': {
             name: 'Docetaxel Monotherapy (mCRPC)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4093,6 +4212,7 @@ const protocolDatabase = {
         'Estramustine': {
             name: 'Estramustine Monotherapy (mCRPC)',
             cycles: 6,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Estramustine', dose: 280, unit: 'mg', schedule: 'three times daily, continuous' }
             ]
@@ -4100,6 +4220,7 @@ const protocolDatabase = {
         'Radium-223': {
             name: 'Radium-223 (ALSYMPCA) (Bone-targeted therapy)',
             cycles: 6,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Radium-223 dichloride', dose: 55, unit: 'kBq/kg', schedule: 'IV D1, every 28 days (bone metastases)' }
             ]
@@ -4107,6 +4228,7 @@ const protocolDatabase = {
         'Lutetium-177-PSMA': {
             name: 'Lutetium-177 PSMA-617 (VISION) (PSMA-targeted therapy)',
             cycles: 6,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lutetium-177 PSMA-617', dose: 7400, unit: 'MBq', schedule: 'IV D1, every 42 days (PSMA+ mCRPC)' }
             ]
@@ -4114,6 +4236,8 @@ const protocolDatabase = {
         'Carboplatin-Cabazitaxel': {
             name: 'Carboplatin + Cabazitaxel (Aggressive variant CRPC)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 4', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Cabazitaxel', dose: 20, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4122,6 +4246,8 @@ const protocolDatabase = {
         'Carboplatin-Docetaxel-NEPC': {
             name: 'Carboplatin + Docetaxel (Neuroendocrine prostate cancer)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4130,6 +4256,8 @@ const protocolDatabase = {
         'Cisplatin-Etoposide-NEPC': {
             name: 'Cisplatin + Etoposide (EP) (Neuroendocrine prostate cancer)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
@@ -4138,6 +4266,7 @@ const protocolDatabase = {
         'Triptorelin': {
             name: 'Triptorelin Monotherapy (ADT)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Triptorelin', dose: 22.5, unit: 'mg', schedule: 'IM D1, every 84 days, continuous' }
             ]
@@ -4145,6 +4274,7 @@ const protocolDatabase = {
         'Histrelin': {
             name: 'Histrelin Monotherapy (ADT)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Histrelin', dose: 50, unit: 'mg', schedule: 'SC implant, every 12 months' }
             ]
@@ -4152,6 +4282,7 @@ const protocolDatabase = {
         'Orchiectomy': {
             name: 'Bilateral Orchiectomy (Surgical castration)',
             cycles: 1,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Surgical castration', dose: 'N/A', unit: 'procedure', schedule: 'One-time surgical procedure' }
             ]
@@ -4162,6 +4293,7 @@ const protocolDatabase = {
         'Pembrolizumab-Adjuvant': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-564) (Adjuvant)',
             cycles: 17,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days x 17 cycles (1 year)' }
             ]
@@ -4171,6 +4303,7 @@ const protocolDatabase = {
         'Pembrolizumab-Axitinib': {
             name: 'Pembrolizumab (PD-1 inhibitor) + Axitinib (VEGFR inhibitor) (KEYNOTE-426) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then 400mg every 42 days' },
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily, continuously' }
@@ -4179,6 +4312,7 @@ const protocolDatabase = {
         'Nivolumab-Ipilimumab': {
             name: 'Nivolumab (PD-1 inhibitor) + Ipilimumab (CTLA-4 inhibitor) (CheckMate-214) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' },
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles only' }
@@ -4187,6 +4321,7 @@ const protocolDatabase = {
         'Lenvatinib-Pembrolizumab': {
             name: 'Lenvatinib (Multi-kinase inhibitor) + Pembrolizumab (PD-1 inhibitor) (CLEAR) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO daily, continuously' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then 400mg every 42 days' }
@@ -4195,6 +4330,7 @@ const protocolDatabase = {
         'Nivolumab-Cabozantinib': {
             name: 'Nivolumab + Cabozantinib (CheckMate-9ER) (PD-1 + Multi-kinase inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days, then 480mg every 28 days' },
                 { name: 'Cabozantinib', dose: 40, unit: 'mg', schedule: 'PO daily, continuously' }
@@ -4203,6 +4339,7 @@ const protocolDatabase = {
         'Avelumab-Axitinib': {
             name: 'Avelumab + Axitinib (JAVELIN Renal 101) (PD-L1 + VEGFR inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' },
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily, continuously' }
@@ -4211,6 +4348,7 @@ const protocolDatabase = {
         'Sunitinib': {
             name: 'Sunitinib (Multi-kinase inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO daily D1-28, then 14 days off (6-week cycle)' }
             ]
@@ -4218,6 +4356,7 @@ const protocolDatabase = {
         'Pazopanib': {
             name: 'Pazopanib (VEGFR inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO daily on empty stomach, continuously' }
             ]
@@ -4225,6 +4364,7 @@ const protocolDatabase = {
         'Cabozantinib': {
             name: 'Cabozantinib (Multi-kinase inhibitor) (METEOR) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -4232,6 +4372,7 @@ const protocolDatabase = {
         'Sunitinib-Continuous': {
             name: 'Sunitinib (Multi-kinase inhibitor) (Continuous dosing) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -4239,6 +4380,7 @@ const protocolDatabase = {
         'Axitinib': {
             name: 'Axitinib (VEGFR inhibitor) (AXIS) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -4246,6 +4388,7 @@ const protocolDatabase = {
         'Sorafenib': {
             name: 'Sorafenib (Multi-kinase inhibitor) (TARGET) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -4253,6 +4396,7 @@ const protocolDatabase = {
         'Nivolumab': {
             name: 'Nivolumab monotherapy (PD-1 inhibitor) (CheckMate-025) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days, then 480mg every 28 days' }
             ]
@@ -4260,6 +4404,7 @@ const protocolDatabase = {
         'Lenvatinib': {
             name: 'Lenvatinib (Multi-kinase inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -4267,6 +4412,7 @@ const protocolDatabase = {
         'Everolimus': {
             name: 'Everolimus (mTOR inhibitor) (RECORD-1) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -4274,6 +4420,7 @@ const protocolDatabase = {
         'Regorafenib': {
             name: 'Regorafenib (Multi-kinase inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO daily D1-21, then 7 days off (28-day cycle)' }
             ]
@@ -4281,6 +4428,7 @@ const protocolDatabase = {
         'Tivozanib': {
             name: 'Tivozanib (VEGFR inhibitor) (TIVO-1) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Tivozanib', dose: 1340, unit: 'mcg', schedule: 'PO daily D1-21, then 7 days off (28-day cycle)' }
             ]
@@ -4290,6 +4438,7 @@ const protocolDatabase = {
         'Cabozantinib-Nivolumab-Ipilimumab': {
             name: 'Cabozantinib + Nivolumab + Ipilimumab (COSMIC-313) (Multi-kinase + PD-1 + CTLA-4 inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Cabozantinib', dose: 40, unit: 'mg', schedule: 'PO daily, continuously' },
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 21 days x 4 cycles, then 240mg every 14 days' },
@@ -4299,6 +4448,7 @@ const protocolDatabase = {
         'Lenvatinib-Everolimus': {
             name: 'Lenvatinib + Everolimus (Study 205) (Multi-kinase + mTOR inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenvatinib', dose: 18, unit: 'mg', schedule: 'PO daily, continuously' },
                 { name: 'Everolimus', dose: 5, unit: 'mg', schedule: 'PO daily, continuously' }
@@ -4307,6 +4457,7 @@ const protocolDatabase = {
         'Lenvatinib-Belzutifan': {
             name: 'Lenvatinib + Belzutifan (KEYMAKER-U03) (Multi-kinase + HIF-2alpha inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO daily, continuously' },
                 { name: 'Belzutifan', dose: 120, unit: 'mg', schedule: 'PO daily, continuously' }
@@ -4315,6 +4466,7 @@ const protocolDatabase = {
         'Bevacizumab-Everolimus': {
             name: 'Bevacizumab + Everolimus (VEGF + mTOR inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuously' }
@@ -4323,6 +4475,7 @@ const protocolDatabase = {
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days, then 400mg every 42 days' }
             ]
@@ -4332,6 +4485,7 @@ const protocolDatabase = {
         'Belzutifan': {
             name: 'Belzutifan (HIF-2alpha inhibitor) (von Hippel-Lindau disease) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Belzutifan', dose: 120, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -4339,6 +4493,7 @@ const protocolDatabase = {
         'Erlotinib-Bevacizumab': {
             name: 'Erlotinib + Bevacizumab (Hereditary leiomyomatosis RCC) (EGFR + VEGF inhibitors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO daily, continuously' },
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' }
@@ -4347,6 +4502,7 @@ const protocolDatabase = {
         'Temsirolimus': {
             name: 'Temsirolimus (mTOR inhibitor) (ARCC) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Temsirolimus', dose: 25, unit: 'mg', schedule: 'D1, every 7 days' }
             ]
@@ -4356,6 +4512,7 @@ const protocolDatabase = {
         'Bevacizumab-Interferon': {
             name: 'Bevacizumab + Interferon alfa-2a (Historical) (VEGF inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Bevacizumab', dose: 10, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                 { name: 'Interferon alfa-2a', dose: 9, unit: 'MIU', schedule: 'SC 3x/week, continuously' }
@@ -4364,6 +4521,7 @@ const protocolDatabase = {
         'Interleukin-2': {
             name: 'Interleukin-2 (IL-2) (High-dose) (Historical) (Metastatic)',
             cycles: 2,
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Interleukin-2 (IL-2)', dose: 600000, unit: 'IU/kg', schedule: 'every 8 hours x 14 doses (cycle 1), then every 8 hours x 14 doses (cycle 2)' }
             ]
@@ -4371,6 +4529,7 @@ const protocolDatabase = {
         'Interferon-alpha': {
             name: 'Interferon alfa-2a (Historical) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Interferon alfa-2a', dose: 9, unit: 'MIU', schedule: 'SC 3x/week, continuously' }
             ]
@@ -4536,6 +4695,8 @@ const protocolDatabase = {
         'BEP': {
             name: 'Bleomycin + Etoposide + Cisplatin (BEP) (Good/Intermediate/Poor risk NSGCT) (Adjuvant/Metastatic)',
             cycles: '3-4',
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Bleomycin', dose: 30, unit: 'units', schedule: 'D1, D8, D15, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4545,6 +4706,8 @@ const protocolDatabase = {
         'EP': {
             name: 'Etoposide + Cisplatin (EP) (Good risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
             cycles: 4,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
@@ -4554,6 +4717,8 @@ const protocolDatabase = {
         'Carboplatin': {
             name: 'Carboplatin (Stage I seminoma) (Adjuvant)',
             cycles: '1-2',
+            fnRisk: 'Low',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'Single dose or every 21 days x2' }
             ]
@@ -4562,6 +4727,8 @@ const protocolDatabase = {
         'VIP': {
             name: 'Etoposide + Ifosfamide + Cisplatin (VIP) (Intermediate/Poor risk NSGCT) (Bleomycin contraindicated) (Metastatic)',
             cycles: 4,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4574,6 +4741,8 @@ const protocolDatabase = {
         'TIP': {
             name: 'Paclitaxel + Ifosfamide + Cisplatin (TIP) (First salvage therapy) (Metastatic)',
             cycles: 4,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel', dose: 250, unit: 'mg/m²', schedule: 'D1 (24-hour infusion), every 21 days' },
                 { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D2-D5, every 21 days' },
@@ -4584,6 +4753,8 @@ const protocolDatabase = {
         'VeIP': {
             name: 'Vinblastine + Ifosfamide + Cisplatin (VeIP) (Standard salvage therapy) (Metastatic)',
             cycles: 4,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Vinblastine', dose: 0.11, unit: 'mg/kg', schedule: 'D1-D2, every 21 days' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -4595,6 +4766,8 @@ const protocolDatabase = {
         'Paclitaxel-Gemcitabine-Oxaliplatin': {
             name: 'Paclitaxel + Gemcitabine + Oxaliplatin (GTP) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4604,6 +4777,8 @@ const protocolDatabase = {
         'Paclitaxel-Gemcitabine': {
             name: 'Paclitaxel + Gemcitabine (GT) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
@@ -4612,6 +4787,8 @@ const protocolDatabase = {
         'Gemcitabine-Oxaliplatin': {
             name: 'Gemcitabine + Oxaliplatin (GO) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Oxaliplatin', dose: 130, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4622,6 +4799,8 @@ const protocolDatabase = {
         'Carboplatin-Etoposide-HD': {
             name: 'High-dose Carboplatin + Etoposide (HD-CE) (Refractory/multiply relapsed) (With ASCT) (Metastatic)',
             cycles: 3,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 7', unit: 'AUC', schedule: 'D1-D3, every 21 days' },
                 { name: 'Etoposide', dose: 750, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
@@ -4630,6 +4809,8 @@ const protocolDatabase = {
         'Carboplatin-Etoposide': {
             name: 'Carboplatin + Etoposide (CE) (Cisplatin-ineligible patients) (Metastatic)',
             cycles: 4,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Etoposide', dose: 120, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
@@ -4640,6 +4821,8 @@ const protocolDatabase = {
         'Gemcitabine-Paclitaxel-Carboplatin': {
             name: 'Gemcitabine + Paclitaxel + Carboplatin (GTC) (Second/third salvage therapy) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
@@ -4651,6 +4834,7 @@ const protocolDatabase = {
         'Pembrolizumab-MSI': {
             name: 'Pembrolizumab (PD-1 inhibitor) (MSI-H/dMMR) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'IV on D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -4658,6 +4842,7 @@ const protocolDatabase = {
         'Pembrolizumab-TMB': {
             name: 'Pembrolizumab (PD-1 inhibitor) (TMB-H ≥10 mut/Mb) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'IV on D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -4667,6 +4852,8 @@ const protocolDatabase = {
         'PVB': {
             name: 'PVB (Cisplatin + Vinblastine + Bleomycin) (Historical regimen) (Metastatic)',
             cycles: 3,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Vinblastine', dose: 0.15, unit: 'mg/kg', schedule: 'D1-D2, every 21 days' },
@@ -4678,6 +4865,8 @@ const protocolDatabase = {
         'Etoposide-Oral': {
             name: 'Etoposide (Oral) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Etoposide (oral)', dose: 50, unit: 'mg', schedule: 'twice daily D1-D10 every 21 days' }
             ]
@@ -4688,6 +4877,8 @@ const protocolDatabase = {
         'Doxorubicin-Ifosfamide': {
             name: 'Doxorubicin + Ifosfamide + Mesna (AIM) (Neoadjuvant/Adjuvant)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
@@ -4697,6 +4888,8 @@ const protocolDatabase = {
         'MAID': {
             name: 'Mesna + Doxorubicin + Ifosfamide + Dacarbazine (MAID) (Neoadjuvant/Adjuvant)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4, every 21 days (uroprotection)' },
                 { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -4707,6 +4900,8 @@ const protocolDatabase = {
         'Doxorubicin-Adjuvant': {
             name: 'Doxorubicin monotherapy (Adjuvant)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4716,6 +4911,8 @@ const protocolDatabase = {
         'Doxorubicin': {
             name: 'Doxorubicin monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4723,6 +4920,8 @@ const protocolDatabase = {
         'Gemcitabine-Docetaxel': {
             name: 'Gemcitabine + Docetaxel (GemTax) (Leiomyosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 900, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Docetaxel', dose: 100, unit: 'mg/m²', schedule: 'D8, every 21 days' }
@@ -4731,6 +4930,8 @@ const protocolDatabase = {
         'Trabectedin': {
             name: 'Trabectedin (Liposarcoma/Leiomyosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Trabectedin', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4747,6 +4948,7 @@ const protocolDatabase = {
         'Pazopanib': {
             name: 'Pazopanib (VEGFR inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO daily on empty stomach, continuously' }
             ]
@@ -4754,6 +4956,8 @@ const protocolDatabase = {
         'Ifosfamide': {
             name: 'Ifosfamide + Mesna monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Ifosfamide', dose: 3000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Mesna', dose: 600, unit: 'mg/m²', schedule: '120 mg/m² before Ifosfamide, then 240 mg/m² at 4h and 8h post-Ifosfamide, D1-D3, every 21 days' }
@@ -4762,6 +4966,8 @@ const protocolDatabase = {
         'Doxorubicin-Dacarbazine': {
             name: 'Doxorubicin + Dacarbazine (AD) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Dacarbazine (DTIC)', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4770,6 +4976,8 @@ const protocolDatabase = {
         'Gemcitabine-Docetaxel-Alternative': {
             name: 'Gemcitabine + Docetaxel (Alternative dosing - well tolerated) (Leiomyosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 900, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Docetaxel', dose: 35, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -4778,6 +4986,8 @@ const protocolDatabase = {
         'Gemcitabine': {
             name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
@@ -4785,6 +4995,8 @@ const protocolDatabase = {
         'Dacarbazine-Monotherapy': {
             name: 'Dacarbazine (DTIC) monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Dacarbazine (DTIC)', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4792,6 +5004,8 @@ const protocolDatabase = {
         'Doxorubicin-Liposomal': {
             name: 'Doxorubicin liposomal (Pegylated liposomal doxorubicin) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Doxorubicin liposomal', dose: 50, unit: 'mg/m²', schedule: 'D1, every 28 days' }
             ]
@@ -4799,6 +5013,8 @@ const protocolDatabase = {
         'Gemcitabine-Vinorelbine': {
             name: 'Gemcitabine + Vinorelbine (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 800, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -4807,6 +5023,8 @@ const protocolDatabase = {
         'Docetaxel': {
             name: 'Docetaxel monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4814,6 +5032,8 @@ const protocolDatabase = {
         'Vinorelbine': {
             name: 'Vinorelbine monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
@@ -4821,6 +5041,8 @@ const protocolDatabase = {
         'Trabectedin-Doxorubicin': {
             name: 'Trabectedin + Doxorubicin (Liposarcoma/Leiomyosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Trabectedin', dose: 1.1, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4829,6 +5051,8 @@ const protocolDatabase = {
         'Gemcitabine-Dacarbazine': {
             name: 'Gemcitabine + Dacarbazine (DTIC) (Leiomyosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Dacarbazine (DTIC)', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4838,6 +5062,8 @@ const protocolDatabase = {
         'MAID-Metastatic': {
             name: 'Mesna + Doxorubicin + Ifosfamide + Dacarbazine (MAID) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4, every 21 days (uroprotection)' },
                 { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -4848,6 +5074,8 @@ const protocolDatabase = {
         'CYVADIC': {
             name: 'Cyclophosphamide + Vincristine + Doxorubicin + Dacarbazine (CYVADIC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, D8, every 21 days (max 2mg)' },
@@ -4858,6 +5086,8 @@ const protocolDatabase = {
         'IAP': {
             name: 'Ifosfamide + Doxorubicin + Cisplatin (IAP) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Mesna (pre-dose)', dose: 360, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5, every 21 days' },
@@ -4870,6 +5100,8 @@ const protocolDatabase = {
         'IAC': {
             name: 'Ifosfamide + Actinomycin D + Cisplatin (IAC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Ifosfamide', dose: 1800, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Mesna (pre-dose)', dose: 360, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5, every 21 days' },
@@ -4882,6 +5114,8 @@ const protocolDatabase = {
         'AP': {
             name: 'Doxorubicin + Cisplatin (AP) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4890,6 +5124,8 @@ const protocolDatabase = {
         'Epirubicin': {
             name: 'Epirubicin (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Epirubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -4897,6 +5133,8 @@ const protocolDatabase = {
         'Ifosfamide-Epirubicin': {
             name: 'Ifosfamide + Epirubicin (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Ifosfamide', dose: 2000, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Epirubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -4910,6 +5148,7 @@ const protocolDatabase = {
         'Tazemetostat': {
             name: 'Tazemetostat (EZH2 inhibitor) (Epithelioid sarcoma) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -4917,6 +5156,7 @@ const protocolDatabase = {
         'Pexidartinib': {
             name: 'Pexidartinib (CSF1R inhibitor) (Tenosynovial Giant Cell Tumor) (Metastatic)',
             cycles: 6,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pexidartinib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -4926,6 +5166,7 @@ const protocolDatabase = {
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (TMB-H) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -4933,6 +5174,7 @@ const protocolDatabase = {
         'Atezolizumab': {
             name: 'Atezolizumab monotherapy (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Atezolizumab', dose: 840, unit: 'mg', schedule: 'D1, every 14 days, then 1200mg every 21 days' }
             ]
@@ -4940,6 +5182,7 @@ const protocolDatabase = {
         'Ipilimumab-Nivolumab': {
             name: 'Ipilimumab (CTLA-4 inhibitor) + Nivolumab (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks' },
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days' }
@@ -4948,6 +5191,7 @@ const protocolDatabase = {
         'Pembrolizumab-Axitinib': {
             name: 'Pembrolizumab (PD-1 inhibitor) + Axitinib (VEGFR inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' },
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily, continuously' }
@@ -4956,6 +5200,7 @@ const protocolDatabase = {
         'Bevacizumab': {
             name: 'Bevacizumab (VEGF inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -4963,6 +5208,8 @@ const protocolDatabase = {
         'Olaratumab-Doxorubicin': {
             name: 'Olaratumab (PDGFR-alpha inhibitor) + Doxorubicin (Investigational - limited evidence) (Metastatic)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Olaratumab', dose: 15, unit: 'mg/kg', schedule: 'D1, D8, every 21 days' },
                 { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -4973,6 +5220,8 @@ const protocolDatabase = {
         'VAC': {
             name: 'Vincristine + Actinomycin D (Dactinomycin) + Cyclophosphamide (VAC) (Rhabdomyosarcoma) (Neoadjuvant/Adjuvant)',
             cycles: 12,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                 { name: 'Actinomycin D (Dactinomycin)', dose: 0.015, unit: 'mg/kg', schedule: 'D1, every 21 days' },
@@ -4985,6 +5234,8 @@ const protocolDatabase = {
         'Cyclophosphamide-Topotecan': {
             name: 'Cyclophosphamide + Topotecan (Rhabdomyosarcoma) (Relapsed/Refractory)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 250, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Topotecan', dose: 0.75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
@@ -4993,6 +5244,8 @@ const protocolDatabase = {
         'Vincristine-Irinotecan-Temozolomide': {
             name: 'Vincristine + Irinotecan + Temozolomide (VIT) (Rhabdomyosarcoma) (Relapsed/Refractory)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Vincristine', dose: 1.5, unit: 'mg/m²', schedule: 'D1, D8, every 21 days (max 2mg)' },
                 { name: 'Irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -5004,6 +5257,7 @@ const protocolDatabase = {
         'Imatinib-DFSP': {
             name: 'Imatinib (BCR-ABL/KIT inhibitor) (Dermatofibrosarcoma Protuberans) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Imatinib', dose: 400, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -5011,6 +5265,7 @@ const protocolDatabase = {
         'Larotrectinib': {
             name: 'Larotrectinib (NTRK fusion inhibitor) (NTRK fusion-positive) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -5018,6 +5273,7 @@ const protocolDatabase = {
         'Entrectinib': {
             name: 'Entrectinib (NTRK fusion inhibitor) (NTRK fusion-positive) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -5025,6 +5281,7 @@ const protocolDatabase = {
         'Repotrectinib': {
             name: 'Repotrectinib (NTRK fusion inhibitor) (NTRK fusion-positive) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -5032,6 +5289,7 @@ const protocolDatabase = {
         'Crizotinib': {
             name: 'Crizotinib (ALK fusion inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Crizotinib', dose: 250, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -5039,6 +5297,7 @@ const protocolDatabase = {
         'Alectinib': {
             name: 'Alectinib (ALK fusion inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Alectinib', dose: 600, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -5046,6 +5305,7 @@ const protocolDatabase = {
         'Brigatinib': {
             name: 'Brigatinib (ALK fusion inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Brigatinib', dose: 180, unit: 'mg', schedule: 'PO daily, continuously (after 7-day lead-in at 90mg)' }
             ]
@@ -5053,6 +5313,7 @@ const protocolDatabase = {
         'Sirolimus': {
             name: 'Sirolimus (mTOR inhibitor) (Perivascular epithelioid cell tumor - PEComa) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sirolimus', dose: 2, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -5060,6 +5321,7 @@ const protocolDatabase = {
         'Temsirolimus': {
             name: 'Temsirolimus (mTOR inhibitor) (Perivascular epithelioid cell tumor - PEComa) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Temsirolimus', dose: 25, unit: 'mg', schedule: 'weekly' }
             ]
@@ -5067,6 +5329,7 @@ const protocolDatabase = {
         'Everolimus': {
             name: 'Everolimus (mTOR inhibitor) (Perivascular epithelioid cell tumor - PEComa) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO daily, continuously' }
             ]
@@ -5074,6 +5337,7 @@ const protocolDatabase = {
         'Nirogacestat': {
             name: 'Nirogacestat (Gamma-secretase inhibitor) (Desmoid tumors) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Nirogacestat', dose: 150, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -5083,6 +5347,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel-Bevacizumab': {
             name: 'Paclitaxel + Carboplatin + Bevacizumab (VEGF inhibitor) (Angiosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -5092,6 +5358,7 @@ const protocolDatabase = {
         'Propranolol': {
             name: 'Propranolol (Beta-blocker) (Angiosarcoma) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Propranolol', dose: 40, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -5099,6 +5366,7 @@ const protocolDatabase = {
         'Sorafenib': {
             name: 'Sorafenib (Multi-kinase inhibitor) (Epithelioid Hemangioendothelioma) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily, continuously' }
             ]
@@ -5106,6 +5374,7 @@ const protocolDatabase = {
         'Sunitinib-SFT': {
             name: 'Sunitinib (Multi-kinase inhibitor) (Solitary Fibrous Tumor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO daily for 4 weeks, then 2 weeks off' }
             ]
@@ -5113,6 +5382,8 @@ const protocolDatabase = {
         'Temozolomide': {
             name: 'Temozolomide monotherapy (Extraskeletal Myxoid Chondrosarcoma) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO D1-D5, every 28 days' }
             ]
@@ -5691,6 +5962,8 @@ const protocolDatabase = {
         'CAP': {
             name: 'Cyclophosphamide + Doxorubicin + Cisplatin (CAP) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -5700,6 +5973,8 @@ const protocolDatabase = {
         'ADOC': {
             name: 'Doxorubicin + Cisplatin + Vincristine + Cyclophosphamide (ADOC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Doxorubicin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -5710,6 +5985,8 @@ const protocolDatabase = {
         'Cisplatin-Etoposide': {
             name: 'Cisplatin + Etoposide (EP) (Non-anthracycline alternative) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
@@ -5718,6 +5995,8 @@ const protocolDatabase = {
         'VIP': {
             name: 'Etoposide + Ifosfamide + Cisplatin (VIP) (Alternative regimen) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 4,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
@@ -5728,6 +6007,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel': {
             name: 'Paclitaxel + Carboplatin (PC) (Alternative first-line) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -5738,6 +6019,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel-Ramucirumab': {
             name: 'Paclitaxel + Carboplatin + Ramucirumab (VEGFR-2 inhibitor) (RELEVENT trial) (Thymic carcinoma first-line) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -5749,6 +6032,7 @@ const protocolDatabase = {
         'Lenvatinib': {
             name: 'Lenvatinib (Multi-kinase inhibitor) (REMORA trial) (Thymic carcinoma) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -5756,6 +6040,7 @@ const protocolDatabase = {
         'Lenvatinib-Pembrolizumab': {
             name: 'Lenvatinib (Multi-kinase inhibitor) + Pembrolizumab (PD-1 inhibitor) (PECATI trial) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
@@ -5764,6 +6049,7 @@ const protocolDatabase = {
         'Avelumab-Axitinib': {
             name: 'Avelumab (PD-L1 inhibitor) + Axitinib (VEGFR inhibitor) (CAVEATT trial) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Avelumab', dose: 10, unit: 'mg/kg', schedule: 'D1, D15, every 28 days' },
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily' }
@@ -5774,6 +6060,7 @@ const protocolDatabase = {
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -5783,6 +6070,8 @@ const protocolDatabase = {
         'Gemcitabine-Docetaxel': {
             name: 'Gemcitabine + Docetaxel (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D8, every 21 days' }
@@ -5791,6 +6080,8 @@ const protocolDatabase = {
         'Gemcitabine-Capecitabine': {
             name: 'Gemcitabine + Capecitabine (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Capecitabine', dose: 650, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
@@ -5801,6 +6092,8 @@ const protocolDatabase = {
         'Gemcitabine-Single': {
             name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
@@ -5808,6 +6101,7 @@ const protocolDatabase = {
         'Sunitinib': {
             name: 'Sunitinib (Multi-kinase inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO daily for 4 weeks, then 2 weeks off (6-week cycles)' }
             ]
@@ -5817,6 +6111,7 @@ const protocolDatabase = {
         'Octreotide': {
             name: 'Octreotide LAR (Somatostatin analog) (Thymic neuroendocrine tumors) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'IM monthly' }
             ]
@@ -5824,6 +6119,8 @@ const protocolDatabase = {
         '5FU-Leucovorin': {
             name: '5-Fluorouracil + Leucovorin (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'Bolus D1, every 14 days' },
@@ -5833,6 +6130,8 @@ const protocolDatabase = {
         'Paclitaxel-Single': {
             name: 'Paclitaxel monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
@@ -5840,6 +6139,8 @@ const protocolDatabase = {
         'Pemetrexed-Single': {
             name: 'Pemetrexed monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1 every 21 days' }
             ]
@@ -5847,6 +6148,8 @@ const protocolDatabase = {
         'Etoposide-Single': {
             name: 'Etoposide monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3 every 21 days' }
             ]
@@ -5854,6 +6157,8 @@ const protocolDatabase = {
         'Ifosfamide-Single': {
             name: 'Ifosfamide monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
                 { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '360 mg/m² before Ifosfamide, then 720 mg/m² at 4h and 8h post-Ifosfamide, D1-D5 every 21 days' }
@@ -5866,6 +6171,7 @@ const protocolDatabase = {
             'Lenvatinib-DTC': {
                 name: 'Lenvatinib (SELECT) (multi-kinase inhibitor) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5873,6 +6179,7 @@ const protocolDatabase = {
             'Selpercatinib-RET-DTC': {
                 name: 'Selpercatinib (RET inhibitor) (RET gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -5880,6 +6187,7 @@ const protocolDatabase = {
             'Pralsetinib-RET-DTC': {
                 name: 'Pralsetinib (RET inhibitor) (RET gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5887,6 +6195,7 @@ const protocolDatabase = {
             'Larotrectinib-NTRK-DTC': {
                 name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -5894,6 +6203,7 @@ const protocolDatabase = {
             'Entrectinib-NTRK-DTC': {
                 name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5901,6 +6211,7 @@ const protocolDatabase = {
             'Repotrectinib-NTRK-DTC': {
                 name: 'Repotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5910,6 +6221,7 @@ const protocolDatabase = {
             'Cabozantinib-DTC': {
                 name: 'Cabozantinib (COSMIC-311) (multi-kinase inhibitor) (post-lenvatinib/sorafenib) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5917,6 +6229,7 @@ const protocolDatabase = {
             'Sorafenib-DTC': {
                 name: 'Sorafenib (DECISION) (multi-kinase inhibitor) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -5926,6 +6239,7 @@ const protocolDatabase = {
             'Pembrolizumab-Lenvatinib-DTC': {
                 name: 'Pembrolizumab + Lenvatinib (PD-1 inhibitor + multi-kinase inhibitor) (post-lenvatinib progression) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' },
                     { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily' }
@@ -5936,6 +6250,7 @@ const protocolDatabase = {
             'Dabrafenib-Trametinib-DTC': {
                 name: 'Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant) (post-multi-kinase inhibitor failure) (RAI-refractory DTC) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
                     { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily' }
@@ -5947,6 +6262,7 @@ const protocolDatabase = {
             'Selpercatinib-RET-MTC': {
                 name: 'Selpercatinib (RET inhibitor) (RET-mutant) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -5954,6 +6270,7 @@ const protocolDatabase = {
             'Pralsetinib-RET-MTC': {
                 name: 'Pralsetinib (RET inhibitor) (RET-mutant) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5961,6 +6278,7 @@ const protocolDatabase = {
             'Vandetanib-MTC': {
                 name: 'Vandetanib (multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Vandetanib', dose: 300, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5968,6 +6286,7 @@ const protocolDatabase = {
             'Cabozantinib-MTC': {
                 name: 'Cabozantinib (multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5977,6 +6296,7 @@ const protocolDatabase = {
             'Sorafenib-MTC': {
                 name: 'Sorafenib (multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -5984,6 +6304,7 @@ const protocolDatabase = {
             'Lenvatinib-MTC': {
                 name: 'Lenvatinib (multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Lenvatinib', dose: 20, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -5991,6 +6312,7 @@ const protocolDatabase = {
             'Sunitinib-MTC': {
                 name: 'Sunitinib (multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Sunitinib', dose: 50, unit: 'mg', schedule: 'PO once daily D1-28, every 42 days (4 weeks on, 2 weeks off)' }
                 ]
@@ -6000,6 +6322,7 @@ const protocolDatabase = {
             'Larotrectinib-NTRK-MTC': {
                 name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -6007,6 +6330,7 @@ const protocolDatabase = {
             'Entrectinib-NTRK-MTC': {
                 name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -6014,6 +6338,7 @@ const protocolDatabase = {
             'Pembrolizumab-TMB-MTC': {
                 name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (TMB-H ≥10 mut/Mb) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Minimal',
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
                 ]
@@ -6025,6 +6350,7 @@ const protocolDatabase = {
             'Dabrafenib-Trametinib-ATC': {
                 name: 'Dabrafenib (BRAF inhibitor) + Trametinib (MEK inhibitor) (BRAF V600E-mutant) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
                     { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily' }
@@ -6033,6 +6359,7 @@ const protocolDatabase = {
             'Vemurafenib-Cobimetinib-ATC': {
                 name: 'Vemurafenib (BRAF inhibitor) + Cobimetinib (MEK inhibitor) (BRAF V600E-mutant) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily' },
                     { name: 'Cobimetinib', dose: 60, unit: 'mg', schedule: 'PO daily for 21 days, then 7 days off' }
@@ -6042,6 +6369,7 @@ const protocolDatabase = {
             'Selpercatinib-RET-ATC': {
                 name: 'Selpercatinib monotherapy (RET inhibitor) (RET-altered) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -6049,6 +6377,7 @@ const protocolDatabase = {
             'Pralsetinib-RET-ATC': {
                 name: 'Pralsetinib monotherapy (RET inhibitor) (RET-altered) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -6057,6 +6386,7 @@ const protocolDatabase = {
             'Larotrectinib-NTRK-ATC': {
                 name: 'Larotrectinib monotherapy (TRK inhibitor) (NTRK fusion-positive) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -6064,6 +6394,7 @@ const protocolDatabase = {
             'Entrectinib-NTRK-ATC': {
                 name: 'Entrectinib monotherapy (TRK inhibitor) (NTRK fusion-positive) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -6071,6 +6402,7 @@ const protocolDatabase = {
             'Repotrectinib-NTRK-ATC': {
                 name: 'Repotrectinib monotherapy (TRK inhibitor) (NTRK fusion-positive) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -6079,6 +6411,7 @@ const protocolDatabase = {
             'Lenvatinib-ATC': {
                 name: 'Lenvatinib monotherapy (Multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -6086,6 +6419,7 @@ const protocolDatabase = {
             'Sorafenib-ATC': {
                 name: 'Sorafenib monotherapy (Multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily' }
                 ]
@@ -6093,6 +6427,7 @@ const protocolDatabase = {
             'Cabozantinib-ATC': {
                 name: 'Cabozantinib monotherapy (Multi-kinase inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Cabozantinib', dose: 140, unit: 'mg', schedule: 'PO once daily' }
                 ]
@@ -6101,6 +6436,7 @@ const protocolDatabase = {
             'Pembrolizumab-ATC': {
                 name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Minimal',
                 drugs: [
                     { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
                 ]
@@ -6108,6 +6444,7 @@ const protocolDatabase = {
             'Nivolumab-ATC': {
                 name: 'Nivolumab monotherapy (PD-1 inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Minimal',
                 drugs: [
                     { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480 mg every 28 days' }
                 ]
@@ -6115,6 +6452,7 @@ const protocolDatabase = {
             'Spartalizumab-ATC': {
                 name: 'Spartalizumab monotherapy (PD-1 inhibitor) (Metastatic)',
                 cycles: 35,
+                emetogenicity: 'Minimal',
                 drugs: [
                     { name: 'Spartalizumab', dose: 300, unit: 'mg', schedule: 'D1, every 21 days' }
                 ]
@@ -6123,6 +6461,8 @@ const protocolDatabase = {
             'Doxorubicin-Cisplatin-ATC': {
                 name: 'Doxorubicin + Cisplatin (Metastatic)',
                 cycles: 6,
+                fnRisk: 'High',
+                emetogenicity: 'High',
                 drugs: [
                     { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -6131,6 +6471,8 @@ const protocolDatabase = {
             'Paclitaxel-Carboplatin-ATC': {
                 name: 'Paclitaxel + Carboplatin (Metastatic)',
                 cycles: 6,
+                fnRisk: 'Intermediate',
+                emetogenicity: 'High',
                 drugs: [
                     { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                     { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -6139,6 +6481,8 @@ const protocolDatabase = {
             'Doxorubicin-ATC': {
                 name: 'Doxorubicin monotherapy (Metastatic)',
                 cycles: 6,
+                fnRisk: 'Intermediate',
+                emetogenicity: 'Moderate',
                 drugs: [
                     { name: 'Doxorubicin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
@@ -6146,6 +6490,8 @@ const protocolDatabase = {
             'Docetaxel-ATC': {
                 name: 'Docetaxel monotherapy (Metastatic)',
                 cycles: 6,
+                fnRisk: 'Intermediate',
+                emetogenicity: 'Low',
                 drugs: [
                     { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
                 ]
@@ -6170,6 +6516,8 @@ const protocolDatabase = {
         'Gemcitabine-Nabpaclitaxel': {
             name: 'Gemcitabine + Nab-paclitaxel (LAPACT/MPACT) (Neoadjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Nab-paclitaxel', dose: 125, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
@@ -6180,6 +6528,8 @@ const protocolDatabase = {
         'Gemcitabine-Capecitabine': {
             name: 'Gemcitabine + Capecitabine (ESPAC-4) (Adjuvant)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Capecitabine', dose: 830, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 21 days' }
@@ -6188,6 +6538,8 @@ const protocolDatabase = {
         'Gemcitabine-Adjuvant': {
             name: 'Gemcitabine monotherapy (CONKO-001) (Adjuvant)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' }
             ]
@@ -6197,6 +6549,8 @@ const protocolDatabase = {
         'Capecitabine-RT': {
             name: 'Capecitabine + Radiation Therapy (Definitive)',
             cycles: 1,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily on days of RT' },
                 { name: 'Radiation Therapy', dose: 50.4, unit: 'Gy', schedule: '28 fractions over 5.5 weeks' }
@@ -6223,6 +6577,8 @@ const protocolDatabase = {
         'NALIRIFOX': {
             name: 'NALIRIFOX (NAPOLI-3) (Metastatic)',
             cycles: 12,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Nanoliposomal irinotecan', dose: 50, unit: 'mg/m²', schedule: 'D1, D15, every 28 days' },
                 { name: 'Oxaliplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, D15, every 28 days' },
@@ -6234,6 +6590,8 @@ const protocolDatabase = {
         'GEMOX': {
             name: 'Gemcitabine + Oxaliplatin (GEMOX) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Oxaliplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -6981,6 +7339,8 @@ const protocolDatabase = {
         'VRd': {
             name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd) (SWOG S0777) (transplant-eligible) (First-Line)',
             cycles: 4,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 21 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D14, every 21 days' },
@@ -6990,6 +7350,8 @@ const protocolDatabase = {
         'VTD': {
             name: 'Bortezomib + Thalidomide + Dexamethasone (VTD) (GIMEMA) (transplant-eligible) (First-Line)',
             cycles: 4,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
                 { name: 'Thalidomide', dose: 100, unit: 'mg', schedule: 'PO once daily' },
@@ -6999,6 +7361,8 @@ const protocolDatabase = {
         'CyBorD': {
             name: 'Cyclophosphamide + Bortezomib + Dexamethasone (CyBorD) (transplant-eligible) (First-Line)',
             cycles: 4,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
@@ -7008,6 +7372,8 @@ const protocolDatabase = {
         'Dara-VTD': {
             name: 'Daratumumab + Bortezomib + Thalidomide + Dexamethasone (Dara-VTD) (CASSIOPEIA) (CD38 mAb) (transplant-eligible) (First-Line)',
             cycles: 4,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 28 days' },
@@ -7018,6 +7384,8 @@ const protocolDatabase = {
         'Dara-VRd': {
             name: 'Daratumumab + Bortezomib + Lenalidomide + Dexamethasone (Dara-VRd) (GRIFFIN) (CD38 mAb) (transplant-eligible) (First-Line)',
             cycles: 4,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 8 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 21 days' },
@@ -7028,6 +7396,8 @@ const protocolDatabase = {
         'Isa-VRd': {
             name: 'Isatuximab + Bortezomib + Lenalidomide + Dexamethasone (Isa-VRd) (GMMG-HD7) (CD38 mAb) (transplant-eligible) (First-Line)',
             cycles: 4,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 21 days' },
@@ -7040,6 +7410,8 @@ const protocolDatabase = {
         'VRd-Lite': {
             name: 'Bortezomib + Lenalidomide + Dexamethasone (VRd-Lite) (SWOG S0777) (transplant-ineligible) (First-Line)',
             cycles: 9,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, every 28 days x 9 cycles' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days x 9 cycles' },
@@ -7049,6 +7421,8 @@ const protocolDatabase = {
         'Dara-Rd': {
             name: 'Daratumumab + Lenalidomide + Dexamethasone (Dara-Rd) (MAIA) (CD38 mAb) (transplant-ineligible) (First-Line)',
             cycles: 12,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days until progression' },
@@ -7058,6 +7432,8 @@ const protocolDatabase = {
         'Dara-VMP': {
             name: 'Daratumumab + Bortezomib + Melphalan + Prednisone (Dara-VMP) (ALCYONE) (CD38 mAb) (transplant-ineligible) (First-Line)',
             cycles: 9,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 6 weeks, then every 21 days x 16 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1, D8, D15, D22, every 6 weeks' },
@@ -7068,6 +7444,8 @@ const protocolDatabase = {
         'Dara-CyBorD': {
             name: 'Daratumumab + Cyclophosphamide + Bortezomib + Dexamethasone (Dara-CyBorD) (CD38 mAb) (transplant-ineligible) (First-Line)',
             cycles: 9,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Cyclophosphamide', dose: 300, unit: 'mg/m²', schedule: 'D1, D8, D15, D22, every 28 days' },
@@ -7078,6 +7456,8 @@ const protocolDatabase = {
         'MPT': {
             name: 'Melphalan + Prednisone + Thalidomide (MPT) (transplant-ineligible) (First-Line)',
             cycles: 12,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
                 { name: 'Prednisone', dose: 2, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
@@ -7087,6 +7467,8 @@ const protocolDatabase = {
         'Rd': {
             name: 'Lenalidomide + Dexamethasone (Rd) (transplant-ineligible) (First-Line)',
             cycles: 12,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days until progression' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days until progression' }
@@ -7097,6 +7479,8 @@ const protocolDatabase = {
         'KRd': {
             name: 'Carfilzomib + Lenalidomide + Dexamethasone (KRd) (ASPIRE) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'PO D1-D21, every 28 days' },
@@ -7106,6 +7490,8 @@ const protocolDatabase = {
         'Kd': {
             name: 'Carfilzomib + Dexamethasone (Kd) (ENDEAVOR) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1-D2, D8-D9, D15-D16, D22-D23, every 28 days' }
@@ -7114,6 +7500,8 @@ const protocolDatabase = {
         'PVd': {
             name: 'Pomalidomide + Bortezomib + Dexamethasone (PVd) (IMiD/proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D14 every 21 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
@@ -7123,6 +7511,8 @@ const protocolDatabase = {
         'Pd': {
             name: 'Pomalidomide + Dexamethasone (Pd) (IMiD) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
@@ -7131,6 +7521,8 @@ const protocolDatabase = {
         'Dara-Pd': {
             name: 'Daratumumab + Pomalidomide + Dexamethasone (Dara-Pd) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
@@ -7140,6 +7532,8 @@ const protocolDatabase = {
         'Isa-Pd': {
             name: 'Isatuximab + Pomalidomide + Dexamethasone (Isa-Pd) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Isatuximab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 4 weeks, then every 14 days' },
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
@@ -7149,6 +7543,8 @@ const protocolDatabase = {
         'Dara-Vd': {
             name: 'Daratumumab + Bortezomib + Dexamethasone (Dara-Vd) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
@@ -7158,6 +7554,8 @@ const protocolDatabase = {
         'Elo-Rd': {
             name: 'Elotuzumab + Lenalidomide + Dexamethasone (Elo-Rd) (SLAMF7 mAb) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Elotuzumab', dose: 10, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days' },
@@ -7167,6 +7565,8 @@ const protocolDatabase = {
         'Panobinostat-Vd': {
             name: 'Panobinostat + Bortezomib + Dexamethasone (Panobinostat-Vd) (HDAC inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Panobinostat', dose: 20, unit: 'mg', schedule: 'D1,D3,D5,D8,D10,D12 every 21 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
@@ -7176,6 +7576,8 @@ const protocolDatabase = {
         'IRd': {
             name: 'Ixazomib + Lenalidomide + Dexamethasone (IRd) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Ixazomib', dose: 4, unit: 'mg', schedule: 'D1,D8,D15 every 28 days' },
                 { name: 'Lenalidomide', dose: 25, unit: 'mg', schedule: 'D1-D21 every 28 days' },
@@ -7185,6 +7587,8 @@ const protocolDatabase = {
         'Selinexor-d': {
             name: 'Selinexor + Dexamethasone (Selinexor-d) (XPO1 inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Selinexor', dose: 80, unit: 'mg', schedule: 'twice weekly' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'twice weekly' }
@@ -7193,6 +7597,8 @@ const protocolDatabase = {
         'Melflufen-d': {
             name: 'Melphalan Flufenamide + Dexamethasone (Melflufen-d) (alkylating agent) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Melphalan Flufenamide', dose: 40, unit: 'mg', schedule: 'D1 every 28 days' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1,D8,D15,D22 every 28 days' }
@@ -7203,6 +7609,8 @@ const protocolDatabase = {
         'VTD-PACE': {
             name: 'Bortezomib + Thalidomide + Dexamethasone + Cisplatin + Doxorubicin + Cyclophosphamide + Etoposide (VTD-PACE) (High-dose)',
             cycles: 2,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Bortezomib', dose: 1, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Thalidomide', dose: 400, unit: 'mg', schedule: 'PO once daily' },
@@ -7217,6 +7625,8 @@ const protocolDatabase = {
         'VAD': {
             name: 'Vincristine + Adriamycin + Dexamethasone (VAD) (Historical)',
             cycles: 4,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Vincristine', dose: 0.4, unit: 'mg', schedule: 'D1-D4 continuous infusion every 28 days' },
                 { name: 'Doxorubicin (Adriamycin)', dose: 9, unit: 'mg/m²', schedule: 'D1-D4 continuous infusion every 28 days' },
@@ -7226,6 +7636,8 @@ const protocolDatabase = {
         'DVD': {
             name: 'Doxorubicin Liposomal + Vincristine + Dexamethasone (DVD) (Relapsed/Refractory)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Doxorubicin Liposomal', dose: 40, unit: 'mg/m²', schedule: 'D1 every 28 days' },
                 { name: 'Vincristine', dose: 2, unit: 'mg', schedule: 'D1 every 28 days' },
@@ -7237,6 +7649,8 @@ const protocolDatabase = {
         'Bortezomib': {
             name: 'Bortezomib monotherapy (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'D1,D4,D8,D11 every 21 days' }
             ]
@@ -7244,6 +7658,8 @@ const protocolDatabase = {
         'Carfilzomib': {
             name: 'Carfilzomib monotherapy (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Carfilzomib', dose: 56, unit: 'mg/m²', schedule: 'D1-D2, D8-D9, D15-D16, every 28 days' }
             ]
@@ -7251,6 +7667,8 @@ const protocolDatabase = {
         'Lenalidomide': {
             name: 'Lenalidomide monotherapy (IMiD) (Maintenance)',
             cycles: 12,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Lenalidomide', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -7258,6 +7676,8 @@ const protocolDatabase = {
         'Thalidomide': {
             name: 'Thalidomide monotherapy (IMiD) (Maintenance)',
             cycles: 12,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -7265,6 +7685,7 @@ const protocolDatabase = {
         'Dexamethasone': {
             name: 'Dexamethasone monotherapy (corticosteroid) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1-D4,D9-D12,D17-D20 every 28 days' }
             ]
@@ -7272,6 +7693,7 @@ const protocolDatabase = {
         'Daratumumab': {
             name: 'Daratumumab monotherapy (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Daratumumab', dose: 16, unit: 'mg/kg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days' }
             ]
@@ -7279,6 +7701,7 @@ const protocolDatabase = {
         'Daratumumab-Hyaluronidase': {
             name: 'Daratumumab + Hyaluronidase (subcutaneous) (CD38 mAb) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Daratumumab', dose: 1800, unit: 'mg', schedule: 'weekly x 8 weeks, then every 14 days x 16 weeks, then every 28 days (subcutaneous)' },
                 { name: 'Hyaluronidase', dose: 30000, unit: 'units', schedule: 'with daratumumab' }
@@ -7287,6 +7710,8 @@ const protocolDatabase = {
         'Belantamab-Mafodotin': {
             name: 'Belantamab Mafodotin monotherapy (BCMA-ADC) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -7294,6 +7719,8 @@ const protocolDatabase = {
         'Belantamab-Pd': {
             name: 'Belantamab Mafodotin + Pomalidomide + Dexamethasone (DREAMM-8) (BCMA-ADC) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                 { name: 'Pomalidomide', dose: 4, unit: 'mg', schedule: 'D1-D21 every 28 days' },
@@ -7303,6 +7730,8 @@ const protocolDatabase = {
         'Belantamab-Vd': {
             name: 'Belantamab Mafodotin + Bortezomib + Dexamethasone (DREAMM-7) (BCMA-ADC) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Belantamab Mafodotin', dose: 2.5, unit: 'mg/kg', schedule: 'D1, every 21 days' },
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
@@ -7312,6 +7741,7 @@ const protocolDatabase = {
         'Teclistamab': {
             name: 'Teclistamab (BCMA BiTE) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Teclistamab', dose: 1.5, unit: 'mg/kg', schedule: 'weekly after step-up dosing' }
             ]
@@ -7319,6 +7749,7 @@ const protocolDatabase = {
         'Talquetamab': {
             name: 'Talquetamab monotherapy (GPRC5D BiTE) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Talquetamab', dose: 405, unit: 'mcg/kg', schedule: 'weekly after step-up dosing' }
             ]
@@ -7326,6 +7757,7 @@ const protocolDatabase = {
         'Teclistamab-Talquetamab': {
             name: 'Teclistamab + Talquetamab (BCMA/GPRC5D BiTE combination) (ASCO 2024) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Teclistamab', dose: 1.5, unit: 'mg/kg', schedule: 'weekly after step-up dosing' },
                 { name: 'Talquetamab', dose: 405, unit: 'mcg/kg', schedule: 'weekly after step-up dosing' }
@@ -7334,6 +7766,7 @@ const protocolDatabase = {
         'Idecabtagene-Vicleucel': {
             name: 'Idecabtagene Vicleucel (IDE-CEL CAR-T) (Relapsed/Refractory)',
             cycles: 1,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Idecabtagene Vicleucel', dose: 450, unit: 'million cells', schedule: 'single infusion after lymphodepletion' }
             ]
@@ -7341,6 +7774,7 @@ const protocolDatabase = {
         'Ciltacabtagene-Vicleucel': {
             name: 'Ciltacabtagene Vicleucel (CILTA-CEL CAR-T) (Relapsed/Refractory)',
             cycles: 1,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Ciltacabtagene Vicleucel', dose: 0.75, unit: 'million cells/kg', schedule: 'single infusion after lymphodepletion' }
             ]
@@ -7348,6 +7782,7 @@ const protocolDatabase = {
         'Ibrutinib': {
             name: 'Ibrutinib (BTK inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Ibrutinib', dose: 560, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -7356,6 +7791,8 @@ const protocolDatabase = {
         'Melphalan': {
             name: 'Melphalan monotherapy (Palliative)',
             cycles: 8,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' }
             ]
@@ -7363,6 +7800,8 @@ const protocolDatabase = {
         'MP': {
             name: 'Melphalan + Prednisone (MP) (transplant-ineligible) (First-Line)',
             cycles: 12,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Melphalan', dose: 0.25, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' },
                 { name: 'Prednisone', dose: 2, unit: 'mg/kg', schedule: 'D1-D4 every 6 weeks' }
@@ -7371,6 +7810,8 @@ const protocolDatabase = {
         'Td': {
             name: 'Thalidomide + Dexamethasone (Td) (transplant-ineligible) (First-Line)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Thalidomide', dose: 200, unit: 'mg', schedule: 'PO once daily' },
                 { name: 'Dexamethasone', dose: 40, unit: 'mg', schedule: 'D1-D4 every 28 days' }
@@ -7379,6 +7820,8 @@ const protocolDatabase = {
         'Vd': {
             name: 'Bortezomib + Dexamethasone (Vd) (proteasome inhibitor) (Relapsed/Refractory)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Bortezomib', dose: 1.3, unit: 'mg/m²', schedule: 'SC D1,D4,D8,D11 every 21 days' },
                 { name: 'Dexamethasone', dose: 20, unit: 'mg', schedule: 'D1,D2,D4,D5,D8,D9,D11,D12 every 21 days' }
@@ -7390,6 +7833,8 @@ const protocolDatabase = {
         'TIP-Neoadjuvant': {
             name: 'Paclitaxel + Ifosfamide + Cisplatin (TIP) (Neoadjuvant/Adjuvant)',
             cycles: 4,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
@@ -7402,6 +7847,8 @@ const protocolDatabase = {
         'Capecitabine-RT': {
             name: 'Capecitabine + Radiation Therapy (Neoadjuvant/Adjuvant)',
             cycles: 2,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily during RT' }
             ]
@@ -7409,6 +7856,8 @@ const protocolDatabase = {
         '5FU-Mitomycin': {
             name: '5-Fluorouracil + Mitomycin-C (Neoadjuvant/Adjuvant)',
             cycles: 2,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI D1-D4, every 21 days' },
                 { name: 'Mitomycin-C', dose: 15, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7419,6 +7868,8 @@ const protocolDatabase = {
         'Cisplatin-RT': {
             name: 'Cisplatin + Radiation Therapy (Definitive)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'weekly during RT' },
                 { name: 'Radiation Therapy', dose: 54, unit: 'Gy', schedule: '54-57 Gy nodal, 63 Gy primary' }
@@ -7427,6 +7878,8 @@ const protocolDatabase = {
         'TIP-RT-InPACT': {
             name: 'Paclitaxel + Ifosfamide + Cisplatin + Radiation Therapy (TIP-RT) (InPACT) (Definitive)',
             cycles: 4,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days (4 cycles)' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D3, every 21 days (4 cycles)' },
@@ -7547,6 +8000,8 @@ const protocolDatabase = {
         'Cisplatin-RT': {
             name: 'Cisplatin + RT (Definitive)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 40, unit: 'mg/m²', schedule: 'D1, every 7 days during RT' }
             ]
@@ -7554,6 +8009,8 @@ const protocolDatabase = {
         'Carboplatin-RT': {
             name: 'Carboplatin + RT (cisplatin-ineligible) (Definitive)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days during RT', requiresAUC: true }
             ]
@@ -7561,6 +8018,8 @@ const protocolDatabase = {
         'Cisplatin-5FU-RT': {
             name: 'Cisplatin + 5-Fluorouracil + RT (Definitive)',
             cycles: 2,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, week 1 and 5 with RT' },
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'CI daily D1-D4, week 1 and 5 with RT' }
@@ -7569,6 +8028,8 @@ const protocolDatabase = {
         'Capecitabine-RT': {
             name: 'Capecitabine + RT (Definitive)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily during RT' }
             ]
@@ -7576,6 +8037,8 @@ const protocolDatabase = {
         'Mitomycin-Capecitabine-RT': {
             name: 'Mitomycin + Capecitabine + RT (Definitive)',
             cycles: 2,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Mitomycin', dose: 10, unit: 'mg/m²', schedule: 'D1, D29 (with concurrent RT)' },
                 { name: 'Capecitabine', dose: 825, unit: 'mg/m²', schedule: 'PO twice daily during RT' }
@@ -7586,6 +8049,8 @@ const protocolDatabase = {
         'Cisplatin-Paclitaxel': {
             name: 'Cisplatin + Paclitaxel (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7594,6 +8059,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel': {
             name: 'Carboplatin + Paclitaxel (PC) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days', requiresAUC: true },
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7602,6 +8069,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel-Weekly': {
             name: 'Carboplatin + Paclitaxel (Weekly) (cisplatin-ineligible) (Metastatic)',
             cycles: 18,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days', requiresAUC: true },
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
@@ -7610,6 +8079,8 @@ const protocolDatabase = {
         'Cisplatin-Paclitaxel-Bevacizumab': {
             name: 'Cisplatin + Paclitaxel + Bevacizumab (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 28 days' },
                 { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
@@ -7619,6 +8090,8 @@ const protocolDatabase = {
         'Carboplatin-Paclitaxel-Bevacizumab': {
             name: 'Carboplatin + Paclitaxel + Bevacizumab (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'IM D1, every 28 days', requiresAUC: true },
                 { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 28 days' },
@@ -7628,6 +8101,8 @@ const protocolDatabase = {
         'Gemcitabine-Cisplatin': {
             name: 'Gemcitabine + Cisplatin (GC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7636,6 +8111,8 @@ const protocolDatabase = {
         'Cisplatin-Docetaxel': {
             name: 'Cisplatin + Docetaxel (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7646,6 +8123,7 @@ const protocolDatabase = {
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (PD-L1 CPS ≥1 or dMMR/MSI-H) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -7653,6 +8131,7 @@ const protocolDatabase = {
         'Cemiplimab': {
             name: 'Cemiplimab monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Cemiplimab', dose: 350, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -7660,6 +8139,7 @@ const protocolDatabase = {
         'Nivolumab': {
             name: 'Nivolumab monotherapy (PD-1 inhibitor) (HPV-associated) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480 mg every 28 days' }
             ]
@@ -7669,6 +8149,8 @@ const protocolDatabase = {
         'Topotecan': {
             name: 'Topotecan monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Topotecan', dose: 1.25, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
@@ -7678,6 +8160,8 @@ const protocolDatabase = {
         'Trastuzumab-Deruxtecan': {
             name: 'Trastuzumab Deruxtecan (T-DXd) (Trop-2 ADC) (HER2-positive) (Metastatic)',
             cycles: 35,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Trastuzumab Deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -7685,6 +8169,7 @@ const protocolDatabase = {
         'Erlotinib': {
             name: 'Erlotinib (EGFR inhibitor) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Erlotinib', dose: 150, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -7692,6 +8177,7 @@ const protocolDatabase = {
         'Larotrectinib': {
             name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
             ]
@@ -7699,6 +8185,7 @@ const protocolDatabase = {
         'Entrectinib': {
             name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -7709,6 +8196,8 @@ const protocolDatabase = {
         'Pemetrexed-Cisplatin': {
             name: 'Pemetrexed + Cisplatin (PC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days (3-6 cycles depending on setting)' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days (3-6 cycles depending on setting)' },
@@ -7719,6 +8208,8 @@ const protocolDatabase = {
         'Pemetrexed-Carboplatin': {
             name: 'Pemetrexed + Carboplatin (PC) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -7729,6 +8220,7 @@ const protocolDatabase = {
         'Nivolumab-Ipilimumab': {
             name: 'Nivolumab + Ipilimumab (CheckMate 743) (PD-1/CTLA-4 inhibitors) (Metastatic)',
             cycles: 4,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 360, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 480mg every 28 days' },
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 cycles' }
@@ -7737,6 +8229,8 @@ const protocolDatabase = {
         'Pemetrexed-Cisplatin-Bevacizumab': {
             name: 'Pemetrexed + Cisplatin + Bevacizumab (MAPS Trial) (PCB) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7748,6 +8242,8 @@ const protocolDatabase = {
         'Pemetrexed-Carboplatin-Bevacizumab': {
             name: 'Pemetrexed + Carboplatin + Bevacizumab (PCB) (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -7759,6 +8255,8 @@ const protocolDatabase = {
         'Pemetrexed-Cisplatin-ADI-PEG20': {
             name: 'Pemetrexed + Cisplatin + ADI-PEG20 (ATOMIC-Meso) (nonepithelioid) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -7770,6 +8268,8 @@ const protocolDatabase = {
         'Pemetrexed-Carboplatin-ADI-PEG20': {
             name: 'Pemetrexed + Carboplatin + ADI-PEG20 (ATOMIC-Meso) (nonepithelioid) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
@@ -7783,6 +8283,8 @@ const protocolDatabase = {
         'Gemcitabine-Cisplatin': {
             name: 'Gemcitabine + Cisplatin (GC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7791,6 +8293,8 @@ const protocolDatabase = {
         'Gemcitabine-Carboplatin': {
             name: 'Gemcitabine + Carboplatin (GC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -7799,6 +8303,8 @@ const protocolDatabase = {
         'Gemcitabine-Vinorelbine': {
             name: 'Gemcitabine + Vinorelbine (GV) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Vinorelbine', dose: 25, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -7807,6 +8313,8 @@ const protocolDatabase = {
         'Vinorelbine-Cisplatin': {
             name: 'Vinorelbine + Cisplatin (VC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 80, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7815,6 +8323,8 @@ const protocolDatabase = {
         'Lurbinectedin': {
             name: 'Lurbinectedin monotherapy (PM1183) (Metastatic)',
             cycles: 8,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Lurbinectedin', dose: 3.2, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -7824,6 +8334,8 @@ const protocolDatabase = {
         'Pemetrexed-Maintenance': {
             name: 'Pemetrexed monotherapy (maintenance after platinum-based therapy) (Metastatic)',
             cycles: 12,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pemetrexed', dose: 500, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Folic Acid', dose: 400, unit: 'mcg', schedule: 'PO once daily' },
@@ -7833,6 +8345,7 @@ const protocolDatabase = {
         'Bevacizumab-Maintenance': {
             name: 'Bevacizumab monotherapy (maintenance after platinum-based therapy) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Bevacizumab', dose: 15, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -7840,6 +8353,8 @@ const protocolDatabase = {
         'ADI-PEG20-Maintenance': {
             name: 'ADI-PEG20 monotherapy (Pegargiminase) (maintenance after ADI-PEG20 combination) (Metastatic)',
             cycles: 24,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'ADI-PEG20 (Pegargiminase)', dose: 36, unit: 'mg/m²', schedule: 'IM weekly' }
             ]
@@ -7849,6 +8364,7 @@ const protocolDatabase = {
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (KEYNOTE-158) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -7856,6 +8372,7 @@ const protocolDatabase = {
         'Nivolumab': {
             name: 'Nivolumab monotherapy (MERIT) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
@@ -7863,6 +8380,7 @@ const protocolDatabase = {
         'Atezolizumab': {
             name: 'Atezolizumab monotherapy (ETOP 9-15) (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -7872,6 +8390,7 @@ const protocolDatabase = {
         'Tazemetostat': {
             name: 'Tazemetostat (EZH2 inhibitor) (BAP1 mutation) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Tazemetostat', dose: 800, unit: 'mg', schedule: 'PO twice daily' }
             ]
@@ -7881,6 +8400,8 @@ const protocolDatabase = {
         'Gemcitabine': {
             name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
@@ -7888,6 +8409,8 @@ const protocolDatabase = {
         'Vinorelbine': {
             name: 'Vinorelbine monotherapy (Metastatic)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
@@ -7895,6 +8418,8 @@ const protocolDatabase = {
         'Doxorubicin': {
             name: 'Doxorubicin monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -7905,6 +8430,7 @@ const protocolDatabase = {
         'Avelumab-Neoadjuvant': {
             name: 'Avelumab monotherapy (PD-L1 inhibitor) (Neoadjuvant)',
             cycles: 3,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
@@ -7912,6 +8438,7 @@ const protocolDatabase = {
         'Pembrolizumab-Neoadjuvant': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Neoadjuvant)',
             cycles: 3,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -7921,6 +8448,7 @@ const protocolDatabase = {
         'Avelumab-Adjuvant': {
             name: 'Avelumab monotherapy (PD-L1 inhibitor) (Adjuvant)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
@@ -7928,6 +8456,7 @@ const protocolDatabase = {
         'Pembrolizumab-Adjuvant': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (Adjuvant)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -7937,6 +8466,7 @@ const protocolDatabase = {
         'Avelumab': {
             name: 'Avelumab monotherapy (JAVELIN Merkel 200) (PD-L1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Avelumab', dose: 800, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
@@ -7944,6 +8474,7 @@ const protocolDatabase = {
         'Pembrolizumab': {
             name: 'Pembrolizumab monotherapy (KEYNOTE-017) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -7951,6 +8482,7 @@ const protocolDatabase = {
         'Nivolumab': {
             name: 'Nivolumab monotherapy (CheckMate 358) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
             ]
@@ -7958,6 +8490,7 @@ const protocolDatabase = {
         'Retifanlimab': {
             name: 'Retifanlimab monotherapy (POD1UM-201) (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Retifanlimab', dose: 500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
@@ -7965,6 +8498,7 @@ const protocolDatabase = {
         'Retifanlimab-dlwr': {
             name: 'Retifanlimab-dlwr (Zynyz) monotherapy (PD-1 inhibitor) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Retifanlimab-dlwr', dose: 500, unit: 'mg', schedule: 'D1, every 28 days' }
             ]
@@ -7974,6 +8508,8 @@ const protocolDatabase = {
         'EP': {
             name: 'Etoposide + Cisplatin (EP) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -7982,6 +8518,8 @@ const protocolDatabase = {
         'EC': {
             name: 'Etoposide + Carboplatin (EC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -7990,6 +8528,8 @@ const protocolDatabase = {
         'CAV': {
             name: 'Cyclophosphamide + Doxorubicin + Vincristine (CAV) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
@@ -8000,6 +8540,8 @@ const protocolDatabase = {
         'Topotecan-Cyclophosphamide': {
             name: 'Topotecan + Cyclophosphamide (TC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Topotecan', dose: 1.7, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8011,6 +8553,8 @@ const protocolDatabase = {
         'Temozolomide': {
             name: 'Temozolomide monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 28 days' }
             ]
@@ -8018,6 +8562,8 @@ const protocolDatabase = {
         'Paclitaxel': {
             name: 'Paclitaxel monotherapy (Metastatic)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
@@ -8025,6 +8571,8 @@ const protocolDatabase = {
         'Docetaxel': {
             name: 'Docetaxel monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -8032,6 +8580,8 @@ const protocolDatabase = {
         'Gemcitabine': {
             name: 'Gemcitabine monotherapy (Metastatic)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
             ]
@@ -8039,6 +8589,8 @@ const protocolDatabase = {
         'Vinorelbine': {
             name: 'Vinorelbine monotherapy (Metastatic)',
             cycles: 8,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Vinorelbine', dose: 30, unit: 'mg/m²', schedule: 'D1, every 7 days' }
             ]
@@ -8046,6 +8598,8 @@ const protocolDatabase = {
         'Doxorubicin': {
             name: 'Doxorubicin monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -8053,6 +8607,8 @@ const protocolDatabase = {
         'Cyclophosphamide': {
             name: 'Cyclophosphamide monotherapy (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' }
@@ -8063,6 +8619,8 @@ const protocolDatabase = {
         'Paclitaxel-Carboplatin': {
             name: 'Paclitaxel + Carboplatin (PC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -8071,6 +8629,8 @@ const protocolDatabase = {
         'Gemcitabine-Carboplatin': {
             name: 'Gemcitabine + Carboplatin (GC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -8079,6 +8639,8 @@ const protocolDatabase = {
         'Docetaxel-Carboplatin': {
             name: 'Docetaxel + Carboplatin (DC) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -8089,6 +8651,7 @@ const protocolDatabase = {
         'Ipilimumab-Nivolumab': {
             name: 'Ipilimumab + Nivolumab (CTLA-4/PD-1 inhibitors) (ASCO 2024 data) (Metastatic)',
             cycles: 4,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 6 weeks x 4 cycles' },
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days' }
@@ -8097,6 +8660,7 @@ const protocolDatabase = {
         'Dostarlimab': {
             name: 'Dostarlimab monotherapy (PD-1 inhibitor) (Investigational) (Metastatic)',
             cycles: 8,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days x 4 cycles, then 1000mg every 42 days' }
             ]
@@ -8827,6 +9391,7 @@ const protocolDatabase = {
         'Pembrolizumab-MSI-H': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (MSI-H/dMMR solid tumors)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -8834,6 +9399,7 @@ const protocolDatabase = {
         'Dostarlimab-MSI-H': {
             name: 'Dostarlimab monotherapy (PD-1 inhibitor) (MSI-H/dMMR solid tumors)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Dostarlimab', dose: 500, unit: 'mg', schedule: 'D1, every 21 days for 4 cycles, then 1000 mg every 42 days' }
             ]
@@ -8841,6 +9407,7 @@ const protocolDatabase = {
         'Nivolumab-MSI-H': {
             name: 'Nivolumab monotherapy (PD-1 inhibitor) (MSI-H/dMMR solid tumors)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 240, unit: 'mg', schedule: 'D1, every 14 days or 480 mg every 28 days' }
             ]
@@ -8848,6 +9415,7 @@ const protocolDatabase = {
         'Nivolumab-Ipilimumab-MSI-H': {
             name: 'Nivolumab + Ipilimumab (CheckMate 8HW) (PD-1/CTLA-4 inhibitors) (MSI-H/dMMR solid tumors)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Nivolumab', dose: 3, unit: 'mg/kg', schedule: 'D1, every 14 days' },
                 { name: 'Ipilimumab', dose: 1, unit: 'mg/kg', schedule: 'D1, every 42 days for 4 doses' }
@@ -8858,6 +9426,7 @@ const protocolDatabase = {
         'Pembrolizumab-TMB-H': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (TMB-H ≥10 mut/Mb solid tumors)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -8867,6 +9436,7 @@ const protocolDatabase = {
         'Larotrectinib': {
             name: 'Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Larotrectinib', dose: 100, unit: 'mg', schedule: 'PO twice daily' }
             ]
@@ -8874,6 +9444,7 @@ const protocolDatabase = {
         'Entrectinib': {
             name: 'Entrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Entrectinib', dose: 600, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -8881,6 +9452,7 @@ const protocolDatabase = {
         'Repotrectinib': {
             name: 'Repotrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Repotrectinib', dose: 160, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -8890,6 +9462,7 @@ const protocolDatabase = {
         'Selpercatinib': {
             name: 'Selpercatinib (RET inhibitor) (RET gene fusion-positive solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Selpercatinib', dose: 160, unit: 'mg', schedule: 'PO twice daily' }
             ]
@@ -8897,6 +9470,7 @@ const protocolDatabase = {
         'Pralsetinib': {
             name: 'Pralsetinib (RET inhibitor) (RET gene fusion-positive solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Pralsetinib', dose: 400, unit: 'mg', schedule: 'PO once daily' }
             ]
@@ -8906,6 +9480,7 @@ const protocolDatabase = {
         'Dabrafenib-Trametinib': {
             name: 'Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Dabrafenib', dose: 150, unit: 'mg', schedule: 'PO twice daily' },
                 { name: 'Trametinib', dose: 2, unit: 'mg', schedule: 'PO once daily' }
@@ -8914,6 +9489,7 @@ const protocolDatabase = {
         'Vemurafenib': {
             name: 'Vemurafenib (BRAF inhibitor) (BRAF V600E-mutant solid tumors)',
             cycles: 35,
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Vemurafenib', dose: 960, unit: 'mg', schedule: 'PO twice daily' }
             ]
@@ -8923,6 +9499,8 @@ const protocolDatabase = {
         'Trastuzumab-Deruxtecan-HER2': {
             name: 'Trastuzumab Deruxtecan (T-DXd) (HER2-directed ADC) (HER2-positive solid tumors)',
             cycles: 35,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Trastuzumab Deruxtecan', dose: 5.4, unit: 'mg/kg', schedule: 'D1, every 21 days' }
             ]
@@ -8933,6 +9511,8 @@ const protocolDatabase = {
         'GC-Split-Dose': {
             name: 'Gemcitabine + Cisplatin (Split-dose) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: '4-6',
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 35, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' }
@@ -8941,6 +9521,8 @@ const protocolDatabase = {
         'GC-Standard': {
             name: 'Gemcitabine + Cisplatin (Standard dose) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: '4-6',
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Cisplatin', dose: 70, unit: 'mg/m²', schedule: 'D1, every 21 days' }
@@ -8949,6 +9531,8 @@ const protocolDatabase = {
         'MVAC': {
             name: 'Methotrexate + Vinblastine + Doxorubicin + Cisplatin (MVAC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: '4-6',
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 28 days (or every 14 days for neoadjuvant/adjuvant)' },
                 { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 28 days (or every 14 days for neoadjuvant/adjuvant)' },
@@ -8960,6 +9544,8 @@ const protocolDatabase = {
         'ddMVAC': {
             name: 'Dose-dense MVAC (ddMVAC) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: '4-6',
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Methotrexate', dose: 30, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: 'Vinblastine', dose: 3, unit: 'mg/m²', schedule: 'D2, every 14 days' },
@@ -8973,6 +9559,8 @@ const protocolDatabase = {
         'Cisplatin-RT-Urethral': {
             name: 'Cisplatin + Radiotherapy (Definitive - urethral cancer)',
             cycles: 3,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 100, unit: 'mg/m²', schedule: 'D1, every 21 days during RT' }
             ]
@@ -8980,6 +9568,8 @@ const protocolDatabase = {
         '5FU-MMC-RT-Urethral': {
             name: '5-Fluorouracil + Mitomycin C + Radiotherapy (Definitive - urethral cancer)',
             cycles: 2,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: '5-Fluorouracil', dose: 1000, unit: 'mg/m²', schedule: 'D1-D4, every 28 days during RT' },
                 { name: 'Mitomycin C', dose: 10, unit: 'mg/m²', schedule: 'D1, cycle 1 and 2 only' }
@@ -8988,6 +9578,8 @@ const protocolDatabase = {
         'TPF-Urethral': {
             name: 'Docetaxel + Cisplatin + 5-Fluorouracil (TPF) (Definitive - urethral cancer)',
             cycles: 3,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
@@ -8999,6 +9591,8 @@ const protocolDatabase = {
         'GC-Carboplatin-Metastatic': {
             name: 'Gemcitabine + Carboplatin (Cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Gemcitabine', dose: 1000, unit: 'mg/m²', schedule: 'D1, D8, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5-6', unit: 'AUC', schedule: 'D1, every 21 days' }
@@ -9007,6 +9601,7 @@ const protocolDatabase = {
         'Pembrolizumab-Monotherapy': {
             name: 'Pembrolizumab monotherapy (PD-1 inhibitor) (PD-L1+ or cisplatin-ineligible) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pembrolizumab', dose: 200, unit: 'mg', schedule: 'D1, every 21 days or 400 mg every 42 days' }
             ]
@@ -9014,6 +9609,7 @@ const protocolDatabase = {
         'Atezolizumab-Monotherapy': {
             name: 'Atezolizumab monotherapy (PD-L1 inhibitor) (Cisplatin-ineligible) (Metastatic)',
             cycles: 35,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Atezolizumab', dose: 1200, unit: 'mg', schedule: 'D1, every 21 days' }
             ]
@@ -9021,6 +9617,8 @@ const protocolDatabase = {
         'Paclitaxel-Monotherapy': {
             name: 'Paclitaxel monotherapy (Cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Paclitaxel', dose: 175, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -9028,6 +9626,8 @@ const protocolDatabase = {
         'Docetaxel-Monotherapy': {
             name: 'Docetaxel monotherapy (Cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'Low',
             drugs: [
                 { name: 'Docetaxel', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' }
             ]
@@ -9038,6 +9638,7 @@ const protocolDatabase = {
         'Octreotide-LAR-Adjuvant': {
             name: 'Octreotide LAR (somatostatin analog) (Adjuvant)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Octreotide LAR', dose: 20, unit: 'mg', schedule: 'IM D1, every 28 days' }
             ]
@@ -9049,6 +9650,7 @@ const protocolDatabase = {
         'Octreotide-LAR': {
             name: 'Octreotide LAR (PROMID) (somatostatin analog) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'IM D1, every 28 days' }
             ]
@@ -9056,6 +9658,7 @@ const protocolDatabase = {
         'Lanreotide': {
             name: 'Lanreotide (CLARINET) (somatostatin analog) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Lanreotide', dose: 120, unit: 'mg', schedule: 'SC D1, every 28 days' }
             ]
@@ -9065,6 +9668,7 @@ const protocolDatabase = {
         'Everolimus': {
             name: 'Everolimus (RADIANT-4) (mTOR inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -9072,6 +9676,7 @@ const protocolDatabase = {
         'Everolimus-Octreotide': {
             name: 'Everolimus + Octreotide LAR (RADIANT-2) (mTOR inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Everolimus', dose: 10, unit: 'mg', schedule: 'PO once daily until progression' },
                 { name: 'Octreotide LAR', dose: 30, unit: 'mg', schedule: 'IM D1, every 28 days' }
@@ -9082,6 +9687,7 @@ const protocolDatabase = {
         'Sunitinib': {
             name: 'Sunitinib (multi-kinase inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Sunitinib', dose: 37.5, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -9091,6 +9697,8 @@ const protocolDatabase = {
         'Lutetium-177': {
             name: 'Lutetium Lu 177 Dotatate (NETTER-1) (PRRT) (Metastatic)',
             cycles: 4,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Lutetium Lu 177 Dotatate', dose: 7.4, unit: 'GBq', schedule: 'D1, every 8 weeks' }
             ]
@@ -9100,6 +9708,8 @@ const protocolDatabase = {
         'Cisplatin-Etoposide': {
             name: 'Cisplatin + Etoposide (EP) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
@@ -9108,6 +9718,8 @@ const protocolDatabase = {
         'Carboplatin-Etoposide': {
             name: 'Carboplatin + Etoposide (cisplatin-ineligible) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' },
                 { name: 'Etoposide', dose: 100, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
@@ -9116,6 +9728,8 @@ const protocolDatabase = {
         'Irinotecan-Cisplatin': {
             name: 'Irinotecan + Cisplatin (IP) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Irinotecan', dose: 60, unit: 'mg/m²', schedule: 'D1, D8, D15, every 28 days' },
                 { name: 'Cisplatin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 28 days' }
@@ -9124,6 +9738,8 @@ const protocolDatabase = {
         'Cyclophosphamide-Doxorubicin-Vincristine': {
             name: 'Cyclophosphamide + Doxorubicin + Vincristine (CAV) (Metastatic)',
             cycles: 6,
+            fnRisk: 'High',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
@@ -9135,6 +9751,8 @@ const protocolDatabase = {
         'Capecitabine-Temozolomide': {
             name: 'Capecitabine + Temozolomide (CAPTEM) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Capecitabine', dose: 750, unit: 'mg/m²', schedule: 'PO twice daily D1-D14, every 28 days' },
                 { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'PO once daily D10-D14, every 28 days' }
@@ -9143,6 +9761,8 @@ const protocolDatabase = {
         'Temozolomide': {
             name: 'Temozolomide monotherapy (alkylating agent) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Temozolomide', dose: 200, unit: 'mg/m²', schedule: 'PO once daily D1-D5, every 28 days' }
             ]
@@ -9150,6 +9770,8 @@ const protocolDatabase = {
         'Streptozocin-5FU': {
             name: 'Streptozocin + 5-Fluorouracil (alkylating agent) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Streptozocin', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 42 days' },
                 { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'D1-D5, every 42 days' }
@@ -9158,6 +9780,8 @@ const protocolDatabase = {
         'Streptozocin-Doxorubicin': {
             name: 'Streptozocin + Doxorubicin (alkylating agent) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Intermediate',
+            emetogenicity: 'High',
             drugs: [
                 { name: 'Streptozocin', dose: 500, unit: 'mg/m²', schedule: 'D1-D5, every 42 days' },
                 { name: 'Doxorubicin', dose: 50, unit: 'mg/m²', schedule: 'D1, every 42 days' }
@@ -9167,6 +9791,7 @@ const protocolDatabase = {
         'Cabozantinib': {
             name: 'Cabozantinib (multi-kinase inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Cabozantinib', dose: 60, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -9174,6 +9799,7 @@ const protocolDatabase = {
         'Lenvatinib': {
             name: 'Lenvatinib (multi-kinase inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Lenvatinib', dose: 24, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -9181,6 +9807,7 @@ const protocolDatabase = {
         'Axitinib': {
             name: 'Axitinib (VEGFR inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Axitinib', dose: 5, unit: 'mg', schedule: 'PO twice daily until progression' }
             ]
@@ -9188,6 +9815,7 @@ const protocolDatabase = {
         'Pazopanib': {
             name: 'Pazopanib (multi-kinase inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Pazopanib', dose: 800, unit: 'mg', schedule: 'PO once daily until progression' }
             ]
@@ -9195,6 +9823,7 @@ const protocolDatabase = {
         'Sorafenib': {
             name: 'Sorafenib (multi-kinase inhibitor) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Minimal',
             drugs: [
                 { name: 'Sorafenib', dose: 400, unit: 'mg', schedule: 'PO twice daily until progression' }
             ]
@@ -9204,6 +9833,8 @@ const protocolDatabase = {
         'Dacarbazine': {
             name: 'Dacarbazine monotherapy (DTIC) (alkylating agent) (Metastatic)',
             cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Dacarbazine', dose: 200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
@@ -9211,6 +9842,7 @@ const protocolDatabase = {
         'Interferon-Alpha': {
             name: 'Interferon Alpha-2b monotherapy (immunomodulator) (Metastatic)',
             cycles: 12,
+            emetogenicity: 'Moderate',
             drugs: [
                 { name: 'Interferon Alpha-2b', dose: 5, unit: 'MU', schedule: '3 times weekly until progression' }
             ]
@@ -14213,7 +14845,7 @@ function shouldShowRiskProfiles(protocol) {
     // Oral targeted therapy keywords (complete exclusion - no risk profiles at all)
     const oralTargetedKeywords = ['erlotinib', 'gefitinib', 'osimertinib', 'afatinib', 
                                  'nilotinib', 'bosutinib', 'ponatinib', 'ibrutinib',
-                                 'acalabrutinib', 'zanubrutinib', 'rucaparib', 'niraparib'];
+                                 'acalabrutinib', 'zanubrutinib'];
     
     // Note: CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib), hormonal therapies, 
     // and PARP inhibitors like olaparib should show emetogenicity but not FN risk
