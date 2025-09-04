@@ -16651,6 +16651,12 @@ function showFinalPrescription() {
             </div>
         </div>
         
+        ${results.reference ? `
+        <div style="margin-bottom: 20px; padding: 8px 12px; background-color: #f8f9fa; border-left: 3px solid #6c757d; border-radius: 3px; font-size: 12px;">
+            <strong>📚 Reference:</strong> ${results.reference}
+        </div>
+        ` : ''}
+        
         <div style="margin-top: 15px; padding: 8px 12px; background-color: #e8f5e8; border-left: 3px solid #27ae60; border-radius: 3px; font-size: 14px;">
             <strong>Patient Summary & Risk Profile:</strong><br>
             ${patientData.creatinine ? 
