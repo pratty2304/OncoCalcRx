@@ -16102,7 +16102,7 @@ function displayResults(results, patientData) {
         </div>
         ` : ''}
         
-        <div class="result-item" style="margin-bottom: 20px;">
+        <div class="result-item" style="margin-bottom: 20px; font-size: 14px;">
             <strong>Patient Summary & Risk Profile</strong><br>
             ${results.hasCarboplatin ? 
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
