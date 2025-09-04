@@ -13329,7 +13329,7 @@ const protocolDatabase = {
                 cycles: 35,
                 emetogenicity: 'Minimal',
                 drugs: [
-                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'IV D1 (loading), then 1050mg every 14 days' },
+                    { name: 'Amivantamab', dose: 1, unit: 'mg', schedule: 'IV weekly x 4 weeks, then every 2 weeks thereafter' },
                     { name: 'Lazertinib', dose: 240, unit: 'mg', schedule: 'PO daily continuously' }
                 ]
             },
@@ -13338,7 +13338,7 @@ const protocolDatabase = {
                 cycles: 35,
                 emetogenicity: 'Minimal',
                 drugs: [
-                    { name: 'Amivantamab', dose: 1400, unit: 'mg', schedule: 'IV D1 (loading), then 1050mg every 14 days' }
+                    { name: 'Amivantamab', dose: 1, unit: 'mg', schedule: 'IV weekly x 4 weeks, then every 2 weeks thereafter' }
                 ]
             },
             'Mobocertinib-Exon20': {
@@ -14282,7 +14282,13 @@ function calculateDoses(formData) {
         let calculatedDose;
         let doseUnit;
         
-        if (drug.unit === 'mg/m²' || drug.unit === 'units/m²') {
+        // Special handling for Amivantamab weight-based dosing
+        if (drug.name.toLowerCase().includes('amivantamab')) {
+            const weightKg = parseFloat(weight);
+            const totalDose = weightKg < 80 ? 1050 : 1400;
+            calculatedDose = totalDose;
+            doseUnit = 'mg';
+        } else if (drug.unit === 'mg/m²' || drug.unit === 'units/m²') {
             if (drug.hasLoadingDose) {
                 let loadingDose = drug.dose * bsa;
                 let maintenanceDose = drug.maintenanceDose * bsa;
@@ -14326,13 +14332,27 @@ function calculateDoses(formData) {
             }
         }
         
+        // Handle originalDose and schedule for amivantamab
+        let originalDose;
+        let finalSchedule;
+        if (drug.name.toLowerCase().includes('amivantamab')) {
+            const weightKg = parseFloat(weight);
+            const totalDose = weightKg < 80 ? 1050 : 1400;
+            const day2Dose = totalDose - 350; // Calculate D2 dose (total - 350mg)
+            originalDose = totalDose;
+            finalSchedule = `IV weekly x 4 weeks, then every 2 weeks thereafter. Week 1: D1=350mg, D2=${day2Dose}mg`;
+        } else {
+            originalDose = drug.hasLoadingDose ? `${drug.dose} → ${drug.maintenanceDose}` : drug.dose;
+            finalSchedule = drug.schedule;
+        }
+        
         calculatedDrugs.push({
             name: drug.name,
-            originalDose: drug.hasLoadingDose ? `${drug.dose} → ${drug.maintenanceDose}` : drug.dose,
+            originalDose: originalDose,
             originalUnit: drug.unit,
             calculatedDose: calculatedDose,
             doseUnit: doseUnit,
-            schedule: drug.schedule,
+            schedule: finalSchedule,
             hasLoadingDose: drug.hasLoadingDose,
             days: drug.days
         });
