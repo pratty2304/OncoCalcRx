@@ -4732,7 +4732,9 @@ const protocolDatabase = {
             drugs: [
                 { name: 'Etoposide', dose: 75, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
-                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '240 mg/m² before Ifosfamide, then 240 mg/m² at 4h and 8h post-Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D5, every 21 days' },
                 { name: 'Cisplatin', dose: 20, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' }
             ]
         },
@@ -4875,24 +4877,28 @@ const protocolDatabase = {
     sarcoma: {
         // NEOADJUVANT/ADJUVANT REGIMENS
         'Doxorubicin-Ifosfamide': {
-            name: 'Doxorubicin + Ifosfamide + Mesna (AIM) (Neoadjuvant/Adjuvant)',
+            name: 'Doxorubicin + Ifosfamide + Mesna (AIM) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             fnRisk: 'High',
             emetogenicity: 'High',
             drugs: [
-                { name: 'Doxorubicin', dose: 25, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
-                { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4, every 21 days' },
-                { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: '500 mg/m² before Ifosfamide, then 500 mg/m² at 4h and 8h post-Ifosfamide, D1-D4, every 21 days' }
+                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Mesna (pre-dose)', dose: 500, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D3, every 21 days' },
+                { name: 'Mesna (4h post)', dose: 1000, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D3, every 21 days' },
+                { name: 'Mesna (8h post)', dose: 1000, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D3, every 21 days' }
             ]
         },
         'MAID': {
-            name: 'Mesna + Doxorubicin + Ifosfamide + Dacarbazine (MAID) (Neoadjuvant/Adjuvant)',
+            name: 'Mesna + Doxorubicin + Ifosfamide + Dacarbazine (MAID) (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             fnRisk: 'High',
             emetogenicity: 'High',
             drugs: [
-                { name: 'Mesna', dose: 2500, unit: 'mg/m²', schedule: 'D1-D4, every 21 days (uroprotection)' },
-                { name: 'Doxorubicin', dose: 20, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
+                { name: 'Mesna (pre-dose)', dose: 500, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D3, every 21 days' },
+                { name: 'Mesna (4h post)', dose: 1000, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D3, every 21 days' },
+                { name: 'Mesna (8h post)', dose: 1000, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D3, every 21 days' },
+                { name: 'Doxorubicin', dose: 60, unit: 'mg/m²', schedule: 'D1, every 21 days' },
                 { name: 'Ifosfamide', dose: 2500, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' },
                 { name: 'Dacarbazine (DTIC)', dose: 300, unit: 'mg/m²', schedule: 'D1-D3, every 21 days' }
             ]
@@ -6160,8 +6166,10 @@ const protocolDatabase = {
             fnRisk: 'Intermediate',
             emetogenicity: 'Moderate',
             drugs: [
-                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5 every 21 days' },
-                { name: 'Mesna', dose: 1200, unit: 'mg/m²', schedule: '360 mg/m² before Ifosfamide, then 720 mg/m² at 4h and 8h post-Ifosfamide, D1-D5 every 21 days' }
+                { name: 'Ifosfamide', dose: 1200, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
+                { name: 'Mesna (pre-dose)', dose: 240, unit: 'mg/m²', schedule: 'before Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Mesna (4h post)', dose: 480, unit: 'mg/m²', schedule: '4 hours after Ifosfamide, D1-D5, every 21 days' },
+                { name: 'Mesna (8h post)', dose: 480, unit: 'mg/m²', schedule: '8 hours after Ifosfamide, D1-D5, every 21 days' }
             ]
         }
     },
