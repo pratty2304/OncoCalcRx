@@ -16102,8 +16102,8 @@ function displayResults(results, patientData) {
         </div>
         ` : ''}
         
-        <div class="result-item" style="margin-bottom: 20px; font-size: 14px;">
-            <strong>Patient Summary & Risk Profile</strong><br>
+        <div class="patient-summary-box" style="margin-top: 15px; padding: 8px 12px; background-color: #e8f5e8; border-left: 3px solid #27ae60; border-radius: 3px; font-size: 14px;">
+            <strong>Patient Summary & Risk Profile:</strong><br>
             ${results.hasCarboplatin ? 
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
@@ -16657,7 +16657,7 @@ function showFinalPrescription() {
         </div>
         ` : ''}
         
-        <div style="margin-top: 15px; padding: 8px 12px; background-color: #e8f5e8; border-left: 3px solid #27ae60; border-radius: 3px; font-size: 14px;">
+        <div class="patient-summary-box" style="margin-top: 15px; padding: 8px 12px; background-color: #e8f5e8; border-left: 3px solid #27ae60; border-radius: 3px; font-size: 14px;">
             <strong>Patient Summary & Risk Profile:</strong><br>
             ${patientData.creatinine ? 
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
