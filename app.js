@@ -2347,8 +2347,8 @@ const protocolDatabase = {
                 emetogenicity: 'Moderate',
                 drugs: [
                     { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Cyclophosphamide', dose: 1000, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                    { name: 'Mesna', dose: 800, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
+                    { name: 'Cyclophosphamide', dose: 750, unit: 'mg/m²', schedule: 'D1, every 21 days' },
+                    { name: 'Mesna', dose: 600, unit: 'mg/m²', schedule: 'D1, every 21 days (80% of Cyclophosphamide dose)' },
                     { name: 'Vincristine', dose: 1.4, unit: 'mg/m²', schedule: 'D1, every 21 days (max 2mg)' },
                     { name: 'Prednisone', dose: 100, unit: 'mg', schedule: 'PO D1-D5, every 21 days' }
                 ]
@@ -2507,10 +2507,10 @@ const protocolDatabase = {
                 fnRisk: 'Low',
                 emetogenicity: 'Moderate',
                 drugs: [
-                    { name: 'Methotrexate (High-dose)', dose: 3500, unit: 'mg/m²', schedule: 'D1, every 14 days' },
-                    { name: 'Leucovorin', dose: 20, unit: 'mg/m²', schedule: 'q6h starting 24h after MTX until level <0.05' },
-                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO D1-D7, every 14 days' },
-                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D1, every 14 days' }
+                    { name: 'Methotrexate (High-dose)', dose: 8000, unit: 'mg/m²', schedule: 'D1, every 14 days' },
+                    { name: 'Leucovorin', dose: 100, unit: 'mg/m²', schedule: 'D2, q6h until MTX level <0.05 mM' },
+                    { name: 'Rituximab', dose: 375, unit: 'mg/m²', schedule: 'D3, every 14 days (cycles 1-6 only)' },
+                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO D7-D11, every 14 days (odd cycles only)' }
                 ]
             },
             // Waldenström Macroglobulinemia
@@ -9859,7 +9859,7 @@ const protocolDatabase = {
     cervical: {
         // Neoadjuvant/Adjuvant Therapy
         'Cisplatin-Paclitaxel-Neo-Adj': {
-            name: 'Cisplatin + Paclitaxel (Neoadjuvant/Adjuvant)',
+            name: 'Cisplatin + Paclitaxel (Neoadjuvant/Adjuvant/Metastatic)',
             cycles: 6,
             fnRisk: 'Intermediate',
             emetogenicity: 'High',
@@ -9902,6 +9902,16 @@ const protocolDatabase = {
                 { name: 'Ifosfamide', dose: 1500, unit: 'mg/m²', schedule: 'D1-D5, every 21 days' },
                 { name: 'Mesna', dose: 1500, unit: 'mg/m²', schedule: '300 mg/m² before Ifosfamide, then 600 mg/m² at 4h and 8h post-Ifosfamide, D1-D5, every 21 days' },
                 { name: 'Carboplatin', dose: 'AUC 5', unit: 'AUC', schedule: 'D1, every 21 days' }
+            ]
+        },
+        'Paclitaxel-Carboplatin-Weekly-INTERLACE': {
+            name: 'Paclitaxel + Carboplatin weekly (INTERLACE) (Neoadjuvant)',
+            cycles: 6,
+            fnRisk: 'Low',
+            emetogenicity: 'Moderate',
+            drugs: [
+                { name: 'Paclitaxel', dose: 80, unit: 'mg/m²', schedule: 'D1, every 7 days x 6 weeks' },
+                { name: 'Carboplatin', dose: 'AUC 2', unit: 'AUC', schedule: 'D1, every 7 days x 6 weeks' }
             ]
         },
 
@@ -9947,16 +9957,6 @@ const protocolDatabase = {
         },
 
         // Metastatic - 1L
-        'Cisplatin-Paclitaxel-Metastatic': {
-            name: 'Cisplatin + Paclitaxel (Metastatic)',
-            cycles: 6,
-            fnRisk: 'Intermediate',
-            emetogenicity: 'High',
-            drugs: [
-                { name: 'Cisplatin', dose: 75, unit: 'mg/m²', schedule: 'D1, every 21 days' },
-                { name: 'Paclitaxel', dose: 135, unit: 'mg/m²', schedule: 'D1, every 21 days' }
-            ]
-        },
         'Carboplatin-Paclitaxel-Weekly-Metastatic': {
             name: 'Paclitaxel + Carboplatin (PC) Weekly (Metastatic)',
             cycles: 6,
