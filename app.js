@@ -5925,16 +5925,6 @@ const protocolDatabase = {
                 drugs: [
                     { name: 'Regorafenib', dose: 160, unit: 'mg', schedule: 'PO once daily D1-D21, every 28 days' }
                 ]
-            },
-            'Temozolomide-Irinotecan': {
-                name: 'Temozolomide + Irinotecan (Metastatic)',
-                cycles: 6,
-                fnRisk: 'Low',
-                emetogenicity: 'Moderate',
-                drugs: [
-                    { name: 'Temozolomide', dose: 150, unit: 'mg/m²', schedule: 'PO D1-D5, every 28 days' },
-                    { name: 'Irinotecan', dose: 250, unit: 'mg/m²', schedule: 'D1, every 28 days' }
-                ]
             }
         },
         chondrosarcoma: {
