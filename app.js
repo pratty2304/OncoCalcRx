@@ -6517,7 +6517,6 @@ const protocolDatabase = {
                 { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: 'Irinotecan', dose: 150, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                 { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
-                { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'Bolus D1, every 14 days' },
                 { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'Continuous infusion 46h D1-D2, every 14 days' }
             ]
         },
@@ -10824,7 +10823,6 @@ const protocolDatabase = {
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
-                    { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'Bolus D1, every 14 days' },
                     { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'Continuous infusion 46h D1-D2, every 14 days' }
                 ]
             },
@@ -10837,7 +10835,6 @@ const protocolDatabase = {
                     { name: 'Oxaliplatin', dose: 85, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Irinotecan', dose: 180, unit: 'mg/m²', schedule: 'D1, every 14 days' },
                     { name: 'Leucovorin', dose: 400, unit: 'mg/m²', schedule: 'D1, every 14 days' },
-                    { name: '5-Fluorouracil', dose: 400, unit: 'mg/m²', schedule: 'Bolus D1, every 14 days' },
                     { name: '5-Fluorouracil', dose: 2400, unit: 'mg/m²', schedule: 'Continuous infusion 46h D1-D2, every 14 days' },
                     { name: 'Bevacizumab', dose: 5, unit: 'mg/kg', schedule: 'D1, every 14 days' }
                 ]
