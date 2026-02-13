@@ -754,9 +754,17 @@
             .form-row {
                 flex-direction: column;
             }
-            
+
             .container {
                 padding: 10px;
+                min-height: auto;
+            }
+
+            /* Override absolute positioning — use normal flow on mobile */
+            .page.active {
+                position: static !important;
+                min-height: auto !important;
+                overflow-y: visible !important;
             }
 
             /* Enhanced form sections on mobile - increased vertical space */
@@ -774,16 +782,12 @@
                 margin-top: 18px !important;
             }
 
-            /* Better page 1 positioning on mobile - reduced height and centered */
+            /* Page 1 on mobile - normal flow, no forced height */
             #page1.page.active {
-                top: 40px;
-                height: auto;
-                min-height: calc(80vh - 40px);
-                overflow-y: auto;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 20px 0;
+                position: static !important;
+                min-height: auto !important;
+                display: block;
+                padding: 10px 0;
             }
 
             #page1 .form-section {
