@@ -27,7 +27,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f0f4f8;
             color: #333;
             line-height: 1.6;
             margin: 0;
@@ -52,30 +52,31 @@
         }
 
         .header h1 {
-            color: #2c3e50;
+            color: #0f3460;
             font-size: 24px;
             margin-bottom: 10px;
         }
 
         .header p {
-            color: #7f8c8d;
+            color: #4a5a6a;
             font-size: 16px;
         }
 
         .form-section {
             background: white;
             padding: 20px 25px 20px 25px !important;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(15, 52, 96, 0.08), 0 1px 3px rgba(0,0,0,0.06);
             margin-bottom: 15px;
             margin-top: 15px !important;
+            border: 1px solid rgba(15, 52, 96, 0.06);
         }
 
         .form-section h2 {
-            color: #2c3e50;
+            color: #0f3460;
             margin-bottom: 20px;
             font-size: 20px;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 2px solid #0a7e8c;
             padding-bottom: 10px;
         }
 
@@ -87,7 +88,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: 600;
-            color: #2c3e50;
+            color: #0f3460;
         }
 
         input, select {
@@ -101,7 +102,7 @@
 
         input:focus, select:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #0a7e8c;
         }
 
         .form-row {
@@ -114,7 +115,7 @@
         }
 
         .calculate-btn {
-            background: #3498db;
+            background: #0a7e8c;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -127,7 +128,7 @@
         }
 
         .calculate-btn:hover {
-            background: #2980b9;
+            background: #086b77;
         }
 
         .calculate-btn:disabled {
@@ -145,7 +146,7 @@
         }
 
         .results h2 {
-            color: #27ae60;
+            color: #0a7e8c;
             margin-bottom: 20px;
             font-size: 20px;
         }
@@ -155,11 +156,11 @@
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 5px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #0a7e8c;
         }
 
         .result-item strong {
-            color: #2c3e50;
+            color: #0f3460;
         }
 
         .hidden {
@@ -210,21 +211,21 @@
         }
 
         .btn-primary {
-            background: #3498db;
+            background: #0a7e8c;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #2980b9;
+            background: #086b77;
         }
 
         .btn-secondary {
-            background: #95a5a6;
+            background: #5a6c7d;
             color: white;
         }
 
         .btn-secondary:hover {
-            background: #7f8c8d;
+            background: #4a5a6a;
         }
 
         .btn:disabled {
@@ -252,25 +253,70 @@
             width: 16px;
             height: 16px;
             margin: 0;
-            accent-color: #3498db;
+            accent-color: #0a7e8c;
         }
         
         .radio-option span {
             font-weight: 500;
             font-size: 14px;
-            color: #2c3e50;
+            color: #0f3460;
         }
         
         .radio-option:hover span {
-            color: #3498db;
+            color: #0a7e8c;
         }
 
         .progress-bar {
-            background: #ecf0f1;
-            height: 6px;
-            border-radius: 3px;
-            margin-bottom: 0 !important;
-            overflow: hidden;
+            display: none;
+        }
+
+        .step-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            padding: 10px 20px;
+            margin-bottom: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #f0f4f8;
+        }
+
+        .step-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #dce3ea;
+            color: #8a9bb0;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .step-circle.active {
+            background: #0a7e8c;
+            color: white;
+        }
+
+        .step-circle.completed {
+            background: #0f3460;
+            color: white;
+        }
+
+        .step-line {
+            height: 2px;
+            width: 40px;
+            background: #dce3ea;
+            transition: background 0.3s;
+        }
+
+        .step-line.completed {
+            background: #0f3460;
         }
 
         /* SIMPLE FIX - DIRECT POSITIONING */
@@ -309,7 +355,7 @@
         }
 
         .progress-fill {
-            background: linear-gradient(90deg, #3498db, #2ecc71);
+            background: linear-gradient(90deg, #0f3460, #0a7e8c);
             height: 100%;
             border-radius: 3px;
             transition: width 0.3s ease;
@@ -324,7 +370,7 @@
         }
 
         .page-number {
-            background: #3498db;
+            background: #0a7e8c;
             color: white;
             width: 30px;
             height: 30px;
@@ -377,9 +423,8 @@
 
         /* Copyright Footer Styles */
         .app-footer {
-            background: #f8f9fa;
-            border-top: 1px solid #e9ecef;
-            padding: 20px 0;
+            background: #0f3460;
+            padding: 18px 0;
             margin-top: 40px;
             text-align: center;
             position: relative;
@@ -394,15 +439,15 @@
         }
 
         .copyright-line {
-            font-size: 14px;
-            color: #6c757d;
-            margin-bottom: 5px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 4px;
             font-weight: 500;
         }
 
         .brand-line {
-            font-size: 13px;
-            color: #868e96;
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
             font-weight: 400;
         }
 
@@ -450,7 +495,7 @@
             vertical-align: middle;
             font-size: 14px;
             background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-            color: #2c3e50;
+            color: #0f3460;
             font-weight: 600;
         }
 
@@ -644,12 +689,12 @@
 
         .suggestion-protocol {
             font-weight: 600;
-            color: #2c3e50;
+            color: #0f3460;
         }
 
         .suggestion-cancer {
             font-size: 12px;
-            color: #7f8c8d;
+            color: #4a5a6a;
             margin-top: 2px;
         }
 
@@ -657,7 +702,7 @@
             text-align: center;
             margin: 25px 0;
             position: relative;
-            color: #7f8c8d;
+            color: #4a5a6a;
             font-weight: 600;
         }
 
@@ -694,8 +739,8 @@
         }
 
         .selected-protocol-info {
-            background: #e8f5e8;
-            border: 1px solid #28a745;
+            background: #e6f3f5;
+            border: 1px solid #0a7e8c;
             border-radius: 5px;
             padding: 15px;
             margin-top: 15px;
@@ -704,7 +749,7 @@
 
         .selected-protocol-name {
             font-weight: 600;
-            color: #155724;
+            color: #065a64;
             margin-bottom: 5px;
         }
 
@@ -724,7 +769,6 @@
             align-items: center;
             justify-content: center;
         }
-
 
         .splash-content h1 {
             font-size: 48px;
@@ -964,7 +1008,7 @@
 
             .suggestion-cancer {
                 font-size: 12px !important;
-                color: #7f8c8d !important;
+                color: #4a5a6a !important;
                 margin-top: 2px !important;
                 line-height: 1.2 !important;
             }
@@ -1083,6 +1127,20 @@
                 margin-bottom: 15px;
             }
 
+            .step-indicators {
+                padding: 8px 10px 6px;
+            }
+
+            .step-circle {
+                width: 24px;
+                height: 24px;
+                font-size: 11px;
+            }
+
+            .step-line {
+                width: 24px;
+            }
+
             .splash-content h1 {
                 font-size: 36px;
             }
@@ -1186,11 +1244,10 @@
 
             /* Mobile footer adjustments - ensure visibility */
             .app-footer {
-                padding: 15px 0;
+                padding: 12px 0;
                 margin-top: 25px;
                 position: relative;
                 z-index: 100;
-                background: #f8f9fa;
             }
 
             .copyright-line {
@@ -1230,7 +1287,7 @@
                 line-height: 1.3;
                 vertical-align: middle;
                 background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%) !important;
-                color: #2c3e50 !important;
+                color: #0f3460 !important;
                 font-weight: 600;
             }
 
@@ -1472,6 +1529,17 @@
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
         </div>
+        <div class="step-indicators" id="stepIndicators">
+            <div class="step-circle" data-step="1">1</div>
+            <div class="step-line" data-line="1"></div>
+            <div class="step-circle" data-step="2">2</div>
+            <div class="step-line" data-line="2"></div>
+            <div class="step-circle" data-step="3">3</div>
+            <div class="step-line" data-line="3"></div>
+            <div class="step-circle" data-step="4">4</div>
+            <div class="step-line" data-line="4"></div>
+            <div class="step-circle" data-step="5">5</div>
+        </div>
         <!-- Splash Screen -->
         <div id="splashScreen" class="page active">
             <div class="splash-content">
@@ -1534,11 +1602,11 @@
                 </div>
 
                 <!-- Tab Toggle -->
-                <div class="regimen-tabs" style="display: flex; margin-bottom: 16px; border-radius: 8px; overflow: hidden; border: 2px solid #3498db;">
-                    <button type="button" id="tabSearch" class="regimen-tab active" style="flex: 1; padding: 10px 12px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; background: #3498db; color: white;">
+                <div class="regimen-tabs" style="display: flex; margin-bottom: 16px; border-radius: 8px; overflow: hidden; border: 2px solid #0a7e8c;">
+                    <button type="button" id="tabSearch" class="regimen-tab active" style="flex: 1; padding: 10px 12px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; background: #0a7e8c; color: white;">
                         Quick Search
                     </button>
-                    <button type="button" id="tabBrowse" class="regimen-tab" style="flex: 1; padding: 10px 12px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; border-left: 1px solid #3498db; transition: all 0.2s; background: white; color: #3498db;">
+                    <button type="button" id="tabBrowse" class="regimen-tab" style="flex: 1; padding: 10px 12px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; border-left: 1px solid #0a7e8c; transition: all 0.2s; background: white; color: #0a7e8c;">
                         Browse by Cancer Type
                     </button>
                 </div>
@@ -1548,7 +1616,7 @@
                 <div class="search-section" style="padding: 8px; margin-bottom: 12px;">
                     <div class="search-header" style="margin-bottom: 8px;">
                         <span class="search-icon" style="font-size: 14px;">🔍</span>
-                        <h3 style="margin: 0; color: #2c3e50; font-size: 13px;">Quick Search (All Cancers)</h3>
+                        <h3 style="margin: 0; color: #0f3460; font-size: 13px;">Quick Search (All Cancers)</h3>
                     </div>
                     <div class="search-input">
                         <div style="position: relative;">
@@ -1568,7 +1636,7 @@
                     <div style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
                         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
                             <i class="fas fa-calculator" style="font-size: 18px; color: #e67e22;"></i>
-                            <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Carboplatin Dosing Parameters</h3>
+                            <h3 style="margin: 0; color: #0f3460; font-size: 16px;">Carboplatin Dosing Parameters</h3>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -1616,7 +1684,7 @@
                 <div class="browse-section" style="padding: 18px; margin-bottom: 15px;">
                     <div class="browse-header">
                         <i class="fas fa-clipboard-list" style="font-size: 20px; color: #e67e22;"></i>
-                        <h3 style="margin: 0; color: #2c3e50;">Browse by Cancer Type</h3>
+                        <h3 style="margin: 0; color: #0f3460;">Browse by Cancer Type</h3>
                     </div>
                     
                     <div class="form-group">
@@ -1779,7 +1847,7 @@
                 <div style="background: #fff; border: 2px solid #e9ecef; border-radius: 8px; padding: 12px; margin-bottom: 15px;">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
                         <i class="fas fa-sliders-h" style="font-size: 18px; color: #8e44ad;"></i>
-                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Quick Actions</h3>
+                        <h3 style="margin: 0; color: #0f3460; font-size: 16px;">Quick Actions</h3>
                     </div>
                     <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
                         <label style="margin: 0;">Reduce all doses by:</label>
@@ -1793,7 +1861,7 @@
                 <div style="background: #fff; border: 2px solid #e9ecef; border-radius: 8px; padding: 12px; margin-bottom: 15px;">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
                         <span style="font-size: 18px;">💊</span>
-                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Individual Drug Adjustments</h3>
+                        <h3 style="margin: 0; color: #0f3460; font-size: 16px;">Individual Drug Adjustments</h3>
                     </div>
                     
                     <div id="doseAdjustmentTable">
@@ -1822,7 +1890,7 @@
                 <div id="reductionSummary" style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 8px; padding: 12px; margin-top: 15px;">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
                         <i class="fas fa-file-medical" style="font-size: 18px; color: #8e44ad;"></i>
-                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">Dose Reductions Applied</h3>
+                        <h3 style="margin: 0; color: #0f3460; font-size: 16px;">Dose Reductions Applied</h3>
                     </div>
                     <div id="reductionList">
                         <!-- Reduction summary will be populated here -->
@@ -1896,14 +1964,20 @@
             splashScreen.style.display = 'block';
             splashScreen.classList.add('active');
             page1.classList.remove('active');
-            
+            document.getElementById('stepIndicators').style.display = 'none';
+
             // Auto-transition from splash screen to page 1 after 1.5 seconds
             setTimeout(function() {
                 splashScreen.classList.remove('active');
                 page1.classList.add('active');
-                // Update progress bar to show page 1
+                document.getElementById('stepIndicators').style.display = 'flex';
+                // Update progress bar and step indicators for page 1
                 document.getElementById('progressFill').style.width = '33%';
-            }, 1500);
+                document.querySelectorAll('.step-circle').forEach(c => {
+                    c.classList.remove('active', 'completed');
+                    if (c.dataset.step === '1') c.classList.add('active');
+                });
+            }, 1000);
             
             // Radio buttons handle mutual exclusion automatically - no additional code needed
             // Optional: Add visual feedback for radio button selection

@@ -804,6 +804,18 @@ function showPage(pageNumber) {
     const maxPages = 5; // Now we have 5 pages
     const progressPercent = (pageNumber / maxPages) * 100;
     progressFill.style.width = `${progressPercent}%`;
+
+    // Update step indicators
+    document.querySelectorAll('.step-circle').forEach(circle => {
+        const step = parseInt(circle.dataset.step);
+        circle.classList.remove('active', 'completed');
+        if (step === pageNumber) circle.classList.add('active');
+        else if (step < pageNumber) circle.classList.add('completed');
+    });
+    document.querySelectorAll('.step-line').forEach(line => {
+        const lineStep = parseInt(line.dataset.line);
+        line.classList.toggle('completed', lineStep < pageNumber);
+    });
     
     // Scroll to top
     window.scrollTo(0, 0);
@@ -2431,18 +2443,18 @@ function displayResults(results, patientData) {
                                         `<div style="font-size: 12px; line-height: 1.3;">
                                             <div style="color: #007bff; font-weight: 600;">Loading</div>
                                             <div style="color: #007bff; margin-bottom: 8px;">${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
-                                            <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                            <div style="color: #28a745;">${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
+                                            <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                            <div style="color: #0a7e8c;">${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
                                         </div>` 
                                         : `${drug.originalDose}${drug.originalUnit === 'AUC' && drug.originalDose.toString().includes('AUC') ? '' : ' ' + drug.originalUnit}`}
                                 </td>
-                                <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e8f5e8; font-weight: 600;">
+                                <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e6f3f5; font-weight: 600;">
                                     ${drug.hasLoadingDose ? 
                                         `<div style="font-size: 12px; line-height: 1.3;">
                                             <div style="color: #007bff; font-weight: 600;">Loading</div>
                                             <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
-                                            <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                            <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
+                                            <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                            <div style="color: #0a7e8c;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
                                         </div>` 
                                         : `${drug.calculatedDose} ${drug.doseUnit}`}
                                 </td>
@@ -2454,8 +2466,8 @@ function displayResults(results, patientData) {
                                             return `<div style="font-size: 12px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                 <div style="color: #007bff; margin-bottom: 8px;">${roundDose(loadingDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
-                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${roundDose(maintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
+                                                <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #0a7e8c;">${roundDose(maintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                             </div>`;
                                         })()
                                         : `${roundDose(parseFloat(drug.calculatedDose), drug.name, results.protocolName)} ${drug.doseUnit}`}
@@ -2732,8 +2744,8 @@ function buildDoseAdjustmentTable() {
                                             `<div style="font-size: 11px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                 <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
-                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
+                                                <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #0a7e8c;">${drug.calculatedDose.split(' → ')[1]}</div>
                                             </div>` 
                                             : originalDose}
                                     </td>
@@ -2745,8 +2757,8 @@ function buildDoseAdjustmentTable() {
                                             `<div style="font-size: 11px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                 <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
-                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
+                                                <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #0a7e8c;">${drug.calculatedDose.split(' → ')[1]}</div>
                                                 <div style="font-size: 10px; color: #7f8c8d; font-weight: 400; margin-top: 3px; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                             </div>` 
                                             : `${originalDose}<div style="font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 2px; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`}
@@ -2769,8 +2781,8 @@ function buildDoseAdjustmentTable() {
                                             `<div style="font-size: 11px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                 <div style="color: #007bff; margin-bottom: 4px;">${drug.calculatedDose.split(' → ')[0]}</div>
-                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]}</div>
+                                                <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #0a7e8c;">${drug.calculatedDose.split(' → ')[1]}</div>
                                             </div>` 
                                             : originalDose}
                                     </td>
@@ -2784,7 +2796,7 @@ function buildDoseAdjustmentTable() {
                                                onchange="updateDrugReduction('${drug.name}', this.value)">
                                         <span class="percentage-symbol">%</span>
                                     </td>
-                                    <td id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
+                                    <td id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #0a7e8c;">
                                         ${finalDose.toFixed(1)}${drug.unit || 'mg'}
                                     </td>
                                 </tr>
@@ -2805,7 +2817,7 @@ function buildDoseAdjustmentTable() {
                                                onchange="updateDrugReduction('${drug.name}', this.value)">
                                         <span class="percentage-symbol">%</span>
                                     </td>
-                                    <td id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #27ae60;">
+                                    <td id="final_${drug.name.replace(/\s+/g, '_')}" style="font-weight: 600; color: #0a7e8c;">
                                         ${finalDose.toFixed(1)}${drug.unit || 'mg'}
                                     </td>
                                 </tr>
@@ -2919,30 +2931,30 @@ function showFinalPrescription() {
                                             `<div style="font-size: 12px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                 <div style="color: #007bff; margin-bottom: 8px;">${drug.originalDose.split(' → ')[0]} ${drug.originalUnit}</div>
-                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
+                                                <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #0a7e8c;">${drug.originalDose.split(' → ')[1]} ${drug.originalUnit}</div>
                                             </div>` 
                                             : `${drug.originalDose}${drug.originalUnit === 'AUC' && drug.originalDose.toString().includes('AUC') ? '' : ' ' + drug.originalUnit}`}
                                     </td>
-                                    <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e8f5e8; font-weight: 600;">
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; background-color: #e6f3f5; font-weight: 600;">
                                         ${drug.hasLoadingDose ? 
                                             `<div style="font-size: 12px; line-height: 1.3;">
                                                 <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                 <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
-                                                <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
+                                                <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                <div style="color: #0a7e8c;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
                                             </div>` 
                                             : `${drug.calculatedDose} ${drug.doseUnit}`}
                                     </td>
-                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600; color: ${isNonReducible ? '#2c3e50' : (reduction > 0 ? '#e74c3c' : '#27ae60')}; background-color: ${isNonReducible ? '#f8f9fa' : (reduction > 0 ? '#fdf2f2' : '#f8f9fa')};">
+                                    <td style="padding: 12px; border: 1px solid #dee2e6; font-weight: 600; color: ${isNonReducible ? '#2c3e50' : (reduction > 0 ? '#e74c3c' : '#0a7e8c')}; background-color: ${isNonReducible ? '#f8f9fa' : (reduction > 0 ? '#fdf2f2' : '#f8f9fa')};">
                                         ${isNonReducible ? 
                                             // For non-reducible drugs, show same as calculated dose
                                             (drug.hasLoadingDose ? 
                                                 `<div style="font-size: 12px; line-height: 1.3;">
                                                     <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                     <div style="color: #007bff; margin-bottom: 8px;">${drug.calculatedDose.split(' → ')[0]} ${drug.doseUnit}</div>
-                                                    <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                    <div style="color: #28a745;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
+                                                    <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                    <div style="color: #0a7e8c;">${drug.calculatedDose.split(' → ')[1]} ${drug.doseUnit}</div>
                                                     <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                 </div>` 
                                                 : `${drug.calculatedDose} ${drug.doseUnit}<div style="font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>`)
@@ -2972,8 +2984,8 @@ function showFinalPrescription() {
                                                     return `<div style="font-size: 12px; line-height: 1.3;">
                                                         <div style="color: #007bff; font-weight: 600;">Loading</div>
                                                         <div style="color: #007bff; margin-bottom: 8px;">${roundDose(calcLoadingDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
-                                                        <div style="color: #28a745; font-weight: 600;">Maintenance</div>
-                                                        <div style="color: #28a745;">${roundDose(calcMaintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
+                                                        <div style="color: #0a7e8c; font-weight: 600;">Maintenance</div>
+                                                        <div style="color: #0a7e8c;">${roundDose(calcMaintenanceDose, drug.name, results.protocolName)} ${drug.doseUnit}</div>
                                                         <div style="font-size: 10px; color: #7f8c8d; margin-top: 4px; font-style: italic; white-space: normal; word-wrap: break-word;">${(isImmuno || isHormonal) ? 'Withhold if toxicity' : 'Per dose level schedule'}</div>
                                                     </div>`;
                                                 })()
@@ -3198,7 +3210,7 @@ function showFinalPrescription() {
     );
     
     if (appliedReductions.length === 0) {
-        reductionList.innerHTML = '<div class="reduction-item" style="color: #27ae60; font-style: italic; font-size: 13px;">No dose reductions applied</div>';
+        reductionList.innerHTML = '<div class="reduction-item" style="color: #0a7e8c; font-style: italic; font-size: 13px;">No dose reductions applied</div>';
     } else {
         reductionList.innerHTML = appliedReductions.map(([drugName, reduction]) => 
             `<div class="reduction-item" style="margin-bottom: 5px; font-size: 13px;">• <strong>${drugName}:</strong> ${reduction}% reduction</div>`
@@ -3532,10 +3544,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset tabs to Quick Search
         document.getElementById('searchTab').style.display = '';
         document.getElementById('browseTab').style.display = 'none';
-        document.getElementById('tabSearch').style.background = '#3498db';
+        document.getElementById('tabSearch').style.background = '#0a7e8c';
         document.getElementById('tabSearch').style.color = 'white';
         document.getElementById('tabBrowse').style.background = 'white';
-        document.getElementById('tabBrowse').style.color = '#3498db';
+        document.getElementById('tabBrowse').style.color = '#0a7e8c';
 
         // Go back to first page
         showPage(1);
@@ -3616,10 +3628,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset tabs to Quick Search
         document.getElementById('searchTab').style.display = '';
         document.getElementById('browseTab').style.display = 'none';
-        document.getElementById('tabSearch').style.background = '#3498db';
+        document.getElementById('tabSearch').style.background = '#0a7e8c';
         document.getElementById('tabSearch').style.color = 'white';
         document.getElementById('tabBrowse').style.background = 'white';
-        document.getElementById('tabBrowse').style.color = '#3498db';
+        document.getElementById('tabBrowse').style.color = '#0a7e8c';
 
         // Go back to first page
         showPage(1);
@@ -3670,21 +3682,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('tabSearch').addEventListener('click', function() {
         document.getElementById('searchTab').style.display = '';
         document.getElementById('browseTab').style.display = 'none';
-        this.style.background = '#3498db';
+        this.style.background = '#0a7e8c';
         this.style.color = 'white';
         const browseBtn = document.getElementById('tabBrowse');
         browseBtn.style.background = 'white';
-        browseBtn.style.color = '#3498db';
+        browseBtn.style.color = '#0a7e8c';
     });
 
     document.getElementById('tabBrowse').addEventListener('click', function() {
         document.getElementById('browseTab').style.display = '';
         document.getElementById('searchTab').style.display = 'none';
-        this.style.background = '#3498db';
+        this.style.background = '#0a7e8c';
         this.style.color = 'white';
         const searchBtn = document.getElementById('tabSearch');
         searchBtn.style.background = 'white';
-        searchBtn.style.color = '#3498db';
+        searchBtn.style.color = '#0a7e8c';
     });
 
     // Global search event listeners
