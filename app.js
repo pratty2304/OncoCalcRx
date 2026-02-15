@@ -76,6 +76,20 @@ function calculateCarboplatinDose(auc, crCl) {
     return auc * (gfr + 25);
 }
 
+// Get display label for clinical setting key
+function getSettingLabel(setting) {
+    const labels = {
+        neoadjuvant: 'Neoadjuvant', adjuvant: 'Adjuvant', perioperative: 'Perioperative',
+        definitive: 'Definitive', locally_advanced: 'Locally Advanced', primary_treatment: 'Primary Treatment',
+        maintenance: 'Maintenance', metastatic: 'Metastatic', recurrent_progressive: 'Recurrent/Progressive',
+        relapsed_refractory: 'Relapsed/Refractory', unresectable_recurrent: 'Unresectable/Recurrent',
+        mcspc: 'Metastatic Castration-Sensitive (mCSPC)', nmcrpc: 'Non-Metastatic Castration-Resistant (nmCRPC)',
+        mcrpc: 'Metastatic Castration-Resistant (mCRPC)', autologous: 'Autologous SCT Conditioning',
+        allogeneic_mac: 'Allogeneic Myeloablative (MAC)', allogeneic_ric: 'Allogeneic Reduced Intensity / Non-Myeloablative'
+    };
+    return labels[setting] || setting || '';
+}
+
 // Populate subtype dropdown for breast cancer and lung cancer
 // Populate clinical settings dropdown
 function populateSettings(cancerType, subtype) {
@@ -2497,13 +2511,15 @@ function displayResults(results, patientData) {
         ` : ''}
         
         <div class="result-item" style="margin-bottom: 20px; background: linear-gradient(135deg, #e8f5e9 0%, #f3e5f5 100%); border-left: 4px solid #4caf50;">
-            <strong>Patient Summary & Risk Profile:</strong><br>
+            <strong>Patient Summary:</strong><br>
             ${results.hasCarboplatin ?
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
+                Setting: ${getSettingLabel(patientData.setting)}<br>
                 Regimen: ${results.protocolName}${results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}` :
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m²<br>
+                Setting: ${getSettingLabel(patientData.setting)}<br>
                 Regimen: ${results.protocolName}`
             }
         </div>
@@ -3026,13 +3042,15 @@ function showFinalPrescription() {
         </div>
         
         <div style="margin-top: 15px; padding: 8px 12px; background: linear-gradient(135deg, #e8f5e9 0%, #f3e5f5 100%); border-left: 3px solid #4caf50; border-radius: 3px; font-size: 14px;">
-            <strong>Patient Summary & Risk Profile:</strong><br>
+            <strong>Patient Summary:</strong><br>
             ${patientData.creatinine ?
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m² | CrCl: ${results.crCl} mL/min<br>
+                Setting: ${getSettingLabel(patientData.setting)}<br>
                 Regimen: ${results.protocolName}${results.selectedAuc ? ` | AUC ${results.selectedAuc}` : ''}` :
                 `Weight: ${patientData.weight} kg | Height: ${patientData.height} cm<br>
                 BSA: ${results.bsa} m²<br>
+                Setting: ${getSettingLabel(patientData.setting)}<br>
                 Regimen: ${results.protocolName}`
             }
         </div>

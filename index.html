@@ -1485,18 +1485,24 @@
                 margin-bottom: 2px !important;
             }
 
-            /* Grey scrollbar for horizontal table scrolling on mobile */
-            .responsive-table::-webkit-scrollbar {
-                height: 6px;
-            }
-            .responsive-table::-webkit-scrollbar-track {
-                background: #e0e0e0;
-                border-radius: 3px;
-            }
-            .responsive-table::-webkit-scrollbar-thumb {
-                background: #999;
-                border-radius: 3px;
-            }
+        }
+
+        /* Grey scrollbar for horizontal table scrolling - forced light regardless of system dark mode */
+        .responsive-table {
+            color-scheme: light;
+            scrollbar-color: #999 #e0e0e0;
+            scrollbar-width: thin;
+        }
+        .responsive-table::-webkit-scrollbar {
+            height: 6px;
+        }
+        .responsive-table::-webkit-scrollbar-track {
+            background: #e0e0e0 !important;
+            border-radius: 3px;
+        }
+        .responsive-table::-webkit-scrollbar-thumb {
+            background: #999 !important;
+            border-radius: 3px;
         }
 
     </style>
