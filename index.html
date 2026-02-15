@@ -32,14 +32,20 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            min-height: 100dvh;
         }
 
         .container {
             max-width: 600px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 20px 20px 20px;
             position: relative;
-            min-height: 100vh;
+            box-sizing: border-box;
+            flex: 1;
         }
 
         .header {
@@ -172,8 +178,6 @@
             display: none;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
         }
 
         .page.active {
@@ -319,39 +323,15 @@
             background: #0f3460;
         }
 
-        /* SIMPLE FIX - DIRECT POSITIONING */
+        /* Page positioning - normal flow */
         .page.active {
-            position: absolute;
-            top: 30px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
+            position: relative;
             margin: 0;
-            padding: 0;
-            overflow-y: auto;
-        }
-
-        /* Pages 2 and 3 specific styling */
-        #page2.page.active,
-        #page3.page.active {
-            overflow-y: auto;
-        }
-
-        /* Better vertical centering for page 1 */
-        #page1.page.active {
-            top: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: calc(100vh - 60px);
-            overflow-y: auto;
+            padding: 20px 20px 0 20px;
         }
 
         #page1 .form-section {
             width: 100%;
-            max-width: 500px;
-            margin-top: 30px;
-            margin-bottom: 30px;
         }
 
         .progress-fill {
@@ -425,11 +405,10 @@
         .app-footer {
             background: #0f3460;
             padding: 18px 0;
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
-            position: relative;
-            bottom: 0;
             width: 100%;
+            flex-shrink: 0;
         }
 
         .footer-content {
@@ -818,23 +797,10 @@
                 margin-top: 18px !important;
             }
 
-            /* Better page 1 positioning on mobile - reduced height and centered */
-            #page1.page.active {
-                top: 40px;
-                height: auto;
-                min-height: calc(80vh - 40px);
-                overflow-y: auto;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 20px 0;
-            }
-
             #page1 .form-section {
                 margin-top: 0;
                 margin-bottom: 0;
                 width: 100%;
-                max-width: 500px;
             }
 
             .splash-content h1 {
@@ -1245,8 +1211,7 @@
             /* Mobile footer adjustments - ensure visibility */
             .app-footer {
                 padding: 12px 0;
-                margin-top: 25px;
-                position: relative;
+                margin-top: 50px;
                 z-index: 100;
             }
 
@@ -1969,6 +1934,7 @@
             // Auto-transition from splash screen to page 1 after 1.5 seconds
             setTimeout(function() {
                 splashScreen.classList.remove('active');
+                splashScreen.style.display = 'none';
                 page1.classList.add('active');
                 document.getElementById('stepIndicators').style.display = 'flex';
                 // Update progress bar and step indicators for page 1
