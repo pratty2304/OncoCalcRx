@@ -1154,32 +1154,32 @@ window.protocolData.lymphoma = {
         ]
       },
       "MTR-PCNSL": {
-        "name": "MTR (methotrexate + temozolomide + rituximab) (PCNSL)",
-        "cycles": 8,
+        "name": "MTR (methotrexate + temozolomide + rituximab) (CALGB 50202) (PCNSL)",
+        "cycles": 5,
         "drugs": [
           {
             "name": "Methotrexate (High-dose)",
-            "dose": 3500,
+            "dose": 8000,
             "unit": "mg/m²",
-            "schedule": "D1, every 14 days x 8 cycles"
+            "schedule": "D1, IV over 4h, every 2 weeks x 7 doses (adjust for CrCl)"
           },
           {
             "name": "Leucovorin",
             "dose": 20,
             "unit": "mg/m²",
-            "schedule": "q6h starting 24h after MTX until level <0.05"
+            "schedule": "q6h starting 24h after MTX until MTX level <0.05 µmol/L"
           },
           {
             "name": "Temozolomide",
             "dose": 150,
             "unit": "mg/m²",
-            "schedule": "PO D1-D7, every 14 days x 8 cycles"
+            "schedule": "PO D7-D11, every 28 days x 5 cycles"
           },
           {
             "name": "Rituximab",
             "dose": 375,
             "unit": "mg/m²",
-            "schedule": "D1, every 14 days x 8 cycles"
+            "schedule": "D3, weekly x 6 doses"
           }
         ]
       },

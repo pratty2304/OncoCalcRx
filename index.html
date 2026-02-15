@@ -1484,6 +1484,19 @@
                 font-size: 10px !important;
                 margin-bottom: 2px !important;
             }
+
+            /* Grey scrollbar for horizontal table scrolling on mobile */
+            .responsive-table::-webkit-scrollbar {
+                height: 6px;
+            }
+            .responsive-table::-webkit-scrollbar-track {
+                background: #e0e0e0;
+                border-radius: 3px;
+            }
+            .responsive-table::-webkit-scrollbar-thumb {
+                background: #999;
+                border-radius: 3px;
+            }
         }
 
     </style>

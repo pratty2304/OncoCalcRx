@@ -43,6 +43,30 @@ window.protocolData.cervical = {
         }
       ]
     },
+    "INTERLACE-Induction-CRT": {
+      "name": "Carboplatin + Paclitaxel Induction → Cisplatin-RT (INTERLACE)",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "Paclitaxel (induction)",
+          "dose": 80,
+          "unit": "mg/m²",
+          "schedule": "D1, weekly x 6 weeks (induction phase, before CRT)"
+        },
+        {
+          "name": "Carboplatin (induction)",
+          "dose": "AUC 2",
+          "unit": "AUC",
+          "schedule": "D1, weekly x 6 weeks (induction phase, before CRT)"
+        },
+        {
+          "name": "Cisplatin (concurrent with RT)",
+          "dose": 40,
+          "unit": "mg/m²",
+          "schedule": "D1, weekly during radiation therapy x 5-6 weeks (after induction)"
+        }
+      ]
+    },
     "Cisplatin-5FU-RT": {
       "name": "Cisplatin + 5-Fluorouracil + RT",
       "cycles": 2,
