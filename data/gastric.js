@@ -280,6 +280,17 @@ window.protocolData.gastric = {
           "schedule": "CI over 24 hours D1, every 14 days (4 cycles preoperative + 4 cycles postoperative)"
         }
       ]
+    },
+    "Durvalumab-Maintenance-MATTERHORN": {
+      "name": "Durvalumab Maintenance (MATTERHORN) (post Durvalumab + FLOT)",
+      "drugs": [
+        {
+          "name": "Durvalumab",
+          "dose": 1500,
+          "unit": "mg",
+          "schedule": "D1, every 28 days x 12 months (after completing perioperative Durvalumab + FLOT and surgery)"
+        }
+      ]
     }
   },
   "metastatic": {
