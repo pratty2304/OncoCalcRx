@@ -1155,55 +1155,95 @@ function buildProtocolIndex() {
         }
         
         // === ENHANCED BIOMARKER & TARGET SEARCH ===
-        // EGFR-related
+        // EGFR-related — class-level aliases
         if (text.includes('egfr') || text.includes('osimertinib') || text.includes('erlotinib') || text.includes('afatinib') || text.includes('mobocertinib') || text.includes('exon19') || text.includes('l858r') || text.includes('exon20')) {
-            aliases += ' egfr egfr-positive egfr+ egfr-mutated egfr-mutation egfr-targeted osimertinib erlotinib afatinib mobocertinib exon19del l858r exon20 tagrisso tarceva gilotrif exkivity';
+            aliases += ' egfr egfr-positive egfr+ egfr-mutated egfr-mutation egfr-targeted exon19del l858r exon20';
         }
-        
-        // ALK-related  
+        // EGFR — drug-specific aliases (only added when that drug is present)
+        if (text.includes('osimertinib')) aliases += ' tagrisso osimertinib';
+        if (text.includes('erlotinib')) aliases += ' tarceva erlotinib';
+        if (text.includes('afatinib')) aliases += ' gilotrif afatinib';
+        if (text.includes('mobocertinib')) aliases += ' exkivity mobocertinib';
+
+        // ALK-related — class-level aliases
         if (text.includes('alk') || text.includes('alectinib') || text.includes('crizotinib') || text.includes('brigatinib') || text.includes('lorlatinib') || text.includes('rearrangement')) {
-            aliases += ' alk alk-positive alk+ alk-rearrangement alk-fusion alk-targeted alectinib crizotinib brigatinib lorlatinib alecensa xalkori alunbrig lorbrena';
+            aliases += ' alk alk-positive alk+ alk-rearrangement alk-fusion alk-targeted';
         }
-        
-        // PD-1/PD-L1 immunotherapy
+        // ALK — drug-specific aliases
+        if (text.includes('alectinib')) aliases += ' alecensa alectinib';
+        if (text.includes('crizotinib')) aliases += ' xalkori crizotinib';
+        if (text.includes('brigatinib')) aliases += ' alunbrig brigatinib';
+        if (text.includes('lorlatinib')) aliases += ' lorbrena lorlatinib';
+
+        // PD-1/PD-L1 immunotherapy — class-level aliases
         if (text.includes('pd-1') || text.includes('pdl1') || text.includes('pd-l1') || text.includes('pembrolizumab') || text.includes('nivolumab') || text.includes('cemiplimab') || text.includes('dostarlimab') || text.includes('atezolizumab') || text.includes('durvalumab') || text.includes('avelumab')) {
-            aliases += ' pd1 pd-1 pdl1 pd-l1 immunotherapy checkpoint-inhibitor checkpoint immune pembrolizumab keytruda pembro nivolumab opdivo nivo cemiplimab libtayo dostarlimab jemperli atezolizumab tecentriq atezo durvalumab imfinzi durva avelumab bavencio';
+            aliases += ' pd1 pd-1 pdl1 pd-l1 immunotherapy checkpoint-inhibitor checkpoint immune';
         }
-        
-        // CTLA-4
+        // PD-1/PD-L1 — drug-specific aliases (only added when that drug is present)
+        if (text.includes('pembrolizumab')) aliases += ' keytruda pembro pembrolizumab';
+        if (text.includes('nivolumab')) aliases += ' opdivo nivo nivolumab';
+        if (text.includes('cemiplimab')) aliases += ' libtayo cemiplimab';
+        if (text.includes('dostarlimab')) aliases += ' jemperli dostarlimab';
+        if (text.includes('atezolizumab')) aliases += ' tecentriq atezo atezolizumab';
+        if (text.includes('durvalumab')) aliases += ' imfinzi durva durvalumab';
+        if (text.includes('avelumab')) aliases += ' bavencio avelumab';
+
+        // CTLA-4 — class-level aliases
         if (text.includes('ctla') || text.includes('ipilimumab') || text.includes('tremelimumab')) {
-            aliases += ' ctla4 ctla-4 ipilimumab yervoy ipi tremelimumab immunotherapy checkpoint-inhibitor checkpoint immune';
+            aliases += ' ctla4 ctla-4 immunotherapy checkpoint-inhibitor checkpoint immune';
         }
-        
-        // HER2-related
+        // CTLA-4 — drug-specific aliases
+        if (text.includes('ipilimumab')) aliases += ' yervoy ipi ipilimumab';
+        if (text.includes('tremelimumab')) aliases += ' tremelimumab';
+
+        // HER2-related — class-level aliases
         if (text.includes('her2') || text.includes('trastuzumab') || text.includes('pertuzumab') || text.includes('t-dxd') || text.includes('t-dm1')) {
-            aliases += ' her2 her2-positive her2+ her2-targeted her2-amplified trastuzumab herceptin pertuzumab perjeta t-dxd t-dm1 kadcyla enhertu trastu pertuz';
+            aliases += ' her2 her2-positive her2+ her2-targeted her2-amplified';
         }
-        
-        // VEGF/VEGFR angiogenesis
+        // HER2 — drug-specific aliases
+        if (text.includes('trastuzumab')) aliases += ' herceptin trastu trastuzumab';
+        if (text.includes('pertuzumab')) aliases += ' perjeta pertuz pertuzumab';
+        if (text.includes('t-dxd')) aliases += ' enhertu t-dxd';
+        if (text.includes('t-dm1')) aliases += ' kadcyla t-dm1';
+
+        // VEGF/VEGFR angiogenesis — class-level aliases
         if (text.includes('vegf') || text.includes('bevacizumab') || text.includes('ramucirumab') || text.includes('axitinib') || text.includes('pazopanib') || text.includes('angiogenesis')) {
-            aliases += ' vegf vegfr vegfr2 angiogenesis bevacizumab avastin bev ramucirumab cyramza ram axitinib inlyta pazopanib votrient';
+            aliases += ' vegf vegfr vegfr2 angiogenesis';
         }
-        
-        // PARP inhibitors
+        // VEGF — drug-specific aliases
+        if (text.includes('bevacizumab')) aliases += ' avastin bev bevacizumab';
+        if (text.includes('ramucirumab')) aliases += ' cyramza ram ramucirumab';
+        if (text.includes('axitinib')) aliases += ' inlyta axitinib';
+        if (text.includes('pazopanib')) aliases += ' votrient pazopanib';
+
+        // PARP inhibitors — class-level aliases
         if (text.includes('parp') || text.includes('olaparib') || text.includes('rucaparib') || text.includes('niraparib') || text.includes('talazoparib') || text.includes('brca')) {
-            aliases += ' parp parp-inhibitor brca brca-positive brca+ brca1 brca2 hrr hrd homologous-recombination olaparib lynparza rucaparib rubraca niraparib zejula talazoparib talzenna';
+            aliases += ' parp parp-inhibitor brca brca-positive brca+ brca1 brca2 hrr hrd homologous-recombination';
         }
-        
+        // PARP — drug-specific aliases
+        if (text.includes('olaparib')) aliases += ' lynparza olaparib';
+        if (text.includes('rucaparib')) aliases += ' rubraca rucaparib';
+        if (text.includes('niraparib')) aliases += ' zejula niraparib';
+        if (text.includes('talazoparib')) aliases += ' talzenna talazoparib';
+
         // ROS1
         if (text.includes('ros1') || text.includes('entrectinib')) {
             aliases += ' ros1 ros1-positive ros1+ ros1-rearrangement ros1-fusion entrectinib rozlytrek';
         }
-        
+
         // NTRK/TRK
         if (text.includes('ntrk') || text.includes('trk') || text.includes('larotrectinib')) {
             aliases += ' ntrk trk ntrk-fusion trk-fusion entrectinib rozlytrek larotrectinib vitrakvi';
         }
-        
-        // BRAF
+
+        // BRAF — class-level aliases
         if (text.includes('braf') || text.includes('vemurafenib') || text.includes('dabrafenib') || text.includes('trametinib') || text.includes('v600')) {
-            aliases += ' braf braf-mutated braf+ v600e v600k vemurafenib zelboraf dabrafenib tafinlar trametinib mekinist';
+            aliases += ' braf braf-mutated braf+ v600e v600k';
         }
+        // BRAF — drug-specific aliases
+        if (text.includes('vemurafenib')) aliases += ' zelboraf vemurafenib';
+        if (text.includes('dabrafenib')) aliases += ' tafinlar dabrafenib';
+        if (text.includes('trametinib')) aliases += ' mekinist trametinib';
         
         // MSI/MMR
         if (text.includes('msi') || text.includes('mmr') || text.includes('dmmr') || text.includes('microsatellite')) {
