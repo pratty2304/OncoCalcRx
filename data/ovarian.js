@@ -524,6 +524,18 @@ window.protocolData.ovarian = {
           "dose": 500,
           "unit": "mg/m²",
           "schedule": "D1, every 21 days"
+        },
+        {
+          "name": "Folic Acid",
+          "dose": 400,
+          "unit": "mcg",
+          "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+        },
+        {
+          "name": "Vitamin B12 (Vitcofol)",
+          "dose": 1000,
+          "unit": "mcg",
+          "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
         }
       ]
     },

@@ -23,6 +23,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 3 cycles (non-squamous)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -41,6 +53,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -151,6 +175,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 2-3 cycles concurrent with RT"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -248,6 +284,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 neo cycles (non-squamous; or Gemcitabine 1000mg/m² D1,8 for squamous)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       }
@@ -352,6 +400,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -463,6 +523,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days (continue as maintenance)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -486,6 +558,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days (continue as maintenance)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -561,6 +645,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 2 cycles (non-squamous; or Paclitaxel 200mg/m² for squamous)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -613,6 +709,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days (continue as maintenance)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -647,6 +755,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles then maintenance"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -709,6 +829,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days (continue as maintenance)"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -908,6 +1040,47 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4-6 cycles then maintenance"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Carboplatin-Pemetrexed": {
+        "name": "Carboplatin + Pemetrexed (non-squamous)",
+        "drugs": [
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 4-6 cycles"
+          },
+          {
+            "name": "Pemetrexed",
+            "dose": 500,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4-6 cycles then maintenance"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
@@ -1003,6 +1176,18 @@ window.protocolData.lung = {
             "dose": 500,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days until progression"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       }
