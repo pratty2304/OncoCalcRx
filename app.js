@@ -1151,12 +1151,13 @@ function generateSearchAliases(text) {
         
         // === ENHANCED BIOMARKER & TARGET SEARCH ===
         // EGFR-related — class-level aliases
-        if (text.includes('egfr') || text.includes('osimertinib') || text.includes('erlotinib') || text.includes('afatinib') || text.includes('mobocertinib') || text.includes('exon19') || text.includes('l858r') || text.includes('exon20')) {
+        if (text.includes('egfr') || text.includes('osimertinib') || text.includes('erlotinib') || text.includes('afatinib') || text.includes('gefitinib') || text.includes('mobocertinib') || text.includes('exon19') || text.includes('l858r') || text.includes('exon20')) {
             aliases += ' egfr egfr-positive egfr+ egfr-mutated egfr-mutation egfr-targeted exon19del l858r exon20';
         }
         // EGFR — drug-specific aliases (only added when that drug is present)
         if (text.includes('osimertinib')) aliases += ' tagrisso osimertinib';
         if (text.includes('erlotinib')) aliases += ' tarceva erlotinib';
+        if (text.includes('gefitinib')) aliases += ' iressa gefitinib';
         if (text.includes('afatinib')) aliases += ' gilotrif afatinib';
         if (text.includes('mobocertinib')) aliases += ' exkivity mobocertinib';
 
@@ -1808,7 +1809,7 @@ function searchProtocols(query) {
             // Biomarker-specific matching
             if (['egfr', 'alk', 'ros1', 'ntrk', 'braf'].includes(queryWord)) {
                 const biomarkerDrugs = {
-                    'egfr': ['egfr', 'osimertinib', 'erlotinib', 'afatinib', 'mobocertinib', 'exon19', 'l858r', 'exon20'],
+                    'egfr': ['egfr', 'osimertinib', 'erlotinib', 'gefitinib', 'afatinib', 'mobocertinib', 'exon19', 'l858r', 'exon20'],
                     'alk': ['alk', 'alectinib', 'crizotinib', 'brigatinib', 'lorlatinib', 'rearrangement'],
                     'ros1': ['ros1', 'entrectinib'],
                     'ntrk': ['ntrk', 'larotrectinib', 'entrectinib'],

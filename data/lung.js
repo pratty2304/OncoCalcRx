@@ -770,6 +770,41 @@ window.protocolData.lung = {
           }
         ]
       },
+      "Gefitinib-Carboplatin-Pemetrexed": {
+        "name": "Gefitinib + Carboplatin + Pemetrexed (NEJ009) (EGFR exon19del/L858R)",
+        "drugs": [
+          {
+            "name": "Gefitinib",
+            "dose": 250,
+            "unit": "mg",
+            "schedule": "PO once daily continuously"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 4-6 cycles"
+          },
+          {
+            "name": "Pemetrexed",
+            "dose": 500,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4-6 cycles then maintenance"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
       "Amivantamab-Lazertinib": {
         "name": "Amivantamab + Lazertinib (MARIPOSA) (EGFR exon19del/L858R)",
         "drugs": [
@@ -793,6 +828,17 @@ window.protocolData.lung = {
           {
             "name": "Afatinib",
             "dose": 40,
+            "unit": "mg",
+            "schedule": "PO once daily continuously"
+          }
+        ]
+      },
+      "Gefitinib": {
+        "name": "Gefitinib (IPASS) (EGFR exon19del/L858R)",
+        "drugs": [
+          {
+            "name": "Gefitinib",
+            "dose": 250,
             "unit": "mg",
             "schedule": "PO once daily continuously"
           }
