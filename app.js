@@ -980,6 +980,17 @@ function validatePage2() {
 let allProtocols = [];
 let selectedSearchProtocol = null;
 
+// Supportive drugs to exclude from therapeutic drug count (supplements, not searched by users)
+const SUPPORTIVE_DRUGS = ['folic acid', 'vitamin b12', 'vitcofol'];
+
+// Helper: extract therapeutic drug names from a protocol's drug list
+function getTherapeuticDrugs(protocol) {
+    if (!protocol.drugs) return [];
+    return protocol.drugs
+        .map(drug => drug.name)
+        .filter(name => !SUPPORTIVE_DRUGS.includes(name.toLowerCase()));
+}
+
 // Build searchable protocol index
 function buildProtocolIndex() {
     console.log('Building protocol index...'); // Debug log
@@ -1256,6 +1267,7 @@ function buildProtocolIndex() {
                     Object.keys(protocolDatabase[cancerType][subtype][setting]).forEach(protocolKey => {
                         const protocol = protocolDatabase[cancerType][subtype][setting][protocolKey];
                         const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                        const therapeuticDrugs = getTherapeuticDrugs(protocol);
                         const settingName = setting.charAt(0).toUpperCase() + setting.slice(1);
                         const baseSearchText = `${protocol.name} ${cancerName} ${subtypeName} ${settingName} ${drugNames}`.toLowerCase();
                         const searchText = generateSearchAliases(baseSearchText);
@@ -1268,7 +1280,9 @@ function buildProtocolIndex() {
                             subtype: subtype,
                             setting: setting,
                             searchText: searchText,
-                            searchTextNormalized: normalizeSearchString(searchText)
+                            searchTextNormalized: normalizeSearchString(searchText),
+                            drugCount: therapeuticDrugs.length,
+                            drugNames: therapeuticDrugs.map(n => n.toLowerCase())
                         });
                     });
                 });
@@ -1279,6 +1293,7 @@ function buildProtocolIndex() {
                 Object.keys(protocolDatabase[cancerType][setting]).forEach(protocolKey => {
                     const protocol = protocolDatabase[cancerType][setting][protocolKey];
                     const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                    const therapeuticDrugs = getTherapeuticDrugs(protocol);
                     const settingName = setting.charAt(0).toUpperCase() + setting.slice(1);
                     const baseSearchText = `${protocol.name} ${cancerName} ${settingName} ${drugNames}`.toLowerCase();
                     const searchText = generateSearchAliases(baseSearchText);
@@ -1291,7 +1306,9 @@ function buildProtocolIndex() {
                         subtype: null,
                         setting: setting,
                         searchText: searchText,
-                        searchTextNormalized: normalizeSearchString(searchText)
+                        searchTextNormalized: normalizeSearchString(searchText),
+                        drugCount: therapeuticDrugs.length,
+                        drugNames: therapeuticDrugs.map(n => n.toLowerCase())
                     });
                 });
             });
@@ -1814,6 +1831,28 @@ function searchProtocols(query) {
             }
         });
 
+        // Drug specificity scoring: prefer exact drug-count matches over combos with extra drugs
+        if (protocol.drugCount > 0 && nonCancerWords.length > 0) {
+            // Count how many protocol drugs are matched by any search term
+            const matchedDrugCount = protocol.drugNames.filter(drugName =>
+                nonCancerWords.some(term =>
+                    drugName.includes(term) || term.includes(drugName) ||
+                    (term.length > 3 && drugName.length > 3 && fuzzyMatch(term, drugName, 0.75))
+                )
+            ).length;
+            const unmatchedDrugs = protocol.drugCount - matchedDrugCount;
+
+            if (matchedDrugCount > 0) {
+                if (unmatchedDrugs === 0) {
+                    // All protocol drugs accounted for by search terms — exact match bonus
+                    score += 5;
+                } else {
+                    // Penalty for each extra drug beyond what was searched
+                    score -= unmatchedDrugs * 2;
+                }
+            }
+        }
+
         // For queries with only cancer type and no other terms, show all protocols for that cancer
         if (mappedCancerType && nonCancerWords.length === 0) {
             score = 5; // Just the cancer type match score
@@ -2174,6 +2213,7 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
                 Object.keys(protocolDatabase[cancerType][subtype][setting]).forEach(protocolKey => {
                     const protocol = protocolDatabase[cancerType][subtype][setting][protocolKey];
                     const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                    const therapeuticDrugs = getTherapeuticDrugs(protocol);
                     const settingName = setting.charAt(0).toUpperCase() + setting.slice(1);
                     const searchText = `${protocol.name} ${settingName} ${drugNames}`.toLowerCase();
                     cancerSpecificProtocols.push({
@@ -2184,7 +2224,9 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
                         subtype: subtype,
                         setting: setting,
                         searchText: searchText,
-                        searchTextNormalized: normalizeSearchString(searchText)
+                        searchTextNormalized: normalizeSearchString(searchText),
+                        drugCount: therapeuticDrugs.length,
+                        drugNames: therapeuticDrugs.map(n => n.toLowerCase())
                     });
                 });
             });
@@ -2197,6 +2239,7 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
                 Object.keys(protocolDatabase[cancerType][subtypeKey][setting]).forEach(protocolKey => {
                     const protocol = protocolDatabase[cancerType][subtypeKey][setting][protocolKey];
                     const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                    const therapeuticDrugs = getTherapeuticDrugs(protocol);
                     const settingName = setting.charAt(0).toUpperCase() + setting.slice(1);
                     const searchText = `${protocol.name} ${settingName} ${drugNames}`.toLowerCase();
                     cancerSpecificProtocols.push({
@@ -2207,7 +2250,9 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
                         subtype: subtypeKey,
                         setting: setting,
                         searchText: searchText,
-                        searchTextNormalized: normalizeSearchString(searchText)
+                        searchTextNormalized: normalizeSearchString(searchText),
+                        drugCount: therapeuticDrugs.length,
+                        drugNames: therapeuticDrugs.map(n => n.toLowerCase())
                     });
                 });
             });
@@ -2218,6 +2263,7 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
             Object.keys(protocolDatabase[cancerType][setting]).forEach(protocolKey => {
                 const protocol = protocolDatabase[cancerType][setting][protocolKey];
                 const drugNames = protocol.drugs ? protocol.drugs.map(drug => drug.name).join(' ') : '';
+                const therapeuticDrugs = getTherapeuticDrugs(protocol);
                 const settingName = setting.charAt(0).toUpperCase() + setting.slice(1);
                 const searchText = `${protocol.name} ${settingName} ${drugNames}`.toLowerCase();
                 cancerSpecificProtocols.push({
@@ -2228,7 +2274,9 @@ function buildCancerSpecificIndex(cancerType, subtype = null) {
                     subtype: null,
                     setting: setting,
                     searchText: searchText,
-                    searchTextNormalized: normalizeSearchString(searchText)
+                    searchTextNormalized: normalizeSearchString(searchText),
+                    drugCount: therapeuticDrugs.length,
+                    drugNames: therapeuticDrugs.map(n => n.toLowerCase())
                 });
             });
         });
@@ -2255,12 +2303,30 @@ function searchCancerSpecificProtocols(query) {
         protocol.searchTextNormalized.includes(queryNormalized)
     );
 
-    // If we have exact matches, prioritize them
+    // If we have exact matches, prioritize them with drug specificity scoring
     if (exactResults.length > 0) {
+        const queryWords = queryLower.split(/\s+/).filter(w => w.length > 1);
         exactResults.sort((a, b) => {
-            const aExact = a.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-            const bExact = b.name.toLowerCase().startsWith(queryLower) ? 0 : 1;
-            return aExact - bExact;
+            // Drug specificity: compute score adjustment for each result
+            function drugSpecificityScore(protocol) {
+                let adj = 0;
+                if (protocol.drugCount > 0 && queryWords.length > 0) {
+                    const matchedDrugCount = protocol.drugNames.filter(drugName =>
+                        queryWords.some(term =>
+                            drugName.includes(term) || term.includes(drugName) ||
+                            (term.length > 3 && drugName.length > 3 && fuzzyMatch(term, drugName, 0.75))
+                        )
+                    ).length;
+                    const unmatchedDrugs = protocol.drugCount - matchedDrugCount;
+                    if (matchedDrugCount > 0) {
+                        adj = unmatchedDrugs === 0 ? 5 : -(unmatchedDrugs * 2);
+                    }
+                }
+                // Name-starts-with bonus
+                if (protocol.name.toLowerCase().startsWith(queryLower)) adj += 1;
+                return adj;
+            }
+            return drugSpecificityScore(b) - drugSpecificityScore(a);
         });
         return exactResults.slice(0, 20);
     }
