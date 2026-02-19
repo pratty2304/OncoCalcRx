@@ -216,7 +216,7 @@ window.protocolData.lung = {
     },
     "perioperative": {
       "Nivolumab-Carbo-Pac-Periop": {
-        "name": "Nivolumab + Carboplatin + Paclitaxel (CheckMate 77T)",
+        "name": "Nivolumab + Carboplatin + Paclitaxel (CheckMate 77T) (PD-L1 irrespective)",
         "cycles": 4,
         "drugs": [
           {
