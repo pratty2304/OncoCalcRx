@@ -239,8 +239,8 @@ window.protocolData.lung = {
           }
         ]
       },
-      "Pembrolizumab-Chemo-Periop": {
-        "name": "Pembrolizumab + platinum doublet (KEYNOTE-671)",
+      "Pembrolizumab-Cis-Pem-Periop": {
+        "name": "Pembrolizumab + Cisplatin + Pemetrexed (KEYNOTE-671) (non-squamous, PD-L1 irrespective)",
         "cycles": 4,
         "drugs": [
           {
@@ -250,21 +250,57 @@ window.protocolData.lung = {
             "schedule": "D1, every 21 days x 4 neo cycles, then 200mg q3w adj x 13 cycles"
           },
           {
-            "name": "Carboplatin",
-            "dose": "AUC 5",
-            "unit": "AUC",
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 neo cycles"
           },
           {
-            "name": "Paclitaxel",
-            "dose": 200,
+            "name": "Pemetrexed",
+            "dose": 500,
             "unit": "mg/m²",
-            "schedule": "D1, every 21 days x 4 neo cycles (or Pemetrexed 500mg/m² for non-squamous)"
+            "schedule": "D1, every 21 days x 4 neo cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
           }
         ]
       },
-      "Durvalumab-Chemo-Periop": {
-        "name": "Durvalumab + platinum doublet (AEGEAN)",
+      "Pembrolizumab-Cis-Gem-Periop": {
+        "name": "Pembrolizumab + Cisplatin + Gemcitabine (KEYNOTE-671) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Pembrolizumab",
+            "dose": 200,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 4 neo cycles, then 200mg q3w adj x 13 cycles"
+          },
+          {
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 neo cycles"
+          },
+          {
+            "name": "Gemcitabine",
+            "dose": 1000,
+            "unit": "mg/m²",
+            "schedule": "D1,8, every 21 days x 4 neo cycles"
+          }
+        ]
+      },
+      "Durvalumab-Cis-Pem-Periop": {
+        "name": "Durvalumab + Cisplatin + Pemetrexed (AEGEAN) (non-squamous, PD-L1 irrespective)",
         "cycles": 4,
         "drugs": [
           {
@@ -283,7 +319,7 @@ window.protocolData.lung = {
             "name": "Pemetrexed",
             "dose": 500,
             "unit": "mg/m²",
-            "schedule": "D1, every 21 days x 4 neo cycles (non-squamous; or Gemcitabine 1000mg/m² D1,8 for squamous)"
+            "schedule": "D1, every 21 days x 4 neo cycles"
           },
           {
             "name": "Folic Acid",
@@ -296,6 +332,210 @@ window.protocolData.lung = {
             "dose": 1000,
             "unit": "mcg",
             "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Durvalumab-Carbo-Pem-Periop": {
+        "name": "Durvalumab + Carboplatin + Pemetrexed (AEGEAN) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Durvalumab",
+            "dose": 1500,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 4 neo cycles, then 1500mg q4w adj x 12 cycles"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 4 neo cycles"
+          },
+          {
+            "name": "Pemetrexed",
+            "dose": 500,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 neo cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Durvalumab-Cis-Gem-Periop": {
+        "name": "Durvalumab + Cisplatin + Gemcitabine (AEGEAN) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Durvalumab",
+            "dose": 1500,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 4 neo cycles, then 1500mg q4w adj x 12 cycles"
+          },
+          {
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 neo cycles"
+          },
+          {
+            "name": "Gemcitabine",
+            "dose": 1250,
+            "unit": "mg/m²",
+            "schedule": "D1,8, every 21 days x 4 neo cycles"
+          }
+        ]
+      },
+      "Durvalumab-Carbo-Gem-Periop": {
+        "name": "Durvalumab + Carboplatin + Gemcitabine (AEGEAN) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Durvalumab",
+            "dose": 1500,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 4 neo cycles, then 1500mg q4w adj x 12 cycles"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 4 neo cycles"
+          },
+          {
+            "name": "Gemcitabine",
+            "dose": 1250,
+            "unit": "mg/m²",
+            "schedule": "D1,8, every 21 days x 4 neo cycles"
+          }
+        ]
+      },
+      "Tislelizumab-Cis-Pem-Periop": {
+        "name": "Tislelizumab + Cisplatin + Pemetrexed (RATIONALE-315) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Tislelizumab",
+            "dose": 200,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 3-4 neo cycles, then 400mg q6w adj x 8 cycles"
+          },
+          {
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          },
+          {
+            "name": "Pemetrexed",
+            "dose": 500,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Tislelizumab-Carbo-Pem-Periop": {
+        "name": "Tislelizumab + Carboplatin + Pemetrexed (RATIONALE-315) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Tislelizumab",
+            "dose": 200,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 3-4 neo cycles, then 400mg q6w adj x 8 cycles"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          },
+          {
+            "name": "Pemetrexed",
+            "dose": 500,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Tislelizumab-Cis-Pac-Periop": {
+        "name": "Tislelizumab + Cisplatin + Paclitaxel (RATIONALE-315) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Tislelizumab",
+            "dose": 200,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 3-4 neo cycles, then 400mg q6w adj x 8 cycles"
+          },
+          {
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          }
+        ]
+      },
+      "Tislelizumab-Carbo-Pac-Periop": {
+        "name": "Tislelizumab + Carboplatin + Paclitaxel (RATIONALE-315) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "drugs": [
+          {
+            "name": "Tislelizumab",
+            "dose": 200,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 3-4 neo cycles, then 400mg q6w adj x 8 cycles"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3-4 neo cycles"
           }
         ]
       }
