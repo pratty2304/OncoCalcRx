@@ -2,8 +2,8 @@ window.protocolData = window.protocolData || {};
 window.protocolData.lung = {
   "nsclc": {
     "neoadjuvant": {
-      "Nivolumab-Platinum-Doublet-Neo": {
-        "name": "Nivolumab + platinum doublet (CheckMate 816)",
+      "Nivolumab-Cis-Pem-Neo": {
+        "name": "Nivolumab + Cisplatin + Pemetrexed (CheckMate 816) (non-squamous, PD-L1 irrespective)",
         "cycles": 3,
         "drugs": [
           {
@@ -22,7 +22,7 @@ window.protocolData.lung = {
             "name": "Pemetrexed",
             "dose": 500,
             "unit": "mg/m²",
-            "schedule": "D1, every 21 days x 3 cycles (non-squamous)"
+            "schedule": "D1, every 21 days x 3 cycles"
           },
           {
             "name": "Folic Acid",
@@ -35,6 +35,54 @@ window.protocolData.lung = {
             "dose": 1000,
             "unit": "mcg",
             "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Nivolumab-Cis-Gem-Neo": {
+        "name": "Nivolumab + Cisplatin + Gemcitabine (CheckMate 816) (squamous, PD-L1 irrespective)",
+        "cycles": 3,
+        "drugs": [
+          {
+            "name": "Nivolumab",
+            "dose": 360,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Gemcitabine",
+            "dose": 1000,
+            "unit": "mg/m²",
+            "schedule": "D1,8, every 21 days x 3 cycles"
+          }
+        ]
+      },
+      "Nivolumab-Carbo-Pac-Neo": {
+        "name": "Nivolumab + Carboplatin + Paclitaxel (CheckMate 816) (PD-L1 irrespective)",
+        "cycles": 3,
+        "drugs": [
+          {
+            "name": "Nivolumab",
+            "dose": 360,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 5",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 200,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 3 cycles"
           }
         ]
       },
@@ -859,8 +907,37 @@ window.protocolData.lung = {
           }
         ]
       },
-      "Nivolumab-Ipilimumab-Chemotherapy": {
-        "name": "Nivolumab + Ipilimumab + platinum doublet (CheckMate 9LA) (PD-L1 irrespective)",
+      "Nivo-Ipi-Carbo-Pac-9LA": {
+        "name": "Nivolumab + Ipilimumab + Carboplatin + Paclitaxel (CheckMate 9LA) (squamous, PD-L1 irrespective)",
+        "drugs": [
+          {
+            "name": "Nivolumab",
+            "dose": 360,
+            "unit": "mg",
+            "schedule": "D1, every 21 days"
+          },
+          {
+            "name": "Ipilimumab",
+            "dose": 1,
+            "unit": "mg/kg",
+            "schedule": "D1, every 6 weeks"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 6",
+            "unit": "AUC",
+            "schedule": "D1, every 21 days x 2 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 200,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 2 cycles"
+          }
+        ]
+      },
+      "Nivo-Ipi-Carbo-Pem-9LA": {
+        "name": "Nivolumab + Ipilimumab + Carboplatin + Pemetrexed (CheckMate 9LA) (non-squamous, PD-L1 irrespective)",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -884,7 +961,48 @@ window.protocolData.lung = {
             "name": "Pemetrexed",
             "dose": 500,
             "unit": "mg/m²",
-            "schedule": "D1, every 21 days x 2 cycles (non-squamous; or Paclitaxel 200mg/m² for squamous)"
+            "schedule": "D1, every 21 days x 2 cycles"
+          },
+          {
+            "name": "Folic Acid",
+            "dose": 400,
+            "unit": "mcg",
+            "schedule": "PO daily, starting 7 days before first pemetrexed, continue throughout and for 21 days after last dose"
+          },
+          {
+            "name": "Vitamin B12 (Vitcofol)",
+            "dose": 1000,
+            "unit": "mcg",
+            "schedule": "IM injection, at least 7 days before first pemetrexed, then every 9 weeks"
+          }
+        ]
+      },
+      "Nivo-Ipi-Cis-Pem-9LA": {
+        "name": "Nivolumab + Ipilimumab + Cisplatin + Pemetrexed (CheckMate 9LA) (non-squamous, PD-L1 irrespective)",
+        "drugs": [
+          {
+            "name": "Nivolumab",
+            "dose": 360,
+            "unit": "mg",
+            "schedule": "D1, every 21 days"
+          },
+          {
+            "name": "Ipilimumab",
+            "dose": 1,
+            "unit": "mg/kg",
+            "schedule": "D1, every 6 weeks"
+          },
+          {
+            "name": "Cisplatin",
+            "dose": 75,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 2 cycles"
+          },
+          {
+            "name": "Pemetrexed",
+            "dose": 500,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 2 cycles"
           },
           {
             "name": "Folic Acid",
