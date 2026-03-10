@@ -2209,5 +2209,156 @@
     <script src="data/ureteric_urethral.js"></script>
     <script src="data/vulvar_vaginal.js"></script>
     <script src="app.js?v=3"></script>
+
+    <!-- Feedback Button -->
+    <style>
+        .feedback-btn-wrap {
+            position: fixed;
+            bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+            right: 24px;
+            z-index: 9999;
+        }
+        .feedback-pulse-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50px;
+            background: rgba(10, 126, 140, 0.35);
+            animation: feedbackPulse 2s ease-out infinite;
+            pointer-events: none;
+        }
+        @keyframes feedbackPulse {
+            0%   { transform: scale(1);    opacity: 0.7; }
+            70%  { transform: scale(1.18); opacity: 0;   }
+            100% { transform: scale(1.18); opacity: 0;   }
+        }
+        .feedback-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: #0a7e8c;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 13px 18px 13px 14px;
+            min-height: 44px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(10, 126, 140, 0.45);
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .feedback-btn:hover {
+            background: #086b77;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(10, 126, 140, 0.55);
+        }
+        .feedback-btn svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+        }
+        .feedback-new-badge {
+            background: #e74c3c;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 1px 6px;
+            letter-spacing: 0.3px;
+            line-height: 1.5;
+        }
+        .feedback-tooltip {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            right: 0;
+            background: #0f3460;
+            color: #fff;
+            font-size: 13px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            white-space: nowrap;
+            padding: 8px 13px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+        }
+        .feedback-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            right: 22px;
+            border: 6px solid transparent;
+            border-top-color: #0f3460;
+        }
+        .feedback-tooltip.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .feedback-btn-wrap {
+                right: 16px;
+                bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+            }
+            .feedback-tooltip {
+                white-space: normal;
+                width: max-content;
+                max-width: calc(100vw - 80px);
+                right: 0;
+            }
+        }
+    </style>
+
+    <div class="feedback-btn-wrap" id="feedbackWrap">
+        <div class="feedback-pulse-ring" id="feedbackPulseRing"></div>
+        <div class="feedback-tooltip" id="feedbackTooltip">We'd love your feedback! 💬</div>
+        <a class="feedback-btn" href="https://forms.gle/sux9VA5WzLkpDqEBA" target="_blank" rel="noopener" id="feedbackBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/>
+            </svg>
+            Feedback
+            <span class="feedback-new-badge" id="feedbackNewBadge">New</span>
+        </a>
+    </div>
+
+    <script>
+        (function () {
+            var TOOLTIP_KEY = 'feedbackTooltipShown';
+            var BADGE_KEY   = 'feedbackBadgeDismissed';
+            var tooltip     = document.getElementById('feedbackTooltip');
+            var badge       = document.getElementById('feedbackNewBadge');
+            var pulseRing   = document.getElementById('feedbackPulseRing');
+
+            // Hide "New" badge and pulse if user has clicked feedback before
+            if (localStorage.getItem(BADGE_KEY)) {
+                badge.style.display = 'none';
+                pulseRing.style.display = 'none';
+            }
+
+            // Show tooltip once after 3s if never shown before
+            if (!localStorage.getItem(TOOLTIP_KEY)) {
+                setTimeout(function () {
+                    tooltip.classList.add('visible');
+                    setTimeout(function () {
+                        tooltip.classList.remove('visible');
+                    }, 4000);
+                    localStorage.setItem(TOOLTIP_KEY, '1');
+                }, 3000);
+            }
+
+            // On click: dismiss badge and pulse permanently
+            document.getElementById('feedbackBtn').addEventListener('click', function () {
+                localStorage.setItem(BADGE_KEY, '1');
+                badge.style.display = 'none';
+                pulseRing.style.display = 'none';
+            });
+        })();
+    </script>
 </body>
 </html>
