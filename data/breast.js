@@ -1176,20 +1176,44 @@ window.protocolData.breast = {
   "triple_negative": {
     "neoadjuvant": {
       "Paclitaxel-Carboplatin-Pembrolizumab": {
-        "name": "Paclitaxel + Carboplatin + Pembrolizumab (KEYNOTE-522) (Phase 1)",
+        "name": "Paclitaxel + Carboplatin + Pembrolizumab (KEYNOTE-522) (Phase 1, 3-weekly paclitaxel)",
         "cycles": 4,
         "drugs": [
           {
             "name": "Paclitaxel",
-            "dose": 80,
+            "dose": 175,
             "unit": "mg/m²",
-            "schedule": "D1, D8, D15, every 21 days x 4 cycles"
+            "schedule": "D1, every 21 days x 4 cycles"
           },
           {
             "name": "Carboplatin",
             "dose": "AUC 5",
             "unit": "AUC",
             "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Pembrolizumab",
+            "dose": 200,
+            "unit": "mg",
+            "schedule": "D1, every 21 days x 4 cycles"
+          }
+        ]
+      },
+      "Paclitaxel-Carboplatin-Pembrolizumab-Weekly": {
+        "name": "Paclitaxel + Carboplatin + Pembrolizumab (KEYNOTE-522) (Phase 1, weekly paclitaxel)",
+        "cycles": 12,
+        "drugs": [
+          {
+            "name": "Paclitaxel",
+            "dose": 80,
+            "unit": "mg/m²",
+            "schedule": "D1, weekly x 12 weeks"
+          },
+          {
+            "name": "Carboplatin",
+            "dose": "AUC 1.5",
+            "unit": "AUC",
+            "schedule": "D1, weekly x 12 weeks"
           },
           {
             "name": "Pembrolizumab",
@@ -1253,13 +1277,13 @@ window.protocolData.breast = {
         "drugs": [
           {
             "name": "Paclitaxel",
-            "dose": 80,
+            "dose": 175,
             "unit": "mg/m²",
-            "schedule": "D1, D8, D15, every 21 days x 4 cycles"
+            "schedule": "D1, every 21 days x 4 cycles"
           },
           {
             "name": "Carboplatin",
-            "dose": "AUC 6",
+            "dose": "AUC 5",
             "unit": "AUC",
             "schedule": "D1, every 21 days x 4 cycles"
           },
