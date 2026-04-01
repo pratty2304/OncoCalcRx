@@ -4332,19 +4332,19 @@ function buildPostMeds() {
     const oralOndan = document.getElementById('selectOralOndansetron').value;
     if (oralOndan !== 'none') {
         const [dose, freq] = oralOndan.split(' ');
-        rows.push({ name: 'Tab. Ondansetron', dose, route: 'Oral', frequency: freq, duration: 'Days 2–3' });
+        rows.push({ name: 'Tab. Ondansetron', dose, route: 'Oral', frequency: freq, duration: 'Days 2–4' });
     }
 
     const oralDex = document.getElementById('selectOralDex').value;
     if (oralDex !== 'none') {
         const [dose, freq] = oralDex.split(' ');
-        rows.push({ name: 'Tab. Dexamethasone', dose, route: 'Oral', frequency: freq, duration: 'Days 2–3' });
+        rows.push({ name: 'Tab. Dexamethasone', dose, route: 'Oral', frequency: freq, duration: 'Days 2–4' });
     }
 
     const oralOlanz = document.getElementById('selectOralOlanzapine').value;
     if (oralOlanz !== 'none') {
         const [dose] = oralOlanz.split(' ');
-        rows.push({ name: 'Tab. Olanzapine', dose, route: 'Oral', frequency: 'At Bedtime', duration: 'Days 1–3' });
+        rows.push({ name: 'Tab. Olanzapine', dose, route: 'Oral', frequency: 'SOS', duration: 'As needed' });
     }
 
     return rows;
