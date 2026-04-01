@@ -4393,7 +4393,7 @@ function get5FUCIInfo(drugName, calcDrug, reduction) {
         return {
             doseText:     `${daily} mg/day &times; ${numDays} days<br><small style="color:#555">Total: ${total} mg over ${hours}h</small>`,
             volumeText:   'Per pharmacy',
-            durationText: `${hours}h CI (D${startDay}–D${endDay})<br><small style="color:#555">Elastomeric or CADD pump — consult pharmacy for fill volume &amp; rate</small>`
+            durationText: `${hours}h CI (D${startDay}–D${endDay})`
         };
     }
 
@@ -4402,7 +4402,7 @@ function get5FUCIInfo(drugName, calcDrug, reduction) {
     return {
         doseText:     `${daily24} mg/day`,
         volumeText:   'Per pharmacy',
-        durationText: `Daily CI<br><small style="color:#555">Elastomeric or CADD pump — consult pharmacy for fill volume &amp; rate</small>`
+        durationText: `Daily CI`
     };
 }
 
@@ -4499,7 +4499,7 @@ function buildInfusionRows(phase) {
                 // Cisplatin — mandatory hydration + electrolyte monitoring (all regimens, all cancer types)
                 const isCisplatin = drugLower.includes('cisplatin');
                 const cisNote = isCisplatin && !existingNoteLower.includes('hydrat')
-                    ? 'Mandatory pre-hydration (1–2L IV NS over 2–4h before) and post-hydration (1–2L IV NS after). Supplement Mg²⁺ and K⁺ before each cycle (cisplatin causes obligate renal wasting). Target urine output ≥100 mL/hr during infusion.'
+                    ? 'Pre + post IV hydration required. Supplement Mg²⁺ and K⁺. See Clinical Alerts.'
                     : '';
 
                 const noteDisplay = [existingNote, filterNote, taxaneNote, cisNote].filter(Boolean).join(' ');
