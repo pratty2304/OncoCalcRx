@@ -386,7 +386,7 @@ window.protocolData.pancreatic = {
     },
     "mFOLFOX6": {
       "name": "mFOLFOX6",
-      "cycles": 8,
+      "cycles": 12,
       "drugs": [
         {
           "name": "Oxaliplatin",
