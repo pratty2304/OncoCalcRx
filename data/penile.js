@@ -274,6 +274,7 @@ window.protocolData.penile = {
     "Cisplatin-5FU-Pembrolizumab": {
       "name": "Cisplatin + 5-FU + Pembrolizumab (PD-1 inhibitor) (HERCULES)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -298,6 +299,7 @@ window.protocolData.penile = {
     "Carboplatin-5FU-Pembrolizumab": {
       "name": "Carboplatin + 5-FU + Pembrolizumab (PD-1 inhibitor) (HERCULES) (cisplatin-ineligible)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -345,7 +347,7 @@ window.protocolData.penile = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab monotherapy (PD-1 inhibitor) (dMMR/MSI-H/TMB-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",

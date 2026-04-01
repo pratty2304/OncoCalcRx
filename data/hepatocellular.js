@@ -23,6 +23,7 @@ window.protocolData.hepatocellular = {
   "metastatic": {
     "Atezolizumab-Bevacizumab-1L": {
       "name": "Atezolizumab + Bevacizumab (IMbrave150) (PD-L1 + VEGF inhibitors)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Atezolizumab",
@@ -40,6 +41,8 @@ window.protocolData.hepatocellular = {
     },
     "Durvalumab-Tremelimumab-1L": {
       "name": "Durvalumab + Tremelimumab (HIMALAYA) (PD-L1 + CTLA-4 inhibitors)",
+      "cycles": "Until progression",
+      "cyclesNote": "Tremelimumab: single priming dose (cycle 1 only); Durvalumab continues until progression",
       "drugs": [
         {
           "name": "Durvalumab",
@@ -57,6 +60,7 @@ window.protocolData.hepatocellular = {
     },
     "Sorafenib-1L": {
       "name": "Sorafenib (SHARP) (multi-kinase inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sorafenib",
@@ -68,6 +72,7 @@ window.protocolData.hepatocellular = {
     },
     "Lenvatinib-1L": {
       "name": "Lenvatinib (REFLECT) (multi-kinase inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",
@@ -79,6 +84,7 @@ window.protocolData.hepatocellular = {
     },
     "Durvalumab-Monotherapy-1L": {
       "name": "Durvalumab monotherapy (HIMALAYA) (PD-L1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Durvalumab",
@@ -90,6 +96,7 @@ window.protocolData.hepatocellular = {
     },
     "Tislelizumab-Monotherapy-1L": {
       "name": "Tislelizumab monotherapy (RATIONALE-301) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tislelizumab",
@@ -101,6 +108,7 @@ window.protocolData.hepatocellular = {
     },
     "Cabozantinib-2L": {
       "name": "Cabozantinib (CELESTIAL) (multi-kinase inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Cabozantinib",
@@ -112,6 +120,7 @@ window.protocolData.hepatocellular = {
     },
     "Regorafenib-2L": {
       "name": "Regorafenib (RESORCE) (multi-kinase inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Regorafenib",
@@ -123,6 +132,7 @@ window.protocolData.hepatocellular = {
     },
     "Ramucirumab-2L": {
       "name": "Ramucirumab (REACH-2) (AFP ≥400 ng/mL) (VEGFR-2 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ramucirumab",
@@ -134,6 +144,8 @@ window.protocolData.hepatocellular = {
     },
     "Ipilimumab-Nivolumab-2L": {
       "name": "Ipilimumab + Nivolumab (CheckMate-040) (CTLA-4 + PD-1 inhibitors)",
+      "cycles": 4,
+      "cyclesNote": "Ipilimumab: 4 doses (induction only); Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Ipilimumab",
@@ -151,6 +163,7 @@ window.protocolData.hepatocellular = {
     },
     "Nivolumab-Monotherapy-2L": {
       "name": "Nivolumab monotherapy (CheckMate-040) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -162,6 +175,7 @@ window.protocolData.hepatocellular = {
     },
     "Pembrolizumab-Monotherapy-2L": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-224) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -173,6 +187,7 @@ window.protocolData.hepatocellular = {
     },
     "FOLFOX4-Subsequent": {
       "name": "FOLFOX4 (EACH)",
+      "cycles": 8,
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -202,6 +217,7 @@ window.protocolData.hepatocellular = {
     },
     "Dostarlimab-MSI": {
       "name": "Dostarlimab monotherapy (dMMR/MSI-H) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dostarlimab",
@@ -213,6 +229,7 @@ window.protocolData.hepatocellular = {
     },
     "Selpercatinib-RET": {
       "name": "Selpercatinib (RET fusion+) (RET inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Selpercatinib",
@@ -224,6 +241,7 @@ window.protocolData.hepatocellular = {
     },
     "Larotrectinib-NTRK": {
       "name": "Larotrectinib (NTRK fusion+) (TRK inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Larotrectinib",
@@ -235,6 +253,7 @@ window.protocolData.hepatocellular = {
     },
     "Entrectinib-NTRK": {
       "name": "Entrectinib (NTRK fusion+) (TRK inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Entrectinib",
@@ -246,6 +265,7 @@ window.protocolData.hepatocellular = {
     },
     "Repotrectinib-NTRK": {
       "name": "Repotrectinib (NTRK fusion+) (TRK inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Repotrectinib",

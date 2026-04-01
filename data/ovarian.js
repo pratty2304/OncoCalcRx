@@ -58,6 +58,7 @@ window.protocolData.ovarian = {
     "Bevacizumab-Carboplatin-Paclitaxel": {
       "name": "Carboplatin + Paclitaxel + Bevacizumab (GOG-218/ICON7)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -82,6 +83,7 @@ window.protocolData.ovarian = {
     "DUO-O": {
       "name": "Durvalumab + Olaparib + Bevacizumab + Carboplatin + Paclitaxel (DUO-O) (HRD-positive, non-BRCA)",
       "cycles": 6,
+      "cyclesNote": "Durvalumab, Olaparib, and Bevacizumab continue as maintenance until progression",
       "drugs": [
         {
           "name": "Durvalumab",
@@ -185,7 +187,7 @@ window.protocolData.ovarian = {
   "maintenance": {
     "Olaparib-Bevacizumab": {
       "name": "Olaparib + Bevacizumab (PAOLA-1) (PARP inhibitor + VEGF inhibitor) (HRD-positive)",
-      "cycles": 24,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Olaparib",
@@ -203,7 +205,7 @@ window.protocolData.ovarian = {
     },
     "Niraparib-Bevacizumab": {
       "name": "Niraparib + Bevacizumab (PARP inhibitor + VEGF inhibitor) (all-comers; HRP: minimal benefit)",
-      "cycles": 36,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Niraparib",
@@ -221,7 +223,7 @@ window.protocolData.ovarian = {
     },
     "Olaparib": {
       "name": "Olaparib (SOLO1/SOLO2) (PARP inhibitor) (BRCA-mutated)",
-      "cycles": 24,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Olaparib",
@@ -233,7 +235,7 @@ window.protocolData.ovarian = {
     },
     "Niraparib": {
       "name": "Niraparib (PRIMA) (PARP inhibitor) (all-comers; HRP: minimal benefit)",
-      "cycles": 36,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Niraparib",
@@ -245,7 +247,7 @@ window.protocolData.ovarian = {
     },
     "Rucaparib": {
       "name": "Rucaparib (ARIEL3) (PARP inhibitor) (all-comers; HRP: minimal benefit)",
-      "cycles": 24,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Rucaparib",
@@ -257,7 +259,7 @@ window.protocolData.ovarian = {
     },
     "Bevacizumab": {
       "name": "Bevacizumab (GOG-218) (VEGF inhibitor)",
-      "cycles": 22,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Bevacizumab",
@@ -326,6 +328,7 @@ window.protocolData.ovarian = {
     "Carboplatin-Gemcitabine-Bevacizumab": {
       "name": "Carboplatin + Gemcitabine + Bevacizumab (OCEANS) (platinum-sensitive recurrent)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -385,7 +388,7 @@ window.protocolData.ovarian = {
     },
     "Mirvetuximab-Soravtansine": {
       "name": "Mirvetuximab soravtansine (MIRASOL) (FRα-ADC) (FRα-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Mirvetuximab Soravtansine",
@@ -398,6 +401,7 @@ window.protocolData.ovarian = {
     "Pembrolizumab-Paclitaxel": {
       "name": "Pembrolizumab + Paclitaxel (KEYNOTE-B96) (PD-L1 CPS≥1, platinum-resistant)",
       "cycles": 12,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -416,6 +420,7 @@ window.protocolData.ovarian = {
     "Pembrolizumab-Paclitaxel-Bevacizumab": {
       "name": "Pembrolizumab + Paclitaxel + Bevacizumab (KEYNOTE-B96) (PD-L1 CPS≥1, platinum-resistant)",
       "cycles": 12,
+      "cyclesNote": "Pembrolizumab and Bevacizumab continue until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -440,6 +445,7 @@ window.protocolData.ovarian = {
     "Paclitaxel-Bevacizumab": {
       "name": "Paclitaxel + Bevacizumab (AURELIA) (platinum-resistant)",
       "cycles": 12,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -553,7 +559,7 @@ window.protocolData.ovarian = {
     },
     "Avutometinib-Defactinib": {
       "name": "Avutometinib + Defactinib (RAMP 201) (KRAS-mutated recurrent LGSOC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avutometinib",

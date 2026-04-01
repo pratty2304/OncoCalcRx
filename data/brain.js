@@ -36,7 +36,7 @@ window.protocolData.brain = {
     "recurrent_progressive": {
       "Bevacizumab": {
         "name": "Bevacizumab",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Bevacizumab",
@@ -49,6 +49,7 @@ window.protocolData.brain = {
       "Bevacizumab-Lomustine": {
         "name": "Bevacizumab + Lomustine (EORTC 26101)",
         "cycles": 6,
+        "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Bevacizumab",
@@ -103,6 +104,7 @@ window.protocolData.brain = {
       "Temozolomide-Bevacizumab": {
         "name": "Temozolomide + Bevacizumab",
         "cycles": 6,
+        "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Temozolomide",
@@ -121,6 +123,7 @@ window.protocolData.brain = {
       "Irinotecan-Bevacizumab": {
         "name": "Irinotecan + Bevacizumab",
         "cycles": 6,
+        "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Irinotecan",
@@ -156,7 +159,7 @@ window.protocolData.brain = {
       },
       "Regorafenib": {
         "name": "Regorafenib (REGOMA)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Regorafenib",
@@ -234,7 +237,7 @@ window.protocolData.brain = {
       },
       "Bevacizumab": {
         "name": "Bevacizumab",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Bevacizumab",
@@ -270,7 +273,7 @@ window.protocolData.brain = {
       },
       "Vorasidenib": {
         "name": "Vorasidenib (INDIGO) (IDH-mutant)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Vorasidenib",
@@ -282,7 +285,7 @@ window.protocolData.brain = {
       },
       "Tovorafenib": {
         "name": "Tovorafenib (Ojemda) (FIREFLY-1) (RAF inhibitor) (BRAF fusion/V600 mutation, pediatric LGG)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tovorafenib",
@@ -440,7 +443,7 @@ window.protocolData.brain = {
     "recurrent_progressive": {
       "Dordaviprone": {
         "name": "Dordaviprone (Modeyso) (ClpP activator) (H3 K27M-mutant)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dordaviprone",

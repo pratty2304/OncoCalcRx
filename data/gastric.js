@@ -283,6 +283,7 @@ window.protocolData.gastric = {
     },
     "Durvalumab-Maintenance-MATTERHORN": {
       "name": "Durvalumab Maintenance (MATTERHORN) (post Durvalumab + FLOT)",
+      "cycles": 13,
       "drugs": [
         {
           "name": "Durvalumab",
@@ -296,6 +297,8 @@ window.protocolData.gastric = {
   "metastatic": {
     "Pembrolizumab-5FU-Cisplatin-1L": {
       "name": "Pembrolizumab + 5-Fluorouracil + Cisplatin (PD-L1 CPS≥1) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -319,6 +322,8 @@ window.protocolData.gastric = {
     },
     "Nivolumab-Ipilimumab-MSI-1L": {
       "name": "Nivolumab + Ipilimumab (CheckMate-649) (dMMR/MSI-H) (PD-1 + CTLA-4 inhibitors)",
+      "cycles": 4,
+      "cyclesNote": "Ipilimumab: 4 doses (induction only); Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -336,6 +341,7 @@ window.protocolData.gastric = {
     },
     "Pembrolizumab-Mono": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-059) (dMMR/MSI-H) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -347,6 +353,8 @@ window.protocolData.gastric = {
     },
     "FOLFOX-Zolbetuximab-1L": {
       "name": "mFOLFOX6 + Zolbetuximab (SPOTLIGHT) (CLDN18.2+)",
+      "cycles": 12,
+      "cyclesNote": "Zolbetuximab continues until progression",
       "drugs": [
         {
           "name": "Zolbetuximab",
@@ -382,6 +390,8 @@ window.protocolData.gastric = {
     },
     "XP-Trastuzumab-HER2-1L": {
       "name": "Capecitabine + Cisplatin + Trastuzumab (ToGA) (HER2+)",
+      "cycles": 6,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Capecitabine",
@@ -407,6 +417,8 @@ window.protocolData.gastric = {
     },
     "FOLFOX-Trastuzumab-HER2-1L": {
       "name": "mFOLFOX6 + Trastuzumab (HER2+)",
+      "cycles": 12,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -444,6 +456,8 @@ window.protocolData.gastric = {
     },
     "FOLFOX-Trastuzumab-Pembrolizumab-HER2-1L": {
       "name": "mFOLFOX6 + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "cycles": 12,
+      "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -487,6 +501,8 @@ window.protocolData.gastric = {
     },
     "5FU-Cisplatin-Trastuzumab-HER2-1L": {
       "name": "5-Fluorouracil + Cisplatin + Trastuzumab (ToGA) (HER2+)",
+      "cycles": 6,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -512,6 +528,8 @@ window.protocolData.gastric = {
     },
     "5FU-Cisplatin-Trastuzumab-Pembrolizumab-HER2-1L": {
       "name": "5-Fluorouracil + Cisplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -543,6 +561,7 @@ window.protocolData.gastric = {
     },
     "ECX-1L": {
       "name": "Epirubicin + Cisplatin + Capecitabine (ECX) (REAL-2)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Epirubicin",
@@ -566,6 +585,7 @@ window.protocolData.gastric = {
     },
     "EOX-1L": {
       "name": "Epirubicin + Oxaliplatin + Capecitabine (EOX) (REAL-2)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Epirubicin",
@@ -589,6 +609,7 @@ window.protocolData.gastric = {
     },
     "DCF-1L": {
       "name": "Docetaxel + Cisplatin + 5-Fluorouracil (DCF) (V325)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Docetaxel",
@@ -612,6 +633,7 @@ window.protocolData.gastric = {
     },
     "FLO-1L": {
       "name": "Oxaliplatin + Leucovorin + 5-Fluorouracil (FLO)",
+      "cycles": 12,
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -635,6 +657,7 @@ window.protocolData.gastric = {
     },
     "mFOLFOX6-1L": {
       "name": "Oxaliplatin + Leucovorin + 5-Fluorouracil (mFOLFOX6)",
+      "cycles": 12,
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -664,6 +687,7 @@ window.protocolData.gastric = {
     },
     "CapeOX-1L": {
       "name": "Capecitabine + Oxaliplatin (CAPOX)",
+      "cycles": 8,
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -681,6 +705,8 @@ window.protocolData.gastric = {
     },
     "FOLFOX-Nivolumab-1L": {
       "name": "mFOLFOX6 + Nivolumab (CheckMate-649) (PD-1 inhibitor)",
+      "cycles": 12,
+      "cyclesNote": "Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -716,6 +742,8 @@ window.protocolData.gastric = {
     },
     "FOLFOX-Pembrolizumab-1L": {
       "name": "mFOLFOX6 + Pembrolizumab (KEYNOTE-859) (PD-1 inhibitor)",
+      "cycles": 12,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -751,6 +779,8 @@ window.protocolData.gastric = {
     },
     "5FU-Cisplatin-Tislelizumab-1L": {
       "name": "5-Fluorouracil + Cisplatin + Tislelizumab (RATIONALE-305) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Tislelizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -774,6 +804,8 @@ window.protocolData.gastric = {
     },
     "CapeOX-Trastuzumab-HER2-1L": {
       "name": "Capecitabine + Oxaliplatin + Trastuzumab (HER2+)",
+      "cycles": 8,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -799,6 +831,8 @@ window.protocolData.gastric = {
     },
     "CapeOX-Trastuzumab-Pembrolizumab-HER2-1L": {
       "name": "Capecitabine + Oxaliplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "cycles": 8,
+      "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -830,6 +864,8 @@ window.protocolData.gastric = {
     },
     "CapCis-Trastuzumab-HER2-1L": {
       "name": "Capecitabine + Cisplatin + Trastuzumab (HER2+)",
+      "cycles": 6,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -855,6 +891,8 @@ window.protocolData.gastric = {
     },
     "CapCis-Trastuzumab-Pembrolizumab-HER2-1L": {
       "name": "Capecitabine + Cisplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -886,6 +924,8 @@ window.protocolData.gastric = {
     },
     "CapeOX-Nivolumab-1L": {
       "name": "Capecitabine + Oxaliplatin + Nivolumab (CheckMate-649) (PD-1 inhibitor)",
+      "cycles": 8,
+      "cyclesNote": "Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -909,6 +949,8 @@ window.protocolData.gastric = {
     },
     "CapeOX-Pembrolizumab-1L": {
       "name": "Capecitabine + Oxaliplatin + Pembrolizumab (KEYNOTE-859) (PD-1 inhibitor)",
+      "cycles": 8,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -932,6 +974,8 @@ window.protocolData.gastric = {
     },
     "CapeOX-Tislelizumab-1L": {
       "name": "Capecitabine + Oxaliplatin + Tislelizumab (RATIONALE-305) (PD-1 inhibitor)",
+      "cycles": 8,
+      "cyclesNote": "Tislelizumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -955,6 +999,8 @@ window.protocolData.gastric = {
     },
     "CapeOX-Zolbetuximab-1L": {
       "name": "Capecitabine + Oxaliplatin + Zolbetuximab (GLOW) (CLDN18.2+)",
+      "cycles": 8,
+      "cyclesNote": "Zolbetuximab continues until progression",
       "drugs": [
         {
           "name": "Zolbetuximab",
@@ -978,6 +1024,8 @@ window.protocolData.gastric = {
     },
     "CapCis-Pembrolizumab-1L": {
       "name": "Capecitabine + Cisplatin + Pembrolizumab (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -1001,6 +1049,8 @@ window.protocolData.gastric = {
     },
     "CapCis-Tislelizumab-1L": {
       "name": "Capecitabine + Cisplatin + Tislelizumab (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Tislelizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -1024,6 +1074,8 @@ window.protocolData.gastric = {
     },
     "Paclitaxel-Ramucirumab-2L": {
       "name": "Paclitaxel + Ramucirumab (RAINBOW) (VEGFR2 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Ramucirumab continues until progression",
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -1041,6 +1093,8 @@ window.protocolData.gastric = {
     },
     "FOLFIRI-Ramucirumab-2L": {
       "name": "FOLFIRI + Ramucirumab (VEGFR2 inhibitor)",
+      "cycles": 12,
+      "cyclesNote": "Ramucirumab continues until progression",
       "drugs": [
         {
           "name": "Irinotecan",
@@ -1076,6 +1130,8 @@ window.protocolData.gastric = {
     },
     "Irinotecan-Ramucirumab-2L": {
       "name": "Irinotecan + Ramucirumab (VEGFR2 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Ramucirumab continues until progression",
       "drugs": [
         {
           "name": "Irinotecan",
@@ -1093,6 +1149,7 @@ window.protocolData.gastric = {
     },
     "T-DXd-HER2-2L": {
       "name": "Trastuzumab Deruxtecan (T-DXd) (DESTINY-Gastric01) (HER2+)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab Deruxtecan",
@@ -1104,6 +1161,7 @@ window.protocolData.gastric = {
     },
     "mFOLFIRI-2L": {
       "name": "Irinotecan + Leucovorin + 5-Fluorouracil (mFOLFIRI)",
+      "cycles": 12,
       "drugs": [
         {
           "name": "Irinotecan",
@@ -1133,6 +1191,7 @@ window.protocolData.gastric = {
     },
     "Docetaxel-2L": {
       "name": "Docetaxel monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Docetaxel",
@@ -1144,6 +1203,7 @@ window.protocolData.gastric = {
     },
     "Paclitaxel-2L": {
       "name": "Paclitaxel monotherapy (weekly)",
+      "cycles": 12,
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -1155,6 +1215,7 @@ window.protocolData.gastric = {
     },
     "Irinotecan-2L": {
       "name": "Irinotecan monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Irinotecan",
@@ -1166,6 +1227,7 @@ window.protocolData.gastric = {
     },
     "TAS-102-3L": {
       "name": "Trifluridine/Tipiracil (TAS-102) (TAGS)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "TAS-102",
@@ -1177,6 +1239,7 @@ window.protocolData.gastric = {
     },
     "Ramucirumab-2L": {
       "name": "Ramucirumab monotherapy (REGARD) (VEGFR2 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ramucirumab",
@@ -1188,6 +1251,7 @@ window.protocolData.gastric = {
     },
     "Nivolumab-3L": {
       "name": "Nivolumab monotherapy (ATTRACTION-2) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -1199,6 +1263,7 @@ window.protocolData.gastric = {
     },
     "Dostarlimab-MSI-3L": {
       "name": "Dostarlimab monotherapy (dMMR/MSI-H) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dostarlimab",

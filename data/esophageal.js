@@ -140,6 +140,7 @@ window.protocolData.esophageal = {
     "FLOT-Durvalumab-Perioperative": {
       "name": "FLOT + Durvalumab (MATTERHORN) (GEJ adenocarcinoma)",
       "cycles": 8,
+      "cyclesNote": "Durvalumab continues as maintenance for 1 year postoperatively",
       "drugs": [
         {
           "name": "Docetaxel",
@@ -262,8 +263,9 @@ window.protocolData.esophageal = {
   },
   "metastatic": {
     "Pembrolizumab-Cisplatin-5FU": {
-      "name": "Pembrolizumab + Cisplatin + 5-FU (KEYNOTE-590)",
-      "cycles": 12,
+      "name": "Pembrolizumab + Cisplatin + 5-FU (KEYNOTE-590) (All ESCC; adenocarcinoma/GEJ PD-L1 CPS ≥1)",
+      "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -288,6 +290,7 @@ window.protocolData.esophageal = {
     "Nivolumab-FOLFOX": {
       "name": "Nivolumab + mFOLFOX6 (CheckMate-649) (adenocarcinoma, PD-L1 CPS ≥5)",
       "cycles": 12,
+      "cyclesNote": "Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -324,6 +327,7 @@ window.protocolData.esophageal = {
     "Nivolumab-CAPOX": {
       "name": "Nivolumab + CAPOX (CheckMate-649) (adenocarcinoma, PD-L1 CPS ≥5)",
       "cycles": 8,
+      "cyclesNote": "Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -347,7 +351,8 @@ window.protocolData.esophageal = {
     },
     "Nivolumab-Cisplatin-5FU": {
       "name": "Nivolumab + Cisplatin + 5-FU (CheckMate-648) (ESCC)",
-      "cycles": 12,
+      "cycles": 6,
+      "cyclesNote": "Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -371,7 +376,7 @@ window.protocolData.esophageal = {
     },
     "Nivolumab-Ipilimumab": {
       "name": "Nivolumab + Ipilimumab (CheckMate-648) (ESCC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -389,7 +394,8 @@ window.protocolData.esophageal = {
     },
     "Tislelizumab-Cisplatin-5FU": {
       "name": "Tislelizumab + Cisplatin + 5-FU (RATIONALE-306) (ESCC)",
-      "cycles": 12,
+      "cycles": 6,
+      "cyclesNote": "Tislelizumab continues until progression",
       "drugs": [
         {
           "name": "Tislelizumab",
@@ -414,6 +420,7 @@ window.protocolData.esophageal = {
     "mFOLFOX6-Pembrolizumab": {
       "name": "mFOLFOX6 + Pembrolizumab (KEYNOTE-590) (PD-L1 CPS ≥1)",
       "cycles": 12,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -449,7 +456,8 @@ window.protocolData.esophageal = {
     },
     "Cisplatin-5FU-Trastuzumab-HER2": {
       "name": "Cisplatin + 5-FU + Trastuzumab (ToGA) (HER2+)",
-      "cycles": 12,
+      "cycles": 6,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Trastuzumab",
@@ -476,6 +484,7 @@ window.protocolData.esophageal = {
     "CapeOX-Trastuzumab-HER2": {
       "name": "Capecitabine + Oxaliplatin + Trastuzumab (ToGA) (HER2+)",
       "cycles": 8,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Trastuzumab",
@@ -502,6 +511,7 @@ window.protocolData.esophageal = {
     "FOLFOX-Trastuzumab-HER2": {
       "name": "mFOLFOX6 + Trastuzumab (HER2+)",
       "cycles": 12,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Trastuzumab",
@@ -540,6 +550,7 @@ window.protocolData.esophageal = {
     "CapeOX-Trastuzumab-Pembrolizumab-HER2": {
       "name": "CAPOX + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+/PD-L1 CPS ≥1)",
       "cycles": 8,
+      "cyclesNote": "Pembrolizumab and Trastuzumab continue until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -703,7 +714,8 @@ window.protocolData.esophageal = {
     },
     "Ramucirumab-Paclitaxel-2L": {
       "name": "Ramucirumab + Paclitaxel (RAINBOW)",
-      "cycles": 8,
+      "cycles": 6,
+      "cyclesNote": "Ramucirumab continues until progression",
       "drugs": [
         {
           "name": "Ramucirumab",
@@ -721,7 +733,7 @@ window.protocolData.esophageal = {
     },
     "Nivolumab-2L-ESCC": {
       "name": "Nivolumab monotherapy (ATTRACTION-3) (PD-1 inhibitor) (ESCC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -733,7 +745,7 @@ window.protocolData.esophageal = {
     },
     "Ramucirumab-Monotherapy-2L": {
       "name": "Ramucirumab monotherapy (REGARD)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ramucirumab",
@@ -745,7 +757,7 @@ window.protocolData.esophageal = {
     },
     "T-DXd-HER2-2L": {
       "name": "Trastuzumab Deruxtecan (DESTINY-Gastric01) (HER2+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab Deruxtecan",
@@ -799,7 +811,7 @@ window.protocolData.esophageal = {
     },
     "Paclitaxel-Weekly-2L": {
       "name": "Paclitaxel monotherapy (weekly)",
-      "cycles": 6,
+      "cycles": 12,
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -811,6 +823,7 @@ window.protocolData.esophageal = {
     },
     "Nab-Paclitaxel-Carboplatin-1L": {
       "name": "Nab-Paclitaxel + Carboplatin",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Nab-Paclitaxel",
@@ -828,6 +841,7 @@ window.protocolData.esophageal = {
     },
     "Nab-Paclitaxel-2L": {
       "name": "Nab-Paclitaxel monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Nab-Paclitaxel",
@@ -881,7 +895,7 @@ window.protocolData.esophageal = {
     },
     "Pembrolizumab-3L": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-181) (PD-1 inhibitor) (PD-L1 CPS ≥10)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -893,7 +907,7 @@ window.protocolData.esophageal = {
     },
     "TAS-102-3L": {
       "name": "Trifluridine/Tipiracil (TAS-102) (TAGS)",
-      "cycles": 12,
+      "cycles": 6,
       "drugs": [
         {
           "name": "Trifluridine/Tipiracil",

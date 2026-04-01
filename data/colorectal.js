@@ -683,6 +683,7 @@ window.protocolData.colorectal = {
       "mFOLFOX6-Bevacizumab-Metastatic": {
         "name": "mFOLFOX6 + Bevacizumab",
         "cycles": 12,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Oxaliplatin",
@@ -719,6 +720,7 @@ window.protocolData.colorectal = {
       "CapeOX-Bevacizumab-Metastatic": {
         "name": "Capecitabine + Oxaliplatin + Bevacizumab",
         "cycles": 8,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Oxaliplatin",
@@ -743,6 +745,7 @@ window.protocolData.colorectal = {
       "FOLFIRI-Bevacizumab-Metastatic": {
         "name": "FOLFIRI + Bevacizumab",
         "cycles": 12,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Irinotecan",
@@ -779,6 +782,7 @@ window.protocolData.colorectal = {
       "FOLFOXIRI-Bevacizumab-Metastatic": {
         "name": "FOLFOXIRI + Bevacizumab (TRIBE)",
         "cycles": 12,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Irinotecan",
@@ -815,6 +819,7 @@ window.protocolData.colorectal = {
       "mFOLFOX6-Cetuximab-Metastatic": {
         "name": "mFOLFOX6 + Cetuximab (KRAS/NRAS/BRAF WT/Left-sided)",
         "cycles": 12,
+      "cyclesNote": "Cetuximab continues until progression",
         "drugs": [
           {
             "name": "Cetuximab",
@@ -851,6 +856,7 @@ window.protocolData.colorectal = {
       "mFOLFOX6-Panitumumab-Metastatic": {
         "name": "mFOLFOX6 + Panitumumab (KRAS/NRAS/BRAF WT/Left-sided)",
         "cycles": 12,
+      "cyclesNote": "Panitumumab continues until progression",
         "drugs": [
           {
             "name": "Panitumumab",
@@ -887,6 +893,7 @@ window.protocolData.colorectal = {
       "CapeOX-Cetuximab-Metastatic": {
         "name": "Capecitabine + Oxaliplatin + Cetuximab (KRAS/NRAS/BRAF WT/Left-sided)",
         "cycles": 8,
+      "cyclesNote": "Cetuximab continues until progression",
         "drugs": [
           {
             "name": "Cetuximab",
@@ -913,6 +920,7 @@ window.protocolData.colorectal = {
       "CapeOX-Panitumumab-Metastatic": {
         "name": "Capecitabine + Oxaliplatin + Panitumumab (KRAS/NRAS/BRAF WT/Left-sided)",
         "cycles": 8,
+      "cyclesNote": "Panitumumab continues until progression",
         "drugs": [
           {
             "name": "Panitumumab",
@@ -937,6 +945,7 @@ window.protocolData.colorectal = {
       "FOLFIRI-Cetuximab-Metastatic": {
         "name": "FOLFIRI + Cetuximab (KRAS/NRAS/BRAF WT/Left-sided)",
         "cycles": 12,
+      "cyclesNote": "Cetuximab continues until progression",
         "drugs": [
           {
             "name": "Cetuximab",
@@ -973,6 +982,7 @@ window.protocolData.colorectal = {
       "FOLFIRI-Panitumumab-Metastatic": {
         "name": "FOLFIRI + Panitumumab (KRAS/NRAS/BRAF WT/Left-sided)",
         "cycles": 12,
+      "cyclesNote": "Panitumumab continues until progression",
         "drugs": [
           {
             "name": "Panitumumab",
@@ -1009,6 +1019,7 @@ window.protocolData.colorectal = {
       "Cetuximab-Irinotecan-Metastatic": {
         "name": "Cetuximab + Irinotecan (BOND) (KRAS/NRAS/BRAF WT)",
         "cycles": 8,
+      "cyclesNote": "Cetuximab continues until progression",
         "drugs": [
           {
             "name": "Cetuximab",
@@ -1119,6 +1130,7 @@ window.protocolData.colorectal = {
       "5FU-LV-Bevacizumab-Metastatic": {
         "name": "5-FU + Leucovorin + Bevacizumab",
         "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "5-Fluorouracil",
@@ -1143,6 +1155,7 @@ window.protocolData.colorectal = {
       "TAS-102-Bevacizumab-Metastatic": {
         "name": "TAS-102 + Bevacizumab (SUNLIGHT)",
         "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "TAS-102",
@@ -1173,6 +1186,7 @@ window.protocolData.colorectal = {
       "XELIRI-Bevacizumab-Metastatic": {
         "name": "mXELIRI/CapIRI + Bevacizumab",
         "cycles": 8,
+      "cyclesNote": "Bevacizumab continues until progression",
         "drugs": [
           {
             "name": "Capecitabine",
@@ -1197,6 +1211,7 @@ window.protocolData.colorectal = {
       "FOLFIRI-Ziv-Aflibercept-Metastatic": {
         "name": "FOLFIRI + Ziv-aflibercept (VELOUR)",
         "cycles": 12,
+      "cyclesNote": "Ziv-aflibercept continues until progression",
         "drugs": [
           {
             "name": "Irinotecan",
@@ -1233,6 +1248,7 @@ window.protocolData.colorectal = {
       "FOLFIRI-Ramucirumab-Metastatic": {
         "name": "FOLFIRI + Ramucirumab (RAISE)",
         "cycles": 12,
+      "cyclesNote": "Ramucirumab continues until progression",
         "drugs": [
           {
             "name": "Irinotecan",
@@ -1269,6 +1285,7 @@ window.protocolData.colorectal = {
       "mFOLFOX6-Encorafenib-Cetuximab-BRAF": {
         "name": "mFOLFOX6 + Encorafenib + Cetuximab (BREAKWATER) (BRAF V600E mutation)",
         "cycles": 12,
+      "cyclesNote": "Encorafenib and Cetuximab continue until progression",
         "drugs": [
           {
             "name": "Oxaliplatin",
@@ -1311,6 +1328,7 @@ window.protocolData.colorectal = {
       "mFOLFOX6-Encorafenib-Panitumumab-BRAF": {
         "name": "mFOLFOX6 + Encorafenib + Panitumumab (BRAF V600E mutation)",
         "cycles": 12,
+      "cyclesNote": "Encorafenib and Panitumumab continue until progression",
         "drugs": [
           {
             "name": "Oxaliplatin",
@@ -1353,6 +1371,7 @@ window.protocolData.colorectal = {
       "Vemurafenib-Irinotecan-Cetuximab-BRAF": {
         "name": "Vemurafenib + Irinotecan + Cetuximab (SWOG-1406) (BRAF V600E mutation)",
         "cycles": 8,
+      "cyclesNote": "Vemurafenib and Cetuximab continue until progression",
         "drugs": [
           {
             "name": "Vemurafenib",
@@ -1376,7 +1395,7 @@ window.protocolData.colorectal = {
       },
       "Binimetinib-Encorafenib-Cetuximab-BRAF": {
         "name": "Binimetinib + Encorafenib + Cetuximab (BEACON CRC) (BRAF V600E mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Binimetinib",
@@ -1402,7 +1421,7 @@ window.protocolData.colorectal = {
       },
       "Encorafenib-Cetuximab-BRAF": {
         "name": "Encorafenib + Cetuximab (BEACON CRC) (BRAF V600E mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Encorafenib",
@@ -1422,7 +1441,7 @@ window.protocolData.colorectal = {
       },
       "Encorafenib-Panitumumab-BRAF": {
         "name": "Encorafenib + Panitumumab (BRAF V600E mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Encorafenib",
@@ -1440,7 +1459,8 @@ window.protocolData.colorectal = {
       },
       "Nivolumab-Ipilimumab-dMMR": {
         "name": "Nivolumab + Ipilimumab (CheckMate-142/8HW) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": 4,
+        "cyclesNote": "Ipilimumab: 4 doses (induction only); Nivolumab continues until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -1458,7 +1478,7 @@ window.protocolData.colorectal = {
       },
       "Trastuzumab-Lapatinib-HER2": {
         "name": "Trastuzumab + Lapatinib (HER2 positive)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -1478,7 +1498,7 @@ window.protocolData.colorectal = {
       },
       "Trastuzumab-Tucatinib-HER2": {
         "name": "Trastuzumab + Tucatinib (MOUNTAINEER) (HER2 positive)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -1498,7 +1518,7 @@ window.protocolData.colorectal = {
       },
       "Trastuzumab-Pertuzumab-HER2": {
         "name": "Trastuzumab + Pertuzumab (MyPathway) (HER2 positive)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -1556,7 +1576,7 @@ window.protocolData.colorectal = {
       },
       "Cetuximab-Single": {
         "name": "Cetuximab monotherapy (KRAS/NRAS/BRAF WT)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cetuximab",
@@ -1570,7 +1590,7 @@ window.protocolData.colorectal = {
       },
       "Panitumumab-Single": {
         "name": "Panitumumab monotherapy (KRAS/NRAS/BRAF WT)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Panitumumab",
@@ -1582,7 +1602,7 @@ window.protocolData.colorectal = {
       },
       "Trastuzumab-Deruxtecan-HER2": {
         "name": "Trastuzumab deruxtecan (DESTINY-CRC01) (HER2 positive)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab deruxtecan",
@@ -1594,7 +1614,7 @@ window.protocolData.colorectal = {
       },
       "Regorafenib-Single": {
         "name": "Regorafenib (CORRECT)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Regorafenib",
@@ -1606,7 +1626,7 @@ window.protocolData.colorectal = {
       },
       "Pembrolizumab-dMMR": {
         "name": "Pembrolizumab monotherapy (PD-1 inhibitor) (KEYNOTE-177) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -1618,7 +1638,7 @@ window.protocolData.colorectal = {
       },
       "Nivolumab-dMMR": {
         "name": "Nivolumab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -1630,7 +1650,7 @@ window.protocolData.colorectal = {
       },
       "Larotrectinib-NTRK": {
         "name": "Larotrectinib (NAVIGATE) (NTRK fusion)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Larotrectinib",
@@ -1642,7 +1662,7 @@ window.protocolData.colorectal = {
       },
       "Entrectinib-NTRK": {
         "name": "Entrectinib (STARTRK-2) (NTRK fusion)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -1654,7 +1674,7 @@ window.protocolData.colorectal = {
       },
       "Sotorasib-KRAS-G12C": {
         "name": "Sotorasib (CodeBreaK 100) (KRAS G12C mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sotorasib",
@@ -1666,7 +1686,7 @@ window.protocolData.colorectal = {
       },
       "Adagrasib-KRAS-G12C": {
         "name": "Adagrasib (KRYSTAL-1) (KRAS G12C mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Adagrasib",
@@ -1678,7 +1698,7 @@ window.protocolData.colorectal = {
       },
       "Selpercatinib-RET": {
         "name": "Selpercatinib (LIBRETTO-001) (RET gene fusion)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Selpercatinib",
@@ -1690,7 +1710,7 @@ window.protocolData.colorectal = {
       },
       "Dostarlimab-dMMR": {
         "name": "Dostarlimab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dostarlimab",
@@ -1702,7 +1722,7 @@ window.protocolData.colorectal = {
       },
       "Cemiplimab-dMMR": {
         "name": "Cemiplimab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cemiplimab",
@@ -1714,7 +1734,7 @@ window.protocolData.colorectal = {
       },
       "Retifanlimab-dMMR": {
         "name": "Retifanlimab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Retifanlimab",
@@ -1726,7 +1746,7 @@ window.protocolData.colorectal = {
       },
       "Tislelizumab-dMMR": {
         "name": "Tislelizumab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tislelizumab",
@@ -1738,7 +1758,7 @@ window.protocolData.colorectal = {
       },
       "Toripalimab-dMMR": {
         "name": "Toripalimab monotherapy (PD-1 inhibitor) (dMMR/MSI-H)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Toripalimab",
@@ -1750,7 +1770,7 @@ window.protocolData.colorectal = {
       },
       "Fruquintinib": {
         "name": "Fruquintinib (FRESCO-2)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Fruquintinib",

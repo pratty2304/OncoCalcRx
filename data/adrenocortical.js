@@ -19,7 +19,7 @@ window.protocolData.adrenocortical = {
     "metastatic": {
         "Mitotane": {
             "name": "Mitotane monotherapy",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Mitotane",
@@ -32,6 +32,7 @@ window.protocolData.adrenocortical = {
         "EDP-M": {
             "name": "Etoposide + Doxorubicin + Cisplatin + Mitotane (EDP-M)",
             "cycles": 6,
+            "cyclesNote": "Mitotane continues until progression",
             "drugs": [
                 {
                     "name": "Etoposide",
@@ -62,6 +63,7 @@ window.protocolData.adrenocortical = {
         "EP-M": {
             "name": "Etoposide + Cisplatin + Mitotane (EP-M) (NCCN Preferred)",
             "cycles": 6,
+            "cyclesNote": "Mitotane continues until progression",
             "drugs": [
                 {
                     "name": "Etoposide",
@@ -86,6 +88,7 @@ window.protocolData.adrenocortical = {
         "Streptozocin-Mitotane": {
             "name": "Streptozocin + Mitotane",
             "cycles": 6,
+            "cyclesNote": "Mitotane continues until progression",
             "drugs": [
                 {
                     "name": "Streptozocin",
@@ -104,6 +107,7 @@ window.protocolData.adrenocortical = {
         "EDP-M-Carboplatin": {
             "name": "Etoposide + Doxorubicin + Carboplatin + Mitotane (EDP-M) (cisplatin-ineligible)",
             "cycles": 6,
+            "cyclesNote": "Mitotane continues until progression",
             "drugs": [
                 {
                     "name": "Etoposide",
@@ -152,6 +156,7 @@ window.protocolData.adrenocortical = {
         "Gemcitabine-Capecitabine-Mitotane": {
             "name": "Gemcitabine + Capecitabine + Mitotane",
             "cycles": 6,
+            "cyclesNote": "Mitotane continues until progression",
             "drugs": [
                 {
                     "name": "Gemcitabine",
@@ -206,6 +211,7 @@ window.protocolData.adrenocortical = {
         "Nivolumab-Ipilimumab": {
             "name": "Nivolumab + Ipilimumab (PD-1 + CTLA-4 inhibitors) (Investigational)",
             "cycles": 4,
+            "cyclesNote": "Ipilimumab: 4 doses (induction only); Nivolumab continues q14d until progression",
             "drugs": [
                 {
                     "name": "Nivolumab",
@@ -223,19 +229,26 @@ window.protocolData.adrenocortical = {
         },
         "Pembrolizumab": {
             "name": "Pembrolizumab ± Mitotane (NCCN Other Recommended)",
-            "cycles": 12,
+            "cycles": "Until progression",
+            "cyclesNote": "Mitotane continues until progression (if used)",
             "drugs": [
                 {
                     "name": "Pembrolizumab",
                     "dose": 200,
                     "unit": "mg",
                     "schedule": "IV every 21 days"
+                },
+                {
+                    "name": "Mitotane",
+                    "dose": 2000,
+                    "unit": "mg",
+                    "schedule": "PO continuous dosing to maintain serum levels 14-20 mcg/ml"
                 }
             ]
         },
         "Cabozantinib": {
             "name": "Cabozantinib (Investigational)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Cabozantinib",

@@ -153,7 +153,7 @@ window.protocolData.ureteric_urethral = {
   "metastatic": {
     "Enfortumab-Vedotin-Pembrolizumab": {
       "name": "Enfortumab Vedotin + Pembrolizumab (Nectin-4 ADC + PD-1 inhibitor) (EV-302/KEYNOTE-A39) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enfortumab Vedotin",
@@ -172,6 +172,7 @@ window.protocolData.ureteric_urethral = {
     "Gemcitabine-Cisplatin-Nivolumab": {
       "name": "Gemcitabine + Cisplatin + Nivolumab (PD-1 inhibitor) (CheckMate 901)",
       "cycles": 6,
+      "cyclesNote": "Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -285,7 +286,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Avelumab-Maintenance": {
       "name": "Avelumab maintenance (PD-L1 inhibitor) (JAVELIN Bladder 100)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avelumab",
@@ -333,7 +334,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Pembrolizumab-Monotherapy": {
       "name": "Pembrolizumab monotherapy (PD-1 inhibitor) (cisplatin-ineligible, PD-L1+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -345,7 +346,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Atezolizumab-Monotherapy": {
       "name": "Atezolizumab monotherapy (PD-L1 inhibitor) (cisplatin-ineligible, PD-L1+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Atezolizumab",
@@ -357,7 +358,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Enfortumab-Vedotin-Mono": {
       "name": "Enfortumab Vedotin monotherapy (Nectin-4 ADC) (EV-301)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enfortumab Vedotin",
@@ -369,7 +370,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Erdafitinib": {
       "name": "Erdafitinib (pan-FGFR inhibitor) (FGFR3 alteration) (THOR)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Erdafitinib",
@@ -382,7 +383,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Trastuzumab-Deruxtecan": {
       "name": "Trastuzumab deruxtecan (T-DXd) (HER2-directed ADC) (HER2 IHC 3+) (DESTINY-PanTumor02)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab deruxtecan",
@@ -394,7 +395,7 @@ window.protocolData.ureteric_urethral = {
     },
     "Nivolumab-Monotherapy": {
       "name": "Nivolumab monotherapy (PD-1 inhibitor)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",

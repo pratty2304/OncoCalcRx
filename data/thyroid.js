@@ -4,7 +4,7 @@ window.protocolData.thyroid = {
     "metastatic": {
       "Lenvatinib-DTC": {
         "name": "Lenvatinib (SELECT) (NCCN Preferred)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Lenvatinib",
@@ -16,7 +16,7 @@ window.protocolData.thyroid = {
       },
       "Sorafenib-DTC": {
         "name": "Sorafenib (DECISION)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sorafenib",
@@ -28,7 +28,7 @@ window.protocolData.thyroid = {
       },
       "Cabozantinib-DTC": {
         "name": "Cabozantinib (COSMIC-311) (post-VEGFR-targeted therapy)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cabozantinib",
@@ -40,7 +40,7 @@ window.protocolData.thyroid = {
       },
       "Selpercatinib-RET-DTC": {
         "name": "Selpercatinib (RET inhibitor) (RET gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Selpercatinib",
@@ -52,7 +52,7 @@ window.protocolData.thyroid = {
       },
       "Pralsetinib-RET-DTC": {
         "name": "Pralsetinib (RET inhibitor) (RET gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pralsetinib",
@@ -64,7 +64,7 @@ window.protocolData.thyroid = {
       },
       "Larotrectinib-NTRK-DTC": {
         "name": "Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Larotrectinib",
@@ -76,7 +76,7 @@ window.protocolData.thyroid = {
       },
       "Entrectinib-NTRK-DTC": {
         "name": "Entrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -88,7 +88,7 @@ window.protocolData.thyroid = {
       },
       "Repotrectinib-NTRK-DTC": {
         "name": "Repotrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Repotrectinib",
@@ -100,7 +100,7 @@ window.protocolData.thyroid = {
       },
       "Dabrafenib-Trametinib-DTC": {
         "name": "Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dabrafenib",
@@ -118,7 +118,7 @@ window.protocolData.thyroid = {
       },
       "Pembrolizumab-Lenvatinib-DTC": {
         "name": "Pembrolizumab + Lenvatinib (post-lenvatinib progression)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -170,7 +170,7 @@ window.protocolData.thyroid = {
     "metastatic": {
       "Selpercatinib-RET-MTC": {
         "name": "Selpercatinib (LIBRETTO-531) (RET inhibitor) (RET-mutant) (NCCN Preferred)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Selpercatinib",
@@ -182,7 +182,7 @@ window.protocolData.thyroid = {
       },
       "Vandetanib-MTC": {
         "name": "Vandetanib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Vandetanib",
@@ -194,7 +194,7 @@ window.protocolData.thyroid = {
       },
       "Cabozantinib-MTC": {
         "name": "Cabozantinib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cabozantinib",
@@ -206,7 +206,7 @@ window.protocolData.thyroid = {
       },
       "Sorafenib-MTC": {
         "name": "Sorafenib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sorafenib",
@@ -218,7 +218,7 @@ window.protocolData.thyroid = {
       },
       "Lenvatinib-MTC": {
         "name": "Lenvatinib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Lenvatinib",
@@ -230,7 +230,7 @@ window.protocolData.thyroid = {
       },
       "Sunitinib-MTC": {
         "name": "Sunitinib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sunitinib",
@@ -242,7 +242,7 @@ window.protocolData.thyroid = {
       },
       "Larotrectinib-NTRK-MTC": {
         "name": "Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Larotrectinib",
@@ -254,7 +254,7 @@ window.protocolData.thyroid = {
       },
       "Entrectinib-NTRK-MTC": {
         "name": "Entrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -266,7 +266,7 @@ window.protocolData.thyroid = {
       },
       "Pembrolizumab-TMB-MTC": {
         "name": "Pembrolizumab (PD-1 inhibitor) (TMB-H ≥10 mut/Mb)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -294,7 +294,7 @@ window.protocolData.thyroid = {
     "metastatic": {
       "Dabrafenib-Trametinib-ATC": {
         "name": "Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant) (NCCN Preferred)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dabrafenib",
@@ -312,7 +312,7 @@ window.protocolData.thyroid = {
       },
       "Selpercatinib-RET-ATC": {
         "name": "Selpercatinib (RET inhibitor) (RET-altered)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Selpercatinib",
@@ -324,7 +324,7 @@ window.protocolData.thyroid = {
       },
       "Pralsetinib-RET-ATC": {
         "name": "Pralsetinib (RET inhibitor) (RET fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pralsetinib",
@@ -336,7 +336,7 @@ window.protocolData.thyroid = {
       },
       "Larotrectinib-NTRK-ATC": {
         "name": "Larotrectinib (TRK inhibitor) (NTRK fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Larotrectinib",
@@ -348,7 +348,7 @@ window.protocolData.thyroid = {
       },
       "Entrectinib-NTRK-ATC": {
         "name": "Entrectinib (TRK inhibitor) (NTRK fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -360,7 +360,7 @@ window.protocolData.thyroid = {
       },
       "Repotrectinib-NTRK-ATC": {
         "name": "Repotrectinib (TRK inhibitor) (NTRK fusion-positive)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Repotrectinib",
@@ -372,7 +372,7 @@ window.protocolData.thyroid = {
       },
       "Lenvatinib-ATC": {
         "name": "Lenvatinib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Lenvatinib",
@@ -384,7 +384,7 @@ window.protocolData.thyroid = {
       },
       "Sorafenib-ATC": {
         "name": "Sorafenib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sorafenib",
@@ -396,7 +396,7 @@ window.protocolData.thyroid = {
       },
       "Cabozantinib-ATC": {
         "name": "Cabozantinib (multi-kinase inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cabozantinib",
@@ -408,7 +408,7 @@ window.protocolData.thyroid = {
       },
       "Pembrolizumab-ATC": {
         "name": "Pembrolizumab (PD-1 inhibitor)",
-        "cycles": 35,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",

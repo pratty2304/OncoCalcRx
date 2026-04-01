@@ -16,6 +16,7 @@ window.protocolData.cervical = {
     "Cisplatin-Pembrolizumab-RT": {
       "name": "Cisplatin + Pembrolizumab + RT (KEYNOTE-A18)",
       "cycles": 5,
+      "cyclesNote": "Pembrolizumab continues as maintenance for up to 15 additional cycles",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -164,8 +165,9 @@ window.protocolData.cervical = {
   },
   "metastatic": {
     "Cisplatin-Paclitaxel-Pembrolizumab-Bevacizumab": {
-      "name": "Cisplatin + Paclitaxel + Pembrolizumab + Bevacizumab (KEYNOTE-826) (NCCN Preferred)",
+      "name": "Cisplatin + Paclitaxel + Pembrolizumab + Bevacizumab (KEYNOTE-826) (PD-L1 CPS≥1) (NCCN Preferred)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab and Bevacizumab continue until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -194,8 +196,9 @@ window.protocolData.cervical = {
       ]
     },
     "Carboplatin-Paclitaxel-Pembrolizumab-Bevacizumab": {
-      "name": "Carboplatin + Paclitaxel + Pembrolizumab + Bevacizumab (KEYNOTE-826) (NCCN Preferred)",
+      "name": "Carboplatin + Paclitaxel + Pembrolizumab + Bevacizumab (KEYNOTE-826) (PD-L1 CPS≥1) (NCCN Preferred)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab and Bevacizumab continue until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -224,8 +227,9 @@ window.protocolData.cervical = {
       ]
     },
     "Cisplatin-Paclitaxel-Pembrolizumab": {
-      "name": "Cisplatin + Paclitaxel + Pembrolizumab (KEYNOTE-826)",
+      "name": "Cisplatin + Paclitaxel + Pembrolizumab (KEYNOTE-826) (PD-L1 CPS≥1)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -248,8 +252,9 @@ window.protocolData.cervical = {
       ]
     },
     "Carboplatin-Paclitaxel-Pembrolizumab": {
-      "name": "Carboplatin + Paclitaxel + Pembrolizumab (KEYNOTE-826)",
+      "name": "Carboplatin + Paclitaxel + Pembrolizumab (KEYNOTE-826) (PD-L1 CPS≥1)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -272,8 +277,9 @@ window.protocolData.cervical = {
       ]
     },
     "Cisplatin-Paclitaxel-Atezolizumab-Bevacizumab": {
-      "name": "Cisplatin + Paclitaxel + Atezolizumab + Bevacizumab (BEATcc)",
+      "name": "Cisplatin + Paclitaxel + Atezolizumab + Bevacizumab (BEATcc) (irrespective of PD-L1)",
       "cycles": 6,
+      "cyclesNote": "Atezolizumab and Bevacizumab continue until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -302,8 +308,9 @@ window.protocolData.cervical = {
       ]
     },
     "Carboplatin-Paclitaxel-Atezolizumab-Bevacizumab": {
-      "name": "Carboplatin + Paclitaxel + Atezolizumab + Bevacizumab (BEATcc)",
+      "name": "Carboplatin + Paclitaxel + Atezolizumab + Bevacizumab (BEATcc) (irrespective of PD-L1)",
       "cycles": 6,
+      "cyclesNote": "Atezolizumab and Bevacizumab continue until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -334,6 +341,7 @@ window.protocolData.cervical = {
     "Cisplatin-Paclitaxel-Bevacizumab": {
       "name": "Cisplatin + Paclitaxel + Bevacizumab (GOG-240)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -358,6 +366,7 @@ window.protocolData.cervical = {
     "Carboplatin-Paclitaxel-Bevacizumab": {
       "name": "Carboplatin + Paclitaxel + Bevacizumab (GOG-240)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -417,7 +426,7 @@ window.protocolData.cervical = {
     },
     "Carboplatin-Paclitaxel-Weekly": {
       "name": "Carboplatin + Paclitaxel (weekly)",
-      "cycles": 6,
+      "cycles": 18,
       "drugs": [
         {
           "name": "Carboplatin",
@@ -436,6 +445,7 @@ window.protocolData.cervical = {
     "Topotecan-Paclitaxel-Bevacizumab": {
       "name": "Topotecan + Paclitaxel + Bevacizumab (GOG-240)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Topotecan",
@@ -460,6 +470,7 @@ window.protocolData.cervical = {
     "Gemcitabine-Cisplatin-Pembrolizumab": {
       "name": "Gemcitabine + Cisplatin + Pembrolizumab",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -484,6 +495,7 @@ window.protocolData.cervical = {
     "Gemcitabine-Carboplatin-Pembrolizumab": {
       "name": "Gemcitabine + Carboplatin + Pembrolizumab",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -507,7 +519,7 @@ window.protocolData.cervical = {
     },
     "Pembrolizumab-2L": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-158) (PD-L1 CPS >= 1)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -519,7 +531,7 @@ window.protocolData.cervical = {
     },
     "Cemiplimab-2L": {
       "name": "Cemiplimab (EMPOWER-Cervical 1) (NCCN Preferred 2L)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Cemiplimab",
@@ -531,7 +543,7 @@ window.protocolData.cervical = {
     },
     "Tisotumab-Vedotin-2L": {
       "name": "Tisotumab vedotin (innovaTV 301) (tissue factor-directed ADC) (NCCN Preferred 2L)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tisotumab vedotin",
@@ -543,7 +555,7 @@ window.protocolData.cervical = {
     },
     "Nivolumab-2L": {
       "name": "Nivolumab (CheckMate 358)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -555,7 +567,7 @@ window.protocolData.cervical = {
     },
     "Trastuzumab-Deruxtecan-2L": {
       "name": "Trastuzumab deruxtecan (DESTINY-PanTumor02) (HER2+ IHC 3+ or 2+/ISH+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab deruxtecan",
@@ -724,6 +736,7 @@ window.protocolData.cervical = {
     "Paclitaxel-Topotecan-Bevacizumab-2L": {
       "name": "Paclitaxel + Topotecan + Bevacizumab",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Paclitaxel",

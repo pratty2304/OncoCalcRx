@@ -4,6 +4,7 @@ window.protocolData.leukemia = {
     "primary_treatment": {
       "Imatinib-First-Line": {
         "name": "Imatinib (IRIS) (BCR-ABL TKI)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Imatinib",
@@ -15,6 +16,7 @@ window.protocolData.leukemia = {
       },
       "Dasatinib-First-Line": {
         "name": "Dasatinib (DASISION) (BCR-ABL TKI)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dasatinib",
@@ -26,6 +28,7 @@ window.protocolData.leukemia = {
       },
       "Nilotinib-First-Line": {
         "name": "Nilotinib (ENESTnd) (BCR-ABL TKI)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Nilotinib",
@@ -37,6 +40,7 @@ window.protocolData.leukemia = {
       },
       "Bosutinib-First-Line": {
         "name": "Bosutinib (BFORE) (BCR-ABL TKI)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Bosutinib",
@@ -48,6 +52,7 @@ window.protocolData.leukemia = {
       },
       "Dasatinib-Second-Line": {
         "name": "Dasatinib (BCR-ABL TKI) (chronic phase, 2nd line)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dasatinib",
@@ -59,6 +64,7 @@ window.protocolData.leukemia = {
       },
       "Dasatinib-AP-BP": {
         "name": "Dasatinib (BCR-ABL TKI) (accelerated/blast phase)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dasatinib",
@@ -70,6 +76,7 @@ window.protocolData.leukemia = {
       },
       "Nilotinib-Second-Line": {
         "name": "Nilotinib (BCR-ABL TKI) (2nd line)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Nilotinib",
@@ -81,6 +88,7 @@ window.protocolData.leukemia = {
       },
       "Bosutinib-Second-Line": {
         "name": "Bosutinib (BCR-ABL TKI) (2nd/3rd line)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Bosutinib",
@@ -92,6 +100,7 @@ window.protocolData.leukemia = {
       },
       "Ponatinib": {
         "name": "Ponatinib (PACE) (BCR-ABL TKI) (T315I/multi-TKI resistant)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ponatinib",
@@ -103,6 +112,7 @@ window.protocolData.leukemia = {
       },
       "Asciminib-First-Line": {
         "name": "Asciminib (ASC4FIRST) (STAMP inhibitor) (1st line CML-CP)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Asciminib",
@@ -114,6 +124,7 @@ window.protocolData.leukemia = {
       },
       "Asciminib-T315I": {
         "name": "Asciminib (ASCEMBL) (STAMP inhibitor) (T315I mutation)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Asciminib",
@@ -125,6 +136,7 @@ window.protocolData.leukemia = {
       },
       "Asciminib-Non-T315I": {
         "name": "Asciminib (ASCEMBL) (STAMP inhibitor) (non-T315I, ≥3rd line)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Asciminib",
@@ -136,6 +148,7 @@ window.protocolData.leukemia = {
       },
       "Omacetaxine": {
         "name": "Omacetaxine (protein synthesis inhibitor) (T315I/multi-TKI failure)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Omacetaxine",
@@ -147,6 +160,7 @@ window.protocolData.leukemia = {
       },
       "Imatinib-High-Dose": {
         "name": "Imatinib high-dose (BCR-ABL TKI) (blast crisis)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Imatinib",
@@ -158,6 +172,7 @@ window.protocolData.leukemia = {
       },
       "Hydroxyurea": {
         "name": "Hydroxyurea (cytoreductive therapy) (initial cytoreduction/bridge)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Hydroxyurea",
@@ -169,6 +184,7 @@ window.protocolData.leukemia = {
       },
       "Interferon-alpha-2a": {
         "name": "Interferon alpha-2a (pregnancy/TKI-intolerant/special circumstances)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Interferon alpha-2a",
@@ -184,6 +200,7 @@ window.protocolData.leukemia = {
     "primary_treatment": {
       "Ibrutinib-Monotherapy": {
         "name": "Ibrutinib (RESONATE-2) (BTK inhibitor)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -195,6 +212,7 @@ window.protocolData.leukemia = {
       },
       "Acalabrutinib-Monotherapy": {
         "name": "Acalabrutinib (ELEVATE-TN) (BTK inhibitor)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Acalabrutinib",
@@ -206,6 +224,7 @@ window.protocolData.leukemia = {
       },
       "Zanubrutinib-Monotherapy": {
         "name": "Zanubrutinib (ALPINE) (BTK inhibitor)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Zanubrutinib",
@@ -217,6 +236,7 @@ window.protocolData.leukemia = {
       },
       "Venetoclax-Obinutuzumab": {
         "name": "Venetoclax + Obinutuzumab (CLL14) (BCL-2 + anti-CD20)",
+        "cycles": 12,
         "drugs": [
           {
             "name": "Venetoclax",
@@ -234,6 +254,8 @@ window.protocolData.leukemia = {
       },
       "Acalabrutinib-Obinutuzumab": {
         "name": "Acalabrutinib + Obinutuzumab (ELEVATE-TN) (BTK + anti-CD20)",
+        "cycles": 6,
+        "cyclesNote": "Acalabrutinib continues until progression",
         "drugs": [
           {
             "name": "Acalabrutinib",
@@ -251,6 +273,8 @@ window.protocolData.leukemia = {
       },
       "Ibrutinib-Obinutuzumab": {
         "name": "Ibrutinib + Obinutuzumab (iLLUMINATE) (BTK + anti-CD20)",
+        "cycles": 6,
+        "cyclesNote": "Ibrutinib continues until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -328,6 +352,7 @@ window.protocolData.leukemia = {
       },
       "Ibrutinib-Venetoclax": {
         "name": "Ibrutinib + Venetoclax (GLOW) (BTK + BCL-2)",
+        "cycles": 15,
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -345,6 +370,8 @@ window.protocolData.leukemia = {
       },
       "Venetoclax-Rituximab-Frontline": {
         "name": "Venetoclax + Rituximab (BCL-2 + anti-CD20) (frontline)",
+        "cycles": 6,
+        "cyclesNote": "Venetoclax continues for 24 months total",
         "drugs": [
           {
             "name": "Venetoclax",
@@ -376,6 +403,7 @@ window.protocolData.leukemia = {
     "relapsed_refractory": {
       "Ibrutinib-RR": {
         "name": "Ibrutinib (RESONATE) (BTK inhibitor)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -387,6 +415,7 @@ window.protocolData.leukemia = {
       },
       "Acalabrutinib-RR": {
         "name": "Acalabrutinib (ACE-CL-001) (BTK inhibitor)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Acalabrutinib",
@@ -398,6 +427,7 @@ window.protocolData.leukemia = {
       },
       "Zanubrutinib-RR": {
         "name": "Zanubrutinib (ALPINE) (BTK inhibitor)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Zanubrutinib",
@@ -409,6 +439,8 @@ window.protocolData.leukemia = {
       },
       "Venetoclax-Rituximab-RR": {
         "name": "Venetoclax + Rituximab (MURANO) (BCL-2 + anti-CD20)",
+        "cycles": 6,
+        "cyclesNote": "Venetoclax continues for 24 months total",
         "drugs": [
           {
             "name": "Venetoclax",
@@ -426,6 +458,7 @@ window.protocolData.leukemia = {
       },
       "Venetoclax-Monotherapy-RR": {
         "name": "Venetoclax monotherapy (BCL-2 inhibitor) (del17p/TP53)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Venetoclax",
@@ -437,6 +470,8 @@ window.protocolData.leukemia = {
       },
       "Idelalisib-Rituximab": {
         "name": "Idelalisib + Rituximab (Study 116) (PI3Kδ + anti-CD20)",
+        "cycles": 8,
+        "cyclesNote": "Idelalisib continues until progression",
         "drugs": [
           {
             "name": "Idelalisib",
@@ -466,6 +501,7 @@ window.protocolData.leukemia = {
       },
       "Pirtobrutinib": {
         "name": "Pirtobrutinib (BRUIN) (non-covalent BTK inhibitor) (post-covalent BTKi)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pirtobrutinib",
@@ -519,6 +555,7 @@ window.protocolData.leukemia = {
       },
       "Ibrutinib-Venetoclax-RR": {
         "name": "Ibrutinib + Venetoclax (BTK + BCL-2) (R/R)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -536,6 +573,7 @@ window.protocolData.leukemia = {
       },
       "Ofatumumab-RR": {
         "name": "Ofatumumab monotherapy (anti-CD20) (fludarabine-refractory)",
+        "cycles": 12,
         "drugs": [
           {
             "name": "Ofatumumab",
@@ -547,6 +585,7 @@ window.protocolData.leukemia = {
       },
       "Obinutuzumab-Monotherapy-RR": {
         "name": "Obinutuzumab monotherapy (anti-CD20) (R/R)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Obinutuzumab",
@@ -558,6 +597,8 @@ window.protocolData.leukemia = {
       },
       "Lenalidomide-Rituximab-RR": {
         "name": "Lenalidomide + Rituximab (CONTINUUM) (IMiD + anti-CD20)",
+        "cycles": 12,
+        "cyclesNote": "Lenalidomide continues until progression",
         "drugs": [
           {
             "name": "Lenalidomide",
@@ -633,6 +674,7 @@ window.protocolData.leukemia = {
       },
       "Interferon-alpha-HCL": {
         "name": "Interferon alpha-2a (pregnancy/unable to receive purine analogs)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Interferon alpha-2a",
@@ -670,6 +712,7 @@ window.protocolData.leukemia = {
       },
       "Rituximab-HCL-RR": {
         "name": "Rituximab monotherapy (anti-CD20) (R/R HCL)",
+        "cycles": 8,
         "drugs": [
           {
             "name": "Rituximab",
@@ -681,6 +724,7 @@ window.protocolData.leukemia = {
       },
       "Vemurafenib-HCL": {
         "name": "Vemurafenib (BRAF V600E inhibitor) (R/R HCL)",
+        "cycles": 4,
         "drugs": [
           {
             "name": "Vemurafenib",
@@ -692,6 +736,7 @@ window.protocolData.leukemia = {
       },
       "Vemurafenib-Rituximab-HCL": {
         "name": "Vemurafenib + Rituximab (BRAF V600E + anti-CD20) (R/R HCL)",
+        "cycles": 8,
         "drugs": [
           {
             "name": "Vemurafenib",
@@ -727,6 +772,7 @@ window.protocolData.leukemia = {
       },
       "Interferon-alpha-HCL-RR": {
         "name": "Interferon alpha-2a (R/R HCL, unable to receive purine analogs)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Interferon alpha-2a",
@@ -802,6 +848,7 @@ window.protocolData.leukemia = {
       },
       "BFM-95": {
         "name": "ALL-BFM 95 (Protocol I induction) (pediatric/AYA)",
+        "cycles": 1,
         "drugs": [
           {
             "name": "Prednisone",
@@ -849,6 +896,7 @@ window.protocolData.leukemia = {
       },
       "CALGB-10403-AYA": {
         "name": "CALGB 10403 (AYA protocol, age 15-39)",
+        "cycles": 1,
         "drugs": [
           {
             "name": "Daunorubicin",
@@ -878,6 +926,7 @@ window.protocolData.leukemia = {
       },
       "GRAALL-2005": {
         "name": "GRAALL-2005 (adult ALL intensive induction)",
+        "cycles": 1,
         "drugs": [
           {
             "name": "Daunorubicin",
@@ -1069,6 +1118,7 @@ window.protocolData.leukemia = {
       },
       "Nelarabine-T-ALL": {
         "name": "Nelarabine (T-ALL/T-LBL)",
+        "cycles": 3,
         "drugs": [
           {
             "name": "Nelarabine",
@@ -1080,6 +1130,7 @@ window.protocolData.leukemia = {
       },
       "POMP-Maintenance": {
         "name": "POMP maintenance (6-MP + methotrexate + vincristine + prednisone)",
+        "cycles": 24,
         "drugs": [
           {
             "name": "6-Mercaptopurine",
@@ -1159,6 +1210,7 @@ window.protocolData.leukemia = {
       },
       "Nelarabine-RR-T-ALL": {
         "name": "Nelarabine (R/R T-ALL/T-LBL)",
+        "cycles": 3,
         "drugs": [
           {
             "name": "Nelarabine",
@@ -1258,6 +1310,7 @@ window.protocolData.leukemia = {
       },
       "Azacitidine-Venetoclax": {
         "name": "Azacitidine + Venetoclax (VIALE-A) (unfit for intensive chemo)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Azacitidine",
@@ -1275,6 +1328,7 @@ window.protocolData.leukemia = {
       },
       "Decitabine-Venetoclax": {
         "name": "Decitabine + Venetoclax (unfit for intensive chemo)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Decitabine",
@@ -1292,6 +1346,7 @@ window.protocolData.leukemia = {
       },
       "LDAC-Venetoclax": {
         "name": "Low-dose cytarabine + Venetoclax (VIALE-C) (unfit for intensive/HMA)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cytarabine",
@@ -1309,6 +1364,7 @@ window.protocolData.leukemia = {
       },
       "Azacitidine-Monotherapy": {
         "name": "Azacitidine monotherapy (AZA-001) (unfit for intensive chemo)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Azacitidine",
@@ -1320,6 +1376,7 @@ window.protocolData.leukemia = {
       },
       "Decitabine-Monotherapy": {
         "name": "Decitabine monotherapy (DACO-016) (unfit for intensive chemo)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Decitabine",
@@ -1367,6 +1424,8 @@ window.protocolData.leukemia = {
       },
       "ATRA-ATO-APL": {
         "name": "ATRA + Arsenic trioxide (Lo-Coco) (APL, low-intermediate risk)",
+        "cycles": 4,
+        "cyclesNote": "Induction: ATRA + ATO until CR; followed by 4 consolidation cycles",
         "drugs": [
           {
             "name": "All-trans retinoic acid (ATRA)",
@@ -1384,6 +1443,8 @@ window.protocolData.leukemia = {
       },
       "ATRA-Idarubicin-APL": {
         "name": "ATRA + Idarubicin (AIDA) (APL, high risk)",
+        "cycles": 4,
+        "cyclesNote": "Induction: ATRA + idarubicin until CR; followed by 3 consolidation cycles",
         "drugs": [
           {
             "name": "All-trans retinoic acid (ATRA)",
@@ -1401,6 +1462,7 @@ window.protocolData.leukemia = {
       },
       "Midostaurin-Maintenance-FLT3": {
         "name": "Midostaurin maintenance (RATIFY) (FLT3-mutated, post-consolidation)",
+        "cycles": 12,
         "drugs": [
           {
             "name": "Midostaurin",
@@ -1412,6 +1474,7 @@ window.protocolData.leukemia = {
       },
       "Azacitidine-Maintenance-CC-486": {
         "name": "Oral azacitidine maintenance (QUAZAR AML-001) (CR1, unfit for transplant)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Oral azacitidine (CC-486)",
@@ -1423,6 +1486,7 @@ window.protocolData.leukemia = {
       },
       "Ivosidenib-IDH1": {
         "name": "Ivosidenib (AGILE) (IDH1-mutated) (monotherapy or + azacitidine)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ivosidenib",
@@ -1434,6 +1498,7 @@ window.protocolData.leukemia = {
       },
       "Enasidenib-IDH2": {
         "name": "Enasidenib (AG221-001) (IDH2-mutated)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Enasidenib",
@@ -1445,6 +1510,7 @@ window.protocolData.leukemia = {
       },
       "Ivosidenib-Azacitidine-IDH1": {
         "name": "Ivosidenib + Azacitidine (AGILE) (IDH1-mutated, unfit for intensive)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ivosidenib",
@@ -1462,6 +1528,7 @@ window.protocolData.leukemia = {
       },
       "Olutasidenib-IDH1": {
         "name": "Olutasidenib (IDH1 inhibitor) (R/R IDH1-mutated)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Olutasidenib",
@@ -1474,6 +1541,7 @@ window.protocolData.leukemia = {
       "Quizartinib-FLT3-ITD": {
         "name": "Quizartinib + 7+3 (QuANTUM-First) (FLT3-ITD)",
         "cycles": 2,
+        "cyclesNote": "Quizartinib maintenance continues for up to 3 years post-consolidation",
         "drugs": [
           {
             "name": "Quizartinib",
@@ -1499,6 +1567,7 @@ window.protocolData.leukemia = {
     "relapsed_refractory": {
       "Gilteritinib-FLT3": {
         "name": "Gilteritinib (ADMIRAL) (FLT3-mutated R/R AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Gilteritinib",
@@ -1510,6 +1579,7 @@ window.protocolData.leukemia = {
       },
       "Venetoclax-Azacitidine-RR": {
         "name": "Venetoclax + Azacitidine (BCL-2 + HMA) (R/R AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Venetoclax",
@@ -1599,6 +1669,7 @@ window.protocolData.leukemia = {
       },
       "Gemtuzumab-Ozogamicin-Mono-RR": {
         "name": "Gemtuzumab ozogamicin monotherapy (CD33+ R/R AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Gemtuzumab ozogamicin",
@@ -1610,6 +1681,7 @@ window.protocolData.leukemia = {
       },
       "Ivosidenib-RR-IDH1": {
         "name": "Ivosidenib (IDH1-mutated R/R AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ivosidenib",
@@ -1621,6 +1693,7 @@ window.protocolData.leukemia = {
       },
       "Enasidenib-RR-IDH2": {
         "name": "Enasidenib (AG221-001) (IDH2-mutated R/R AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Enasidenib",
@@ -1632,6 +1705,7 @@ window.protocolData.leukemia = {
       },
       "Revumenib-KMT2A": {
         "name": "Revumenib (AUGMENT-101) (menin inhibitor) (KMT2A-rearranged/NPM1-mutated R/R AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Revumenib",
@@ -1643,6 +1717,7 @@ window.protocolData.leukemia = {
       },
       "Olutasidenib-RR-IDH1": {
         "name": "Olutasidenib (IDH1 inhibitor) (R/R IDH1-mutated AML)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Olutasidenib",

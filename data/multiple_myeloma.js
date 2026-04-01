@@ -189,7 +189,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Dara-Rd": {
       "name": "Dara-Rd (MAIA) (daratumumab + lenalidomide + dexamethasone) (transplant-ineligible)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Daratumumab",
@@ -297,7 +297,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Rd": {
       "name": "Rd (lenalidomide + dexamethasone) (transplant-ineligible)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenalidomide",
@@ -351,7 +351,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Lenalidomide-Maintenance": {
       "name": "Lenalidomide maintenance",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenalidomide",
@@ -363,7 +363,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Dara-SC-SMM": {
       "name": "Daratumumab SC (AQUILA) (anti-CD38) (high-risk smoldering myeloma)",
-      "cycles": 36,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Daratumumab (SC)",
@@ -377,7 +377,7 @@ window.protocolData.multiple_myeloma = {
   "relapsed_refractory": {
     "KRd": {
       "name": "KRd (ASPIRE) (carfilzomib + lenalidomide + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Carfilzomib",
@@ -401,7 +401,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Kd": {
       "name": "Kd (ENDEAVOR) (carfilzomib + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Carfilzomib",
@@ -419,7 +419,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Isa-Kd": {
       "name": "Isa-Kd (IKEMA) (isatuximab + carfilzomib + dexamethasone)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Isatuximab",
@@ -443,7 +443,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Dara-Kd": {
       "name": "Dara-Kd (CANDOR) (daratumumab + carfilzomib + dexamethasone)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Daratumumab",
@@ -467,7 +467,7 @@ window.protocolData.multiple_myeloma = {
     },
     "PVd": {
       "name": "PVd (pomalidomide + bortezomib + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pomalidomide",
@@ -491,7 +491,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Pd": {
       "name": "Pd (pomalidomide + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pomalidomide",
@@ -509,7 +509,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Dara-Pd": {
       "name": "Dara-Pd (APOLLO) (daratumumab + pomalidomide + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Daratumumab",
@@ -533,7 +533,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Isa-Pd": {
       "name": "Isa-Pd (ICARIA-MM) (isatuximab + pomalidomide + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Isatuximab",
@@ -557,7 +557,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Dara-Vd": {
       "name": "Dara-Vd (CASTOR) (daratumumab + bortezomib + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Daratumumab",
@@ -581,7 +581,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Elo-Rd": {
       "name": "Elo-Rd (ELOQUENT-2) (elotuzumab + lenalidomide + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Elotuzumab",
@@ -605,7 +605,7 @@ window.protocolData.multiple_myeloma = {
     },
     "IRd": {
       "name": "IRd (TOURMALINE-MM1) (ixazomib + lenalidomide + dexamethasone)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ixazomib",
@@ -629,7 +629,7 @@ window.protocolData.multiple_myeloma = {
     },
     "SVd": {
       "name": "SVd (BOSTON) (selinexor + bortezomib + dexamethasone)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Selinexor",
@@ -653,7 +653,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Selinexor-d": {
       "name": "Selinexor-d (STORM) (selinexor + dexamethasone) (penta-refractory)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Selinexor",
@@ -671,7 +671,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Belantamab-Pd": {
       "name": "Belantamab mafodotin + Pd (DREAMM-8) (BCMA-ADC)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Belantamab Mafodotin",
@@ -695,7 +695,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Belantamab-Vd": {
       "name": "Belantamab mafodotin + Vd (DREAMM-7) (BCMA-ADC)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Belantamab Mafodotin",
@@ -719,7 +719,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Teclistamab": {
       "name": "Teclistamab (MajesTEC-1) (BCMA bispecific)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Teclistamab",
@@ -731,7 +731,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Talquetamab": {
       "name": "Talquetamab (MonumenTAL-1) (GPRC5D bispecific)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Talquetamab",
@@ -743,7 +743,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Elranatamab": {
       "name": "Elranatamab (MagnetisMM-3) (BCMA bispecific)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Elranatamab",
@@ -755,7 +755,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Linvoseltamab": {
       "name": "Linvoseltamab (LINKER-MM1) (BCMA bispecific)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Linvoseltamab",
@@ -845,7 +845,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Panobinostat-Vd": {
       "name": "Panobinostat-Vd (PANORAMA-1) (HDAC inhibitor + Vd)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Panobinostat",
@@ -869,7 +869,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Bortezomib": {
       "name": "Bortezomib monotherapy",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Bortezomib",
@@ -881,7 +881,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Carfilzomib": {
       "name": "Carfilzomib monotherapy",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Carfilzomib",
@@ -893,7 +893,7 @@ window.protocolData.multiple_myeloma = {
     },
     "Daratumumab": {
       "name": "Daratumumab monotherapy (SIRIUS) (CD38 mAb)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Daratumumab",

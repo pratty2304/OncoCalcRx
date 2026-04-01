@@ -167,6 +167,8 @@ window.protocolData.head_neck = {
   "metastatic": {
     "Pembrolizumab-Cisplatin-5FU-1L": {
       "name": "Pembrolizumab + Cisplatin + 5-Fluorouracil (KEYNOTE-048) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -190,6 +192,8 @@ window.protocolData.head_neck = {
     },
     "Pembrolizumab-Carboplatin-5FU-1L": {
       "name": "Pembrolizumab + Carboplatin + 5-Fluorouracil (KEYNOTE-048) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -213,6 +217,7 @@ window.protocolData.head_neck = {
     },
     "Pembrolizumab-Monotherapy-CPS20-1L": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-048) (PD-L1 CPS≥20) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -224,6 +229,8 @@ window.protocolData.head_neck = {
     },
     "Cisplatin-5FU-Cetuximab-1L": {
       "name": "Cisplatin + 5-Fluorouracil + Cetuximab (EXTREME) (EGFR inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Cetuximab continues until progression",
       "drugs": [
         {
           "name": "Cetuximab",
@@ -249,6 +256,8 @@ window.protocolData.head_neck = {
     },
     "Carboplatin-5FU-Cetuximab-1L": {
       "name": "Carboplatin + 5-Fluorouracil + Cetuximab (EXTREME) (EGFR inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Cetuximab continues until progression",
       "drugs": [
         {
           "name": "Cetuximab",
@@ -274,6 +283,7 @@ window.protocolData.head_neck = {
     },
     "Cisplatin-5FU-1L": {
       "name": "Cisplatin + 5-Fluorouracil",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Cisplatin",
@@ -291,6 +301,7 @@ window.protocolData.head_neck = {
     },
     "Carboplatin-Paclitaxel-1L": {
       "name": "Carboplatin + Paclitaxel",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Carboplatin",
@@ -308,6 +319,7 @@ window.protocolData.head_neck = {
     },
     "Carboplatin-Paclitaxel-Weekly-1L": {
       "name": "Carboplatin + Paclitaxel (weekly)",
+      "cycles": 18,
       "drugs": [
         {
           "name": "Carboplatin",
@@ -325,6 +337,7 @@ window.protocolData.head_neck = {
     },
     "Cisplatin-Paclitaxel-1L": {
       "name": "Cisplatin + Paclitaxel",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Cisplatin",
@@ -342,6 +355,8 @@ window.protocolData.head_neck = {
     },
     "Toripalimab-Gemcitabine-Cisplatin-NPC": {
       "name": "Toripalimab + Gemcitabine + Cisplatin (JUPITER-02) (Nasopharyngeal) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Toripalimab continues until progression",
       "drugs": [
         {
           "name": "Toripalimab",
@@ -365,6 +380,7 @@ window.protocolData.head_neck = {
     },
     "Gemcitabine-Cisplatin-NPC": {
       "name": "Gemcitabine + Cisplatin (Nasopharyngeal)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -382,6 +398,7 @@ window.protocolData.head_neck = {
     },
     "Cisplatin-Vinorelbine-NPC": {
       "name": "Cisplatin + Vinorelbine (Nasopharyngeal)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Cisplatin",
@@ -399,6 +416,7 @@ window.protocolData.head_neck = {
     },
     "Pembrolizumab-Monotherapy-CPS1-2L": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-040) (PD-L1 CPS≥1) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -410,6 +428,7 @@ window.protocolData.head_neck = {
     },
     "Nivolumab-Monotherapy-2L": {
       "name": "Nivolumab monotherapy (CheckMate-141) (PD-1 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -421,6 +440,7 @@ window.protocolData.head_neck = {
     },
     "Cetuximab-Monotherapy-2L": {
       "name": "Cetuximab monotherapy (EGFR inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Cetuximab",
@@ -434,6 +454,7 @@ window.protocolData.head_neck = {
     },
     "Docetaxel-Monotherapy-2L": {
       "name": "Docetaxel monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Docetaxel",
@@ -445,6 +466,7 @@ window.protocolData.head_neck = {
     },
     "Paclitaxel-Monotherapy-2L": {
       "name": "Paclitaxel monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -456,6 +478,7 @@ window.protocolData.head_neck = {
     },
     "Paclitaxel-Weekly-2L": {
       "name": "Paclitaxel monotherapy (weekly)",
+      "cycles": 12,
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -467,6 +490,7 @@ window.protocolData.head_neck = {
     },
     "Methotrexate-Monotherapy-2L": {
       "name": "Methotrexate monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Methotrexate",
@@ -478,6 +502,7 @@ window.protocolData.head_neck = {
     },
     "Capecitabine-Monotherapy-2L": {
       "name": "Capecitabine monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Capecitabine",
@@ -489,6 +514,8 @@ window.protocolData.head_neck = {
     },
     "Carboplatin-Cetuximab-2L": {
       "name": "Carboplatin + Cetuximab (EGFR inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Cetuximab continues until progression",
       "drugs": [
         {
           "name": "Cetuximab",
@@ -508,6 +535,8 @@ window.protocolData.head_neck = {
     },
     "Paclitaxel-Carboplatin-Cetuximab-2L": {
       "name": "Paclitaxel + Carboplatin + Cetuximab (PCE) (EGFR inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Cetuximab continues until progression",
       "drugs": [
         {
           "name": "Cetuximab",
@@ -533,6 +562,7 @@ window.protocolData.head_neck = {
     },
     "Afatinib-2L": {
       "name": "Afatinib (LUX-Head&Neck 1) (EGFR/HER2 inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Afatinib",

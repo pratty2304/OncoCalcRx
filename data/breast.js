@@ -26,8 +26,32 @@ window.protocolData.breast = {
           }
         ]
       },
-      "EC-T": {
-        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-T)",
+      "AC-Doc": {
+        "name": "Doxorubicin + Cyclophosphamide → Docetaxel (AC-Doc)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Doxorubicin",
+            "dose": 60,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Docetaxel",
+            "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles AC)"
+          }
+        ]
+      },
+      "EC-Doc": {
+        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-Doc)",
         "cycles": 8,
         "drugs": [
           {
@@ -45,6 +69,30 @@ window.protocolData.breast = {
           {
             "name": "Docetaxel",
             "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
+          }
+        ]
+      },
+      "EC-T": {
+        "name": "Epirubicin + Cyclophosphamide → Paclitaxel (EC-T)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Epirubicin",
+            "dose": 90,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
           }
@@ -256,8 +304,32 @@ window.protocolData.breast = {
           }
         ]
       },
-      "EC-T": {
-        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-T)",
+      "AC-Doc": {
+        "name": "Doxorubicin + Cyclophosphamide → Docetaxel (AC-Doc)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Doxorubicin",
+            "dose": 60,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Docetaxel",
+            "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles AC)"
+          }
+        ]
+      },
+      "EC-Doc": {
+        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-Doc)",
         "cycles": 8,
         "drugs": [
           {
@@ -275,6 +347,30 @@ window.protocolData.breast = {
           {
             "name": "Docetaxel",
             "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
+          }
+        ]
+      },
+      "EC-T": {
+        "name": "Epirubicin + Cyclophosphamide → Paclitaxel (EC-T)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Epirubicin",
+            "dose": 90,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
           }
@@ -704,7 +800,7 @@ window.protocolData.breast = {
       },
       "Palbociclib-Letrozole": {
         "name": "Palbociclib + Letrozole (PALOMA-1/2)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Palbociclib",
@@ -722,7 +818,7 @@ window.protocolData.breast = {
       },
       "Ribociclib-Letrozole": {
         "name": "Ribociclib + Letrozole (MONALEESA-2)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ribociclib",
@@ -740,7 +836,7 @@ window.protocolData.breast = {
       },
       "Abemaciclib-Letrozole": {
         "name": "Abemaciclib + Letrozole (MONARCH-3)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Abemaciclib",
@@ -758,7 +854,7 @@ window.protocolData.breast = {
       },
       "Palbociclib-Fulvestrant": {
         "name": "Palbociclib + Fulvestrant (PALOMA-3)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Palbociclib",
@@ -776,7 +872,7 @@ window.protocolData.breast = {
       },
       "Ribociclib-Fulvestrant": {
         "name": "Ribociclib + Fulvestrant (MONALEESA-3)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ribociclib",
@@ -794,7 +890,7 @@ window.protocolData.breast = {
       },
       "Abemaciclib-Fulvestrant": {
         "name": "Abemaciclib + Fulvestrant (MONARCH-2)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Abemaciclib",
@@ -812,7 +908,7 @@ window.protocolData.breast = {
       },
       "Everolimus-Exemestane": {
         "name": "Everolimus + Exemestane (BOLERO-2)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Everolimus",
@@ -830,7 +926,7 @@ window.protocolData.breast = {
       },
       "Alpelisib-Fulvestrant": {
         "name": "Alpelisib + Fulvestrant (SOLAR-1) (PIK3CA mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Alpelisib",
@@ -848,7 +944,7 @@ window.protocolData.breast = {
       },
       "Elacestrant": {
         "name": "Elacestrant (EMERALD) (ESR1 mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Elacestrant",
@@ -860,7 +956,7 @@ window.protocolData.breast = {
       },
       "Inavolisib-Palbociclib-Fulvestrant": {
         "name": "Inavolisib + Palbociclib + Fulvestrant (INAVO120) (PIK3CA mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Inavolisib",
@@ -884,7 +980,7 @@ window.protocolData.breast = {
       },
       "Capivasertib-Fulvestrant": {
         "name": "Capivasertib + Fulvestrant (CAPItello-291) (AKT1/PIK3CA/PTEN alteration)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Capivasertib",
@@ -938,7 +1034,7 @@ window.protocolData.breast = {
       },
       "Nab-Paclitaxel-Carboplatin-weekly": {
         "name": "Nab-paclitaxel + Carboplatin (weekly)",
-        "cycles": 12,
+        "cycles": 18,
         "drugs": [
           {
             "name": "Nab-paclitaxel",
@@ -974,7 +1070,7 @@ window.protocolData.breast = {
       },
       "Paclitaxel-Carboplatin-weekly": {
         "name": "Paclitaxel + Carboplatin (PC) (weekly)",
-        "cycles": 12,
+        "cycles": 18,
         "drugs": [
           {
             "name": "Paclitaxel",
@@ -1076,7 +1172,7 @@ window.protocolData.breast = {
       },
       "Sacituzumab-Govitecan": {
         "name": "Sacituzumab Govitecan (TROPiCS-02)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sacituzumab Govitecan",
@@ -1160,7 +1256,7 @@ window.protocolData.breast = {
       },
       "Imlunestrant": {
         "name": "Imlunestrant (EMBER-3) (oral SERD) (ESR1-mutated)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Imlunestrant",
@@ -1325,6 +1421,30 @@ window.protocolData.breast = {
           }
         ]
       },
+      "AC-Doc": {
+        "name": "Doxorubicin + Cyclophosphamide → Docetaxel (AC-Doc)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Doxorubicin",
+            "dose": 60,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Docetaxel",
+            "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles AC)"
+          }
+        ]
+      },
       "TAC": {
         "name": "Docetaxel + Doxorubicin + Cyclophosphamide (TAC) (BCIRG-001)",
         "cycles": 6,
@@ -1397,8 +1517,8 @@ window.protocolData.breast = {
           }
         ]
       },
-      "EC-T": {
-        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-T)",
+      "EC-Doc": {
+        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-Doc)",
         "cycles": 8,
         "drugs": [
           {
@@ -1416,6 +1536,30 @@ window.protocolData.breast = {
           {
             "name": "Docetaxel",
             "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
+          }
+        ]
+      },
+      "EC-T": {
+        "name": "Epirubicin + Cyclophosphamide → Paclitaxel (EC-T)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Epirubicin",
+            "dose": 90,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
           }
@@ -1561,6 +1705,30 @@ window.protocolData.breast = {
           }
         ]
       },
+      "AC-Doc": {
+        "name": "Doxorubicin + Cyclophosphamide → Docetaxel (AC-Doc)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Doxorubicin",
+            "dose": 60,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Docetaxel",
+            "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles AC)"
+          }
+        ]
+      },
       "TAC": {
         "name": "Docetaxel + Doxorubicin + Cyclophosphamide (TAC) (BCIRG-001)",
         "cycles": 6,
@@ -1633,8 +1801,8 @@ window.protocolData.breast = {
           }
         ]
       },
-      "EC-T": {
-        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-T)",
+      "EC-Doc": {
+        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-Doc)",
         "cycles": 8,
         "drugs": [
           {
@@ -1652,6 +1820,30 @@ window.protocolData.breast = {
           {
             "name": "Docetaxel",
             "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
+          }
+        ]
+      },
+      "EC-T": {
+        "name": "Epirubicin + Cyclophosphamide → Paclitaxel (EC-T)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Epirubicin",
+            "dose": 90,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
           }
@@ -1751,7 +1943,8 @@ window.protocolData.breast = {
     "metastatic": {
       "Pembrolizumab-Nab-Paclitaxel": {
         "name": "Pembrolizumab + Nab-paclitaxel (KEYNOTE-355) (PD-L1 CPS ≥10)",
-        "cycles": 12,
+        "cycles": 6,
+        "cyclesNote": "Pembrolizumab continues until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -1769,7 +1962,8 @@ window.protocolData.breast = {
       },
       "Pembrolizumab-Paclitaxel": {
         "name": "Pembrolizumab + Paclitaxel (KEYNOTE-355) (PD-L1 CPS ≥10)",
-        "cycles": 12,
+        "cycles": 6,
+        "cyclesNote": "Pembrolizumab continues until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -1788,6 +1982,7 @@ window.protocolData.breast = {
       "Pembrolizumab-Gemcitabine-Carboplatin": {
         "name": "Pembrolizumab + Gemcitabine + Carboplatin (KEYNOTE-355) (PD-L1 CPS ≥10)",
         "cycles": 6,
+        "cyclesNote": "Pembrolizumab continues until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -1811,7 +2006,7 @@ window.protocolData.breast = {
       },
       "Sacituzumab-Govitecan-Pembrolizumab": {
         "name": "Sacituzumab Govitecan + Pembrolizumab (ASCENT-04) (PD-L1 CPS ≥10)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sacituzumab Govitecan",
@@ -1829,7 +2024,7 @@ window.protocolData.breast = {
       },
       "Sacituzumab-Govitecan": {
         "name": "Sacituzumab Govitecan (ASCENT/ASCENT-03) (NCCN Preferred)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sacituzumab Govitecan",
@@ -1841,7 +2036,7 @@ window.protocolData.breast = {
       },
       "Olaparib-BRCA": {
         "name": "Olaparib (OlympiAD) (germline BRCA1/2 mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Olaparib",
@@ -1853,7 +2048,7 @@ window.protocolData.breast = {
       },
       "Talazoparib-BRCA": {
         "name": "Talazoparib (EMBRACA) (germline BRCA1/2 mutation)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Talazoparib",
@@ -1865,7 +2060,7 @@ window.protocolData.breast = {
       },
       "Trastuzumab-Deruxtecan-HER2low": {
         "name": "Trastuzumab Deruxtecan (DESTINY-Breast04) (HER2-low)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab Deruxtecan",
@@ -1877,7 +2072,7 @@ window.protocolData.breast = {
       },
       "Datopotamab-Deruxtecan": {
         "name": "Datopotamab Deruxtecan (TROPION-Breast02)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Datopotamab Deruxtecan",
@@ -1907,7 +2102,7 @@ window.protocolData.breast = {
       },
       "Paclitaxel-Carboplatin-weekly": {
         "name": "Paclitaxel + Carboplatin (PC) (weekly)",
-        "cycles": 12,
+        "cycles": 18,
         "drugs": [
           {
             "name": "Paclitaxel",
@@ -1943,7 +2138,7 @@ window.protocolData.breast = {
       },
       "Nab-Paclitaxel-Carboplatin-weekly": {
         "name": "Nab-paclitaxel + Carboplatin (weekly)",
-        "cycles": 12,
+        "cycles": 18,
         "drugs": [
           {
             "name": "Nab-paclitaxel",
@@ -2333,7 +2528,7 @@ window.protocolData.breast = {
       },
       "Dostarlimab-dMMR": {
         "name": "Dostarlimab (GARNET) (dMMR)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dostarlimab",
@@ -2345,7 +2540,7 @@ window.protocolData.breast = {
       },
       "Larotrectinib-NTRK": {
         "name": "Larotrectinib (NAVIGATE) (NTRK fusion+)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Larotrectinib",
@@ -2357,7 +2552,7 @@ window.protocolData.breast = {
       },
       "Entrectinib-NTRK": {
         "name": "Entrectinib (STARTRK-2) (NTRK fusion+)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -2423,7 +2618,7 @@ window.protocolData.breast = {
           },
           {
             "name": "Docetaxel",
-            "dose": 75,
+            "dose": 100,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles AC)"
           },
@@ -2793,8 +2988,8 @@ window.protocolData.breast = {
           }
         ]
       },
-      "EC-T": {
-        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-T)",
+      "EC-Doc": {
+        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-Doc)",
         "cycles": 8,
         "drugs": [
           {
@@ -2812,6 +3007,30 @@ window.protocolData.breast = {
           {
             "name": "Docetaxel",
             "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
+          }
+        ]
+      },
+      "EC-T": {
+        "name": "Epirubicin + Cyclophosphamide → Paclitaxel (EC-T)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Epirubicin",
+            "dose": 90,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
           }
@@ -2871,7 +3090,7 @@ window.protocolData.breast = {
           },
           {
             "name": "Docetaxel",
-            "dose": 75,
+            "dose": 100,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles AC)"
           },
@@ -3099,8 +3318,8 @@ window.protocolData.breast = {
           }
         ]
       },
-      "EC-T": {
-        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-T)",
+      "EC-Doc": {
+        "name": "Epirubicin + Cyclophosphamide → Docetaxel (EC-Doc)",
         "cycles": 8,
         "drugs": [
           {
@@ -3118,6 +3337,30 @@ window.protocolData.breast = {
           {
             "name": "Docetaxel",
             "dose": 100,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
+          }
+        ]
+      },
+      "EC-T": {
+        "name": "Epirubicin + Cyclophosphamide → Paclitaxel (EC-T)",
+        "cycles": 8,
+        "drugs": [
+          {
+            "name": "Epirubicin",
+            "dose": 90,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Cyclophosphamide",
+            "dose": 600,
+            "unit": "mg/m²",
+            "schedule": "D1, every 21 days x 4 cycles"
+          },
+          {
+            "name": "Paclitaxel",
+            "dose": 175,
             "unit": "mg/m²",
             "schedule": "D1, every 21 days x 4 cycles (after 4 cycles EC)"
           }
@@ -3178,6 +3421,7 @@ window.protocolData.breast = {
       "Pertuzumab-Trastuzumab-Docetaxel": {
         "name": "Pertuzumab + Trastuzumab + Docetaxel (CLEOPATRA) (NCCN Preferred)",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab + Pertuzumab continue until progression",
         "drugs": [
           {
             "name": "Pertuzumab",
@@ -3206,6 +3450,7 @@ window.protocolData.breast = {
       "Pertuzumab-Trastuzumab-Paclitaxel": {
         "name": "Pertuzumab + Trastuzumab + Paclitaxel (NCCN Other Recommended)",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab + Pertuzumab continue until progression",
         "drugs": [
           {
             "name": "Pertuzumab",
@@ -3233,7 +3478,7 @@ window.protocolData.breast = {
       },
       "TDxd-Pertuzumab": {
         "name": "Trastuzumab deruxtecan + Pertuzumab (DESTINY-Breast09) (NCCN Preferred)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab deruxtecan",
@@ -3253,7 +3498,7 @@ window.protocolData.breast = {
       },
       "TDxd": {
         "name": "Trastuzumab deruxtecan (T-DXd) (DESTINY-Breast03) (NCCN Preferred 2nd-line)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab deruxtecan",
@@ -3265,7 +3510,7 @@ window.protocolData.breast = {
       },
       "TDM1": {
         "name": "Trastuzumab emtansine (T-DM1) (EMILIA) (NCCN Other Recommended)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab emtansine",
@@ -3278,6 +3523,7 @@ window.protocolData.breast = {
       "Trastuzumab-Paclitaxel": {
         "name": "Trastuzumab + Paclitaxel",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab continues until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -3298,6 +3544,7 @@ window.protocolData.breast = {
       "Trastuzumab-Docetaxel": {
         "name": "Trastuzumab + Docetaxel (M77001)",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab continues until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -3317,7 +3564,7 @@ window.protocolData.breast = {
       },
       "Tucatinib-Trastuzumab-Capecitabine": {
         "name": "Tucatinib + Trastuzumab + Capecitabine (HER2CLIMB) (NCCN Preferred)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tucatinib",
@@ -3343,7 +3590,7 @@ window.protocolData.breast = {
       },
       "Tucatinib-TDM1": {
         "name": "Tucatinib + Trastuzumab emtansine (HER2CLIMB-02)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tucatinib",
@@ -3361,7 +3608,7 @@ window.protocolData.breast = {
       },
       "Capecitabine-Lapatinib": {
         "name": "Capecitabine + Lapatinib (EGF100151) (NCCN Other Recommended)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Capecitabine",
@@ -3379,7 +3626,7 @@ window.protocolData.breast = {
       },
       "Trastuzumab-Lapatinib": {
         "name": "Trastuzumab + Lapatinib (EGF104900)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -3400,6 +3647,7 @@ window.protocolData.breast = {
       "Trastuzumab-Vinorelbine": {
         "name": "Trastuzumab + Vinorelbine (NCCN Other Recommended)",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab continues until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -3420,6 +3668,7 @@ window.protocolData.breast = {
       "Trastuzumab-Capecitabine": {
         "name": "Trastuzumab + Capecitabine",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab continues until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -3439,7 +3688,7 @@ window.protocolData.breast = {
       },
       "Capecitabine-Neratinib": {
         "name": "Capecitabine + Neratinib (NALA)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Capecitabine",
@@ -3457,7 +3706,7 @@ window.protocolData.breast = {
       },
       "Trastuzumab-Pertuzumab-Maintenance": {
         "name": "Trastuzumab + Pertuzumab maintenance (after completing chemo)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab",
@@ -3497,7 +3746,7 @@ window.protocolData.breast = {
       },
       "Paclitaxel-Carboplatin-weekly": {
         "name": "Paclitaxel + Carboplatin (PC) (weekly)",
-        "cycles": 6,
+        "cycles": 18,
         "drugs": [
           {
             "name": "Paclitaxel",
@@ -3533,7 +3782,7 @@ window.protocolData.breast = {
       },
       "Nab-Paclitaxel-Carboplatin-weekly": {
         "name": "Nab-paclitaxel + Carboplatin (weekly)",
-        "cycles": 6,
+        "cycles": 18,
         "drugs": [
           {
             "name": "Nab-paclitaxel",
@@ -3552,6 +3801,7 @@ window.protocolData.breast = {
       "Gemcitabine-Carboplatin-Trastuzumab": {
         "name": "Gemcitabine + Carboplatin + Trastuzumab",
         "cycles": 6,
+        "cyclesNote": "Trastuzumab continues until progression",
         "drugs": [
           {
             "name": "Gemcitabine",
@@ -3578,6 +3828,7 @@ window.protocolData.breast = {
       "Margetuximab-Capecitabine": {
         "name": "Margetuximab + Capecitabine (SOPHIA)",
         "cycles": 6,
+        "cyclesNote": "Margetuximab continues until progression",
         "drugs": [
           {
             "name": "Margetuximab",
@@ -3596,6 +3847,7 @@ window.protocolData.breast = {
       "Margetuximab-Eribulin": {
         "name": "Margetuximab + Eribulin (SOPHIA)",
         "cycles": 6,
+        "cyclesNote": "Margetuximab continues until progression",
         "drugs": [
           {
             "name": "Margetuximab",
@@ -3614,6 +3866,7 @@ window.protocolData.breast = {
       "Margetuximab-Vinorelbine": {
         "name": "Margetuximab + Vinorelbine (SOPHIA)",
         "cycles": 6,
+        "cyclesNote": "Margetuximab continues until progression",
         "drugs": [
           {
             "name": "Margetuximab",
@@ -3632,6 +3885,7 @@ window.protocolData.breast = {
       "Margetuximab-Gemcitabine": {
         "name": "Margetuximab + Gemcitabine (SOPHIA)",
         "cycles": 6,
+        "cyclesNote": "Margetuximab continues until progression",
         "drugs": [
           {
             "name": "Margetuximab",
@@ -3649,7 +3903,7 @@ window.protocolData.breast = {
       },
       "Single-Neratinib": {
         "name": "Neratinib monotherapy",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Neratinib",
@@ -3715,7 +3969,7 @@ window.protocolData.breast = {
     "metastatic": {
       "TDxd-DESTINY-Breast06": {
         "name": "Trastuzumab deruxtecan (T-DXd) (DESTINY-Breast06) (NCCN Preferred) (HR+, after endocrine therapy)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab deruxtecan",
@@ -3727,7 +3981,7 @@ window.protocolData.breast = {
       },
       "TDxd-DESTINY-Breast04": {
         "name": "Trastuzumab deruxtecan (T-DXd) (DESTINY-Breast04) (NCCN Preferred) (after prior chemotherapy)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab deruxtecan",

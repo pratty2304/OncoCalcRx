@@ -240,6 +240,7 @@ window.protocolData.lung = {
       },
       "Osimertinib-Post-CRT": {
         "name": "Osimertinib (LAURA) (post-chemoRT, EGFR exon19del/L858R, unresectable stage III)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Osimertinib",
@@ -743,6 +744,7 @@ window.protocolData.lung = {
     "metastatic": {
       "Pembrolizumab-Monotherapy": {
         "name": "Pembrolizumab monotherapy (KEYNOTE-024) (PD-L1 ≥50%)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -754,6 +756,7 @@ window.protocolData.lung = {
       },
       "Atezolizumab-Monotherapy": {
         "name": "Atezolizumab monotherapy (OAK) (PD-L1+)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Atezolizumab",
@@ -765,6 +768,7 @@ window.protocolData.lung = {
       },
       "Cemiplimab-Monotherapy": {
         "name": "Cemiplimab monotherapy (EMPOWER-Lung 1) (PD-L1 ≥50%)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cemiplimab",
@@ -776,6 +780,7 @@ window.protocolData.lung = {
       },
       "Nivolumab-Ipilimumab": {
         "name": "Nivolumab + Ipilimumab (CheckMate 227) (PD-L1 ≥1%)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -793,6 +798,8 @@ window.protocolData.lung = {
       },
       "Pembrolizumab-Carboplatin-Pemetrexed": {
         "name": "Pembrolizumab + Carboplatin + Pemetrexed (KEYNOTE-189) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "cyclesNote": "Pembrolizumab and Pemetrexed continue until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -828,6 +835,8 @@ window.protocolData.lung = {
       },
       "Pembrolizumab-Cisplatin-Pemetrexed": {
         "name": "Pembrolizumab + Cisplatin + Pemetrexed (KEYNOTE-189) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "cyclesNote": "Pembrolizumab and Pemetrexed continue until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -863,6 +872,8 @@ window.protocolData.lung = {
       },
       "Pembrolizumab-Carboplatin-Paclitaxel": {
         "name": "Pembrolizumab + Carboplatin + Paclitaxel (KEYNOTE-407) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "cyclesNote": "Pembrolizumab continues until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -886,6 +897,8 @@ window.protocolData.lung = {
       },
       "Pembrolizumab-Carboplatin-NabPaclitaxel": {
         "name": "Pembrolizumab + Carboplatin + Nab-paclitaxel (KEYNOTE-407) (squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "cyclesNote": "Pembrolizumab continues until progression",
         "drugs": [
           {
             "name": "Pembrolizumab",
@@ -909,6 +922,8 @@ window.protocolData.lung = {
       },
       "Nivo-Ipi-Carbo-Pac-9LA": {
         "name": "Nivolumab + Ipilimumab + Carboplatin + Paclitaxel (CheckMate 9LA) (squamous, PD-L1 irrespective)",
+        "cycles": 2,
+        "cyclesNote": "Nivolumab and Ipilimumab continue until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -938,6 +953,8 @@ window.protocolData.lung = {
       },
       "Nivo-Ipi-Carbo-Pem-9LA": {
         "name": "Nivolumab + Ipilimumab + Carboplatin + Pemetrexed (CheckMate 9LA) (non-squamous, PD-L1 irrespective)",
+        "cycles": 2,
+        "cyclesNote": "Nivolumab and Ipilimumab continue until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -979,6 +996,8 @@ window.protocolData.lung = {
       },
       "Nivo-Ipi-Cis-Pem-9LA": {
         "name": "Nivolumab + Ipilimumab + Cisplatin + Pemetrexed (CheckMate 9LA) (non-squamous, PD-L1 irrespective)",
+        "cycles": 2,
+        "cyclesNote": "Nivolumab and Ipilimumab continue until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -1020,6 +1039,8 @@ window.protocolData.lung = {
       },
       "Atezolizumab-Bevacizumab-Carboplatin-Paclitaxel": {
         "name": "Atezolizumab + Bevacizumab + Carboplatin + Paclitaxel (IMpower150) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "cyclesNote": "Atezolizumab and Bevacizumab continue until progression",
         "drugs": [
           {
             "name": "Atezolizumab",
@@ -1049,6 +1070,8 @@ window.protocolData.lung = {
       },
       "Cemiplimab-Carboplatin-Pemetrexed": {
         "name": "Cemiplimab + Carboplatin + Pemetrexed (EMPOWER-Lung 3) (non-squamous, PD-L1 irrespective)",
+        "cycles": 4,
+        "cyclesNote": "Cemiplimab and Pemetrexed continue until progression",
         "drugs": [
           {
             "name": "Cemiplimab",
@@ -1084,6 +1107,7 @@ window.protocolData.lung = {
       },
       "Osimertinib": {
         "name": "Osimertinib (FLAURA) (EGFR exon19del/L858R)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Osimertinib",
@@ -1095,6 +1119,8 @@ window.protocolData.lung = {
       },
       "Osimertinib-Carboplatin-Pemetrexed": {
         "name": "Osimertinib + Carboplatin + Pemetrexed (FLAURA2) (EGFR-mutated)",
+        "cycles": 4,
+        "cyclesNote": "Osimertinib and Pemetrexed continue until progression",
         "drugs": [
           {
             "name": "Osimertinib",
@@ -1130,6 +1156,8 @@ window.protocolData.lung = {
       },
       "Gefitinib-Carboplatin-Pemetrexed": {
         "name": "Gefitinib + Carboplatin + Pemetrexed (NEJ009) (EGFR exon19del/L858R)",
+        "cycles": 6,
+        "cyclesNote": "Gefitinib and Pemetrexed continue until progression",
         "drugs": [
           {
             "name": "Gefitinib",
@@ -1165,6 +1193,7 @@ window.protocolData.lung = {
       },
       "Amivantamab-Lazertinib": {
         "name": "Amivantamab + Lazertinib (MARIPOSA) (EGFR exon19del/L858R)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Amivantamab",
@@ -1182,6 +1211,7 @@ window.protocolData.lung = {
       },
       "Afatinib": {
         "name": "Afatinib (LUX-Lung 3/6/7) (EGFR uncommon mutations: G719X, L861Q, S768I)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Afatinib",
@@ -1193,6 +1223,7 @@ window.protocolData.lung = {
       },
       "Gefitinib": {
         "name": "Gefitinib (IPASS) (EGFR exon19del/L858R)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Gefitinib",
@@ -1204,6 +1235,7 @@ window.protocolData.lung = {
       },
       "Amivantamab-Exon20": {
         "name": "Amivantamab monotherapy (CHRYSALIS) (EGFR exon 20 insertion)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Amivantamab",
@@ -1215,6 +1247,8 @@ window.protocolData.lung = {
       },
       "Amivantamab-Chemo-Exon20": {
         "name": "Amivantamab + Carboplatin + Pemetrexed (PAPILLON) (EGFR exon 20 insertion)",
+        "cycles": 4,
+        "cyclesNote": "Amivantamab and Pemetrexed continue until progression",
         "drugs": [
           {
             "name": "Amivantamab",
@@ -1250,6 +1284,7 @@ window.protocolData.lung = {
       },
       "Alectinib": {
         "name": "Alectinib (ALEX) (ALK rearrangement)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Alectinib",
@@ -1261,6 +1296,7 @@ window.protocolData.lung = {
       },
       "Brigatinib": {
         "name": "Brigatinib (ALTA-1L) (ALK rearrangement)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Brigatinib",
@@ -1272,6 +1308,7 @@ window.protocolData.lung = {
       },
       "Lorlatinib": {
         "name": "Lorlatinib (CROWN) (ALK rearrangement)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Lorlatinib",
@@ -1283,6 +1320,7 @@ window.protocolData.lung = {
       },
       "Crizotinib-ROS1": {
         "name": "Crizotinib (PROFILE 1001) (ROS1 rearrangement)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Crizotinib",
@@ -1294,6 +1332,7 @@ window.protocolData.lung = {
       },
       "Entrectinib-ROS1": {
         "name": "Entrectinib (STARTRK-2) (ROS1 rearrangement)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -1305,6 +1344,7 @@ window.protocolData.lung = {
       },
       "Repotrectinib-ROS1": {
         "name": "Repotrectinib (TRIDENT-1) (ROS1 rearrangement)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Repotrectinib",
@@ -1316,6 +1356,7 @@ window.protocolData.lung = {
       },
       "Sotorasib": {
         "name": "Sotorasib (CodeBreaK 100) (KRAS G12C)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sotorasib",
@@ -1327,6 +1368,7 @@ window.protocolData.lung = {
       },
       "Adagrasib": {
         "name": "Adagrasib (KRYSTAL-1) (KRAS G12C)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Adagrasib",
@@ -1338,6 +1380,7 @@ window.protocolData.lung = {
       },
       "Dabrafenib-Trametinib": {
         "name": "Dabrafenib + Trametinib (BRF113928) (BRAF V600E)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dabrafenib",
@@ -1355,6 +1398,7 @@ window.protocolData.lung = {
       },
       "Capmatinib": {
         "name": "Capmatinib (GEOMETRY mono-1) (MET exon 14 skipping)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Capmatinib",
@@ -1366,6 +1410,7 @@ window.protocolData.lung = {
       },
       "Tepotinib": {
         "name": "Tepotinib (VISION) (MET exon 14 skipping)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tepotinib",
@@ -1377,6 +1422,7 @@ window.protocolData.lung = {
       },
       "Selpercatinib-RET": {
         "name": "Selpercatinib (LIBRETTO-001) (RET fusion+)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Selpercatinib",
@@ -1388,6 +1434,7 @@ window.protocolData.lung = {
       },
       "Trastuzumab-Deruxtecan-HER2": {
         "name": "Trastuzumab deruxtecan (DESTINY-Lung02) (HER2 mutation+)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Trastuzumab deruxtecan",
@@ -1399,6 +1446,7 @@ window.protocolData.lung = {
       },
       "Entrectinib-NTRK": {
         "name": "Entrectinib (NTRK fusion+)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Entrectinib",
@@ -1410,6 +1458,7 @@ window.protocolData.lung = {
       },
       "Larotrectinib-NTRK": {
         "name": "Larotrectinib (NTRK fusion+)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Larotrectinib",
@@ -1421,6 +1470,7 @@ window.protocolData.lung = {
       },
       "Nivolumab-2L": {
         "name": "Nivolumab monotherapy (CheckMate 017/057) (2nd line)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Nivolumab",
@@ -1432,6 +1482,7 @@ window.protocolData.lung = {
       },
       "Cisplatin-Pemetrexed": {
         "name": "Cisplatin + Pemetrexed (non-squamous)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Cisplatin",
@@ -1461,6 +1512,7 @@ window.protocolData.lung = {
       },
       "Carboplatin-Pemetrexed": {
         "name": "Carboplatin + Pemetrexed (non-squamous)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Carboplatin",
@@ -1490,6 +1542,7 @@ window.protocolData.lung = {
       },
       "Carboplatin-Paclitaxel": {
         "name": "Carboplatin + Paclitaxel",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Carboplatin",
@@ -1507,6 +1560,7 @@ window.protocolData.lung = {
       },
       "Carboplatin-Gemcitabine": {
         "name": "Carboplatin + Gemcitabine (squamous)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Carboplatin",
@@ -1524,6 +1578,8 @@ window.protocolData.lung = {
       },
       "Docetaxel-Ramucirumab": {
         "name": "Docetaxel + Ramucirumab (REVEL) (2nd line)",
+        "cycles": 6,
+        "cyclesNote": "Ramucirumab continues until progression",
         "drugs": [
           {
             "name": "Docetaxel",
@@ -1541,6 +1597,7 @@ window.protocolData.lung = {
       },
       "Datopotamab-Deruxtecan-2L": {
         "name": "Datopotamab deruxtecan (TROPION-Lung01) (TROP2-directed ADC) (2nd line+, non-squamous)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Datopotamab deruxtecan",
@@ -1552,6 +1609,7 @@ window.protocolData.lung = {
       },
       "Tislelizumab-2L": {
         "name": "Tislelizumab (RATIONALE-303) (2nd/3rd line)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tislelizumab",
@@ -1563,6 +1621,7 @@ window.protocolData.lung = {
       },
       "Docetaxel-Monotherapy": {
         "name": "Docetaxel monotherapy (2nd line)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Docetaxel",
@@ -1574,6 +1633,7 @@ window.protocolData.lung = {
       },
       "Pemetrexed-Maintenance": {
         "name": "Pemetrexed maintenance (non-squamous)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pemetrexed",
@@ -1652,6 +1712,7 @@ window.protocolData.lung = {
       "Atezolizumab-Carboplatin-Etoposide": {
         "name": "Atezolizumab + Carboplatin + Etoposide (IMpower133) (extensive stage 1L)",
         "cycles": 4,
+        "cyclesNote": "Atezolizumab continues until progression",
         "drugs": [
           {
             "name": "Atezolizumab",
@@ -1676,6 +1737,7 @@ window.protocolData.lung = {
       "Durvalumab-Carboplatin-Etoposide": {
         "name": "Durvalumab + Carboplatin + Etoposide (CASPIAN) (extensive stage 1L)",
         "cycles": 4,
+        "cyclesNote": "Durvalumab continues until progression",
         "drugs": [
           {
             "name": "Durvalumab",
@@ -1700,6 +1762,7 @@ window.protocolData.lung = {
       "Durvalumab-Cisplatin-Etoposide": {
         "name": "Durvalumab + Cisplatin + Etoposide (CASPIAN) (extensive stage 1L)",
         "cycles": 4,
+        "cyclesNote": "Durvalumab continues until progression",
         "drugs": [
           {
             "name": "Durvalumab",
@@ -1724,6 +1787,7 @@ window.protocolData.lung = {
       "Durvalumab-Tremelimumab-Carboplatin-Etoposide": {
         "name": "Durvalumab + Tremelimumab + Carboplatin + Etoposide (CASPIAN) (extensive stage 1L)",
         "cycles": 4,
+        "cyclesNote": "Durvalumab continues until progression; Tremelimumab: 4 cycles induction only (concurrent with chemotherapy)",
         "drugs": [
           {
             "name": "Durvalumab",
@@ -1807,6 +1871,7 @@ window.protocolData.lung = {
       },
       "Tarlatamab": {
         "name": "Tarlatamab (DeLLphi-301) (DLL3-targeted BiTE) (2nd line+)",
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tarlatamab",
@@ -1842,6 +1907,7 @@ window.protocolData.lung = {
       },
       "Lurbinectedin": {
         "name": "Lurbinectedin (2nd line+)",
+        "cycles": 6,
         "drugs": [
           {
             "name": "Lurbinectedin",

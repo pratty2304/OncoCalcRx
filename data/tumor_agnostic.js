@@ -3,7 +3,7 @@ window.protocolData.tumor_agnostic = {
   "metastatic": {
     "Pembrolizumab-MSI-H": {
       "name": "Pembrolizumab (PD-1 inhibitor) (MSI-H/dMMR solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -15,7 +15,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Pembrolizumab-TMB-H": {
       "name": "Pembrolizumab (PD-1 inhibitor) (TMB-H ≥10 mut/Mb solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -27,7 +27,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Larotrectinib": {
       "name": "Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Larotrectinib",
@@ -39,7 +39,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Entrectinib": {
       "name": "Entrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Entrectinib",
@@ -51,7 +51,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Repotrectinib": {
       "name": "Repotrectinib (TRK inhibitor) (NTRK gene fusion-positive solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Repotrectinib",
@@ -63,7 +63,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Selpercatinib": {
       "name": "Selpercatinib (RET inhibitor) (RET gene fusion-positive solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Selpercatinib",
@@ -75,7 +75,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Dabrafenib-Trametinib": {
       "name": "Dabrafenib + Trametinib (BRAF/MEK inhibitors) (BRAF V600E-mutant solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dabrafenib",
@@ -93,7 +93,7 @@ window.protocolData.tumor_agnostic = {
     },
     "Trastuzumab-Deruxtecan-HER2": {
       "name": "Trastuzumab Deruxtecan (T-DXd) (HER2-directed ADC) (DESTINY-PanTumor02) (HER2 IHC 3+ solid tumors)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab Deruxtecan",

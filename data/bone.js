@@ -242,7 +242,7 @@ window.protocolData.bone = {
       },
       "Regorafenib": {
         "name": "Regorafenib (SARCOME-13/OS2016) (NCCN Category 1)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Regorafenib",
@@ -254,7 +254,7 @@ window.protocolData.bone = {
       },
       "Sorafenib": {
         "name": "Sorafenib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sorafenib",
@@ -266,7 +266,7 @@ window.protocolData.bone = {
       },
       "Cabozantinib": {
         "name": "Cabozantinib (CABONE) (Investigational)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cabozantinib",
@@ -366,7 +366,7 @@ window.protocolData.bone = {
     "relapsed_refractory": {
       "Imatinib": {
         "name": "Imatinib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Imatinib",
@@ -378,7 +378,7 @@ window.protocolData.bone = {
       },
       "Dasatinib": {
         "name": "Dasatinib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dasatinib",
@@ -390,7 +390,7 @@ window.protocolData.bone = {
       },
       "Sunitinib": {
         "name": "Sunitinib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sunitinib",
@@ -403,6 +403,7 @@ window.protocolData.bone = {
       "Imatinib-Cisplatin": {
         "name": "Imatinib + Cisplatin",
         "cycles": 6,
+        "cyclesNote": "Imatinib continues until progression",
         "drugs": [
           {
             "name": "Imatinib",
@@ -420,7 +421,7 @@ window.protocolData.bone = {
       },
       "Imatinib-Sirolimus": {
         "name": "Imatinib + Sirolimus",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Imatinib",
@@ -438,7 +439,7 @@ window.protocolData.bone = {
       },
       "Erlotinib": {
         "name": "Erlotinib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Erlotinib",
@@ -450,7 +451,7 @@ window.protocolData.bone = {
       },
       "Lapatinib": {
         "name": "Lapatinib (EGFR positive)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Lapatinib",
@@ -462,7 +463,7 @@ window.protocolData.bone = {
       },
       "Sorafenib": {
         "name": "Sorafenib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Sorafenib",
@@ -1108,7 +1109,7 @@ window.protocolData.bone = {
       },
       "Regorafenib": {
         "name": "Regorafenib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Regorafenib",
@@ -1120,7 +1121,7 @@ window.protocolData.bone = {
       },
       "Cabozantinib": {
         "name": "Cabozantinib",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Cabozantinib",
@@ -1148,7 +1149,7 @@ window.protocolData.bone = {
     "relapsed_refractory": {
       "Ivosidenib": {
         "name": "Ivosidenib (IDH1 mutant)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ivosidenib",
@@ -1160,7 +1161,7 @@ window.protocolData.bone = {
       },
       "Pazopanib": {
         "name": "Pazopanib (VEGFR inhibitor)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Pazopanib",
@@ -1172,7 +1173,7 @@ window.protocolData.bone = {
       },
       "Dasatinib": {
         "name": "Dasatinib (Src/PDGFR inhibitor)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Dasatinib",
@@ -1242,7 +1243,7 @@ window.protocolData.bone = {
     "unresectable_recurrent": {
       "Denosumab": {
         "name": "Denosumab (RANKL inhibitor) (NCCN Preferred)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Denosumab",
@@ -1254,7 +1255,7 @@ window.protocolData.bone = {
       },
       "Interferon-Alfa-2a": {
         "name": "Interferon Alfa-2a",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Interferon Alfa-2a",
@@ -1266,7 +1267,7 @@ window.protocolData.bone = {
       },
       "Peginterferon-Alfa-2a": {
         "name": "Peginterferon Alfa-2a",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Peginterferon Alfa-2a",

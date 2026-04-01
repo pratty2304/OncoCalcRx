@@ -3,7 +3,7 @@ window.protocolData.basal_cell = {
     "locally_advanced": {
         "Vismodegib": {
             "name": "Vismodegib (Hedgehog pathway inhibitor) (ERIVANCE)",
-            "cycles": 8,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Vismodegib",
@@ -15,7 +15,7 @@ window.protocolData.basal_cell = {
         },
         "Sonidegib": {
             "name": "Sonidegib (Hedgehog pathway inhibitor) (BOLT)",
-            "cycles": 8,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Sonidegib",
@@ -27,7 +27,7 @@ window.protocolData.basal_cell = {
         },
         "Cemiplimab": {
             "name": "Cemiplimab (PD-1 inhibitor) (post-HHI)",
-            "cycles": 8,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Cemiplimab",
@@ -41,7 +41,7 @@ window.protocolData.basal_cell = {
     "metastatic": {
         "Vismodegib": {
             "name": "Vismodegib (Hedgehog pathway inhibitor) (ERIVANCE)",
-            "cycles": 8,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Vismodegib",
@@ -53,7 +53,7 @@ window.protocolData.basal_cell = {
         },
         "Cemiplimab": {
             "name": "Cemiplimab (PD-1 inhibitor) (post-HHI)",
-            "cycles": 8,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Cemiplimab",

@@ -103,7 +103,7 @@ window.protocolData.melanoma = {
   "metastatic": {
     "Pembrolizumab": {
       "name": "Pembrolizumab (KEYNOTE-006) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -115,7 +115,7 @@ window.protocolData.melanoma = {
     },
     "Nivolumab": {
       "name": "Nivolumab (CheckMate 066) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -127,7 +127,8 @@ window.protocolData.melanoma = {
     },
     "Nivolumab-Ipilimumab": {
       "name": "Nivolumab + Ipilimumab (CheckMate 067)",
-      "cycles": 8,
+      "cycles": 4,
+      "cyclesNote": "Ipilimumab: 4 induction doses only; Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -145,7 +146,7 @@ window.protocolData.melanoma = {
     },
     "Nivolumab-Relatlimab": {
       "name": "Nivolumab + Relatlimab (RELATIVITY-047)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -175,7 +176,7 @@ window.protocolData.melanoma = {
     },
     "Dabrafenib-Trametinib": {
       "name": "Dabrafenib + Trametinib (COMBI-d/v) (BRAF V600E/K)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dabrafenib",
@@ -193,7 +194,7 @@ window.protocolData.melanoma = {
     },
     "Vemurafenib-Cobimetinib": {
       "name": "Vemurafenib + Cobimetinib (coBRIM) (BRAF V600E/K)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Vemurafenib",
@@ -211,7 +212,7 @@ window.protocolData.melanoma = {
     },
     "Encorafenib-Binimetinib": {
       "name": "Encorafenib + Binimetinib (COLUMBUS) (BRAF V600E/K)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Encorafenib",
@@ -229,7 +230,7 @@ window.protocolData.melanoma = {
     },
     "Atezolizumab-Vemurafenib-Cobimetinib": {
       "name": "Atezolizumab + Vemurafenib + Cobimetinib (IMspire150) (BRAF V600)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Atezolizumab",
@@ -253,7 +254,7 @@ window.protocolData.melanoma = {
     },
     "Dabrafenib": {
       "name": "Dabrafenib (BREAK-3) (BRAF V600E/K)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dabrafenib",
@@ -265,7 +266,7 @@ window.protocolData.melanoma = {
     },
     "Vemurafenib": {
       "name": "Vemurafenib (BRIM-3) (BRAF V600E/K)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Vemurafenib",
@@ -277,7 +278,7 @@ window.protocolData.melanoma = {
     },
     "Encorafenib": {
       "name": "Encorafenib (BRAF V600E/K)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Encorafenib",
@@ -289,7 +290,7 @@ window.protocolData.melanoma = {
     },
     "Tebentafusp": {
       "name": "Tebentafusp (IMCgp100-202) (uveal melanoma, HLA-A*02:01)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tebentafusp",
@@ -337,7 +338,7 @@ window.protocolData.melanoma = {
     },
     "Talimogene-laherparepvec": {
       "name": "Talimogene laherparepvec (OPTiM) (intralesional oncolytic virus)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Talimogene laherparepvec",
@@ -421,7 +422,7 @@ window.protocolData.melanoma = {
     },
     "Imatinib-KIT": {
       "name": "Imatinib (KIT-mutant melanoma)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Imatinib",

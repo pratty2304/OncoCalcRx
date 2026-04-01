@@ -187,7 +187,7 @@ window.protocolData.mesothelioma = {
     },
     "Nivolumab-Ipilimumab": {
       "name": "Nivolumab + Ipilimumab (CheckMate 743) (non-epithelioid preferred)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -206,6 +206,7 @@ window.protocolData.mesothelioma = {
     "Pemetrexed-Cisplatin-Bevacizumab": {
       "name": "Pemetrexed + Cisplatin + Bevacizumab (MAPS)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Pemetrexed",
@@ -242,6 +243,7 @@ window.protocolData.mesothelioma = {
     "Pemetrexed-Carboplatin-Bevacizumab": {
       "name": "Pemetrexed + Carboplatin + Bevacizumab (cisplatin-ineligible)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Pemetrexed",
@@ -313,7 +315,7 @@ window.protocolData.mesothelioma = {
     },
     "Pemetrexed-Maintenance": {
       "name": "Pemetrexed maintenance (after platinum-based therapy)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pemetrexed",
@@ -337,7 +339,7 @@ window.protocolData.mesothelioma = {
     },
     "Bevacizumab-Maintenance": {
       "name": "Bevacizumab maintenance (after platinum-based therapy)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Bevacizumab",
@@ -349,7 +351,7 @@ window.protocolData.mesothelioma = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (KEYNOTE-158) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -361,7 +363,7 @@ window.protocolData.mesothelioma = {
     },
     "Nivolumab": {
       "name": "Nivolumab (MERIT) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -373,7 +375,7 @@ window.protocolData.mesothelioma = {
     },
     "Atezolizumab": {
       "name": "Atezolizumab (ETOP 9-15) (PD-L1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Atezolizumab",
@@ -385,7 +387,7 @@ window.protocolData.mesothelioma = {
     },
     "Gemcitabine": {
       "name": "Gemcitabine monotherapy",
-      "cycles": 8,
+      "cycles": 6,
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -397,7 +399,7 @@ window.protocolData.mesothelioma = {
     },
     "Vinorelbine": {
       "name": "Vinorelbine monotherapy",
-      "cycles": 8,
+      "cycles": 12,
       "drugs": [
         {
           "name": "Vinorelbine",

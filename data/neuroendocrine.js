@@ -1,9 +1,71 @@
 window.protocolData = window.protocolData || {};
 window.protocolData.neuroendocrine = {
+  "adjuvant": {
+    "Octreotide-LAR": {
+      "name": "Octreotide LAR (functional NET — post-resection symptom control)",
+      "cycles": "Until progression",
+      "drugs": [
+        {
+          "name": "Octreotide LAR",
+          "dose": 30,
+          "unit": "mg",
+          "schedule": "IM D1, every 28 days"
+        }
+      ]
+    },
+    "Lanreotide": {
+      "name": "Lanreotide (functional NET — post-resection symptom control)",
+      "cycles": "Until progression",
+      "drugs": [
+        {
+          "name": "Lanreotide",
+          "dose": 120,
+          "unit": "mg",
+          "schedule": "SC D1, every 28 days"
+        }
+      ]
+    },
+    "Cisplatin-Etoposide": {
+      "name": "Cisplatin + Etoposide (EP) (adjuvant NEC G3 — post-resection)",
+      "cycles": 4,
+      "drugs": [
+        {
+          "name": "Cisplatin",
+          "dose": 75,
+          "unit": "mg/m²",
+          "schedule": "D1, every 21 days x 4 cycles"
+        },
+        {
+          "name": "Etoposide",
+          "dose": 100,
+          "unit": "mg/m²",
+          "schedule": "D1-D3, every 21 days x 4 cycles"
+        }
+      ]
+    },
+    "Carboplatin-Etoposide": {
+      "name": "Carboplatin + Etoposide (EC) (adjuvant NEC G3 — cisplatin-ineligible, post-resection)",
+      "cycles": 4,
+      "drugs": [
+        {
+          "name": "Carboplatin",
+          "dose": "AUC 5",
+          "unit": "AUC",
+          "schedule": "D1, every 21 days x 4 cycles"
+        },
+        {
+          "name": "Etoposide",
+          "dose": 100,
+          "unit": "mg/m²",
+          "schedule": "D1-D3, every 21 days x 4 cycles"
+        }
+      ]
+    }
+  },
   "metastatic": {
     "Octreotide-LAR": {
       "name": "Octreotide LAR (PROMID) (somatostatin analog) (well-differentiated NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Octreotide LAR",
@@ -15,7 +77,7 @@ window.protocolData.neuroendocrine = {
     },
     "Lanreotide": {
       "name": "Lanreotide (CLARINET) (somatostatin analog) (well-differentiated NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lanreotide",
@@ -27,7 +89,7 @@ window.protocolData.neuroendocrine = {
     },
     "Everolimus": {
       "name": "Everolimus (RADIANT-4) (mTOR inhibitor) (well-differentiated NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Everolimus",
@@ -39,7 +101,7 @@ window.protocolData.neuroendocrine = {
     },
     "Everolimus-Octreotide": {
       "name": "Everolimus + Octreotide LAR (mTOR inhibitor + SSA)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Everolimus",
@@ -57,7 +119,7 @@ window.protocolData.neuroendocrine = {
     },
     "Sunitinib": {
       "name": "Sunitinib (pNET) (multi-kinase inhibitor)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sunitinib",
@@ -69,7 +131,7 @@ window.protocolData.neuroendocrine = {
     },
     "Cabozantinib": {
       "name": "Cabozantinib (CABINET) (NCCN preferred, previously treated NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Cabozantinib",
@@ -81,7 +143,7 @@ window.protocolData.neuroendocrine = {
     },
     "Lenvatinib": {
       "name": "Lenvatinib (multi-kinase inhibitor) (NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",
@@ -93,7 +155,7 @@ window.protocolData.neuroendocrine = {
     },
     "Pazopanib": {
       "name": "Pazopanib (multi-kinase inhibitor) (NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pazopanib",
@@ -105,7 +167,7 @@ window.protocolData.neuroendocrine = {
     },
     "Sorafenib": {
       "name": "Sorafenib (multi-kinase inhibitor) (NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sorafenib",
@@ -117,7 +179,7 @@ window.protocolData.neuroendocrine = {
     },
     "Belzutifan": {
       "name": "Belzutifan (HIF-2α inhibitor) (VHL-associated pNET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Belzutifan",
@@ -363,7 +425,7 @@ window.protocolData.neuroendocrine = {
     },
     "Interferon-Alpha": {
       "name": "Interferon alpha-2b (well-differentiated NET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Interferon Alpha-2b",

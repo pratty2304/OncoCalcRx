@@ -17,7 +17,7 @@ window.protocolData.renal = {
   "metastatic": {
     "Lenvatinib-Pembrolizumab": {
       "name": "Lenvatinib + Pembrolizumab (CLEAR) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",
@@ -35,7 +35,8 @@ window.protocolData.renal = {
     },
     "Nivolumab-Ipilimumab": {
       "name": "Nivolumab + Ipilimumab (CheckMate-214) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": 4,
+      "cyclesNote": "Ipilimumab: 4 doses (induction only); Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -53,7 +54,7 @@ window.protocolData.renal = {
     },
     "Nivolumab-Cabozantinib": {
       "name": "Nivolumab + Cabozantinib (CheckMate-9ER) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -71,7 +72,7 @@ window.protocolData.renal = {
     },
     "Pembrolizumab-Axitinib": {
       "name": "Pembrolizumab + Axitinib (KEYNOTE-426) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -89,7 +90,7 @@ window.protocolData.renal = {
     },
     "Avelumab-Axitinib": {
       "name": "Avelumab + Axitinib (JAVELIN Renal 101)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avelumab",
@@ -107,7 +108,7 @@ window.protocolData.renal = {
     },
     "Cabozantinib": {
       "name": "Cabozantinib (CABOSUN/METEOR)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Cabozantinib",
@@ -119,7 +120,7 @@ window.protocolData.renal = {
     },
     "Sunitinib": {
       "name": "Sunitinib",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sunitinib",
@@ -131,7 +132,7 @@ window.protocolData.renal = {
     },
     "Pazopanib": {
       "name": "Pazopanib",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pazopanib",
@@ -143,7 +144,7 @@ window.protocolData.renal = {
     },
     "Axitinib": {
       "name": "Axitinib (AXIS) (2L+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Axitinib",
@@ -155,7 +156,7 @@ window.protocolData.renal = {
     },
     "Sorafenib": {
       "name": "Sorafenib (TARGET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sorafenib",
@@ -167,7 +168,7 @@ window.protocolData.renal = {
     },
     "Tivozanib": {
       "name": "Tivozanib (TIVO-3) (3L+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tivozanib",
@@ -179,7 +180,7 @@ window.protocolData.renal = {
     },
     "Nivolumab": {
       "name": "Nivolumab (CheckMate-025) (2L+ after prior TKI)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -191,7 +192,7 @@ window.protocolData.renal = {
     },
     "Lenvatinib-Everolimus": {
       "name": "Lenvatinib + Everolimus (Study 205) (2L+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",
@@ -209,7 +210,7 @@ window.protocolData.renal = {
     },
     "Everolimus": {
       "name": "Everolimus (RECORD-1) (2L+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Everolimus",
@@ -221,7 +222,7 @@ window.protocolData.renal = {
     },
     "Belzutifan": {
       "name": "Belzutifan (LITESPARK-005) (HIF-2α inhibitor) (post PD-1/PD-L1 + post VEGF-TKI)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Belzutifan",
@@ -233,7 +234,7 @@ window.protocolData.renal = {
     },
     "Belzutifan-VHL": {
       "name": "Belzutifan (HIF-2α inhibitor) (VHL disease-associated RCC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Belzutifan",
@@ -245,7 +246,7 @@ window.protocolData.renal = {
     },
     "Erlotinib-Bevacizumab": {
       "name": "Erlotinib + Bevacizumab (HLRCC-associated RCC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Erlotinib",
@@ -263,7 +264,7 @@ window.protocolData.renal = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (MSI-H/dMMR/TMB-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",

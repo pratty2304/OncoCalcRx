@@ -21,7 +21,7 @@ window.protocolData.carcinoma_unknown_primary = {
     },
     "Carboplatin-Paclitaxel-Weekly": {
       "name": "Carboplatin + Paclitaxel weekly (adenocarcinoma/squamous)",
-      "cycles": 12,
+      "cycles": 18,
       "drugs": [
         {
           "name": "Carboplatin",
@@ -297,7 +297,7 @@ window.protocolData.carcinoma_unknown_primary = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab monotherapy (MSI-H/dMMR or TMB-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -309,7 +309,7 @@ window.protocolData.carcinoma_unknown_primary = {
     },
     "Nivolumab": {
       "name": "Nivolumab monotherapy (MSI-H/dMMR)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",

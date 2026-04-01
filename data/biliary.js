@@ -13,6 +13,19 @@ window.protocolData.biliary = {
         }
       ]
     },
+    "Single-S1-Adjuvant": {
+      "name": "S-1 (Tegafur/Gimeracil/Oteracil) [ASCOT/JCOG1202]",
+      "cycles": 4,
+      "drugs": [
+        {
+          "name": "S-1",
+          "dose": 50,
+          "unit": "mg",
+          "isOralTargeted": true,
+          "schedule": "PO twice daily D1–28, every 42 days × 4 cycles. BSA-tiered dosing: BSA <1.25 m² → 40 mg BD; BSA 1.25–1.5 m² → 50 mg BD; BSA >1.5 m² → 60 mg BD"
+        }
+      ]
+    },
     "Gemcitabine-Cisplatin": {
       "name": "Gemcitabine + Cisplatin (GC)",
       "cycles": 8,
@@ -78,12 +91,10 @@ window.protocolData.biliary = {
           "schedule": "PO twice daily on days of RT (45-59.4 Gy)"
         }
       ]
-    }
-  },
-  "metastatic": {
-    "Gemcitabine-Cisplatin": {
-      "name": "Gemcitabine + Cisplatin (GC)",
-      "cycles": 8,
+    },
+    "Gemcitabine-Capecitabine": {
+      "name": "Gemcitabine + Capecitabine (GemCap)",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -92,34 +103,104 @@ window.protocolData.biliary = {
           "schedule": "D1, D8, every 21 days"
         },
         {
-          "name": "Cisplatin",
-          "dose": 25,
+          "name": "Capecitabine",
+          "dose": 830,
           "unit": "mg/m²",
-          "schedule": "D1, D8, every 21 days"
+          "schedule": "PO twice daily D1-D14, every 21 days"
         }
       ]
     },
-    "Gemcitabine-Cisplatin-Durvalumab": {
-      "name": "Gemcitabine + Cisplatin + Durvalumab (TOPAZ-1)",
-      "cycles": 8,
+    "Single-5FU-Adjuvant": {
+      "name": "5-Fluorouracil monotherapy",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "5-Fluorouracil",
+          "dose": 500,
+          "unit": "mg/m²",
+          "schedule": "IV bolus D1-D5, every 28 days"
+        }
+      ]
+    },
+    "Single-Gemcitabine": {
+      "name": "Gemcitabine monotherapy",
+      "cycles": 6,
       "drugs": [
         {
           "name": "Gemcitabine",
           "dose": 1000,
           "unit": "mg/m²",
-          "schedule": "D1, D8, every 21 days"
+          "schedule": "D1, D8, D15, every 28 days"
+        }
+      ]
+    }
+  },
+  "metastatic": {
+    "Gemcitabine-Cisplatin-Durvalumab": {
+      "name": "Gemcitabine + Cisplatin + Durvalumab (TOPAZ-1)",
+      "cycles": 8,
+      "cyclesNote": "GemCis for 8 cycles then both stopped; Durvalumab switches to 1500mg Q4W monotherapy until progression (no maximum)",
+      "drugs": [
+        {
+          "name": "Gemcitabine",
+          "dose": 1000,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days. Stopped after 8 cycles"
         },
         {
           "name": "Cisplatin",
           "dose": 25,
           "unit": "mg/m²",
-          "schedule": "D1, D8, every 21 days"
+          "schedule": "D1, D8, every 21 days. Maximum 8 cycles, then discontinued"
         },
         {
           "name": "Durvalumab",
           "dose": 1500,
           "unit": "mg",
-          "schedule": "D1, every 21 days"
+          "schedule": "D1, every 21 days for 8 cycles (induction), then 1500mg every 28 days as monotherapy until progression (no maximum)"
+        }
+      ]
+    },
+    "Gemcitabine-Cisplatin-Pembrolizumab": {
+      "name": "Gemcitabine + Cisplatin + Pembrolizumab (KEYNOTE-966)",
+      "cycles": 8,
+      "cyclesNote": "Cisplatin: max 8 cycles then stopped; Gemcitabine continues until progression (no cap); Pembrolizumab max 35 cycles (~2 years)",
+      "drugs": [
+        {
+          "name": "Gemcitabine",
+          "dose": 1000,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days. Continues beyond cycle 8 until progression or toxicity (no maximum)"
+        },
+        {
+          "name": "Cisplatin",
+          "dose": 25,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days. Maximum 8 cycles, then discontinued"
+        },
+        {
+          "name": "Pembrolizumab",
+          "dose": 200,
+          "unit": "mg",
+          "schedule": "D1, every 21 days. Maximum 35 cycles (~2 years)"
+        }
+      ]
+    },
+    "Gemcitabine-Cisplatin": {
+      "name": "Gemcitabine + Cisplatin (GC) (ABC-02)",
+      "cycles": 8,
+      "drugs": [
+        {
+          "name": "Gemcitabine",
+          "dose": 1000,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days"
+        },
+        {
+          "name": "Cisplatin",
+          "dose": 25,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days"
         }
       ]
     },
@@ -138,6 +219,24 @@ window.protocolData.biliary = {
           "dose": 85,
           "unit": "mg/m²",
           "schedule": "D1, every 21 days"
+        }
+      ]
+    },
+    "Gemcitabine-Nabpaclitaxel": {
+      "name": "Gemcitabine + Nab-paclitaxel",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "Nab-paclitaxel",
+          "dose": 125,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days"
+        },
+        {
+          "name": "Gemcitabine",
+          "dose": 1000,
+          "unit": "mg/m²",
+          "schedule": "D1, D8, every 21 days"
         }
       ]
     },
@@ -178,7 +277,7 @@ window.protocolData.biliary = {
       ]
     },
     "mFOLFOX6": {
-      "name": "mFOLFOX6",
+      "name": "mFOLFOX6 (ABC-06)",
       "cycles": 12,
       "drugs": [
         {
@@ -279,33 +378,9 @@ window.protocolData.biliary = {
         }
       ]
     },
-    "Gemcitabine-Cisplatin-Pembrolizumab": {
-      "name": "Gemcitabine + Cisplatin + Pembrolizumab (KEYNOTE-966)",
-      "cycles": 8,
-      "drugs": [
-        {
-          "name": "Gemcitabine",
-          "dose": 1000,
-          "unit": "mg/m²",
-          "schedule": "D1, D8, every 21 days"
-        },
-        {
-          "name": "Cisplatin",
-          "dose": 25,
-          "unit": "mg/m²",
-          "schedule": "D1, D8, every 21 days"
-        },
-        {
-          "name": "Pembrolizumab",
-          "dose": 200,
-          "unit": "mg",
-          "schedule": "D1, every 21 days"
-        }
-      ]
-    },
     "Dabrafenib-Trametinib": {
       "name": "Dabrafenib + Trametinib (BRAF V600E mutation)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dabrafenib",
@@ -325,7 +400,7 @@ window.protocolData.biliary = {
     },
     "Ivosidenib": {
       "name": "Ivosidenib (ClarIDHy) (IDH1 mutation)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ivosidenib",
@@ -338,7 +413,7 @@ window.protocolData.biliary = {
     },
     "Pemigatinib": {
       "name": "Pemigatinib (FIGHT-202) (FGFR2 fusions)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pemigatinib",
@@ -351,7 +426,7 @@ window.protocolData.biliary = {
     },
     "Futibatinib": {
       "name": "Futibatinib (FOENIX-CCA2) (FGFR2 fusions)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Futibatinib",
@@ -364,7 +439,7 @@ window.protocolData.biliary = {
     },
     "Pembrolizumab-Monotherapy": {
       "name": "Pembrolizumab monotherapy (MSI-H/dMMR/TMB-H)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -376,7 +451,7 @@ window.protocolData.biliary = {
     },
     "Dostarlimab-Monotherapy": {
       "name": "Dostarlimab (dMMR/MSI-H)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dostarlimab",
@@ -388,7 +463,8 @@ window.protocolData.biliary = {
     },
     "Nivolumab-Ipilimumab": {
       "name": "Nivolumab + Ipilimumab (MSI-H/dMMR/TMB-H)",
-      "cycles": 12,
+      "cycles": "Until progression",
+      "cyclesNote": "Ipilimumab: 4 doses (q6weeks); Nivolumab continues until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -406,7 +482,7 @@ window.protocolData.biliary = {
     },
     "Zanidatamab": {
       "name": "Zanidatamab (HERIZON-BTC-01) (HER2+ IHC 3+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Zanidatamab",
@@ -417,8 +493,8 @@ window.protocolData.biliary = {
       ]
     },
     "Trastuzumab-Deruxtecan": {
-      "name": "Trastuzumab deruxtecan (T-DXd) (HER2+)",
-      "cycles": 12,
+      "name": "Trastuzumab deruxtecan (T-DXd) (HER2+ IHC 3+)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab deruxtecan",
@@ -429,8 +505,8 @@ window.protocolData.biliary = {
       ]
     },
     "Trastuzumab-Pertuzumab": {
-      "name": "Trastuzumab + Pertuzumab (HER2+)",
-      "cycles": 12,
+      "name": "Trastuzumab + Pertuzumab (HER2+ IHC 3+)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab",
@@ -450,9 +526,30 @@ window.protocolData.biliary = {
         }
       ]
     },
+    "Tucatinib-Trastuzumab": {
+      "name": "Tucatinib + Trastuzumab (MOUNTAINEER) (HER2+ IHC 3+)",
+      "cycles": "Until progression",
+      "drugs": [
+        {
+          "name": "Tucatinib",
+          "dose": 300,
+          "unit": "mg",
+          "schedule": "PO twice daily continuously",
+          "isOralTargeted": true
+        },
+        {
+          "name": "Trastuzumab",
+          "dose": 8,
+          "maintenanceDose": 6,
+          "unit": "mg/kg",
+          "schedule": "loading 8mg/kg IV cycle 1, then 6mg/kg q3weeks",
+          "hasLoadingDose": true
+        }
+      ]
+    },
     "Entrectinib": {
       "name": "Entrectinib (NTRK fusion+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Entrectinib",
@@ -465,7 +562,7 @@ window.protocolData.biliary = {
     },
     "Larotrectinib": {
       "name": "Larotrectinib (NTRK fusion+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Larotrectinib",
@@ -478,7 +575,7 @@ window.protocolData.biliary = {
     },
     "Selpercatinib": {
       "name": "Selpercatinib (RET fusion+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Selpercatinib",
@@ -491,7 +588,7 @@ window.protocolData.biliary = {
     },
     "Adagrasib": {
       "name": "Adagrasib (KRAS G12C mutation)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Adagrasib",

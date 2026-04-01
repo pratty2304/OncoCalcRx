@@ -42,6 +42,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Pembrolizumab-Adj": {
       "name": "Carboplatin + Paclitaxel + Pembrolizumab (NRG-GY018) (NCCN Preferred)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues as maintenance up to 14 cycles (Q6W)",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -66,6 +67,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Dostarlimab-Adj": {
       "name": "Carboplatin + Paclitaxel + Dostarlimab (RUBY) (NCCN Preferred)",
       "cycles": 6,
+      "cyclesNote": "Dostarlimab continues as maintenance up to 3 years (Q6W)",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -90,6 +92,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Durvalumab-Adj": {
       "name": "Carboplatin + Paclitaxel + Durvalumab (DUO-E)",
       "cycles": 6,
+      "cyclesNote": "Durvalumab continues as maintenance (Q4W)",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -128,6 +131,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Pembrolizumab": {
       "name": "Carboplatin + Paclitaxel + Pembrolizumab (NRG-GY018) (NCCN Preferred)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -152,6 +156,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Dostarlimab": {
       "name": "Carboplatin + Paclitaxel + Dostarlimab (RUBY) (NCCN Preferred)",
       "cycles": 6,
+      "cyclesNote": "Dostarlimab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -176,6 +181,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Durvalumab": {
       "name": "Carboplatin + Paclitaxel + Durvalumab (DUO-E)",
       "cycles": 6,
+      "cyclesNote": "Durvalumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -200,6 +206,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Trastuzumab-HER2": {
       "name": "Carboplatin + Paclitaxel + Trastuzumab (HER2+ serous)",
       "cycles": 6,
+      "cyclesNote": "Trastuzumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -226,6 +233,7 @@ window.protocolData.endometrial = {
     "Carboplatin-Paclitaxel-Bevacizumab": {
       "name": "Carboplatin + Paclitaxel + Bevacizumab",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -267,7 +275,7 @@ window.protocolData.endometrial = {
     },
     "Lenvatinib-Pembrolizumab-2L": {
       "name": "Lenvatinib + Pembrolizumab (KEYNOTE-775) (NCCN Preferred 2L)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",
@@ -285,7 +293,7 @@ window.protocolData.endometrial = {
     },
     "Pembrolizumab-dMMR-2L": {
       "name": "Pembrolizumab monotherapy (KEYNOTE-158) (dMMR/MSI-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -297,7 +305,7 @@ window.protocolData.endometrial = {
     },
     "Dostarlimab-dMMR-2L": {
       "name": "Dostarlimab monotherapy (GARNET) (dMMR/MSI-H)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dostarlimab",
@@ -309,7 +317,7 @@ window.protocolData.endometrial = {
     },
     "Trastuzumab-Deruxtecan-HER2-2L": {
       "name": "Trastuzumab deruxtecan (DESTINY-PanTumor02) (HER2+ IHC 3+ or 2+/ISH+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab deruxtecan",
@@ -507,7 +515,7 @@ window.protocolData.endometrial = {
     },
     "Megestrol": {
       "name": "Megestrol acetate (hormonal, low-grade ER/PR+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Megestrol acetate",
@@ -519,7 +527,7 @@ window.protocolData.endometrial = {
     },
     "Medroxyprogesterone": {
       "name": "Medroxyprogesterone acetate (hormonal, low-grade ER/PR+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Medroxyprogesterone acetate",
@@ -531,7 +539,7 @@ window.protocolData.endometrial = {
     },
     "Tamoxifen": {
       "name": "Tamoxifen (hormonal, low-grade ER/PR+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tamoxifen",
@@ -543,7 +551,7 @@ window.protocolData.endometrial = {
     },
     "Letrozole": {
       "name": "Letrozole (aromatase inhibitor, low-grade ER/PR+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Letrozole",
@@ -555,7 +563,7 @@ window.protocolData.endometrial = {
     },
     "Everolimus-Letrozole": {
       "name": "Everolimus + Letrozole (mTOR inhibitor + aromatase inhibitor)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Everolimus",

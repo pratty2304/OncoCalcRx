@@ -281,7 +281,7 @@ window.protocolData.testicular = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (PD-1 inhibitor) (MSI-H/dMMR or TMB-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",

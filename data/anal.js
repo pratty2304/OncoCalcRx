@@ -180,6 +180,7 @@ window.protocolData.anal = {
         "Carboplatin-Paclitaxel-Retifanlimab": {
             "name": "Paclitaxel + Carboplatin + Retifanlimab-dlwr",
             "cycles": 6,
+            "cyclesNote": "Retifanlimab continues until progression",
             "drugs": [
                 {
                     "name": "Carboplatin",
@@ -203,7 +204,7 @@ window.protocolData.anal = {
         },
         "Pembrolizumab-Monotherapy": {
             "name": "Pembrolizumab monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Pembrolizumab",
@@ -215,7 +216,7 @@ window.protocolData.anal = {
         },
         "Nivolumab-Monotherapy": {
             "name": "Nivolumab monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Nivolumab",
@@ -227,7 +228,7 @@ window.protocolData.anal = {
         },
         "Cemiplimab-Monotherapy": {
             "name": "Cemiplimab monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Cemiplimab",
@@ -239,7 +240,7 @@ window.protocolData.anal = {
         },
         "Single-Toripalimab": {
             "name": "Toripalimab monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Toripalimab",
@@ -251,7 +252,7 @@ window.protocolData.anal = {
         },
         "Single-Tislelizumab": {
             "name": "Tislelizumab monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Tislelizumab",
@@ -263,7 +264,7 @@ window.protocolData.anal = {
         },
         "Dostarlimab-Monotherapy": {
             "name": "Dostarlimab monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Dostarlimab",
@@ -275,7 +276,7 @@ window.protocolData.anal = {
         },
         "Retifanlimab-Monotherapy": {
             "name": "Retifanlimab-dlwr monotherapy (PD-1 inhibitor)",
-            "cycles": 12,
+            "cycles": "Until progression",
             "drugs": [
                 {
                     "name": "Retifanlimab-dlwr",

@@ -194,6 +194,7 @@ window.protocolData.sarcoma = {
     "Doxorubicin-Trabectedin": {
       "name": "Doxorubicin + Trabectedin (LMS-04) (LMS first-line)",
       "cycles": 6,
+      "cyclesNote": "Trabectedin continues as maintenance until progression",
       "drugs": [
         {
           "name": "Doxorubicin",
@@ -295,7 +296,7 @@ window.protocolData.sarcoma = {
     },
     "Trabectedin": {
       "name": "Trabectedin (LPS/LMS)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trabectedin",
@@ -433,7 +434,7 @@ window.protocolData.sarcoma = {
     },
     "Pazopanib": {
       "name": "Pazopanib (PALETTE) (non-adipocytic STS)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pazopanib",
@@ -481,7 +482,7 @@ window.protocolData.sarcoma = {
     },
     "Temozolomide-Bevacizumab": {
       "name": "Temozolomide + Bevacizumab (SFT)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Temozolomide",
@@ -499,7 +500,7 @@ window.protocolData.sarcoma = {
     },
     "Sunitinib-SFT": {
       "name": "Sunitinib (SFT)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sunitinib",
@@ -511,7 +512,7 @@ window.protocolData.sarcoma = {
     },
     "Tazemetostat": {
       "name": "Tazemetostat (EZH2 inhibitor) (epithelioid sarcoma, INI1-loss)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tazemetostat",
@@ -523,7 +524,7 @@ window.protocolData.sarcoma = {
     },
     "Nirogacestat": {
       "name": "Nirogacestat (DeFi) (gamma-secretase inhibitor) (desmoid tumors) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nirogacestat",
@@ -535,7 +536,7 @@ window.protocolData.sarcoma = {
     },
     "Sorafenib-Desmoid": {
       "name": "Sorafenib (Alliance A091105) (desmoid tumors)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sorafenib",
@@ -565,7 +566,7 @@ window.protocolData.sarcoma = {
     },
     "Pexidartinib": {
       "name": "Pexidartinib (ENLIVEN) (CSF1R inhibitor) (tenosynovial giant cell tumor)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pexidartinib",
@@ -577,7 +578,7 @@ window.protocolData.sarcoma = {
     },
     "Imatinib-DFSP": {
       "name": "Imatinib (PDGFR inhibitor) (dermatofibrosarcoma protuberans)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Imatinib",
@@ -589,7 +590,7 @@ window.protocolData.sarcoma = {
     },
     "Sorafenib-EHE": {
       "name": "Sorafenib (epithelioid hemangioendothelioma)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sorafenib",
@@ -637,7 +638,7 @@ window.protocolData.sarcoma = {
     },
     "Atezolizumab": {
       "name": "Atezolizumab (ASPS) (PD-L1 inhibitor) (alveolar soft part sarcoma)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Atezolizumab",
@@ -649,7 +650,7 @@ window.protocolData.sarcoma = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (SARC028) (UPS/DDLPS/angiosarcoma/MSI-H/TMB-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -661,7 +662,7 @@ window.protocolData.sarcoma = {
     },
     "Nivolumab-Ipilimumab": {
       "name": "Nivolumab + Ipilimumab (angiosarcoma)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -679,7 +680,7 @@ window.protocolData.sarcoma = {
     },
     "Sirolimus": {
       "name": "Sirolimus (mTOR inhibitor) (PEComa)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sirolimus",
@@ -691,7 +692,7 @@ window.protocolData.sarcoma = {
     },
     "Temsirolimus": {
       "name": "Temsirolimus (mTOR inhibitor) (PEComa)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Temsirolimus",
@@ -703,7 +704,7 @@ window.protocolData.sarcoma = {
     },
     "Everolimus": {
       "name": "Everolimus (mTOR inhibitor) (PEComa)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Everolimus",
@@ -715,7 +716,7 @@ window.protocolData.sarcoma = {
     },
     "Larotrectinib": {
       "name": "Larotrectinib (NTRK fusion inhibitor) (NTRK fusion-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Larotrectinib",
@@ -727,7 +728,7 @@ window.protocolData.sarcoma = {
     },
     "Entrectinib": {
       "name": "Entrectinib (NTRK fusion inhibitor) (NTRK fusion-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Entrectinib",
@@ -739,7 +740,7 @@ window.protocolData.sarcoma = {
     },
     "Repotrectinib": {
       "name": "Repotrectinib (NTRK fusion inhibitor) (NTRK fusion-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Repotrectinib",
@@ -751,7 +752,7 @@ window.protocolData.sarcoma = {
     },
     "Crizotinib": {
       "name": "Crizotinib (ALK inhibitor) (inflammatory myofibroblastic tumor)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Crizotinib",

@@ -246,6 +246,7 @@ window.protocolData.thymoma = {
     "Carboplatin-Paclitaxel-Ramucirumab": {
       "name": "Paclitaxel + Carboplatin + Ramucirumab (RELEVENT) (NCCN Preferred, thymic carcinoma)",
       "cycles": 6,
+      "cyclesNote": "Ramucirumab continues as maintenance until progression",
       "drugs": [
         {
           "name": "Paclitaxel",
@@ -269,7 +270,7 @@ window.protocolData.thymoma = {
     },
     "Everolimus": {
       "name": "Everolimus (mTOR inhibitor) (Zucali JCO 2018) (NCCN Preferred, thymoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Everolimus",
@@ -335,7 +336,7 @@ window.protocolData.thymoma = {
     },
     "Octreotide": {
       "name": "Octreotide LAR (thymoma, if octreoscan/DOTATATE positive) (NCCN Preferred, thymoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Octreotide LAR",
@@ -347,7 +348,7 @@ window.protocolData.thymoma = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (PD-1 inhibitor) (thymic carcinoma ONLY — contraindicated in thymoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -359,7 +360,7 @@ window.protocolData.thymoma = {
     },
     "Sunitinib": {
       "name": "Sunitinib (multi-kinase inhibitor) (STYLE) (thymic carcinoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sunitinib",
@@ -371,7 +372,7 @@ window.protocolData.thymoma = {
     },
     "Lenvatinib": {
       "name": "Lenvatinib (multi-kinase inhibitor) (REMORA) (NCCN Preferred, thymic carcinoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",
@@ -383,7 +384,7 @@ window.protocolData.thymoma = {
     },
     "Avelumab-Axitinib": {
       "name": "Avelumab + Axitinib (CAVEATT) (thymic carcinoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avelumab",
@@ -401,7 +402,7 @@ window.protocolData.thymoma = {
     },
     "Lenvatinib-Pembrolizumab": {
       "name": "Lenvatinib + Pembrolizumab (PECATI) (Investigational, thymic carcinoma)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Lenvatinib",

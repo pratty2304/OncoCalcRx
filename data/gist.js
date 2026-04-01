@@ -43,6 +43,7 @@ window.protocolData.gist = {
   "metastatic": {
     "Imatinib-400": {
       "name": "Imatinib 400mg (B2222) (KIT/PDGFRA inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Imatinib",
@@ -54,6 +55,7 @@ window.protocolData.gist = {
     },
     "Imatinib-800-Exon9": {
       "name": "Imatinib 800mg (KIT exon 9 mutation) (KIT/PDGFRA inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Imatinib",
@@ -65,6 +67,7 @@ window.protocolData.gist = {
     },
     "Avapritinib-PDGFRA": {
       "name": "Avapritinib (NAVIGATOR) (PDGFRA D842V+) (KIT/PDGFRA inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avapritinib",
@@ -76,6 +79,7 @@ window.protocolData.gist = {
     },
     "Sunitinib-2L": {
       "name": "Sunitinib (A6181004) (multi-kinase inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sunitinib",
@@ -87,6 +91,7 @@ window.protocolData.gist = {
     },
     "Regorafenib-3L": {
       "name": "Regorafenib (GRID) (multi-kinase inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Regorafenib",
@@ -98,6 +103,7 @@ window.protocolData.gist = {
     },
     "Ripretinib-4L": {
       "name": "Ripretinib (INVICTUS) (KIT/PDGFRA inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ripretinib",
@@ -109,6 +115,7 @@ window.protocolData.gist = {
     },
     "Larotrectinib-NTRK": {
       "name": "Larotrectinib (NAVIGATE) (NTRK fusion+) (TRK inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Larotrectinib",
@@ -120,6 +127,7 @@ window.protocolData.gist = {
     },
     "Entrectinib-NTRK": {
       "name": "Entrectinib (STARTRK-2) (NTRK fusion+) (TRK inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Entrectinib",
@@ -131,6 +139,7 @@ window.protocolData.gist = {
     },
     "Repotrectinib-NTRK": {
       "name": "Repotrectinib (TRIDENT-1) (NTRK fusion+) (TRK inhibitor)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Repotrectinib",
@@ -142,6 +151,7 @@ window.protocolData.gist = {
     },
     "Dabrafenib-Trametinib-BRAF": {
       "name": "Dabrafenib + Trametinib (BRAF V600E+) (BRAF + MEK inhibitors)",
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Dabrafenib",

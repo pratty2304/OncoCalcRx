@@ -55,7 +55,7 @@ window.protocolData.merkel_cell = {
   "metastatic": {
     "Avelumab": {
       "name": "Avelumab (JAVELIN Merkel 200) (PD-L1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avelumab",
@@ -67,7 +67,7 @@ window.protocolData.merkel_cell = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (KEYNOTE-017) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -79,7 +79,7 @@ window.protocolData.merkel_cell = {
     },
     "Nivolumab": {
       "name": "Nivolumab (CheckMate 358) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -91,7 +91,7 @@ window.protocolData.merkel_cell = {
     },
     "Retifanlimab": {
       "name": "Retifanlimab (POD1UM-201) (PD-1 inhibitor)",
-      "cycles": 8,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Retifanlimab",
@@ -103,7 +103,7 @@ window.protocolData.merkel_cell = {
     },
     "Ipilimumab-Nivolumab": {
       "name": "Ipilimumab + Nivolumab (CheckMate 358)",
-      "cycles": 4,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Ipilimumab",

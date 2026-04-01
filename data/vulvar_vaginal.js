@@ -94,6 +94,7 @@ window.protocolData.vulvar_vaginal = {
     "Pembrolizumab-Cisplatin-Paclitaxel-Bev": {
       "name": "Pembrolizumab + Cisplatin + Paclitaxel ± Bevacizumab (PD-1 inhibitor + chemo ± VEGF inhibitor) (KEYNOTE-826) (vaginal SCC, PD-L1 CPS ≥1)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -124,6 +125,7 @@ window.protocolData.vulvar_vaginal = {
     "Pembrolizumab-Carboplatin-Paclitaxel-Bev": {
       "name": "Pembrolizumab + Carboplatin + Paclitaxel ± Bevacizumab (PD-1 inhibitor + chemo ± VEGF inhibitor) (KEYNOTE-826) (cisplatin-ineligible, vaginal SCC, PD-L1 CPS ≥1)",
       "cycles": 6,
+      "cyclesNote": "Pembrolizumab continues until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -155,6 +157,7 @@ window.protocolData.vulvar_vaginal = {
     "Cisplatin-Paclitaxel-Bevacizumab": {
       "name": "Cisplatin + Paclitaxel + Bevacizumab (VEGF inhibitor) (GOG-240 extrapolation)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Cisplatin",
@@ -179,6 +182,7 @@ window.protocolData.vulvar_vaginal = {
     "Carboplatin-Paclitaxel-Bevacizumab": {
       "name": "Carboplatin + Paclitaxel + Bevacizumab (VEGF inhibitor) (cisplatin-ineligible)",
       "cycles": 6,
+      "cyclesNote": "Bevacizumab continues until progression",
       "drugs": [
         {
           "name": "Carboplatin",
@@ -283,7 +287,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab monotherapy (PD-1 inhibitor) (PD-L1 CPS ≥1 or MSI-H/dMMR or TMB-H)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -295,7 +299,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Cemiplimab": {
       "name": "Cemiplimab monotherapy (PD-1 inhibitor) (NCCN Other Recommended)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Cemiplimab",
@@ -307,7 +311,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Nivolumab": {
       "name": "Nivolumab monotherapy (PD-1 inhibitor) (CheckMate 358) (HPV-associated)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
@@ -319,7 +323,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Tisotumab-Vedotin": {
       "name": "Tisotumab vedotin (tissue factor-directed ADC) (innovaTV 301) (vaginal SCC extrapolation)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Tisotumab vedotin",
@@ -367,7 +371,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Erlotinib": {
       "name": "Erlotinib (EGFR inhibitor) (vulvar SCC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Erlotinib",
@@ -380,7 +384,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Trastuzumab-Deruxtecan": {
       "name": "Trastuzumab deruxtecan (T-DXd) (HER2-directed ADC) (HER2 IHC 3+) (DESTINY-PanTumor02)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab deruxtecan",
@@ -392,7 +396,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Larotrectinib": {
       "name": "Larotrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Larotrectinib",
@@ -405,7 +409,7 @@ window.protocolData.vulvar_vaginal = {
     },
     "Entrectinib": {
       "name": "Entrectinib (TRK inhibitor) (NTRK gene fusion-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Entrectinib",

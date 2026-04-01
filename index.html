@@ -1210,7 +1210,7 @@
 
             /* Mobile footer adjustments - ensure visibility */
             .app-footer {
-                padding: 12px 0 80px;
+                padding: 12px 0;
                 margin-top: 50px;
                 z-index: 100;
             }
@@ -1503,6 +1503,104 @@
         .responsive-table::-webkit-scrollbar-thumb {
             background: #999 !important;
             border-radius: 3px;
+        }
+
+        /* ===== PAGE 6 PRINT STYLES ===== */
+        .print-header { margin-bottom: 16px; }
+        .print-section { margin-bottom: 18px; }
+        .print-section-title {
+            font-size: 14px; font-weight: 700; color: #0f3460;
+            border-bottom: 2px solid #0a7e8c; padding-bottom: 4px; margin-bottom: 8px;
+        }
+        .print-table {
+            width: 100%; border-collapse: collapse; font-size: 12px;
+        }
+        .print-table th {
+            background: #0f3460; color: white; padding: 7px 10px;
+            text-align: left; font-weight: 600;
+        }
+        .print-table td {
+            padding: 6px 10px; border: 1px solid #dee2e6;
+        }
+        .print-table tbody tr:nth-child(even) { background: #f8f9fa; }
+
+        /* Screen: printArea hidden; shown only when printing */
+        #printArea { display: none; }
+
+        @media print {
+            .no-print, .app-footer, #stepIndicators, .feedback-btn { display: none !important; }
+            body { background: white !important; }
+            .container { max-width: 100% !important; padding: 0 !important; }
+            .form-section { box-shadow: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+            #printArea { display: block !important; }
+            .page { display: none !important; }
+            #page6 { display: block !important; }
+        }
+
+        /* ── Colour printing: force all backgrounds/colours to render exactly ── */
+        @media print and (color) {
+            .print-table th {
+                background: #0f3460 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-table tbody tr:nth-child(even) {
+                background: #f8f9fa !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* ── Monochrome/B&W printing: replace dark-bg/white-text with B&W-safe styles ── */
+        @media print and (monochrome) {
+            /* Table headers: white bg + black text + bold border */
+            .print-table th {
+                background: white !important;
+                color: black !important;
+                border-top: 1px solid #888 !important;
+                border-bottom: 2px solid black !important;
+                -webkit-print-color-adjust: economy !important;
+                print-color-adjust: economy !important;
+            }
+            .print-table tbody tr:nth-child(even) {
+                background: #efefef !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Section titles */
+            .print-section-title {
+                color: black !important;
+                border-bottom-color: black !important;
+            }
+
+            /* Header rule */
+            #printArea hr { border-top-color: black !important; }
+
+            /* Note boxes (dose mod, pre-cycle, growth factor) */
+            #printDoseModNote,
+            #printPreCycleNoteText,
+            #printGrowthFactorText {
+                background: white !important;
+                border-left-color: #444 !important;
+                color: black !important;
+            }
+
+            /* Warning alerts: solid thick black left border */
+            #printClinicalAlertsContent .print-alert-warning {
+                background: white !important;
+                border-left: 4px solid black !important;
+            }
+            /* Info alerts: dashed border to distinguish from warnings */
+            #printClinicalAlertsContent .print-alert-info {
+                background: white !important;
+                border-left: 3px dashed #555 !important;
+            }
+            #printClinicalAlertsContent .print-alert-warning .alert-title,
+            #printClinicalAlertsContent .print-alert-info .alert-title {
+                color: black !important;
+            }
         }
 
     </style>
@@ -1811,9 +1909,10 @@
                 
                 <div id="resultsContent"></div>
 
-                <div class="nav-buttons">
+                <div class="nav-buttons" style="flex-wrap: wrap;">
                     <button type="button" class="btn btn-secondary" id="backToPage2">Back to Regimen Selection</button>
                     <button type="button" class="btn btn-primary" id="adjustDoses">Adjust Doses</button>
+                    <button type="button" class="btn btn-primary" id="goToPage6FromPage3" style="background:#0f3460;">&#128203; Supportive Care &amp; Print</button>
                     <button type="button" class="btn btn-primary" id="startOver">Start New Calculation</button>
                 </div>
             </div>
@@ -1883,10 +1982,258 @@
 
                 <div class="nav-buttons" style="flex-wrap: wrap;">
                     <button type="button" class="btn btn-secondary" id="backToPage4">Back to Adjust</button>
+                    <button type="button" class="btn btn-primary" id="goToPage6" style="background:#0f3460;">&#128203; Supportive Care &amp; Print</button>
                     <button type="button" class="btn btn-primary" id="newCalculationFromPage5">New Calculation</button>
                 </div>
             </div>
         </div>
+
+        <!-- Page 6: Supportive Care & Print -->
+        <div id="page6" class="page">
+            <div class="form-section no-print">
+                <div class="page-title">
+                    <h2>Supportive Care &amp; Print</h2>
+                </div>
+
+                <!-- Optional patient identifier fields + regimen recall -->
+                <div style="background:#eef6ff; border:2px solid #cce0ff; border-radius:8px; padding:14px 16px; margin-bottom:16px;">
+                    <h3 style="color:#0f3460; font-size:14px; margin:0 0 10px 0;">&#128100; Patient Details <span style="font-weight:400; color:#666; font-size:12px;">(optional — for print only)</span></h3>
+
+                    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
+                        <div style="flex:2; min-width:160px;">
+                            <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:4px; font-size:13px;">Patient Name</label>
+                            <input type="text" id="printPatientName" placeholder="e.g. Jane Doe" style="width:100%; padding:8px 10px; border:2px solid #ddd; border-radius:5px; font-size:14px; box-sizing:border-box;">
+                        </div>
+                        <div style="flex:1; min-width:100px;">
+                            <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:4px; font-size:13px;">Age (years)</label>
+                            <input type="number" id="printPatientAge" placeholder="e.g. 45" min="1" max="120" style="width:100%; padding:8px 10px; border:2px solid #ddd; border-radius:5px; font-size:14px; box-sizing:border-box;">
+                        </div>
+                    </div>
+
+                    <!-- Regimen recall banner -->
+                    <div id="regimenRecallBanner" style="background:#fff; border:1.5px solid #a8c8ff; border-radius:6px; padding:8px 12px; font-size:13px; color:#0f3460; line-height:1.6;">
+                        <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.5px; color:#888; display:block; margin-bottom:2px;">Selected Regimen</span>
+                        <span id="regimenRecallName" style="font-weight:700; font-size:15px;">—</span>
+                        <span id="regimenRecallMeta" style="color:#555; font-size:12px; display:block; margin-top:1px;"></span>
+                    </div>
+                </div>
+
+                <!-- Phase selector for sequential regimens -->
+                <div id="phaseSelectGroup" style="display:none; margin-bottom:18px;">
+                    <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:6px;">Regimen Phase</label>
+                    <select id="phaseSelect" style="width:100%; padding:12px; border:2px solid #ddd; border-radius:5px; font-size:16px;">
+                    </select>
+                </div>
+
+                <!-- Loading / Maintenance dose selector (shown only for regimens with loading doses) -->
+                <div id="cycleTypeGroup" style="display:none; margin-bottom:18px;">
+                    <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:6px;">Cycle Type</label>
+                    <select id="selectCycleType" style="width:100%; padding:12px; border:2px solid #ddd; border-radius:5px; font-size:16px;" onchange="buildPrintPreview()">
+                        <option value="loading">Loading Dose (Cycle 1)</option>
+                        <option value="maintenance">Maintenance Dose (Cycle 2+)</option>
+                    </select>
+                </div>
+
+                <!-- Preference dropdowns -->
+                <div id="premedPreferencesCard" style="background:#f8f9fa; border:2px solid #e9ecef; border-radius:8px; padding:16px; margin-bottom:12px;">
+                    <h3 style="color:#0f3460; font-size:15px; margin:0 0 12px 0;">&#9881; Pre-medication Preferences</h3>
+
+                    <div id="nk1Group" class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">NK1 Antagonist</label>
+                        <select id="selectNK1" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="fosaprepitant">Inj. Fosaprepitant 150mg IV</option>
+                            <option value="aprepitant">Cap Aprepitant 125mg Oral (Day 1)</option>
+                            <option value="nepa">Cap NEPA (Netupitant+Palonosetron) 300mg/0.5mg Oral</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Dexamethasone</label>
+                        <select id="selectDex" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="8">Inj. Dexamethasone 8mg IV</option>
+                            <option value="10">Inj. Dexamethasone 10mg IV</option>
+                            <option value="12">Inj. Dexamethasone 12mg IV</option>
+                            <option value="16">Inj. Dexamethasone 16mg IV</option>
+                            <option value="20">Inj. Dexamethasone 20mg IV</option>
+                        </select>
+                    </div>
+
+                    <div id="serotonin5ht3Group" class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">5-HT3 Antagonist</label>
+                        <select id="select5ht3" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="ondansetron">Ondansetron 8mg IV</option>
+                            <option value="granisetron">Granisetron 1mg IV</option>
+                            <option value="palonosetron">Palonosetron 0.25mg IV</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antacid / Gastroprotective (IV)</label>
+                        <select id="selectAntacid" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="pantoprazole">Inj. Pantoprazole 40mg IV</option>
+                            <option value="omeprazole">Inj. Omeprazole 40mg IV</option>
+                            <option value="esomeprazole">Inj. Esomeprazole 40mg IV</option>
+                            <option value="famotidine">Inj. Famotidine 20mg IV</option>
+                            <option value="ranitidine">Inj. Ranitidine 50mg IV</option>
+                        </select>
+                    </div>
+
+                    <div id="antihistGroup" class="form-group" style="margin-bottom:0;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">H1 Antihistamine <span style="font-size:12px; color:#666;">(HSR Prophylaxis — taxanes &amp; MABs)</span></label>
+                        <select id="selectAntiHist" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="pheniramine">Pheniramine Maleate 25mg IV</option>
+                            <option value="diphenhydramine">Diphenhydramine 50mg IV</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="background:#f8f9fa; border:2px solid #e9ecef; border-radius:8px; padding:16px; margin-bottom:18px;">
+                    <h3 style="color:#0f3460; font-size:15px; margin:0 0 12px 0;">&#128137; Post-discharge Medication Preferences</h3>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Oral Antacid</label>
+                        <select id="selectOralAntacid" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="pantoprazole">Tab. Pantoprazole 40mg OD</option>
+                            <option value="omeprazole">Tab. Omeprazole 20mg OD</option>
+                            <option value="esomeprazole">Tab. Esomeprazole 20mg OD</option>
+                            <option value="rabeprazole">Tab. Rabeprazole 20mg OD</option>
+                            <option value="famotidine">Tab. Famotidine 40mg OD</option>
+                            <option value="ranitidine">Tab. Ranitidine 150mg BD</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antiemetic — Ondansetron</label>
+                        <select id="selectOralOndansetron" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="4mg BD">Tab. Ondansetron 4mg BD</option>
+                            <option value="8mg BD">Tab. Ondansetron 8mg BD</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antiemetic — Dexamethasone</label>
+                        <select id="selectOralDex" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="2mg BD">Tab. Dexamethasone 2mg BD</option>
+                            <option value="4mg BD">Tab. Dexamethasone 4mg BD</option>
+                            <option value="8mg BD">Tab. Dexamethasone 8mg BD</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antiemetic — Olanzapine</label>
+                        <select id="selectOralOlanzapine" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="2.5mg HS">Tab. Olanzapine 2.5mg at Bedtime</option>
+                            <option value="5mg HS">Tab. Olanzapine 5mg at Bedtime</option>
+                            <option value="10mg HS">Tab. Olanzapine 10mg at Bedtime</option>
+                        </select>
+                    </div>
+
+                    <div id="gcsGroup" class="form-group" style="margin-bottom:0;">
+                        <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Growth Factor</label>
+                        <select id="selectGCS" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                            <option value="none">— None —</option>
+                            <option value="pegfilgrastim">Inj. Pegfilgrastim 6mg SC — Day 2</option>
+                            <option value="filgrastim5">Inj. Filgrastim 5mcg/kg SC — Day 3 to Day 7 (5 days)</option>
+                            <option value="filgrastim7">Inj. Filgrastim 5mcg/kg SC — Day 3 to Day 9 (7 days)</option>
+                            <option value="filgrastimANC">Inj. Filgrastim 5mcg/kg SC — until ANC recovery</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="nav-buttons" style="flex-wrap:wrap;">
+                    <button type="button" class="btn btn-secondary" id="backToPage5">&#8592; Back</button>
+                    <button type="button" class="btn btn-primary" id="printPrescription" style="background:#0f3460;">&#128438; Print Prescription</button>
+                </div>
+            </div>
+
+            <!-- ===== PRINTABLE AREA ===== -->
+            <div id="printArea" style="display:none;">
+                <!-- Header -->
+                <div class="print-header">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
+                        <div>
+                            <div style="font-size:22px; font-weight:700; color:#0f3460;">OncoCalcRx</div>
+                            <div style="font-size:12px; color:#555; margin-top:2px;">Chemotherapy Prescription</div>
+                        </div>
+                        <div style="text-align:right; font-size:13px; color:#333;">
+                            <div id="printDate"></div>
+                        </div>
+                    </div>
+                    <hr style="border:none; border-top:2px solid #0a7e8c; margin:10px 0 8px 0;">
+                    <div id="printPatientSummary" style="font-size:13px; color:#333; line-height:1.7;"></div>
+                    <div id="printDoseModNote" style="display:none; margin-top:8px; padding:6px 10px; background:#fff3cd; border-left:4px solid #f0a500; border-radius:3px; font-size:12px; color:#7a5000;"></div>
+                </div>
+
+                <!-- Pre-cycle note (docetaxel) -->
+                <div id="printPreCycleNote" style="display:none;" class="print-section">
+                    <div class="print-section-title">&#9888; Pre-Cycle Instruction</div>
+                    <div id="printPreCycleNoteText" style="font-size:13px; padding:8px 12px; background:#fff8e1; border-left:4px solid #f9a825; border-radius:3px;"></div>
+                </div>
+
+                <!-- Pre-medications -->
+                <div id="printPremedSection" class="print-section">
+                    <div class="print-section-title">Pre-Medications <span style="font-size:12px; font-weight:400;">(administer 30 min before chemotherapy)</span></div>
+                    <table class="print-table">
+                        <thead><tr><th>#</th><th>Drug</th><th>Dose</th><th>Route</th><th>Timing</th></tr></thead>
+                        <tbody id="printPremedRows"></tbody>
+                    </table>
+                </div>
+
+                <!-- Infusion sequence -->
+                <div id="printInfusionSection" class="print-section">
+                    <div class="print-section-title">Drug Infusion Sequence</div>
+                    <table class="print-table">
+                        <thead><tr><th>#</th><th>Drug</th><th>Dose</th><th>Solvent</th><th>Volume</th><th>Duration</th></tr></thead>
+                        <tbody id="printInfusionRows"></tbody>
+                    </table>
+                </div>
+
+                <!-- Oral chemotherapy -->
+                <div id="printOralChemoSection" class="print-section" style="display:none;">
+                    <div class="print-section-title">Oral Chemotherapy</div>
+                    <table class="print-table">
+                        <thead><tr><th>#</th><th>Drug</th><th>Dose</th><th>Route</th><th>Schedule / Instructions</th></tr></thead>
+                        <tbody id="printOralChemoRows"></tbody>
+                    </table>
+                </div>
+
+                <!-- Post-discharge medications -->
+                <div id="printPostmedSection" class="print-section">
+                    <div class="print-section-title">Post-Discharge Medications</div>
+                    <table class="print-table">
+                        <thead><tr><th>#</th><th>Drug</th><th>Dose</th><th>Route</th><th>Frequency</th><th>Duration</th></tr></thead>
+                        <tbody id="printPostmedRows"></tbody>
+                    </table>
+                </div>
+
+                <!-- Growth factor -->
+                <div id="printGrowthFactorSection" class="print-section" style="display:none;">
+                    <div class="print-section-title">Growth Factor Prophylaxis</div>
+                    <div id="printGrowthFactorText" style="font-size:13px; padding:8px 12px; background:#e8f5e9; border-left:4px solid #388e3c; border-radius:3px;"></div>
+                </div>
+
+                <!-- Clinical alerts -->
+                <div id="printClinicalAlerts" class="print-section" style="display:none;">
+                    <div class="print-section-title">&#9888; Clinical Alerts &amp; Special Instructions</div>
+                    <div id="printClinicalAlertsContent"></div>
+                </div>
+
+                <!-- Footer -->
+                <div style="margin-top:24px; padding-top:10px; border-top:1px solid #ccc; font-size:11px; color:#888; text-align:center;">
+                    Generated by OncoCalcRx &nbsp;|&nbsp; For clinical use by qualified medical professionals only
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Copyright Footer -->
@@ -2208,157 +2555,44 @@
     <script src="data/tumor_agnostic.js"></script>
     <script src="data/ureteric_urethral.js"></script>
     <script src="data/vulvar_vaginal.js"></script>
+    <script src="data/breast_premeds.js"></script>
+    <script src="data/adrenocortical_premeds.js"></script>
+    <script src="data/anal_premeds.js"></script>
+    <script src="data/basal_cell_premeds.js"></script>
+    <script src="data/biliary_premeds.js"></script>
+    <script src="data/bladder_premeds.js"></script>
+    <script src="data/bone_premeds.js"></script>
+    <script src="data/brain_premeds.js"></script>
+    <script src="data/carcinoma_unknown_primary_premeds.js"></script>
+    <script src="data/cervical_premeds.js"></script>
+    <script src="data/colorectal_premeds.js"></script>
+    <script src="data/endometrial_premeds.js"></script>
+    <script src="data/esophageal_premeds.js"></script>
+    <script src="data/gastric_premeds.js"></script>
+    <script src="data/gist_premeds.js"></script>
+    <script src="data/head_neck_premeds.js"></script>
+    <script src="data/hepatocellular_premeds.js"></script>
+    <script src="data/leukemia_premeds.js"></script>
+    <script src="data/lung_premeds.js"></script>
+    <script src="data/lymphoma_premeds.js"></script>
+    <script src="data/melanoma_premeds.js"></script>
+    <script src="data/merkel_cell_premeds.js"></script>
+    <script src="data/mesothelioma_premeds.js"></script>
+    <script src="data/multiple_myeloma_premeds.js"></script>
+    <script src="data/neuroendocrine_premeds.js"></script>
+    <script src="data/ovarian_premeds.js"></script>
+    <script src="data/pancreatic_premeds.js"></script>
+    <script src="data/penile_premeds.js"></script>
+    <script src="data/prostate_premeds.js"></script>
+    <script src="data/renal_premeds.js"></script>
+    <script src="data/sarcoma_premeds.js"></script>
+    <script src="data/stem_cell_transplant_premeds.js"></script>
+    <script src="data/testicular_premeds.js"></script>
+    <script src="data/thymoma_premeds.js"></script>
+    <script src="data/thyroid_premeds.js"></script>
+    <script src="data/tumor_agnostic_premeds.js"></script>
+    <script src="data/ureteric_urethral_premeds.js"></script>
+    <script src="data/vulvar_vaginal_premeds.js"></script>
     <script src="app.js?v=3"></script>
-
-    <!-- Feedback Button -->
-    <style>
-        .feedback-btn-wrap {
-            position: fixed;
-            bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-            right: 24px;
-            z-index: 9999;
-        }
-        .feedback-pulse-ring {
-            position: absolute;
-            inset: 0;
-            border-radius: 50px;
-            background: rgba(10, 126, 140, 0.35);
-            animation: feedbackPulse 2s ease-out infinite;
-            pointer-events: none;
-        }
-        @keyframes feedbackPulse {
-            0%   { transform: scale(1);    opacity: 0.7; }
-            70%  { transform: scale(1.18); opacity: 0;   }
-            100% { transform: scale(1.18); opacity: 0;   }
-        }
-        .feedback-btn {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            background: #0a7e8c;
-            color: #fff;
-            border: none;
-            border-radius: 50px;
-            padding: 13px 18px 13px 14px;
-            min-height: 44px;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(10, 126, 140, 0.45);
-            text-decoration: none;
-            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .feedback-btn:hover {
-            background: #086b77;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(10, 126, 140, 0.55);
-        }
-        .feedback-btn svg {
-            width: 17px;
-            height: 17px;
-            flex-shrink: 0;
-        }
-        .feedback-new-badge {
-            background: #e74c3c;
-            color: #fff;
-            font-size: 10px;
-            font-weight: 700;
-            border-radius: 50px;
-            padding: 1px 6px;
-            letter-spacing: 0.3px;
-            line-height: 1.5;
-        }
-        .feedback-tooltip {
-            position: absolute;
-            bottom: calc(100% + 10px);
-            right: 0;
-            background: #0f3460;
-            color: #fff;
-            font-size: 13px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            white-space: nowrap;
-            padding: 8px 13px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            opacity: 0;
-            transform: translateY(6px);
-            transition: opacity 0.3s, transform 0.3s;
-            pointer-events: none;
-        }
-        .feedback-tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            right: 22px;
-            border: 6px solid transparent;
-            border-top-color: #0f3460;
-        }
-        .feedback-tooltip.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Mobile adjustments */
-        @media (max-width: 480px) {
-            .feedback-btn-wrap {
-                right: 16px;
-                bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-            }
-            .feedback-tooltip {
-                white-space: normal;
-                width: max-content;
-                max-width: calc(100vw - 80px);
-                right: 0;
-            }
-        }
-    </style>
-
-    <div class="feedback-btn-wrap" id="feedbackWrap">
-        <div class="feedback-pulse-ring" id="feedbackPulseRing"></div>
-        <div class="feedback-tooltip" id="feedbackTooltip">We'd love your feedback! 💬</div>
-        <a class="feedback-btn" href="https://forms.gle/sux9VA5WzLkpDqEBA" target="_blank" rel="noopener" id="feedbackBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/>
-            </svg>
-            Feedback
-            <span class="feedback-new-badge" id="feedbackNewBadge">New</span>
-        </a>
-    </div>
-
-    <script>
-        (function () {
-            var TOOLTIP_KEY = 'feedbackTooltipShown';
-            var BADGE_KEY   = 'feedbackBadgeDismissed';
-            var tooltip     = document.getElementById('feedbackTooltip');
-            var badge       = document.getElementById('feedbackNewBadge');
-            var pulseRing   = document.getElementById('feedbackPulseRing');
-
-            // Hide "New" badge and pulse if user has clicked feedback before
-            if (localStorage.getItem(BADGE_KEY)) {
-                badge.style.display = 'none';
-                pulseRing.style.display = 'none';
-            }
-
-            // Show tooltip once after 3s if never shown before
-            if (!localStorage.getItem(TOOLTIP_KEY)) {
-                setTimeout(function () {
-                    tooltip.classList.add('visible');
-                    setTimeout(function () {
-                        tooltip.classList.remove('visible');
-                    }, 4000);
-                    localStorage.setItem(TOOLTIP_KEY, '1');
-                }, 3000);
-            }
-
-            // On click: dismiss badge and pulse permanently
-            document.getElementById('feedbackBtn').addEventListener('click', function () {
-                localStorage.setItem(BADGE_KEY, '1');
-                badge.style.display = 'none';
-                pulseRing.style.display = 'none';
-            });
-        })();
-    </script>
 </body>
 </html>

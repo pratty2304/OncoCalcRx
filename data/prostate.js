@@ -3,7 +3,7 @@ window.protocolData.prostate = {
   "mcspc": {
     "Abiraterone-Prednisone-ADT": {
       "name": "Abiraterone + Prednisone + ADT (LATITUDE/STAMPEDE)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Abiraterone acetate",
@@ -27,7 +27,7 @@ window.protocolData.prostate = {
     },
     "Enzalutamide-ADT": {
       "name": "Enzalutamide + ADT (ARCHES/ENZAMET)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enzalutamide",
@@ -45,7 +45,7 @@ window.protocolData.prostate = {
     },
     "Apalutamide-ADT": {
       "name": "Apalutamide + ADT (TITAN)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Apalutamide",
@@ -63,7 +63,7 @@ window.protocolData.prostate = {
     },
     "Darolutamide-ADT": {
       "name": "Darolutamide + ADT (ARANOTE)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Darolutamide",
@@ -82,6 +82,7 @@ window.protocolData.prostate = {
     "Darolutamide-Docetaxel-ADT": {
       "name": "Darolutamide + Docetaxel + ADT (ARASENS)",
       "cycles": 6,
+      "cyclesNote": "Darolutamide and ADT continue until progression",
       "drugs": [
         {
           "name": "Darolutamide",
@@ -106,6 +107,7 @@ window.protocolData.prostate = {
     "Abiraterone-Docetaxel-ADT": {
       "name": "Abiraterone + Docetaxel + ADT (PEACE-1)",
       "cycles": 6,
+      "cyclesNote": "Abiraterone, Prednisone, and ADT continue until progression",
       "drugs": [
         {
           "name": "Abiraterone acetate",
@@ -136,6 +138,7 @@ window.protocolData.prostate = {
     "Docetaxel-ADT": {
       "name": "Docetaxel + ADT (CHAARTED/STAMPEDE)",
       "cycles": 6,
+      "cyclesNote": "Prednisone and ADT continue until progression",
       "drugs": [
         {
           "name": "Docetaxel",
@@ -159,7 +162,7 @@ window.protocolData.prostate = {
     },
     "Niraparib-Abiraterone-BRCA2": {
       "name": "Niraparib + Abiraterone + Prednisone (AMPLITUDE) (BRCA2-mutated)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Niraparib",
@@ -191,7 +194,7 @@ window.protocolData.prostate = {
   "nmcrpc": {
     "Apalutamide-ADT": {
       "name": "Apalutamide + ADT (SPARTAN)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Apalutamide",
@@ -209,7 +212,7 @@ window.protocolData.prostate = {
     },
     "Enzalutamide-ADT": {
       "name": "Enzalutamide + ADT (PROSPER)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enzalutamide",
@@ -227,7 +230,7 @@ window.protocolData.prostate = {
     },
     "Darolutamide-ADT": {
       "name": "Darolutamide + ADT (ARAMIS)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Darolutamide",
@@ -245,7 +248,7 @@ window.protocolData.prostate = {
     },
     "Enzalutamide-EMBARK": {
       "name": "Enzalutamide ± Leuprolide (EMBARK) (M0 high-risk HSPC)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enzalutamide",
@@ -265,7 +268,7 @@ window.protocolData.prostate = {
   "mcrpc": {
     "Abiraterone-Prednisone": {
       "name": "Abiraterone + Prednisone (COU-AA-301/302)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Abiraterone acetate",
@@ -283,7 +286,7 @@ window.protocolData.prostate = {
     },
     "Enzalutamide": {
       "name": "Enzalutamide (AFFIRM/PREVAIL)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enzalutamide",
@@ -367,7 +370,7 @@ window.protocolData.prostate = {
     },
     "Olaparib": {
       "name": "Olaparib (PROfound) (HRR gene mutations)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Olaparib",
@@ -379,7 +382,7 @@ window.protocolData.prostate = {
     },
     "Olaparib-Abiraterone": {
       "name": "Olaparib + Abiraterone + Prednisone (PROpel) (BRCA mutations)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Olaparib",
@@ -403,7 +406,7 @@ window.protocolData.prostate = {
     },
     "Niraparib-Abiraterone": {
       "name": "Niraparib + Abiraterone + Prednisone (MAGNITUDE) (BRCA mutations)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Niraparib",
@@ -427,7 +430,7 @@ window.protocolData.prostate = {
     },
     "Talazoparib-Enzalutamide": {
       "name": "Talazoparib + Enzalutamide (TALAPRO-2) (HRR gene mutations)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Talazoparib",
@@ -445,7 +448,7 @@ window.protocolData.prostate = {
     },
     "Rucaparib": {
       "name": "Rucaparib (TRITON3) (BRCA mutations)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Rucaparib",
@@ -493,7 +496,7 @@ window.protocolData.prostate = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (MSI-H/dMMR/TMB-H)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",

@@ -344,6 +344,7 @@ window.protocolData.pancreatic = {
     "Gemcitabine-Erlotinib": {
       "name": "Gemcitabine + Erlotinib",
       "cycles": 6,
+      "cyclesNote": "Erlotinib continues until progression",
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -385,7 +386,7 @@ window.protocolData.pancreatic = {
     },
     "mFOLFOX6": {
       "name": "mFOLFOX6",
-      "cycles": 12,
+      "cycles": 8,
       "drugs": [
         {
           "name": "Oxaliplatin",
@@ -415,7 +416,7 @@ window.protocolData.pancreatic = {
     },
     "mFOLFIRI": {
       "name": "mFOLFIRI",
-      "cycles": 12,
+      "cycles": 8,
       "drugs": [
         {
           "name": "Irinotecan",
@@ -487,7 +488,7 @@ window.protocolData.pancreatic = {
     },
     "Olaparib": {
       "name": "Olaparib (POLO) (PARP inhibitor) (gBRCA-mutated, maintenance after platinum)",
-      "cycles": 24,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Olaparib",
@@ -499,7 +500,7 @@ window.protocolData.pancreatic = {
     },
     "Pembrolizumab": {
       "name": "Pembrolizumab (PD-1 inhibitor) (MSI-H/dMMR)",
-      "cycles": 35,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -511,7 +512,7 @@ window.protocolData.pancreatic = {
     },
     "Sotorasib": {
       "name": "Sotorasib (CodeBreaK 100) (KRAS G12C-mutated)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Sotorasib",
@@ -523,7 +524,7 @@ window.protocolData.pancreatic = {
     },
     "Adagrasib": {
       "name": "Adagrasib (KRYSTAL-1) (KRAS G12C-mutated)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Adagrasib",
@@ -535,7 +536,7 @@ window.protocolData.pancreatic = {
     },
     "Zenocutuzumab": {
       "name": "Zenocutuzumab (Bizengri) (eNRGy) (NRG1-fusion-positive)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Zenocutuzumab",

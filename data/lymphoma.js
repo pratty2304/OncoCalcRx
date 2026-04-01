@@ -270,7 +270,7 @@ window.protocolData.lymphoma = {
     "relapsed_refractory": {
       "Brentuximab-Vedotin": {
         "name": "Brentuximab vedotin monotherapy (CD30 ADC)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Brentuximab vedotin",
@@ -320,7 +320,7 @@ window.protocolData.lymphoma = {
             "schedule": "D1, every 14 days or 480mg every 28 days"
           }
         ],
-        "cycles": 24
+        "cycles": "Until progression"
       },
       "ICE": {
         "name": "ICE (ifosfamide + carboplatin + etoposide) (salvage pre-transplant)",
@@ -330,7 +330,25 @@ window.protocolData.lymphoma = {
             "name": "Ifosfamide",
             "dose": 5000,
             "unit": "mg/m²",
-            "schedule": "D2, CIV over 24h, every 21 days (with mesna) x 3 cycles"
+            "schedule": "D2, CIV over 24h, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (pre-dose)",
+            "dose": 1000,
+            "unit": "mg/m²",
+            "schedule": "Before ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (4h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "4 hours after ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (8h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "8 hours after ifosfamide, D2, every 21 days x 3 cycles"
           },
           {
             "name": "Carboplatin",
@@ -354,7 +372,25 @@ window.protocolData.lymphoma = {
             "name": "Ifosfamide",
             "dose": 5000,
             "unit": "mg/m²",
-            "schedule": "D2, CIV over 24h, every 21 days (with mesna) x 3 cycles"
+            "schedule": "D2, CIV over 24h, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (pre-dose)",
+            "dose": 1000,
+            "unit": "mg/m²",
+            "schedule": "Before ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (4h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "4 hours after ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (8h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "8 hours after ifosfamide, D2, every 21 days x 3 cycles"
           },
           {
             "name": "Carboplatin",
@@ -384,7 +420,25 @@ window.protocolData.lymphoma = {
             "name": "Ifosfamide",
             "dose": 5000,
             "unit": "mg/m²",
-            "schedule": "D2, CIV over 24h, every 21 days (with mesna) x 3 cycles"
+            "schedule": "D2, CIV over 24h, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (pre-dose)",
+            "dose": 1000,
+            "unit": "mg/m²",
+            "schedule": "Before ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (4h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "4 hours after ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (8h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "8 hours after ifosfamide, D2, every 21 days x 3 cycles"
           },
           {
             "name": "Carboplatin",
@@ -414,7 +468,25 @@ window.protocolData.lymphoma = {
             "name": "Ifosfamide",
             "dose": 5000,
             "unit": "mg/m²",
-            "schedule": "D2, CIV over 24h, every 21 days (with mesna) x 3 cycles"
+            "schedule": "D2, CIV over 24h, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (pre-dose)",
+            "dose": 1000,
+            "unit": "mg/m²",
+            "schedule": "Before ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (4h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "4 hours after ifosfamide, D2, every 21 days x 3 cycles"
+          },
+          {
+            "name": "Mesna (8h post)",
+            "dose": 2000,
+            "unit": "mg/m²",
+            "schedule": "8 hours after ifosfamide, D2, every 21 days x 3 cycles"
           },
           {
             "name": "Carboplatin",
@@ -1252,7 +1324,7 @@ window.protocolData.lymphoma = {
       },
       "Ibrutinib-WM": {
         "name": "Ibrutinib (WM)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -1264,7 +1336,7 @@ window.protocolData.lymphoma = {
       },
       "Zanubrutinib-WM": {
         "name": "Zanubrutinib (ASPEN) (WM)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Zanubrutinib",
@@ -1277,6 +1349,7 @@ window.protocolData.lymphoma = {
       "Ibrutinib-Rituximab-MCL": {
         "name": "Ibrutinib + Rituximab (SHINE) (MCL)",
         "cycles": 6,
+        "cyclesNote": "Ibrutinib continues until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -1331,6 +1404,7 @@ window.protocolData.lymphoma = {
       "Acalabrutinib-BR-MCL": {
         "name": "Acalabrutinib + Bendamustine + Rituximab (ECHO) (BTK inhibitor + chemoimmunotherapy) (MCL, transplant-ineligible)",
         "cycles": 6,
+        "cyclesNote": "Acalabrutinib continues until progression",
         "drugs": [
           {
             "name": "Acalabrutinib",
@@ -1595,6 +1669,7 @@ window.protocolData.lymphoma = {
       "Tafasitamab-Lenalidomide": {
         "name": "Tafasitamab + Lenalidomide (L-MIND) (DLBCL)",
         "cycles": 12,
+        "cyclesNote": "Tafasitamab continues until progression",
         "drugs": [
           {
             "name": "Tafasitamab",
@@ -1630,7 +1705,7 @@ window.protocolData.lymphoma = {
       },
       "Tazemetostat-FL": {
         "name": "Tazemetostat (EZH2 inhibitor) (EZH2-mutated FL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Tazemetostat",
@@ -1642,7 +1717,7 @@ window.protocolData.lymphoma = {
       },
       "Copanlisib-FL": {
         "name": "Copanlisib (PI3K inhibitor) (FL)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Copanlisib",
@@ -1655,6 +1730,7 @@ window.protocolData.lymphoma = {
       "Idelalisib-Rituximab-FL": {
         "name": "Idelalisib + Rituximab (FL)",
         "cycles": 12,
+        "cyclesNote": "Idelalisib continues until progression",
         "drugs": [
           {
             "name": "Idelalisib",
@@ -1672,7 +1748,7 @@ window.protocolData.lymphoma = {
       },
       "Ibrutinib-MCL": {
         "name": "Ibrutinib (BTK inhibitor) (MCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Ibrutinib",
@@ -1684,7 +1760,7 @@ window.protocolData.lymphoma = {
       },
       "Acalabrutinib-MCL": {
         "name": "Acalabrutinib (BTK inhibitor) (MCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Acalabrutinib",
@@ -1696,7 +1772,7 @@ window.protocolData.lymphoma = {
       },
       "Zanubrutinib-MCL": {
         "name": "Zanubrutinib (BTK inhibitor) (MCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Zanubrutinib",
@@ -1720,7 +1796,7 @@ window.protocolData.lymphoma = {
       },
       "Lenalidomide-MCL": {
         "name": "Lenalidomide (MCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Lenalidomide",
@@ -1834,7 +1910,7 @@ window.protocolData.lymphoma = {
       },
       "Epcoritamab": {
         "name": "Epcoritamab (EPCORE NHL-1) (CD20xCD3 bispecific) (DLBCL)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Epcoritamab",
@@ -1870,7 +1946,7 @@ window.protocolData.lymphoma = {
       },
       "Selinexor-Dexamethasone": {
         "name": "Selinexor + Dexamethasone (SADAL) (DLBCL)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Selinexor",
@@ -1908,7 +1984,7 @@ window.protocolData.lymphoma = {
             "schedule": "PO once daily continuously"
           }
         ],
-        "cycles": 12
+        "cycles": "Until progression"
       },
       "BV-Lenalidomide-Rituximab-LBCL": {
         "name": "Brentuximab vedotin + Lenalidomide + Rituximab (ECHELON-3) (CD30 ADC) (LBCL, transplant/CAR-T ineligible)",
@@ -1936,7 +2012,7 @@ window.protocolData.lymphoma = {
       },
       "Epcoritamab-FL": {
         "name": "Epcoritamab (EPCORE NHL-1) (CD20xCD3 bispecific) (FL, 2L+)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Epcoritamab",
@@ -1949,6 +2025,7 @@ window.protocolData.lymphoma = {
       "Epcoritamab-R2-FL": {
         "name": "Epcoritamab + Rituximab + Lenalidomide (EPCORE NHL-2) (CD20xCD3 bispecific + R2) (FL, 2L+)",
         "cycles": 12,
+        "cyclesNote": "Epcoritamab continues until progression",
         "drugs": [
           {
             "name": "Epcoritamab",
@@ -1973,6 +2050,7 @@ window.protocolData.lymphoma = {
       "Tafasitamab-Len-R-FL": {
         "name": "Tafasitamab + Lenalidomide + Rituximab (inMIND) (anti-CD19 + IMiD) (FL)",
         "cycles": 12,
+        "cyclesNote": "Tafasitamab continues until progression",
         "drugs": [
           {
             "name": "Tafasitamab",
@@ -2253,7 +2331,7 @@ window.protocolData.lymphoma = {
       },
       "Crizotinib-ALCL": {
         "name": "Crizotinib (ALK inhibitor) (ALK+ ALCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Crizotinib",
@@ -2265,7 +2343,7 @@ window.protocolData.lymphoma = {
       },
       "Alectinib-ALCL": {
         "name": "Alectinib (ALK inhibitor) (ALK+ ALCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Alectinib",
@@ -2291,7 +2369,7 @@ window.protocolData.lymphoma = {
       },
       "Belinostat-PTCL": {
         "name": "Belinostat (BELIEF) (HDAC inhibitor) (PTCL)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Belinostat",
@@ -2303,7 +2381,7 @@ window.protocolData.lymphoma = {
       },
       "Romidepsin-PTCL": {
         "name": "Romidepsin (HDAC inhibitor) (PTCL)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Romidepsin",
@@ -2327,7 +2405,7 @@ window.protocolData.lymphoma = {
       },
       "Mogamulizumab-CTCL": {
         "name": "Mogamulizumab (MAVORIC) (anti-CCR4) (CTCL)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Mogamulizumab",
@@ -2339,7 +2417,7 @@ window.protocolData.lymphoma = {
       },
       "Romidepsin-CTCL": {
         "name": "Romidepsin (HDAC inhibitor) (CTCL)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Romidepsin",
@@ -2351,7 +2429,7 @@ window.protocolData.lymphoma = {
       },
       "Vorinostat-CTCL": {
         "name": "Vorinostat (HDAC inhibitor) (CTCL)",
-        "cycles": 6,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Vorinostat",
@@ -2375,7 +2453,7 @@ window.protocolData.lymphoma = {
       },
       "Bexarotene-CTCL": {
         "name": "Bexarotene (oral retinoid) (CTCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Bexarotene",
@@ -2399,7 +2477,7 @@ window.protocolData.lymphoma = {
       },
       "Crizotinib-ALCL": {
         "name": "Crizotinib (ALK inhibitor) (ALK+ ALCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Crizotinib",
@@ -2411,7 +2489,7 @@ window.protocolData.lymphoma = {
       },
       "Alectinib-ALCL": {
         "name": "Alectinib (ALK inhibitor) (ALK+ ALCL)",
-        "cycles": 12,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Alectinib",
@@ -2423,7 +2501,7 @@ window.protocolData.lymphoma = {
       },
       "Denileukin-diftitox-CTCL": {
         "name": "Denileukin diftitox-cxdl (LYMPHIR) (IL-2 fusion protein) (CTCL)",
-        "cycles": 8,
+        "cycles": "Until progression",
         "drugs": [
           {
             "name": "Denileukin diftitox-cxdl",

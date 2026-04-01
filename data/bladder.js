@@ -101,7 +101,7 @@ window.protocolData.bladder = {
     },
     "Nivolumab-Adjuvant": {
       "name": "Nivolumab monotherapy (PD-1 inhibitor) (CheckMate 274)",
-      "cycles": 12,
+      "cycles": 26,
       "drugs": [
         {
           "name": "Nivolumab",
@@ -140,6 +140,7 @@ window.protocolData.bladder = {
     "GC-Durvalumab-Perioperative": {
       "name": "Gemcitabine + Cisplatin + Durvalumab (PD-L1 inhibitor) (NIAGARA) (NCCN Preferred)",
       "cycles": 4,
+      "cyclesNote": "4 neoadjuvant cycles (GemCis + Durvalumab); post-surgery: Durvalumab 1500mg Q4W × 8 adjuvant cycles",
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -164,6 +165,7 @@ window.protocolData.bladder = {
     "EV-Pembrolizumab-Perioperative": {
       "name": "Enfortumab Vedotin + Pembrolizumab (Nectin-4 ADC + PD-1 inhibitor) (KEYNOTE-905/EV-303) (cisplatin-ineligible)",
       "cycles": 3,
+      "cyclesNote": "3 neoadjuvant cycles; post-surgery: EV D1,D8 Q3W × 6 adjuvant cycles + Pembrolizumab Q3W × 14 adjuvant cycles",
       "drugs": [
         {
           "name": "Enfortumab Vedotin",
@@ -263,7 +265,7 @@ window.protocolData.bladder = {
   "metastatic": {
     "Enfortumab-Vedotin-Pembrolizumab": {
       "name": "Enfortumab Vedotin + Pembrolizumab (Nectin-4 ADC + PD-1 inhibitor) (EV-302/KEYNOTE-A39) (NCCN Preferred)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enfortumab Vedotin",
@@ -282,6 +284,7 @@ window.protocolData.bladder = {
     "Gemcitabine-Cisplatin-Nivolumab": {
       "name": "Gemcitabine + Cisplatin + Nivolumab (PD-1 inhibitor) (CheckMate 901)",
       "cycles": 6,
+      "cyclesNote": "Nivolumab: 360mg Q3W with GemCis (6 cycles), then switches to 480mg Q4W maintenance until progression",
       "drugs": [
         {
           "name": "Gemcitabine",
@@ -299,7 +302,7 @@ window.protocolData.bladder = {
           "name": "Nivolumab",
           "dose": 360,
           "unit": "mg",
-          "schedule": "D1, every 21 days"
+          "schedule": "360mg IV D1, Q3W with GemCis (6 cycles); then 480mg IV Q4W maintenance until progression"
         }
       ]
     },
@@ -353,7 +356,7 @@ window.protocolData.bladder = {
     },
     "Avelumab-Maintenance": {
       "name": "Avelumab maintenance (PD-L1 inhibitor) (JAVELIN Bladder 100)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Avelumab",
@@ -401,7 +404,7 @@ window.protocolData.bladder = {
     },
     "Pembrolizumab-Monotherapy": {
       "name": "Pembrolizumab monotherapy (PD-1 inhibitor) (cisplatin-ineligible, PD-L1+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Pembrolizumab",
@@ -413,7 +416,7 @@ window.protocolData.bladder = {
     },
     "Atezolizumab-Monotherapy": {
       "name": "Atezolizumab monotherapy (PD-L1 inhibitor) (cisplatin-ineligible, PD-L1+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Atezolizumab",
@@ -425,7 +428,7 @@ window.protocolData.bladder = {
     },
     "Enfortumab-Vedotin-Mono": {
       "name": "Enfortumab Vedotin monotherapy (Nectin-4 ADC) (EV-301)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Enfortumab Vedotin",
@@ -437,7 +440,7 @@ window.protocolData.bladder = {
     },
     "Erdafitinib": {
       "name": "Erdafitinib (pan-FGFR inhibitor) (FGFR3 alteration)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Erdafitinib",
@@ -450,7 +453,7 @@ window.protocolData.bladder = {
     },
     "Trastuzumab-Deruxtecan": {
       "name": "Trastuzumab deruxtecan (T-DXd) (HER2-directed ADC) (HER2 IHC 3+)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Trastuzumab deruxtecan",
@@ -462,7 +465,7 @@ window.protocolData.bladder = {
     },
     "Nivolumab-Monotherapy": {
       "name": "Nivolumab monotherapy (PD-1 inhibitor)",
-      "cycles": 12,
+      "cycles": "Until progression",
       "drugs": [
         {
           "name": "Nivolumab",
