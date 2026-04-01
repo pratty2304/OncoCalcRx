@@ -4196,7 +4196,7 @@ const GF_ANC_RECOVERY_PROTOCOLS = new Set([
 function getGCSLabel() {
     const v = document.getElementById('selectGCS').value;
     if (v === 'none') return null;
-    if (v === 'pegfilgrastim') return 'Inj. Pegfilgrastim 6mg SC — Day 2 (single dose, 24h after chemo)';
+    if (v === 'pegfilgrastim') return 'Inj. Pegfilgrastim 6mg SC — 24h after chemotherapy completion (single dose)';
     const protocolKey = originalResults && originalResults.results && originalResults.results.protocolKey;
     const forceANC = protocolKey && GF_ANC_RECOVERY_PROTOCOLS.has(protocolKey);
     if (v === 'filgrastimANC' || forceANC) return 'Inj. Filgrastim 5mcg/kg SC — Day 3 until ANC recovery (ANC ≥1000/μL post-nadir) [NCCN recommended]';
