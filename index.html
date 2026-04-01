@@ -2097,44 +2097,56 @@
 
                     <div class="form-group" style="margin-bottom:12px;">
                         <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Oral Antacid</label>
-                        <select id="selectOralAntacid" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
-                            <option value="none">— None —</option>
-                            <option value="pantoprazole">Tab. Pantoprazole 40mg OD</option>
-                            <option value="omeprazole">Tab. Omeprazole 20mg OD</option>
-                            <option value="esomeprazole">Tab. Esomeprazole 20mg OD</option>
-                            <option value="rabeprazole">Tab. Rabeprazole 20mg OD</option>
-                            <option value="famotidine">Tab. Famotidine 40mg OD</option>
-                            <option value="ranitidine">Tab. Ranitidine 150mg BD</option>
-                        </select>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            <select id="selectOralAntacid" style="flex:1; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                                <option value="none">— None —</option>
+                                <option value="pantoprazole">Tab. Pantoprazole 40mg OD</option>
+                                <option value="omeprazole">Tab. Omeprazole 20mg OD</option>
+                                <option value="esomeprazole">Tab. Esomeprazole 20mg OD</option>
+                                <option value="rabeprazole">Tab. Rabeprazole 20mg OD</option>
+                                <option value="famotidine">Tab. Famotidine 40mg OD</option>
+                                <option value="ranitidine">Tab. Ranitidine 150mg BD</option>
+                            </select>
+                            <input type="number" id="daysOralAntacid" min="1" max="30" placeholder="Days" style="width:64px; padding:9px 6px; border:2px solid #ddd; border-radius:5px; font-size:14px; text-align:center;">
+                        </div>
                     </div>
 
                     <div class="form-group" style="margin-bottom:12px;">
                         <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antiemetic — Ondansetron</label>
-                        <select id="selectOralOndansetron" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
-                            <option value="none">— None —</option>
-                            <option value="4mg BD">Tab. Ondansetron 4mg BD — Days 2–4</option>
-                            <option value="8mg BD">Tab. Ondansetron 8mg BD — Days 2–4</option>
-                        </select>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            <select id="selectOralOndansetron" style="flex:1; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                                <option value="none">— None —</option>
+                                <option value="4mg BD">Tab. Ondansetron 4mg BD — Days 2–4</option>
+                                <option value="8mg BD">Tab. Ondansetron 8mg BD — Days 2–4</option>
+                            </select>
+                            <input type="number" id="daysOralOndansetron" min="1" max="30" placeholder="Days" style="width:64px; padding:9px 6px; border:2px solid #ddd; border-radius:5px; font-size:14px; text-align:center;">
+                        </div>
                     </div>
 
                     <div class="form-group" style="margin-bottom:12px;">
                         <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antiemetic — Dexamethasone</label>
-                        <select id="selectOralDex" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
-                            <option value="none">— None —</option>
-                            <option value="2mg BD">Tab. Dexamethasone 2mg BD — Days 2–4</option>
-                            <option value="4mg BD">Tab. Dexamethasone 4mg BD — Days 2–4</option>
-                            <option value="8mg BD">Tab. Dexamethasone 8mg BD — Days 2–4</option>
-                        </select>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            <select id="selectOralDex" style="flex:1; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                                <option value="none">— None —</option>
+                                <option value="2mg BD">Tab. Dexamethasone 2mg BD — Days 2–4</option>
+                                <option value="4mg BD">Tab. Dexamethasone 4mg BD — Days 2–4</option>
+                                <option value="8mg BD">Tab. Dexamethasone 8mg BD — Days 2–4</option>
+                            </select>
+                            <input type="number" id="daysOralDex" min="1" max="30" placeholder="Days" style="width:64px; padding:9px 6px; border:2px solid #ddd; border-radius:5px; font-size:14px; text-align:center;">
+                        </div>
                     </div>
 
                     <div class="form-group" style="margin-bottom:12px;">
                         <label style="font-weight:600; color:#0f3460; display:block; margin-bottom:5px;">Antiemetic — Olanzapine</label>
-                        <select id="selectOralOlanzapine" style="width:100%; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
-                            <option value="none">— None —</option>
-                            <option value="2.5mg HS">Tab. Olanzapine 2.5mg SOS</option>
-                            <option value="5mg HS">Tab. Olanzapine 5mg SOS</option>
-                            <option value="10mg HS">Tab. Olanzapine 10mg SOS</option>
-                        </select>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            <select id="selectOralOlanzapine" style="flex:1; padding:9px; border:2px solid #ddd; border-radius:5px; font-size:14px;">
+                                <option value="none">— None —</option>
+                                <option value="2.5mg HS">Tab. Olanzapine 2.5mg SOS</option>
+                                <option value="5mg HS">Tab. Olanzapine 5mg SOS</option>
+                                <option value="10mg HS">Tab. Olanzapine 10mg SOS</option>
+                            </select>
+                            <input type="number" id="daysOralOlanzapine" min="1" max="30" placeholder="Days" style="width:64px; padding:9px 6px; border:2px solid #ddd; border-radius:5px; font-size:14px; text-align:center;">
+                        </div>
                     </div>
 
                     <div id="gcsGroup" class="form-group" style="margin-bottom:0;">

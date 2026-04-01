@@ -4009,6 +4009,12 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('onco_' + id);
     });
 
+    // Days inputs for post-discharge meds — update preview on change
+    ['daysOralAntacid','daysOralOndansetron','daysOralDex','daysOralOlanzapine'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', buildPrintPreview);
+    });
+
     document.getElementById('phaseSelect').addEventListener('change', buildPrintPreview);
 
     // Optional patient name/age — update preview live as user types
@@ -4050,6 +4056,10 @@ function loadPreferences() {
      'selectOralAntacid','selectOralOndansetron','selectOralDex','selectOralOlanzapine','selectGCS'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.value = 'none';
+    });
+    ['daysOralAntacid','daysOralOndansetron','daysOralDex','daysOralOlanzapine'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
     });
     handleNEPALogic();
 }
@@ -4323,28 +4333,37 @@ function buildPostMeds() {
         famotidine:   { name: 'Tab. Famotidine',   dose: '40mg', route: 'Oral', frequency: 'OD', duration: 'Days 2–5' },
         ranitidine:   { name: 'Tab. Ranitidine',   dose: '150mg', route: 'Oral', frequency: 'BD', duration: 'Days 2–5' }
     };
+    function getDays(id, fallback) {
+        const v = parseInt(document.getElementById(id)?.value, 10);
+        return (v > 0) ? `${v} days` : fallback;
+    }
+
     const oralAntacidVal = document.getElementById('selectOralAntacid').value;
     if (oralAntacidVal !== 'none' && oralAntacidMap[oralAntacidVal]) {
-        rows.push(oralAntacidMap[oralAntacidVal]);
+        const entry = Object.assign({}, oralAntacidMap[oralAntacidVal]);
+        entry.duration = getDays('daysOralAntacid', entry.duration);
+        rows.push(entry);
     }
 
     // Oral antiemetics
     const oralOndan = document.getElementById('selectOralOndansetron').value;
     if (oralOndan !== 'none') {
         const [dose, freq] = oralOndan.split(' ');
-        rows.push({ name: 'Tab. Ondansetron', dose, route: 'Oral', frequency: freq, duration: 'Days 2–4' });
+        rows.push({ name: 'Tab. Ondansetron', dose, route: 'Oral', frequency: freq, duration: getDays('daysOralOndansetron', 'Days 2–4') });
     }
 
     const oralDex = document.getElementById('selectOralDex').value;
     if (oralDex !== 'none') {
         const [dose, freq] = oralDex.split(' ');
-        rows.push({ name: 'Tab. Dexamethasone', dose, route: 'Oral', frequency: freq, duration: 'Days 2–4' });
+        rows.push({ name: 'Tab. Dexamethasone', dose, route: 'Oral', frequency: freq, duration: getDays('daysOralDex', 'Days 2–4') });
     }
 
     const oralOlanz = document.getElementById('selectOralOlanzapine').value;
     if (oralOlanz !== 'none') {
         const [dose] = oralOlanz.split(' ');
-        rows.push({ name: 'Tab. Olanzapine', dose, route: 'Oral', frequency: 'SOS', duration: 'As needed' });
+        const olanzDays = parseInt(document.getElementById('daysOralOlanzapine')?.value, 10);
+        const olanzDuration = olanzDays > 0 ? `SOS — ${olanzDays} days` : 'As needed';
+        rows.push({ name: 'Tab. Olanzapine', dose, route: 'Oral', frequency: 'SOS', duration: olanzDuration });
     }
 
     return rows;
