@@ -4361,9 +4361,7 @@ function buildPostMeds() {
     const oralOlanz = document.getElementById('selectOralOlanzapine').value;
     if (oralOlanz !== 'none') {
         const [dose] = oralOlanz.split(' ');
-        const olanzDays = parseInt(document.getElementById('daysOralOlanzapine')?.value, 10);
-        const olanzDuration = olanzDays > 0 ? `SOS — ${olanzDays} days` : 'As needed';
-        rows.push({ name: 'Tab. Olanzapine', dose, route: 'Oral', frequency: 'SOS', duration: olanzDuration });
+        rows.push({ name: 'Tab. Olanzapine', dose, route: 'Oral', frequency: 'SOS', duration: getDays('daysOralOlanzapine', 'As needed') });
     }
 
     return rows;
