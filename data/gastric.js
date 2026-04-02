@@ -455,7 +455,7 @@ window.protocolData.gastric = {
       ]
     },
     "FOLFOX-Trastuzumab-Pembrolizumab-HER2-1L": {
-      "name": "mFOLFOX6 + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "name": "mFOLFOX6 + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+, PD-L1 CPS≥1) (PD-1 inhibitor)",
       "cycles": 12,
       "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
@@ -527,7 +527,7 @@ window.protocolData.gastric = {
       ]
     },
     "5FU-Cisplatin-Trastuzumab-Pembrolizumab-HER2-1L": {
-      "name": "5-Fluorouracil + Cisplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "name": "5-Fluorouracil + Cisplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+, PD-L1 CPS≥1) (PD-1 inhibitor)",
       "cycles": 6,
       "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
@@ -830,7 +830,7 @@ window.protocolData.gastric = {
       ]
     },
     "CapeOX-Trastuzumab-Pembrolizumab-HER2-1L": {
-      "name": "Capecitabine + Oxaliplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "name": "Capecitabine + Oxaliplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+, PD-L1 CPS≥1) (PD-1 inhibitor)",
       "cycles": 8,
       "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
@@ -890,7 +890,7 @@ window.protocolData.gastric = {
       ]
     },
     "CapCis-Trastuzumab-Pembrolizumab-HER2-1L": {
-      "name": "Capecitabine + Cisplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+) (PD-1 inhibitor)",
+      "name": "Capecitabine + Cisplatin + Trastuzumab + Pembrolizumab (KEYNOTE-811) (HER2+, PD-L1 CPS≥1) (PD-1 inhibitor)",
       "cycles": 6,
       "cyclesNote": "Trastuzumab and Pembrolizumab continue until progression",
       "drugs": [
