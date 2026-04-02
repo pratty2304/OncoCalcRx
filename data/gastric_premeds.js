@@ -246,6 +246,30 @@ window.premedData.gastric = (function () {
             emetogenicity: 'high',
             infusionDrugs: [tisl(1), cisplat(2)]
         },
+        'SP-1L': {
+            label: null,
+            emetogenicity: 'high',
+            infusionDrugs: [cisplat(1)]
+            // S-1 (oral) appears automatically in Oral Chemotherapy section
+        },
+        'SOX-1L': {
+            label: null,
+            emetogenicity: 'moderate',
+            infusionDrugs: [oxali(1)]
+            // S-1 (oral) appears automatically in Oral Chemotherapy section
+        },
+        'SOX-Nivolumab-1L': {
+            label: null,
+            emetogenicity: 'moderate',
+            infusionDrugs: [nivo(1), oxali(2)]
+            // S-1 (oral) appears automatically in Oral Chemotherapy section
+        },
+        'S1-Mono-1L': {
+            label: null,
+            emetogenicity: 'low',
+            isOral: true,
+            infusionDrugs: []
+        },
         'Paclitaxel-Ramucirumab-2L': {
             label: null,
             emetogenicity: 'low',
@@ -300,6 +324,13 @@ window.premedData.gastric = (function () {
             label: null,
             emetogenicity: 'low',
             infusionDrugs: [dostar(1)]
+        },
+
+        'S1-Docetaxel-2L': {
+            label: null,
+            emetogenicity: 'moderate',
+            infusionDrugs: [doce(1)]
+            // S-1 (oral) appears automatically in Oral Chemotherapy section
         },
 
         // ── ORAL ONLY ────────────────────────────────────────────────────────

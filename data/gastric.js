@@ -1072,6 +1072,79 @@ window.protocolData.gastric = {
         }
       ]
     },
+    "SP-1L": {
+      "name": "S-1 + Cisplatin (SP) (SPIRITS)",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "Cisplatin",
+          "dose": 60,
+          "unit": "mg/m²",
+          "schedule": "D8, every 35 days"
+        },
+        {
+          "name": "S-1",
+          "dose": 40,
+          "unit": "mg/m²",
+          "schedule": "PO twice daily D1-D21, every 35 days"
+        }
+      ]
+    },
+    "SOX-1L": {
+      "name": "S-1 + Oxaliplatin (SOX) (G-SOX)",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "Oxaliplatin",
+          "dose": 130,
+          "unit": "mg/m²",
+          "schedule": "D1, every 21 days"
+        },
+        {
+          "name": "S-1",
+          "dose": 40,
+          "unit": "mg/m²",
+          "schedule": "PO twice daily D1-D14, every 21 days"
+        }
+      ]
+    },
+    "SOX-Nivolumab-1L": {
+      "name": "S-1 + Oxaliplatin + Nivolumab (ATTRACTION-4) (PD-1 inhibitor)",
+      "cycles": 6,
+      "cyclesNote": "Nivolumab continues until progression",
+      "drugs": [
+        {
+          "name": "Nivolumab",
+          "dose": 360,
+          "unit": "mg",
+          "schedule": "D1, every 21 days"
+        },
+        {
+          "name": "Oxaliplatin",
+          "dose": 130,
+          "unit": "mg/m²",
+          "schedule": "D1, every 21 days"
+        },
+        {
+          "name": "S-1",
+          "dose": 40,
+          "unit": "mg/m²",
+          "schedule": "PO twice daily D1-D14, every 21 days"
+        }
+      ]
+    },
+    "S1-Mono-1L": {
+      "name": "S-1 monotherapy",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "S-1",
+          "dose": 40,
+          "unit": "mg/m²",
+          "schedule": "PO twice daily D1-D28, every 42 days"
+        }
+      ]
+    },
     "Paclitaxel-Ramucirumab-2L": {
       "name": "Paclitaxel + Ramucirumab (RAINBOW) (VEGFR2 inhibitor)",
       "cycles": 6,
@@ -1222,6 +1295,24 @@ window.protocolData.gastric = {
           "dose": 150,
           "unit": "mg/m²",
           "schedule": "D1, every 14 days"
+        }
+      ]
+    },
+    "S1-Docetaxel-2L": {
+      "name": "S-1 + Docetaxel (DS)",
+      "cycles": 6,
+      "drugs": [
+        {
+          "name": "Docetaxel",
+          "dose": 60,
+          "unit": "mg/m²",
+          "schedule": "D1, every 21 days"
+        },
+        {
+          "name": "S-1",
+          "dose": 40,
+          "unit": "mg/m²",
+          "schedule": "PO twice daily D1-D14, every 21 days"
         }
       ]
     },
