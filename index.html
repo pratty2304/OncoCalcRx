@@ -1608,10 +1608,14 @@
             .print-table th {
                 background: white !important;
                 color: black !important;
-                border-top: 1px solid #888 !important;
+                border: 1px solid black !important;
                 border-bottom: 2px solid black !important;
                 -webkit-print-color-adjust: economy !important;
                 print-color-adjust: economy !important;
+            }
+            /* Table cell borders: force black lines */
+            .print-table td {
+                border: 1px solid black !important;
             }
             .print-table tbody tr:nth-child(even) {
                 background: #efefef !important;
