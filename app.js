@@ -6663,6 +6663,22 @@ function buildPrintPreview() {
 function buildAndPrint() {
     buildPrintPreview();
     document.getElementById('printArea').style.display = 'block';
+
+    // Set PDF filename via document.title (browser uses this as the Save As default name)
+    const originalTitle = document.title;
+    const patientName = (document.getElementById('printPatientName').value || '').trim();
+    const protocol = (originalResults && originalResults.results)
+        ? (originalResults.results.protocolName || originalResults.results.protocolKey || '')
+        : '';
+    document.title = patientName
+        ? patientName
+        : (protocol ? `OncoCalcRx - ${protocol}` : originalTitle);
+
+    window.onafterprint = function () {
+        document.title = originalTitle;
+        window.onafterprint = null;
+    };
+
     window.print();
     setTimeout(() => { document.getElementById('printArea').style.display = 'none'; }, 1000);
 }
