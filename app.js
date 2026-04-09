@@ -3000,6 +3000,50 @@ function buildDoseAdjustmentTable() {
     `;
 }
 
+// Global helper — mirrors the non-reducible logic from showDoseAdjustment / showFinalPrescription.
+// Used by applyGlobalReduction and buildInfusionRows / buildOralChemoRows so that
+// immunotherapy, targeted therapy, and hormonal agents are never dose-reduced in the print.
+function _isNonReducibleForPrint(drugName) {
+    const n = drugName.toLowerCase();
+    // Conditionally reducible drugs (ramucirumab, cetuximab, panitumumab) ARE reducible
+    if (['ramucirumab','cetuximab','panitumumab'].some(d => n.includes(d))) return false;
+    // Immunotherapy / MAbs
+    if ([
+        'trastuzumab','pertuzumab','rituximab','bevacizumab',
+        'pembrolizumab','nivolumab','ipilimumab','atezolizumab','relatlimab',
+        'cemiplimab','dostarlimab','toripalimab','tislelizumab','avelumab',
+        'durvalumab','tremelimumab','spartalizumab','retifanlimab'
+    ].some(d => n.includes(d))) return true;
+    // Targeted therapies
+    if ([
+        'ribociclib','abemaciclib','palbociclib',
+        'olaparib','niraparib','rucaparib','talazoparib',
+        'erlotinib','gefitinib','osimertinib','crizotinib','alectinib',
+        'brigatinib','lorlatinib','ceritinib','lapatinib','afatinib',
+        'dacomitinib','mobocertinib','amivantamab','sotorasib','adagrasib',
+        'imatinib','dasatinib','nilotinib','bosutinib','ponatinib',
+        'midostaurin','gilteritinib','sorafenib','sunitinib','pazopanib',
+        'axitinib','cabozantinib','lenvatinib','regorafenib','tivozanib',
+        'donafenib','apatinib',
+        'everolimus','temsirolimus',
+        'selpercatinib','pralsetinib',
+        'ibrutinib','acalabrutinib','zanubrutinib','idelalisib','venetoclax',
+        'ruxolitinib','fedratinib','pacritinib','vismodegib','sonidegib',
+        'glasdegib','tucatinib','avapritinib','ripretinib',
+        'larotrectinib','entrectinib','repotrectinib',
+        'dabrafenib','trametinib','vemurafenib','cobimetinib','encorafenib','binimetinib'
+    ].some(d => n.includes(d))) return true;
+    // Hormonal agents
+    if ([
+        'tamoxifen','toremifene','anastrozole','letrozole','exemestane',
+        'fulvestrant','elacestrant','camizestrant',
+        'goserelin','leuprolide','triptorelin','histrelin',
+        'bicalutamide','flutamide','enzalutamide','apalutamide','darolutamide',
+        'abiraterone','degarelix'
+    ].some(d => n.includes(d))) return true;
+    return false;
+}
+
 function updateDrugReduction(drugName, reductionValue) {
     const reduction = Math.max(0, Math.min(100, parseFloat(reductionValue) || 0));
     currentReductions[drugName] = reduction;
@@ -3028,8 +3072,9 @@ function applyGlobalReduction() {
         }
     }
 
-    // Update all drug reductions
+    // Update all drug reductions — skip immunotherapy / targeted / hormonal agents
     Object.keys(currentReductions).forEach(drugName => {
+        if (_isNonReducibleForPrint(drugName)) return;
         currentReductions[drugName] = clampedValue;
         const inputElement = document.getElementById(`reduction_${drugName.replace(/\s+/g, '_')}`);
         if (inputElement) {
@@ -4488,7 +4533,7 @@ function buildInfusionRows(phase) {
                         rawDose = parseFloat(calcDrug.calculatedDose);
                     }
                     if (!isNaN(rawDose)) {
-                        const reduced = rawDose * (1 - reduction / 100);
+                        const reduced = _isNonReducibleForPrint(d.name) ? rawDose : rawDose * (1 - reduction / 100);
                         const rounded = roundDose(reduced, d.name, results.protocolName || '');
                         doseDisplay = `${rounded} mg`;
                     }
@@ -4563,7 +4608,7 @@ function buildInfusionRows(phase) {
                 rawDose = parseFloat(d.calculatedDose);
             }
             if (!isNaN(rawDose)) {
-                const reduced = rawDose * (1 - reduction / 100);
+                const reduced = _isNonReducibleForPrint(d.name) ? rawDose : rawDose * (1 - reduction / 100);
                 const rounded = roundDose(reduced, d.name, results.protocolName || '');
                 doseDisplay = `${rounded} mg`;
             }
@@ -4645,7 +4690,7 @@ function buildOralChemoRows(phase) {
             let doseDisplay = '—';
             const rawDose = parseFloat(d.calculatedDose);
             if (!isNaN(rawDose) && rawDose > 0) {
-                const reduced = rawDose * (1 - reduction / 100);
+                const reduced = _isNonReducibleForPrint(d.name) ? rawDose : rawDose * (1 - reduction / 100);
                 const rounded = roundDose(reduced, d.name, results.protocolName || '');
                 doseDisplay = `${rounded} mg`;
             } else if (d.dose) {
